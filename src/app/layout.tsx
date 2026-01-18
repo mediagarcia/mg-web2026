@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   title: "Media Garcia | HubSpot Solutions Partner",
   description: "We build and run digital platforms that keep companies lean, growing, and easy to do business with. Elite HubSpot implementation, automation, and growth solutions.",
   keywords: ["HubSpot", "HubSpot Partner", "Marketing Automation", "CRM", "Sales Enablement", "Digital Transformation"],
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     title: "Media Garcia | HubSpot Solutions Partner",
     description: "We build and run digital platforms that keep companies lean, growing, and easy to do business with.",
