@@ -3,6 +3,8 @@ export { ClientLogos } from "./ClientLogos";
 export { Services } from "./Services";
 export { Stats } from "./Stats";
 export { Industries } from "./Industries";
+export { WhyUs } from "./WhyUs";
+export { Values } from "./Values";
 export { Testimonials } from "./Testimonials";
 export { CaseStudies } from "./CaseStudies";
 export { Team } from "./Team";
