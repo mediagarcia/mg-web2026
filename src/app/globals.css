@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary Brand Colors */
+  --color-teal-50: #E8F7F1;
+  --color-teal-100: #D1EFE3;
+  --color-teal-200: #A3DFC7;
+  --color-teal-300: #75CFAB;
+  --color-teal-400: #47BF8F;
+  --color-teal-500: #3BB782;
+  --color-teal-600: #2F9268;
+  --color-teal-700: #236E4E;
+  --color-teal-800: #184934;
+  --color-teal-900: #0C251A;
+
+  /* Neon Purple Accent */
+  --color-neon-purple-50: #FDF5FD;
+  --color-neon-purple-100: #FBEBFB;
+  --color-neon-purple-200: #F7D7F7;
+  --color-neon-purple-300: #F3C3F3;
+  --color-neon-purple-400: #F0AFEF;
+  --color-neon-purple-500: #EE82F0;
+  --color-neon-purple-600: #E94EEB;
+  --color-neon-purple-700: #D41ED7;
+  --color-neon-purple-800: #9F17A1;
+  --color-neon-purple-900: #6A0F6B;
+
+  /* Orange Red Accent */
+  --color-orange-red-50: #FDF0ED;
+  --color-orange-red-100: #FBE1DB;
+  --color-orange-red-200: #F7C3B7;
+  --color-orange-red-300: #F3A593;
+  --color-orange-red-400: #EF876F;
+  --color-orange-red-500: #EC4724;
+  --color-orange-red-600: #C9351A;
+  --color-orange-red-700: #972814;
+  --color-orange-red-800: #651B0D;
+  --color-orange-red-900: #320D07;
+
+  /* Typography Scale */
+  --font-family-sans: var(--font-roboto), system-ui, sans-serif;
+  --font-family-mono: var(--font-roboto-mono), monospace;
+
+  /* Section Spacing */
+  --spacing-section: clamp(80px, 15vw, 200px);
+  --spacing-section-sm: clamp(60px, 10vw, 120px);
+
+  /* Animations */
+  --animate-fade-in: fadeIn 0.8s ease-out forwards;
+  --animate-slide-up: slideUp 0.8s ease-out forwards;
+  --animate-slide-in-left: slideInLeft 0.6s ease-out forwards;
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideInLeft {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  color: #000000;
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-teal-500);
+  color: white;
+}
+
+/* Focus States */
+:focus-visible {
+  outline: 2px solid var(--color-teal-500);
+  outline-offset: 2px;
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Organic Shape Background */
+.organic-shape {
+  position: absolute;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  filter: blur(60px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Gradient backgrounds */
+.gradient-teal-purple {
+  background: linear-gradient(135deg, var(--color-teal-500), var(--color-neon-purple-500));
+}
+
+.gradient-orange-purple {
+  background: linear-gradient(135deg, var(--color-orange-red-500), var(--color-neon-purple-500));
+}
+
+/* Hero text gradient */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-teal-500), var(--color-neon-purple-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
