@@ -2,13 +2,16 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { OrganicShapeCluster, DotPattern } from "@/components/OrganicShapes";
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
       {/* Organic Background Shapes */}
-      <div className="organic-shape w-[600px] h-[600px] bg-teal-500 -top-40 -right-40" />
-      <div className="organic-shape w-[400px] h-[400px] bg-neon-purple-500 bottom-20 -left-20" />
+      <OrganicShapeCluster />
+
+      {/* Dot pattern accent */}
+      <DotPattern className="top-20 right-20 hidden lg:block" />
 
       {/* Content */}
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-0">
