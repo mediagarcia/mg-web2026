@@ -16,15 +16,18 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-0">
         <div className="max-w-4xl">
-          {/* Badge */}
+          {/* HubSpot Partner Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-black/5 rounded-full px-4 py-2 mb-8"
+            className="inline-flex items-center gap-3 bg-black/5 rounded-full px-5 py-2.5 mb-8"
           >
+            <svg className="w-6 h-6 text-[#ff7a59]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.984 2.21 2.21 0 00-4.42 0c0 .873.51 1.625 1.245 1.982v2.848a5.276 5.276 0 00-2.407 1.227l-6.39-4.972a2.474 2.474 0 00.093-.655 2.472 2.472 0 10-2.471 2.471c.426 0 .824-.11 1.17-.299l6.271 4.876a5.3 5.3 0 00-.203 1.422 5.3 5.3 0 00.203 1.422l-6.271 4.876c-.346-.19-.744-.299-1.17-.299a2.472 2.472 0 102.471 2.471c0-.228-.034-.447-.093-.655l6.39-4.972a5.276 5.276 0 002.407 1.227v2.848a2.198 2.198 0 00-1.245 1.982 2.21 2.21 0 004.42 0 2.198 2.198 0 00-1.267-1.984V16.07a5.287 5.287 0 10-5.096-9.14 5.287 5.287 0 005.096-9.14z"/>
+            </svg>
+            <span className="text-sm font-semibold text-black/80">HubSpot Solutions Partner</span>
             <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
-            <span className="text-sm font-medium text-black/70">HubSpot Solutions Partner</span>
           </motion.div>
 
           {/* Main Headline */}
