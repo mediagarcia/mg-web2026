@@ -19,11 +19,11 @@ const industries = [
 ];
 
 const navItems = [
-  { label: "Services", href: "#services", hasDropdown: true, dropdown: services },
-  { label: "Industries", href: "#industries", hasDropdown: true, dropdown: industries },
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/services/hubspot-onboarding", hasDropdown: true, dropdown: services },
+  { label: "Industries", href: "/industries", hasDropdown: true, dropdown: industries },
+  { label: "Pricing", href: "/pricing" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function DropdownMenu({ items, isOpen, onClose }: { items: typeof services; isOpen: boolean; onClose: () => void }) {
@@ -148,7 +148,7 @@ export function Navigation() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-teal-500 transition-colors duration-300"
             >
               Get Started
@@ -250,7 +250,7 @@ export function Navigation() {
                 </ul>
               </nav>
               <Link
-                href="#contact"
+                href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="inline-flex items-center justify-center gap-2 bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-teal-500 transition-colors duration-300 mt-8"
               >

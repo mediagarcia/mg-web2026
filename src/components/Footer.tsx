@@ -2,10 +2,10 @@ import Link from "next/link";
 
 const footerLinks = {
   services: [
-    { label: "CRM Onboarding", href: "/services/crm-onboarding" },
+    { label: "HubSpot Onboarding", href: "/services/hubspot-onboarding" },
     { label: "Sales Enablement", href: "/services/sales-enablement" },
+    { label: "Marketing Automation", href: "/services/marketing-automation" },
     { label: "Custom Integrations", href: "/services/integrations" },
-    { label: "Website Development", href: "/services/development" },
     { label: "Growth Marketing", href: "/services/marketing" },
   ],
   company: [
