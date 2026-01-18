@@ -1,4 +1,4 @@
-import { Hero, ClientLogos, Services, Stats, Industries, WhyUs, Values, Testimonials, CaseStudies, Team, Contact } from "@/components/sections";
+import { Hero, ClientLogos, Services, Stats, Industries, WhyUs, Process, Values, CTABanner, Testimonials, CaseStudies, Team, Contact } from "@/components/sections";
 
 export default function Home() {
   return (
@@ -9,7 +9,9 @@ export default function Home() {
       <Stats />
       <Industries />
       <WhyUs />
+      <Process />
       <Values />
+      <CTABanner />
       <Testimonials />
       <CaseStudies />
       <Team />

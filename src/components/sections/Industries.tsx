@@ -42,7 +42,7 @@ const industries = [
 
 export function Industries() {
   return (
-    <section className="py-[var(--spacing-section)] bg-white">
+    <section id="industries" className="py-[var(--spacing-section)] bg-white">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24">
