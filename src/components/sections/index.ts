@@ -1,6 +1,8 @@
 export { Hero } from "./Hero";
 export { ClientLogos } from "./ClientLogos";
 export { Services } from "./Services";
+export { Stats } from "./Stats";
+export { Industries } from "./Industries";
 export { Testimonials } from "./Testimonials";
 export { CaseStudies } from "./CaseStudies";
 export { Team } from "./Team";
