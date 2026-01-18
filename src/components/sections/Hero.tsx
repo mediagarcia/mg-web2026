@@ -31,18 +31,17 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-[clamp(2.5rem,8vw,5.5rem)] font-black leading-[1.05] tracking-tight text-black mb-8"
           >
-            Digital platforms that keep you{" "}
-            <span className="text-gradient">lean, growing,</span> and easy to do business with.
+            <span className="text-gradient">HubSpot</span> and Marketing Experts
           </motion.h1>
 
-          {/* Subheadline */}
+          {/* Subheadline - Mission */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl lg:text-2xl text-black/60 leading-relaxed max-w-2xl mb-12"
           >
-            We implement, optimize, and manage HubSpot to transform how your business attracts, engages, and delights customers.
+            We build and run digital platforms that keep companies lean, growing, and easy to do business with.
           </motion.p>
 
           {/* CTA */}

@@ -83,9 +83,9 @@ export function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-black/50 font-medium">Call us</p>
-                  <a href="tel:+1-555-123-4567" className="text-black font-medium hover:text-teal-500 transition-colors">
-                    (555) 123-4567
+                  <p className="text-sm text-black/50 font-medium">Call us (US/Canada)</p>
+                  <a href="tel:+18886124250" className="text-black font-medium hover:text-teal-500 transition-colors">
+                    +1 888-612-4250
                   </a>
                 </div>
               </div>
@@ -99,7 +99,20 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-black/50 font-medium">Location</p>
-                  <p className="text-black font-medium">Minneapolis, MN</p>
+                  <p className="text-black font-medium">428 Minnesota Street, Suite 500</p>
+                  <p className="text-black/60 text-sm">Saint Paul, MN 55101</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-teal-500/10 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm text-black/50 font-medium">Global Presence</p>
+                  <p className="text-black/60 text-sm">US, Canada, UK, Australia, NZ, India, Sweden, Spain, Colombia, Mexico</p>
                 </div>
               </div>
             </motion.div>
