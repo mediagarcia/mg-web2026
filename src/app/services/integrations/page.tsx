@@ -4,10 +4,15 @@ import { CTABanner } from "@/components/sections";
 
 export const metadata: Metadata = {
   title: "Custom Integrations | Media Garcia",
-  description: "Connect HubSpot with your existing tech stack through custom APIs and middleware solutions. Seamless data flow across all your tools.",
+  description: "Connect HubSpot with your tech stack through AI-powered integrations, custom APIs, and middleware solutions. Seamless, intelligent data flow.",
 };
 
 const integrationTypes = [
+  {
+    title: "AI-Powered Integrations",
+    description: "Connect HubSpot's AI capabilities with your existing tools for intelligent automation.",
+    examples: ["AI data enrichment", "Smart routing", "Predictive sync", "Automated mapping"],
+  },
   {
     title: "Native Integrations",
     description: "Leverage HubSpot's 1,000+ app marketplace integrations for common tools.",
@@ -23,20 +28,15 @@ const integrationTypes = [
     description: "Connect multiple systems with intelligent data routing and transformation.",
     examples: ["Zapier automation", "Make workflows", "Custom middleware", "iPaaS solutions"],
   },
-  {
-    title: "Data Sync",
-    description: "Real-time or scheduled data synchronization between HubSpot and other platforms.",
-    examples: ["Bi-directional sync", "Real-time updates", "Scheduled batches", "Conflict resolution"],
-  },
 ];
 
 const commonIntegrations = [
+  { category: "AI & Automation", tools: ["OpenAI", "HubSpot Breeze", "Zapier AI", "ChatGPT"] },
   { category: "Sales Tools", tools: ["Salesforce", "LinkedIn Sales Nav", "ZoomInfo", "Gong"] },
   { category: "Marketing", tools: ["Google Ads", "Facebook Ads", "Mailchimp", "Unbounce"] },
   { category: "Communication", tools: ["Slack", "Microsoft Teams", "Zoom", "Calendly"] },
   { category: "Finance", tools: ["QuickBooks", "Stripe", "PayPal", "Xero"] },
   { category: "Support", tools: ["Zendesk", "Intercom", "Freshdesk", "Jira"] },
-  { category: "Analytics", tools: ["Google Analytics", "Mixpanel", "Amplitude", "Datadog"] },
 ];
 
 export default function IntegrationsPage() {
