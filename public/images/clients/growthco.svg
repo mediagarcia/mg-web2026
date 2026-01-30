@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none">
+  <path d="M4 28 L12 18 L20 22 L28 10" stroke="#ff7a59" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <circle cx="28" cy="10" r="4" fill="#ff7a59"/>
+  <text x="36" y="26" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#1f2937">GrowthCo</text>
+</svg>

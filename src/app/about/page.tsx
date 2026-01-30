@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { PageHeader } from "@/components/PageHeader";
 import { CTABanner, Values } from "@/components/sections";
 
@@ -13,12 +14,14 @@ const team = [
     role: "CEO & Founder",
     bio: "Louis founded Media Garcia with a vision to help technology companies grow through strategic HubSpot implementations. With 15+ years in digital marketing and sales operations, he leads the company's strategic direction.",
     initials: "LG",
+    image: "/images/team/team-member-1.jpg",
   },
   {
     name: "Rochelle Schmidt",
     role: "Account Manager",
     bio: "Rochelle ensures every client project delivers exceptional results. She brings deep expertise in project management and client success to ensure smooth implementations.",
     initials: "RS",
+    image: "/images/team/team-member-2.jpg",
   },
 ];
 
@@ -62,13 +65,24 @@ export default function AboutPage() {
                 Founded with a focus on technology companies, Media Garcia brings deep expertise in HubSpot implementation, marketing automation, and revenue operations. We understand the unique challenges of selling technology—complex sales cycles, technical buyers, and the need for scalable systems.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat) => (
-                <div key={stat.label} className="bg-gray-50 rounded-2xl p-6 text-center">
-                  <p className="text-4xl font-black text-teal-500">{stat.value}</p>
-                  <p className="text-sm text-black/60 mt-2">{stat.label}</p>
-                </div>
-              ))}
+            <div className="relative">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/about/team-collaboration.jpg"
+                  alt="Media Garcia team collaborating"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              {/* Stats overlay */}
+              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-lg p-6 grid grid-cols-2 gap-4">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="text-center">
+                    <p className="text-2xl font-black text-teal-500">{stat.value}</p>
+                    <p className="text-xs text-black/60">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -81,8 +95,13 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-8">
             {team.map((member) => (
               <div key={member.name} className="bg-white rounded-2xl p-8 flex gap-6">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-teal-500 to-neon-purple-500 flex items-center justify-center text-white text-2xl font-bold shrink-0">
-                  {member.initials}
+                <div className="relative w-20 h-20 rounded-full overflow-hidden ring-4 ring-gray-100 shrink-0">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-black">{member.name}</h3>
@@ -141,14 +160,25 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-            <div className="bg-gray-50 rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-black mb-4">Countries We Serve</h3>
-              <div className="flex flex-wrap gap-3">
-                {["United States", "Canada", "United Kingdom", "Australia", "New Zealand", "India", "Sweden", "Spain", "Colombia", "Mexico"].map((country) => (
-                  <span key={country} className="px-4 py-2 bg-white rounded-full text-sm text-black/70">
-                    {country}
-                  </span>
-                ))}
+            <div className="relative">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/about/office.jpg"
+                  alt="Media Garcia office"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              {/* Countries overlay */}
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-lg p-6 max-w-sm">
+                <h3 className="text-lg font-bold text-black mb-3">Countries We Serve</h3>
+                <div className="flex flex-wrap gap-2">
+                  {["United States", "Canada", "United Kingdom", "Australia", "New Zealand", "India", "Sweden", "Spain", "Colombia", "Mexico"].map((country) => (
+                    <span key={country} className="px-3 py-1 bg-gray-50 rounded-full text-xs text-black/70">
+                      {country}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

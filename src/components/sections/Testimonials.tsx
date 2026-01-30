@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -9,6 +10,7 @@ const testimonials = [
     author: "Sarah Chen",
     title: "VP of Sales",
     company: "TechFlow Solutions",
+    image: "/images/testimonials/author-1.jpg",
     rating: 5,
   },
   {
@@ -16,6 +18,7 @@ const testimonials = [
     author: "Michael Rodriguez",
     title: "Marketing Director",
     company: "Elevate Digital",
+    image: "/images/testimonials/author-2.jpg",
     rating: 5,
   },
   {
@@ -23,6 +26,7 @@ const testimonials = [
     author: "Jennifer Walsh",
     title: "CEO",
     company: "GrowthPath Analytics",
+    image: "/images/testimonials/author-3.jpg",
     rating: 5,
   },
   {
@@ -30,6 +34,7 @@ const testimonials = [
     author: "David Park",
     title: "Operations Manager",
     company: "Nexus Partners",
+    image: "/images/testimonials/author-4.jpg",
     rating: 5,
   },
 ];
@@ -109,8 +114,13 @@ export function Testimonials() {
 
                 {/* Author */}
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-teal-500 to-neon-purple-500 flex items-center justify-center text-white font-bold text-xl">
-                    {testimonials[currentIndex].author.charAt(0)}
+                  <div className="relative w-14 h-14 rounded-full overflow-hidden ring-4 ring-teal-500/20">
+                    <Image
+                      src={testimonials[currentIndex].image}
+                      alt={testimonials[currentIndex].author}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <div>
                     <p className="font-bold text-black">{testimonials[currentIndex].author}</p>

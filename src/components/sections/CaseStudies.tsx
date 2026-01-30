@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const caseStudies = [
   {
@@ -95,8 +96,15 @@ export function CaseStudies() {
               <Link href={`/work/${study.client.toLowerCase().replace(/\s+/g, "-")}`}>
                 {/* Image Container */}
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6">
-                  {/* Placeholder gradient background */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${study.gradient}`} />
+                  {/* Background image */}
+                  <Image
+                    src={study.image}
+                    alt={`${study.client} case study`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Gradient overlay for readability */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${study.gradient} opacity-60`} />
 
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500" />

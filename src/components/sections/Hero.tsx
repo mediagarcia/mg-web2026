@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { OrganicShapeCluster, DotPattern } from "@/components/OrganicShapes";
 import { useState, useEffect } from "react";
 
@@ -20,6 +21,17 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+      {/* Background Image - subtle tech/consulting visual */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero/hero-bg.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-[0.04]"
+          priority
+        />
+      </div>
+
       {/* Organic Background Shapes */}
       <OrganicShapeCluster />
 

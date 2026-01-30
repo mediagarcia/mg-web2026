@@ -1,15 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-// Placeholder company names - these would be replaced with actual client logos
 const clients = [
-  { name: "TechCorp", industry: "SaaS" },
-  { name: "Innovate", industry: "Technology" },
-  { name: "GrowthCo", industry: "Marketing" },
-  { name: "DataFlow", industry: "Analytics" },
-  { name: "CloudSync", industry: "Cloud" },
-  { name: "ScaleUp", industry: "Startup" },
+  { name: "TechCorp", logo: "/images/clients/techcorp.svg" },
+  { name: "Innovate", logo: "/images/clients/innovate.svg" },
+  { name: "GrowthCo", logo: "/images/clients/growthco.svg" },
+  { name: "DataFlow", logo: "/images/clients/dataflow.svg" },
+  { name: "CloudSync", logo: "/images/clients/cloudsync.svg" },
+  { name: "ScaleUp", logo: "/images/clients/scaleup.svg" },
 ];
 
 export function ClientLogos() {
@@ -33,15 +33,15 @@ export function ClientLogos() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group"
+              className="group opacity-60 hover:opacity-100 transition-opacity duration-300"
             >
-              {/* Placeholder logo - would be replaced with actual SVG/image */}
-              <div className="flex items-center gap-2 text-black/30 group-hover:text-black/60 transition-colors">
-                <div className="w-8 h-8 rounded bg-black/10 flex items-center justify-center">
-                  <span className="text-xs font-bold">{client.name.charAt(0)}</span>
-                </div>
-                <span className="text-lg font-semibold tracking-tight">{client.name}</span>
-              </div>
+              <Image
+                src={client.logo}
+                alt={`${client.name} logo`}
+                width={120}
+                height={40}
+                className="h-10 w-auto grayscale group-hover:grayscale-0 transition-all duration-300"
+              />
             </motion.div>
           ))}
         </div>

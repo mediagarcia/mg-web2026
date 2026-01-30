@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const team = [
   {
@@ -8,6 +9,7 @@ const team = [
     role: "CEO",
     bio: "Founder leading Media Garcia's vision for digital transformation.",
     initials: "LG",
+    image: "/images/team/team-member-1.jpg",
     gradient: "from-teal-500 to-teal-600",
   },
   {
@@ -15,6 +17,7 @@ const team = [
     role: "Account Manager",
     bio: "Client success champion ensuring exceptional project delivery.",
     initials: "RS",
+    image: "/images/team/team-member-2.jpg",
     gradient: "from-neon-purple-500 to-neon-purple-600",
   },
   {
@@ -22,6 +25,7 @@ const team = [
     role: "Implementation Specialists",
     bio: "Certified experts in CRM, automation, and integrations.",
     initials: "HS",
+    image: "/images/team/team-member-3.jpg",
     gradient: "from-orange-red-500 to-orange-red-600",
   },
   {
@@ -29,6 +33,7 @@ const team = [
     role: "Growth Strategists",
     bio: "SEO, advertising, and content marketing professionals.",
     initials: "MT",
+    image: "/images/team/team-member-4.jpg",
     gradient: "from-teal-500 to-neon-purple-500",
   },
 ];
@@ -102,8 +107,13 @@ export function Team() {
               className="group text-center"
             >
               {/* Avatar */}
-              <div className={`w-24 h-24 lg:w-32 lg:h-32 mx-auto rounded-full bg-gradient-to-br ${member.gradient} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300`}>
-                <span className="text-2xl lg:text-3xl font-bold text-white">{member.initials}</span>
+              <div className={`relative w-24 h-24 lg:w-32 lg:h-32 mx-auto rounded-full overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300 ring-4 ring-white shadow-lg`}>
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               {/* Info */}
