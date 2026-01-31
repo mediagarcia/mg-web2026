@@ -330,3 +330,144 @@ Wait until all content is complete before switching.
 ### Pages to Create
 - `src/app/work/page.tsx` - Case studies index
 - `src/app/work/[slug]/page.tsx` - Case study detail template
+
+---
+
+## SEO Implementation Status & Recommendations
+
+### Current SEO Foundation (Already in WIP)
+
+| Element | Status | Location |
+|---------|--------|----------|
+| Meta title/description | Done | `layout.tsx` + page-level |
+| Open Graph tags | Done | `layout.tsx` metadata |
+| Twitter cards | Done | `layout.tsx` metadata |
+| Canonical URLs | Done | `layout.tsx` alternates |
+| robots.txt | Done | `public/robots.txt` |
+| XML Sitemap | Done | `src/app/sitemap.ts` |
+| Organization Schema | Done | `layout.tsx` JSON-LD |
+| Semantic HTML | Done | Proper heading hierarchy |
+| Skip to content | Done | Accessibility link in layout |
+
+### SEO Gaps to Address
+
+#### P1 - Before/At Launch
+
+| Gap | Current State | Fix | Files |
+|-----|---------------|-----|-------|
+| **OG Images missing** | No `og:image` defined | Create 1200x630 OG image | `layout.tsx`, `public/og-image.jpg` |
+| **Sitemap incomplete** | Missing About, Pricing, Contact, AI-Automation | Add all pages | `src/app/sitemap.ts` |
+| **Page-specific canonicals** | Only global canonical | Add per-page canonicals | Each page's metadata |
+| **LocalBusiness schema** | Only Organization | Add LocalBusiness for local SEO | `layout.tsx` |
+| **Service schema** | Missing | Add Service schema per service page | Service pages |
+
+#### P2 - Post-Launch
+
+| Gap | Recommendation |
+|-----|----------------|
+| **FAQ Schema** | Add FAQPage schema to FAQ section |
+| **Breadcrumb Schema** | Add BreadcrumbList schema |
+| **Review/Rating Schema** | Add AggregateRating from testimonials |
+| **HowTo Schema** | Add to process sections |
+| **Blog Article Schema** | Add when blog is active |
+
+### SEO Quick Wins to Implement Now
+
+#### 1. Complete the Sitemap
+```typescript
+// Add to sitemap.ts
+{ url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+{ url: `${baseUrl}/pricing`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+{ url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+{ url: `${baseUrl}/services/ai-automation`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+{ url: `${baseUrl}/services/development`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+{ url: `${baseUrl}/services/marketing`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+```
+
+#### 2. Add OG Image to Layout
+```typescript
+openGraph: {
+  // ... existing
+  images: [
+    {
+      url: 'https://mediagarcia.com/og-image.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Media Garcia - HubSpot Solutions Partner',
+    },
+  ],
+},
+```
+
+#### 3. Add LocalBusiness Schema
+```typescript
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://mediagarcia.com/#localbusiness",
+  name: "Media Garcia",
+  image: "https://mediagarcia.com/logo.png",
+  priceRange: "$$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "428 Minnesota Street, Suite 500",
+    addressLocality: "Saint Paul",
+    addressRegion: "MN",
+    postalCode: "55101",
+    addressCountry: "US",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 44.9444,
+    longitude: -93.0900,
+  },
+  telephone: "+1-888-612-4250",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "17:00",
+  },
+};
+```
+
+#### 4. Add FAQPage Schema (for FAQ section)
+```typescript
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(faq => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+```
+
+### Target Keywords by Page
+
+| Page | Primary Keyword | Secondary Keywords |
+|------|-----------------|-------------------|
+| Homepage | HubSpot partner | HubSpot implementation, HubSpot agency |
+| HubSpot Onboarding | HubSpot onboarding | HubSpot setup, HubSpot CRM setup |
+| Sales Enablement | HubSpot sales enablement | sales automation, HubSpot workflows |
+| Marketing Automation | HubSpot marketing automation | email automation, lead nurturing |
+| CRM Migration | HubSpot migration | Salesforce to HubSpot, CRM migration |
+| Reporting | HubSpot reporting | HubSpot dashboards, HubSpot analytics |
+| IT Industry | HubSpot for IT companies | HubSpot for tech companies |
+| SaaS Industry | HubSpot for SaaS | SaaS CRM, SaaS marketing automation |
+
+### Technical SEO Checklist
+
+- [x] HTTPS enabled
+- [x] Mobile responsive
+- [x] Proper heading hierarchy (h1 → h2 → h3)
+- [x] Alt text on images (check all)
+- [x] Clean URL structure
+- [ ] Core Web Vitals audit (run after launch)
+- [ ] Image optimization (WebP, lazy loading)
+- [ ] Internal linking strategy
+- [ ] 301 redirects from old URLs (if structure changed)
