@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Script from "next/script";
 
 const faqs = [
   {
@@ -71,11 +72,31 @@ function FAQItem({ faq, isOpen, onClick }: { faq: typeof faqs[0]; isOpen: boolea
   );
 }
 
+// FAQ Schema for SEO - content is static, not user input
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section className="py-[var(--spacing-section)] bg-white">
+      {/* FAQ Schema for SEO - faqSchema is a static constant, not user input */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left - Header */}

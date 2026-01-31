@@ -165,13 +165,15 @@ export default function ContactPage() {
               <div className="bg-gray-50 rounded-2xl p-8">
                 <h3 className="text-xl font-bold text-black mb-4">Schedule a call</h3>
                 <p className="text-black/60 mb-6">
-                  Prefer to talk? Book a free 30-minute consultation to discuss your HubSpot needs.
+                  Prefer to talk? Book a free 30-minute discovery call to discuss your HubSpot needs.
                 </p>
                 <a
-                  href="#"
+                  href="https://meetings.hubspot.com/louis3/discovery-meeting-with-louis"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-teal-500 transition-colors"
                 >
-                  Book a Meeting
+                  Book a Meeting with Louis
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
