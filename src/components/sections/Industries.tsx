@@ -5,7 +5,24 @@ import Link from "next/link";
 
 const industries = [
   {
-    name: "Information Technology",
+    name: "Healthcare",
+    slug: "healthcare",
+    description: "HubSpot implementations that understand healthcare complexity — long sales cycles, multiple stakeholders, and the need for careful, compliant communication.",
+    features: [
+      "Multi-stakeholder sales tracking",
+      "Long-cycle lead nurturing",
+      "Referral management systems",
+      "Patient journey automation",
+    ],
+    gradient: "from-teal-500 to-teal-600",
+    icon: (
+      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+      </svg>
+    ),
+  },
+  {
+    name: "IT Services",
     slug: "information-technology",
     description: "HubSpot solutions built for IT companies managing complex sales cycles, technical buyers, and multi-stakeholder decisions.",
     features: [
@@ -14,7 +31,7 @@ const industries = [
       "Partner ecosystem management",
       "Product-led growth enablement",
     ],
-    gradient: "from-teal-500 to-teal-600",
+    gradient: "from-neon-purple-500 to-neon-purple-600",
     icon: (
       <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -31,7 +48,7 @@ const industries = [
       "Customer health monitoring",
       "Expansion revenue workflows",
     ],
-    gradient: "from-neon-purple-500 to-neon-purple-600",
+    gradient: "from-orange-red-500 to-orange-red-600",
     icon: (
       <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
@@ -61,7 +78,7 @@ export function Industries() {
             transition={{ delay: 0.1 }}
             className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6"
           >
-            Specialized expertise for tech companies
+            Deep expertise in three verticals
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -70,12 +87,12 @@ export function Industries() {
             transition={{ delay: 0.2 }}
             className="text-lg text-black/60 leading-relaxed"
           >
-            We understand the unique challenges of selling technology. Our HubSpot implementations are tailored to your industry&apos;s specific needs.
+            We specialize in industries with complex sales cycles and high stakes. Our HubSpot implementations are tailored to the unique challenges of healthcare, IT services, and SaaS.
           </motion.p>
         </div>
 
         {/* Industries Grid */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {industries.map((industry, index) => (
             <motion.div
               key={industry.slug}

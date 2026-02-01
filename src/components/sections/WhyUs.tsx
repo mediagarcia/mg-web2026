@@ -5,23 +5,23 @@ import { motion } from "framer-motion";
 const differentiators = [
   {
     number: "01",
-    title: "HubSpot Solutions Partner",
-    description: "Official certification and deep platform expertise means we implement solutions that actually work—the first time.",
+    title: "Three-Vertical Specialization",
+    description: "Healthcare, IT Services, and SaaS — we understand your compliance requirements, sales cycles, and tech stacks inside out.",
   },
   {
     number: "02",
-    title: "Tech Industry Focus",
-    description: "We specialize in IT and SaaS companies. We understand your sales cycles, your buyers, and your tech stack.",
+    title: "Right-Sized Partner",
+    description: "Senior talent without the overhead. Small enough that our founder is involved in every engagement, experienced enough to handle enterprise complexity.",
   },
   {
     number: "03",
-    title: "Outcome-Driven Approach",
-    description: "We don't just configure HubSpot—we architect revenue systems. Every workflow ties to measurable business results.",
+    title: "Outcome-Obsessed",
+    description: "We measure success by your results, not our billable hours. That's why clients stay for years, not months.",
   },
   {
     number: "04",
-    title: "Global Reach, Local Touch",
-    description: "Serving clients across 10+ countries while maintaining the responsiveness and care of a boutique partner.",
+    title: "14 Years of Stability",
+    description: "200+ implementations across 10+ countries. We've seen every scenario and know what actually works.",
   },
 ];
 
@@ -47,7 +47,7 @@ export function WhyUs() {
               transition={{ delay: 0.1 }}
               className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6"
             >
-              Built different. Built for results.
+              Enterprise results. Boutique partnership.
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ export function WhyUs() {
               transition={{ delay: 0.2 }}
               className="text-lg text-black/60 leading-relaxed mb-8"
             >
-              We&apos;re not your typical HubSpot agency. We combine deep technical expertise with strategic thinking to build systems that drive real business growth.
+              Unlike large HubSpot agencies that assign you to junior staff, we provide senior-level expertise from day one — with a founder who stays involved throughout your engagement.
             </motion.p>
 
             {/* Quick Stats */}
@@ -68,8 +68,8 @@ export function WhyUs() {
               className="flex gap-12"
             >
               <div>
-                <span className="text-4xl font-black text-teal-500">98%</span>
-                <p className="text-sm text-black/50 mt-1">Client retention</p>
+                <span className="text-4xl font-black text-teal-500">14+</span>
+                <p className="text-sm text-black/50 mt-1">Years experience</p>
               </div>
               <div>
                 <span className="text-4xl font-black text-teal-500">200+</span>

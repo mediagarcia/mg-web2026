@@ -4,15 +4,15 @@ import { PageHeader } from "@/components/PageHeader";
 import { CTABanner, Values } from "@/components/sections";
 
 export const metadata: Metadata = {
-  title: "About Media Garcia | HubSpot Solutions Partner",
-  description: "We build and run digital platforms that keep companies lean, growing, and easy to do business with. Meet the team behind Media Garcia.",
+  title: "About Media Garcia | The Boutique HubSpot Partner",
+  description: "14+ years helping healthcare, IT, and SaaS companies build HubSpot systems that actually work. Enterprise results with boutique partnership.",
 };
 
 const team = [
   {
     name: "Louis Garcia",
     role: "CEO & Founder",
-    bio: "Louis founded Media Garcia with a vision to help technology companies grow through strategic HubSpot implementations. With 15+ years in digital marketing and sales operations, he leads the company's strategic direction.",
+    bio: "Louis is personally involved in every engagement — not just overseeing from afar. With 15+ years in digital marketing and sales operations, he brings senior-level expertise from day one. That's the boutique difference.",
     initials: "LG",
     image: "/images/team/team-member-1.jpg",
     linkedin: "https://www.linkedin.com/in/louisgarcia/",
@@ -46,8 +46,8 @@ export default function AboutPage() {
     <>
       <PageHeader
         badge="About Us"
-        title="We build digital platforms that drive growth"
-        description="Media Garcia is a HubSpot Solutions Partner helping technology companies streamline operations, accelerate sales, and scale efficiently."
+        title="The boutique HubSpot partner for companies who want results"
+        description="We're obsessed with your outcomes, not our billable hours. That's why healthcare, IT, and SaaS companies choose us — and why they stay for years, not months."
         breadcrumbs={[
           { label: "About", href: "/about" },
         ]}
@@ -60,10 +60,10 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">Our Mission</h2>
               <p className="text-xl text-black/60 leading-relaxed mb-6">
-                We build and run digital platforms that keep companies lean, growing, and easy to do business with.
+                We build HubSpot-powered revenue systems for healthcare, IT, and SaaS companies that want enterprise results without enterprise overhead.
               </p>
               <p className="text-black/60 leading-relaxed">
-                Founded with a focus on technology companies, Media Garcia brings deep expertise in HubSpot implementation, marketing automation, and revenue operations. We understand the unique challenges of selling technology—complex sales cycles, technical buyers, and the need for scalable systems.
+                For 14+ years, we&apos;ve specialized in industries with complex sales cycles and high stakes. Unlike large agencies that assign you to junior staff, we provide senior-level expertise from day one — with a founder who stays involved throughout your engagement. We measure success by your outcomes, not our billable hours.
               </p>
             </div>
             <div className="relative">
@@ -149,9 +149,9 @@ export default function AboutPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">Global Reach, Local Touch</h2>
+              <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">Right-Sized Partner, Global Reach</h2>
               <p className="text-black/60 leading-relaxed mb-6">
-                Headquartered in Saint Paul, Minnesota, we serve clients across 10+ countries while maintaining the responsiveness and care of a boutique partner.
+                Headquartered in Saint Paul, Minnesota, we serve clients across 10+ countries. We&apos;re small enough that our founder is involved in every engagement, but experienced enough to handle enterprise complexity and regulated industries.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
