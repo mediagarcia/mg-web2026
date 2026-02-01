@@ -7,30 +7,33 @@ import Image from "next/image";
 const caseStudies = [
   {
     title: "340% Increase in Qualified Leads",
-    client: "TechFlow Solutions",
+    client: "SaaS Technology Company",
     industry: "SaaS",
     service: "Marketing Automation",
-    description: "Implemented advanced lead scoring and nurturing workflows that transformed their sales pipeline.",
-    image: "/images/case-study-1.jpg",
+    description: "Implemented advanced lead scoring and nurturing workflows that transformed their sales pipeline from chaos to predictable growth.",
+    image: "/images/case-studies/case-study-1.jpg",
     gradient: "from-teal-500 to-teal-700",
+    slug: "lead-generation-saas",
   },
   {
     title: "Full CRM Migration in 30 Days",
-    client: "Elevate Digital",
+    client: "Professional Services Firm",
     industry: "Professional Services",
     service: "CRM Migration",
-    description: "Migrated 50,000+ contacts from Salesforce to HubSpot with zero data loss and no downtime.",
-    image: "/images/case-study-2.jpg",
+    description: "Migrated 50,000+ contacts from Salesforce to HubSpot with zero data loss, no downtime, and immediate team adoption.",
+    image: "/images/case-studies/case-study-2.jpg",
     gradient: "from-neon-purple-500 to-neon-purple-700",
+    slug: "crm-migration",
   },
   {
     title: "$2.4M Revenue Attribution",
-    client: "GrowthPath Analytics",
+    client: "Growth-Stage Tech Company",
     industry: "Technology",
     service: "RevOps Strategy",
-    description: "Built custom reporting dashboards connecting marketing spend directly to closed revenue.",
-    image: "/images/case-study-3.jpg",
+    description: "Built custom reporting dashboards connecting marketing spend directly to closed revenue, proving ROI for the first time.",
+    image: "/images/case-studies/case-study-3.jpg",
     gradient: "from-orange-red-500 to-orange-red-700",
+    slug: "revenue-attribution",
   },
 ];
 
@@ -93,7 +96,7 @@ export function CaseStudies() {
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              <Link href={`/work/${study.client.toLowerCase().replace(/\s+/g, "-")}`}>
+              <Link href={`/work/${study.slug}`}>
                 {/* Image Container */}
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6">
                   {/* Background image */}
