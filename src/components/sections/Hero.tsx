@@ -6,27 +6,8 @@ import Image from "next/image";
 import { OrganicShapeCluster, DotPattern } from "@/components/OrganicShapes";
 import { useState, useEffect } from "react";
 
-const rotatingWords = [
-  "lean",
-  "growing",
-  "agile",
-  "efficient",
-  "competitive",
-  "innovative",
-  "easy to work with",
-  "data-driven"
-];
-
-const rotatingColors = [
-  "text-teal-500",
-  "text-neon-purple-500",
-  "text-orange-red-500",
-  "text-teal-500",
-  "text-neon-purple-500",
-  "text-orange-red-500",
-  "text-teal-500",
-  "text-neon-purple-500"
-];
+const rotatingWords = ["Healthcare", "IT Services", "SaaS"];
+const rotatingColors = ["text-teal-500", "text-neon-purple-500", "text-orange-red-500"];
 
 export function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
@@ -41,7 +22,7 @@ export function Hero() {
 
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % rotatingWords.length);
-    }, 3000);
+    }, 2500);
     return () => clearInterval(interval);
   }, [mounted]);
 
@@ -88,7 +69,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg lg:text-xl font-medium text-black/50 mb-4"
           >
-            Tired of software nobody uses?
+            Tired of HubSpot agencies that over-promise and under-deliver?
           </motion.p>
 
           {/* Main Headline with Rotating Text */}
@@ -98,8 +79,8 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-[clamp(2.5rem,7vw,4.5rem)] font-black leading-[1.1] tracking-tight text-black mb-8"
           >
-            Digital platforms that keep your company{" "}
-            <span className="inline-block relative h-[1.2em] min-w-[15ch] overflow-hidden align-bottom">
+            The Boutique HubSpot Partner for{" "}
+            <span className="inline-block relative h-[1.2em] min-w-[12ch] overflow-hidden align-bottom">
               <AnimatePresence mode="wait">
                 {mounted && (
                   <motion.span
@@ -108,7 +89,7 @@ export function Hero() {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -40, opacity: 0 }}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="absolute left-0 whitespace-nowrap bg-gradient-to-r from-teal-500 via-neon-purple-500 to-orange-red-500 bg-[length:200%_100%] animate-gradient-shift bg-clip-text text-transparent"
+                    className={`absolute left-0 whitespace-nowrap ${rotatingColors[wordIndex]}`}
                   >
                     {rotatingWords[wordIndex]}
                   </motion.span>
@@ -124,7 +105,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl lg:text-2xl text-black/60 leading-relaxed max-w-2xl mb-10"
           >
-            We build HubSpot solutions you&apos;ll actually use—because we measure success by your outcomes, not our billable hours.
+            Enterprise-quality HubSpot implementations without enterprise overhead. 14 years. 200+ implementations. Clients who stay for years, not months.
           </motion.p>
 
           {/* CTA */}
@@ -175,16 +156,16 @@ export function Hero() {
               <span className="font-medium">Platinum HubSpot Partner</span>
             </div>
             <div className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="font-medium">14+ Years Experience</span>
+            </div>
+            <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
               <span className="font-medium">50+ Five-Star Reviews</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span className="font-medium">Clients in 10+ Countries</span>
             </div>
           </motion.div>
         </div>

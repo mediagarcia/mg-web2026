@@ -5,12 +5,24 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Industries We Serve | Media Garcia",
-  description: "HubSpot solutions tailored for IT and SaaS companies. We understand your unique sales cycles, buyers, and growth challenges.",
+  description: "HubSpot solutions tailored for healthcare, IT services, and SaaS companies. Deep expertise in industries with complex sales cycles.",
 };
 
 const industries = [
   {
-    name: "Information Technology",
+    name: "Healthcare",
+    slug: "healthcare",
+    description: "HubSpot implementations that understand healthcare complexity — long sales cycles, multiple stakeholders, and careful communication.",
+    features: [
+      "Multi-stakeholder sales tracking",
+      "Long-cycle lead nurturing",
+      "Referral management systems",
+      "Patient journey automation",
+    ],
+    color: "teal",
+  },
+  {
+    name: "IT Services",
     slug: "information-technology",
     description: "HubSpot solutions built for IT companies managing complex sales cycles, technical buyers, and multi-stakeholder decisions.",
     features: [
@@ -19,7 +31,7 @@ const industries = [
       "Partner ecosystem management",
       "Product-led growth enablement",
     ],
-    color: "teal",
+    color: "purple",
   },
   {
     name: "SaaS",
@@ -31,7 +43,7 @@ const industries = [
       "Customer health monitoring",
       "Expansion revenue workflows",
     ],
-    color: "purple",
+    color: "orange",
   },
 ];
 
@@ -40,8 +52,8 @@ export default function IndustriesPage() {
     <>
       <PageHeader
         badge="Industries"
-        title="Specialized expertise for tech companies"
-        description="We understand the unique challenges of selling technology. Our HubSpot implementations are tailored to your industry's specific needs."
+        title="Deep expertise in three verticals"
+        description="We specialize in industries with complex sales cycles and high stakes. Healthcare, IT services, and SaaS — we understand your unique challenges."
         breadcrumbs={[
           { label: "Industries", href: "/industries" },
         ]}
@@ -50,17 +62,21 @@ export default function IndustriesPage() {
       {/* Industries Grid */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry) => (
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="group block bg-gray-50 rounded-3xl p-8 lg:p-12 hover:shadow-2xl transition-all duration-500"
+                className="group block bg-gray-50 rounded-3xl p-8 lg:p-10 hover:shadow-2xl transition-all duration-500"
               >
                 <div className={`w-16 h-16 rounded-2xl mb-6 flex items-center justify-center ${
-                  industry.color === "teal" ? "bg-teal-500" : "bg-neon-purple-500"
+                  industry.color === "teal" ? "bg-teal-500" : industry.color === "purple" ? "bg-neon-purple-500" : "bg-orange-red-500"
                 }`}>
                   {industry.color === "teal" ? (
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                    </svg>
+                  ) : industry.color === "purple" ? (
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
@@ -102,20 +118,20 @@ export default function IndustriesPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">Why Industry Focus Matters</h2>
             <p className="text-lg text-black/60 leading-relaxed mb-12">
-              Generic HubSpot implementations miss the nuances of your industry. We bring deep understanding of tech company operations, enabling faster implementation and better results.
+              Generic HubSpot implementations miss the nuances of your industry. We bring 14+ years of experience with complex B2B sales cycles, enabling faster implementation and better results.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-2xl p-6">
-                <p className="text-4xl font-black text-teal-500 mb-2">50%</p>
-                <p className="text-black/60">Faster Implementation</p>
+                <p className="text-4xl font-black text-teal-500 mb-2">14+</p>
+                <p className="text-black/60">Years of Experience</p>
               </div>
               <div className="bg-white rounded-2xl p-6">
-                <p className="text-4xl font-black text-teal-500 mb-2">3x</p>
-                <p className="text-black/60">Better Lead Quality</p>
+                <p className="text-4xl font-black text-teal-500 mb-2">200+</p>
+                <p className="text-black/60">Implementations</p>
               </div>
               <div className="bg-white rounded-2xl p-6">
-                <p className="text-4xl font-black text-teal-500 mb-2">98%</p>
-                <p className="text-black/60">Client Satisfaction</p>
+                <p className="text-4xl font-black text-teal-500 mb-2">50+</p>
+                <p className="text-black/60">Five-Star Reviews</p>
               </div>
             </div>
           </div>

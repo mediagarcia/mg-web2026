@@ -76,7 +76,9 @@
       "Bash(git stash:*)",
       "Bash(git reset:*)",
       "Bash(git check-ignore:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(git rebase:*)",
+      "Bash(GIT_EDITOR=true git rebase:*)"
     ]
   }
 }
