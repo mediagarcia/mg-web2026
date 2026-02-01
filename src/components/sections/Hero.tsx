@@ -98,7 +98,10 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-[clamp(2.5rem,7vw,4.5rem)] font-black leading-[1.1] tracking-tight text-black mb-8"
           >
-            Digital platforms that keep your company{" "}
+            Digital platforms that
+            <br />
+            keep your company
+            <br />
             <span className="inline-block relative h-[1.2em] min-w-[15ch] overflow-hidden align-bottom">
               <AnimatePresence mode="wait">
                 {mounted && (
