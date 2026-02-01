@@ -6,18 +6,44 @@ import Image from "next/image";
 import { OrganicShapeCluster, DotPattern } from "@/components/OrganicShapes";
 import { useState, useEffect } from "react";
 
-const rotatingWords = ["lean", "growing", "easy to work with"];
-const rotatingColors = ["text-teal-500", "text-neon-purple-500", "text-orange-red-500"];
+const rotatingWords = [
+  "lean",
+  "growing",
+  "agile",
+  "efficient",
+  "competitive",
+  "innovative",
+  "easy to work with",
+  "data-driven"
+];
+
+const rotatingColors = [
+  "text-teal-500",
+  "text-neon-purple-500",
+  "text-orange-red-500",
+  "text-teal-500",
+  "text-neon-purple-500",
+  "text-orange-red-500",
+  "text-teal-500",
+  "text-neon-purple-500"
+];
 
 export function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % rotatingWords.length);
-    }, 2500);
+    }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [mounted]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
@@ -73,18 +99,20 @@ export function Hero() {
             className="text-[clamp(2.5rem,7vw,4.5rem)] font-black leading-[1.1] tracking-tight text-black mb-8"
           >
             Digital platforms that keep your company{" "}
-            <span className="inline-block relative h-[1.2em] overflow-hidden align-bottom">
+            <span className="inline-block relative h-[1.2em] min-w-[15ch] overflow-hidden align-bottom">
               <AnimatePresence mode="wait">
-                <motion.span
-                  key={wordIndex}
-                  initial={{ y: 40, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -40, opacity: 0 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                  className={`absolute left-0 ${rotatingColors[wordIndex]}`}
-                >
-                  {rotatingWords[wordIndex]}
-                </motion.span>
+                {mounted && (
+                  <motion.span
+                    key={wordIndex}
+                    initial={{ y: 40, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -40, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="absolute left-0 whitespace-nowrap bg-gradient-to-r from-teal-500 via-neon-purple-500 to-orange-red-500 bg-[length:200%_100%] animate-gradient-shift bg-clip-text text-transparent"
+                  >
+                    {rotatingWords[wordIndex]}
+                  </motion.span>
+                )}
               </AnimatePresence>
             </span>
           </motion.h1>
