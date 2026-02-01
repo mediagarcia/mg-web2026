@@ -21,7 +21,7 @@ const packages = [
       "Team training (2 hours)",
       "30 days email support",
     ],
-    cta: "Get Started",
+    cta: "Start With Starter",
     popular: false,
   },
   {
@@ -39,7 +39,7 @@ const packages = [
       "Team training (4 hours)",
       "60 days email support",
     ],
-    cta: "Get Started",
+    cta: "Choose Professional",
     popular: true,
   },
   {
