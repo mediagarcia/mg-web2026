@@ -1,7 +1,16 @@
 import { MetadataRoute } from 'next'
+import { caseStudies } from '@/data/case-studies'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://mediagarcia.com'
+
+  // Generate case study URLs dynamically
+  const caseStudyUrls: MetadataRoute.Sitemap = caseStudies.map((study) => ({
+    url: `${baseUrl}/work/${study.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
 
   return [
     // Core Pages
@@ -29,6 +38,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+
+    // Work / Case Studies
+    {
+      url: `${baseUrl}/work`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    ...caseStudyUrls,
 
     // Service Pages
     {

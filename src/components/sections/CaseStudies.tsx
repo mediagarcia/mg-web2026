@@ -3,39 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-
-const caseStudies = [
-  {
-    title: "80% Reduction in Manual Data Entry",
-    client: "Healthcare Provider Network",
-    industry: "Healthcare",
-    service: "EHR Integration",
-    description: "Integrated patient intake system with CRM, automating lead capture and eliminating duplicate data entry across multiple clinic locations.",
-    image: "/images/case-studies/case-study-1.jpg",
-    gradient: "from-teal-500 to-teal-700",
-    slug: "healthcare-integration",
-  },
-  {
-    title: "340% Increase in Qualified Leads",
-    client: "SaaS Technology Company",
-    industry: "SaaS",
-    service: "Marketing Automation",
-    description: "Implemented advanced lead scoring and nurturing workflows that transformed their sales pipeline from chaos to predictable growth.",
-    image: "/images/case-studies/case-study-2.jpg",
-    gradient: "from-neon-purple-500 to-neon-purple-700",
-    slug: "lead-generation-saas",
-  },
-  {
-    title: "Full CRM Migration in 30 Days",
-    client: "Professional Services Firm",
-    industry: "IT Services",
-    service: "Salesforce to HubSpot",
-    description: "Migrated 50,000+ contacts from Salesforce to HubSpot with zero data loss, no downtime, and immediate team adoption.",
-    image: "/images/case-studies/case-study-3.jpg",
-    gradient: "from-orange-red-500 to-orange-red-700",
-    slug: "crm-migration",
-  },
-];
+import { caseStudies } from "@/data/case-studies";
 
 export function CaseStudies() {
   return (
