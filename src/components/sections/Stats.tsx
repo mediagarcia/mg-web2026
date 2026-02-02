@@ -5,23 +5,22 @@ import { useRef, useEffect, useState } from "react";
 
 const stats = [
   {
+    value: 14,
+    suffix: "+",
+    label: "Years Experience",
+    description: "Building HubSpot systems",
+  },
+  {
     value: 200,
     suffix: "+",
     label: "CRM & RevOps Implementations",
     description: "Successfully deployed",
   },
   {
-    value: 98,
-    suffix: "%",
-    label: "Client Retention",
-    description: "Year over year",
-  },
-  {
-    value: 4,
-    prefix: "$",
-    suffix: "M+",
-    label: "Revenue Attributed",
-    description: "For our clients",
+    value: 50,
+    suffix: "+",
+    label: "Five-Star Reviews",
+    description: "From real clients",
   },
   {
     value: 10,
@@ -84,7 +83,6 @@ export function Stats() {
               <div className="text-4xl lg:text-6xl font-black text-teal-500 mb-2">
                 <AnimatedCounter
                   value={stat.value}
-                  prefix={stat.prefix}
                   suffix={stat.suffix}
                 />
               </div>
