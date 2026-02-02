@@ -220,11 +220,11 @@ export function Contact() {
                   type="submit"
                   className="w-full bg-black text-white py-4 rounded-xl font-medium hover:bg-teal-500 transition-colors duration-300"
                 >
-                  Send Message
+                  Send My Request
                 </button>
 
                 <p className="text-xs text-black/40 text-center">
-                  By submitting, you agree to our Privacy Policy and consent to receive communications.
+                  We respond within 24 hours. No spam, ever.
                 </p>
               </div>
             </form>

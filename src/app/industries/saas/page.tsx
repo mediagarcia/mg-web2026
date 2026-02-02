@@ -109,6 +109,31 @@ export default function SaaSIndustryPage() {
         </div>
       </section>
 
+      {/* Inline CTA */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="bg-teal-500 rounded-3xl p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="text-center lg:text-left">
+              <h3 className="text-2xl lg:text-3xl font-black text-white mb-2">
+                Built for SaaS growth
+              </h3>
+              <p className="text-white/80">
+                Talk to someone who understands product-led growth and subscription metrics.
+              </p>
+            </div>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-white text-teal-600 px-8 py-4 rounded-full font-bold hover:bg-black hover:text-white transition-all shrink-0"
+            >
+              Book a Strategy Call
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Metrics Comparison */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">

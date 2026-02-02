@@ -111,8 +111,11 @@ export default function ContactPage() {
                   type="submit"
                   className="w-full bg-black text-white py-4 rounded-full font-medium hover:bg-teal-500 transition-colors"
                 >
-                  Send Message
+                  Send My Request
                 </button>
+                <p className="text-xs text-black/40 text-center mt-4">
+                  We&apos;ll respond within 24 hours with next steps.
+                </p>
               </form>
             </div>
 
