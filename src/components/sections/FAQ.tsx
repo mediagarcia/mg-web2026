@@ -6,28 +6,28 @@ import Script from "next/script";
 
 const faqs = [
   {
-    question: "How long does a typical HubSpot implementation take?",
+    question: "What platforms do you work with?",
+    answer: "We're a Platinum HubSpot Partner and work extensively with Salesforce, Zoho, Pipedrive, and custom-built solutions. We recommend the platform that fits your needs, budget, and existing tech stack—not the one that's easiest for us.",
+  },
+  {
+    question: "Do you work with healthcare organizations?",
+    answer: "Yes, healthcare is one of our core verticals. We understand HIPAA compliance requirements, EHR integrations, and the unique challenges of healthcare sales and marketing. We've helped providers, health tech companies, and life sciences organizations build compliant, effective revenue systems.",
+  },
+  {
+    question: "How long does a typical implementation take?",
     answer: "Implementation timelines vary based on complexity, but most projects complete within 4-12 weeks. We start with a thorough discovery phase to understand your needs, then build and launch in sprints. Simple CRM onboarding can be done in as little as 2-4 weeks.",
   },
   {
-    question: "Do you work with companies outside the US?",
-    answer: "Absolutely. We serve clients across 10+ countries including the US, Canada, UK, Australia, New Zealand, India, Sweden, Spain, Colombia, and Mexico. Our team is experienced in managing projects across time zones and global compliance requirements.",
-  },
-  {
-    question: "What makes you different from other HubSpot partners?",
-    answer: "We specialize exclusively in technology companies—IT and SaaS. This focus means we understand your sales cycles, technical buyers, and operational needs better than generalist agencies. We also think in outcomes, not tasks, connecting every implementation to measurable business results.",
-  },
-  {
     question: "Can you migrate our data from another CRM?",
-    answer: "Yes, we've migrated data from Salesforce, Pipedrive, Zoho, and many other CRMs with zero data loss. Our migration process includes data mapping, cleaning, validation, and thorough testing before go-live. We handle the technical complexity so you can focus on your business.",
+    answer: "Yes, we've migrated data from Salesforce, Pipedrive, Zoho, legacy systems, and spreadsheets—with zero data loss. Our migration process includes data mapping, cleaning, validation, and thorough testing before go-live.",
   },
   {
     question: "Do you offer ongoing support after implementation?",
     answer: "Yes, we offer flexible ongoing support packages. Many clients continue working with us for optimization, training, custom integrations, and strategic guidance. Our goal is long-term partnership—98% of our clients stay with us year over year.",
   },
   {
-    question: "What's included in a HubSpot audit?",
-    answer: "Our free HubSpot audit includes a comprehensive review of your portal setup, data quality, automation workflows, lead scoring, reporting configuration, and integration architecture. You'll receive a detailed report with specific recommendations and a roadmap for improvement.",
+    question: "What's included in a revenue systems audit?",
+    answer: "Our free audit includes a comprehensive review of your CRM setup, data quality, automation workflows, lead scoring, reporting configuration, and integration architecture. You'll receive a detailed report with specific recommendations and a prioritized roadmap.",
   },
 ];
 

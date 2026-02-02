@@ -76,7 +76,10 @@
       "Bash(git stash:*)",
       "Bash(git reset:*)",
       "Bash(git check-ignore:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(npx next build)",
+      "Bash(gh pr create:*)",
+      "Bash(gh pr merge:*)"
     ]
   }
 }

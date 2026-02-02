@@ -6,34 +6,34 @@ import Image from "next/image";
 
 const caseStudies = [
   {
+    title: "80% Reduction in Manual Data Entry",
+    client: "Healthcare Provider Network",
+    industry: "Healthcare",
+    service: "EHR Integration",
+    description: "Integrated patient intake system with CRM, automating lead capture and eliminating duplicate data entry across multiple clinic locations.",
+    image: "/images/case-studies/case-study-1.jpg",
+    gradient: "from-teal-500 to-teal-700",
+    slug: "healthcare-integration",
+  },
+  {
     title: "340% Increase in Qualified Leads",
     client: "SaaS Technology Company",
     industry: "SaaS",
     service: "Marketing Automation",
     description: "Implemented advanced lead scoring and nurturing workflows that transformed their sales pipeline from chaos to predictable growth.",
-    image: "/images/case-studies/case-study-1.jpg",
-    gradient: "from-teal-500 to-teal-700",
+    image: "/images/case-studies/case-study-2.jpg",
+    gradient: "from-neon-purple-500 to-neon-purple-700",
     slug: "lead-generation-saas",
   },
   {
     title: "Full CRM Migration in 30 Days",
     client: "Professional Services Firm",
-    industry: "Professional Services",
-    service: "CRM Migration",
+    industry: "IT Services",
+    service: "Salesforce to HubSpot",
     description: "Migrated 50,000+ contacts from Salesforce to HubSpot with zero data loss, no downtime, and immediate team adoption.",
-    image: "/images/case-studies/case-study-2.jpg",
-    gradient: "from-neon-purple-500 to-neon-purple-700",
-    slug: "crm-migration",
-  },
-  {
-    title: "$2.4M Revenue Attribution",
-    client: "Growth-Stage Tech Company",
-    industry: "Technology",
-    service: "RevOps Strategy",
-    description: "Built custom reporting dashboards connecting marketing spend directly to closed revenue, proving ROI for the first time.",
     image: "/images/case-studies/case-study-3.jpg",
     gradient: "from-orange-red-500 to-orange-red-700",
-    slug: "revenue-attribution",
+    slug: "crm-migration",
   },
 ];
 
@@ -159,7 +159,7 @@ export function CaseStudies() {
           className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 py-12 border-t border-black/10"
         >
           {[
-            { value: "200+", label: "HubSpot Implementations" },
+            { value: "200+", label: "CRM Implementations" },
             { value: "98%", label: "Client Retention" },
             { value: "$4M+", label: "Revenue Attributed" },
             { value: "50+", label: "5-Star Reviews" },

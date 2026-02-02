@@ -5,18 +5,18 @@ import { motion } from "framer-motion";
 const differentiators = [
   {
     number: "01",
-    title: "Three-Vertical Specialization",
-    description: "Healthcare, IT Services, and SaaS — we understand your compliance requirements, sales cycles, and tech stacks inside out.",
+    title: "Platform Expertise, Not Lock-in",
+    description: "HubSpot Platinum Partner. Salesforce integration experts. Custom API builders. We recommend what's right for your business, not what's easiest for us.",
   },
   {
     number: "02",
-    title: "Right-Sized Partner",
-    description: "Senior talent without the overhead. Small enough that our founder is involved in every engagement, experienced enough to handle enterprise complexity.",
+    title: "Industry-Specific Focus",
+    description: "We specialize in healthcare, IT, and SaaS. We understand your compliance requirements, your buyers, and your sales cycles.",
   },
   {
     number: "03",
-    title: "Outcome-Obsessed",
-    description: "We measure success by your results, not our billable hours. That's why clients stay for years, not months.",
+    title: "Outcome-Driven Approach",
+    description: "We don't just configure CRMs—we architect revenue systems. Every workflow ties to measurable business results.",
   },
   {
     number: "04",
@@ -56,7 +56,7 @@ export function WhyUs() {
               transition={{ delay: 0.2 }}
               className="text-lg text-black/60 leading-relaxed mb-8"
             >
-              Unlike large HubSpot agencies that assign you to junior staff, we provide senior-level expertise from day one — with a founder who stays involved throughout your engagement.
+              We&apos;re not another CRM agency. We combine deep technical expertise with strategic thinking to build systems that drive real business growth.
             </motion.p>
 
             {/* Quick Stats */}

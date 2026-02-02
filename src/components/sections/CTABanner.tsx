@@ -21,10 +21,10 @@ export function CTABanner() {
             className="text-center lg:text-left"
           >
             <h2 className="text-2xl lg:text-4xl font-black text-white mb-4">
-              Ready to accelerate your growth?
+              Ready to build a revenue system that works?
             </h2>
             <p className="text-white/80 text-lg max-w-xl">
-              Let&apos;s discuss how we can transform your HubSpot into a revenue engine.
+              Let&apos;s discuss how we can transform your CRM into a growth engine—on any platform.
             </p>
           </motion.div>
 

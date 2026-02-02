@@ -13,7 +13,7 @@ const stats = [
   {
     value: 200,
     suffix: "+",
-    label: "HubSpot Implementations",
+    label: "CRM & RevOps Implementations",
     description: "Successfully deployed",
   },
   {

@@ -5,31 +5,31 @@ import Link from "next/link";
 
 const industries = [
   {
-    name: "Healthcare",
+    name: "Healthcare & Life Sciences",
     slug: "healthcare",
-    description: "HubSpot implementations that understand healthcare complexity — long sales cycles, multiple stakeholders, and the need for careful, compliant communication.",
+    description: "Revenue systems for regulated environments. We understand HIPAA compliance, EHR integrations, and the nuances of selling to healthcare organizations.",
     features: [
-      "Multi-stakeholder sales tracking",
-      "Long-cycle lead nurturing",
-      "Referral management systems",
-      "Patient journey automation",
+      "HIPAA-compliant workflows",
+      "EHR & patient system integrations",
+      "Provider relationship management",
+      "Compliance-aware automation",
     ],
     gradient: "from-teal-500 to-teal-600",
     icon: (
       <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
       </svg>
     ),
   },
   {
-    name: "IT Services",
+    name: "Information Technology",
     slug: "information-technology",
-    description: "HubSpot solutions built for IT companies managing complex sales cycles, technical buyers, and multi-stakeholder decisions.",
+    description: "CRM and RevOps for technical buyers. Long sales cycles, multiple stakeholders, and solutions-based selling require specialized systems.",
     features: [
       "Technical content marketing",
       "Long-cycle lead nurturing",
       "Partner ecosystem management",
-      "Product-led growth enablement",
+      "Multi-stakeholder deal tracking",
     ],
     gradient: "from-neon-purple-500 to-neon-purple-600",
     icon: (
@@ -39,9 +39,9 @@ const industries = [
     ),
   },
   {
-    name: "SaaS",
+    name: "SaaS & Software",
     slug: "saas",
-    description: "Scale your SaaS company with HubSpot automations designed for subscription revenue, product adoption, and customer success.",
+    description: "Scale your revenue engine from startup to scale-up. Product-led growth integrations, usage-based billing connections, and customer success automation.",
     features: [
       "Trial-to-paid conversion funnels",
       "Usage-based lead scoring",
@@ -69,7 +69,7 @@ export function Industries() {
             viewport={{ once: true }}
             className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block"
           >
-            Industries We Serve
+            Who We Serve
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -78,7 +78,7 @@ export function Industries() {
             transition={{ delay: 0.1 }}
             className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6"
           >
-            Deep expertise in three verticals
+            Built for industries with complex sales
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -87,7 +87,7 @@ export function Industries() {
             transition={{ delay: 0.2 }}
             className="text-lg text-black/60 leading-relaxed"
           >
-            We specialize in industries with complex sales cycles and high stakes. Our HubSpot implementations are tailored to the unique challenges of healthcare, IT services, and SaaS.
+            We specialize in organizations where sales cycles are long, compliance matters, and your buyers are technical.
           </motion.p>
         </div>
 
