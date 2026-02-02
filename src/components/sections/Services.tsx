@@ -5,75 +5,81 @@ import Link from "next/link";
 
 const services = [
   {
-    title: "AI-Powered Automation",
-    description: "Unlock HubSpot Breeze AI, intelligent workflows, and predictive scoring—automation that actually gets used.",
+    title: "RevOps Strategy & Architecture",
+    description: "Design unified revenue systems that align sales, marketing, and customer success—regardless of your tech stack.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
       </svg>
     ),
-    color: "neon-purple",
-    href: "/services/ai-automation",
+    color: "teal",
+    href: "/services/hubspot-onboarding",
   },
   {
-    title: "CRM Onboarding & Migration",
-    description: "Seamless HubSpot deployment and data migration from legacy systems with zero data loss and minimal disruption.",
+    title: "CRM Implementation & Migration",
+    description: "Seamless deployment on HubSpot, Salesforce, or custom solutions. Zero data loss, minimal disruption.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
       </svg>
     ),
-    color: "teal",
+    color: "neon-purple",
+    href: "/services/crm-migration",
   },
   {
-    title: "Sales Enablement & Workflows",
-    description: "Strategic workflow design and automation that nurtures leads and accelerates your sales pipeline.",
+    title: "Marketing Automation",
+    description: "Intelligent workflows, lead scoring, and nurture sequences that move prospects through your pipeline.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
     color: "orange-red",
-  },
-  {
-    title: "Reporting & Analytics",
-    description: "Custom dashboards and reporting that connect marketing spend directly to closed revenue.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    ),
-    color: "teal",
+    href: "/services/marketing-automation",
   },
   {
     title: "Custom Integrations",
-    description: "Connect HubSpot with your existing tech stack through custom APIs and middleware solutions.",
+    description: "Connect your CRM with EHR systems, ERPs, billing platforms, and any tool your business depends on.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
       </svg>
     ),
+    color: "teal",
+    href: "/services/integrations",
+  },
+  {
+    title: "Reporting & Analytics",
+    description: "Custom dashboards that connect marketing spend to closed revenue—across any platform.",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      </svg>
+    ),
     color: "neon-purple",
+    href: "/services/reporting",
+  },
+  {
+    title: "AI & Workflow Automation",
+    description: "Leverage AI-powered tools for predictive scoring, chatbots, and intelligent routing.",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+      </svg>
+    ),
+    color: "orange-red",
+    href: "/services/ai-automation",
   },
   {
     title: "Website & CMS Development",
-    description: "HubSpot CMS websites and custom development that convert visitors into customers.",
+    description: "High-converting websites on HubSpot CMS, WordPress, or custom builds.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
       </svg>
     ),
-    color: "orange-red",
-  },
-  {
-    title: "Growth Marketing",
-    description: "SEO, paid advertising, content marketing, and conversion optimization to drive qualified traffic.",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-      </svg>
-    ),
     color: "teal",
+    href: "/services/development",
   },
 ];
 
@@ -104,7 +110,7 @@ export function Services() {
             transition={{ delay: 0.1 }}
             className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6"
           >
-            HubSpot expertise that drives measurable growth
+            Revenue systems and integrations that actually work
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -113,7 +119,7 @@ export function Services() {
             transition={{ delay: 0.2 }}
             className="text-lg text-black/60 leading-relaxed"
           >
-            From initial implementation to advanced automation, we deliver end-to-end HubSpot solutions that transform how you attract, engage, and retain customers.
+            From CRM strategy to automation build-out, we deliver end-to-end RevOps solutions that transform how you attract, engage, and close.
           </motion.p>
         </div>
 
@@ -164,6 +170,20 @@ export function Services() {
             </motion.div>
           ))}
         </div>
+
+        {/* Platform Footnote */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-16 pt-8 border-t border-black/10"
+        >
+          <p className="text-sm text-black/50 text-center">
+            <strong className="text-black/70">Platforms we work with:</strong>{" "}
+            HubSpot (Platinum Partner) • Salesforce • Zoho • Pipedrive • Custom APIs & middleware
+          </p>
+        </motion.div>
       </div>
     </section>
   );

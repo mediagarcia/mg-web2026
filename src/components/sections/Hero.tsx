@@ -9,12 +9,19 @@ import { useState, useEffect } from "react";
 const rotatingWords = [
   "lean",
   "growing",
+  "winning",
+  "ahead",
+  "profitable",
+  "scaling",
+  "focused",
+  "thriving",
+  "sharp",
   "agile",
-  "efficient",
-  "competitive",
-  "innovative",
-  "easy to work with",
-  "data-driven"
+  "closing",
+  "in control",
+  "on top",
+  "sane",
+  "selling",
 ];
 
 const rotatingColors = [
@@ -24,8 +31,6 @@ const rotatingColors = [
   "text-teal-500",
   "text-neon-purple-500",
   "text-orange-red-500",
-  "text-teal-500",
-  "text-neon-purple-500"
 ];
 
 export function Hero() {
@@ -88,7 +93,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg lg:text-xl font-medium text-black/50 mb-4"
           >
-            Tired of software nobody uses?
+            Tired of CRM investments that gather dust?
           </motion.p>
 
           {/* Main Headline with Rotating Text */}
@@ -98,9 +103,9 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-[clamp(2.5rem,7vw,4.5rem)] font-black leading-[1.1] tracking-tight text-black mb-8"
           >
-            Digital platforms that
+            We build systems
             <br />
-            keep your company
+            that keep you
             <br />
             <span className="inline-block relative h-[1.2em] min-w-[15ch] overflow-hidden align-bottom">
               <AnimatePresence mode="wait">
@@ -127,7 +132,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl lg:text-2xl text-black/60 leading-relaxed max-w-2xl mb-10"
           >
-            We build HubSpot solutions you&apos;ll actually use—because we measure success by your outcomes, not our billable hours.
+            We design RevOps and automation platforms for healthcare, IT, and SaaS companies—across HubSpot, Salesforce, and custom stacks.
           </motion.p>
 
           {/* CTA */}
@@ -141,7 +146,7 @@ export function Hero() {
               href="#contact"
               className="inline-flex items-center justify-center gap-2 bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-teal-500 transition-all duration-300 group"
             >
-              Start Your Project
+              Get Your Free Audit
               <svg
                 className="w-5 h-5 transition-transform group-hover:translate-x-1"
                 fill="none"
@@ -176,6 +181,12 @@ export function Hero() {
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               <span className="font-medium">Platinum HubSpot Partner</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-[#00A1E0]" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <span className="font-medium">Salesforce Integration Experts</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">

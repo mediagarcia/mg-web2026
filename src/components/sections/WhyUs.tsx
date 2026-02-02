@@ -5,18 +5,18 @@ import { motion } from "framer-motion";
 const differentiators = [
   {
     number: "01",
-    title: "HubSpot Solutions Partner",
-    description: "Official certification and deep platform expertise means we implement solutions that actually work—the first time.",
+    title: "Platform Expertise, Not Lock-in",
+    description: "HubSpot Platinum Partner. Salesforce integration experts. Custom API builders. We recommend what's right for your business, not what's easiest for us.",
   },
   {
     number: "02",
-    title: "Tech Industry Focus",
-    description: "We specialize in IT and SaaS companies. We understand your sales cycles, your buyers, and your tech stack.",
+    title: "Industry-Specific Focus",
+    description: "We specialize in healthcare, IT, and SaaS. We understand your compliance requirements, your buyers, and your sales cycles.",
   },
   {
     number: "03",
     title: "Outcome-Driven Approach",
-    description: "We don't just configure HubSpot—we architect revenue systems. Every workflow ties to measurable business results.",
+    description: "We don't just configure CRMs—we architect revenue systems. Every workflow ties to measurable business results.",
   },
   {
     number: "04",
@@ -56,7 +56,7 @@ export function WhyUs() {
               transition={{ delay: 0.2 }}
               className="text-lg text-black/60 leading-relaxed mb-8"
             >
-              We&apos;re not your typical HubSpot agency. We combine deep technical expertise with strategic thinking to build systems that drive real business growth.
+              We&apos;re not another CRM agency. We combine deep technical expertise with strategic thinking to build systems that drive real business growth.
             </motion.p>
 
             {/* Quick Stats */}

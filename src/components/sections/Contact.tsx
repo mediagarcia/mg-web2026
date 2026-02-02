@@ -42,17 +42,47 @@ export function Contact() {
               transition={{ delay: 0.1 }}
               className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6"
             >
-              Ready to transform your HubSpot?
+              Ready to transform how you grow?
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-lg text-black/60 leading-relaxed mb-12"
+              className="text-lg text-black/60 leading-relaxed mb-8"
             >
               Tell us about your project and we&apos;ll get back to you within 24 hours with a customized plan of action.
             </motion.p>
+
+            {/* What Happens Next */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.25 }}
+              className="bg-white rounded-2xl p-6 mb-8 border border-black/5"
+            >
+              <h3 className="text-sm font-bold text-black/40 uppercase tracking-widest mb-4">What happens next?</h3>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500/10 text-teal-500 text-sm font-bold flex items-center justify-center">1</span>
+                  <p className="text-sm text-black/70"><strong className="text-black">We respond within 24 hours</strong> — A real person reviews your inquiry.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500/10 text-teal-500 text-sm font-bold flex items-center justify-center">2</span>
+                  <p className="text-sm text-black/70"><strong className="text-black">Discovery call</strong> — 30 minutes to understand your goals and challenges.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500/10 text-teal-500 text-sm font-bold flex items-center justify-center">3</span>
+                  <p className="text-sm text-black/70"><strong className="text-black">Platform-agnostic recommendation</strong> — We suggest the right approach for you.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500/10 text-teal-500 text-sm font-bold flex items-center justify-center">4</span>
+                  <p className="text-sm text-black/70"><strong className="text-black">Custom proposal</strong> — Timeline, investment, and expected outcomes.</p>
+                </div>
+              </div>
+              <p className="text-xs text-black/40 mt-4">No hard sell. No platform lock-in. Just a conversation about what&apos;s possible.</p>
+            </motion.div>
 
             {/* Contact Info */}
             <motion.div

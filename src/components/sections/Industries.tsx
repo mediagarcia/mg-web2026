@@ -5,16 +5,33 @@ import Link from "next/link";
 
 const industries = [
   {
+    name: "Healthcare & Life Sciences",
+    slug: "healthcare",
+    description: "Revenue systems for regulated environments. We understand HIPAA compliance, EHR integrations, and the nuances of selling to healthcare organizations.",
+    features: [
+      "HIPAA-compliant workflows",
+      "EHR & patient system integrations",
+      "Provider relationship management",
+      "Compliance-aware automation",
+    ],
+    gradient: "from-teal-500 to-teal-600",
+    icon: (
+      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    ),
+  },
+  {
     name: "Information Technology",
     slug: "information-technology",
-    description: "HubSpot solutions built for IT companies managing complex sales cycles, technical buyers, and multi-stakeholder decisions.",
+    description: "CRM and RevOps for technical buyers. Long sales cycles, multiple stakeholders, and solutions-based selling require specialized systems.",
     features: [
       "Technical content marketing",
       "Long-cycle lead nurturing",
       "Partner ecosystem management",
-      "Product-led growth enablement",
+      "Multi-stakeholder deal tracking",
     ],
-    gradient: "from-teal-500 to-teal-600",
+    gradient: "from-neon-purple-500 to-neon-purple-600",
     icon: (
       <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -22,16 +39,16 @@ const industries = [
     ),
   },
   {
-    name: "SaaS",
+    name: "SaaS & Software",
     slug: "saas",
-    description: "Scale your SaaS company with HubSpot automations designed for subscription revenue, product adoption, and customer success.",
+    description: "Scale your revenue engine from startup to scale-up. Product-led growth integrations, usage-based billing connections, and customer success automation.",
     features: [
       "Trial-to-paid conversion funnels",
       "Usage-based lead scoring",
       "Customer health monitoring",
       "Expansion revenue workflows",
     ],
-    gradient: "from-neon-purple-500 to-neon-purple-600",
+    gradient: "from-orange-red-500 to-orange-red-600",
     icon: (
       <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
@@ -52,7 +69,7 @@ export function Industries() {
             viewport={{ once: true }}
             className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block"
           >
-            Industries We Serve
+            Who We Serve
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -61,7 +78,7 @@ export function Industries() {
             transition={{ delay: 0.1 }}
             className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6"
           >
-            Specialized expertise for tech companies
+            Built for industries with complex sales
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -70,12 +87,12 @@ export function Industries() {
             transition={{ delay: 0.2 }}
             className="text-lg text-black/60 leading-relaxed"
           >
-            We understand the unique challenges of selling technology. Our HubSpot implementations are tailored to your industry&apos;s specific needs.
+            We specialize in organizations where sales cycles are long, compliance matters, and your buyers are technical.
           </motion.p>
         </div>
 
         {/* Industries Grid */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {industries.map((industry, index) => (
             <motion.div
               key={industry.slug}
