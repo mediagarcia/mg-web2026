@@ -80,10 +80,12 @@ function MegaMenu({
   type,
   isOpen,
   onClose,
+  isScrolled,
 }: {
   type: "services" | "industries" | "resources";
   isOpen: boolean;
   onClose: () => void;
+  isScrolled: boolean;
 }) {
   return (
     <AnimatePresence>
@@ -93,7 +95,9 @@ function MegaMenu({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 8 }}
           transition={{ duration: 0.15 }}
-          className="absolute top-full left-0 right-0 mt-2 bg-white shadow-2xl border-t border-gray-100"
+          className={`fixed left-0 right-0 bg-white shadow-2xl border-t border-gray-100 ${
+            isScrolled ? "top-[72px]" : "top-[88px]"
+          }`}
           onMouseLeave={onClose}
         >
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-8">
@@ -351,6 +355,7 @@ export function Navigation() {
                     type={item.megaMenuType}
                     isOpen={openMegaMenu === item.label}
                     onClose={() => setOpenMegaMenu(null)}
+                    isScrolled={isScrolled}
                   />
                 )}
               </li>
