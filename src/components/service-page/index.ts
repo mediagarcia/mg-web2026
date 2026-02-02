@@ -1,0 +1,1 @@
+export { ServiceFAQ } from "./ServiceFAQ";
