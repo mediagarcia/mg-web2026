@@ -49,10 +49,10 @@ function JourneyCharacter({
   );
 }
 
-// Path bloom effect - lines spread beneath the contact form
+// Path bloom effect - lines spread beneath the contact form (above footer)
 function PathBloom({ progress }: { progress: number }) {
-  // Start showing at 75% scroll (near contact form), fully visible by 90%
-  const bloomProgress = Math.max(0, Math.min(1, (progress - 0.72) / 0.18));
+  // Start showing at 78% scroll (contact form area), fully visible by 92%
+  const bloomProgress = Math.max(0, Math.min(1, (progress - 0.76) / 0.16));
 
   if (bloomProgress <= 0) return null;
 
@@ -60,12 +60,12 @@ function PathBloom({ progress }: { progress: number }) {
     <motion.div
       className="fixed left-0 z-[44] pointer-events-none"
       style={{
-        bottom: 0,
+        bottom: "15%", // Stay above the footer
         width: "100%",
-        height: "25%",
+        height: "20%",
       }}
       initial={{ opacity: 0 }}
-      animate={{ opacity: bloomProgress * 0.7 }}
+      animate={{ opacity: bloomProgress * 0.6 }}
     >
       <svg
         className="w-full h-full"
@@ -133,7 +133,7 @@ function PathBloom({ progress }: { progress: number }) {
   );
 }
 
-// CTA Emergence - larger character in background near contact form
+// CTA Emergence - character in background near contact form (above footer)
 function CTAEmergence({
   progress,
   variant,
@@ -141,24 +141,24 @@ function CTAEmergence({
   progress: number;
   variant: CharacterVariant;
 }) {
-  // Start showing at 75% scroll (contact form area)
-  const shouldShow = progress > 0.72;
-  const emergenceProgress = Math.max(0, (progress - 0.72) / 0.18);
+  // Start showing at 78% scroll - AFTER small character fades out
+  const shouldShow = progress > 0.78;
+  const emergenceProgress = Math.max(0, (progress - 0.78) / 0.15);
 
   if (!shouldShow) return null;
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.3, y: 100 }}
+      initial={{ opacity: 0, scale: 0.5, y: 60 }}
       animate={{
-        opacity: Math.min(emergenceProgress * 0.85, 0.85), // Keep it somewhat transparent as background
-        scale: 0.6 + emergenceProgress * 0.4,
-        y: 50 - emergenceProgress * 50,
+        opacity: Math.min(emergenceProgress * 0.8, 0.8), // Keep it somewhat transparent as background
+        scale: 0.7 + emergenceProgress * 0.3,
+        y: 30 - emergenceProgress * 30,
       }}
-      className="fixed bottom-[5%] left-[5%] z-[42] pointer-events-none"
+      className="fixed bottom-[18%] left-[3%] z-[42] pointer-events-none"
     >
-      {/* Much larger character */}
-      <div className="w-64 h-96">
+      {/* Moderately sized character - stays above footer */}
+      <div className="w-40 h-60">
         <CharacterLarge variant={variant} size="xlarge" />
       </div>
 
@@ -237,8 +237,8 @@ function JourneyBackgroundInner({
     return () => unsubscribe();
   }, [smoothProgress]);
 
-  // Character Y position (8% to 85% - ends at contact form)
-  const charYValue = useTransform(smoothProgress, [0, 0.85], [8, 85]);
+  // Character Y position (8% to 78% - ends before contact CTA)
+  const charYValue = useTransform(smoothProgress, [0, 0.72], [8, 78]);
   const [charY, setCharY] = useState("8%");
 
   useEffect(() => {
@@ -248,8 +248,8 @@ function JourneyBackgroundInner({
     return () => unsubscribe();
   }, [charYValue]);
 
-  // Hide small character when large one appears (at contact form)
-  const showSmallCharacter = currentProgress < 0.74;
+  // Hide small character well BEFORE large one appears (clean gap, no overlap)
+  const showSmallCharacter = currentProgress < 0.72;
 
   if (prefersReducedMotion || isMobile) {
     return <StaticJourneyIllustration variant={character} />;

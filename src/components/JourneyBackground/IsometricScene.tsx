@@ -252,24 +252,25 @@ function CampfireScene({ progress }: { progress: MotionValue<number> }) {
   );
 }
 
-// Journey end marker - simple glow point at contact form area
+// Journey end marker - glow point at contact CTA header ("Ready to transform")
 function JourneyEndPoint({ progress }: { progress: MotionValue<number> }) {
-  const opacity = useTransform(progress, [0.7, 0.85], [0, 1]);
-  const scale = useTransform(progress, [0.7, 0.85], [0.5, 1.2]);
+  const opacity = useTransform(progress, [0.78, 0.90], [0, 1]);
+  const scale = useTransform(progress, [0.78, 0.90], [0.6, 1.4]);
 
   return (
     <motion.div
       style={{ opacity, scale }}
-      className="absolute top-[88%] left-1/2 -translate-x-1/2"
+      className="absolute bottom-[18%] left-1/2 -translate-x-1/2"
     >
-      <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
-        {/* Glowing endpoint */}
-        <circle cx="30" cy="30" r="25" fill="#3BB782" opacity="0.2" filter="blur(8px)" />
-        <circle cx="30" cy="30" r="15" fill="#3BB782" opacity="0.4" filter="blur(4px)" />
-        <circle cx="30" cy="30" r="8" fill="#3BB782" opacity="0.8" />
-        {/* Sparkle */}
-        <path d="M30 18 L32 28 L30 22 L28 28 Z" fill="white" opacity="0.6" />
-        <path d="M18 30 L28 32 L22 30 L28 28 Z" fill="white" opacity="0.6" />
+      <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+        {/* Glowing endpoint - larger and more visible */}
+        <circle cx="50" cy="50" r="45" fill="#3BB782" opacity="0.25" filter="blur(12px)" />
+        <circle cx="50" cy="50" r="30" fill="#3BB782" opacity="0.4" filter="blur(6px)" />
+        <circle cx="50" cy="50" r="18" fill="#3BB782" opacity="0.7" />
+        <circle cx="50" cy="50" r="10" fill="#3BB782" opacity="0.9" />
+        {/* Sparkle cross */}
+        <path d="M50 30 L52 46 L50 38 L48 46 Z" fill="white" opacity="0.7" />
+        <path d="M30 50 L46 52 L38 50 L46 48 Z" fill="white" opacity="0.7" />
       </svg>
     </motion.div>
   );
