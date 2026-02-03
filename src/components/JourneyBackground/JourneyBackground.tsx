@@ -1,107 +1,209 @@
 "use client";
 
-import { useScroll, useTransform, useSpring, motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useScroll, useTransform, useSpring, motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, createContext, useContext } from "react";
 import { IsometricScene } from "./IsometricScene";
-import { Character } from "./Character";
+import { CharacterVariant, CharacterSVG, CharacterPicker, CharacterLarge } from "./CharacterVariants";
 import { useReducedMotion } from "./hooks/useReducedMotion";
 import { useMediaQuery } from "./hooks/useMediaQuery";
 
-// Static fallback for reduced motion or mobile
-function StaticJourneyIllustration() {
+// Context for sharing character selection
+const CharacterContext = createContext<{
+  character: CharacterVariant;
+  setCharacter: (c: CharacterVariant) => void;
+}>({
+  character: "professional",
+  setCharacter: () => {},
+});
+
+export const useCharacter = () => useContext(CharacterContext);
+
+// Animated character in the journey strip
+function JourneyCharacter({
+  y,
+  progress,
+  variant,
+}: {
+  y: string;
+  progress: number;
+  variant: CharacterVariant;
+}) {
+  // Bounce effect
+  const bounceOffset = Math.sin(progress * Math.PI * 20) * 2;
+
   return (
-    <div className="fixed left-0 top-0 bottom-0 w-32 z-10 overflow-hidden pointer-events-none">
-      <div className="absolute inset-0 opacity-20">
-        <svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 120 800"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          {/* Simple vertical path */}
-          <path
-            d="M 60 50 Q 70 200, 60 400 Q 50 600, 60 750"
-            stroke="#3BB782"
-            strokeWidth="3"
-            strokeDasharray="10 8"
-            fill="none"
-            opacity="0.5"
-          />
+    <motion.div
+      style={{ top: y }}
+      animate={{ x: bounceOffset }}
+      className="absolute left-1/2 -translate-x-1/2 w-12 h-16 z-20 drop-shadow-lg"
+    >
+      <CharacterSVG variant={variant} className="w-full h-full" />
+    </motion.div>
+  );
+}
 
-          {/* Start building silhouette */}
-          <rect x="30" y="30" width="60" height="70" fill="#6B7280" opacity="0.5" rx="2" />
+// CTA Emergence - character pops out into main content
+function CTAEmergence({
+  progress,
+  variant,
+}: {
+  progress: number;
+  variant: CharacterVariant;
+}) {
+  // Only show when near the bottom (85%+)
+  const shouldShow = progress > 0.82;
+  const emergenceProgress = Math.max(0, (progress - 0.82) / 0.18);
 
-          {/* End building silhouette */}
-          <rect x="25" y="680" width="70" height="90" fill="#1F2937" opacity="0.5" rx="2" />
+  if (!shouldShow) return null;
 
-          {/* Character silhouette */}
-          <ellipse cx="60" cy="400" rx="15" ry="25" fill="#3BB782" opacity="0.5" />
-        </svg>
-      </div>
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.3, x: -200 }}
+      animate={{
+        opacity: emergenceProgress,
+        scale: 0.5 + emergenceProgress * 0.5,
+        x: -50 + emergenceProgress * 50,
+      }}
+      className="fixed bottom-32 left-8 z-50 pointer-events-none"
+    >
+      <CharacterLarge variant={variant} />
+
+      {/* Speech bubble with CTA hint */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: emergenceProgress > 0.5 ? 1 : 0, y: 0 }}
+        className="absolute -top-4 left-24 bg-white rounded-xl px-4 py-2 shadow-xl border-2 border-teal-500"
+      >
+        <div className="text-sm font-bold text-gray-800">Ready to start?</div>
+        <div className="text-xs text-gray-500">Your journey awaits!</div>
+        {/* Pointer */}
+        <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white" />
+      </motion.div>
+    </motion.div>
+  );
+}
+
+// Static fallback for reduced motion or mobile
+function StaticJourneyIllustration({ variant }: { variant: CharacterVariant }) {
+  return (
+    <div className="fixed left-0 top-0 bottom-0 w-24 z-[45] overflow-hidden pointer-events-none opacity-30">
+      <svg
+        className="absolute inset-0 w-full h-full"
+        viewBox="0 0 80 600"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <path
+          d="M 40 30 Q 50 150, 40 300 Q 30 450, 40 570"
+          stroke="#3BB782"
+          strokeWidth="2"
+          strokeDasharray="8 6"
+          fill="none"
+          opacity="0.6"
+        />
+      </svg>
     </div>
   );
 }
 
-// Inner component that uses scroll hooks (only rendered client-side after mount)
+// Inner component that uses scroll hooks
 function JourneyBackgroundInner({
   prefersReducedMotion,
   isMobile,
+  character,
+  setCharacter,
 }: {
   prefersReducedMotion: boolean;
   isMobile: boolean;
+  character: CharacterVariant;
+  setCharacter: (c: CharacterVariant) => void;
 }) {
-  // Get scroll progress
   const { scrollYProgress } = useScroll();
+  const [showPicker, setShowPicker] = useState(true);
+  const [currentProgress, setCurrentProgress] = useState(0);
 
-  // Smooth the scroll progress for less jittery animations
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 60,
     damping: 25,
   });
 
-  // Character moves from top to bottom as user scrolls
-  const charY = useTransform(smoothProgress, [0, 1], ["8%", "78%"]);
+  // Track progress for CTA emergence
+  useEffect(() => {
+    const unsubscribe = smoothProgress.on("change", (v) => {
+      setCurrentProgress(v);
+      // Hide picker after scrolling a bit
+      if (v > 0.05) setShowPicker(false);
+    });
+    return () => unsubscribe();
+  }, [smoothProgress]);
 
-  // Return static version for reduced motion or mobile
+  // Character Y position (8% to 75%)
+  const charYValue = useTransform(smoothProgress, [0, 0.82], [8, 75]);
+  const [charY, setCharY] = useState("8%");
+
+  useEffect(() => {
+    const unsubscribe = charYValue.on("change", (v) => {
+      setCharY(`${v}%`);
+    });
+    return () => unsubscribe();
+  }, [charYValue]);
+
   if (prefersReducedMotion || isMobile) {
-    return <StaticJourneyIllustration />;
+    return <StaticJourneyIllustration variant={character} />;
   }
 
   return (
     <>
-      {/* Main journey background layer - vertical strip on left */}
-      <div className="fixed left-0 top-0 bottom-0 w-36 lg:w-44 z-10 overflow-hidden pointer-events-none">
-        {/* Fade edge for smooth transition to content */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/80 z-30" />
-
-        {/* Scene container */}
-        <div className="relative w-full h-full opacity-70">
+      {/* Journey strip - transparent, no background */}
+      <div className="fixed left-0 top-0 bottom-0 w-28 lg:w-36 z-[45] overflow-visible pointer-events-none">
+        {/* Scene elements */}
+        <div className="relative w-full h-full">
           <IsometricScene progress={smoothProgress} />
-          <Character y={charY} progress={smoothProgress} />
+          <JourneyCharacter y={charY} progress={currentProgress} variant={character} />
         </div>
+
+        {/* Character picker - only at start */}
+        <AnimatePresence>
+          {showPicker && (
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              className="absolute top-24 left-2 pointer-events-auto z-50"
+            >
+              <CharacterPicker selected={character} onSelect={setCharacter} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
+
+      {/* CTA Emergence - character pops out at bottom */}
+      <CTAEmergence progress={currentProgress} variant={character} />
     </>
   );
 }
 
 export function JourneyBackground() {
   const [mounted, setMounted] = useState(false);
+  const [character, setCharacter] = useState<CharacterVariant>("professional");
   const prefersReducedMotion = useReducedMotion();
   const isMobile = useMediaQuery("(max-width: 1023px)");
 
-  // Only render on client after mount to avoid SSR issues with scroll hooks
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // During SSR and initial mount, render nothing
   if (!mounted) {
     return null;
   }
 
   return (
-    <JourneyBackgroundInner
-      prefersReducedMotion={prefersReducedMotion}
-      isMobile={isMobile}
-    />
+    <CharacterContext.Provider value={{ character, setCharacter }}>
+      <JourneyBackgroundInner
+        prefersReducedMotion={prefersReducedMotion}
+        isMobile={isMobile}
+        character={character}
+        setCharacter={setCharacter}
+      />
+    </CharacterContext.Provider>
   );
 }

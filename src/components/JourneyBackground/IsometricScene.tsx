@@ -327,8 +327,7 @@ function Destination({ progress }: { progress: MotionValue<number> }) {
 export function IsometricScene({ progress }: IsometricSceneProps) {
   return (
     <div className="relative w-full h-full">
-      {/* Subtle gradient background for the journey strip */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-100 via-white to-gray-50" />
+      {/* No solid background - transparent to blend with page */}
 
       {/* Journey path */}
       <JourneyPath progress={progress} />

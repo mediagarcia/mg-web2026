@@ -223,7 +223,7 @@ export default function RootLayout({
         {/* Isometric journey background - fixed layer behind content */}
         <JourneyBackground />
         <Navigation />
-        <main id="main-content" tabIndex={-1} className="relative z-40 outline-none lg:pl-44">
+        <main id="main-content" tabIndex={-1} className="relative z-40 outline-none">
           {children}
         </main>
         <Footer />
