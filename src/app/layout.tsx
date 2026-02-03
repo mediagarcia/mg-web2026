@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { ScrollToTopOnNavigation } from "@/components/ScrollToTopOnNavigation";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -212,6 +213,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${roboto.variable} ${robotoMono.variable}`}>
       <body className="font-sans antialiased">
+        <ScrollToTopOnNavigation />
         {/* Skip to main content link for accessibility */}
         <a
           href="#main-content"
