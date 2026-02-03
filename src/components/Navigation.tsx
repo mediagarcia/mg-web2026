@@ -368,8 +368,20 @@ export function Navigation() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-teal-600 transition-colors"
             >
-              Book a Free Consultation
-              <ArrowRight className="w-4 h-4" />
+              Book a Strategy Call
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
             </Link>
           </div>
 
@@ -471,7 +483,7 @@ export function Navigation() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-teal-600 transition-colors mt-8"
               >
-                Book a Free Consultation
+                Book a Strategy Call
               </Link>
             </div>
           </motion.div>

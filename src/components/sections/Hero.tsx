@@ -140,13 +140,13 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 mb-10"
+            className="flex flex-col sm:flex-row gap-4 mb-4"
           >
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-teal-500 transition-all duration-300 group"
             >
-              Get Your Free Audit
+              Book a Strategy Call
               <svg
                 className="w-5 h-5 transition-transform group-hover:translate-x-1"
                 fill="none"
@@ -162,12 +162,20 @@ export function Hero() {
               </svg>
             </Link>
             <Link
-              href="#work"
+              href="/work"
               className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-black/20 text-black px-8 py-4 rounded-full text-lg font-medium hover:border-teal-500 hover:text-teal-500 transition-all duration-300"
             >
-              View Our Work
+              See Our Results
             </Link>
           </motion.div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="text-sm text-black/50 mb-10"
+          >
+            30 minutes with a senior strategist. No commitment.
+          </motion.p>
 
           {/* Trust Indicators */}
           <motion.div

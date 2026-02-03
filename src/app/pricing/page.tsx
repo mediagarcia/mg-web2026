@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
-import { CTABanner, FAQ } from "@/components/sections";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -166,24 +165,25 @@ export default function PricingPage() {
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="bg-black rounded-3xl p-8 lg:p-16 text-white text-center">
-            <h2 className="text-3xl lg:text-4xl font-black mb-4">Need a custom solution?</h2>
+            <h2 className="text-3xl lg:text-4xl font-black mb-4">Need something custom?</h2>
             <p className="text-white/60 mb-8 max-w-2xl mx-auto">
-              Every business is different. Let&apos;s discuss your specific needs and create a custom package that fits your goals and budget.
+              Every business is different. Let&apos;s discuss your specific needs and create a package that fits your goals and budget.
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-teal-500 text-white px-8 py-4 rounded-full font-medium hover:bg-teal-400 transition-colors"
-            >
-              Get a Custom Quote
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            <div className="flex flex-col items-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-teal-500 text-white px-8 py-4 rounded-full font-medium hover:bg-teal-400 transition-colors"
+              >
+                Get a Custom Quote
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <span className="text-white/40 text-sm mt-3">No obligation. We&apos;ll send a proposal within 48 hours.</span>
+            </div>
           </div>
         </div>
       </section>
-
-      <CTABanner />
     </>
   );
 }
