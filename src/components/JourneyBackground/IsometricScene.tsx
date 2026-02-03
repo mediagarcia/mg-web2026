@@ -6,46 +6,45 @@ interface IsometricSceneProps {
   progress: MotionValue<number>;
 }
 
-// Vertical path that winds down the left side
+// Vertical path that winds down the left side - ends at ~70% (CTA area)
 function JourneyPath({ progress }: { progress: MotionValue<number> }) {
-  const pathLength = useTransform(progress, [0, 0.9], [0.05, 1]);
+  const pathLength = useTransform(progress, [0, 0.65], [0.05, 1]);
+  // Path gets wider as it approaches the end
+  const strokeWidth = useTransform(progress, [0, 0.5, 0.65], [3, 4, 6]);
+  const glowWidth = useTransform(progress, [0, 0.5, 0.65], [16, 24, 40]);
 
   return (
     <svg
-      className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-24"
-      viewBox="0 0 80 1000"
+      className="absolute left-1/2 -translate-x-1/2 top-0 h-[75%] w-24"
+      viewBox="0 0 80 750"
       preserveAspectRatio="none"
     >
-      {/* Main path - dashed line */}
+      {/* Main path - dashed line, ends at 70% of viewport */}
       <motion.path
         d="M 40 0
-           C 50 100, 30 150, 40 200
-           S 55 300, 40 350
-           S 25 450, 40 500
-           S 55 600, 40 650
-           S 30 750, 40 800
-           S 50 900, 40 1000"
+           C 50 80, 30 120, 40 160
+           S 55 240, 40 300
+           S 25 380, 40 440
+           S 55 520, 40 580
+           S 30 660, 40 750"
         fill="none"
         stroke="#3BB782"
-        strokeWidth="3"
         strokeDasharray="12 8"
-        style={{ pathLength }}
+        style={{ pathLength, strokeWidth }}
         opacity={0.6}
       />
 
-      {/* Path glow */}
+      {/* Path glow - expands as it goes down */}
       <motion.path
         d="M 40 0
-           C 50 100, 30 150, 40 200
-           S 55 300, 40 350
-           S 25 450, 40 500
-           S 55 600, 40 650
-           S 30 750, 40 800
-           S 50 900, 40 1000"
+           C 50 80, 30 120, 40 160
+           S 55 240, 40 300
+           S 25 380, 40 440
+           S 55 520, 40 580
+           S 30 660, 40 750"
         fill="none"
         stroke="#3BB782"
-        strokeWidth="16"
-        style={{ pathLength }}
+        style={{ pathLength, strokeWidth: glowWidth }}
         opacity={0.15}
         filter="blur(6px)"
       />
@@ -251,74 +250,24 @@ function CampfireScene({ progress }: { progress: MotionValue<number> }) {
   );
 }
 
-// Destination - thriving connected office at bottom
-function Destination({ progress }: { progress: MotionValue<number> }) {
-  const opacity = useTransform(progress, [0.7, 0.9], [0.4, 1]);
-  const scale = useTransform(progress, [0.7, 0.95], [0.85, 1]);
-  const glowIntensity = useTransform(progress, [0.85, 1], [0.3, 0.8]);
+// Journey end marker - simple glow point that leads into the CTA bloom
+function JourneyEndPoint({ progress }: { progress: MotionValue<number> }) {
+  const opacity = useTransform(progress, [0.5, 0.65], [0, 1]);
+  const scale = useTransform(progress, [0.5, 0.65], [0.5, 1]);
 
   return (
     <motion.div
       style={{ opacity, scale }}
-      className="absolute bottom-[2%] left-1/2 -translate-x-1/2"
+      className="absolute top-[68%] left-1/2 -translate-x-1/2"
     >
-      <svg width="110" height="130" viewBox="0 0 110 130" fill="none">
-        {/* Glow effect */}
-        <motion.ellipse
-          cx="55"
-          cy="120"
-          rx="50"
-          ry="15"
-          fill="#3BB782"
-          style={{ opacity: glowIntensity }}
-          filter="blur(12px)"
-        />
-
-        {/* Building shadow */}
-        <ellipse cx="55" cy="125" rx="45" ry="6" fill="black" opacity="0.15" />
-
-        {/* Modern connected building */}
-        <g>
-          {/* Left tower */}
-          <rect x="10" y="40" width="40" height="80" fill="#1F2937" rx="2" />
-
-          {/* Right tower */}
-          <rect x="60" y="25" width="40" height="95" fill="#111827" rx="2" />
-
-          {/* Connecting bridge */}
-          <rect x="50" y="65" width="10" height="15" fill="#374151" />
-
-          {/* Windows - all lit (organized, working) */}
-          {[0, 1, 2, 3].map((row) => (
-            <g key={`left-${row}`}>
-              <rect x="16" y={48 + row * 18} width="8" height="10" fill="#3BB782" opacity="0.85" />
-              <rect x="30" y={48 + row * 18} width="8" height="10" fill="#3BB782" opacity="0.85" />
-            </g>
-          ))}
-
-          {[0, 1, 2, 3, 4].map((row) => (
-            <g key={`right-${row}`}>
-              <rect x="66" y={33 + row * 18} width="8" height="10" fill="#3BB782" opacity="0.85" />
-              <rect x="80" y={33 + row * 18} width="8" height="10" fill="#3BB782" opacity="0.85" />
-            </g>
-          ))}
-
-          {/* Roof gardens */}
-          <rect x="12" y="36" width="36" height="6" fill="#22C55E" rx="1" />
-          <rect x="62" y="21" width="36" height="6" fill="#22C55E" rx="1" />
-
-          {/* Entrance */}
-          <rect x="20" y="105" width="20" height="15" fill="#3BB782" rx="1" />
-
-          {/* Success arrow */}
-          <path d="M52 12 L55 4 L58 12 M55 4 V20" stroke="#3BB782" strokeWidth="2.5" fill="none" />
-        </g>
-
-        {/* Data connection nodes */}
-        <circle cx="20" cy="28" r="4" fill="#3BB782" opacity="0.7" />
-        <circle cx="90" cy="15" r="4" fill="#EE82F0" opacity="0.7" />
-        <line x1="20" y1="28" x2="55" y2="20" stroke="#3BB782" strokeWidth="1" opacity="0.5" strokeDasharray="3 2" />
-        <line x1="55" y1="20" x2="90" y2="15" stroke="#EE82F0" strokeWidth="1" opacity="0.5" strokeDasharray="3 2" />
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+        {/* Glowing endpoint */}
+        <circle cx="30" cy="30" r="25" fill="#3BB782" opacity="0.2" filter="blur(8px)" />
+        <circle cx="30" cy="30" r="15" fill="#3BB782" opacity="0.4" filter="blur(4px)" />
+        <circle cx="30" cy="30" r="8" fill="#3BB782" opacity="0.8" />
+        {/* Sparkle */}
+        <path d="M30 18 L32 28 L30 22 L28 28 Z" fill="white" opacity="0.6" />
+        <path d="M18 30 L28 32 L22 30 L28 28 Z" fill="white" opacity="0.6" />
       </svg>
     </motion.div>
   );
@@ -339,7 +288,8 @@ export function IsometricScene({ progress }: IsometricSceneProps) {
       <Obstacle2 progress={progress} />
       <Milestones progress={progress} />
       <CampfireScene progress={progress} />
-      <Destination progress={progress} />
+      {/* Journey ends with a glow point that leads into the CTA bloom */}
+      <JourneyEndPoint progress={progress} />
     </div>
   );
 }

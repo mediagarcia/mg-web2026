@@ -23,10 +23,12 @@ function JourneyCharacter({
   y,
   progress,
   variant,
+  visible,
 }: {
   y: string;
   progress: number;
   variant: CharacterVariant;
+  visible: boolean;
 }) {
   // Bounce effect
   const bounceOffset = Math.sin(progress * Math.PI * 20) * 2;
@@ -34,7 +36,12 @@ function JourneyCharacter({
   return (
     <motion.div
       style={{ top: y }}
-      animate={{ x: bounceOffset }}
+      animate={{
+        x: bounceOffset,
+        opacity: visible ? 1 : 0,
+        scale: visible ? 1 : 0.5,
+      }}
+      transition={{ opacity: { duration: 0.3 }, scale: { duration: 0.3 } }}
       className="absolute left-1/2 -translate-x-1/2 w-12 h-16 z-20 drop-shadow-lg"
     >
       <CharacterSVG variant={variant} className="w-full h-full" />
@@ -42,7 +49,79 @@ function JourneyCharacter({
   );
 }
 
-// CTA Emergence - character pops out into main content
+// Path bloom effect - the path expands into the CTA area
+function PathBloom({ progress }: { progress: number }) {
+  // Start showing at 60% scroll, fully visible by 75%
+  const bloomProgress = Math.max(0, Math.min(1, (progress - 0.55) / 0.20));
+
+  if (bloomProgress <= 0) return null;
+
+  return (
+    <motion.div
+      className="fixed left-0 z-[44] pointer-events-none"
+      style={{
+        bottom: "15%",
+        width: "100%",
+        height: "40%",
+      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: bloomProgress * 0.6 }}
+    >
+      <svg
+        className="w-full h-full"
+        viewBox="0 0 400 300"
+        preserveAspectRatio="xMinYMax slice"
+      >
+        {/* Expanding path glow - starts as a point and blooms outward */}
+        <defs>
+          <radialGradient id="pathBloomGradient" cx="0%" cy="100%" r="100%">
+            <stop offset="0%" stopColor="#3BB782" stopOpacity={0.4 * bloomProgress} />
+            <stop offset="30%" stopColor="#3BB782" stopOpacity={0.2 * bloomProgress} />
+            <stop offset="60%" stopColor="#3BB782" stopOpacity={0.05 * bloomProgress} />
+            <stop offset="100%" stopColor="#3BB782" stopOpacity="0" />
+          </radialGradient>
+          <radialGradient id="pathBloomGradient2" cx="0%" cy="100%" r="80%">
+            <stop offset="0%" stopColor="#3BB782" stopOpacity={0.6 * bloomProgress} />
+            <stop offset="50%" stopColor="#3BB782" stopOpacity={0.15 * bloomProgress} />
+            <stop offset="100%" stopColor="#3BB782" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+
+        {/* Main bloom shape - organic, expanding feel */}
+        <ellipse
+          cx={20 + bloomProgress * 80}
+          cy="280"
+          rx={30 + bloomProgress * 300}
+          ry={20 + bloomProgress * 150}
+          fill="url(#pathBloomGradient)"
+        />
+
+        {/* Inner glow - more concentrated */}
+        <ellipse
+          cx={20 + bloomProgress * 40}
+          cy="290"
+          rx={15 + bloomProgress * 120}
+          ry={10 + bloomProgress * 60}
+          fill="url(#pathBloomGradient2)"
+        />
+
+        {/* Path tendrils extending into CTA area */}
+        <motion.path
+          d={`M 20 300
+              Q ${40 + bloomProgress * 60} ${280 - bloomProgress * 40}, ${80 + bloomProgress * 120} ${260 - bloomProgress * 30}
+              Q ${120 + bloomProgress * 80} ${250 - bloomProgress * 20}, ${160 + bloomProgress * 100} ${260 - bloomProgress * 10}`}
+          stroke="#3BB782"
+          strokeWidth={2 + bloomProgress * 3}
+          fill="none"
+          opacity={0.3 * bloomProgress}
+          strokeDasharray="8 12"
+        />
+      </svg>
+    </motion.div>
+  );
+}
+
+// CTA Emergence - larger character in background
 function CTAEmergence({
   progress,
   variant,
@@ -50,35 +129,43 @@ function CTAEmergence({
   progress: number;
   variant: CharacterVariant;
 }) {
-  // Only show when near the bottom (85%+)
-  const shouldShow = progress > 0.82;
-  const emergenceProgress = Math.max(0, (progress - 0.82) / 0.18);
+  // Start showing at 65% scroll (CTA section), not 82%
+  const shouldShow = progress > 0.60;
+  const emergenceProgress = Math.max(0, (progress - 0.60) / 0.15);
 
   if (!shouldShow) return null;
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.3, x: -200 }}
+      initial={{ opacity: 0, scale: 0.3, y: 100 }}
       animate={{
-        opacity: emergenceProgress,
-        scale: 0.5 + emergenceProgress * 0.5,
-        x: -50 + emergenceProgress * 50,
+        opacity: Math.min(emergenceProgress * 0.85, 0.85), // Keep it somewhat transparent as background
+        scale: 0.6 + emergenceProgress * 0.4,
+        y: 50 - emergenceProgress * 50,
       }}
-      className="fixed bottom-32 left-8 z-50 pointer-events-none"
+      className="fixed bottom-[10%] left-[5%] z-[42] pointer-events-none"
     >
-      <CharacterLarge variant={variant} />
+      {/* Much larger character */}
+      <div className="w-64 h-96">
+        <CharacterLarge variant={variant} size="xlarge" />
+      </div>
 
-      {/* Speech bubble with CTA hint */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: emergenceProgress > 0.5 ? 1 : 0, y: 0 }}
-        className="absolute -top-4 left-24 bg-white rounded-xl px-4 py-2 shadow-xl border-2 border-teal-500"
-      >
-        <div className="text-sm font-bold text-gray-800">Ready to start?</div>
-        <div className="text-xs text-gray-500">Your journey awaits!</div>
-        {/* Pointer */}
-        <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-white" />
-      </motion.div>
+      {/* Speech bubble with CTA hint - appears later */}
+      <AnimatePresence>
+        {emergenceProgress > 0.6 && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            className="absolute top-8 left-[70%] bg-white rounded-2xl px-5 py-3 shadow-2xl border-2 border-teal-500"
+          >
+            <div className="text-base font-bold text-gray-800">Ready to start?</div>
+            <div className="text-sm text-gray-500">Your journey awaits!</div>
+            {/* Pointer */}
+            <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[12px] border-r-white" />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
@@ -132,12 +219,14 @@ function JourneyBackgroundInner({
       setCurrentProgress(v);
       // Hide picker after scrolling a bit
       if (v > 0.05) setShowPicker(false);
+      // Show picker again when back at top
+      if (v < 0.02) setShowPicker(true);
     });
     return () => unsubscribe();
   }, [smoothProgress]);
 
-  // Character Y position (8% to 75%)
-  const charYValue = useTransform(smoothProgress, [0, 0.82], [8, 75]);
+  // Character Y position (8% to 65% - ends at CTA, not footer)
+  const charYValue = useTransform(smoothProgress, [0, 0.65], [8, 65]);
   const [charY, setCharY] = useState("8%");
 
   useEffect(() => {
@@ -146,6 +235,9 @@ function JourneyBackgroundInner({
     });
     return () => unsubscribe();
   }, [charYValue]);
+
+  // Hide small character when large one appears
+  const showSmallCharacter = currentProgress < 0.62;
 
   if (prefersReducedMotion || isMobile) {
     return <StaticJourneyIllustration variant={character} />;
@@ -158,25 +250,33 @@ function JourneyBackgroundInner({
         {/* Scene elements */}
         <div className="relative w-full h-full">
           <IsometricScene progress={smoothProgress} />
-          <JourneyCharacter y={charY} progress={currentProgress} variant={character} />
+          <JourneyCharacter
+            y={charY}
+            progress={currentProgress}
+            variant={character}
+            visible={showSmallCharacter}
+          />
         </div>
-
-        {/* Character picker - only at start */}
-        <AnimatePresence>
-          {showPicker && (
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              className="absolute top-24 left-2 pointer-events-auto z-50"
-            >
-              <CharacterPicker selected={character} onSelect={setCharacter} />
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
 
-      {/* CTA Emergence - character pops out at bottom */}
+      {/* Character picker - positioned to the right of the journey strip */}
+      <AnimatePresence>
+        {showPicker && (
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            className="fixed top-32 left-40 lg:left-44 pointer-events-auto z-[46]"
+          >
+            <CharacterPicker selected={character} onSelect={setCharacter} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Path bloom effect - expands into CTA area */}
+      <PathBloom progress={currentProgress} />
+
+      {/* CTA Emergence - large character in background */}
       <CTAEmergence progress={currentProgress} variant={character} />
     </>
   );

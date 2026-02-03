@@ -158,21 +158,32 @@ export function CharacterPicker({ selected, onSelect }: CharacterPickerProps) {
 }
 
 // Large character for CTA section
-export function CharacterLarge({ variant }: { variant: CharacterVariant }) {
+export function CharacterLarge({
+  variant,
+  size = "large",
+}: {
+  variant: CharacterVariant;
+  size?: "large" | "xlarge";
+}) {
   const styles = variantStyles[variant];
+
+  // Size classes based on size prop
+  const sizeClasses = size === "xlarge"
+    ? "w-full h-full drop-shadow-2xl"
+    : "w-32 h-48 drop-shadow-2xl";
 
   return (
     <motion.div
       initial={{ scale: 0.5, opacity: 0, x: -100 }}
       animate={{ scale: 1, opacity: 1, x: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
-      className="relative"
+      className="relative w-full h-full"
     >
       <svg
         viewBox="0 0 120 180"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-32 h-48 drop-shadow-2xl"
+        className={sizeClasses}
       >
         {/* Shadow */}
         <ellipse cx="60" cy="172" rx="30" ry="8" fill="black" opacity="0.2" />
