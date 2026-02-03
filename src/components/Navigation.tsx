@@ -47,7 +47,7 @@ const hubspotServices: MenuItem[] = [
   { label: "HubSpot Onboarding", href: "/services/hubspot-onboarding", description: "Get your team up and running fast", icon: Rocket },
   { label: "Sales Enablement", href: "/services/sales-enablement", description: "Empower your sales team to close more", icon: TrendingUp },
   { label: "Marketing Automation", href: "/services/marketing-automation", description: "Automate campaigns that convert", icon: Zap },
-  { label: "CRM Migration", href: "/services/crm-migration", description: "Seamless data transfer & setup", icon: Database },
+  { label: "CRM Migration", href: "/services/crm-migration", description: "Zero-downtime data transfer & setup", icon: Database },
   { label: "Reporting & Analytics", href: "/services/reporting", description: "Data-driven decision making", icon: BarChart3 },
   { label: "Custom Integrations", href: "/services/integrations", description: "Connect your tech stack", icon: Puzzle },
 ];

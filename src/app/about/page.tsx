@@ -439,7 +439,7 @@ export default function AboutPage() {
               The Team
             </span>
             <h2 className="text-3xl lg:text-4xl font-black text-black">
-              Meet the people behind the work
+              A team you&apos;ll actually work with
             </h2>
           </motion.div>
 
@@ -525,7 +525,7 @@ export default function AboutPage() {
               Recognition
             </span>
             <h2 className="text-3xl lg:text-4xl font-black text-black mb-4">
-              Certified expertise, proven results
+              26+ certifications across every HubSpot hub
             </h2>
             <p className="text-black/60">
               Third-party validation from the platforms we implement

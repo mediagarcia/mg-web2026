@@ -70,7 +70,7 @@ export function Process() {
             transition={{ delay: 0.1 }}
             className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6"
           >
-            A proven process for results
+            Discovery to launch in 4 stages
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -79,7 +79,7 @@ export function Process() {
             transition={{ delay: 0.2 }}
             className="text-lg text-black/60 leading-relaxed"
           >
-            Platform-agnostic methodology that ensures every implementation is strategic, efficient, and built to scale.
+            A platform-agnostic approach that keeps every implementation strategic, efficient, and ready to grow with you.
           </motion.p>
         </div>
 

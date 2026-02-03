@@ -109,7 +109,7 @@ export function Testimonials() {
             transition={{ delay: 0.1 }}
             className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black"
           >
-            Trusted by growth-focused teams
+            What 200+ implementations taught us
           </motion.h2>
         </div>
 

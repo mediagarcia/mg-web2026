@@ -42,7 +42,7 @@ export function Contact() {
               transition={{ delay: 0.1 }}
               className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6"
             >
-              Ready to transform how you grow?
+              Ready to talk about your revenue?
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

@@ -74,7 +74,7 @@ export function Values() {
             transition={{ delay: 0.1 }}
             className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight mb-6"
           >
-            What drives everything we do
+            The principles behind our 98% retention
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

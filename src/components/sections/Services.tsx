@@ -17,7 +17,7 @@ const services = [
   },
   {
     title: "CRM Implementation & Migration",
-    description: "Seamless deployment on HubSpot, Salesforce, or custom solutions. Zero data loss, minimal disruption.",
+    description: "Deployment on HubSpot, Salesforce, or custom solutions. Zero data loss, minimal disruption.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
@@ -119,7 +119,7 @@ export function Services() {
             transition={{ delay: 0.2 }}
             className="text-lg text-black/60 leading-relaxed"
           >
-            From CRM strategy to automation build-out, we deliver end-to-end RevOps solutions that transform how you attract, engage, and close.
+            From CRM strategy to automation build-out, we design RevOps systems that improve how you attract, engage, and close.
           </motion.p>
         </div>
 

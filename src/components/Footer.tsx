@@ -46,7 +46,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-sm">
-              We build and run digital platforms that keep companies lean, growing, and easy to do business with.
+              Digital platforms that keep companies lean, growing, and easy to do business with.
             </p>
             {/* HubSpot Partner Badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
