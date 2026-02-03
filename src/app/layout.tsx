@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { JourneyBackground } from "@/components/JourneyBackground";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -219,8 +220,10 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        {/* Isometric journey background - fixed layer behind content */}
+        <JourneyBackground />
         <Navigation />
-        <main id="main-content" tabIndex={-1} className="outline-none">
+        <main id="main-content" tabIndex={-1} className="relative z-40 outline-none lg:pl-44">
           {children}
         </main>
         <Footer />

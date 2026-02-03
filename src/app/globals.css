@@ -128,3 +128,27 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ===== Section backgrounds for Journey Background overlay ===== */
+/* High-priority content sections - solid backgrounds for full readability */
+.section-solid {
+  @apply bg-white;
+}
+
+.section-solid-dark {
+  @apply bg-gray-900;
+}
+
+/* Secondary sections - subtle transparency with backdrop blur */
+.section-translucent {
+  @apply bg-white/95 backdrop-blur-sm;
+}
+
+.section-translucent-light {
+  @apply bg-white/90 backdrop-blur-sm;
+}
+
+/* Section content wrapper - ensures proper z-index stacking */
+.section-content {
+  @apply relative z-10;
+}
