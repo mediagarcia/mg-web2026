@@ -6,27 +6,28 @@ interface IsometricSceneProps {
   progress: MotionValue<number>;
 }
 
-// Vertical path that winds down the left side - ends at ~70% (CTA area)
+// Vertical path that winds down the left side - ends at contact form (~90%)
 function JourneyPath({ progress }: { progress: MotionValue<number> }) {
-  const pathLength = useTransform(progress, [0, 0.65], [0.05, 1]);
+  const pathLength = useTransform(progress, [0, 0.85], [0.05, 1]);
   // Path gets wider as it approaches the end
-  const strokeWidth = useTransform(progress, [0, 0.5, 0.65], [3, 4, 6]);
-  const glowWidth = useTransform(progress, [0, 0.5, 0.65], [16, 24, 40]);
+  const strokeWidth = useTransform(progress, [0, 0.6, 0.85], [3, 4, 8]);
+  const glowWidth = useTransform(progress, [0, 0.6, 0.85], [16, 28, 50]);
 
   return (
     <svg
-      className="absolute left-1/2 -translate-x-1/2 top-0 h-[75%] w-24"
-      viewBox="0 0 80 750"
+      className="absolute left-1/2 -translate-x-1/2 top-0 h-[92%] w-24"
+      viewBox="0 0 80 920"
       preserveAspectRatio="none"
     >
-      {/* Main path - dashed line, ends at 70% of viewport */}
+      {/* Main path - dashed line, ends at contact form */}
       <motion.path
         d="M 40 0
-           C 50 80, 30 120, 40 160
-           S 55 240, 40 300
-           S 25 380, 40 440
-           S 55 520, 40 580
-           S 30 660, 40 750"
+           C 50 80, 30 140, 40 200
+           S 55 280, 40 360
+           S 25 440, 40 520
+           S 55 600, 40 680
+           S 30 760, 40 840
+           S 50 880, 40 920"
         fill="none"
         stroke="#3BB782"
         strokeDasharray="12 8"
@@ -37,11 +38,12 @@ function JourneyPath({ progress }: { progress: MotionValue<number> }) {
       {/* Path glow - expands as it goes down */}
       <motion.path
         d="M 40 0
-           C 50 80, 30 120, 40 160
-           S 55 240, 40 300
-           S 25 380, 40 440
-           S 55 520, 40 580
-           S 30 660, 40 750"
+           C 50 80, 30 140, 40 200
+           S 55 280, 40 360
+           S 25 440, 40 520
+           S 55 600, 40 680
+           S 30 760, 40 840
+           S 50 880, 40 920"
         fill="none"
         stroke="#3BB782"
         style={{ pathLength, strokeWidth: glowWidth }}
@@ -250,15 +252,15 @@ function CampfireScene({ progress }: { progress: MotionValue<number> }) {
   );
 }
 
-// Journey end marker - simple glow point that leads into the CTA bloom
+// Journey end marker - simple glow point at contact form area
 function JourneyEndPoint({ progress }: { progress: MotionValue<number> }) {
-  const opacity = useTransform(progress, [0.5, 0.65], [0, 1]);
-  const scale = useTransform(progress, [0.5, 0.65], [0.5, 1]);
+  const opacity = useTransform(progress, [0.7, 0.85], [0, 1]);
+  const scale = useTransform(progress, [0.7, 0.85], [0.5, 1.2]);
 
   return (
     <motion.div
       style={{ opacity, scale }}
-      className="absolute top-[68%] left-1/2 -translate-x-1/2"
+      className="absolute top-[88%] left-1/2 -translate-x-1/2"
     >
       <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
         {/* Glowing endpoint */}

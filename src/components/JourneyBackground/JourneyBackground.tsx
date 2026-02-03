@@ -49,10 +49,10 @@ function JourneyCharacter({
   );
 }
 
-// Path bloom effect - the path expands into the CTA area
+// Path bloom effect - lines spread beneath the contact form
 function PathBloom({ progress }: { progress: number }) {
-  // Start showing at 60% scroll, fully visible by 75%
-  const bloomProgress = Math.max(0, Math.min(1, (progress - 0.55) / 0.20));
+  // Start showing at 75% scroll (near contact form), fully visible by 90%
+  const bloomProgress = Math.max(0, Math.min(1, (progress - 0.72) / 0.18));
 
   if (bloomProgress <= 0) return null;
 
@@ -60,68 +60,80 @@ function PathBloom({ progress }: { progress: number }) {
     <motion.div
       className="fixed left-0 z-[44] pointer-events-none"
       style={{
-        bottom: "15%",
+        bottom: 0,
         width: "100%",
-        height: "40%",
+        height: "25%",
       }}
       initial={{ opacity: 0 }}
-      animate={{ opacity: bloomProgress * 0.6 }}
+      animate={{ opacity: bloomProgress * 0.7 }}
     >
       <svg
         className="w-full h-full"
-        viewBox="0 0 400 300"
+        viewBox="0 0 800 200"
         preserveAspectRatio="xMinYMax slice"
       >
-        {/* Expanding path glow - starts as a point and blooms outward */}
+        {/* Expanding path glow - radiates from bottom left */}
         <defs>
-          <radialGradient id="pathBloomGradient" cx="0%" cy="100%" r="100%">
-            <stop offset="0%" stopColor="#3BB782" stopOpacity={0.4 * bloomProgress} />
-            <stop offset="30%" stopColor="#3BB782" stopOpacity={0.2 * bloomProgress} />
-            <stop offset="60%" stopColor="#3BB782" stopOpacity={0.05 * bloomProgress} />
+          <radialGradient id="pathBloomGradient" cx="5%" cy="100%" r="120%">
+            <stop offset="0%" stopColor="#3BB782" stopOpacity={0.5 * bloomProgress} />
+            <stop offset="25%" stopColor="#3BB782" stopOpacity={0.25 * bloomProgress} />
+            <stop offset="50%" stopColor="#3BB782" stopOpacity={0.08 * bloomProgress} />
             <stop offset="100%" stopColor="#3BB782" stopOpacity="0" />
           </radialGradient>
-          <radialGradient id="pathBloomGradient2" cx="0%" cy="100%" r="80%">
+          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="#3BB782" stopOpacity={0.6 * bloomProgress} />
-            <stop offset="50%" stopColor="#3BB782" stopOpacity={0.15 * bloomProgress} />
             <stop offset="100%" stopColor="#3BB782" stopOpacity="0" />
-          </radialGradient>
+          </linearGradient>
         </defs>
 
-        {/* Main bloom shape - organic, expanding feel */}
+        {/* Main bloom shape - spreads under contact form */}
         <ellipse
-          cx={20 + bloomProgress * 80}
-          cy="280"
-          rx={30 + bloomProgress * 300}
-          ry={20 + bloomProgress * 150}
+          cx={50 + bloomProgress * 100}
+          cy="200"
+          rx={80 + bloomProgress * 500}
+          ry={40 + bloomProgress * 120}
           fill="url(#pathBloomGradient)"
         />
 
-        {/* Inner glow - more concentrated */}
-        <ellipse
-          cx={20 + bloomProgress * 40}
-          cy="290"
-          rx={15 + bloomProgress * 120}
-          ry={10 + bloomProgress * 60}
-          fill="url(#pathBloomGradient2)"
+        {/* Horizontal path lines spreading across beneath form */}
+        <motion.path
+          d={`M 30 180
+              Q ${100 + bloomProgress * 150} ${170 - bloomProgress * 20}, ${250 + bloomProgress * 200} ${175 - bloomProgress * 10}
+              Q ${400 + bloomProgress * 150} ${180}, ${600 + bloomProgress * 100} ${185}`}
+          stroke="url(#lineGradient)"
+          strokeWidth={3 + bloomProgress * 4}
+          fill="none"
+          strokeDasharray="15 10"
         />
 
-        {/* Path tendrils extending into CTA area */}
         <motion.path
-          d={`M 20 300
-              Q ${40 + bloomProgress * 60} ${280 - bloomProgress * 40}, ${80 + bloomProgress * 120} ${260 - bloomProgress * 30}
-              Q ${120 + bloomProgress * 80} ${250 - bloomProgress * 20}, ${160 + bloomProgress * 100} ${260 - bloomProgress * 10}`}
-          stroke="#3BB782"
+          d={`M 40 195
+              Q ${150 + bloomProgress * 100} ${190}, ${350 + bloomProgress * 200} ${188}
+              Q ${500 + bloomProgress * 100} ${192}, ${700 + bloomProgress * 50} ${195}`}
+          stroke="url(#lineGradient)"
           strokeWidth={2 + bloomProgress * 3}
           fill="none"
-          opacity={0.3 * bloomProgress}
+          strokeDasharray="10 15"
+          opacity={0.7}
+        />
+
+        {/* Third line - subtle */}
+        <motion.path
+          d={`M 50 165
+              Q ${120 + bloomProgress * 100} ${158 - bloomProgress * 10}, ${280 + bloomProgress * 150} ${162}
+              Q ${420 + bloomProgress * 100} ${155}, ${550 + bloomProgress * 80} ${160}`}
+          stroke="url(#lineGradient)"
+          strokeWidth={2 + bloomProgress * 2}
+          fill="none"
           strokeDasharray="8 12"
+          opacity={0.5}
         />
       </svg>
     </motion.div>
   );
 }
 
-// CTA Emergence - larger character in background
+// CTA Emergence - larger character in background near contact form
 function CTAEmergence({
   progress,
   variant,
@@ -129,9 +141,9 @@ function CTAEmergence({
   progress: number;
   variant: CharacterVariant;
 }) {
-  // Start showing at 65% scroll (CTA section), not 82%
-  const shouldShow = progress > 0.60;
-  const emergenceProgress = Math.max(0, (progress - 0.60) / 0.15);
+  // Start showing at 75% scroll (contact form area)
+  const shouldShow = progress > 0.72;
+  const emergenceProgress = Math.max(0, (progress - 0.72) / 0.18);
 
   if (!shouldShow) return null;
 
@@ -143,7 +155,7 @@ function CTAEmergence({
         scale: 0.6 + emergenceProgress * 0.4,
         y: 50 - emergenceProgress * 50,
       }}
-      className="fixed bottom-[10%] left-[5%] z-[42] pointer-events-none"
+      className="fixed bottom-[5%] left-[5%] z-[42] pointer-events-none"
     >
       {/* Much larger character */}
       <div className="w-64 h-96">
@@ -225,8 +237,8 @@ function JourneyBackgroundInner({
     return () => unsubscribe();
   }, [smoothProgress]);
 
-  // Character Y position (8% to 65% - ends at CTA, not footer)
-  const charYValue = useTransform(smoothProgress, [0, 0.65], [8, 65]);
+  // Character Y position (8% to 85% - ends at contact form)
+  const charYValue = useTransform(smoothProgress, [0, 0.85], [8, 85]);
   const [charY, setCharY] = useState("8%");
 
   useEffect(() => {
@@ -236,8 +248,8 @@ function JourneyBackgroundInner({
     return () => unsubscribe();
   }, [charYValue]);
 
-  // Hide small character when large one appears
-  const showSmallCharacter = currentProgress < 0.62;
+  // Hide small character when large one appears (at contact form)
+  const showSmallCharacter = currentProgress < 0.74;
 
   if (prefersReducedMotion || isMobile) {
     return <StaticJourneyIllustration variant={character} />;
