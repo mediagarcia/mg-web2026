@@ -43,8 +43,8 @@ type MenuCategory = {
   items: MenuItem[];
 };
 
-const hubspotServices: MenuItem[] = [
-  { label: "HubSpot Onboarding", href: "/services/hubspot-onboarding", description: "Get your team up and running fast", icon: Rocket },
+const crmServices: MenuItem[] = [
+  { label: "CRM Onboarding", href: "/services/hubspot-onboarding", description: "Get your team up and running fast", icon: Rocket },
   { label: "Sales Enablement", href: "/services/sales-enablement", description: "Empower your sales team to close more", icon: TrendingUp },
   { label: "Marketing Automation", href: "/services/marketing-automation", description: "Automate campaigns that convert", icon: Zap },
   { label: "CRM Migration", href: "/services/crm-migration", description: "Zero-downtime data transfer & setup", icon: Database },
@@ -66,7 +66,7 @@ const industries: MenuItem[] = [
 
 const resources: MenuItem[] = [
   { label: "Resource Center", href: "/resources", description: "Guides, tools, and insights", icon: Library },
-  { label: "HubSpot Assessment", href: "/resources/assessment", description: "Evaluate your HubSpot setup", icon: ClipboardCheck },
+  { label: "CRM Assessment", href: "/resources/assessment", description: "Evaluate your CRM setup", icon: ClipboardCheck },
   { label: "Guides & Best Practices", href: "/resources/guides", description: "Expert tips and strategies", icon: BookOpen },
   { label: "ROI Calculator", href: "/resources/roi-calculator", description: "Calculate your potential ROI", icon: Calculator },
   { label: "TCO Calculator", href: "/resources/tco-calculator", description: "Total cost of ownership analysis", icon: DollarSign },
@@ -114,13 +114,13 @@ function MegaMenu({
 function ServicesMegaMenu({ onClose }: { onClose: () => void }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {/* HubSpot Services */}
+      {/* CRM & RevOps */}
       <div>
         <h3 className="text-xs font-bold uppercase tracking-wider text-teal-600 mb-4">
-          HubSpot Services
+          CRM & RevOps
         </h3>
         <div className="space-y-1">
-          {hubspotServices.map((item) => (
+          {crmServices.map((item) => (
             <MenuLink key={item.href} item={item} onClose={onClose} />
           ))}
         </div>
@@ -427,7 +427,7 @@ export function Navigation() {
                     title="Services"
                     onClose={() => setIsMobileMenuOpen(false)}
                   >
-                    <MobileMenuCategory title="HubSpot Services" items={hubspotServices} onClose={() => setIsMobileMenuOpen(false)} />
+                    <MobileMenuCategory title="CRM & RevOps" items={crmServices} onClose={() => setIsMobileMenuOpen(false)} />
                     <MobileMenuCategory title="Additional Services" items={additionalServices} onClose={() => setIsMobileMenuOpen(false)} />
                   </MobileMenuSection>
 
