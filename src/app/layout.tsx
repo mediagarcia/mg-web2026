@@ -20,15 +20,15 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Media Garcia | HubSpot Solutions Partner",
-  description: "We build and run digital platforms that keep companies lean, growing, and easy to do business with. Elite HubSpot implementation, automation, and growth solutions.",
-  keywords: ["HubSpot", "HubSpot Partner", "Marketing Automation", "CRM", "Sales Enablement", "Digital Transformation", "HubSpot Agency", "HubSpot Implementation"],
+  title: "Media Garcia | RevOps & CRM Experts",
+  description: "We build and run digital platforms that keep companies lean, growing, and easy to do business with. Platform-agnostic RevOps expertise across HubSpot, Salesforce, and custom stacks.",
+  keywords: ["RevOps", "Revenue Operations", "CRM Implementation", "HubSpot", "HubSpot Partner", "Salesforce Integration", "Marketing Automation", "CRM", "Sales Enablement", "Digital Transformation", "Platform-Agnostic"],
   icons: {
     icon: "/favicon.svg",
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Media Garcia | HubSpot Solutions Partner",
+    title: "Media Garcia | RevOps & CRM Experts",
     description: "We build and run digital platforms that keep companies lean, growing, and easy to do business with.",
     type: "website",
     url: "https://mediagarcia.com",
@@ -39,13 +39,13 @@ export const metadata: Metadata = {
         url: "https://mediagarcia.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Media Garcia - Platinum HubSpot Solutions Partner",
+        alt: "Media Garcia - RevOps & CRM Experts",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Media Garcia | HubSpot Solutions Partner",
+    title: "Media Garcia | RevOps & CRM Experts",
     description: "We build and run digital platforms that keep companies lean, growing, and easy to do business with.",
     images: ["https://mediagarcia.com/og-image.jpg"],
   },
