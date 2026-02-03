@@ -40,7 +40,7 @@ export function CTABanner() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-white text-teal-600 px-8 py-4 rounded-full text-lg font-bold hover:bg-black hover:text-white transition-all duration-300 group"
               >
-                Get Your Free Audit
+                Book a Strategy Call
                 <svg
                   className="w-5 h-5 transition-transform group-hover:translate-x-1"
                   fill="none"
@@ -50,7 +50,7 @@ export function CTABanner() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
-              <span className="text-white/60 text-sm mt-2">Takes 24 hours. You&apos;ll get a detailed report.</span>
+              <span className="text-white/60 text-sm mt-2">30 minutes with a senior strategist. No commitment.</span>
             </div>
             <Link
               href="tel:+18886124250"

@@ -21,7 +21,7 @@ const serviceCategories = [
       },
       {
         title: "CRM Migration",
-        description: "Seamless data migration from your current CRM with zero data loss and minimal disruption.",
+        description: "Data migration from your current CRM with zero data loss and minimal disruption.",
         href: "/services/crm-migration",
         bestFor: "Switching platforms",
       },
@@ -117,7 +117,7 @@ export default function ServicesPage() {
     <>
       <PageHeader
         badge="Services"
-        title="Find the right service for your business"
+        title="Revenue services for complex sales cycles"
         description="Revenue operations, CRM implementation, and growth services built for healthcare, IT services, and B2B SaaS companies. We work on HubSpot, Salesforce, and any platform."
         breadcrumbs={[
           { label: "Services", href: "/services" },

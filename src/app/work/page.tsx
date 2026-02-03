@@ -10,7 +10,7 @@ import { caseStudies } from "@/data/case-studies";
 const stats = [
   { value: "200+", label: "CRM Implementations" },
   { value: "98%", label: "Client Retention" },
-  { value: "$4M+", label: "Revenue Attributed" },
+  { value: "$4M+", label: "Client Revenue Attributed" },
   { value: "50+", label: "5-Star Reviews" },
 ];
 
@@ -19,7 +19,7 @@ export default function WorkPage() {
     <>
       <PageHeader
         badge="Our Work"
-        title="Results that speak for themselves"
+        title="Real numbers from real clients"
         description="Real outcomes from real clients. See how we've helped businesses transform their operations with strategic CRM implementation and automation."
         breadcrumbs={[{ label: "Work", href: "/work" }]}
       />

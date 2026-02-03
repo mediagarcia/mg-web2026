@@ -12,7 +12,7 @@ export default function ContactPage() {
       <PageHeader
         badge="Contact"
         title="Let's talk about your growth"
-        description="Ready to streamline your operations and accelerate revenue? Tell us about your goals and we'll show you how we can help."
+        description="Tell us about your goals and we'll show you what's possible."
         breadcrumbs={[
           { label: "Contact", href: "/contact" },
         ]}
