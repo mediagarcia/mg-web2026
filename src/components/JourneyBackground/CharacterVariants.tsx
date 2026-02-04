@@ -128,7 +128,7 @@ export function CharacterPicker({ selected, onSelect }: CharacterPickerProps) {
   return (
     <div className="flex flex-col items-center gap-2 p-3 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg">
       <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500">
-        Pick Your Guide
+        Pick Your Hero
       </span>
       <div className="flex gap-2">
         {variants.map((v) => (

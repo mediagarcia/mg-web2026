@@ -36,11 +36,12 @@ export function Contact() {
               Get Started
             </motion.span>
             <motion.h2
+              id="journey-cta-heading"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6"
+              className="journey-destination text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6"
             >
               Ready to transform how you grow?
             </motion.h2>

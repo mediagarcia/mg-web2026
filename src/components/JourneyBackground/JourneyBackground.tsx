@@ -1,9 +1,10 @@
 "use client";
 
 import { useScroll, useTransform, useSpring, motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState, useEffect, createContext, useContext, useCallback, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { IsometricScene } from "./IsometricScene";
-import { CharacterVariant, CharacterSVG, CharacterPicker, CharacterLarge } from "./CharacterVariants";
+import { CharacterVariant, CharacterSVG, CharacterPicker } from "./CharacterVariants";
 import { useReducedMotion } from "./hooks/useReducedMotion";
 import { useMediaQuery } from "./hooks/useMediaQuery";
 
@@ -18,7 +19,66 @@ const CharacterContext = createContext<{
 
 export const useCharacter = () => useContext(CharacterContext);
 
-// Animated character in the journey strip
+// Hook to track CTA heading position with RAF throttling
+interface CTAPosition {
+  top: number;
+  left: number;
+  right: number;
+  bottom: number;
+  centerX: number;
+  centerY: number;
+}
+
+function useCTAHeadingPosition(): CTAPosition | null {
+  const [position, setPosition] = useState<CTAPosition | null>(null);
+  const rafRef = useRef<number | null>(null);
+
+  const updatePosition = useCallback(() => {
+    const element = document.getElementById("journey-cta-heading");
+    if (!element) {
+      setPosition(null);
+      return;
+    }
+
+    const rect = element.getBoundingClientRect();
+    setPosition({
+      top: rect.top,
+      left: rect.left,
+      right: rect.right,
+      bottom: rect.bottom,
+      centerX: rect.left + rect.width / 2,
+      centerY: rect.top + rect.height / 2,
+    });
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (rafRef.current) return; // Already scheduled
+      rafRef.current = requestAnimationFrame(() => {
+        updatePosition();
+        rafRef.current = null;
+      });
+    };
+
+    // Initial position
+    updatePosition();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", updatePosition);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", updatePosition);
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, [updatePosition]);
+
+  return position;
+}
+
+// Animated character in the journey strip with arrival speech bubble
 function JourneyCharacter({
   y,
   progress,
@@ -33,6 +93,9 @@ function JourneyCharacter({
   // Bounce effect
   const bounceOffset = Math.sin(progress * Math.PI * 20) * 2;
 
+  // Show speech bubble when near the end
+  const showSpeechBubble = progress > 0.92;
+
   return (
     <motion.div
       style={{ top: y }}
@@ -45,139 +108,80 @@ function JourneyCharacter({
       className="absolute left-1/2 -translate-x-1/2 w-12 h-16 z-20 drop-shadow-lg"
     >
       <CharacterSVG variant={variant} className="w-full h-full" />
-    </motion.div>
-  );
-}
 
-// Path bloom effect - lines spread beneath the contact form (above footer)
-function PathBloom({ progress }: { progress: number }) {
-  // Start showing at 78% scroll (contact form area), fully visible by 92%
-  const bloomProgress = Math.max(0, Math.min(1, (progress - 0.76) / 0.16));
-
-  if (bloomProgress <= 0) return null;
-
-  return (
-    <motion.div
-      className="fixed left-0 z-[44] pointer-events-none"
-      style={{
-        bottom: "15%", // Stay above the footer
-        width: "100%",
-        height: "20%",
-      }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: bloomProgress * 0.6 }}
-    >
-      <svg
-        className="w-full h-full"
-        viewBox="0 0 800 200"
-        preserveAspectRatio="xMinYMax slice"
-      >
-        {/* Expanding path glow - radiates from bottom left */}
-        <defs>
-          <radialGradient id="pathBloomGradient" cx="5%" cy="100%" r="120%">
-            <stop offset="0%" stopColor="#3BB782" stopOpacity={0.5 * bloomProgress} />
-            <stop offset="25%" stopColor="#3BB782" stopOpacity={0.25 * bloomProgress} />
-            <stop offset="50%" stopColor="#3BB782" stopOpacity={0.08 * bloomProgress} />
-            <stop offset="100%" stopColor="#3BB782" stopOpacity="0" />
-          </radialGradient>
-          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#3BB782" stopOpacity={0.6 * bloomProgress} />
-            <stop offset="100%" stopColor="#3BB782" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-
-        {/* Main bloom shape - spreads under contact form */}
-        <ellipse
-          cx={50 + bloomProgress * 100}
-          cy="200"
-          rx={80 + bloomProgress * 500}
-          ry={40 + bloomProgress * 120}
-          fill="url(#pathBloomGradient)"
-        />
-
-        {/* Horizontal path lines spreading across beneath form */}
-        <motion.path
-          d={`M 30 180
-              Q ${100 + bloomProgress * 150} ${170 - bloomProgress * 20}, ${250 + bloomProgress * 200} ${175 - bloomProgress * 10}
-              Q ${400 + bloomProgress * 150} ${180}, ${600 + bloomProgress * 100} ${185}`}
-          stroke="url(#lineGradient)"
-          strokeWidth={3 + bloomProgress * 4}
-          fill="none"
-          strokeDasharray="15 10"
-        />
-
-        <motion.path
-          d={`M 40 195
-              Q ${150 + bloomProgress * 100} ${190}, ${350 + bloomProgress * 200} ${188}
-              Q ${500 + bloomProgress * 100} ${192}, ${700 + bloomProgress * 50} ${195}`}
-          stroke="url(#lineGradient)"
-          strokeWidth={2 + bloomProgress * 3}
-          fill="none"
-          strokeDasharray="10 15"
-          opacity={0.7}
-        />
-
-        {/* Third line - subtle */}
-        <motion.path
-          d={`M 50 165
-              Q ${120 + bloomProgress * 100} ${158 - bloomProgress * 10}, ${280 + bloomProgress * 150} ${162}
-              Q ${420 + bloomProgress * 100} ${155}, ${550 + bloomProgress * 80} ${160}`}
-          stroke="url(#lineGradient)"
-          strokeWidth={2 + bloomProgress * 2}
-          fill="none"
-          strokeDasharray="8 12"
-          opacity={0.5}
-        />
-      </svg>
-    </motion.div>
-  );
-}
-
-// CTA Emergence - character in background near contact form (above footer)
-function CTAEmergence({
-  progress,
-  variant,
-}: {
-  progress: number;
-  variant: CharacterVariant;
-}) {
-  // Start showing at 78% scroll - AFTER small character fades out
-  const shouldShow = progress > 0.78;
-  const emergenceProgress = Math.max(0, (progress - 0.78) / 0.15);
-
-  if (!shouldShow) return null;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.5, y: 60 }}
-      animate={{
-        opacity: Math.min(emergenceProgress * 0.8, 0.8), // Keep it somewhat transparent as background
-        scale: 0.7 + emergenceProgress * 0.3,
-        y: 30 - emergenceProgress * 30,
-      }}
-      className="fixed bottom-[18%] left-[3%] z-[42] pointer-events-none"
-    >
-      {/* Moderately sized character - stays above footer */}
-      <div className="w-40 h-60">
-        <CharacterLarge variant={variant} size="xlarge" />
-      </div>
-
-      {/* Speech bubble with CTA hint - appears later */}
+      {/* Arrival speech bubble */}
       <AnimatePresence>
-        {emergenceProgress > 0.6 && (
+        {showSpeechBubble && visible && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            initial={{ opacity: 0, scale: 0.8, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            className="absolute top-8 left-[70%] bg-white rounded-2xl px-5 py-3 shadow-2xl border-2 border-teal-500"
+            className="absolute -top-14 left-1/2 -translate-x-1/2 whitespace-nowrap"
           >
-            <div className="text-base font-bold text-gray-800">Ready to start?</div>
-            <div className="text-sm text-gray-500">Your journey awaits!</div>
-            {/* Pointer */}
-            <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[12px] border-r-white" />
+            <div className="bg-white rounded-xl px-3 py-2 shadow-lg border-2 border-teal-500">
+              <div className="text-xs font-bold text-gray-800">You made it! Let&apos;s connect.</div>
+            </div>
+            {/* Pointer triangle */}
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-white" />
+            <div className="absolute -bottom-[6px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-teal-500" style={{ marginTop: '-8px' }} />
           </motion.div>
         )}
       </AnimatePresence>
+    </motion.div>
+  );
+}
+
+// Arrival glow behind CTA heading
+function CTAArrivalGlow({
+  progress,
+  ctaPosition,
+}: {
+  progress: number;
+  ctaPosition: CTAPosition | null;
+}) {
+  // Appear at 88%+ scroll
+  const glowProgress = Math.max(0, Math.min(1, (progress - 0.88) / 0.1));
+
+  if (glowProgress <= 0 || !ctaPosition) return null;
+
+  const width = ctaPosition.right - ctaPosition.left + 100;
+  const height = ctaPosition.bottom - ctaPosition.top + 60;
+
+  return (
+    <motion.div
+      className="fixed z-[41] pointer-events-none"
+      style={{
+        left: ctaPosition.left - 50,
+        top: ctaPosition.top - 30,
+        width,
+        height,
+      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: glowProgress * 0.6 }}
+    >
+      <svg className="w-full h-full" style={{ overflow: "visible" }}>
+        <defs>
+          <radialGradient id="arrivalGlow" cx="50%" cy="50%" r="60%">
+            <stop offset="0%" stopColor="#3BB782" stopOpacity="0.4">
+              <animate
+                attributeName="stopOpacity"
+                values="0.3;0.5;0.3"
+                dur="2s"
+                repeatCount="indefinite"
+              />
+            </stop>
+            <stop offset="60%" stopColor="#3BB782" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="#3BB782" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+        <ellipse
+          cx="50%"
+          cy="50%"
+          rx="50%"
+          ry="50%"
+          fill="url(#arrivalGlow)"
+        />
+      </svg>
     </motion.div>
   );
 }
@@ -220,12 +224,15 @@ function JourneyBackgroundInner({
   const [showPicker, setShowPicker] = useState(true);
   const [currentProgress, setCurrentProgress] = useState(0);
 
+  // Track CTA heading position for glow effect
+  const ctaPosition = useCTAHeadingPosition();
+
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 60,
     damping: 25,
   });
 
-  // Track progress for CTA emergence
+  // Track progress
   useEffect(() => {
     const unsubscribe = smoothProgress.on("change", (v) => {
       setCurrentProgress(v);
@@ -237,8 +244,8 @@ function JourneyBackgroundInner({
     return () => unsubscribe();
   }, [smoothProgress]);
 
-  // Character Y position (8% to 78% - ends before contact CTA)
-  const charYValue = useTransform(smoothProgress, [0, 0.72], [8, 78]);
+  // Character Y position (8% to 92% - full journey to the bottom)
+  const charYValue = useTransform(smoothProgress, [0, 0.95], [8, 92]);
   const [charY, setCharY] = useState("8%");
 
   useEffect(() => {
@@ -248,16 +255,13 @@ function JourneyBackgroundInner({
     return () => unsubscribe();
   }, [charYValue]);
 
-  // Hide small character well BEFORE large one appears (clean gap, no overlap)
-  const showSmallCharacter = currentProgress < 0.72;
-
   if (prefersReducedMotion || isMobile) {
     return <StaticJourneyIllustration variant={character} />;
   }
 
   return (
     <>
-      {/* Journey strip - transparent, no background */}
+      {/* Journey strip - full height */}
       <div className="fixed left-0 top-0 bottom-0 w-28 lg:w-36 z-[45] overflow-visible pointer-events-none">
         {/* Scene elements */}
         <div className="relative w-full h-full">
@@ -266,7 +270,7 @@ function JourneyBackgroundInner({
             y={charY}
             progress={currentProgress}
             variant={character}
-            visible={showSmallCharacter}
+            visible={true}
           />
         </div>
       </div>
@@ -285,11 +289,8 @@ function JourneyBackgroundInner({
         )}
       </AnimatePresence>
 
-      {/* Path bloom effect - expands into CTA area */}
-      <PathBloom progress={currentProgress} />
-
-      {/* CTA Emergence - large character in background */}
-      <CTAEmergence progress={currentProgress} variant={character} />
+      {/* Arrival glow behind CTA heading */}
+      <CTAArrivalGlow progress={currentProgress} ctaPosition={ctaPosition} />
     </>
   );
 }
@@ -299,12 +300,14 @@ export function JourneyBackground() {
   const [character, setCharacter] = useState<CharacterVariant>("professional");
   const prefersReducedMotion = useReducedMotion();
   const isMobile = useMediaQuery("(max-width: 1023px)");
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
+  // Only show journey on home page
+  if (!mounted || pathname !== "/") {
     return null;
   }
 
