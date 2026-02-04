@@ -33,6 +33,16 @@ const rotatingColors = [
   "text-orange-red-500",
 ];
 
+// Scale animation - gentle scale + fade with subtle bounce
+const scaleAnimation = {
+  variants: {
+    initial: { scale: 0.8, opacity: 0 },
+    animate: { scale: 1, opacity: 1 },
+    exit: { scale: 1.1, opacity: 0 },
+  },
+  transition: { duration: 0.4, ease: [0.34, 1.56, 0.64, 1] },
+};
+
 export function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
@@ -103,23 +113,27 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-[clamp(2.5rem,7vw,4.5rem)] font-black leading-[1.1] tracking-tight text-black mb-8"
           >
-            We build systems that keep you
+            We build systems that
             <br />
-            <span className="inline-block relative h-[1.2em] min-w-[15ch] overflow-hidden align-bottom">
-              <AnimatePresence mode="wait">
-                {mounted && (
-                  <motion.span
-                    key={wordIndex}
-                    initial={{ y: 40, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -40, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className={`absolute left-0 whitespace-nowrap ${rotatingColors[wordIndex % rotatingColors.length]}`}
-                  >
-                    {rotatingWords[wordIndex]}
-                  </motion.span>
-                )}
-              </AnimatePresence>
+            <span className="inline-flex items-baseline whitespace-nowrap">
+              <span>keep you&nbsp;</span>
+              <span className="relative inline-flex min-w-[4.5ch]">
+                <AnimatePresence mode="wait">
+                  {mounted && (
+                    <motion.span
+                      key={wordIndex}
+                      variants={scaleAnimation.variants}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                      transition={scaleAnimation.transition}
+                      className={`whitespace-nowrap ${rotatingColors[wordIndex % rotatingColors.length]}`}
+                    >
+                      {rotatingWords[wordIndex]}
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </span>
             </span>
           </motion.h1>
 
