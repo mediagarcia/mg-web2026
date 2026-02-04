@@ -43,7 +43,7 @@ const packages = [
   },
   {
     name: "Enterprise",
-    price: "Custom",
+    price: "Starting at $15,000",
     period: "project-based",
     description: "Full-scale transformation for organizations with complex requirements.",
     features: [
