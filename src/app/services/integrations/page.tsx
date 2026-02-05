@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import { ServiceFAQ } from "@/components/service-page";
 import Link from "next/link";
+import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
 
 export const metadata: Metadata = {
   title: "Custom Integrations | Media Garcia",
@@ -187,8 +188,10 @@ export default function IntegrationsPage() {
       />
 
       {/* Pain Point Section */}
-      <section className="py-20 lg:py-32 bg-gray-50">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
+        <FadingGridPattern type="dots" color="gray" opacity={0.08} spacing={28} fadeDirection="both" />
+        <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-30" intensity="subtle" blur="xl" />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="max-w-3xl">
             <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
               Your tools don&apos;t talk to each other
@@ -319,8 +322,11 @@ export default function IntegrationsPage() {
       </section>
 
       {/* Mini Case Study */}
-      <section className="py-20 lg:py-32 bg-black text-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-black text-white relative overflow-hidden">
+        <MeshBackground />
+        <GradientOrb color="teal" size="xl" className="-top-32 -left-32 opacity-30" intensity="medium" blur="xl" />
+        <GradientOrb color="purple" size="lg" className="bottom-0 right-1/4 opacity-20" intensity="subtle" blur="xl" />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">

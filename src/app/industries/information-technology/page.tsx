@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
+import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
 
 export const metadata: Metadata = {
   title: "HubSpot for IT Companies | Media Garcia",
@@ -63,8 +64,9 @@ export default function ITIndustryPage() {
       />
 
       {/* Challenges */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-20" intensity="subtle" blur="xl" />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <h2 className="text-3xl lg:text-4xl font-black text-black mb-12">Challenges We Solve</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {challenges.map((challenge) => (
@@ -78,8 +80,10 @@ export default function ITIndustryPage() {
       </section>
 
       {/* Solutions */}
-      <section className="py-20 lg:py-32 bg-gray-50">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
+        <FadingGridPattern type="dots" color="gray" opacity={0.08} spacing={28} fadeDirection="both" />
+        <GradientOrb color="purple" size="lg" className="bottom-0 -left-32 opacity-20" intensity="subtle" blur="xl" />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <h2 className="text-3xl lg:text-4xl font-black text-black mb-12">Our IT Industry Solutions</h2>
           <div className="grid lg:grid-cols-2 gap-8">
             {solutions.map((solution) => (

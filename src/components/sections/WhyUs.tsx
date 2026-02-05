@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { GradientOrb } from "@/components/ui/visuals";
 
 const differentiators = [
   {
@@ -27,8 +28,24 @@ const differentiators = [
 
 export function WhyUs() {
   return (
-    <section className="py-[var(--spacing-section)] bg-gray-50">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <section className="py-[var(--spacing-section)] bg-gray-50 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <GradientOrb
+        color="teal"
+        size="lg"
+        className="-bottom-32 -left-32 opacity-50"
+        intensity="subtle"
+        blur="xl"
+      />
+      <GradientOrb
+        color="purple"
+        size="md"
+        className="top-1/4 -right-32 opacity-30"
+        intensity="subtle"
+        blur="xl"
+      />
+
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left - Header */}
           <div>

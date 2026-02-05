@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
 
 interface Breadcrumb {
   label: string;
@@ -18,6 +19,31 @@ interface PageHeaderProps {
 export function PageHeader({ badge, title, description, breadcrumbs }: PageHeaderProps) {
   return (
     <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gray-50 relative overflow-hidden">
+      {/* Grid pattern background */}
+      <FadingGridPattern
+        type="dots"
+        color="gray"
+        opacity={0.1}
+        spacing={32}
+        fadeDirection="both"
+      />
+
+      {/* Decorative gradient orbs */}
+      <GradientOrb
+        color="teal"
+        size="xl"
+        className="-top-32 -right-32 opacity-40"
+        intensity="subtle"
+        blur="xl"
+      />
+      <GradientOrb
+        color="purple"
+        size="lg"
+        className="bottom-0 left-1/4 opacity-20"
+        intensity="subtle"
+        blur="xl"
+      />
+
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-teal-500/5 to-transparent" />
 

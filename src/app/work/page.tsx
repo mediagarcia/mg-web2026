@@ -6,6 +6,7 @@ import Image from "next/image";
 import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import { caseStudies } from "@/data/case-studies";
+import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
 
 const stats = [
   { value: "200+", label: "CRM Implementations" },
@@ -25,8 +26,10 @@ export default function WorkPage() {
       />
 
       {/* Case Studies Grid */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-20" intensity="subtle" blur="xl" />
+        <GradientOrb color="purple" size="lg" className="bottom-1/4 -left-32 opacity-15" intensity="subtle" blur="xl" />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
             {caseStudies.map((study, index) => (
               <motion.article

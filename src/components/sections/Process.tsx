@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FadingGridPattern, GradientOrb } from "@/components/ui/visuals";
 
 const steps = [
   {
@@ -49,8 +50,26 @@ const steps = [
 export function Process() {
   return (
     <section className="py-[var(--spacing-section)] bg-white relative overflow-hidden">
+      {/* Background pattern */}
+      <FadingGridPattern
+        type="dots"
+        color="gray"
+        opacity={0.15}
+        spacing={32}
+        fadeDirection="both"
+      />
+
+      {/* Decorative orb */}
+      <GradientOrb
+        color="teal"
+        size="xl"
+        className="top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30"
+        intensity="subtle"
+        blur="xl"
+      />
+
       {/* Connecting line */}
-      <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-black/10 to-transparent" />
+      <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-black/10 to-transparent z-10" />
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Section Header */}
