@@ -1,7 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { GradientOrb } from "@/components/ui/visuals";
+
+interface WhyUsProps {
+  backgroundImage?: string | null;
+}
 
 const differentiators = [
   {
@@ -26,9 +31,21 @@ const differentiators = [
   },
 ];
 
-export function WhyUs() {
+export function WhyUs({ backgroundImage }: WhyUsProps = {}) {
   return (
     <section className="py-[var(--spacing-section)] bg-gray-50 relative overflow-hidden">
+      {/* Optional Background Image */}
+      {backgroundImage && (
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            className="object-cover opacity-[0.06]"
+          />
+        </div>
+      )}
+
       {/* Decorative background elements */}
       <GradientOrb
         color="teal"

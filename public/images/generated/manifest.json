@@ -1,27 +1,468 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-05T07:02:53.580Z",
+  "lastUpdated": "2026-02-05T22:35:16.494Z",
   "slots": {
     "hero": {
       "slot": "hero",
-      "prompt": "Sleek modern workspace with purple ambient lighting",
+      "prompt": "Abstract flowing data visualization. Interconnected nodes and gentle flowing lines suggesting digital transformation. Soft teal (#3BB782) and neon purple (#EE82F0) gradient accents on clean white/light gray background. Minimal, premium aesthetic. No text, no people. Subtle depth and dimensionality.",
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "16:9",
       "createdAt": "2026-02-05T07:01:32.682Z",
-      "updatedAt": "2026-02-05T07:02:50.617Z",
+      "updatedAt": "2026-02-05T19:02:51.131Z",
       "files": [
         {
-          "filename": "hero-001.png",
-          "path": "/images/generated/hero/hero-001.png",
-          "generatedAt": "2026-02-05T07:02:19.090Z"
+          "filename": "hero-003.png",
+          "path": "/images/generated/hero/hero-003.png",
+          "generatedAt": "2026-02-05T09:42:19.269Z"
         },
         {
-          "filename": "hero-002.png",
-          "path": "/images/generated/hero/hero-002.png",
-          "generatedAt": "2026-02-05T07:02:53.579Z"
+          "filename": "hero-004.png",
+          "path": "/images/generated/hero/hero-004.png",
+          "generatedAt": "2026-02-05T09:42:22.522Z"
+        },
+        {
+          "filename": "hero-005.png",
+          "path": "/images/generated/hero/hero-005.png",
+          "generatedAt": "2026-02-05T09:42:25.963Z"
+        }
+      ],
+      "selected": "hero-004.png"
+    },
+    "industries-healthcare": {
+      "slot": "industries-healthcare",
+      "prompt": "Professional healthcare technology environment. Modern hospital or clinic with sleek digital displays, medical professionals collaborating around tablets or workstations. Warm, trustworthy lighting. Premium medical-tech aesthetic. Clean, bright, organized. Brand accent colors: teal (#3BB782) elements visible in decor or screens. People with soft focus or turned away from camera for natural anonymity.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-05T09:42:39.918Z",
+      "updatedAt": "2026-02-05T19:02:55.687Z",
+      "files": [
+        {
+          "filename": "industries-healthcare-001.png",
+          "path": "/images/generated/industries-healthcare/industries-healthcare-001.png",
+          "generatedAt": "2026-02-05T09:42:46.043Z"
+        },
+        {
+          "filename": "industries-healthcare-002.png",
+          "path": "/images/generated/industries-healthcare/industries-healthcare-002.png",
+          "generatedAt": "2026-02-05T09:42:50.091Z"
+        },
+        {
+          "filename": "industries-healthcare-003.png",
+          "path": "/images/generated/industries-healthcare/industries-healthcare-003.png",
+          "generatedAt": "2026-02-05T09:42:53.244Z"
+        }
+      ],
+      "selected": "industries-healthcare-003.png"
+    },
+    "industries-it": {
+      "slot": "industries-it",
+      "prompt": "Modern IT operations center or tech workspace. Engineers collaborating around screens showing dashboards and code. Contemporary office aesthetic with dark accents. Blue-purple ambient lighting suggesting innovation. Premium tech company environment. Brand colors: neon purple (#EE82F0) and teal (#3BB782) visible in screens or lighting. People with soft focus or silhouetted for natural anonymity.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-05T09:47:12.642Z",
+      "updatedAt": "2026-02-05T09:48:00.136Z",
+      "files": [
+        {
+          "filename": "industries-it-001.png",
+          "path": "/images/generated/industries-it/industries-it-001.png",
+          "generatedAt": "2026-02-05T09:47:16.045Z"
+        },
+        {
+          "filename": "industries-it-002.png",
+          "path": "/images/generated/industries-it/industries-it-002.png",
+          "generatedAt": "2026-02-05T09:47:19.289Z"
+        },
+        {
+          "filename": "industries-it-003.png",
+          "path": "/images/generated/industries-it/industries-it-003.png",
+          "generatedAt": "2026-02-05T09:47:22.178Z"
+        }
+      ],
+      "selected": "industries-it-002.png"
+    },
+    "industries-saas": {
+      "slot": "industries-saas",
+      "prompt": "Dynamic startup office environment with growth-focused energy. Team members working on laptops, whiteboard with metrics visible, open collaborative space. Natural light, energetic atmosphere. Premium startup aesthetic with modern furniture. Brand colors: orange-red (#EC4724) and teal (#3BB782) accent elements. People with soft focus or candid angles for natural anonymity.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-05T09:47:45.607Z",
+      "updatedAt": "2026-02-05T09:47:45.607Z",
+      "files": [
+        {
+          "filename": "industries-saas-001.png",
+          "path": "/images/generated/industries-saas/industries-saas-001.png",
+          "generatedAt": "2026-02-05T09:47:48.928Z"
+        },
+        {
+          "filename": "industries-saas-002.png",
+          "path": "/images/generated/industries-saas/industries-saas-002.png",
+          "generatedAt": "2026-02-05T09:47:52.300Z"
+        },
+        {
+          "filename": "industries-saas-003.png",
+          "path": "/images/generated/industries-saas/industries-saas-003.png",
+          "generatedAt": "2026-02-05T09:47:55.501Z"
         }
       ],
       "selected": null
+    },
+    "case-studies-generic": {
+      "slot": "case-studies-generic",
+      "prompt": "Professional business meeting or strategy session. Conference room with large screen showing dashboard or analytics. Diverse professionals engaged in discussion. Premium corporate aesthetic with natural lighting. Brand accent: teal (#3BB782) visible in decor or presentation. Focus on collaboration and results. People with soft focus or over-shoulder perspective for natural anonymity.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-05T09:48:16.240Z",
+      "updatedAt": "2026-02-05T22:35:16.494Z",
+      "files": [
+        {
+          "filename": "case-studies-generic-001.png",
+          "path": "/images/generated/case-studies-generic/case-studies-generic-001.png",
+          "generatedAt": "2026-02-05T09:48:20.122Z"
+        },
+        {
+          "filename": "case-studies-generic-002.png",
+          "path": "/images/generated/case-studies-generic/case-studies-generic-002.png",
+          "generatedAt": "2026-02-05T09:48:23.446Z"
+        },
+        {
+          "filename": "case-studies-generic-003.png",
+          "path": "/images/generated/case-studies-generic/case-studies-generic-003.png",
+          "generatedAt": "2026-02-05T09:48:26.638Z"
+        }
+      ],
+      "selected": "case-studies-generic-001.png"
+    },
+    "why-us": {
+      "slot": "why-us",
+      "prompt": "Abstract partnership visualization. Two flowing forms merging harmoniously. Teal (#3BB782) and neon purple (#EE82F0) gradients blending smoothly. Suggests enterprise capability with boutique attention. Clean white background with organic flowing shapes per brand guidelines.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-05T09:48:47.765Z",
+      "updatedAt": "2026-02-05T09:51:17.912Z",
+      "files": [
+        {
+          "filename": "why-us-001.png",
+          "path": "/images/generated/why-us/why-us-001.png",
+          "generatedAt": "2026-02-05T09:48:50.746Z"
+        },
+        {
+          "filename": "why-us-002.png",
+          "path": "/images/generated/why-us/why-us-002.png",
+          "generatedAt": "2026-02-05T09:48:53.307Z"
+        },
+        {
+          "filename": "why-us-003.png",
+          "path": "/images/generated/why-us/why-us-003.png",
+          "generatedAt": "2026-02-05T09:48:56.223Z"
+        }
+      ],
+      "selected": "why-us-001.png"
+    },
+    "services-accent": {
+      "slot": "services-accent",
+      "prompt": "Abstract automation workflow. Flowing paths connecting geometric shapes suggesting intelligent process automation. Soft teal (#3BB782) glow effects on white background. Premium tech aesthetic with subtle grid pattern.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-05T09:49:16.335Z",
+      "updatedAt": "2026-02-05T22:34:40.367Z",
+      "files": [
+        {
+          "filename": "services-accent-001.png",
+          "path": "/images/generated/services-accent/services-accent-001.png",
+          "generatedAt": "2026-02-05T09:49:19.380Z"
+        },
+        {
+          "filename": "services-accent-002.png",
+          "path": "/images/generated/services-accent/services-accent-002.png",
+          "generatedAt": "2026-02-05T09:49:22.563Z"
+        }
+      ],
+      "selected": "services-accent-002.png"
+    },
+    "stats-background": {
+      "slot": "stats-background",
+      "prompt": "Subtle abstract pattern of ascending data points and growth indicators. Teal (#3BB782) accent dots on light gray. Extremely minimal texture that works as background under text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-05T09:49:43.468Z",
+      "updatedAt": "2026-02-05T22:34:53.067Z",
+      "files": [
+        {
+          "filename": "stats-background-001.png",
+          "path": "/images/generated/stats-background/stats-background-001.png",
+          "generatedAt": "2026-02-05T09:49:46.555Z"
+        },
+        {
+          "filename": "stats-background-002.png",
+          "path": "/images/generated/stats-background/stats-background-002.png",
+          "generatedAt": "2026-02-05T09:49:49.370Z"
+        }
+      ],
+      "selected": "stats-background-002.png"
+    },
+    "case-study-healthcare": {
+      "slot": "case-study-healthcare",
+      "prompt": "Healthcare data integration visualization. Medical dashboards on screens, patient data flowing between systems, clean modern clinic technology environment. Teal (#3BB782) accent colors. Professional, trustworthy, HIPAA-compliant feel. Soft focus on any people, over-shoulder perspective.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-05T09:55:25.222Z",
+      "updatedAt": "2026-02-05T09:55:25.222Z",
+      "files": [
+        {
+          "filename": "case-study-healthcare-001.png",
+          "path": "/images/generated/case-study-healthcare/case-study-healthcare-001.png",
+          "generatedAt": "2026-02-05T09:55:28.447Z"
+        },
+        {
+          "filename": "case-study-healthcare-002.png",
+          "path": "/images/generated/case-study-healthcare/case-study-healthcare-002.png",
+          "generatedAt": "2026-02-05T09:55:31.841Z"
+        },
+        {
+          "filename": "case-study-healthcare-003.png",
+          "path": "/images/generated/case-study-healthcare/case-study-healthcare-003.png",
+          "generatedAt": "2026-02-05T09:55:35.091Z"
+        }
+      ],
+      "selected": null
+    },
+    "case-study-saas": {
+      "slot": "case-study-saas",
+      "prompt": "SaaS dashboard showing lead generation metrics and conversion funnels. Modern analytics interface with growth charts, pipeline visualization, and marketing automation flows. Clean UI with teal (#3BB782) accent highlights on data points. Premium B2B software aesthetic. Abstract data visualization focus, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-05T09:56:53.896Z",
+      "updatedAt": "2026-02-05T09:56:53.896Z",
+      "files": [
+        {
+          "filename": "case-study-saas-001.png",
+          "path": "/images/generated/case-study-saas/case-study-saas-001.png",
+          "generatedAt": "2026-02-05T09:56:57.460Z"
+        },
+        {
+          "filename": "case-study-saas-002.png",
+          "path": "/images/generated/case-study-saas/case-study-saas-002.png",
+          "generatedAt": "2026-02-05T09:57:01.156Z"
+        },
+        {
+          "filename": "case-study-saas-003.png",
+          "path": "/images/generated/case-study-saas/case-study-saas-003.png",
+          "generatedAt": "2026-02-05T09:57:04.852Z"
+        }
+      ],
+      "selected": null
+    },
+    "case-study-crm": {
+      "slot": "case-study-crm",
+      "prompt": "CRM data migration visualization. Abstract representation of data flowing between systems, clean database architecture diagrams, integration connectors and APIs linking platforms. Teal (#3BB782) and neon purple (#EE82F0) gradient flows representing seamless data transfer. Premium enterprise tech aesthetic. No people, abstract data visualization.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-05T09:57:12.410Z",
+      "updatedAt": "2026-02-05T17:33:39.785Z",
+      "files": [
+        {
+          "filename": "case-study-crm-001.png",
+          "path": "/images/generated/case-study-crm/case-study-crm-001.png",
+          "generatedAt": "2026-02-05T09:57:15.585Z"
+        },
+        {
+          "filename": "case-study-crm-002.png",
+          "path": "/images/generated/case-study-crm/case-study-crm-002.png",
+          "generatedAt": "2026-02-05T09:57:18.984Z"
+        },
+        {
+          "filename": "case-study-crm-003.png",
+          "path": "/images/generated/case-study-crm/case-study-crm-003.png",
+          "generatedAt": "2026-02-05T09:57:21.626Z"
+        }
+      ],
+      "selected": "case-study-crm-003.png"
+    },
+    "case-study-healthcare-v3": {
+      "slot": "case-study-healthcare-v3",
+      "prompt": "Medical professional in profile view looking at digital display. Lab coat, modern clinic. Face at angle or turned away. High contrast lighting. Editorial photography style.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-05T17:28:16.391Z",
+      "updatedAt": "2026-02-05T17:37:14.784Z",
+      "files": [
+        {
+          "filename": "case-study-healthcare-v3-001.png",
+          "path": "/images/generated/case-study-healthcare-v3/case-study-healthcare-v3-001.png",
+          "generatedAt": "2026-02-05T17:28:19.611Z"
+        },
+        {
+          "filename": "case-study-healthcare-v3-002.png",
+          "path": "/images/generated/case-study-healthcare-v3/case-study-healthcare-v3-002.png",
+          "generatedAt": "2026-02-05T17:28:23.357Z"
+        },
+        {
+          "filename": "case-study-healthcare-v3-003.png",
+          "path": "/images/generated/case-study-healthcare-v3/case-study-healthcare-v3-003.png",
+          "generatedAt": "2026-02-05T17:28:27.320Z"
+        }
+      ],
+      "selected": "case-study-healthcare-v3-001.png"
+    },
+    "case-study-saas-v3": {
+      "slot": "case-study-saas-v3",
+      "prompt": "Marketing professional viewed from behind, looking at monitor with dashboard. Over-shoulder perspective. Modern office, natural light. Editorial photography style.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-05T17:28:30.931Z",
+      "updatedAt": "2026-02-05T17:37:17.515Z",
+      "files": [
+        {
+          "filename": "case-study-saas-v3-001.png",
+          "path": "/images/generated/case-study-saas-v3/case-study-saas-v3-001.png",
+          "generatedAt": "2026-02-05T17:28:33.924Z"
+        },
+        {
+          "filename": "case-study-saas-v3-002.png",
+          "path": "/images/generated/case-study-saas-v3/case-study-saas-v3-002.png",
+          "generatedAt": "2026-02-05T17:28:36.665Z"
+        },
+        {
+          "filename": "case-study-saas-v3-003.png",
+          "path": "/images/generated/case-study-saas-v3/case-study-saas-v3-003.png",
+          "generatedAt": "2026-02-05T17:28:41.086Z"
+        }
+      ],
+      "selected": "case-study-saas-v3-001.png"
+    },
+    "case-study-crm-v3": {
+      "slot": "case-study-crm-v3",
+      "prompt": "Business consultant in profile working on laptop at conference table. Professional attire. Person viewed from side. Editorial photography style.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-05T17:28:45.003Z",
+      "updatedAt": "2026-02-05T17:37:19.949Z",
+      "files": [
+        {
+          "filename": "case-study-crm-v3-001.png",
+          "path": "/images/generated/case-study-crm-v3/case-study-crm-v3-001.png",
+          "generatedAt": "2026-02-05T17:28:49.722Z"
+        },
+        {
+          "filename": "case-study-crm-v3-002.png",
+          "path": "/images/generated/case-study-crm-v3/case-study-crm-v3-002.png",
+          "generatedAt": "2026-02-05T17:28:54.339Z"
+        },
+        {
+          "filename": "case-study-crm-v3-003.png",
+          "path": "/images/generated/case-study-crm-v3/case-study-crm-v3-003.png",
+          "generatedAt": "2026-02-05T17:28:57.453Z"
+        }
+      ],
+      "selected": "case-study-crm-v3-002.png"
+    },
+    "industries-healthcare-v2": {
+      "slot": "industries-healthcare-v2",
+      "prompt": "Healthcare",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-05T18:31:55.923Z",
+      "updatedAt": "2026-02-05T19:03:45.828Z",
+      "files": [
+        {
+          "filename": "industries-healthcare-v2-001.png",
+          "path": "/images/generated/industries-healthcare-v2/industries-healthcare-v2-001.png",
+          "generatedAt": "2026-02-05T18:31:59.138Z"
+        },
+        {
+          "filename": "industries-healthcare-v2-002.png",
+          "path": "/images/generated/industries-healthcare-v2/industries-healthcare-v2-002.png",
+          "generatedAt": "2026-02-05T18:32:02.454Z"
+        },
+        {
+          "filename": "industries-healthcare-v2-003.png",
+          "path": "/images/generated/industries-healthcare-v2/industries-healthcare-v2-003.png",
+          "generatedAt": "2026-02-05T18:32:05.330Z"
+        },
+        {
+          "filename": "industries-healthcare-v2-004.png",
+          "path": "/images/generated/industries-healthcare-v2/industries-healthcare-v2-004.png",
+          "generatedAt": "2026-02-05T19:03:19.538Z"
+        },
+        {
+          "filename": "industries-healthcare-v2-005.png",
+          "path": "/images/generated/industries-healthcare-v2/industries-healthcare-v2-005.png",
+          "generatedAt": "2026-02-05T19:03:22.100Z"
+        },
+        {
+          "filename": "industries-healthcare-v2-006.png",
+          "path": "/images/generated/industries-healthcare-v2/industries-healthcare-v2-006.png",
+          "generatedAt": "2026-02-05T19:03:24.733Z"
+        }
+      ],
+      "selected": "industries-healthcare-v2-005.png"
+    },
+    "industries-it-v2": {
+      "slot": "industries-it-v2",
+      "prompt": "Software",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-05T18:32:10.214Z",
+      "updatedAt": "2026-02-05T19:04:30.978Z",
+      "files": [
+        {
+          "filename": "industries-it-v2-001.png",
+          "path": "/images/generated/industries-it-v2/industries-it-v2-001.png",
+          "generatedAt": "2026-02-05T18:32:13.324Z"
+        },
+        {
+          "filename": "industries-it-v2-002.png",
+          "path": "/images/generated/industries-it-v2/industries-it-v2-002.png",
+          "generatedAt": "2026-02-05T18:32:16.271Z"
+        },
+        {
+          "filename": "industries-it-v2-003.png",
+          "path": "/images/generated/industries-it-v2/industries-it-v2-003.png",
+          "generatedAt": "2026-02-05T18:32:19.548Z"
+        },
+        {
+          "filename": "industries-it-v2-004.png",
+          "path": "/images/generated/industries-it-v2/industries-it-v2-004.png",
+          "generatedAt": "2026-02-05T19:04:07.069Z"
+        },
+        {
+          "filename": "industries-it-v2-005.png",
+          "path": "/images/generated/industries-it-v2/industries-it-v2-005.png",
+          "generatedAt": "2026-02-05T19:04:10.228Z"
+        },
+        {
+          "filename": "industries-it-v2-006.png",
+          "path": "/images/generated/industries-it-v2/industries-it-v2-006.png",
+          "generatedAt": "2026-02-05T19:04:12.800Z"
+        }
+      ],
+      "selected": "industries-it-v2-001.png"
+    },
+    "industries-saas-v2": {
+      "slot": "industries-saas-v2",
+      "prompt": "Startup founder in profile, gesturing at growth metrics on large display. Modern open office with natural light. High contrast editorial photography. Person viewed from side, energetic pose. Clean minimal aesthetic.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-05T18:32:24.368Z",
+      "updatedAt": "2026-02-05T19:04:44.977Z",
+      "files": [
+        {
+          "filename": "industries-saas-v2-001.png",
+          "path": "/images/generated/industries-saas-v2/industries-saas-v2-001.png",
+          "generatedAt": "2026-02-05T18:32:27.937Z"
+        },
+        {
+          "filename": "industries-saas-v2-002.png",
+          "path": "/images/generated/industries-saas-v2/industries-saas-v2-002.png",
+          "generatedAt": "2026-02-05T18:32:31.317Z"
+        },
+        {
+          "filename": "industries-saas-v2-003.png",
+          "path": "/images/generated/industries-saas-v2/industries-saas-v2-003.png",
+          "generatedAt": "2026-02-05T18:32:34.246Z"
+        }
+      ],
+      "selected": "industries-saas-v2-002.png"
     }
   }
 }

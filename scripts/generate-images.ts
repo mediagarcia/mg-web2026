@@ -260,7 +260,7 @@ async function main() {
 
   console.log(`\n✓ Generated ${successCount}/${args.count} images`);
   console.log(`✓ Manifest updated: ${MANIFEST_PATH}`);
-  console.log(`\nTo review and select images, visit: http://localhost:3500/__image-staging`);
+  console.log(`\nTo review and select images, visit: http://localhost:3500/image-staging`);
 }
 
 main().catch((error) => {

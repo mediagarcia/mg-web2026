@@ -4,6 +4,15 @@ import type { ImageManifest } from "./types";
 
 const MANIFEST_PATH = join(process.cwd(), "public/images/generated/manifest.json");
 
+function loadManifest(): ImageManifest | null {
+  try {
+    if (!existsSync(MANIFEST_PATH)) return null;
+    return JSON.parse(readFileSync(MANIFEST_PATH, "utf-8"));
+  } catch {
+    return null;
+  }
+}
+
 /**
  * Get the selected image path for a slot, with optional fallback.
  * Server-side only (uses node:fs).
@@ -13,30 +22,62 @@ const MANIFEST_PATH = join(process.cwd(), "public/images/generated/manifest.json
  * @returns The image path or fallback, or null if neither exists
  */
 export function getImageForSlot(slot: string, fallback?: string): string | null {
-  try {
-    if (!existsSync(MANIFEST_PATH)) {
-      return fallback ?? null;
-    }
+  const manifest = loadManifest();
+  if (!manifest) return fallback ?? null;
 
-    const manifestContent = readFileSync(MANIFEST_PATH, "utf-8");
-    const manifest: ImageManifest = JSON.parse(manifestContent);
-
-    const slotData = manifest.slots[slot];
-    if (!slotData || slotData.files.length === 0) {
-      return fallback ?? null;
-    }
-
-    // Return selected image, or first variant, or fallback
-    if (slotData.selected) {
-      const selectedFile = slotData.files.find((f) => f.filename === slotData.selected);
-      if (selectedFile) {
-        return selectedFile.path;
-      }
-    }
-
-    // Fall back to first image if no selection
-    return slotData.files[0].path;
-  } catch {
+  const slotData = manifest.slots[slot];
+  if (!slotData || slotData.files.length === 0) {
     return fallback ?? null;
   }
+
+  // Return selected image, or first variant, or fallback
+  if (slotData.selected) {
+    const selectedFile = slotData.files.find((f) => f.filename === slotData.selected);
+    if (selectedFile) {
+      return selectedFile.path;
+    }
+  }
+
+  // Fall back to first image if no selection
+  return slotData.files[0].path;
+}
+
+/**
+ * Get the selected image for a base slot, checking versioned variants first.
+ * Automatically finds highest version (v3 > v2 > base).
+ * Server-side only (uses node:fs).
+ *
+ * @param baseSlot - The base slot name (e.g., "case-study-healthcare")
+ * @param fallback - Optional fallback path
+ * @returns The image path from highest versioned slot with selection, or fallback
+ */
+export function getVersionedImageForSlot(baseSlot: string, fallback?: string): string | null {
+  const manifest = loadManifest();
+  if (!manifest) return fallback ?? null;
+
+  // Find all versioned slots
+  const allSlots = Object.keys(manifest.slots);
+  const versions: { slot: string; version: number }[] = [];
+
+  for (const slot of allSlots) {
+    if (slot === baseSlot) {
+      versions.push({ slot, version: 0 });
+    } else if (slot.startsWith(`${baseSlot}-v`)) {
+      const versionMatch = slot.match(/-v(\d+)$/);
+      if (versionMatch) {
+        versions.push({ slot, version: parseInt(versionMatch[1], 10) });
+      }
+    }
+  }
+
+  // Sort by version descending (highest first)
+  versions.sort((a, b) => b.version - a.version);
+
+  // Return first slot that has a selected image
+  for (const { slot } of versions) {
+    const result = getImageForSlot(slot);
+    if (result) return result;
+  }
+
+  return fallback ?? null;
 }
