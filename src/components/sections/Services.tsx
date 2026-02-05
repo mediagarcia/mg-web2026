@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { GradientOrb } from "@/components/ui/visuals";
 
 const services = [
   {
@@ -91,8 +92,24 @@ const colorClasses = {
 
 export function Services() {
   return (
-    <section id="services" className="py-[var(--spacing-section)] bg-gray-50">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <section id="services" className="py-[var(--spacing-section)] bg-gray-50 relative overflow-hidden">
+      {/* Decorative gradient orbs */}
+      <GradientOrb
+        color="teal"
+        size="xl"
+        className="-top-64 -right-64 opacity-60"
+        intensity="subtle"
+        blur="xl"
+      />
+      <GradientOrb
+        color="purple"
+        size="lg"
+        className="top-1/3 -left-48 opacity-40"
+        intensity="subtle"
+        blur="xl"
+      />
+
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
         {/* Section Header */}
         <div className="max-w-3xl mb-16 lg:mb-24">
           <motion.span

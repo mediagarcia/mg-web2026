@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
+import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
 
 export const metadata: Metadata = {
   title: "Resources | Media Garcia",
@@ -68,8 +69,10 @@ export default function ResourcesPage() {
       />
 
       {/* Resources Grid */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-20" intensity="subtle" blur="xl" />
+        <GradientOrb color="purple" size="lg" className="bottom-1/4 -left-32 opacity-15" intensity="subtle" blur="xl" />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="grid md:grid-cols-2 gap-8">
             {resources.map((resource) => (
               <Link

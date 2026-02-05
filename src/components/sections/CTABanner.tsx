@@ -2,14 +2,35 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { CenteredGlow, FadingGridPattern } from "@/components/ui/visuals";
 
 export function CTABanner() {
   return (
     <section className="py-16 lg:py-24 bg-gradient-to-r from-teal-500 to-teal-600 relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Enhanced background pattern */}
+      <FadingGridPattern
+        type="dots"
+        color="white"
+        opacity={0.1}
+        spacing={24}
+        fadeDirection="both"
+      />
+
+      {/* Centered glow effect */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, transparent 60%)",
+          }}
+        />
+      </div>
+
+      {/* Decorative orbs */}
+      <div className="absolute inset-0 opacity-20" aria-hidden="true">
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-white blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full bg-white blur-3xl" />
+        <div className="absolute top-1/2 right-1/3 w-48 h-48 rounded-full bg-neon-purple-500 blur-3xl opacity-30" />
       </div>
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">

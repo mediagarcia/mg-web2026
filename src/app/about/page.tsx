@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
+import { GradientOrb, FadingGridPattern, MeshBackground } from "@/components/ui/visuals";
 
 // Metadata exported from a separate file for server component compatibility
 // For now, we'll use the client component approach with motion
@@ -238,6 +239,9 @@ export default function AboutPage() {
     <>
       {/* Hero Section */}
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gray-50 relative overflow-hidden">
+        <FadingGridPattern type="dots" color="gray" opacity={0.1} spacing={32} fadeDirection="both" />
+        <GradientOrb color="teal" size="xl" className="-top-32 -right-32 opacity-40" intensity="subtle" blur="xl" />
+        <GradientOrb color="purple" size="lg" className="bottom-0 left-1/4 opacity-20" intensity="subtle" blur="xl" />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-teal-500/5 to-transparent" />
 
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
@@ -353,8 +357,11 @@ export default function AboutPage() {
       </section>
 
       {/* By The Numbers Section */}
-      <section className="py-20 lg:py-32 bg-black text-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-black text-white relative overflow-hidden">
+        <MeshBackground />
+        <GradientOrb color="teal" size="xl" className="-top-32 -left-32 opacity-30" intensity="medium" blur="xl" />
+        <GradientOrb color="purple" size="lg" className="bottom-0 right-1/4 opacity-20" intensity="subtle" blur="xl" />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

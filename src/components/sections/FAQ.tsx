@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Script from "next/script";
+import { GradientOrb } from "@/components/ui/visuals";
 
 const faqs = [
   {
@@ -90,7 +91,15 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-[var(--spacing-section)] bg-white">
+    <section className="py-[var(--spacing-section)] bg-white relative overflow-hidden">
+      {/* Decorative gradient orb */}
+      <GradientOrb
+        color="teal"
+        size="lg"
+        className="-bottom-32 -right-32 opacity-40"
+        intensity="subtle"
+        blur="xl"
+      />
       {/* FAQ Schema for SEO - faqSchema is a static constant, not user input */}
       <Script
         id="faq-schema"
