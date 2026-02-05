@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, unlinkSync } from "node:fs";
 import { join } from "node:path";
 import type { ImageManifest } from "@/lib/images/types";
 
@@ -95,6 +95,19 @@ export async function DELETE(request: NextRequest) {
     // Remove file from slot
     if (!manifest.slots[slot]) {
       return NextResponse.json({ error: "Slot not found" }, { status: 404 });
+    }
+
+    // Find and delete the actual file from disk
+    const fileToDelete = manifest.slots[slot].files.find((f) => f.filename === filename);
+    if (fileToDelete) {
+      const filePath = join(process.cwd(), "public", fileToDelete.path);
+      if (existsSync(filePath)) {
+        try {
+          unlinkSync(filePath);
+        } catch (err) {
+          console.error("Failed to delete file from disk:", err);
+        }
+      }
     }
 
     manifest.slots[slot].files = manifest.slots[slot].files.filter((f) => f.filename !== filename);

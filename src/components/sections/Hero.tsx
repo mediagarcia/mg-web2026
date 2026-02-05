@@ -45,9 +45,10 @@ const scaleAnimation = {
 
 interface HeroProps {
   heroImage?: string | null;
+  imageOpacity?: number; // 0-1, defaults to 0.04
 }
 
-export function Hero({ heroImage }: HeroProps) {
+export function Hero({ heroImage, imageOpacity = 0.04 }: HeroProps) {
   const [wordIndex, setWordIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
 
@@ -72,7 +73,8 @@ export function Hero({ heroImage }: HeroProps) {
           src={heroImage ?? "/images/hero/hero-bg.jpg"}
           alt=""
           fill
-          className="object-cover opacity-[0.04]"
+          className="object-cover transition-opacity duration-300"
+          style={{ opacity: imageOpacity }}
           priority
         />
       </div>

@@ -2,10 +2,33 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import { caseStudies } from "@/data/case-studies";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
+import { GeometricOverlay, type GeometricPattern } from "@/components/ui/GeometricOverlay";
 
-export function CaseStudies() {
+export interface CaseStudyImages {
+  generic?: string | null;
+  [key: string]: string | null | undefined; // Allow slug-based overrides
+}
+
+interface CaseStudiesProps {
+  images?: CaseStudyImages;
+}
+
+// Mapping of case study slugs to duotone colors and geometric patterns
+const caseStudyStyles: Record<
+  string,
+  {
+    color: "teal" | "purple" | "orange";
+    pattern: GeometricPattern;
+  }
+> = {
+  "healthcare-integration": { color: "teal", pattern: "spiral" },
+  "lead-generation-saas": { color: "purple", pattern: "grid" },
+  "crm-migration": { color: "orange", pattern: "arc" },
+};
+
+export function CaseStudies({ images }: CaseStudiesProps = {}) {
   return (
     <section id="work" className="py-[var(--spacing-section)] bg-gray-50">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -55,30 +78,44 @@ export function CaseStudies() {
 
         {/* Case Studies Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-          {caseStudies.map((study, index) => (
-            <motion.article
-              key={study.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group"
-            >
-              <Link href={`/work/${study.slug}`}>
-                {/* Image Container */}
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6">
-                  {/* Background image */}
-                  <Image
-                    src={study.image}
-                    alt={`${study.client} case study`}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {/* Gradient overlay for readability */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${study.gradient} opacity-60`} />
+          {caseStudies.map((study, index) => {
+            // Use slug-specific override, generic override, or default image
+            const imageUrl = images?.[study.slug] ?? images?.generic ?? study.image;
+            // Get duotone styling for this case study
+            const style = caseStudyStyles[study.slug] || { color: "teal" as const, pattern: "spiral" as const };
 
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500" />
+            return (
+              <motion.article
+                key={study.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
+              >
+                <Link href={`/work/${study.slug}`}>
+                  {/* Image Container */}
+                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6">
+                    {/* Background image with duotone effect */}
+                    <DuotoneImage
+                      src={imageUrl}
+                      alt={`${study.client} case study`}
+                      color={style.color}
+                      intensity="medium"
+                      className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
+                    />
+
+                    {/* Geometric overlay pattern */}
+                    <GeometricOverlay
+                      pattern={style.pattern}
+                      position="bottom-left"
+                      color="white"
+                      opacity={0.15}
+                      size={160}
+                    />
+
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500" />
 
                   {/* Content Overlay */}
                   <div className="absolute inset-0 p-6 flex flex-col justify-between">
@@ -116,7 +153,8 @@ export function CaseStudies() {
                 </div>
               </Link>
             </motion.article>
-          ))}
+            );
+          })}
         </div>
 
         {/* Stats Row */}

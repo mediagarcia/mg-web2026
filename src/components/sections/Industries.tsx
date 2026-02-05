@@ -2,6 +2,21 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
+import { GeometricOverlay, type GeometricPattern } from "@/components/ui/GeometricOverlay";
+
+export interface IndustryImages {
+  healthcare?: string | null;
+  it?: string | null;
+  saas?: string | null;
+}
+
+// Map industry slugs to duotone colors and patterns
+const industryStyles: Record<string, { color: "teal" | "purple" | "orange"; pattern: GeometricPattern }> = {
+  healthcare: { color: "teal", pattern: "spiral" },
+  "information-technology": { color: "purple", pattern: "grid" },
+  saas: { color: "orange", pattern: "arc" },
+};
 
 const industries = [
   {
@@ -57,7 +72,11 @@ const industries = [
   },
 ];
 
-export function Industries() {
+interface IndustriesProps {
+  images?: IndustryImages;
+}
+
+export function Industries({ images }: IndustriesProps = {}) {
   return (
     <section id="industries" className="py-[var(--spacing-section)] bg-white">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -93,60 +112,89 @@ export function Industries() {
 
         {/* Industries Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {industries.map((industry, index) => (
-            <motion.div
-              key={industry.slug}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <Link
-                href={`/industries/${industry.slug}`}
-                className="group block bg-gray-50 rounded-3xl p-8 lg:p-12 h-full hover:shadow-2xl transition-all duration-500"
+          {industries.map((industry, index) => {
+            // Map slug to image key
+            const imageKey = industry.slug === "information-technology" ? "it" : industry.slug;
+            const backgroundImage = images?.[imageKey as keyof IndustryImages];
+
+            return (
+              <motion.div
+                key={industry.slug}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
               >
-                {/* Header */}
-                <div className="flex items-start gap-6 mb-8">
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${industry.gradient} flex items-center justify-center text-white shrink-0`}>
-                    {industry.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-black mb-2 group-hover:text-teal-500 transition-colors">
-                      {industry.name}
-                    </h3>
-                    <p className="text-black/60 leading-relaxed">
-                      {industry.description}
-                    </p>
-                  </div>
-                </div>
+                <Link
+                  href={`/industries/${industry.slug}`}
+                  className="group block bg-gray-50 rounded-3xl p-8 lg:p-12 h-full hover:shadow-2xl transition-all duration-500 relative overflow-hidden"
+                >
+                  {/* Optional Background Image with Duotone */}
+                  {backgroundImage && (
+                    <div className="absolute inset-0 z-0 opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500">
+                      <DuotoneImage
+                        src={backgroundImage}
+                        alt=""
+                        color={industryStyles[industry.slug]?.color ?? "teal"}
+                        intensity="light"
+                        className="absolute inset-0"
+                      />
+                      <GeometricOverlay
+                        pattern={industryStyles[industry.slug]?.pattern ?? "spiral"}
+                        position="bottom-right"
+                        color="white"
+                        opacity={0.3}
+                        size={120}
+                      />
+                    </div>
+                  )}
 
-                {/* Features */}
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                  {industry.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3">
-                      <svg className="w-5 h-5 text-teal-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Header */}
+                    <div className="flex items-start gap-6 mb-8">
+                      <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${industry.gradient} flex items-center justify-center text-white shrink-0`}>
+                        {industry.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-2xl lg:text-3xl font-bold text-black mb-2 group-hover:text-teal-500 transition-colors">
+                          {industry.name}
+                        </h3>
+                        <p className="text-black/60 leading-relaxed">
+                          {industry.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Features */}
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                      {industry.features.map((feature) => (
+                        <li key={feature} className="flex items-center gap-3">
+                          <svg className="w-5 h-5 text-teal-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-sm text-black/70">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* CTA */}
+                    <div className="flex items-center gap-2 text-sm font-medium text-black/40 group-hover:text-teal-500 transition-colors">
+                      <span>Learn more about {industry.name}</span>
+                      <svg
+                        className="w-4 h-4 transition-transform group-hover:translate-x-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
-                      <span className="text-sm text-black/70">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* CTA */}
-                <div className="flex items-center gap-2 text-sm font-medium text-black/40 group-hover:text-teal-500 transition-colors">
-                  <span>Learn more about {industry.name}</span>
-                  <svg
-                    className="w-4 h-4 transition-transform group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
