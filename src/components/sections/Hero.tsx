@@ -43,7 +43,11 @@ const scaleAnimation = {
   transition: { duration: 0.4, ease: [0.34, 1.56, 0.64, 1] as const },
 };
 
-export function Hero() {
+interface HeroProps {
+  heroImage?: string | null;
+}
+
+export function Hero({ heroImage }: HeroProps) {
   const [wordIndex, setWordIndex] = useState(0);
   const [mounted, setMounted] = useState(false);
 
@@ -65,7 +69,7 @@ export function Hero() {
       {/* Background Image - subtle tech/consulting visual */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero/hero-bg.jpg"
+          src={heroImage ?? "/images/hero/hero-bg.jpg"}
           alt=""
           fill
           className="object-cover opacity-[0.04]"

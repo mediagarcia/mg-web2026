@@ -6,7 +6,8 @@
     "dev": "next dev -p 3500",
     "build": "next build",
     "start": "next start -p 3500",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-image": "tsx scripts/generate-images.ts"
   },
   "keywords": [
     "hubspot",
@@ -31,6 +32,8 @@
   },
   "devDependencies": {
     "@types/node": "25.0.9",
+    "dotenv": "^17.2.3",
+    "tsx": "^4.7.0",
     "typescript": "5.9.3"
   }
 }

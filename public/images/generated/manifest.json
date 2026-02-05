@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-02-05T07:02:53.580Z",
+  "slots": {
+    "hero": {
+      "slot": "hero",
+      "prompt": "Sleek modern workspace with purple ambient lighting",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-05T07:01:32.682Z",
+      "updatedAt": "2026-02-05T07:02:50.617Z",
+      "files": [
+        {
+          "filename": "hero-001.png",
+          "path": "/images/generated/hero/hero-001.png",
+          "generatedAt": "2026-02-05T07:02:19.090Z"
+        },
+        {
+          "filename": "hero-002.png",
+          "path": "/images/generated/hero/hero-002.png",
+          "generatedAt": "2026-02-05T07:02:53.579Z"
+        }
+      ],
+      "selected": null
+    }
+  }
+}
