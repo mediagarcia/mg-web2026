@@ -1,12 +1,17 @@
 "use client";
 
+import { Suspense } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { useSearchParams, useRouter } from "next/navigation";
 import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import { caseStudies } from "@/data/case-studies";
-import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
+import { portfolioItems, categories } from "@/data/portfolio";
+import { PortfolioCard } from "@/components/PortfolioCard";
+import { PortfolioFilters } from "@/components/PortfolioFilters";
+import { GradientOrb } from "@/components/ui/visuals";
 
 const stats = [
   { value: "200+", label: "CRM Implementations" },
@@ -14,6 +19,82 @@ const stats = [
   { value: "$4M+", label: "Client Revenue Attributed" },
   { value: "50+", label: "5-Star Reviews" },
 ];
+
+function PortfolioShowcase() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const activeCategory = searchParams.get("category") || "all";
+
+  const filteredItems =
+    activeCategory === "all"
+      ? portfolioItems
+      : portfolioItems.filter((item) => item.category === activeCategory);
+
+  const handleClearFilter = () => {
+    router.push("/work", { scroll: false });
+  };
+
+  return (
+    <section className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
+      <GradientOrb
+        color="purple"
+        size="xl"
+        className="-top-48 -left-48 opacity-15"
+        intensity="subtle"
+        blur="xl"
+      />
+      <GradientOrb
+        color="teal"
+        size="lg"
+        className="bottom-1/4 -right-32 opacity-10"
+        intensity="subtle"
+        blur="xl"
+      />
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
+        {/* Section Header */}
+        <motion.span
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-xs font-bold uppercase tracking-widest text-teal-500 block"
+        >
+          Showcase
+        </motion.span>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="text-3xl lg:text-4xl font-bold text-black mt-3 mb-8"
+        >
+          Things We&apos;ve Built
+        </motion.h2>
+
+        {/* Filters */}
+        <PortfolioFilters />
+
+        {/* Grid or Empty State */}
+        {filteredItems.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {filteredItems.map((item, index) => (
+              <PortfolioCard key={item.id} item={item} index={index} />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-black/50">No items in this category yet.</p>
+            <button
+              onClick={handleClearFilter}
+              className="text-teal-500 underline mt-2 hover:text-teal-600 transition-colors"
+            >
+              View all work
+            </button>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
 
 export default function WorkPage() {
   return (
@@ -105,6 +186,11 @@ export default function WorkPage() {
           </div>
         </div>
       </section>
+
+      {/* Portfolio Showcase */}
+      <Suspense fallback={<div className="py-20 lg:py-32 bg-gray-50" />}>
+        <PortfolioShowcase />
+      </Suspense>
 
       <CTABanner />
     </>
