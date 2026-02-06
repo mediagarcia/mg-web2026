@@ -17,6 +17,7 @@ export interface ImageSlot {
   updatedAt: string;
   files: GeneratedFile[];
   selected: string | null;
+  selectedPath?: string | null; // Path in /images/selected/ for deployment
 }
 
 export interface ImageManifest {

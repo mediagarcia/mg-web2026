@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-05T22:35:16.494Z",
+  "lastUpdated": "2026-02-06T02:45:49.192Z",
   "slots": {
     "hero": {
       "slot": "hero",
@@ -26,7 +26,8 @@
           "generatedAt": "2026-02-05T09:42:25.963Z"
         }
       ],
-      "selected": "hero-004.png"
+      "selected": "hero-004.png",
+      "selectedPath": "/images/selected/hero.png"
     },
     "industries-healthcare": {
       "slot": "industries-healthcare",
@@ -52,7 +53,8 @@
           "generatedAt": "2026-02-05T09:42:53.244Z"
         }
       ],
-      "selected": "industries-healthcare-003.png"
+      "selected": "industries-healthcare-003.png",
+      "selectedPath": "/images/selected/industries-healthcare.png"
     },
     "industries-it": {
       "slot": "industries-it",
@@ -78,7 +80,8 @@
           "generatedAt": "2026-02-05T09:47:22.178Z"
         }
       ],
-      "selected": "industries-it-002.png"
+      "selected": "industries-it-002.png",
+      "selectedPath": "/images/selected/industries-it.png"
     },
     "industries-saas": {
       "slot": "industries-saas",
@@ -130,7 +133,8 @@
           "generatedAt": "2026-02-05T09:48:26.638Z"
         }
       ],
-      "selected": "case-studies-generic-001.png"
+      "selected": "case-studies-generic-001.png",
+      "selectedPath": "/images/selected/case-studies-generic.png"
     },
     "why-us": {
       "slot": "why-us",
@@ -156,7 +160,8 @@
           "generatedAt": "2026-02-05T09:48:56.223Z"
         }
       ],
-      "selected": "why-us-001.png"
+      "selected": "why-us-001.png",
+      "selectedPath": "/images/selected/why-us.png"
     },
     "services-accent": {
       "slot": "services-accent",
@@ -177,7 +182,8 @@
           "generatedAt": "2026-02-05T09:49:22.563Z"
         }
       ],
-      "selected": "services-accent-002.png"
+      "selected": "services-accent-002.png",
+      "selectedPath": "/images/selected/services-accent.png"
     },
     "stats-background": {
       "slot": "stats-background",
@@ -198,7 +204,8 @@
           "generatedAt": "2026-02-05T09:49:49.370Z"
         }
       ],
-      "selected": "stats-background-002.png"
+      "selected": "stats-background-002.png",
+      "selectedPath": "/images/selected/stats-background.png"
     },
     "case-study-healthcare": {
       "slot": "case-study-healthcare",
@@ -276,7 +283,8 @@
           "generatedAt": "2026-02-05T09:57:21.626Z"
         }
       ],
-      "selected": "case-study-crm-003.png"
+      "selected": "case-study-crm-003.png",
+      "selectedPath": "/images/selected/case-study-crm.png"
     },
     "case-study-healthcare-v3": {
       "slot": "case-study-healthcare-v3",
@@ -302,7 +310,8 @@
           "generatedAt": "2026-02-05T17:28:27.320Z"
         }
       ],
-      "selected": "case-study-healthcare-v3-001.png"
+      "selected": "case-study-healthcare-v3-001.png",
+      "selectedPath": "/images/selected/case-study-healthcare-v3.png"
     },
     "case-study-saas-v3": {
       "slot": "case-study-saas-v3",
@@ -328,7 +337,8 @@
           "generatedAt": "2026-02-05T17:28:41.086Z"
         }
       ],
-      "selected": "case-study-saas-v3-001.png"
+      "selected": "case-study-saas-v3-001.png",
+      "selectedPath": "/images/selected/case-study-saas-v3.png"
     },
     "case-study-crm-v3": {
       "slot": "case-study-crm-v3",
@@ -354,7 +364,8 @@
           "generatedAt": "2026-02-05T17:28:57.453Z"
         }
       ],
-      "selected": "case-study-crm-v3-002.png"
+      "selected": "case-study-crm-v3-002.png",
+      "selectedPath": "/images/selected/case-study-crm-v3.png"
     },
     "industries-healthcare-v2": {
       "slot": "industries-healthcare-v2",
@@ -395,7 +406,8 @@
           "generatedAt": "2026-02-05T19:03:24.733Z"
         }
       ],
-      "selected": "industries-healthcare-v2-005.png"
+      "selected": "industries-healthcare-v2-005.png",
+      "selectedPath": "/images/selected/industries-healthcare-v2.png"
     },
     "industries-it-v2": {
       "slot": "industries-it-v2",
@@ -436,7 +448,8 @@
           "generatedAt": "2026-02-05T19:04:12.800Z"
         }
       ],
-      "selected": "industries-it-v2-001.png"
+      "selected": "industries-it-v2-001.png",
+      "selectedPath": "/images/selected/industries-it-v2.png"
     },
     "industries-saas-v2": {
       "slot": "industries-saas-v2",
@@ -462,7 +475,8 @@
           "generatedAt": "2026-02-05T18:32:34.246Z"
         }
       ],
-      "selected": "industries-saas-v2-002.png"
+      "selected": "industries-saas-v2-002.png",
+      "selectedPath": "/images/selected/industries-saas-v2.png"
     }
   }
 }
