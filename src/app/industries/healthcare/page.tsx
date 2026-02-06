@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
+import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
 
 export const metadata: Metadata = {
   title: "HubSpot for Healthcare Companies | Media Garcia",
@@ -70,8 +71,9 @@ export default function HealthcareIndustryPage() {
       />
 
       {/* Challenges */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-20" intensity="subtle" blur="xl" />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <h2 className="text-3xl lg:text-4xl font-black text-black mb-12">Healthcare Challenges We Solve</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {challenges.map((challenge) => (
@@ -85,8 +87,10 @@ export default function HealthcareIndustryPage() {
       </section>
 
       {/* Solutions */}
-      <section className="py-20 lg:py-32 bg-gray-50">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
+        <FadingGridPattern type="dots" color="gray" opacity={0.08} spacing={28} fadeDirection="both" />
+        <GradientOrb color="purple" size="lg" className="bottom-0 -left-32 opacity-20" intensity="subtle" blur="xl" />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <h2 className="text-3xl lg:text-4xl font-black text-black mb-12">Healthcare-Specific Solutions</h2>
           <div className="grid lg:grid-cols-2 gap-8">
             {solutions.map((solution) => (
@@ -105,6 +109,31 @@ export default function HealthcareIndustryPage() {
                 </ul>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Inline CTA */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="bg-teal-500 rounded-3xl p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="text-center lg:text-left">
+              <h3 className="text-2xl lg:text-3xl font-black text-white mb-2">
+                Built for healthcare complexity
+              </h3>
+              <p className="text-white/80">
+                Talk to someone who understands long sales cycles and multi-stakeholder deals.
+              </p>
+            </div>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-white text-teal-600 px-8 py-4 rounded-full font-bold hover:bg-black hover:text-white transition-all shrink-0"
+            >
+              Book a Strategy Call
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>

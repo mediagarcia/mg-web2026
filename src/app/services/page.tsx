@@ -21,7 +21,7 @@ const serviceCategories = [
       },
       {
         title: "CRM Migration",
-        description: "Seamless data migration from your current CRM with zero data loss and minimal disruption.",
+        description: "Data migration from your current CRM with zero data loss and minimal disruption.",
         href: "/services/crm-migration",
         bestFor: "Switching platforms",
       },
@@ -117,7 +117,7 @@ export default function ServicesPage() {
     <>
       <PageHeader
         badge="Services"
-        title="Find the right service for your business"
+        title="Revenue services for complex sales cycles"
         description="Revenue operations, CRM implementation, and growth services built for healthcare, IT services, and B2B SaaS companies. We work on HubSpot, Salesforce, and any platform."
         breadcrumbs={[
           { label: "Services", href: "/services" },
@@ -294,22 +294,23 @@ export default function ServicesPage() {
               Still not sure which service you need?
             </h2>
             <p className="text-white/60 mb-8 max-w-2xl mx-auto">
-              Book a free discovery call and we&apos;ll help you identify the right approach for your business. No sales pitch—just an honest assessment of where you are and where you could be.
+              Book a free strategy call and we&apos;ll help you identify the right approach for your business. No sales pitch—just an honest assessment of where you are and where you could be.
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-teal-500 text-white px-8 py-4 rounded-full font-medium hover:bg-teal-400 transition-colors"
-            >
-              Book a Discovery Call
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            <div className="flex flex-col items-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-teal-500 text-white px-8 py-4 rounded-full font-medium hover:bg-teal-400 transition-colors"
+              >
+                Book a Strategy Call
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <span className="text-white/40 text-sm mt-3">30 minutes. Platform-agnostic advice.</span>
+            </div>
           </div>
         </div>
       </section>
-
-      <CTABanner />
     </>
   );
 }

@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "HubSpot Assessment | Media Garcia",
-  description: "Take our free HubSpot assessment to evaluate your current setup and identify opportunities for improvement.",
+  title: "CRM Assessment | Media Garcia",
+  description: "Take our free CRM assessment to evaluate your current setup and identify opportunities for improvement.",
 };
 
 const assessmentAreas = [
@@ -41,8 +41,8 @@ export default function AssessmentPage() {
     <>
       <PageHeader
         badge="Assessment"
-        title="How well is your HubSpot performing?"
-        description="Take our free 5-minute assessment to evaluate your HubSpot setup and get personalized recommendations."
+        title="How well is your CRM performing?"
+        description="Take our free 5-minute assessment to evaluate your CRM setup and get personalized recommendations."
         breadcrumbs={[
           { label: "Resources", href: "/resources" },
           { label: "Assessment", href: "/resources/assessment" },
@@ -117,19 +117,23 @@ export default function AssessmentPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="hubspot" className="block text-sm font-medium text-white/60 mb-2">
-                    HubSpot Subscription
+                  <label htmlFor="crm" className="block text-sm font-medium text-white/60 mb-2">
+                    Current CRM Platform
                   </label>
                   <select
-                    id="hubspot"
-                    name="hubspot"
+                    id="crm"
+                    name="crm"
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
                   >
-                    <option value="" className="text-black">Select your plan</option>
-                    <option value="free" className="text-black">Free / Starter</option>
-                    <option value="professional" className="text-black">Professional</option>
-                    <option value="enterprise" className="text-black">Enterprise</option>
-                    <option value="not-using" className="text-black">Not using HubSpot yet</option>
+                    <option value="" className="text-black">Select your platform</option>
+                    <option value="hubspot-free" className="text-black">HubSpot Free / Starter</option>
+                    <option value="hubspot-professional" className="text-black">HubSpot Professional</option>
+                    <option value="hubspot-enterprise" className="text-black">HubSpot Enterprise</option>
+                    <option value="salesforce" className="text-black">Salesforce</option>
+                    <option value="zoho" className="text-black">Zoho CRM</option>
+                    <option value="pipedrive" className="text-black">Pipedrive</option>
+                    <option value="other" className="text-black">Other / Custom Stack</option>
+                    <option value="none" className="text-black">No CRM yet</option>
                   </select>
                 </div>
                 <button
@@ -158,7 +162,7 @@ export default function AssessmentPage() {
               </div>
               <h3 className="text-xl font-bold text-black mb-3">Answer Questions</h3>
               <p className="text-black/60">
-                Complete our 20-question assessment about your current HubSpot setup and processes.
+                Complete our 20-question assessment about your current CRM setup and processes.
               </p>
             </div>
             <div className="text-center">
@@ -176,7 +180,7 @@ export default function AssessmentPage() {
               </div>
               <h3 className="text-xl font-bold text-black mb-3">Review Recommendations</h3>
               <p className="text-black/60">
-                Get a personalized report with prioritized recommendations to improve your HubSpot ROI.
+                Get a personalized report with prioritized recommendations to improve your CRM ROI.
               </p>
             </div>
           </div>

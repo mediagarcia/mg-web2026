@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MeshBackground, GradientOrb } from "@/components/ui/visuals";
 
 const values = [
   {
@@ -53,6 +54,25 @@ const values = [
 export function Values() {
   return (
     <section className="py-[var(--spacing-section)] bg-black text-white relative overflow-hidden">
+      {/* Mesh gradient background */}
+      <MeshBackground />
+
+      {/* Additional orb decorations */}
+      <GradientOrb
+        color="teal"
+        size="xl"
+        className="-top-32 -right-32 opacity-40"
+        intensity="medium"
+        blur="xl"
+      />
+      <GradientOrb
+        color="purple"
+        size="lg"
+        className="bottom-0 left-1/4 opacity-20"
+        intensity="subtle"
+        blur="xl"
+      />
+
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-teal-500/5 to-transparent" />
 
@@ -74,7 +94,7 @@ export function Values() {
             transition={{ delay: 0.1 }}
             className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight mb-6"
           >
-            What drives everything we do
+            The principles behind our 98% retention
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

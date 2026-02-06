@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
-import { CTABanner, FAQ } from "@/components/sections";
 import Link from "next/link";
+import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
 
 export const metadata: Metadata = {
   title: "Pricing | Media Garcia",
@@ -44,7 +44,7 @@ const packages = [
   },
   {
     name: "Enterprise",
-    price: "Custom",
+    price: "Starting at $15,000",
     period: "project-based",
     description: "Full-scale transformation for organizations with complex requirements.",
     features: [
@@ -82,8 +82,10 @@ export default function PricingPage() {
       />
 
       {/* Packages */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-20" intensity="subtle" blur="xl" />
+        <GradientOrb color="purple" size="lg" className="top-1/2 -left-32 opacity-15" intensity="subtle" blur="xl" />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="grid lg:grid-cols-3 gap-8">
             {packages.map((pkg) => (
               <div
@@ -166,24 +168,25 @@ export default function PricingPage() {
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="bg-black rounded-3xl p-8 lg:p-16 text-white text-center">
-            <h2 className="text-3xl lg:text-4xl font-black mb-4">Need a custom solution?</h2>
+            <h2 className="text-3xl lg:text-4xl font-black mb-4">Need something custom?</h2>
             <p className="text-white/60 mb-8 max-w-2xl mx-auto">
-              Every business is different. Let&apos;s discuss your specific needs and create a custom package that fits your goals and budget.
+              Every business is different. Let&apos;s discuss your specific needs and create a package that fits your goals and budget.
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-teal-500 text-white px-8 py-4 rounded-full font-medium hover:bg-teal-400 transition-colors"
-            >
-              Get a Custom Quote
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            <div className="flex flex-col items-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-teal-500 text-white px-8 py-4 rounded-full font-medium hover:bg-teal-400 transition-colors"
+              >
+                Get a Custom Quote
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <span className="text-white/40 text-sm mt-3">No obligation. We&apos;ll send a proposal within 48 hours.</span>
+            </div>
           </div>
         </div>
       </section>
-
-      <CTABanner />
     </>
   );
 }

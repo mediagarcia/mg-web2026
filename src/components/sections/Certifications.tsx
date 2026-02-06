@@ -81,7 +81,7 @@ export function Certifications() {
             transition={{ delay: 0.1 }}
             className="text-[clamp(1.5rem,4vw,2.5rem)] font-black leading-tight text-black"
           >
-            HubSpot certified across all hubs
+            Certified across the HubSpot platform
           </motion.h2>
         </div>
 

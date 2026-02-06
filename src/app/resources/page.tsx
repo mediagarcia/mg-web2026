@@ -2,16 +2,17 @@ import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
+import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
 
 export const metadata: Metadata = {
   title: "Resources | Media Garcia",
-  description: "Free HubSpot guides, ROI calculators, assessments, and tools to help you make better decisions about your tech stack.",
+  description: "Free CRM guides, ROI calculators, assessments, and tools to help you make better decisions about your tech stack.",
 };
 
 const resources = [
   {
-    title: "HubSpot Guides",
-    description: "In-depth guides on HubSpot implementation, best practices, and optimization strategies.",
+    title: "CRM & RevOps Guides",
+    description: "In-depth guides on CRM implementation, best practices, and optimization strategies.",
     href: "/resources/guides",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -21,8 +22,8 @@ const resources = [
     count: "12 guides",
   },
   {
-    title: "HubSpot Assessment",
-    description: "Take our free assessment to evaluate your current HubSpot setup and identify improvement opportunities.",
+    title: "CRM Assessment",
+    description: "Take our free assessment to evaluate your current CRM setup and identify improvement opportunities.",
     href: "/resources/assessment",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -33,7 +34,7 @@ const resources = [
   },
   {
     title: "ROI Calculator",
-    description: "Calculate the potential return on investment from implementing HubSpot with our team.",
+    description: "Calculate the potential return on investment from a CRM implementation with our team.",
     href: "/resources/roi-calculator",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,15 +62,17 @@ export default function ResourcesPage() {
       <PageHeader
         badge="Resources"
         title="Tools and guides to help you grow"
-        description="Free resources to help you make better decisions about HubSpot, CRM strategy, and marketing automation."
+        description="Free resources to help you make better decisions about CRM strategy, RevOps, and marketing automation."
         breadcrumbs={[
           { label: "Resources", href: "/resources" },
         ]}
       />
 
       {/* Resources Grid */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-20" intensity="subtle" blur="xl" />
+        <GradientOrb color="purple" size="lg" className="bottom-1/4 -left-32 opacity-15" intensity="subtle" blur="xl" />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="grid md:grid-cols-2 gap-8">
             {resources.map((resource) => (
               <Link

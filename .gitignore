@@ -43,3 +43,12 @@ next-env.d.ts
 coverage/
 
 .vercel
+
+# Claude Code session files
+.claude/context.json
+.claude/session.jsonl
+.claude/session.lock
+
+# Generated images (keep manifest)
+public/images/generated/**/
+!public/images/generated/manifest.json

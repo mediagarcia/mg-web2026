@@ -4,14 +4,14 @@ import { CTABanner } from "@/components/sections";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "HubSpot Guides | Media Garcia",
-  description: "Free in-depth guides on HubSpot implementation, marketing automation, CRM migration, and revenue operations.",
+  title: "CRM & RevOps Guides | Media Garcia",
+  description: "Free in-depth guides on CRM implementation, marketing automation, CRM migration, and revenue operations.",
 };
 
 const guides = [
   {
-    title: "The Complete HubSpot Implementation Guide",
-    description: "Everything you need to know about implementing HubSpot successfully, from planning to go-live.",
+    title: "The Complete CRM Implementation Guide",
+    description: "Everything you need to know about implementing your CRM successfully, from planning to go-live.",
     category: "Implementation",
     readTime: "25 min read",
     featured: true,
@@ -105,8 +105,8 @@ export default function GuidesPage() {
     <>
       <PageHeader
         badge="Guides"
-        title="HubSpot guides and resources"
-        description="In-depth guides to help you get the most out of HubSpot, from implementation to advanced automation."
+        title="CRM & RevOps guides and resources"
+        description="In-depth guides to help you get the most out of your CRM, from implementation to advanced automation."
         breadcrumbs={[
           { label: "Resources", href: "/resources" },
           { label: "Guides", href: "/resources/guides" },

@@ -16,8 +16,8 @@ const footerLinks = {
     { label: "Contact", href: "/contact" },
   ],
   resources: [
-    { label: "HubSpot Guides", href: "/resources/guides" },
-    { label: "Digital Growth Assessment", href: "/resources/assessment" },
+    { label: "CRM Guides", href: "/resources/guides" },
+    { label: "CRM Assessment", href: "/resources/assessment" },
     { label: "ROI Calculator", href: "/resources/roi-calculator" },
     { label: "TCO Calculator", href: "/resources/tco-calculator" },
   ],
@@ -46,7 +46,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-sm">
-              We build and run digital platforms that keep companies lean, growing, and easy to do business with.
+              Digital platforms that keep companies lean, growing, and easy to do business with.
             </p>
             {/* HubSpot Partner Badge */}
             <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
@@ -114,7 +114,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div>
               <h4 className="text-lg font-bold mb-2">Stay in the loop</h4>
-              <p className="text-sm text-white/60">Get HubSpot tips and growth strategies delivered to your inbox.</p>
+              <p className="text-sm text-white/60">Get CRM tips and growth strategies delivered to your inbox.</p>
             </div>
             <form className="flex gap-3 w-full md:w-auto">
               <input

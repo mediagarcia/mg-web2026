@@ -3,57 +3,107 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  Rocket,
+  TrendingUp,
+  Zap,
+  Database,
+  BarChart3,
+  Puzzle,
+  Bot,
+  Code,
+  Megaphone,
+  HeartPulse,
+  Cpu,
+  Cloud,
+  Library,
+  ClipboardCheck,
+  BookOpen,
+  Calculator,
+  DollarSign,
+  ChevronDown,
+  ArrowRight,
+  Grid3X3,
+  type LucideIcon,
+} from "lucide-react";
 
-const services = [
-  { label: "HubSpot Onboarding", href: "/services/hubspot-onboarding", description: "Get your team up and running fast" },
-  { label: "Sales Enablement", href: "/services/sales-enablement", description: "Empower your sales team to close more" },
-  { label: "Marketing Automation", href: "/services/marketing-automation", description: "Automate campaigns that convert" },
-  { label: "CRM Migration", href: "/services/crm-migration", description: "Seamless data transfer & setup" },
-  { label: "Reporting & Analytics", href: "/services/reporting", description: "Data-driven decision making" },
-  { label: "Custom Integrations", href: "/services/integrations", description: "Connect your tech stack" },
+// ============================================================================
+// MENU DATA - Edit these to update menu items
+// ============================================================================
+
+type MenuItem = {
+  label: string;
+  href: string;
+  description: string;
+  icon: LucideIcon;
+};
+
+type MenuCategory = {
+  category: string;
+  items: MenuItem[];
+};
+
+const crmServices: MenuItem[] = [
+  { label: "CRM Onboarding", href: "/services/hubspot-onboarding", description: "Get your team up and running fast", icon: Rocket },
+  { label: "Sales Enablement", href: "/services/sales-enablement", description: "Empower your sales team to close more", icon: TrendingUp },
+  { label: "Marketing Automation", href: "/services/marketing-automation", description: "Automate campaigns that convert", icon: Zap },
+  { label: "CRM Migration", href: "/services/crm-migration", description: "Zero-downtime data transfer & setup", icon: Database },
+  { label: "Reporting & Analytics", href: "/services/reporting", description: "Data-driven decision making", icon: BarChart3 },
+  { label: "Custom Integrations", href: "/services/integrations", description: "Connect your tech stack", icon: Puzzle },
 ];
 
-const industries = [
-  { label: "Information Technology", href: "/industries/information-technology", description: "Solutions for IT companies" },
-  { label: "SaaS", href: "/industries/saas", description: "Scale your subscription business" },
+const additionalServices: MenuItem[] = [
+  { label: "AI Automation", href: "/services/ai-automation", description: "Intelligent workflow automation", icon: Bot },
+  { label: "Development", href: "/services/development", description: "Custom software solutions", icon: Code },
+  { label: "Marketing", href: "/services/marketing", description: "Strategic marketing services", icon: Megaphone },
 ];
 
-const navItems = [
-  { label: "Services", href: "/services/hubspot-onboarding", hasDropdown: true, dropdown: services },
-  { label: "Industries", href: "/industries", hasDropdown: true, dropdown: industries },
-  { label: "Pricing", href: "/pricing" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+const industries: MenuItem[] = [
+  { label: "Healthcare", href: "/industries/healthcare", description: "HIPAA-compliant solutions", icon: HeartPulse },
+  { label: "Information Technology", href: "/industries/information-technology", description: "Solutions for IT companies", icon: Cpu },
+  { label: "SaaS", href: "/industries/saas", description: "Scale your subscription business", icon: Cloud },
 ];
 
-function DropdownMenu({ items, isOpen, onClose }: { items: typeof services; isOpen: boolean; onClose: () => void }) {
+const resources: MenuItem[] = [
+  { label: "Resource Center", href: "/resources", description: "Guides, tools, and insights", icon: Library },
+  { label: "CRM Assessment", href: "/resources/assessment", description: "Evaluate your CRM setup", icon: ClipboardCheck },
+  { label: "Guides & Best Practices", href: "/resources/guides", description: "Expert tips and strategies", icon: BookOpen },
+  { label: "ROI Calculator", href: "/resources/roi-calculator", description: "Calculate your potential ROI", icon: Calculator },
+  { label: "TCO Calculator", href: "/resources/tco-calculator", description: "Total cost of ownership analysis", icon: DollarSign },
+];
+
+// ============================================================================
+// MEGA MENU COMPONENT
+// ============================================================================
+
+function MegaMenu({
+  type,
+  isOpen,
+  onClose,
+  isScrolled,
+}: {
+  type: "services" | "industries" | "resources";
+  isOpen: boolean;
+  onClose: () => void;
+  isScrolled: boolean;
+}) {
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
-          transition={{ duration: 0.2 }}
-          className="absolute top-full left-0 mt-2 w-72 bg-white rounded-2xl shadow-2xl border border-black/5 overflow-hidden"
+          exit={{ opacity: 0, y: 8 }}
+          transition={{ duration: 0.15 }}
+          className={`fixed left-0 right-0 bg-white shadow-2xl border-t border-gray-100 ${
+            isScrolled ? "top-[72px]" : "top-[88px]"
+          }`}
           onMouseLeave={onClose}
         >
-          <div className="p-2">
-            {items.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                onClick={onClose}
-                className="block p-4 rounded-xl hover:bg-gray-50 transition-colors group"
-              >
-                <span className="block text-sm font-semibold text-black group-hover:text-teal-500 transition-colors">
-                  {item.label}
-                </span>
-                <span className="block text-xs text-black/50 mt-0.5">
-                  {item.description}
-                </span>
-              </Link>
-            ))}
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-8">
+            {type === "services" && <ServicesMegaMenu onClose={onClose} />}
+            {type === "industries" && <IndustriesMegaMenu onClose={onClose} />}
+            {type === "resources" && <ResourcesMegaMenu onClose={onClose} />}
           </div>
         </motion.div>
       )}
@@ -61,31 +111,200 @@ function DropdownMenu({ items, isOpen, onClose }: { items: typeof services; isOp
   );
 }
 
+function ServicesMegaMenu({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* CRM & RevOps */}
+      <div>
+        <h3 className="text-xs font-bold uppercase tracking-wider text-teal-600 mb-4">
+          CRM & RevOps
+        </h3>
+        <div className="space-y-1">
+          {crmServices.map((item) => (
+            <MenuLink key={item.href} item={item} onClose={onClose} />
+          ))}
+        </div>
+      </div>
+
+      {/* Additional Services */}
+      <div>
+        <h3 className="text-xs font-bold uppercase tracking-wider text-teal-600 mb-4">
+          Additional Services
+        </h3>
+        <div className="space-y-1">
+          {additionalServices.map((item) => (
+            <MenuLink key={item.href} item={item} onClose={onClose} />
+          ))}
+        </div>
+      </div>
+
+      {/* CTA Card */}
+      <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-6 flex flex-col justify-between">
+        <div>
+          <h3 className="text-lg font-bold text-gray-900 mb-2">
+            Not sure which service?
+          </h3>
+          <p className="text-sm text-gray-600 mb-4">
+            Book a free consultation and we&apos;ll help you find the perfect solution.
+          </p>
+        </div>
+        <Link
+          href="/contact"
+          onClick={onClose}
+          className="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-teal-600 transition-colors"
+        >
+          Get Started
+          <ArrowRight className="w-4 h-4" />
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+function IndustriesMegaMenu({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {industries.map((item) => (
+        <Link
+          key={item.href}
+          href={item.href}
+          onClick={onClose}
+          className="group block p-5 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-gray-50 transition-all"
+        >
+          <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors mb-3">
+            <item.icon className="w-5 h-5" />
+          </div>
+          <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors mb-1">
+            {item.label}
+          </h3>
+          <p className="text-xs text-gray-500">{item.description}</p>
+        </Link>
+      ))}
+
+      {/* View All */}
+      <Link
+        href="/industries"
+        onClick={onClose}
+        className="group block p-5 rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50 hover:from-teal-100 hover:to-cyan-100 transition-all"
+      >
+        <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-teal-600 mb-3">
+          <Grid3X3 className="w-5 h-5" />
+        </div>
+        <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors mb-1">
+          View All Industries
+        </h3>
+        <p className="text-xs text-gray-500">Explore all industry solutions</p>
+      </Link>
+    </div>
+  );
+}
+
+function ResourcesMegaMenu({ onClose }: { onClose: () => void }) {
+  const [featured, ...rest] = resources;
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Featured Resource */}
+      <Link
+        href={featured.href}
+        onClick={onClose}
+        className="group block p-6 rounded-xl bg-gradient-to-br from-teal-600 to-cyan-600 text-white"
+      >
+        <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mb-3">
+          <featured.icon className="w-5 h-5" />
+        </div>
+        <h3 className="text-base font-semibold mb-1">{featured.label}</h3>
+        <p className="text-sm text-white/80 mb-4">{featured.description}</p>
+        <span className="inline-flex items-center gap-1 text-sm font-medium">
+          Explore Resources
+          <ArrowRight className="w-4 h-4" />
+        </span>
+      </Link>
+
+      {/* Other Resources */}
+      {rest.map((item) => (
+        <Link
+          key={item.href}
+          href={item.href}
+          onClick={onClose}
+          className="group block p-5 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-gray-50 transition-all"
+        >
+          <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors mb-3">
+            <item.icon className="w-5 h-5" />
+          </div>
+          <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors mb-1">
+            {item.label}
+          </h3>
+          <p className="text-xs text-gray-500">{item.description}</p>
+        </Link>
+      ))}
+    </div>
+  );
+}
+
+function MenuLink({ item, onClose }: { item: MenuItem; onClose: () => void }) {
+  return (
+    <Link
+      href={item.href}
+      onClick={onClose}
+      className="group flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+    >
+      <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+        <item.icon className="w-4 h-4" />
+      </div>
+      <div>
+        <span className="block text-sm font-medium text-gray-900 group-hover:text-teal-600 transition-colors">
+          {item.label}
+        </span>
+        <span className="block text-xs text-gray-500">{item.description}</span>
+      </div>
+    </Link>
+  );
+}
+
+// ============================================================================
+// NAV ITEMS
+// ============================================================================
+
+type NavItem = {
+  label: string;
+  href: string;
+  hasMegaMenu?: boolean;
+  megaMenuType?: "services" | "industries" | "resources";
+};
+
+const navItems: NavItem[] = [
+  { label: "Services", href: "#", hasMegaMenu: true, megaMenuType: "services" },
+  { label: "Industries", href: "#", hasMegaMenu: true, megaMenuType: "industries" },
+  { label: "Resources", href: "#", hasMegaMenu: true, megaMenuType: "resources" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
+];
+
+// ============================================================================
+// MAIN NAVIGATION COMPONENT
+// ============================================================================
+
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openMegaMenu, setOpenMegaMenu] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleMouseEnter = (label: string) => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    setOpenDropdown(label);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpenMegaMenu(label);
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setOpenDropdown(null);
-    }, 150);
+    timeoutRef.current = setTimeout(() => setOpenMegaMenu(null), 150);
   };
 
   return (
@@ -99,7 +318,7 @@ export function Navigation() {
       >
         <nav className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-lg bg-teal-500 flex items-center justify-center">
               <span className="text-white font-bold text-xl">M</span>
             </div>
@@ -109,36 +328,34 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
               <li
                 key={item.label}
                 className="relative"
-                onMouseEnter={() => item.hasDropdown && handleMouseEnter(item.label)}
+                onMouseEnter={() => item.hasMegaMenu && handleMouseEnter(item.label)}
                 onMouseLeave={handleMouseLeave}
               >
                 <Link
                   href={item.href}
-                  className="text-sm font-medium text-black/80 hover:text-teal-500 transition-colors relative group inline-flex items-center gap-1"
+                  className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors inline-flex items-center gap-1 group"
                 >
                   {item.label}
-                  {item.hasDropdown && (
-                    <svg
-                      className={`w-4 h-4 transition-transform ${openDropdown === item.label ? "rotate-180" : ""}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
+                  {item.hasMegaMenu && (
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${
+                        openMegaMenu === item.label ? "rotate-180" : ""
+                      }`}
+                    />
                   )}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-500 transition-all duration-300 group-hover:w-full" />
                 </Link>
-                {item.hasDropdown && item.dropdown && (
-                  <DropdownMenu
-                    items={item.dropdown}
-                    isOpen={openDropdown === item.label}
-                    onClose={() => setOpenDropdown(null)}
+                {item.hasMegaMenu && item.megaMenuType && (
+                  <MegaMenu
+                    type={item.megaMenuType}
+                    isOpen={openMegaMenu === item.label}
+                    onClose={() => setOpenMegaMenu(null)}
+                    isScrolled={isScrolled}
                   />
                 )}
               </li>
@@ -146,12 +363,12 @@ export function Navigation() {
           </ul>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-teal-500 transition-colors duration-300"
+              className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-teal-600 transition-colors"
             >
-              Book a Free Consultation
+              Book a Strategy Call
               <svg
                 className="w-4 h-4"
                 fill="none"
@@ -171,7 +388,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+            className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
             aria-label="Toggle menu"
           >
             <span
@@ -193,73 +410,150 @@ export function Navigation() {
         </nav>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-white md:hidden overflow-y-auto"
+            className="fixed inset-0 z-40 bg-white lg:hidden overflow-y-auto"
           >
             <div className="pt-24 px-6 pb-12 min-h-full flex flex-col">
               <nav className="flex-1">
-                <ul className="space-y-4">
-                  {navItems.map((item, index) => (
-                    <motion.li
-                      key={item.label}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
+                <ul className="space-y-6">
+                  {/* Services */}
+                  <MobileMenuSection
+                    title="Services"
+                    onClose={() => setIsMobileMenuOpen(false)}
+                  >
+                    <MobileMenuCategory title="CRM & RevOps" items={crmServices} onClose={() => setIsMobileMenuOpen(false)} />
+                    <MobileMenuCategory title="Additional Services" items={additionalServices} onClose={() => setIsMobileMenuOpen(false)} />
+                  </MobileMenuSection>
+
+                  {/* Industries */}
+                  <MobileMenuSection
+                    title="Industries"
+                    onClose={() => setIsMobileMenuOpen(false)}
+                  >
+                    <MobileMenuItems items={industries} onClose={() => setIsMobileMenuOpen(false)} />
+                  </MobileMenuSection>
+
+                  {/* Resources */}
+                  <MobileMenuSection
+                    title="Resources"
+                    onClose={() => setIsMobileMenuOpen(false)}
+                  >
+                    <MobileMenuItems items={resources} onClose={() => setIsMobileMenuOpen(false)} />
+                  </MobileMenuSection>
+
+                  {/* Simple Links */}
+                  <li>
+                    <Link
+                      href="/pricing"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-2xl font-bold text-gray-900 hover:text-teal-600 transition-colors block"
                     >
-                      {item.hasDropdown ? (
-                        <div>
-                          <span className="text-2xl font-bold text-black/40 block mb-3">
-                            {item.label}
-                          </span>
-                          <ul className="space-y-2 pl-4 border-l-2 border-teal-500/20">
-                            {item.dropdown?.map((subItem) => (
-                              <li key={subItem.label}>
-                                <Link
-                                  href={subItem.href}
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                  className="block py-2"
-                                >
-                                  <span className="text-lg font-semibold text-black hover:text-teal-500 transition-colors">
-                                    {subItem.label}
-                                  </span>
-                                  <span className="block text-sm text-black/50">
-                                    {subItem.description}
-                                  </span>
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : (
-                        <Link
-                          href={item.href}
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className="text-2xl font-bold text-black hover:text-teal-500 transition-colors block"
-                        >
-                          {item.label}
-                        </Link>
-                      )}
-                    </motion.li>
-                  ))}
+                      Pricing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/about"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-2xl font-bold text-gray-900 hover:text-teal-600 transition-colors block"
+                    >
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/blog"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-2xl font-bold text-gray-900 hover:text-teal-600 transition-colors block"
+                    >
+                      Blog
+                    </Link>
+                  </li>
                 </ul>
               </nav>
+
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="inline-flex items-center justify-center gap-2 bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-teal-500 transition-colors duration-300 mt-8"
+                className="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-teal-600 transition-colors mt-8"
               >
-                Book a Free Consultation
+                Book a Strategy Call
               </Link>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </>
+  );
+}
+
+// ============================================================================
+// MOBILE MENU HELPERS
+// ============================================================================
+
+function MobileMenuSection({
+  title,
+  children,
+  onClose,
+}: {
+  title: string;
+  children: React.ReactNode;
+  onClose: () => void;
+}) {
+  return (
+    <li>
+      <span className="text-2xl font-bold text-gray-400 block mb-3">{title}</span>
+      {children}
+    </li>
+  );
+}
+
+function MobileMenuCategory({
+  title,
+  items,
+  onClose,
+}: {
+  title: string;
+  items: MenuItem[];
+  onClose: () => void;
+}) {
+  return (
+    <div className="mb-4">
+      <span className="text-xs font-bold uppercase tracking-wider text-teal-600 block mb-2">
+        {title}
+      </span>
+      <MobileMenuItems items={items} onClose={onClose} />
+    </div>
+  );
+}
+
+function MobileMenuItems({
+  items,
+  onClose,
+}: {
+  items: MenuItem[];
+  onClose: () => void;
+}) {
+  return (
+    <ul className="space-y-1 pl-4 border-l-2 border-teal-100">
+      {items.map((item) => (
+        <li key={item.href}>
+          <Link
+            href={item.href}
+            onClick={onClose}
+            className="block py-2"
+          >
+            <span className="text-base font-medium text-gray-900">{item.label}</span>
+            <span className="block text-sm text-gray-500">{item.description}</span>
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 }

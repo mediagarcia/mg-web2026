@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
 import { ServiceFAQ } from "@/components/service-page";
+import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
 
 export const metadata: Metadata = {
   title: "CRM Onboarding | Media Garcia",
@@ -188,8 +189,23 @@ export default function CRMOnboardingPage() {
       </section>
 
       {/* Capabilities Grid */}
-      <section className="py-20 lg:py-32 bg-gray-50">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
+        {/* Background pattern */}
+        <FadingGridPattern
+          type="dots"
+          color="gray"
+          opacity={0.08}
+          spacing={28}
+          fadeDirection="both"
+        />
+        <GradientOrb
+          color="teal"
+          size="xl"
+          className="-top-48 -right-48 opacity-30"
+          intensity="subtle"
+          blur="xl"
+        />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
               What&apos;s Included
@@ -260,6 +276,39 @@ export default function CRMOnboardingPage() {
         </div>
       </section>
 
+      {/* Inline CTA */}
+      <section className="py-16 lg:py-20 bg-gray-50">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="bg-black rounded-3xl p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="text-center lg:text-left">
+              <h3 className="text-2xl lg:text-3xl font-black text-white mb-2">
+                See CRM onboarding in action
+              </h3>
+              <p className="text-white/70">
+                Read how we&apos;ve implemented CRM systems for companies like yours.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+              <Link
+                href="/work"
+                className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-teal-500 hover:text-white transition-all"
+              >
+                View Case Studies
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-teal-500 text-white px-6 py-3 rounded-full font-medium hover:bg-teal-400 transition-all"
+              >
+                Book a Strategy Call
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Process Section */}
       <section className="py-20 lg:py-32 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -290,8 +339,23 @@ export default function CRMOnboardingPage() {
       </section>
 
       {/* Mini Case Study */}
-      <section className="py-20 lg:py-32 bg-black text-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-black text-white relative overflow-hidden">
+        <MeshBackground />
+        <GradientOrb
+          color="teal"
+          size="xl"
+          className="-top-32 -left-32 opacity-30"
+          intensity="medium"
+          blur="xl"
+        />
+        <GradientOrb
+          color="purple"
+          size="lg"
+          className="bottom-0 right-1/4 opacity-20"
+          intensity="subtle"
+          blur="xl"
+        />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
@@ -358,9 +422,9 @@ export default function CRMOnboardingPage() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 text-teal-500 font-medium hover:text-teal-600 transition-colors group"
+                className="inline-flex items-center gap-2 bg-teal-500 text-white px-6 py-3 rounded-full font-medium hover:bg-teal-600 transition-colors group"
               >
-                Get in touch
+                Book a Quick Call
                 <svg
                   className="w-5 h-5 transition-transform group-hover:translate-x-1"
                   fill="none"

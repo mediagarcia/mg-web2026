@@ -43,7 +43,7 @@ export function Contact() {
               transition={{ delay: 0.1 }}
               className="journey-destination text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6"
             >
-              Ready to transform how you grow?
+              Ready to talk about your revenue?
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -221,11 +221,11 @@ export function Contact() {
                   type="submit"
                   className="w-full bg-black text-white py-4 rounded-xl font-medium hover:bg-teal-500 transition-colors duration-300"
                 >
-                  Send Message
+                  Send My Request
                 </button>
 
                 <p className="text-xs text-black/40 text-center">
-                  By submitting, you agree to our Privacy Policy and consent to receive communications.
+                  We respond within 24 hours. No spam, ever.
                 </p>
               </div>
             </form>

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
+import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
 
 export const metadata: Metadata = {
   title: "Contact Us | Media Garcia",
@@ -12,15 +13,17 @@ export default function ContactPage() {
       <PageHeader
         badge="Contact"
         title="Let's talk about your growth"
-        description="Ready to streamline your operations and accelerate revenue? Tell us about your goals and we'll show you how we can help."
+        description="Tell us about your goals and we'll show you what's possible."
         breadcrumbs={[
           { label: "Contact", href: "/contact" },
         ]}
       />
 
       {/* Contact Form Section */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-20" intensity="subtle" blur="xl" />
+        <GradientOrb color="purple" size="lg" className="bottom-1/4 -left-32 opacity-15" intensity="subtle" blur="xl" />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Form */}
             <div>
@@ -111,8 +114,11 @@ export default function ContactPage() {
                   type="submit"
                   className="w-full bg-black text-white py-4 rounded-full font-medium hover:bg-teal-500 transition-colors"
                 >
-                  Send Message
+                  Send My Request
                 </button>
+                <p className="text-xs text-black/40 text-center mt-4">
+                  We&apos;ll respond within 24 hours with next steps.
+                </p>
               </form>
             </div>
 
