@@ -79,7 +79,7 @@ const industryUseCases = [
       "Security-focused design with trust signals and certifications",
       "Partner portals with protected resource libraries",
     ],
-    linkHref: "/industries/it-services",
+    linkHref: "/industries/information-technology",
   },
   {
     industry: "B2B SaaS",

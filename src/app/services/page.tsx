@@ -274,7 +274,7 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xl font-bold text-black mb-3">IT Services & Technology</h3>
               <p className="text-black/60 mb-4">Long sales cycles, multi-stakeholder deals, technical evaluation stages, and PSA integrations.</p>
-              <Link href="/industries/it-services" className="text-teal-500 font-medium hover:text-teal-600 transition-colors">
+              <Link href="/industries/information-technology" className="text-teal-500 font-medium hover:text-teal-600 transition-colors">
                 Learn more →
               </Link>
             </div>
