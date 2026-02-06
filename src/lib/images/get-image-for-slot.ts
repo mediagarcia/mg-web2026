@@ -30,16 +30,21 @@ export function getImageForSlot(slot: string, fallback?: string): string | null 
     return fallback ?? null;
   }
 
-  // Return selected image, or first variant, or fallback
+  // Return selected image path (prefer selectedPath for deployed images)
   if (slotData.selected) {
+    // Use selectedPath if available (points to /images/selected/ for production)
+    if (slotData.selectedPath) {
+      return slotData.selectedPath;
+    }
+    // Fall back to finding in files array (for backwards compatibility)
     const selectedFile = slotData.files.find((f) => f.filename === slotData.selected);
     if (selectedFile) {
       return selectedFile.path;
     }
   }
 
-  // Fall back to first image if no selection
-  return slotData.files[0].path;
+  // Fall back to first image if no selection (dev only, won't work in prod)
+  return slotData.files[0]?.path ?? fallback ?? null;
 }
 
 /**

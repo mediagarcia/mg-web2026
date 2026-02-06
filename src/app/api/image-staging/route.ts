@@ -1,9 +1,36 @@
 import { NextRequest, NextResponse } from "next/server";
-import { readFileSync, writeFileSync, existsSync, unlinkSync } from "node:fs";
-import { join } from "node:path";
+import { readFileSync, writeFileSync, existsSync, unlinkSync, mkdirSync, copyFileSync } from "node:fs";
+import { join, dirname } from "node:path";
 import type { ImageManifest } from "@/lib/images/types";
 
 const MANIFEST_PATH = join(process.cwd(), "public/images/generated/manifest.json");
+const SELECTED_DIR = join(process.cwd(), "public/images/selected");
+
+/**
+ * Copy a selected image to the selected/ folder for deployment.
+ * The selected folder is tracked in git, while generated/ is gitignored.
+ */
+function copyToSelectedFolder(slot: string, sourcePath: string): string {
+  // Ensure selected directory exists
+  if (!existsSync(SELECTED_DIR)) {
+    mkdirSync(SELECTED_DIR, { recursive: true });
+  }
+
+  // Create a clean filename: slot-name.ext (e.g., "hero.png", "industries-healthcare.png")
+  const ext = sourcePath.split(".").pop() || "png";
+  const cleanSlot = slot.replace(/\//g, "-"); // Replace slashes with dashes
+  const destFilename = `${cleanSlot}.${ext}`;
+  const destPath = join(SELECTED_DIR, destFilename);
+
+  // Copy the file
+  const fullSourcePath = join(process.cwd(), "public", sourcePath);
+  if (existsSync(fullSourcePath)) {
+    copyFileSync(fullSourcePath, destPath);
+    return `/images/selected/${destFilename}`;
+  }
+
+  return sourcePath; // Return original if copy fails
+}
 
 // Only allow in development
 function isDevelopment(): boolean {
@@ -58,14 +85,24 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Slot not found" }, { status: 404 });
     }
 
+    // Find the selected file to get its path
+    const selectedFile = manifest.slots[slot].files.find((f) => f.filename === selected);
+    if (!selectedFile) {
+      return NextResponse.json({ error: "Selected file not found" }, { status: 404 });
+    }
+
+    // Copy to selected folder for deployment
+    const selectedPath = copyToSelectedFolder(slot, selectedFile.path);
+
     manifest.slots[slot].selected = selected;
+    manifest.slots[slot].selectedPath = selectedPath; // Store the deployed path
     manifest.slots[slot].updatedAt = new Date().toISOString();
     manifest.lastUpdated = new Date().toISOString();
 
     // Save manifest
     writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
 
-    return NextResponse.json({ success: true, manifest });
+    return NextResponse.json({ success: true, manifest, selectedPath });
   } catch {
     return NextResponse.json({ error: "Failed to update manifest" }, { status: 500 });
   }
