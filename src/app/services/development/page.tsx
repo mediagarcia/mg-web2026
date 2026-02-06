@@ -1,9 +1,11 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import { ServiceFAQ } from "@/components/service-page";
 import Link from "next/link";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+import { ServicePageWrapper } from "@/components/ServicePageWrapper";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
   title: "Website & CMS Development | Media Garcia",
@@ -175,9 +177,11 @@ const relatedServices = [
 ];
 
 export default function DevelopmentPage() {
+  const heroImage = getImageForSlot("service-development");
+
   return (
-    <>
-      <PageHeader
+    <ServicePageWrapper>
+      <PageHeaderWithPreview
         badge="Service"
         title="Website & CMS Development"
         description="High-converting websites on HubSpot CMS, WordPress, or custom builds—designed for marketers, optimized for conversions."
@@ -185,6 +189,10 @@ export default function DevelopmentPage() {
           { label: "Services", href: "/services" },
           { label: "Website Development", href: "/services/development" },
         ]}
+        defaultImage={heroImage}
+        slot="service-development"
+        imageAlt="Modern website development and coding"
+        duotoneColor="teal"
       />
 
       {/* Pain Point Section */}
@@ -426,6 +434,6 @@ export default function DevelopmentPage() {
       </section>
 
       <CTABanner />
-    </>
+    </ServicePageWrapper>
   );
 }

@@ -1,10 +1,49 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { usePreview } from "@/lib/images/preview-context";
 
 // Only render in development
 const isProduction = process.env.NODE_ENV === "production";
+
+// Map slots to their page URLs for auto-navigation
+const slotToPageUrl: Record<string, string> = {
+  // Homepage slots
+  "hero": "/",
+  "industries-healthcare": "/",
+  "industries-it": "/",
+  "industries-saas": "/",
+  "why-us": "/",
+  "case-studies-generic": "/",
+  "case-study-healthcare": "/",
+  "case-study-saas": "/",
+  "case-study-crm": "/",
+  "case-study-healthcare-v3": "/",
+  "case-study-saas-v3": "/",
+  "case-study-crm-v3": "/",
+  "services-accent": "/",
+  "stats-background": "/",
+
+  // Service page slots
+  "service-crm-onboarding": "/services/hubspot-onboarding",
+  "service-crm-migration": "/services/crm-migration",
+  "service-marketing-automation": "/services/marketing-automation",
+  "service-sales-enablement": "/services/sales-enablement",
+  "service-reporting": "/services/reporting",
+  "service-ai-automation": "/services/ai-automation",
+  "service-integrations": "/services/integrations",
+  "service-development": "/services/development",
+  "service-marketing": "/services/marketing",
+
+  // Industry page slots (v2 versions used on dedicated pages)
+  "industries-healthcare-v2": "/industries/healthcare",
+  "industries-it-v2": "/industries/information-technology",
+  "industries-saas-v2": "/industries/saas",
+};
+
+// Session storage key for pending slot after navigation
+const PENDING_SLOT_KEY = "preview-pending-slot";
 
 // Map slots to page section selectors for auto-scroll
 const slotToSectionMap: Record<string, string> = {
@@ -56,6 +95,8 @@ function scrollToSlotSection(slot: string) {
 }
 
 export function ImagePreviewBar() {
+  const router = useRouter();
+  const pathname = usePathname();
   const {
     isPreviewMode,
     setPreviewMode,
@@ -86,12 +127,43 @@ export function ImagePreviewBar() {
     (slot) => manifest.slots[slot].files.length > 0
   ) : [];
 
+  // Check for pending slot from navigation on mount
+  useEffect(() => {
+    if (isPreviewMode && availableSlots.length > 0) {
+      const pendingSlot = sessionStorage.getItem(PENDING_SLOT_KEY);
+      if (pendingSlot && availableSlots.includes(pendingSlot)) {
+        setCurrentSlot(pendingSlot);
+        sessionStorage.removeItem(PENDING_SLOT_KEY);
+        // Auto-scroll after setting slot
+        setTimeout(() => scrollToSlotSection(pendingSlot), 200);
+      }
+    }
+  }, [isPreviewMode, availableSlots, setCurrentSlot]);
+
   // Set first slot as default when manifest loads
   useEffect(() => {
     if (availableSlots.length > 0 && !currentSlot) {
       setCurrentSlot(availableSlots[0]);
     }
   }, [availableSlots, currentSlot, setCurrentSlot]);
+
+  // Navigate to a slot, handling cross-page navigation
+  const navigateToSlot = useCallback((newSlot: string) => {
+    const targetUrl = slotToPageUrl[newSlot];
+    const currentUrl = pathname;
+
+    // Check if we need to navigate to a different page
+    if (targetUrl && targetUrl !== currentUrl) {
+      // Store pending slot for after navigation
+      sessionStorage.setItem(PENDING_SLOT_KEY, newSlot);
+      // Navigate with preview param
+      router.push(`${targetUrl}?preview=1`);
+    } else {
+      // Same page, just switch slot
+      setCurrentSlot(newSlot);
+      setTimeout(() => scrollToSlotSection(newSlot), 100);
+    }
+  }, [pathname, router, setCurrentSlot]);
 
   // Cycle through slots (for up/down navigation)
   const cycleSlot = useCallback((direction: "prev" | "next") => {
@@ -107,10 +179,9 @@ export function ImagePreviewBar() {
     }
 
     const newSlot = availableSlots[newIndex];
-    setCurrentSlot(newSlot);
-    // Auto-scroll to the section
-    setTimeout(() => scrollToSlotSection(newSlot), 100);
-  }, [availableSlots, currentSlot, setCurrentSlot]);
+    // Use navigateToSlot for cross-page navigation support
+    navigateToSlot(newSlot);
+  }, [availableSlots, currentSlot, navigateToSlot]);
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -298,9 +369,8 @@ export function ImagePreviewBar() {
               value={currentSlot ?? ""}
               onChange={(e) => {
                 const newSlot = e.target.value;
-                setCurrentSlot(newSlot);
-                // Auto-scroll to the section
-                setTimeout(() => scrollToSlotSection(newSlot), 100);
+                // Use navigateToSlot for cross-page navigation support
+                navigateToSlot(newSlot);
               }}
               className="bg-white/10 border border-white/20 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
             >

@@ -1,9 +1,11 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
 import { ServiceFAQ } from "@/components/service-page";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+import { ServicePageWrapper } from "@/components/ServicePageWrapper";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
   title: "Marketing Automation | Media Garcia",
@@ -144,9 +146,11 @@ const relatedServices = [
 ];
 
 export default function MarketingAutomationPage() {
+  const heroImage = getImageForSlot("service-marketing-automation");
+
   return (
-    <>
-      <PageHeader
+    <ServicePageWrapper>
+      <PageHeaderWithPreview
         badge="Service"
         title="Marketing Automation"
         description="Build marketing automation that proves ROI. Intelligent nurture campaigns, lead scoring, and attribution—on HubSpot, Salesforce, or any platform."
@@ -154,6 +158,10 @@ export default function MarketingAutomationPage() {
           { label: "Services", href: "/services" },
           { label: "Marketing Automation", href: "/services/marketing-automation" },
         ]}
+        defaultImage={heroImage}
+        slot="service-marketing-automation"
+        imageAlt="Marketing automation workflows"
+        duotoneColor="teal"
       />
 
       {/* Pain Point Section */}
@@ -424,6 +432,6 @@ export default function MarketingAutomationPage() {
       </section>
 
       <CTABanner />
-    </>
+    </ServicePageWrapper>
   );
 }

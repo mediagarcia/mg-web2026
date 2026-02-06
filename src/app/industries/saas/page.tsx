@@ -1,7 +1,9 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
+import { getVersionedImageForSlot } from "@/lib/images/get-image-for-slot";
+import { ServicePageWrapper } from "@/components/ServicePageWrapper";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
   title: "HubSpot for SaaS Companies | Media Garcia",
@@ -58,9 +60,11 @@ const metrics = [
 ];
 
 export default function SaaSIndustryPage() {
+  const heroImage = getVersionedImageForSlot("industries-saas");
+
   return (
-    <>
-      <PageHeader
+    <ServicePageWrapper>
+      <PageHeaderWithPreview
         badge="Industry"
         title="HubSpot for SaaS Companies"
         description="Scale your SaaS business with HubSpot implementations designed for subscription metrics, product-led growth, and customer success."
@@ -68,6 +72,10 @@ export default function SaaSIndustryPage() {
           { label: "Industries", href: "/industries" },
           { label: "SaaS", href: "/industries/saas" },
         ]}
+        defaultImage={heroImage}
+        slot="industries-saas"
+        imageAlt="SaaS growth and subscription business"
+        duotoneColor="orange"
       />
 
       {/* Challenges */}
@@ -167,6 +175,6 @@ export default function SaaSIndustryPage() {
       </section>
 
       <CTABanner />
-    </>
+    </ServicePageWrapper>
   );
 }

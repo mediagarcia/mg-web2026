@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
+import { ServicePageWrapper } from "@/components/ServicePageWrapper";
 
 export const metadata: Metadata = {
   title: "Industries We Serve | Media Garcia",
@@ -49,7 +50,7 @@ const industries = [
 
 export default function IndustriesPage() {
   return (
-    <>
+    <ServicePageWrapper>
       <PageHeader
         badge="Industries"
         title="Deep expertise in three verticals"
@@ -139,6 +140,6 @@ export default function IndustriesPage() {
       </section>
 
       <CTABanner />
-    </>
+    </ServicePageWrapper>
   );
 }

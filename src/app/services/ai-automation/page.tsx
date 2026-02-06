@@ -1,9 +1,11 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import { ServiceFAQ } from "@/components/service-page";
 import Link from "next/link";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+import { ServicePageWrapper } from "@/components/ServicePageWrapper";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
   title: "AI-Powered Automation | Media Garcia",
@@ -205,9 +207,11 @@ const relatedServices = [
 ];
 
 export default function AIAutomationPage() {
+  const heroImage = getImageForSlot("service-ai-automation");
+
   return (
-    <>
-      <PageHeader
+    <ServicePageWrapper>
+      <PageHeaderWithPreview
         badge="Service"
         title="AI-Powered Automation"
         description="Unlock AI features you're already paying for—predictive scoring, intelligent workflows, chatbots—on HubSpot, Salesforce, or any CRM."
@@ -215,6 +219,10 @@ export default function AIAutomationPage() {
           { label: "Services", href: "/services" },
           { label: "AI-Powered Automation", href: "/services/ai-automation" },
         ]}
+        defaultImage={heroImage}
+        slot="service-ai-automation"
+        imageAlt="AI automation and machine learning technology"
+        duotoneColor="purple"
       />
 
       {/* Pain Point Section */}
@@ -456,6 +464,6 @@ export default function AIAutomationPage() {
       </section>
 
       <CTABanner />
-    </>
+    </ServicePageWrapper>
   );
 }

@@ -1,9 +1,11 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
 import { ServiceFAQ } from "@/components/service-page";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+import { ServicePageWrapper } from "@/components/ServicePageWrapper";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
   title: "Reporting & Analytics | Media Garcia",
@@ -144,9 +146,11 @@ const relatedServices = [
 ];
 
 export default function ReportingPage() {
+  const heroImage = getImageForSlot("service-reporting");
+
   return (
-    <>
-      <PageHeader
+    <ServicePageWrapper>
+      <PageHeaderWithPreview
         badge="Service"
         title="Reporting & Analytics"
         description="Custom dashboards and attribution that connect marketing spend to closed revenue. Know what's working—on HubSpot, Salesforce, or any platform."
@@ -154,6 +158,10 @@ export default function ReportingPage() {
           { label: "Services", href: "/services" },
           { label: "Reporting & Analytics", href: "/services/reporting" },
         ]}
+        defaultImage={heroImage}
+        slot="service-reporting"
+        imageAlt="Data analytics dashboard with charts and metrics"
+        duotoneColor="teal"
       />
 
       {/* Pain Point Section */}
@@ -424,6 +432,6 @@ export default function ReportingPage() {
       </section>
 
       <CTABanner />
-    </>
+    </ServicePageWrapper>
   );
 }

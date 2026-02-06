@@ -1,9 +1,11 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import { ServiceFAQ } from "@/components/service-page";
 import Link from "next/link";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+import { ServicePageWrapper } from "@/components/ServicePageWrapper";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
   title: "Growth Marketing Services | Media Garcia",
@@ -192,9 +194,11 @@ const relatedServices = [
 ];
 
 export default function MarketingPage() {
+  const heroImage = getImageForSlot("service-marketing");
+
   return (
-    <>
-      <PageHeader
+    <ServicePageWrapper>
+      <PageHeaderWithPreview
         badge="Service"
         title="Growth Marketing Services"
         description="Full-service marketing execution—SEO, paid ads, content, and conversion optimization—all tied to revenue. For healthcare, IT, and SaaS."
@@ -202,6 +206,10 @@ export default function MarketingPage() {
           { label: "Services", href: "/services" },
           { label: "Growth Marketing", href: "/services/marketing" },
         ]}
+        defaultImage={heroImage}
+        slot="service-marketing"
+        imageAlt="Growth marketing strategy and campaigns"
+        duotoneColor="orange"
       />
 
       {/* Pain Point Section */}
@@ -498,6 +506,6 @@ export default function MarketingPage() {
       </section>
 
       <CTABanner />
-    </>
+    </ServicePageWrapper>
   );
 }

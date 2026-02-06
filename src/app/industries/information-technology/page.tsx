@@ -1,7 +1,9 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
+import { getVersionedImageForSlot } from "@/lib/images/get-image-for-slot";
+import { ServicePageWrapper } from "@/components/ServicePageWrapper";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
   title: "HubSpot for IT Companies | Media Garcia",
@@ -51,9 +53,11 @@ const solutions = [
 ];
 
 export default function ITIndustryPage() {
+  const heroImage = getVersionedImageForSlot("industries-it");
+
   return (
-    <>
-      <PageHeader
+    <ServicePageWrapper>
+      <PageHeaderWithPreview
         badge="Industry"
         title="HubSpot for IT Companies"
         description="We understand the unique challenges of selling IT services and solutions. Our HubSpot implementations are built for complex B2B technology sales."
@@ -61,6 +65,10 @@ export default function ITIndustryPage() {
           { label: "Industries", href: "/industries" },
           { label: "Information Technology", href: "/industries/information-technology" },
         ]}
+        defaultImage={heroImage}
+        slot="industries-it"
+        imageAlt="IT services and technology solutions"
+        duotoneColor="purple"
       />
 
       {/* Challenges */}
@@ -157,6 +165,6 @@ export default function ITIndustryPage() {
       </section>
 
       <CTABanner />
-    </>
+    </ServicePageWrapper>
   );
 }
