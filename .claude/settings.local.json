@@ -79,7 +79,19 @@
       "Bash(echo:*)",
       "Bash(npx next build)",
       "Bash(gh pr create:*)",
-      "Bash(gh pr merge:*)"
+      "Bash(gh pr merge:*)",
+      "Bash(gh pr view:*)",
+      "Bash(git pull:*)",
+      "Bash(npm run generate-image:*)",
+      "Bash(npx kill-port:*)",
+      "Bash(ls:*)",
+      "Bash(npx tsc:*)",
+      "Bash(git show:*)",
+      "Bash(git config:*)",
+      "Bash(git -C /mnt/d/mg-web/master config:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(/mnt/c/Program Files/Git/bin/git.exe:*)",
+      "Bash(/mnt/c/Program Files \\\\\\(x86\\\\\\)/Git/bin/git.exe --version)"
     ]
   }
 }
