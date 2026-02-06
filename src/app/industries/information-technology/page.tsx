@@ -53,7 +53,8 @@ const solutions = [
 ];
 
 export default function ITIndustryPage() {
-  const heroImage = getVersionedImageForSlot("industries-it");
+  // Use versioned slot for dedicated industry page (base slot is for homepage)
+  const heroImage = getVersionedImageForSlot("industries-it-v2");
 
   return (
     <ServicePageWrapper>
@@ -66,7 +67,7 @@ export default function ITIndustryPage() {
           { label: "Information Technology", href: "/industries/information-technology" },
         ]}
         defaultImage={heroImage}
-        slot="industries-it"
+        slot="industries-it-v2"
         imageAlt="IT services and technology solutions"
         duotoneColor="purple"
       />

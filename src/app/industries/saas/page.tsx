@@ -60,7 +60,8 @@ const metrics = [
 ];
 
 export default function SaaSIndustryPage() {
-  const heroImage = getVersionedImageForSlot("industries-saas");
+  // Use versioned slot for dedicated industry page (base slot is for homepage)
+  const heroImage = getVersionedImageForSlot("industries-saas-v2");
 
   return (
     <ServicePageWrapper>
@@ -73,7 +74,7 @@ export default function SaaSIndustryPage() {
           { label: "SaaS", href: "/industries/saas" },
         ]}
         defaultImage={heroImage}
-        slot="industries-saas"
+        slot="industries-saas-v2"
         imageAlt="SaaS growth and subscription business"
         duotoneColor="orange"
       />

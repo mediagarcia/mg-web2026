@@ -60,7 +60,8 @@ const metrics = [
 ];
 
 export default function HealthcareIndustryPage() {
-  const heroImage = getVersionedImageForSlot("industries-healthcare");
+  // Use versioned slot for dedicated industry page (base slot is for homepage)
+  const heroImage = getVersionedImageForSlot("industries-healthcare-v2");
 
   return (
     <ServicePageWrapper>
@@ -73,7 +74,7 @@ export default function HealthcareIndustryPage() {
           { label: "Healthcare", href: "/industries/healthcare" },
         ]}
         defaultImage={heroImage}
-        slot="industries-healthcare"
+        slot="industries-healthcare-v2"
         imageAlt="Healthcare technology and digital transformation"
         duotoneColor="teal"
       />
