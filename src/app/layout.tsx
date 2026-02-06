@@ -211,7 +211,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${roboto.variable} ${robotoMono.variable}`}>
+    <html lang="en" className={`${roboto.variable} ${robotoMono.variable}`} data-scroll-behavior="smooth">
       <body className="font-sans antialiased">
         <ScrollToTopOnNavigation />
         {/* Skip to main content link for accessibility */}

@@ -54,7 +54,6 @@ export async function POST(request: NextRequest) {
 
       const child = spawn("npm", args, {
         cwd: process.cwd(),
-        shell: true,
         env: { ...process.env },
       });
 

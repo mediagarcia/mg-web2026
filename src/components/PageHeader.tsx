@@ -131,6 +131,8 @@ export function PageHeader({ badge, title, description, breadcrumbs, image, imag
               color={duotoneColor}
               intensity="light"
               className="w-full h-full"
+              priority
+              sizes="(max-width: 1280px) 400px, 500px"
             />
           </motion.div>
         )}
