@@ -25,3 +25,5 @@ export {
   HeroImagePlaceholder,
   AvatarPlaceholder,
 } from "./ImagePlaceholder";
+
+export { BackgroundVideo } from "./BackgroundVideo";

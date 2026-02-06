@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { OrganicShapeCluster, DotPattern } from "@/components/OrganicShapes";
+import { BackgroundVideo } from "@/components/ui/visuals";
 import { useState, useEffect } from "react";
 
 const rotatingWords = [
@@ -67,6 +68,15 @@ export function Hero({ heroImage, imageOpacity = 0.04 }: HeroProps) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+      {/* Background Video - subtle particles effect */}
+      <div className="absolute inset-0 z-0 opacity-15">
+        <BackgroundVideo
+          src="/videos/hero-particles.mp4"
+          poster="/videos/hero-particles-poster.jpg"
+          overlay={false}
+        />
+      </div>
+
       {/* Background Image - subtle tech/consulting visual */}
       <div className="absolute inset-0 z-0">
         <Image

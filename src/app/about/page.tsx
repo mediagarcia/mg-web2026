@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
-import { GradientOrb, FadingGridPattern, MeshBackground } from "@/components/ui/visuals";
+import { GradientOrb, FadingGridPattern, MeshBackground, BackgroundVideo } from "@/components/ui/visuals";
 
 // Metadata exported from a separate file for server component compatibility
 // For now, we'll use the client component approach with motion
@@ -358,6 +358,14 @@ export default function AboutPage() {
 
       {/* By The Numbers Section */}
       <section className="py-20 lg:py-32 bg-black text-white relative overflow-hidden">
+        {/* Background Video - subtle minimal animation */}
+        <div className="absolute inset-0 z-0 opacity-30">
+          <BackgroundVideo
+            src="/videos/about-minimal.mp4"
+            poster="/videos/about-minimal-poster.jpg"
+            overlay={false}
+          />
+        </div>
         <MeshBackground />
         <GradientOrb color="teal" size="xl" className="-top-32 -left-32 opacity-30" intensity="medium" blur="xl" />
         <GradientOrb color="purple" size="lg" className="bottom-0 right-1/4 opacity-20" intensity="subtle" blur="xl" />

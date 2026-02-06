@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
+import { BackgroundVideo } from "@/components/ui/visuals";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -192,8 +193,15 @@ export default function ServicesPage() {
       </section>
 
       {/* Platform Agnostic Message */}
-      <section className="py-20 lg:py-32 bg-black text-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-black text-white relative overflow-hidden">
+        {/* Background Video - tech/data visualization */}
+        <BackgroundVideo
+          src="/videos/services-tech.mp4"
+          poster="/videos/services-tech-poster.jpg"
+          overlay={true}
+          overlayOpacity={75}
+        />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
