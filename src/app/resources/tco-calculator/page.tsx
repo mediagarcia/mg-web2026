@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 
 export const metadata: Metadata = {
   title: "CRM Total Cost of Ownership Calculator | Media Garcia",
@@ -73,7 +74,9 @@ const comparison = [
 export default function TCOCalculatorPage() {
   return (
     <>
-      <PageHeader
+      <PageHeaderWithPreview
+        slot="page-tco-calculator"
+        defaultImage={getImageForSlot("page-tco-calculator")}
         badge="Calculator"
         title="CRM Total Cost of Ownership"
         description="Compare the true cost of different CRM platforms over time, including hidden costs most vendors don't mention."

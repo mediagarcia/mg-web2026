@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
 
@@ -115,7 +116,9 @@ const decisionGuide = [
 export default function ServicesPage() {
   return (
     <>
-      <PageHeader
+      <PageHeaderWithPreview
+        slot="page-services"
+        defaultImage={getImageForSlot("page-services")}
         badge="Services"
         title="Revenue services for complex sales cycles"
         description="Revenue operations, CRM implementation, and growth services built for healthcare, IT services, and B2B SaaS companies. We work on HubSpot, Salesforce, and any platform."

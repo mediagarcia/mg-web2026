@@ -1,8 +1,8 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
-import { ServicePageWrapper } from "@/components/ServicePageWrapper";
 
 export const metadata: Metadata = {
   title: "Industries We Serve | Media Garcia",
@@ -50,8 +50,10 @@ const industries = [
 
 export default function IndustriesPage() {
   return (
-    <ServicePageWrapper>
-      <PageHeader
+    <>
+      <PageHeaderWithPreview
+        slot="page-industries"
+        defaultImage={getImageForSlot("page-industries")}
         badge="Industries"
         title="Deep expertise in three verticals"
         description="We specialize in industries with complex sales cycles and high stakes. Healthcare, IT services, and SaaS — we understand your unique challenges."
@@ -140,6 +142,6 @@ export default function IndustriesPage() {
       </section>
 
       <CTABanner />
-    </ServicePageWrapper>
+    </>
   );
 }

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-07T04:54:49.760Z",
+  "lastUpdated": "2026-02-07T22:14:24.657Z",
   "slots": {
     "hero": {
       "slot": "hero",
@@ -8,7 +8,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "16:9",
       "createdAt": "2026-02-05T07:01:32.682Z",
-      "updatedAt": "2026-02-05T19:02:51.131Z",
+      "updatedAt": "2026-02-07T22:14:24.657Z",
       "files": [
         {
           "filename": "hero-003.png",
@@ -62,7 +62,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-05T09:47:12.642Z",
-      "updatedAt": "2026-02-05T09:48:00.136Z",
+      "updatedAt": "2026-02-07T22:13:16.978Z",
       "files": [
         {
           "filename": "industries-it-001.png",
@@ -80,7 +80,7 @@
           "generatedAt": "2026-02-05T09:47:22.178Z"
         }
       ],
-      "selected": "industries-it-002.png",
+      "selected": "industries-it-001.png",
       "selectedPath": "/images/selected/industries-it.png"
     },
     "industries-saas": {
@@ -89,7 +89,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-05T09:47:45.607Z",
-      "updatedAt": "2026-02-05T09:47:45.607Z",
+      "updatedAt": "2026-02-07T22:13:12.881Z",
       "files": [
         {
           "filename": "industries-saas-001.png",
@@ -107,7 +107,8 @@
           "generatedAt": "2026-02-05T09:47:55.501Z"
         }
       ],
-      "selected": null
+      "selected": "industries-saas-001.png",
+      "selectedPath": "/images/selected/industries-saas.png"
     },
     "case-studies-generic": {
       "slot": "case-studies-generic",
@@ -923,7 +924,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "16:9",
       "createdAt": "2026-02-07T04:20:11.255Z",
-      "updatedAt": "2026-02-07T04:20:11.255Z",
+      "updatedAt": "2026-02-07T21:53:21.067Z",
       "files": [
         {
           "filename": "page-industries-001.png",
@@ -941,7 +942,8 @@
           "generatedAt": "2026-02-07T04:20:23.501Z"
         }
       ],
-      "selected": null
+      "selected": "page-industries-001.png",
+      "selectedPath": "/images/selected/page-industries.png"
     }
   }
 }

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ServiceFAQ } from "@/components/service-page";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
 import { getImageForSlot } from "@/lib/images/get-image-for-slot";
-import { ServicePageWrapper } from "@/components/ServicePageWrapper";
+
 import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
@@ -149,7 +149,7 @@ export default function SalesEnablementPage() {
   const heroImage = getImageForSlot("service-sales-enablement");
 
   return (
-    <ServicePageWrapper>
+    <>
       <PageHeaderWithPreview
         badge="Service"
         title="Sales Enablement"
@@ -432,6 +432,6 @@ export default function SalesEnablementPage() {
       </section>
 
       <CTABanner />
-    </ServicePageWrapper>
+    </>
   );
 }

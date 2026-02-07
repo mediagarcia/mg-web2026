@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
 import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
@@ -59,7 +60,9 @@ const resources = [
 export default function ResourcesPage() {
   return (
     <>
-      <PageHeader
+      <PageHeaderWithPreview
+        slot="page-resources"
+        defaultImage={getImageForSlot("page-resources")}
         badge="Resources"
         title="Tools and guides to help you grow"
         description="Free resources to help you make better decisions about CRM strategy, RevOps, and marketing automation."

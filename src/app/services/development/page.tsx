@@ -4,7 +4,7 @@ import { ServiceFAQ } from "@/components/service-page";
 import Link from "next/link";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
 import { getImageForSlot } from "@/lib/images/get-image-for-slot";
-import { ServicePageWrapper } from "@/components/ServicePageWrapper";
+
 import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
@@ -180,7 +180,7 @@ export default function DevelopmentPage() {
   const heroImage = getImageForSlot("service-development");
 
   return (
-    <ServicePageWrapper>
+    <>
       <PageHeaderWithPreview
         badge="Service"
         title="Website & CMS Development"
@@ -434,6 +434,6 @@ export default function DevelopmentPage() {
       </section>
 
       <CTABanner />
-    </ServicePageWrapper>
+    </>
   );
 }

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ServiceFAQ } from "@/components/service-page";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
 import { getImageForSlot } from "@/lib/images/get-image-for-slot";
-import { ServicePageWrapper } from "@/components/ServicePageWrapper";
+
 import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
@@ -150,7 +150,7 @@ export default function CRMOnboardingPage() {
   const heroImage = getImageForSlot("service-crm-onboarding");
 
   return (
-    <ServicePageWrapper>
+    <>
       <PageHeaderWithPreview
         badge="Service"
         title="CRM Onboarding"
@@ -491,6 +491,6 @@ export default function CRMOnboardingPage() {
       </section>
 
       <CTABanner />
-    </ServicePageWrapper>
+    </>
   );
 }

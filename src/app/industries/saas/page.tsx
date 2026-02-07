@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { CTABanner } from "@/components/sections";
 import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
 import { getVersionedImageForSlot } from "@/lib/images/get-image-for-slot";
-import { ServicePageWrapper } from "@/components/ServicePageWrapper";
+
 import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
@@ -64,7 +64,7 @@ export default function SaaSIndustryPage() {
   const heroImage = getVersionedImageForSlot("industries-saas-v2");
 
   return (
-    <ServicePageWrapper>
+    <>
       <PageHeaderWithPreview
         badge="Industry"
         title="HubSpot for SaaS Companies"
@@ -176,6 +176,6 @@ export default function SaaSIndustryPage() {
       </section>
 
       <CTABanner />
-    </ServicePageWrapper>
+    </>
   );
 }

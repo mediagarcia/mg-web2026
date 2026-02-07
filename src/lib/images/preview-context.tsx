@@ -27,12 +27,26 @@ const PreviewContext = createContext<PreviewContextValue | null>(null);
 // In production, return a no-op provider
 const isProduction = process.env.NODE_ENV === "production";
 
+const PREVIEW_MODE_KEY = "preview-mode-active";
+
 export function PreviewProvider({ children }: { children: ReactNode }) {
-  const [isPreviewMode, setPreviewMode] = useState(false);
+  const [isPreviewMode, setPreviewModeState] = useState(false);
   const [manifest, setManifest] = useState<ImageManifest | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [currentSlot, setCurrentSlot] = useState<string | null>(null);
   const [currentVariantIndex, setCurrentVariantIndex] = useState<Record<string, number>>({});
+
+  // Wrap setPreviewMode to persist in sessionStorage
+  const setPreviewMode = useCallback((enabled: boolean) => {
+    setPreviewModeState(enabled);
+    if (typeof window !== "undefined") {
+      if (enabled) {
+        sessionStorage.setItem(PREVIEW_MODE_KEY, "1");
+      } else {
+        sessionStorage.removeItem(PREVIEW_MODE_KEY);
+      }
+    }
+  }, []);
 
   // Fetch manifest from API and initialize variant indices from selections
   const refreshManifest = useCallback(async () => {
@@ -75,17 +89,17 @@ export function PreviewProvider({ children }: { children: ReactNode }) {
     }
   }, [isPreviewMode, manifest, refreshManifest]);
 
-  // Check URL for preview param on mount
+  // Check URL param or sessionStorage for preview mode on mount
   useEffect(() => {
     if (isProduction) return;
 
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
-      if (params.get("preview") === "1") {
+      if (params.get("preview") === "1" || sessionStorage.getItem(PREVIEW_MODE_KEY) === "1") {
         setPreviewMode(true);
       }
     }
-  }, []);
+  }, [setPreviewMode]);
 
   // Cycle through variants for a slot and auto-save selection
   const cycleVariant = useCallback((slot: string, direction: "prev" | "next") => {

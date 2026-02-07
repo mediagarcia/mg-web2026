@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { PageHeader } from "@/components/PageHeader";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 import { CTABanner } from "@/components/sections";
 import {
   caseStudies,
@@ -44,7 +44,8 @@ export default function WorkPage() {
 
   return (
     <>
-      <PageHeader
+      <PageHeaderWithPreview
+        slot="page-work"
         badge="Our Work"
         title="Client Success Stories"
         description="Real outcomes from real partnerships. See how we've helped businesses transform their operations with strategic CRM implementation and automation."

@@ -40,6 +40,16 @@ const slotToPageUrl: Record<string, string> = {
   "industries-healthcare-v2": "/industries/healthcare",
   "industries-it-v2": "/industries/information-technology",
   "industries-saas-v2": "/industries/saas",
+
+  // Page header slots
+  "page-resources": "/resources",
+  "page-roi-calculator": "/resources/roi-calculator",
+  "page-tco-calculator": "/resources/tco-calculator",
+  "page-services": "/services",
+  "page-work": "/work",
+  "page-assessment": "/resources/assessment",
+  "page-guides": "/resources/guides",
+  "page-industries": "/industries",
 };
 
 // Session storage key for pending slot after navigation
@@ -127,7 +137,7 @@ export function ImagePreviewBar() {
     (slot) => manifest.slots[slot].files.length > 0
   ) : [];
 
-  // Check for pending slot from navigation on mount
+  // Check for pending slot after navigation completes
   useEffect(() => {
     if (isPreviewMode && availableSlots.length > 0) {
       const pendingSlot = sessionStorage.getItem(PENDING_SLOT_KEY);
@@ -138,7 +148,7 @@ export function ImagePreviewBar() {
         setTimeout(() => scrollToSlotSection(pendingSlot), 200);
       }
     }
-  }, [isPreviewMode, availableSlots, setCurrentSlot]);
+  }, [isPreviewMode, availableSlots, setCurrentSlot, pathname]);
 
   // Set first slot as default when manifest loads
   useEffect(() => {
@@ -152,15 +162,17 @@ export function ImagePreviewBar() {
     const targetUrl = slotToPageUrl[newSlot];
     const currentUrl = pathname;
 
+    // Always update the current slot immediately for UI feedback
+    setCurrentSlot(newSlot);
+
     // Check if we need to navigate to a different page
     if (targetUrl && targetUrl !== currentUrl) {
-      // Store pending slot for after navigation
+      // Store pending slot so scroll happens after navigation completes
       sessionStorage.setItem(PENDING_SLOT_KEY, newSlot);
       // Navigate with preview param
       router.push(`${targetUrl}?preview=1`);
     } else {
-      // Same page, just switch slot
-      setCurrentSlot(newSlot);
+      // Same page, just scroll to section
       setTimeout(() => scrollToSlotSection(newSlot), 100);
     }
   }, [pathname, router, setCurrentSlot]);
