@@ -137,7 +137,7 @@ test.describe('Horizontal Overflow Detection', () => {
 
   test.describe('Tablet Viewport Tests', () => {
     test('all critical pages fit tablet viewport', async ({ page }) => {
-      test.setTimeout(120000); // Extended timeout for iterating many pages
+      test.slow(); // Triple default timeout: 30s → 90s
       await page.setViewportSize({ width: 768, height: 1024 });
 
       for (const pageInfo of criticalPages) {
@@ -174,7 +174,7 @@ test.describe('Horizontal Overflow Detection', () => {
 
   test.describe('Specific Component Overflow Tests', () => {
     test('hero section fits all viewports', async ({ page }) => {
-      test.setTimeout(60000);
+      test.slow(); // Triple default timeout: 30s → 90s
       for (const viewport of mobileViewports) {
         await page.setViewportSize({
           width: viewport.width,

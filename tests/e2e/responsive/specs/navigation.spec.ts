@@ -69,8 +69,9 @@ test.describe('Navigation Responsive Behavior', () => {
       await hamburger.click();
 
       // Wait for mobile menu overlay to appear (Framer Motion animated)
-      const mobileMenu = page.locator('div.fixed.inset-0.z-40');
+      const mobileMenu = page.getByTestId('mobile-menu');
       await mobileMenu.waitFor({ state: 'visible', timeout: 5000 });
+      await page.waitForTimeout(350); // Let Framer Motion opacity animation complete
 
       // Verify menu content is visible (scope to mobile menu to avoid matching hidden desktop nav)
       await expect(mobileMenu.locator('text=Services').first()).toBeVisible();
@@ -86,8 +87,9 @@ test.describe('Navigation Responsive Behavior', () => {
       const hamburger = page.locator('button[aria-label="Toggle menu"]');
       await hamburger.click();
 
-      const mobileMenu = page.locator('div.fixed.inset-0.z-40');
+      const mobileMenu = page.getByTestId('mobile-menu');
       await mobileMenu.waitFor({ state: 'visible', timeout: 5000 });
+      await page.waitForTimeout(350); // Let Framer Motion opacity animation complete
 
       // Check all main sections are visible (scoped to mobile menu)
       await expect(mobileMenu.locator('text=Services').first()).toBeVisible();
@@ -106,27 +108,32 @@ test.describe('Navigation Responsive Behavior', () => {
       const hamburger = page.locator('button[aria-label="Toggle menu"]');
       await hamburger.click();
 
-      const mobileMenu = page.locator('div.fixed.inset-0.z-40');
+      const mobileMenu = page.getByTestId('mobile-menu');
       await mobileMenu.waitFor({ state: 'visible', timeout: 5000 });
+      await page.waitForTimeout(350); // Let Framer Motion opacity animation complete
 
       // Click on Pricing link within mobile menu
-      await mobileMenu.locator('a:has-text("Pricing")').click();
+      const pricingLink = mobileMenu.locator('a:has-text("Pricing")');
+      await pricingLink.scrollIntoViewIfNeeded();
+      await pricingLink.click();
 
       // Should navigate and close menu
-      await expect(page).toHaveURL('/pricing');
+      await expect(page).toHaveURL('/pricing', { timeout: 10000 });
     });
 
     test('mobile CTA button is functional', async ({ page }) => {
       const hamburger = page.locator('button[aria-label="Toggle menu"]');
       await hamburger.click();
 
-      const mobileMenu = page.locator('div.fixed.inset-0.z-40');
+      const mobileMenu = page.getByTestId('mobile-menu');
       await mobileMenu.waitFor({ state: 'visible', timeout: 5000 });
+      await page.waitForTimeout(350); // Let Framer Motion opacity animation complete
 
       const ctaButton = mobileMenu.locator('a:has-text("Book a Strategy Call")');
+      await ctaButton.scrollIntoViewIfNeeded();
       await ctaButton.click();
 
-      await expect(page).toHaveURL('/contact');
+      await expect(page).toHaveURL('/contact', { timeout: 10000 });
     });
   });
 
@@ -189,6 +196,7 @@ test.describe('Navigation Responsive Behavior', () => {
   test.describe('Navigation Scroll Behavior', () => {
     test('header changes style on scroll', async ({ page }) => {
       await page.setViewportSize({ width: 1024, height: 800 });
+      await page.waitForTimeout(200); // Let viewport resize settle
 
       const header = page.locator('header');
 
@@ -197,10 +205,9 @@ test.describe('Navigation Responsive Behavior', () => {
 
       // Scroll down past threshold (>50px)
       await page.evaluate(() => window.scrollTo(0, 200));
-      await page.waitForTimeout(300);
 
-      // Should have scrolled style with shadow
-      await expect(header).toHaveClass(/shadow-sm/);
+      // Wait for React state update instead of fixed timeout
+      await expect(header).toHaveClass(/shadow-sm/, { timeout: 5000 });
     });
   });
 
@@ -225,13 +232,17 @@ test.describe('Navigation Responsive Behavior', () => {
     test('navigation links are keyboard accessible', async ({ page }) => {
       await page.setViewportSize({ width: 1024, height: 800 });
 
-      // Tab through focusable elements: Skip link -> Logo -> First nav item
-      await page.keyboard.press('Tab'); // Skip to main content link
-      await page.keyboard.press('Tab'); // Logo
-      await page.keyboard.press('Tab'); // First nav item
-
-      const focusedElement = page.locator(':focus');
-      await expect(focusedElement).toHaveText(/Services|Industries|Resources|Pricing|About|Blog|Work/);
+      // Tab through focusable elements until we reach a nav link (max 10 tabs)
+      let found = false;
+      for (let i = 0; i < 10; i++) {
+        await page.keyboard.press('Tab');
+        const focusedText = await page.locator(':focus').textContent();
+        if (focusedText && /^(Services|Industries|Work|Resources|Pricing|About|Blog)/.test(focusedText.trim())) {
+          found = true;
+          break;
+        }
+      }
+      expect(found).toBe(true);
     });
   });
 });

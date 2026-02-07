@@ -269,8 +269,8 @@ export const mediumPriorityPages: TestPage[] = [
  */
 export const dynamicPages: TestPage[] = [
   {
-    url: '/work/enterprise-migration',
-    name: 'Case Study (Enterprise)',
+    url: '/work/healthcare-integration',
+    name: 'Case Study (Healthcare)',
     priority: 'high',
     category: 'work',
     hasHeroSection: true,
