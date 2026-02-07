@@ -27,3 +27,4 @@ export {
 } from "./ImagePlaceholder";
 
 export { BackgroundVideo } from "./BackgroundVideo";
+export { PreviewBackgroundVideo } from "./PreviewBackgroundVideo";

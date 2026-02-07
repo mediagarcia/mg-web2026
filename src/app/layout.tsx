@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { ScrollToTopOnNavigation } from "@/components/ScrollToTopOnNavigation";
+import { DevPreviewProviders } from "@/components/DevPreviewProviders";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -221,11 +222,13 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <Navigation />
-        <main id="main-content" tabIndex={-1} className="outline-none">
-          {children}
-        </main>
-        <Footer />
+        <DevPreviewProviders>
+          <Navigation />
+          <main id="main-content" tabIndex={-1} className="outline-none">
+            {children}
+          </main>
+          <Footer />
+        </DevPreviewProviders>
         <ScrollToTop />
         {/* JSON-LD structured data for SEO - content is a static constant, not user input */}
         <script

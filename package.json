@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start -p 3500",
     "lint": "next lint",
-    "generate-image": "tsx scripts/generate-images.ts"
+    "generate-image": "tsx scripts/generate-images.ts",
+    "generate-video": "tsx scripts/generate-videos.ts"
   },
   "keywords": [
     "hubspot",

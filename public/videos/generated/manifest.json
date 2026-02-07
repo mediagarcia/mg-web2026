@@ -1,0 +1,81 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-02-07T09:34:22.988Z",
+  "slots": {
+    "hero-video": {
+      "slot": "hero-video",
+      "prompt": "Abstract dark teal and purple particles flowing slowly through a deep black void, minimal and elegant, subtle glowing light trails, cinematic depth of field, premium tech company aesthetic",
+      "model": "veo-2.0-generate-001",
+      "aspect": "16:9",
+      "duration": 8,
+      "createdAt": "2026-02-07T07:30:53.988Z",
+      "updatedAt": "2026-02-07T09:34:22.988Z",
+      "files": [
+        {
+          "filename": "hero-video-001.mp4",
+          "path": "/videos/generated/hero-video/hero-video-001.mp4",
+          "generatedAt": "2026-02-07T08:51:42.665Z",
+          "durationSeconds": 8
+        },
+        {
+          "filename": "hero-video-002.mp4",
+          "path": "/videos/generated/hero-video/hero-video-002.mp4",
+          "generatedAt": "2026-02-07T08:52:33.398Z",
+          "durationSeconds": 8
+        }
+      ],
+      "selected": "hero-video-002.mp4",
+      "selectedPath": "/videos/selected/hero-video.mp4"
+    },
+    "services-video": {
+      "slot": "services-video",
+      "prompt": "Smooth abstract technology visualization, interconnected glowing nodes and data streams on dark background, teal and purple accent colors, clean modern motion graphics, professional B2B tech aesthetic",
+      "model": "veo-2.0-generate-001",
+      "aspect": "16:9",
+      "duration": 8,
+      "createdAt": "2026-02-07T07:36:55.523Z",
+      "updatedAt": "2026-02-07T09:08:51.322Z",
+      "files": [
+        {
+          "filename": "services-video-001.mp4",
+          "path": "/videos/generated/services-video/services-video-001.mp4",
+          "generatedAt": "2026-02-07T08:54:37.356Z",
+          "durationSeconds": 8
+        },
+        {
+          "filename": "services-video-002.mp4",
+          "path": "/videos/generated/services-video/services-video-002.mp4",
+          "generatedAt": "2026-02-07T08:56:30.728Z",
+          "durationSeconds": 8
+        }
+      ],
+      "selected": "services-video-002.mp4",
+      "selectedPath": "/videos/selected/services-video.mp4"
+    },
+    "about-video": {
+      "slot": "about-video",
+      "prompt": "Minimal abstract composition, soft organic shapes gently morphing in dark space, subtle warm and cool gradients, calm and sophisticated movement, editorial design aesthetic",
+      "model": "veo-2.0-generate-001",
+      "aspect": "16:9",
+      "duration": 8,
+      "createdAt": "2026-02-07T07:38:54.213Z",
+      "updatedAt": "2026-02-07T09:29:49.337Z",
+      "files": [
+        {
+          "filename": "about-video-001.mp4",
+          "path": "/videos/generated/about-video/about-video-001.mp4",
+          "generatedAt": "2026-02-07T08:58:36.476Z",
+          "durationSeconds": 8
+        },
+        {
+          "filename": "about-video-002.mp4",
+          "path": "/videos/generated/about-video/about-video-002.mp4",
+          "generatedAt": "2026-02-07T09:00:29.734Z",
+          "durationSeconds": 8
+        }
+      ],
+      "selected": "about-video-002.mp4",
+      "selectedPath": "/videos/selected/about-video.mp4"
+    }
+  }
+}

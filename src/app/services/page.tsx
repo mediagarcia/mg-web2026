@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
-import { BackgroundVideo } from "@/components/ui/visuals";
+import { PreviewBackgroundVideo } from "@/components/ui/visuals";
+import { getVideoForSlot } from "@/lib/videos/get-video-for-slot";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -114,6 +115,8 @@ const decisionGuide = [
 ];
 
 export default function ServicesPage() {
+  const servicesVideo = getVideoForSlot("services-video", "/videos/services-tech.mp4");
+
   return (
     <>
       <PageHeader
@@ -195,8 +198,9 @@ export default function ServicesPage() {
       {/* Platform Agnostic Message */}
       <section className="py-20 lg:py-32 bg-black text-white relative overflow-hidden">
         {/* Background Video - tech/data visualization */}
-        <BackgroundVideo
-          src="/videos/services-tech.mp4"
+        <PreviewBackgroundVideo
+          slot="services-video"
+          defaultSrc={servicesVideo!}
           poster="/videos/services-tech-poster.jpg"
           overlay={true}
           overlayOpacity={75}
