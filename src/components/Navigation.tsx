@@ -344,7 +344,6 @@ const navItems: NavItem[] = [
   { label: "Services", href: "#", hasMegaMenu: true, megaMenuType: "services" },
   { label: "Work", href: "/work", hasMegaMenu: true, megaMenuType: "work" },
   { label: "Industries", href: "#", hasMegaMenu: true, megaMenuType: "industries" },
-  { label: "Work", href: "/work" },
   { label: "Resources", href: "#", hasMegaMenu: true, megaMenuType: "resources" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
@@ -535,15 +534,6 @@ export function Navigation() {
                   </MobileMenuSection>
 
                   {/* Simple Links */}
-                  <li>
-                    <Link
-                      href="/work"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-2xl font-bold text-gray-900 hover:text-teal-600 transition-colors block"
-                    >
-                      Work
-                    </Link>
-                  </li>
                   <li>
                     <Link
                       href="/pricing"

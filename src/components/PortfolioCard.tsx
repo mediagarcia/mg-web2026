@@ -21,10 +21,10 @@ export function PortfolioCard({ item, index }: PortfolioCardProps) {
     >
       <Link
         href={`/work/portfolio/${item.slug}`}
-        className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 rounded-2xl"
+        className="block bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg hover:border-gray-200 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2"
       >
         {/* 16:9 Image Container */}
-        <div className="relative aspect-video rounded-2xl overflow-hidden mb-4 bg-gray-100">
+        <div className="relative aspect-video overflow-hidden bg-gray-100">
           <Image
             src={item.image}
             alt={`${item.title} preview`}
@@ -48,25 +48,29 @@ export function PortfolioCard({ item, index }: PortfolioCardProps) {
             </span>
           )}
 
-          {/* Hover Overlay */}
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
+          {/* Hover Overlay with bottom gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
 
         {/* Content */}
-        <h3 className="text-lg font-semibold text-black group-hover:text-teal-500 transition-colors">
-          {item.title}
-        </h3>
-        <p className="text-black/60 text-sm mt-1 line-clamp-2">
-          {item.description}
-        </p>
+        <div className="p-5">
+          <h3 className="text-lg font-semibold text-black group-hover:text-teal-500 transition-colors">
+            {item.title}
+          </h3>
+          <p className="text-black/60 text-sm mt-1 line-clamp-2">
+            {item.description}
+          </p>
+        </div>
 
         {/* Tech Stack Tags */}
-        <div className="flex flex-wrap gap-1.5 mt-3">
-          {item.techStack.slice(0, 3).map((tech) => (
-            <span key={tech} className="text-xs text-black/40">
-              #{tech}
-            </span>
-          ))}
+        <div className="px-5 pb-4 pt-3 border-t border-gray-100">
+          <div className="flex flex-wrap gap-1.5">
+            {item.techStack.slice(0, 3).map((tech) => (
+              <span key={tech} className="text-xs text-black/50 bg-gray-50 px-2 py-0.5 rounded-full">
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       </Link>
     </motion.article>
