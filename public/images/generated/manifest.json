@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-06T04:07:33.658Z",
+  "lastUpdated": "2026-02-07T04:54:49.760Z",
   "slots": {
     "hero": {
       "slot": "hero",
@@ -730,6 +730,215 @@
           "filename": "service-marketing-003.png",
           "path": "/images/generated/service-marketing/service-marketing-003.png",
           "generatedAt": "2026-02-06T03:23:53.573Z"
+        }
+      ],
+      "selected": null
+    },
+    "page-resources": {
+      "slot": "page-resources",
+      "prompt": "Knowledge and learning visualization. Open books, digital tablets, and floating icons representing guides, calculators, and tools. Clean, organized desk with educational materials. Teal (#3BB782) accent highlights. Modern, clean aesthetic. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-07T04:13:33.016Z",
+      "updatedAt": "2026-02-07T04:15:30.752Z",
+      "files": [
+        {
+          "filename": "page-resources-001.png",
+          "path": "/images/generated/page-resources/page-resources-001.png",
+          "generatedAt": "2026-02-07T04:13:38.255Z"
+        },
+        {
+          "filename": "page-resources-002.png",
+          "path": "/images/generated/page-resources/page-resources-002.png",
+          "generatedAt": "2026-02-07T04:13:41.526Z"
+        },
+        {
+          "filename": "page-resources-003.png",
+          "path": "/images/generated/page-resources/page-resources-003.png",
+          "generatedAt": "2026-02-07T04:15:33.874Z"
+        }
+      ],
+      "selected": null
+    },
+    "page-roi-calculator": {
+      "slot": "page-roi-calculator",
+      "prompt": "ROI calculation visualization. Abstract rising bar charts and upward arrows showing return on investment growth. Calculator elements blended with financial growth graphics. Teal (#3BB782) and green accent colors suggesting positive returns. Clean, minimal financial aesthetic. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-07T04:13:42.436Z",
+      "updatedAt": "2026-02-07T04:17:40.629Z",
+      "files": [
+        {
+          "filename": "page-roi-calculator-001.png",
+          "path": "/images/generated/page-roi-calculator/page-roi-calculator-001.png",
+          "generatedAt": "2026-02-07T04:17:46.454Z"
+        },
+        {
+          "filename": "page-roi-calculator-002.png",
+          "path": "/images/generated/page-roi-calculator/page-roi-calculator-002.png",
+          "generatedAt": "2026-02-07T04:17:49.390Z"
+        },
+        {
+          "filename": "page-roi-calculator-003.png",
+          "path": "/images/generated/page-roi-calculator/page-roi-calculator-003.png",
+          "generatedAt": "2026-02-07T04:17:54.656Z"
+        }
+      ],
+      "selected": null
+    },
+    "page-tco-calculator": {
+      "slot": "page-tco-calculator",
+      "prompt": "Total cost comparison visualization. Side-by-side abstract representations of cost structures being analyzed. Balanced scales or comparison charts showing cost optimization. Teal (#3BB782) for savings, gray for costs. Clean financial analysis aesthetic. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-07T04:13:44.728Z",
+      "updatedAt": "2026-02-07T04:18:05.596Z",
+      "files": [
+        {
+          "filename": "page-tco-calculator-001.png",
+          "path": "/images/generated/page-tco-calculator/page-tco-calculator-001.png",
+          "generatedAt": "2026-02-07T04:18:08.922Z"
+        },
+        {
+          "filename": "page-tco-calculator-002.png",
+          "path": "/images/generated/page-tco-calculator/page-tco-calculator-002.png",
+          "generatedAt": "2026-02-07T04:18:12.017Z"
+        },
+        {
+          "filename": "page-tco-calculator-003.png",
+          "path": "/images/generated/page-tco-calculator/page-tco-calculator-003.png",
+          "generatedAt": "2026-02-07T04:18:15.170Z"
+        }
+      ],
+      "selected": null
+    },
+    "page-services": {
+      "slot": "page-services",
+      "prompt": "Abstract service ecosystem visualization. Interconnected hexagons or circles representing different service offerings, linked by flowing lines suggesting a unified platform. Teal (#3BB782) and purple (#EE82F0) gradient accents on clean white background. Premium tech services aesthetic. No text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-07T04:13:52.549Z",
+      "updatedAt": "2026-02-07T04:19:52.979Z",
+      "files": [
+        {
+          "filename": "page-services-001.png",
+          "path": "/images/generated/page-services/page-services-001.png",
+          "generatedAt": "2026-02-07T04:13:56.485Z"
+        },
+        {
+          "filename": "page-services-002.png",
+          "path": "/images/generated/page-services/page-services-002.png",
+          "generatedAt": "2026-02-07T04:19:55.977Z"
+        },
+        {
+          "filename": "page-services-003.png",
+          "path": "/images/generated/page-services/page-services-003.png",
+          "generatedAt": "2026-02-07T04:19:58.953Z"
+        }
+      ],
+      "selected": null
+    },
+    "page-work": {
+      "slot": "page-work",
+      "prompt": "Professional portfolio showcase. Abstract composition of successful project deliverables - dashboards, growth charts, and connected systems displayed on floating screens. Achievement and results focused. Teal (#3BB782) accent highlights on dark sophisticated background. Premium case study aesthetic. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-07T04:13:57.282Z",
+      "updatedAt": "2026-02-07T04:20:35.725Z",
+      "files": [
+        {
+          "filename": "page-work-001.png",
+          "path": "/images/generated/page-work/page-work-001.png",
+          "generatedAt": "2026-02-07T04:20:38.928Z"
+        },
+        {
+          "filename": "page-work-002.png",
+          "path": "/images/generated/page-work/page-work-002.png",
+          "generatedAt": "2026-02-07T04:20:42.540Z"
+        },
+        {
+          "filename": "page-work-003.png",
+          "path": "/images/generated/page-work/page-work-003.png",
+          "generatedAt": "2026-02-07T04:20:45.276Z"
+        }
+      ],
+      "selected": null
+    },
+    "page-assessment": {
+      "slot": "page-assessment",
+      "prompt": "CRM health check visualization. Abstract diagnostic interface showing checkmarks, scores, and system health indicators. Clean dashboard aesthetic with teal (#3BB782) positive indicators and amber warnings. Modern assessment tool look. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-07T04:15:43.451Z",
+      "updatedAt": "2026-02-07T04:15:43.451Z",
+      "files": [
+        {
+          "filename": "page-assessment-001.png",
+          "path": "/images/generated/page-assessment/page-assessment-001.png",
+          "generatedAt": "2026-02-07T04:15:46.356Z"
+        },
+        {
+          "filename": "page-assessment-002.png",
+          "path": "/images/generated/page-assessment/page-assessment-002.png",
+          "generatedAt": "2026-02-07T04:15:49.496Z"
+        },
+        {
+          "filename": "page-assessment-003.png",
+          "path": "/images/generated/page-assessment/page-assessment-003.png",
+          "generatedAt": "2026-02-07T04:15:52.768Z"
+        }
+      ],
+      "selected": null
+    },
+    "page-guides": {
+      "slot": "page-guides",
+      "prompt": "Digital library of professional guides and playbooks. Stack of modern ebooks and digital documents with clean cover designs. Teal (#3BB782) accent spines and covers. Premium educational content aesthetic. Organized, clean. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-07T04:16:04.691Z",
+      "updatedAt": "2026-02-07T04:54:49.760Z",
+      "files": [
+        {
+          "filename": "page-guides-001.png",
+          "path": "/images/generated/page-guides/page-guides-001.png",
+          "generatedAt": "2026-02-07T04:16:07.845Z"
+        },
+        {
+          "filename": "page-guides-002.png",
+          "path": "/images/generated/page-guides/page-guides-002.png",
+          "generatedAt": "2026-02-07T04:16:10.929Z"
+        },
+        {
+          "filename": "page-guides-003.png",
+          "path": "/images/generated/page-guides/page-guides-003.png",
+          "generatedAt": "2026-02-07T04:16:14.040Z"
+        }
+      ],
+      "selected": "page-guides-003.png",
+      "selectedPath": "/images/selected/page-guides.png"
+    },
+    "page-industries": {
+      "slot": "page-industries",
+      "prompt": "Multi-industry abstract visualization. Distinct but connected sectors represented by modern geometric shapes - healthcare cross, tech circuit, SaaS cloud - unified by flowing teal (#3BB782) connecting lines. Clean, premium aesthetic showing industry expertise breadth. No text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-07T04:20:11.255Z",
+      "updatedAt": "2026-02-07T04:20:11.255Z",
+      "files": [
+        {
+          "filename": "page-industries-001.png",
+          "path": "/images/generated/page-industries/page-industries-001.png",
+          "generatedAt": "2026-02-07T04:20:17.441Z"
+        },
+        {
+          "filename": "page-industries-002.png",
+          "path": "/images/generated/page-industries/page-industries-002.png",
+          "generatedAt": "2026-02-07T04:20:20.369Z"
+        },
+        {
+          "filename": "page-industries-003.png",
+          "path": "/images/generated/page-industries/page-industries-003.png",
+          "generatedAt": "2026-02-07T04:20:23.501Z"
         }
       ],
       "selected": null
