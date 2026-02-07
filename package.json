@@ -7,7 +7,14 @@
     "build": "next build",
     "start": "next start -p 3500",
     "lint": "next lint",
-    "generate-image": "tsx scripts/generate-images.ts"
+    "generate-image": "tsx scripts/generate-images.ts",
+    "test:responsive": "playwright test --config=tests/e2e/responsive/playwright.config.ts",
+    "test:responsive:critical": "playwright test --config=tests/e2e/responsive/playwright.config.ts navigation.spec.ts overflow.spec.ts",
+    "test:responsive:mobile": "playwright test --config=tests/e2e/responsive/playwright.config.ts --project=Mobile",
+    "test:responsive:tablet": "playwright test --config=tests/e2e/responsive/playwright.config.ts --project=Tablet",
+    "test:responsive:desktop": "playwright test --config=tests/e2e/responsive/playwright.config.ts --project=Desktop",
+    "test:responsive:report": "playwright show-report playwright-report",
+    "test:responsive:ui": "playwright test --config=tests/e2e/responsive/playwright.config.ts --ui"
   },
   "keywords": [
     "hubspot",
@@ -33,6 +40,7 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.1",
     "@types/node": "25.0.9",
     "dotenv": "^17.2.3",
     "tsx": "^4.7.0",
