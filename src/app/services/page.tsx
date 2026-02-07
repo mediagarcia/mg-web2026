@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
+import { PreviewBackgroundVideo } from "@/components/ui/visuals";
+import { getVideoForSlot } from "@/lib/videos/get-video-for-slot";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -113,6 +115,8 @@ const decisionGuide = [
 ];
 
 export default function ServicesPage() {
+  const servicesVideo = getVideoForSlot("services-video", "/videos/services-tech.mp4");
+
   return (
     <>
       <PageHeader
@@ -192,8 +196,16 @@ export default function ServicesPage() {
       </section>
 
       {/* Platform Agnostic Message */}
-      <section className="py-20 lg:py-32 bg-black text-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-20 lg:py-32 bg-black text-white relative overflow-hidden">
+        {/* Background Video - tech/data visualization */}
+        <PreviewBackgroundVideo
+          slot="services-video"
+          defaultSrc={servicesVideo!}
+          poster="/videos/services-tech-poster.jpg"
+          overlay={true}
+          overlayOpacity={75}
+        />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
@@ -266,7 +278,7 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xl font-bold text-black mb-3">IT Services & Technology</h3>
               <p className="text-black/60 mb-4">Long sales cycles, multi-stakeholder deals, technical evaluation stages, and PSA integrations.</p>
-              <Link href="/industries/it-services" className="text-teal-500 font-medium hover:text-teal-600 transition-colors">
+              <Link href="/industries/information-technology" className="text-teal-500 font-medium hover:text-teal-600 transition-colors">
                 Learn more →
               </Link>
             </div>
