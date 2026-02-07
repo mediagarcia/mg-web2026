@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-07T09:34:22.988Z",
+  "lastUpdated": "2026-02-07T21:42:03.385Z",
   "slots": {
     "hero-video": {
       "slot": "hero-video",
@@ -9,14 +9,8 @@
       "aspect": "16:9",
       "duration": 8,
       "createdAt": "2026-02-07T07:30:53.988Z",
-      "updatedAt": "2026-02-07T09:34:22.988Z",
+      "updatedAt": "2026-02-07T21:19:59.795Z",
       "files": [
-        {
-          "filename": "hero-video-001.mp4",
-          "path": "/videos/generated/hero-video/hero-video-001.mp4",
-          "generatedAt": "2026-02-07T08:51:42.665Z",
-          "durationSeconds": 8
-        },
         {
           "filename": "hero-video-002.mp4",
           "path": "/videos/generated/hero-video/hero-video-002.mp4",
@@ -29,12 +23,12 @@
     },
     "services-video": {
       "slot": "services-video",
-      "prompt": "Smooth abstract technology visualization, interconnected glowing nodes and data streams on dark background, teal and purple accent colors, clean modern motion graphics, professional B2B tech aesthetic",
+      "prompt": "Seamless looping abstract technology visualization, interconnected glowing teal and purple nodes with flowing data streams on deep dark background, continuous cyclical orbital motion that repeats perfectly, clean modern motion graphics, the start and end frames blend seamlessly for infinite loop, professional B2B tech aesthetic",
       "model": "veo-2.0-generate-001",
       "aspect": "16:9",
       "duration": 8,
       "createdAt": "2026-02-07T07:36:55.523Z",
-      "updatedAt": "2026-02-07T09:08:51.322Z",
+      "updatedAt": "2026-02-07T21:33:40.945Z",
       "files": [
         {
           "filename": "services-video-001.mp4",
@@ -47,6 +41,12 @@
           "path": "/videos/generated/services-video/services-video-002.mp4",
           "generatedAt": "2026-02-07T08:56:30.728Z",
           "durationSeconds": 8
+        },
+        {
+          "filename": "services-video-003.mp4",
+          "path": "/videos/generated/services-video/services-video-003.mp4",
+          "generatedAt": "2026-02-07T21:34:26.778Z",
+          "durationSeconds": 8
         }
       ],
       "selected": "services-video-002.mp4",
@@ -54,12 +54,12 @@
     },
     "about-video": {
       "slot": "about-video",
-      "prompt": "Minimal abstract composition, soft organic shapes gently morphing in dark space, subtle warm and cool gradients, calm and sophisticated movement, editorial design aesthetic",
+      "prompt": "Seamless looping minimal abstract composition, soft organic shapes gently morphing and rotating in dark space, subtle warm and cool teal-purple gradients, continuous smooth cyclical motion that repeats perfectly, first and last frames match for infinite seamless loop, calm sophisticated editorial design aesthetic",
       "model": "veo-2.0-generate-001",
       "aspect": "16:9",
       "duration": 8,
       "createdAt": "2026-02-07T07:38:54.213Z",
-      "updatedAt": "2026-02-07T09:29:49.337Z",
+      "updatedAt": "2026-02-07T21:42:03.385Z",
       "files": [
         {
           "filename": "about-video-001.mp4",
@@ -72,10 +72,34 @@
           "path": "/videos/generated/about-video/about-video-002.mp4",
           "generatedAt": "2026-02-07T09:00:29.734Z",
           "durationSeconds": 8
+        },
+        {
+          "filename": "about-video-003.mp4",
+          "path": "/videos/generated/about-video/about-video-003.mp4",
+          "generatedAt": "2026-02-07T21:36:19.831Z",
+          "durationSeconds": 8
         }
       ],
-      "selected": "about-video-002.mp4",
+      "selected": "about-video-003.mp4",
       "selectedPath": "/videos/selected/about-video.mp4"
+    },
+    "cta-video": {
+      "slot": "cta-video",
+      "prompt": "Seamless looping energetic abstract motion, glowing teal light rays and particles flowing in continuous circular orbit through dark void, dynamic but smooth cyclical energy that repeats perfectly, first and last frames blend seamlessly for infinite loop, bold premium call-to-action energy, cinematic depth",
+      "model": "veo-2.0-generate-001",
+      "aspect": "16:9",
+      "duration": 8,
+      "createdAt": "2026-02-07T21:37:44.598Z",
+      "updatedAt": "2026-02-07T21:37:44.598Z",
+      "files": [
+        {
+          "filename": "cta-video-001.mp4",
+          "path": "/videos/generated/cta-video/cta-video-001.mp4",
+          "generatedAt": "2026-02-07T21:38:30.717Z",
+          "durationSeconds": 8
+        }
+      ],
+      "selected": null
     }
   }
 }

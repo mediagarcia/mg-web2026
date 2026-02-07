@@ -3,6 +3,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { usePreview } from "@/lib/images/preview-context";
 import { useVideoPreview } from "@/lib/videos/preview-context";
+import type { VideoDesignSettings } from "@/lib/videos/types";
+import { DEFAULT_VIDEO_DESIGN } from "@/lib/videos/types";
 
 // Only render in development
 const isProduction = process.env.NODE_ENV === "production";
@@ -91,6 +93,7 @@ export function ImagePreviewBar() {
   const [showRemixInput, setShowRemixInput] = useState(false);
   const [remixPrompt, setRemixPrompt] = useState("");
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [showVideoControls, setShowVideoControls] = useState(true);
 
   // Sync preview mode between image and video contexts
   const setPreviewMode = useCallback((enabled: boolean) => {
@@ -574,6 +577,18 @@ export function ImagePreviewBar() {
         </div>
       )}
 
+      {/* Video design controls */}
+      {currentSlot && isVideoSlot(currentSlot) && (
+        <VideoDesignControls
+          slot={currentSlot}
+          show={showVideoControls}
+          onToggle={() => setShowVideoControls(!showVideoControls)}
+          settings={videoCtx.getDesignSettings(currentSlot)}
+          onUpdate={(key, value) => videoCtx.updateDesignSetting(currentSlot, key, value)}
+          onReset={() => videoCtx.resetDesignSettings(currentSlot)}
+        />
+      )}
+
       {/* Keyboard shortcuts hint */}
       <div className="max-w-[1400px] mx-auto mt-2 flex items-center gap-4 text-xs text-white/40">
         <span>↑ ↓ Switch slot</span>
@@ -582,5 +597,151 @@ export function ImagePreviewBar() {
       </div>
     </div>
     </>
+  );
+}
+
+// Compact slider for a single design setting
+function DesignSlider({
+  label,
+  value,
+  min,
+  max,
+  step,
+  unit,
+  defaultValue,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  min: number;
+  max: number;
+  step: number;
+  unit: string;
+  defaultValue: number;
+  onChange: (v: number) => void;
+}) {
+  const isDefault = value === defaultValue;
+  return (
+    <div className="flex flex-col gap-1 min-w-[140px]">
+      <div className="flex items-center justify-between">
+        <span className="text-[11px] text-white/60">{label}</span>
+        <span className={`text-[11px] font-mono ${isDefault ? "text-white/40" : "text-teal-400"}`}>
+          {step < 1 ? value.toFixed(2) : value}{unit}
+        </span>
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        className="w-full h-1 accent-teal-500 cursor-pointer"
+      />
+    </div>
+  );
+}
+
+// Video design controls panel
+function VideoDesignControls({
+  slot,
+  show,
+  onToggle,
+  settings,
+  onUpdate,
+  onReset,
+}: {
+  slot: string;
+  show: boolean;
+  onToggle: () => void;
+  settings: VideoDesignSettings;
+  onUpdate: (key: keyof VideoDesignSettings, value: number) => void;
+  onReset: () => void;
+}) {
+  const hasChanges = Object.keys(DEFAULT_VIDEO_DESIGN).some(
+    (k) => settings[k as keyof VideoDesignSettings] !== DEFAULT_VIDEO_DESIGN[k as keyof VideoDesignSettings]
+  );
+
+  return (
+    <div className="max-w-[1400px] mx-auto mt-2">
+      <button
+        onClick={onToggle}
+        className="flex items-center gap-2 text-xs text-white/50 hover:text-white/80 transition-colors mb-1"
+      >
+        <svg
+          className={`w-3 h-3 transition-transform ${show ? "rotate-90" : ""}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+        Video Design
+        {hasChanges && <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />}
+      </button>
+
+      {show && (
+        <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+          <div className="flex flex-wrap items-end gap-x-5 gap-y-3">
+            <DesignSlider
+              label="Opacity"
+              value={settings.opacity}
+              min={0} max={100} step={1}
+              unit="%"
+              defaultValue={DEFAULT_VIDEO_DESIGN.opacity}
+              onChange={(v) => onUpdate("opacity", v)}
+            />
+            <DesignSlider
+              label="Overlay Dark"
+              value={settings.overlayDarkness}
+              min={0} max={100} step={1}
+              unit="%"
+              defaultValue={DEFAULT_VIDEO_DESIGN.overlayDarkness}
+              onChange={(v) => onUpdate("overlayDarkness", v)}
+            />
+            <DesignSlider
+              label="Blur"
+              value={settings.blur}
+              min={0} max={20} step={0.5}
+              unit="px"
+              defaultValue={DEFAULT_VIDEO_DESIGN.blur}
+              onChange={(v) => onUpdate("blur", v)}
+            />
+            <DesignSlider
+              label="Speed"
+              value={settings.speed}
+              min={0.25} max={2} step={0.05}
+              unit="x"
+              defaultValue={DEFAULT_VIDEO_DESIGN.speed}
+              onChange={(v) => onUpdate("speed", v)}
+            />
+            <DesignSlider
+              label="Brightness"
+              value={settings.brightness}
+              min={0} max={200} step={1}
+              unit="%"
+              defaultValue={DEFAULT_VIDEO_DESIGN.brightness}
+              onChange={(v) => onUpdate("brightness", v)}
+            />
+            <DesignSlider
+              label="Saturation"
+              value={settings.saturation}
+              min={0} max={200} step={1}
+              unit="%"
+              defaultValue={DEFAULT_VIDEO_DESIGN.saturation}
+              onChange={(v) => onUpdate("saturation", v)}
+            />
+            {hasChanges && (
+              <button
+                onClick={onReset}
+                className="text-[11px] text-white/40 hover:text-white/70 transition-colors px-2 py-1 bg-white/5 rounded"
+              >
+                Reset
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
   );
 }

@@ -1,7 +1,8 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, useCallback, useMemo, type ReactNode } from "react";
-import type { VideoManifest } from "./types";
+import type { VideoManifest, VideoDesignSettings } from "./types";
+import { DEFAULT_VIDEO_DESIGN } from "./types";
 
 interface VideoPreviewContextValue {
   isPreviewMode: boolean;
@@ -20,6 +21,9 @@ interface VideoPreviewContextValue {
   deleteCurrentVariant: (slot: string) => Promise<boolean>;
   regenerateSlot: (slot: string, prompt?: string) => Promise<boolean>;
   refreshManifest: () => Promise<void>;
+  getDesignSettings: (slot: string) => VideoDesignSettings;
+  updateDesignSetting: (slot: string, key: keyof VideoDesignSettings, value: number) => void;
+  resetDesignSettings: (slot: string) => void;
 }
 
 const VideoPreviewContext = createContext<VideoPreviewContextValue | null>(null);
@@ -33,6 +37,35 @@ export function VideoPreviewProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(false);
   const [currentSlot, setCurrentSlot] = useState<string | null>(null);
   const [currentVariantIndex, setCurrentVariantIndex] = useState<Record<string, number>>({});
+  const [designSettings, setDesignSettings] = useState<Record<string, VideoDesignSettings>>(() => {
+    if (typeof window === "undefined") return {};
+    try {
+      return JSON.parse(localStorage.getItem("video-design-settings") || "{}");
+    } catch {
+      return {};
+    }
+  });
+
+  const getDesignSettings = useCallback((slot: string): VideoDesignSettings => {
+    return { ...DEFAULT_VIDEO_DESIGN, ...designSettings[slot] };
+  }, [designSettings]);
+
+  const updateDesignSetting = useCallback((slot: string, key: keyof VideoDesignSettings, value: number) => {
+    setDesignSettings((prev) => {
+      const updated = { ...prev, [slot]: { ...DEFAULT_VIDEO_DESIGN, ...prev[slot], [key]: value } };
+      try { localStorage.setItem("video-design-settings", JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+  }, []);
+
+  const resetDesignSettings = useCallback((slot: string) => {
+    setDesignSettings((prev) => {
+      const updated = { ...prev };
+      delete updated[slot];
+      try { localStorage.setItem("video-design-settings", JSON.stringify(updated)); } catch {}
+      return updated;
+    });
+  }, []);
 
   // Fetch manifest from API and initialize variant indices from selections
   const refreshManifest = useCallback(async () => {
@@ -264,6 +297,9 @@ export function VideoPreviewProvider({ children }: { children: ReactNode }) {
     deleteCurrentVariant,
     regenerateSlot,
     refreshManifest,
+    getDesignSettings,
+    updateDesignSetting,
+    resetDesignSettings,
   }), [
     isPreviewMode,
     manifest,
@@ -279,6 +315,9 @@ export function VideoPreviewProvider({ children }: { children: ReactNode }) {
     deleteCurrentVariant,
     regenerateSlot,
     refreshManifest,
+    getDesignSettings,
+    updateDesignSetting,
+    resetDesignSettings,
   ]);
 
   // In production, just render children without context
@@ -315,6 +354,9 @@ export function useVideoPreview(): VideoPreviewContextValue {
       deleteCurrentVariant: async () => false,
       regenerateSlot: async () => false,
       refreshManifest: async () => {},
+      getDesignSettings: () => DEFAULT_VIDEO_DESIGN,
+      updateDesignSetting: () => {},
+      resetDesignSettings: () => {},
     };
   }
 

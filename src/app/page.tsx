@@ -1,11 +1,8 @@
 import { HeroWithPreview, ClientLogos, Services, Stats, IndustriesWithPreview, WhyUsWithPreview, Process, Certifications, Values, CTABanner, Testimonials, CaseStudiesWithPreview, FAQ, Team, Contact } from "@/components/sections";
 import { HomePageWrapper } from "@/components/HomePageWrapper";
 import { getImageForSlot, getVersionedImageForSlot } from "@/lib/images/get-image-for-slot";
-import { getVideoForSlot } from "@/lib/videos/get-video-for-slot";
-
 export default function Home() {
   const heroImage = getImageForSlot("hero", "/images/hero/hero-bg.jpg");
-  const heroVideo = getVideoForSlot("hero-video");
 
   // Industry images - auto-discovers highest version (v3 > v2 > base)
   const industryImages = {
@@ -27,7 +24,7 @@ export default function Home() {
 
   return (
     <HomePageWrapper>
-      <HeroWithPreview defaultImage={heroImage} defaultVideo={heroVideo} slot="hero" />
+      <HeroWithPreview defaultImage={heroImage} slot="hero" />
       <ClientLogos />
       <Services />
       <Stats />
