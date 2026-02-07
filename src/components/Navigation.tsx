@@ -24,6 +24,13 @@ import {
   ChevronDown,
   ArrowRight,
   Grid3X3,
+  Briefcase,
+  Wrench,
+  FlaskConical,
+  Mail,
+  Layout,
+  Link2,
+  FileText,
   type LucideIcon,
 } from "lucide-react";
 
@@ -72,6 +79,15 @@ const resources: MenuItem[] = [
   { label: "TCO Calculator", href: "/resources/tco-calculator", description: "Total cost of ownership analysis", icon: DollarSign },
 ];
 
+const portfolioCategories: MenuItem[] = [
+  { label: "Tools & Apps", href: "/work?category=tools", description: "Custom tools and applications", icon: Wrench },
+  { label: "AI Experiments", href: "/work?category=experiments", description: "Cutting-edge AI explorations", icon: FlaskConical },
+  { label: "Email Templates", href: "/work?category=email", description: "Professional email designs", icon: Mail },
+  { label: "Website Templates", href: "/work?category=websites", description: "Modern web designs", icon: Layout },
+  { label: "Integrations", href: "/work?category=integrations", description: "System connections", icon: Link2 },
+  { label: "Reports", href: "/work?category=reports", description: "Data and analytics solutions", icon: FileText },
+];
+
 // ============================================================================
 // MEGA MENU COMPONENT
 // ============================================================================
@@ -82,7 +98,7 @@ function MegaMenu({
   onClose,
   isScrolled,
 }: {
-  type: "services" | "industries" | "resources";
+  type: "services" | "industries" | "resources" | "work";
   isOpen: boolean;
   onClose: () => void;
   isScrolled: boolean;
@@ -104,6 +120,7 @@ function MegaMenu({
             {type === "services" && <ServicesMegaMenu onClose={onClose} />}
             {type === "industries" && <IndustriesMegaMenu onClose={onClose} />}
             {type === "resources" && <ResourcesMegaMenu onClose={onClose} />}
+            {type === "work" && <WorkMegaMenu onClose={onClose} />}
           </div>
         </motion.div>
       )}
@@ -242,6 +259,56 @@ function ResourcesMegaMenu({ onClose }: { onClose: () => void }) {
   );
 }
 
+function WorkMegaMenu({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Featured - Case Studies */}
+      <Link
+        href="/work"
+        onClick={onClose}
+        className="group block p-6 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 text-white lg:col-span-1"
+      >
+        <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mb-3">
+          <Briefcase className="w-5 h-5" />
+        </div>
+        <h3 className="text-base font-semibold mb-1">Case Studies</h3>
+        <p className="text-sm text-white/80 mb-4">Real results from real clients</p>
+        <span className="inline-flex items-center gap-1 text-sm font-medium">
+          View All Work
+          <ArrowRight className="w-4 h-4" />
+        </span>
+      </Link>
+
+      {/* Portfolio Categories */}
+      <div className="lg:col-span-3">
+        <h3 className="text-xs font-bold uppercase tracking-wider text-teal-600 mb-4">
+          Portfolio Showcase
+        </h3>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {portfolioCategories.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={onClose}
+              className="group flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                <item.icon className="w-4 h-4" />
+              </div>
+              <div>
+                <span className="block text-sm font-medium text-gray-900 group-hover:text-teal-600 transition-colors">
+                  {item.label}
+                </span>
+                <span className="block text-xs text-gray-500">{item.description}</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function MenuLink({ item, onClose }: { item: MenuItem; onClose: () => void }) {
   return (
     <Link
@@ -270,13 +337,13 @@ type NavItem = {
   label: string;
   href: string;
   hasMegaMenu?: boolean;
-  megaMenuType?: "services" | "industries" | "resources";
+  megaMenuType?: "services" | "industries" | "resources" | "work";
 };
 
 const navItems: NavItem[] = [
   { label: "Services", href: "#", hasMegaMenu: true, megaMenuType: "services" },
+  { label: "Work", href: "/work", hasMegaMenu: true, megaMenuType: "work" },
   { label: "Industries", href: "#", hasMegaMenu: true, megaMenuType: "industries" },
-  { label: "Work", href: "/work" },
   { label: "Resources", href: "#", hasMegaMenu: true, megaMenuType: "resources" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
@@ -432,6 +499,24 @@ export function Navigation() {
                     <MobileMenuCategory title="Additional Services" items={additionalServices} onClose={() => setIsMobileMenuOpen(false)} />
                   </MobileMenuSection>
 
+                  {/* Work */}
+                  <MobileMenuSection
+                    title="Work"
+                    onClose={() => setIsMobileMenuOpen(false)}
+                  >
+                    <div className="mb-4">
+                      <Link
+                        href="/work"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block py-2 pl-4 border-l-2 border-teal-500"
+                      >
+                        <span className="text-base font-medium text-teal-600">View All Case Studies</span>
+                        <span className="block text-sm text-gray-500">Real results from real clients</span>
+                      </Link>
+                    </div>
+                    <MobileMenuCategory title="Portfolio" items={portfolioCategories} onClose={() => setIsMobileMenuOpen(false)} />
+                  </MobileMenuSection>
+
                   {/* Industries */}
                   <MobileMenuSection
                     title="Industries"
@@ -449,15 +534,6 @@ export function Navigation() {
                   </MobileMenuSection>
 
                   {/* Simple Links */}
-                  <li>
-                    <Link
-                      href="/work"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-2xl font-bold text-gray-900 hover:text-teal-600 transition-colors block"
-                    >
-                      Work
-                    </Link>
-                  </li>
                   <li>
                     <Link
                       href="/pricing"
