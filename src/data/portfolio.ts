@@ -31,6 +31,7 @@ export const categories = [
   { id: "email", label: "Email Templates" },
   { id: "websites", label: "Website Templates" },
   { id: "integrations", label: "Integrations" },
+  { id: "reports", label: "Reports & Analytics" },
 ] as const;
 
 export const portfolioItems: PortfolioItem[] = [
