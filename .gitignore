@@ -54,3 +54,7 @@ test-results/
 # Generated images (keep manifest)
 public/images/generated/**/
 !public/images/generated/manifest.json
+
+# Generated videos (keep manifest)
+public/videos/generated/**/
+!public/videos/generated/manifest.json

@@ -8,6 +8,7 @@
     "start": "next start -p 3500",
     "lint": "next lint",
     "generate-image": "tsx scripts/generate-images.ts",
+    "generate-video": "tsx scripts/generate-videos.ts",
     "test:responsive": "playwright test --config=tests/e2e/responsive/playwright.config.ts",
     "test:responsive:critical": "playwright test --config=tests/e2e/responsive/playwright.config.ts navigation.spec.ts overflow.spec.ts",
     "test:responsive:mobile": "playwright test --config=tests/e2e/responsive/playwright.config.ts --project=Mobile",
