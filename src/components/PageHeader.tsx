@@ -3,23 +3,29 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
 
-interface Breadcrumb {
+export interface Breadcrumb {
   label: string;
   href: string;
 }
 
-interface PageHeaderProps {
+export interface PageHeaderProps {
   badge?: string;
   title: string;
   description?: string;
   breadcrumbs?: Breadcrumb[];
+  image?: string | null;
+  imageAlt?: string;
+  duotoneColor?: "teal" | "purple" | "orange";
   compactBottom?: boolean;
 }
 
-export function PageHeader({ badge, title, description, breadcrumbs, compactBottom }: PageHeaderProps) {
+export function PageHeader({ badge, title, description, breadcrumbs, image, imageAlt, duotoneColor = "teal", compactBottom }: PageHeaderProps) {
+  const hasImage = !!image;
+
   return (
-    <section className={`pt-32 lg:pt-40 bg-gray-50 relative overflow-hidden ${compactBottom ? "pb-8 lg:pb-12" : "pb-16 lg:pb-24"}`}>
+    <section className={`pt-32 lg:pt-40 bg-gray-50 relative overflow-hidden ${hasImage ? 'lg:min-h-[500px]' : ''} ${compactBottom ? "pb-8 lg:pb-12" : "pb-16 lg:pb-24"}`}>
       {/* Grid pattern background */}
       <FadingGridPattern
         type="dots"
@@ -110,6 +116,26 @@ export function PageHeader({ badge, title, description, breadcrumbs, compactBott
           >
             {description}
           </motion.p>
+        )}
+
+        {/* Hero Image - positioned right on large screens */}
+        {hasImage && (
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="hidden lg:block absolute top-1/2 right-12 -translate-y-1/2 w-[400px] xl:w-[500px] aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl"
+          >
+            <DuotoneImage
+              src={image}
+              alt={imageAlt || title}
+              color={duotoneColor}
+              intensity="light"
+              className="w-full h-full"
+              priority
+              sizes="(max-width: 1280px) 400px, 500px"
+            />
+          </motion.div>
         )}
       </div>
     </section>

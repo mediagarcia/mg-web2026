@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
 
@@ -50,7 +51,9 @@ const industries = [
 export default function IndustriesPage() {
   return (
     <>
-      <PageHeader
+      <PageHeaderWithPreview
+        slot="page-industries"
+        defaultImage={getImageForSlot("page-industries")}
         badge="Industries"
         title="Deep expertise in three verticals"
         description="We specialize in industries with complex sales cycles and high stakes. Healthcare, IT services, and SaaS — we understand your unique challenges."

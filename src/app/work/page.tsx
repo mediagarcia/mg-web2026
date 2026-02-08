@@ -3,7 +3,7 @@
 import { Suspense, useState } from "react";
 import { motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
-import { PageHeader } from "@/components/PageHeader";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 import { CTABanner } from "@/components/sections";
 import {
   caseStudies,
@@ -267,7 +267,8 @@ function WorkPageContent() {
 
   return (
     <>
-      <PageHeader
+      <PageHeaderWithPreview
+        slot="page-work"
         badge="Our Work"
         title={showPortfolioFirst ? "Things we've built" : "Client Success Stories"}
         description={
@@ -296,6 +297,62 @@ function WorkPageContent() {
           </Suspense>
         </>
       )}
+
+      {/* CTA Section */}
+      <section className="py-20 lg:py-32 bg-gray-50">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-black rounded-3xl p-8 lg:p-16 text-center relative overflow-hidden"
+          >
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+                  backgroundSize: "32px 32px",
+                }}
+              />
+            </div>
+
+            <div className="relative z-10">
+              <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
+                Ready to Transform Your Business?
+              </span>
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-6 max-w-3xl mx-auto">
+                Let&apos;s create your success story
+              </h2>
+              <p className="text-white/60 text-lg mb-8 max-w-2xl mx-auto">
+                Join 200+ companies that have transformed their revenue
+                operations with our strategic CRM implementation.
+              </p>
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold px-8 py-4 rounded-full transition-colors"
+              >
+                Get Similar Results
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       <CTABanner />
     </>

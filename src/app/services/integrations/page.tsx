@@ -1,9 +1,11 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import { ServiceFAQ } from "@/components/service-page";
 import Link from "next/link";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
   title: "Custom Integrations | Media Garcia",
@@ -175,9 +177,11 @@ const relatedServices = [
 ];
 
 export default function IntegrationsPage() {
+  const heroImage = getImageForSlot("service-integrations");
+
   return (
     <>
-      <PageHeader
+      <PageHeaderWithPreview
         badge="Service"
         title="Custom Integrations"
         description="Connect your CRM to EHRs, PSA tools, billing systems, and any platform your business uses. Reliable, secure, and built for your industry."
@@ -185,6 +189,10 @@ export default function IntegrationsPage() {
           { label: "Services", href: "/services" },
           { label: "Custom Integrations", href: "/services/integrations" },
         ]}
+        defaultImage={heroImage}
+        slot="service-integrations"
+        imageAlt="Connected systems and API integrations"
+        duotoneColor="teal"
       />
 
       {/* Pain Point Section */}

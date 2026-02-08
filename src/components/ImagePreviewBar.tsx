@@ -386,7 +386,7 @@ export function ImagePreviewBar() {
             >
               {availableSlots.map((slot) => (
                 <option key={slot} value={slot} className="bg-gray-900">
-                  {isVideoSlot(slot) ? `🎬 ${slot}` : slot}
+                  {isVideoSlot(slot) ? `\uD83C\uDFAC ${slot}` : slot}
                 </option>
               ))}
             </select>

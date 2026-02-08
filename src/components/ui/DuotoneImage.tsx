@@ -29,6 +29,7 @@ export interface DuotoneImageProps {
   height?: number;
   priority?: boolean;
   intensity?: "light" | "medium" | "strong";
+  sizes?: string;
 }
 
 /**
@@ -49,6 +50,7 @@ export function DuotoneImage({
   height,
   priority = false,
   intensity = "medium",
+  sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
 }: DuotoneImageProps) {
   const colors = duotoneColors[color];
 
@@ -69,6 +71,7 @@ export function DuotoneImage({
         width={!fill ? width : undefined}
         height={!fill ? height : undefined}
         priority={priority}
+        sizes={fill ? sizes : undefined}
         className="object-cover grayscale contrast-[1.1] brightness-[1.05]"
       />
 

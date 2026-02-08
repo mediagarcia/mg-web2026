@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 
 export const metadata: Metadata = {
   title: "CRM Assessment | Media Garcia",
@@ -39,7 +40,9 @@ const benefits = [
 export default function AssessmentPage() {
   return (
     <>
-      <PageHeader
+      <PageHeaderWithPreview
+        slot="page-assessment"
+        defaultImage={getImageForSlot("page-assessment")}
         badge="Assessment"
         title="How well is your CRM performing?"
         description="Take our free 5-minute assessment to evaluate your CRM setup and get personalized recommendations."

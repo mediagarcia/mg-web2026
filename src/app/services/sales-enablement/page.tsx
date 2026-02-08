@@ -1,9 +1,11 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
 import { ServiceFAQ } from "@/components/service-page";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
   title: "Sales Enablement | Media Garcia",
@@ -144,9 +146,11 @@ const relatedServices = [
 ];
 
 export default function SalesEnablementPage() {
+  const heroImage = getImageForSlot("service-sales-enablement");
+
   return (
     <>
-      <PageHeader
+      <PageHeaderWithPreview
         badge="Service"
         title="Sales Enablement"
         description="Build sales systems that turn your CRM into a revenue machine. Sequences, playbooks, and pipeline optimization—on HubSpot, Salesforce, or any CRM."
@@ -154,6 +158,10 @@ export default function SalesEnablementPage() {
           { label: "Services", href: "/services" },
           { label: "Sales Enablement", href: "/services/sales-enablement" },
         ]}
+        defaultImage={heroImage}
+        slot="service-sales-enablement"
+        imageAlt="Sales pipeline and enablement tools"
+        duotoneColor="teal"
       />
 
       {/* Pain Point Section */}

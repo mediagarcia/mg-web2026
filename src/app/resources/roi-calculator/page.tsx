@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 
 export const metadata: Metadata = {
   title: "HubSpot ROI Calculator | Media Garcia",
@@ -23,7 +24,9 @@ const improvements = [
 export default function ROICalculatorPage() {
   return (
     <>
-      <PageHeader
+      <PageHeaderWithPreview
+        slot="page-roi-calculator"
+        defaultImage={getImageForSlot("page-roi-calculator")}
         badge="Calculator"
         title="Calculate your HubSpot ROI"
         description="See the potential return on investment from implementing HubSpot with our team."

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
 
@@ -103,7 +104,9 @@ export default function GuidesPage() {
 
   return (
     <>
-      <PageHeader
+      <PageHeaderWithPreview
+        slot="page-guides"
+        defaultImage={getImageForSlot("page-guides")}
         badge="Guides"
         title="CRM & RevOps guides and resources"
         description="In-depth guides to help you get the most out of your CRM, from implementation to advanced automation."

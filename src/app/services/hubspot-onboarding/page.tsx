@@ -1,9 +1,11 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
 import { ServiceFAQ } from "@/components/service-page";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
   title: "CRM Onboarding | Media Garcia",
@@ -145,9 +147,11 @@ const relatedServices = [
 ];
 
 export default function CRMOnboardingPage() {
+  const heroImage = getImageForSlot("service-crm-onboarding");
+
   return (
     <>
-      <PageHeader
+      <PageHeaderWithPreview
         badge="Service"
         title="CRM Onboarding"
         description="Get your CRM set up right—whether you choose HubSpot, Salesforce, or a custom platform. We configure it around how your team actually works, so they'll use it."
@@ -155,6 +159,10 @@ export default function CRMOnboardingPage() {
           { label: "Services", href: "/services" },
           { label: "CRM Onboarding", href: "/services/hubspot-onboarding" },
         ]}
+        defaultImage={heroImage}
+        slot="service-crm-onboarding"
+        imageAlt="CRM onboarding and implementation"
+        duotoneColor="teal"
       />
 
       {/* Pain Point Section */}

@@ -1,7 +1,9 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getVersionedImageForSlot } from "@/lib/images/get-image-for-slot";
+
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
   title: "HubSpot for Healthcare Companies | Media Garcia",
@@ -58,9 +60,12 @@ const metrics = [
 ];
 
 export default function HealthcareIndustryPage() {
+  // Use versioned slot for dedicated industry page (base slot is for homepage)
+  const heroImage = getVersionedImageForSlot("industries-healthcare-v2");
+
   return (
     <>
-      <PageHeader
+      <PageHeaderWithPreview
         badge="Industry"
         title="HubSpot for Healthcare"
         description="We understand healthcare complexity — the long sales cycles, multiple stakeholders, and the need for careful, compliant communication. Our implementations are built for how healthcare really works."
@@ -68,6 +73,10 @@ export default function HealthcareIndustryPage() {
           { label: "Industries", href: "/industries" },
           { label: "Healthcare", href: "/industries/healthcare" },
         ]}
+        defaultImage={heroImage}
+        slot="industries-healthcare-v2"
+        imageAlt="Healthcare technology and digital transformation"
+        duotoneColor="teal"
       />
 
       {/* Challenges */}

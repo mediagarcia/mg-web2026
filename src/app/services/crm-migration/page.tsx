@@ -1,9 +1,11 @@
 import { Metadata } from "next";
-import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
 import { ServiceFAQ } from "@/components/service-page";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+
+import { PageHeaderWithPreview } from "@/components/PageHeaderWithPreview";
 
 export const metadata: Metadata = {
   title: "CRM Migration | Media Garcia",
@@ -159,9 +161,11 @@ const relatedServices = [
 ];
 
 export default function CRMMigrationPage() {
+  const heroImage = getImageForSlot("service-crm-migration");
+
   return (
     <>
-      <PageHeader
+      <PageHeaderWithPreview
         badge="Service"
         title="CRM Migration"
         description="Seamless data migration with zero data loss. We migrate from Salesforce, Pipedrive, Zoho, and more—to HubSpot or any platform you choose."
@@ -169,6 +173,10 @@ export default function CRMMigrationPage() {
           { label: "Services", href: "/services" },
           { label: "CRM Migration", href: "/services/crm-migration" },
         ]}
+        defaultImage={heroImage}
+        slot="service-crm-migration"
+        imageAlt="CRM data migration visualization"
+        duotoneColor="purple"
       />
 
       {/* Pain Point Section */}

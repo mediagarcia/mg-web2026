@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-06T02:45:49.192Z",
+  "lastUpdated": "2026-02-08T02:56:08.874Z",
   "slots": {
     "hero": {
       "slot": "hero",
@@ -8,7 +8,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "16:9",
       "createdAt": "2026-02-05T07:01:32.682Z",
-      "updatedAt": "2026-02-05T19:02:51.131Z",
+      "updatedAt": "2026-02-07T22:14:24.657Z",
       "files": [
         {
           "filename": "hero-003.png",
@@ -62,7 +62,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-05T09:47:12.642Z",
-      "updatedAt": "2026-02-05T09:48:00.136Z",
+      "updatedAt": "2026-02-07T22:13:16.978Z",
       "files": [
         {
           "filename": "industries-it-001.png",
@@ -80,7 +80,7 @@
           "generatedAt": "2026-02-05T09:47:22.178Z"
         }
       ],
-      "selected": "industries-it-002.png",
+      "selected": "industries-it-001.png",
       "selectedPath": "/images/selected/industries-it.png"
     },
     "industries-saas": {
@@ -89,7 +89,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-05T09:47:45.607Z",
-      "updatedAt": "2026-02-05T09:47:45.607Z",
+      "updatedAt": "2026-02-07T22:13:12.881Z",
       "files": [
         {
           "filename": "industries-saas-001.png",
@@ -107,7 +107,8 @@
           "generatedAt": "2026-02-05T09:47:55.501Z"
         }
       ],
-      "selected": null
+      "selected": "industries-saas-001.png",
+      "selectedPath": "/images/selected/industries-saas.png"
     },
     "case-studies-generic": {
       "slot": "case-studies-generic",
@@ -477,6 +478,530 @@
       ],
       "selected": "industries-saas-v2-002.png",
       "selectedPath": "/images/selected/industries-saas-v2.png"
+    },
+    "service-crm-onboarding": {
+      "slot": "service-crm-onboarding",
+      "prompt": "Modern",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-06T03:19:15.772Z",
+      "updatedAt": "2026-02-06T04:06:58.273Z",
+      "files": [
+        {
+          "filename": "service-crm-onboarding-001.png",
+          "path": "/images/generated/service-crm-onboarding/service-crm-onboarding-001.png",
+          "generatedAt": "2026-02-06T03:19:19.500Z"
+        },
+        {
+          "filename": "service-crm-onboarding-002.png",
+          "path": "/images/generated/service-crm-onboarding/service-crm-onboarding-002.png",
+          "generatedAt": "2026-02-06T03:19:22.458Z"
+        },
+        {
+          "filename": "service-crm-onboarding-003.png",
+          "path": "/images/generated/service-crm-onboarding/service-crm-onboarding-003.png",
+          "generatedAt": "2026-02-06T03:19:25.630Z"
+        },
+        {
+          "filename": "service-crm-onboarding-004.png",
+          "path": "/images/generated/service-crm-onboarding/service-crm-onboarding-004.png",
+          "generatedAt": "2026-02-06T04:05:59.480Z"
+        },
+        {
+          "filename": "service-crm-onboarding-006.png",
+          "path": "/images/generated/service-crm-onboarding/service-crm-onboarding-006.png",
+          "generatedAt": "2026-02-06T04:06:05.029Z"
+        },
+        {
+          "filename": "service-crm-onboarding-007.png",
+          "path": "/images/generated/service-crm-onboarding/service-crm-onboarding-007.png",
+          "generatedAt": "2026-02-06T04:06:40.447Z"
+        },
+        {
+          "filename": "service-crm-onboarding-008.png",
+          "path": "/images/generated/service-crm-onboarding/service-crm-onboarding-008.png",
+          "generatedAt": "2026-02-06T04:06:44.181Z"
+        },
+        {
+          "filename": "service-crm-onboarding-009.png",
+          "path": "/images/generated/service-crm-onboarding/service-crm-onboarding-009.png",
+          "generatedAt": "2026-02-06T04:06:46.811Z"
+        }
+      ],
+      "selected": "service-crm-onboarding-002.png",
+      "selectedPath": "/images/selected/service-crm-onboarding.png"
+    },
+    "service-crm-migration": {
+      "slot": "service-crm-migration",
+      "prompt": "Data migration visualization showing records flowing between systems. Abstract representation of database transfer with glowing data streams connecting legacy system to modern CRM. Dark background with teal (#3BB782) and purple (#EE82F0) data flow lines. Premium tech aesthetic. No text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-06T03:19:43.216Z",
+      "updatedAt": "2026-02-06T04:07:33.658Z",
+      "files": [
+        {
+          "filename": "service-crm-migration-001.png",
+          "path": "/images/generated/service-crm-migration/service-crm-migration-001.png",
+          "generatedAt": "2026-02-06T03:19:46.489Z"
+        },
+        {
+          "filename": "service-crm-migration-002.png",
+          "path": "/images/generated/service-crm-migration/service-crm-migration-002.png",
+          "generatedAt": "2026-02-06T03:19:49.555Z"
+        },
+        {
+          "filename": "service-crm-migration-003.png",
+          "path": "/images/generated/service-crm-migration/service-crm-migration-003.png",
+          "generatedAt": "2026-02-06T03:19:52.453Z"
+        }
+      ],
+      "selected": "service-crm-migration-001.png",
+      "selectedPath": "/images/selected/service-crm-migration.png"
+    },
+    "service-marketing-automation": {
+      "slot": "service-marketing-automation",
+      "prompt": "Marketing automation workflow visualization. Elegant flowchart showing email sequences, lead scoring, and customer journey stages. Clean interface design with connected nodes representing automated touchpoints. Teal (#3BB782) accent color for active elements. Modern, minimal SaaS aesthetic. No text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-06T03:19:55.666Z",
+      "updatedAt": "2026-02-08T02:53:24.649Z",
+      "files": [
+        {
+          "filename": "service-marketing-automation-001.png",
+          "path": "/images/generated/service-marketing-automation/service-marketing-automation-001.png",
+          "generatedAt": "2026-02-06T03:19:59.415Z"
+        },
+        {
+          "filename": "service-marketing-automation-002.png",
+          "path": "/images/generated/service-marketing-automation/service-marketing-automation-002.png",
+          "generatedAt": "2026-02-06T03:20:03.147Z"
+        },
+        {
+          "filename": "service-marketing-automation-003.png",
+          "path": "/images/generated/service-marketing-automation/service-marketing-automation-003.png",
+          "generatedAt": "2026-02-06T03:20:05.776Z"
+        }
+      ],
+      "selected": "service-marketing-automation-001.png",
+      "selectedPath": "/images/selected/service-marketing-automation.png"
+    },
+    "service-sales-enablement": {
+      "slot": "service-sales-enablement",
+      "prompt": "Sales pipeline dashboard showing deal stages and progression. Modern CRM interface with kanban-style deal cards, revenue metrics, and sales forecasting charts. Clean UI with teal (#3BB782) highlights for closed deals. Professional business software aesthetic. No text readable, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-06T03:20:08.889Z",
+      "updatedAt": "2026-02-08T02:53:32.371Z",
+      "files": [
+        {
+          "filename": "service-sales-enablement-001.png",
+          "path": "/images/generated/service-sales-enablement/service-sales-enablement-001.png",
+          "generatedAt": "2026-02-06T03:20:12.601Z"
+        },
+        {
+          "filename": "service-sales-enablement-002.png",
+          "path": "/images/generated/service-sales-enablement/service-sales-enablement-002.png",
+          "generatedAt": "2026-02-06T03:20:15.567Z"
+        }
+      ],
+      "selected": "service-sales-enablement-002.png",
+      "selectedPath": "/images/selected/service-sales-enablement.png"
+    },
+    "service-reporting": {
+      "slot": "service-reporting",
+      "prompt": "Business analytics dashboard with charts and data visualization. Executive-level metrics showing revenue attribution, conversion funnels, and KPI trends. Dark theme with glowing teal (#3BB782) chart elements. Modern BI tool aesthetic. Clean, professional. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-06T03:21:32.461Z",
+      "updatedAt": "2026-02-08T02:53:45.770Z",
+      "files": [
+        {
+          "filename": "service-reporting-001.png",
+          "path": "/images/generated/service-reporting/service-reporting-001.png",
+          "generatedAt": "2026-02-06T03:21:36.113Z"
+        },
+        {
+          "filename": "service-reporting-002.png",
+          "path": "/images/generated/service-reporting/service-reporting-002.png",
+          "generatedAt": "2026-02-06T03:21:39.188Z"
+        },
+        {
+          "filename": "service-reporting-003.png",
+          "path": "/images/generated/service-reporting/service-reporting-003.png",
+          "generatedAt": "2026-02-06T03:21:43.876Z"
+        }
+      ],
+      "selected": "service-reporting-002.png",
+      "selectedPath": "/images/selected/service-reporting.png"
+    },
+    "service-ai-automation": {
+      "slot": "service-ai-automation",
+      "prompt": "AI and machine learning visualization. Neural network nodes with glowing connections, representing intelligent automation and predictive systems. Futuristic tech aesthetic with teal (#3BB782) and purple (#EE82F0) gradient accents. Abstract, premium. No text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-06T03:21:48.012Z",
+      "updatedAt": "2026-02-08T02:53:57.129Z",
+      "files": [
+        {
+          "filename": "service-ai-automation-001.png",
+          "path": "/images/generated/service-ai-automation/service-ai-automation-001.png",
+          "generatedAt": "2026-02-06T03:21:51.775Z"
+        },
+        {
+          "filename": "service-ai-automation-002.png",
+          "path": "/images/generated/service-ai-automation/service-ai-automation-002.png",
+          "generatedAt": "2026-02-06T03:21:54.847Z"
+        },
+        {
+          "filename": "service-ai-automation-003.png",
+          "path": "/images/generated/service-ai-automation/service-ai-automation-003.png",
+          "generatedAt": "2026-02-06T03:21:57.723Z"
+        }
+      ],
+      "selected": "service-ai-automation-002.png",
+      "selectedPath": "/images/selected/service-ai-automation.png"
+    },
+    "service-integrations": {
+      "slot": "service-integrations",
+      "prompt": "System integration visualization showing connected platforms and APIs. Multiple software icons or abstract shapes connected by flowing data lines. Clean technical diagram aesthetic with teal (#3BB782) connection highlights. Modern enterprise software look. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-06T03:22:01.240Z",
+      "updatedAt": "2026-02-08T02:54:09.134Z",
+      "files": [
+        {
+          "filename": "service-integrations-001.png",
+          "path": "/images/generated/service-integrations/service-integrations-001.png",
+          "generatedAt": "2026-02-06T03:22:04.492Z"
+        },
+        {
+          "filename": "service-integrations-002.png",
+          "path": "/images/generated/service-integrations/service-integrations-002.png",
+          "generatedAt": "2026-02-06T03:22:07.305Z"
+        },
+        {
+          "filename": "service-integrations-003.png",
+          "path": "/images/generated/service-integrations/service-integrations-003.png",
+          "generatedAt": "2026-02-06T03:22:10.498Z"
+        }
+      ],
+      "selected": "service-integrations-001.png",
+      "selectedPath": "/images/selected/service-integrations.png"
+    },
+    "service-development": {
+      "slot": "service-development",
+      "prompt": "Modern website design and development concept. Browser mockup showing clean, conversion-focused landing page and teal (#3BB782) CTA buttons. Code editor visible in background. Premium web design aesthetic. No readable text, no people. no words on the computer",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-06T03:23:22.998Z",
+      "updatedAt": "2026-02-08T02:55:47.154Z",
+      "files": [
+        {
+          "filename": "service-development-001.png",
+          "path": "/images/generated/service-development/service-development-001.png",
+          "generatedAt": "2026-02-06T03:23:26.237Z"
+        },
+        {
+          "filename": "service-development-002.png",
+          "path": "/images/generated/service-development/service-development-002.png",
+          "generatedAt": "2026-02-06T03:23:29.830Z"
+        },
+        {
+          "filename": "service-development-003.png",
+          "path": "/images/generated/service-development/service-development-003.png",
+          "generatedAt": "2026-02-06T03:23:34.313Z"
+        },
+        {
+          "filename": "service-development-004.png",
+          "path": "/images/generated/service-development/service-development-004.png",
+          "generatedAt": "2026-02-08T02:54:36.354Z"
+        },
+        {
+          "filename": "service-development-005.png",
+          "path": "/images/generated/service-development/service-development-005.png",
+          "generatedAt": "2026-02-08T02:54:41.183Z"
+        },
+        {
+          "filename": "service-development-006.png",
+          "path": "/images/generated/service-development/service-development-006.png",
+          "generatedAt": "2026-02-08T02:54:44.146Z"
+        },
+        {
+          "filename": "service-development-007.png",
+          "path": "/images/generated/service-development/service-development-007.png",
+          "generatedAt": "2026-02-08T02:55:26.153Z"
+        },
+        {
+          "filename": "service-development-008.png",
+          "path": "/images/generated/service-development/service-development-008.png",
+          "generatedAt": "2026-02-08T02:55:30.507Z"
+        },
+        {
+          "filename": "service-development-009.png",
+          "path": "/images/generated/service-development/service-development-009.png",
+          "generatedAt": "2026-02-08T02:55:33.936Z"
+        }
+      ],
+      "selected": "service-development-008.png",
+      "selectedPath": "/images/selected/service-development.png"
+    },
+    "service-marketing": {
+      "slot": "service-marketing",
+      "prompt": "Digital marketing growth visualization. Rising charts, traffic metrics, and conversion optimization elements. Abstract representation of organic and paid traffic channels converging. Teal (#3BB782) and orange (#EC4724) accent colors. Modern growth marketing aesthetic. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-06T03:23:38.153Z",
+      "updatedAt": "2026-02-08T02:56:08.874Z",
+      "files": [
+        {
+          "filename": "service-marketing-001.png",
+          "path": "/images/generated/service-marketing/service-marketing-001.png",
+          "generatedAt": "2026-02-06T03:23:42.304Z"
+        },
+        {
+          "filename": "service-marketing-002.png",
+          "path": "/images/generated/service-marketing/service-marketing-002.png",
+          "generatedAt": "2026-02-06T03:23:45.569Z"
+        },
+        {
+          "filename": "service-marketing-003.png",
+          "path": "/images/generated/service-marketing/service-marketing-003.png",
+          "generatedAt": "2026-02-06T03:23:53.573Z"
+        }
+      ],
+      "selected": "service-marketing-001.png",
+      "selectedPath": "/images/selected/service-marketing.png"
+    },
+    "page-resources": {
+      "slot": "page-resources",
+      "prompt": "Knowledge and learning visualization. Open books, digital tablets, and floating icons representing guides, calculators, and tools. Clean, organized desk with educational materials. Teal (#3BB782) accent highlights. Modern, clean aesthetic. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-07T04:13:33.016Z",
+      "updatedAt": "2026-02-08T02:52:19.090Z",
+      "files": [
+        {
+          "filename": "page-resources-001.png",
+          "path": "/images/generated/page-resources/page-resources-001.png",
+          "generatedAt": "2026-02-07T04:13:38.255Z"
+        },
+        {
+          "filename": "page-resources-002.png",
+          "path": "/images/generated/page-resources/page-resources-002.png",
+          "generatedAt": "2026-02-07T04:13:41.526Z"
+        },
+        {
+          "filename": "page-resources-003.png",
+          "path": "/images/generated/page-resources/page-resources-003.png",
+          "generatedAt": "2026-02-07T04:15:33.874Z"
+        }
+      ],
+      "selected": "page-resources-002.png",
+      "selectedPath": "/images/selected/page-resources.png"
+    },
+    "page-roi-calculator": {
+      "slot": "page-roi-calculator",
+      "prompt": "ROI calculation visualization. Abstract rising bar charts and upward arrows showing return on investment growth. Teal (#3BB782) and green accent colors suggesting positive returns. Clean, minimal financial aesthetic. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-07T04:13:42.436Z",
+      "updatedAt": "2026-02-08T02:52:00.384Z",
+      "files": [
+        {
+          "filename": "page-roi-calculator-001.png",
+          "path": "/images/generated/page-roi-calculator/page-roi-calculator-001.png",
+          "generatedAt": "2026-02-07T04:17:46.454Z"
+        },
+        {
+          "filename": "page-roi-calculator-002.png",
+          "path": "/images/generated/page-roi-calculator/page-roi-calculator-002.png",
+          "generatedAt": "2026-02-07T04:17:49.390Z"
+        },
+        {
+          "filename": "page-roi-calculator-003.png",
+          "path": "/images/generated/page-roi-calculator/page-roi-calculator-003.png",
+          "generatedAt": "2026-02-07T04:17:54.656Z"
+        },
+        {
+          "filename": "page-roi-calculator-004.png",
+          "path": "/images/generated/page-roi-calculator/page-roi-calculator-004.png",
+          "generatedAt": "2026-02-08T02:51:44.976Z"
+        },
+        {
+          "filename": "page-roi-calculator-005.png",
+          "path": "/images/generated/page-roi-calculator/page-roi-calculator-005.png",
+          "generatedAt": "2026-02-08T02:51:48.209Z"
+        },
+        {
+          "filename": "page-roi-calculator-006.png",
+          "path": "/images/generated/page-roi-calculator/page-roi-calculator-006.png",
+          "generatedAt": "2026-02-08T02:51:51.768Z"
+        }
+      ],
+      "selected": "page-roi-calculator-006.png",
+      "selectedPath": "/images/selected/page-roi-calculator.png"
+    },
+    "page-tco-calculator": {
+      "slot": "page-tco-calculator",
+      "prompt": "Total cost comparison visualization. Side-by-side abstract representations of cost structures being analyzed. Balanced scales or comparison charts showing cost optimization. Teal (#3BB782) for savings, gray for costs. Clean financial analysis aesthetic. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-07T04:13:44.728Z",
+      "updatedAt": "2026-02-08T02:51:13.051Z",
+      "files": [
+        {
+          "filename": "page-tco-calculator-001.png",
+          "path": "/images/generated/page-tco-calculator/page-tco-calculator-001.png",
+          "generatedAt": "2026-02-07T04:18:08.922Z"
+        },
+        {
+          "filename": "page-tco-calculator-002.png",
+          "path": "/images/generated/page-tco-calculator/page-tco-calculator-002.png",
+          "generatedAt": "2026-02-07T04:18:12.017Z"
+        },
+        {
+          "filename": "page-tco-calculator-003.png",
+          "path": "/images/generated/page-tco-calculator/page-tco-calculator-003.png",
+          "generatedAt": "2026-02-07T04:18:15.170Z"
+        }
+      ],
+      "selected": "page-tco-calculator-003.png",
+      "selectedPath": "/images/selected/page-tco-calculator.png"
+    },
+    "page-services": {
+      "slot": "page-services",
+      "prompt": "Abstract service ecosystem visualization. Interconnected hexagons or circles representing different service offerings, linked by flowing lines suggesting a unified platform. Teal (#3BB782) and purple (#EE82F0) gradient accents on clean white background. Premium tech services aesthetic. No text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-07T04:13:52.549Z",
+      "updatedAt": "2026-02-08T02:50:59.386Z",
+      "files": [
+        {
+          "filename": "page-services-001.png",
+          "path": "/images/generated/page-services/page-services-001.png",
+          "generatedAt": "2026-02-07T04:13:56.485Z"
+        },
+        {
+          "filename": "page-services-002.png",
+          "path": "/images/generated/page-services/page-services-002.png",
+          "generatedAt": "2026-02-07T04:19:55.977Z"
+        },
+        {
+          "filename": "page-services-003.png",
+          "path": "/images/generated/page-services/page-services-003.png",
+          "generatedAt": "2026-02-07T04:19:58.953Z"
+        }
+      ],
+      "selected": "page-services-003.png",
+      "selectedPath": "/images/selected/page-services.png"
+    },
+    "page-work": {
+      "slot": "page-work",
+      "prompt": "Professional portfolio showcase. Abstract composition of successful project deliverables - dashboards, growth charts, and connected systems displayed on floating screens. Achievement and results focused. Teal (#3BB782) accent highlights on dark sophisticated background. Premium case study aesthetic. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-07T04:13:57.282Z",
+      "updatedAt": "2026-02-08T02:50:43.416Z",
+      "files": [
+        {
+          "filename": "page-work-001.png",
+          "path": "/images/generated/page-work/page-work-001.png",
+          "generatedAt": "2026-02-07T04:20:38.928Z"
+        },
+        {
+          "filename": "page-work-002.png",
+          "path": "/images/generated/page-work/page-work-002.png",
+          "generatedAt": "2026-02-07T04:20:42.540Z"
+        },
+        {
+          "filename": "page-work-003.png",
+          "path": "/images/generated/page-work/page-work-003.png",
+          "generatedAt": "2026-02-07T04:20:45.276Z"
+        }
+      ],
+      "selected": "page-work-003.png",
+      "selectedPath": "/images/selected/page-work.png"
+    },
+    "page-assessment": {
+      "slot": "page-assessment",
+      "prompt": "CRM health check visualization. Abstract diagnostic interface showing checkmarks, scores, and system health indicators. Clean dashboard aesthetic with teal (#3BB782) positive indicators and amber warnings. Modern assessment tool look. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-07T04:15:43.451Z",
+      "updatedAt": "2026-02-08T02:50:28.890Z",
+      "files": [
+        {
+          "filename": "page-assessment-001.png",
+          "path": "/images/generated/page-assessment/page-assessment-001.png",
+          "generatedAt": "2026-02-07T04:15:46.356Z"
+        },
+        {
+          "filename": "page-assessment-002.png",
+          "path": "/images/generated/page-assessment/page-assessment-002.png",
+          "generatedAt": "2026-02-07T04:15:49.496Z"
+        },
+        {
+          "filename": "page-assessment-003.png",
+          "path": "/images/generated/page-assessment/page-assessment-003.png",
+          "generatedAt": "2026-02-07T04:15:52.768Z"
+        }
+      ],
+      "selected": "page-assessment-003.png",
+      "selectedPath": "/images/selected/page-assessment.png"
+    },
+    "page-guides": {
+      "slot": "page-guides",
+      "prompt": "Digital library of professional guides and playbooks. Stack of modern ebooks and digital documents with clean cover designs. Teal (#3BB782) accent spines and covers. Premium educational content aesthetic. Organized, clean. No readable text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-07T04:16:04.691Z",
+      "updatedAt": "2026-02-08T02:50:15.330Z",
+      "files": [
+        {
+          "filename": "page-guides-001.png",
+          "path": "/images/generated/page-guides/page-guides-001.png",
+          "generatedAt": "2026-02-07T04:16:07.845Z"
+        },
+        {
+          "filename": "page-guides-002.png",
+          "path": "/images/generated/page-guides/page-guides-002.png",
+          "generatedAt": "2026-02-07T04:16:10.929Z"
+        },
+        {
+          "filename": "page-guides-003.png",
+          "path": "/images/generated/page-guides/page-guides-003.png",
+          "generatedAt": "2026-02-07T04:16:14.040Z"
+        }
+      ],
+      "selected": "page-guides-002.png",
+      "selectedPath": "/images/selected/page-guides.png"
+    },
+    "page-industries": {
+      "slot": "page-industries",
+      "prompt": "Multi-industry abstract visualization. Distinct but connected sectors represented by modern geometric shapes - healthcare cross, tech circuit, SaaS cloud - unified by flowing teal (#3BB782) connecting lines. Clean, premium aesthetic showing industry expertise breadth. No text, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-07T04:20:11.255Z",
+      "updatedAt": "2026-02-08T02:50:00.640Z",
+      "files": [
+        {
+          "filename": "page-industries-001.png",
+          "path": "/images/generated/page-industries/page-industries-001.png",
+          "generatedAt": "2026-02-07T04:20:17.441Z"
+        },
+        {
+          "filename": "page-industries-002.png",
+          "path": "/images/generated/page-industries/page-industries-002.png",
+          "generatedAt": "2026-02-07T04:20:20.369Z"
+        },
+        {
+          "filename": "page-industries-003.png",
+          "path": "/images/generated/page-industries/page-industries-003.png",
+          "generatedAt": "2026-02-07T04:20:23.501Z"
+        }
+      ],
+      "selected": "page-industries-003.png",
+      "selectedPath": "/images/selected/page-industries.png"
     }
   }
 }
