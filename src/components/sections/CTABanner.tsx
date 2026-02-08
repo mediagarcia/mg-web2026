@@ -2,11 +2,20 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { CenteredGlow, FadingGridPattern } from "@/components/ui/visuals";
+import { CenteredGlow, FadingGridPattern, BackgroundVideo } from "@/components/ui/visuals";
 
 export function CTABanner() {
   return (
     <section className="py-16 lg:py-24 bg-gradient-to-r from-teal-500 to-teal-600 relative overflow-hidden">
+      {/* Background Video - subtle motion effect under the teal gradient */}
+      <div className="absolute inset-0 z-0 opacity-20 mix-blend-overlay">
+        <BackgroundVideo
+          src="/videos/cta-motion.mp4"
+          poster="/videos/cta-motion-poster.jpg"
+          overlay={false}
+        />
+      </div>
+
       {/* Enhanced background pattern */}
       <FadingGridPattern
         type="dots"

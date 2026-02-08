@@ -1,6 +1,6 @@
 import { HeroWithPreview, ClientLogos, Services, Stats, IndustriesWithPreview, WhyUsWithPreview, Process, Certifications, Values, CTABanner, Testimonials, CaseStudiesWithPreview, FAQ, Team, Contact } from "@/components/sections";
+import { HomePageWrapper } from "@/components/HomePageWrapper";
 import { getImageForSlot, getVersionedImageForSlot } from "@/lib/images/get-image-for-slot";
-
 export default function Home() {
   const heroImage = getImageForSlot("hero", "/images/hero/hero-bg.jpg");
 
@@ -23,7 +23,7 @@ export default function Home() {
   const whyUsImage = getImageForSlot("why-us");
 
   return (
-    <>
+    <HomePageWrapper>
       <HeroWithPreview defaultImage={heroImage} slot="hero" />
       <ClientLogos />
       <Services />
@@ -39,6 +39,6 @@ export default function Home() {
       <FAQ />
       <Team />
       <Contact />
-    </>
+    </HomePageWrapper>
   );
 }

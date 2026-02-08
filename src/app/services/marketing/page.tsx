@@ -81,7 +81,7 @@ const industryUseCases = [
       "Demand generation for long sales cycles with nurturing sequences",
       "Event marketing and webinar programs for lead generation",
     ],
-    linkHref: "/industries/it-services",
+    linkHref: "/industries/information-technology",
   },
   {
     industry: "B2B SaaS",

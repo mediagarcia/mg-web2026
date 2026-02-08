@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { OrganicShapeCluster, DotPattern } from "@/components/OrganicShapes";
+
 import { useState, useEffect } from "react";
 
 const rotatingWords = [

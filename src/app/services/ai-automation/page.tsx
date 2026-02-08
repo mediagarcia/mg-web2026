@@ -111,7 +111,7 @@ const industryUseCases = [
       "Intelligent lead routing based on deal size and technical requirements",
       "Predictive deal scoring for complex, multi-stakeholder sales",
     ],
-    linkHref: "/industries/it-services",
+    linkHref: "/industries/information-technology",
   },
   {
     industry: "B2B SaaS",

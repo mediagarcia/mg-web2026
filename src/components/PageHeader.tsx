@@ -18,13 +18,14 @@ export interface PageHeaderProps {
   image?: string | null;
   imageAlt?: string;
   duotoneColor?: "teal" | "purple" | "orange";
+  compactBottom?: boolean;
 }
 
-export function PageHeader({ badge, title, description, breadcrumbs, image, imageAlt, duotoneColor = "teal" }: PageHeaderProps) {
+export function PageHeader({ badge, title, description, breadcrumbs, image, imageAlt, duotoneColor = "teal", compactBottom }: PageHeaderProps) {
   const hasImage = !!image;
 
   return (
-    <section className={`pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gray-50 relative overflow-hidden ${hasImage ? 'lg:min-h-[500px]' : ''}`}>
+    <section className={`pt-32 lg:pt-40 bg-gray-50 relative overflow-hidden ${hasImage ? 'lg:min-h-[500px]' : ''} ${compactBottom ? "pb-8 lg:pb-12" : "pb-16 lg:pb-24"}`}>
       {/* Grid pattern background */}
       <FadingGridPattern
         type="dots"

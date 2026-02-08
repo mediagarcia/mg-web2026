@@ -1,91 +1,58 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { useRouter, usePathname } from "next/navigation";
 import { usePreview } from "@/lib/images/preview-context";
+import { useVideoPreview } from "@/lib/videos/preview-context";
+import type { VideoDesignSettings } from "@/lib/videos/types";
+import { DEFAULT_VIDEO_DESIGN } from "@/lib/videos/types";
 
 // Only render in development
 const isProduction = process.env.NODE_ENV === "production";
 
-// Map slots to their page URLs for auto-navigation
-const slotToPageUrl: Record<string, string> = {
-  // Homepage slots
-  "hero": "/",
-  "industries-healthcare": "/",
-  "industries-it": "/",
-  "industries-saas": "/",
-  "why-us": "/",
-  "case-studies-generic": "/",
-  "case-study-healthcare": "/",
-  "case-study-saas": "/",
-  "case-study-crm": "/",
-  "case-study-healthcare-v3": "/",
-  "case-study-saas-v3": "/",
-  "case-study-crm-v3": "/",
-  "services-accent": "/",
-  "stats-background": "/",
-
-  // Service page slots
-  "service-crm-onboarding": "/services/hubspot-onboarding",
-  "service-crm-migration": "/services/crm-migration",
-  "service-marketing-automation": "/services/marketing-automation",
-  "service-sales-enablement": "/services/sales-enablement",
-  "service-reporting": "/services/reporting",
-  "service-ai-automation": "/services/ai-automation",
-  "service-integrations": "/services/integrations",
-  "service-development": "/services/development",
-  "service-marketing": "/services/marketing",
-
-  // Industry page slots (v2 versions used on dedicated pages)
-  "industries-healthcare-v2": "/industries/healthcare",
-  "industries-it-v2": "/industries/information-technology",
-  "industries-saas-v2": "/industries/saas",
-
-  // Page header slots
-  "page-resources": "/resources",
-  "page-roi-calculator": "/resources/roi-calculator",
-  "page-tco-calculator": "/resources/tco-calculator",
-  "page-services": "/services",
-  "page-work": "/work",
-  "page-assessment": "/resources/assessment",
-  "page-guides": "/resources/guides",
-  "page-industries": "/industries",
+// Map slots to page paths + section selectors for navigation
+const slotToPageMap: Record<string, { path: string; selector?: string }> = {
+  // Image slots (homepage)
+  "hero": { path: "/", selector: "section:first-of-type" },
+  "industries-healthcare": { path: "/", selector: "#industries" },
+  "industries-it": { path: "/", selector: "#industries" },
+  "industries-saas": { path: "/", selector: "#industries" },
+  "case-studies-generic": { path: "/", selector: "#work" },
+  "case-study-healthcare": { path: "/", selector: "#work" },
+  "case-study-saas": { path: "/", selector: "#work" },
+  "case-study-crm": { path: "/", selector: "#work" },
+  "why-us": { path: "/" },
+  "services-accent": { path: "/", selector: "#services" },
+  "stats-background": { path: "/" },
+  // Video slots
+  "hero-video": { path: "/", selector: "section:first-of-type" },
+  "services-video": { path: "/services" },
+  "about-video": { path: "/about" },
 };
 
-// Session storage key for pending slot after navigation
-const PENDING_SLOT_KEY = "preview-pending-slot";
+// Navigate to the right page and scroll to section for a given slot
+function navigateToSlot(slot: string) {
+  const mapping = slotToPageMap[slot];
 
-// Map slots to page section selectors for auto-scroll
-const slotToSectionMap: Record<string, string> = {
-  "hero": "section:first-of-type",
-  "industries-healthcare": "#industries",
-  "industries-it": "#industries",
-  "industries-saas": "#industries",
-  "case-studies-generic": "#work",
-  "case-study-healthcare": "#work",
-  "case-study-saas": "#work",
-  "case-study-crm": "#work",
-  "why-us": "section:has(.text-teal-500:contains('Why Media Garcia'))",
-  "services-accent": "#services",
-  "stats-background": "section:has(.text-4xl)",
-};
+  // Fallback mapping by name pattern
+  const targetPath = mapping?.path ?? (
+    slot.includes("hero") ? "/" :
+    slot.includes("services") ? "/services" :
+    slot.includes("about") ? "/about" :
+    slot.startsWith("industries") ? "/" :
+    slot.startsWith("case-stud") ? "/" :
+    "/"
+  );
 
-// Scroll to section for a given slot
-function scrollToSlotSection(slot: string) {
-  // Try direct mapping first
-  let selector = slotToSectionMap[slot];
+  const currentPath = window.location.pathname;
 
-  // Fallback: try to find section by slot name patterns
-  if (!selector) {
-    if (slot.startsWith("industries")) {
-      selector = "#industries";
-    } else if (slot.startsWith("case-stud")) {
-      selector = "#work";
-    } else if (slot.includes("hero")) {
-      selector = "section:first-of-type";
-    }
+  if (currentPath !== targetPath) {
+    // Navigate to the correct page with preview mode preserved
+    window.location.href = `${targetPath}?preview=1`;
+    return;
   }
 
+  // Already on the right page — scroll to section
+  const selector = mapping?.selector;
   if (selector) {
     try {
       const element = document.querySelector(selector);
@@ -94,35 +61,30 @@ function scrollToSlotSection(slot: string) {
         return;
       }
     } catch {
-      // Selector might be invalid, try fallback
+      // Selector might be invalid
     }
   }
 
-  // Fallback: scroll to top for hero, or try to find by text content
+  // Fallback: scroll to top for hero-ish slots
   if (slot.includes("hero")) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 }
 
 export function ImagePreviewBar() {
-  const router = useRouter();
-  const pathname = usePathname();
+  const imageCtx = usePreview();
+  const videoCtx = useVideoPreview();
+
+  // Destructure image context as primary
   const {
     isPreviewMode,
-    setPreviewMode,
     manifest,
     isLoading,
     currentSlot,
     setCurrentSlot,
-    cycleVariant,
-    getSlotVariantInfo,
     getSlotPrompt,
-    getCurrentFilename,
-    selectCurrentVariant,
-    deleteCurrentVariant,
-    regenerateSlot,
     refreshManifest,
-  } = usePreview();
+  } = imageCtx;
 
   const [isSelecting, setIsSelecting] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -131,24 +93,74 @@ export function ImagePreviewBar() {
   const [showRemixInput, setShowRemixInput] = useState(false);
   const [remixPrompt, setRemixPrompt] = useState("");
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [showVideoControls, setShowVideoControls] = useState(true);
 
-  // Get available slots from manifest
-  const availableSlots = manifest ? Object.keys(manifest.slots).filter(
+  // Sync preview mode between image and video contexts
+  const setPreviewMode = useCallback((enabled: boolean) => {
+    imageCtx.setPreviewMode(enabled);
+    videoCtx.setPreviewMode(enabled);
+  }, [imageCtx, videoCtx]);
+
+  // Track which slots are video slots
+  const videoSlotSet = new Set(
+    videoCtx.manifest ? Object.keys(videoCtx.manifest.slots).filter(
+      (slot) => videoCtx.manifest!.slots[slot].files.length > 0
+    ) : []
+  );
+
+  const isVideoSlot = (slot: string) => videoSlotSet.has(slot);
+
+  // Get available slots from both manifests
+  const imageSlots = manifest ? Object.keys(manifest.slots).filter(
     (slot) => manifest.slots[slot].files.length > 0
   ) : [];
+  const videoSlots = Array.from(videoSlotSet);
+  const availableSlots = [...imageSlots, ...videoSlots];
 
-  // Check for pending slot after navigation completes
-  useEffect(() => {
-    if (isPreviewMode && availableSlots.length > 0) {
-      const pendingSlot = sessionStorage.getItem(PENDING_SLOT_KEY);
-      if (pendingSlot && availableSlots.includes(pendingSlot)) {
-        setCurrentSlot(pendingSlot);
-        sessionStorage.removeItem(PENDING_SLOT_KEY);
-        // Auto-scroll after setting slot
-        setTimeout(() => scrollToSlotSection(pendingSlot), 200);
-      }
+  // Delegate to the right context based on slot type
+  const cycleVariant = useCallback((slot: string, direction: "prev" | "next") => {
+    if (videoSlotSet.has(slot)) {
+      videoCtx.cycleVariant(slot, direction);
+    } else {
+      imageCtx.cycleVariant(slot, direction);
     }
-  }, [isPreviewMode, availableSlots, setCurrentSlot, pathname]);
+  }, [imageCtx, videoCtx, videoSlotSet]);
+
+  const getSlotVariantInfo = useCallback((slot: string) => {
+    return videoSlotSet.has(slot)
+      ? videoCtx.getSlotVariantInfo(slot)
+      : imageCtx.getSlotVariantInfo(slot);
+  }, [imageCtx, videoCtx, videoSlotSet]);
+
+  const getCurrentFilename = useCallback((slot: string) => {
+    return videoSlotSet.has(slot)
+      ? videoCtx.getCurrentFilename(slot)
+      : imageCtx.getCurrentFilename(slot);
+  }, [imageCtx, videoCtx, videoSlotSet]);
+
+  const selectCurrentVariant = useCallback(async (slot: string) => {
+    return videoSlotSet.has(slot)
+      ? videoCtx.selectCurrentVariant(slot)
+      : imageCtx.selectCurrentVariant(slot);
+  }, [imageCtx, videoCtx, videoSlotSet]);
+
+  const deleteCurrentVariant = useCallback(async (slot: string) => {
+    return videoSlotSet.has(slot)
+      ? videoCtx.deleteCurrentVariant(slot)
+      : imageCtx.deleteCurrentVariant(slot);
+  }, [imageCtx, videoCtx, videoSlotSet]);
+
+  const regenerateSlot = useCallback(async (slot: string, prompt?: string) => {
+    return videoSlotSet.has(slot)
+      ? videoCtx.regenerateSlot(slot, prompt)
+      : imageCtx.regenerateSlot(slot, prompt);
+  }, [imageCtx, videoCtx, videoSlotSet]);
+
+  const getSlotPromptCombined = useCallback((slot: string) => {
+    return videoSlotSet.has(slot)
+      ? videoCtx.getSlotPrompt(slot)
+      : getSlotPrompt(slot);
+  }, [getSlotPrompt, videoCtx, videoSlotSet]);
 
   // Set first slot as default when manifest loads
   useEffect(() => {
@@ -156,26 +168,6 @@ export function ImagePreviewBar() {
       setCurrentSlot(availableSlots[0]);
     }
   }, [availableSlots, currentSlot, setCurrentSlot]);
-
-  // Navigate to a slot, handling cross-page navigation
-  const navigateToSlot = useCallback((newSlot: string) => {
-    const targetUrl = slotToPageUrl[newSlot];
-    const currentUrl = pathname;
-
-    // Always update the current slot immediately for UI feedback
-    setCurrentSlot(newSlot);
-
-    // Check if we need to navigate to a different page
-    if (targetUrl && targetUrl !== currentUrl) {
-      // Store pending slot so scroll happens after navigation completes
-      sessionStorage.setItem(PENDING_SLOT_KEY, newSlot);
-      // Navigate with preview param
-      router.push(`${targetUrl}?preview=1`);
-    } else {
-      // Same page, just scroll to section
-      setTimeout(() => scrollToSlotSection(newSlot), 100);
-    }
-  }, [pathname, router, setCurrentSlot]);
 
   // Cycle through slots (for up/down navigation)
   const cycleSlot = useCallback((direction: "prev" | "next") => {
@@ -191,9 +183,10 @@ export function ImagePreviewBar() {
     }
 
     const newSlot = availableSlots[newIndex];
-    // Use navigateToSlot for cross-page navigation support
-    navigateToSlot(newSlot);
-  }, [availableSlots, currentSlot, navigateToSlot]);
+    setCurrentSlot(newSlot);
+    // Auto-scroll to the section
+    setTimeout(() => navigateToSlot(newSlot), 100);
+  }, [availableSlots, currentSlot, setCurrentSlot]);
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -293,11 +286,11 @@ export function ImagePreviewBar() {
   // Initialize remix prompt with current slot's prompt when opening
   const openRemixInput = useCallback(() => {
     if (currentSlot) {
-      const existingPrompt = getSlotPrompt(currentSlot);
+      const existingPrompt = getSlotPromptCombined(currentSlot);
       setRemixPrompt(existingPrompt ?? "");
     }
     setShowRemixInput(true);
-  }, [currentSlot, getSlotPrompt]);
+  }, [currentSlot, getSlotPromptCombined]);
 
   // Production guard
   if (isProduction) {
@@ -314,14 +307,18 @@ export function ImagePreviewBar() {
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
-        Preview Images
+        Preview Media
       </button>
     );
   }
 
   const variantInfo = currentSlot ? getSlotVariantInfo(currentSlot) : null;
   const currentFilename = currentSlot ? getCurrentFilename(currentSlot) : null;
-  const selectedFilename = currentSlot && manifest?.slots[currentSlot]?.selected || null;
+  const selectedFilename = currentSlot
+    ? (isVideoSlot(currentSlot)
+      ? videoCtx.manifest?.slots[currentSlot]?.selected
+      : manifest?.slots[currentSlot]?.selected) || null
+    : null;
   const isCurrentSelected = currentFilename === selectedFilename;
 
   return (
@@ -375,20 +372,21 @@ export function ImagePreviewBar() {
           {isLoading ? (
             <span className="text-white/60 text-sm">Loading...</span>
           ) : availableSlots.length === 0 ? (
-            <span className="text-white/60 text-sm">No images generated yet</span>
+            <span className="text-white/60 text-sm">No media generated yet</span>
           ) : (
             <select
               value={currentSlot ?? ""}
               onChange={(e) => {
                 const newSlot = e.target.value;
-                // Use navigateToSlot for cross-page navigation support
-                navigateToSlot(newSlot);
+                setCurrentSlot(newSlot);
+                // Auto-scroll to the section
+                setTimeout(() => navigateToSlot(newSlot), 100);
               }}
               className="bg-white/10 border border-white/20 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
             >
               {availableSlots.map((slot) => (
                 <option key={slot} value={slot} className="bg-gray-900">
-                  {slot}
+                  {isVideoSlot(slot) ? `\uD83C\uDFAC ${slot}` : slot}
                 </option>
               ))}
             </select>
@@ -422,7 +420,11 @@ export function ImagePreviewBar() {
                       Selected
                     </span>
                   ) : (
-                    `Selected: #${(manifest?.slots[currentSlot]?.files?.findIndex(f => f.filename === selectedFilename) ?? -1) + 1 || "?"}`
+                    `Selected: #${(
+                      (isVideoSlot(currentSlot)
+                        ? videoCtx.manifest?.slots[currentSlot]?.files?.findIndex(f => f.filename === selectedFilename)
+                        : manifest?.slots[currentSlot]?.files?.findIndex(f => f.filename === selectedFilename)
+                      ) ?? -1) + 1 || "?"}`
                   )}
                 </span>
               )}
@@ -511,7 +513,7 @@ export function ImagePreviewBar() {
           )}
 
           <button
-            onClick={refreshManifest}
+            onClick={() => { refreshManifest(); videoCtx.refreshManifest(); }}
             className="w-8 h-8 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full transition-colors"
             title="Refresh manifest"
           >
@@ -575,6 +577,18 @@ export function ImagePreviewBar() {
         </div>
       )}
 
+      {/* Video design controls */}
+      {currentSlot && isVideoSlot(currentSlot) && (
+        <VideoDesignControls
+          slot={currentSlot}
+          show={showVideoControls}
+          onToggle={() => setShowVideoControls(!showVideoControls)}
+          settings={videoCtx.getDesignSettings(currentSlot)}
+          onUpdate={(key, value) => videoCtx.updateDesignSetting(currentSlot, key, value)}
+          onReset={() => videoCtx.resetDesignSettings(currentSlot)}
+        />
+      )}
+
       {/* Keyboard shortcuts hint */}
       <div className="max-w-[1400px] mx-auto mt-2 flex items-center gap-4 text-xs text-white/40">
         <span>↑ ↓ Switch slot</span>
@@ -583,5 +597,151 @@ export function ImagePreviewBar() {
       </div>
     </div>
     </>
+  );
+}
+
+// Compact slider for a single design setting
+function DesignSlider({
+  label,
+  value,
+  min,
+  max,
+  step,
+  unit,
+  defaultValue,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  min: number;
+  max: number;
+  step: number;
+  unit: string;
+  defaultValue: number;
+  onChange: (v: number) => void;
+}) {
+  const isDefault = value === defaultValue;
+  return (
+    <div className="flex flex-col gap-1 min-w-[140px]">
+      <div className="flex items-center justify-between">
+        <span className="text-[11px] text-white/60">{label}</span>
+        <span className={`text-[11px] font-mono ${isDefault ? "text-white/40" : "text-teal-400"}`}>
+          {step < 1 ? value.toFixed(2) : value}{unit}
+        </span>
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        className="w-full h-1 accent-teal-500 cursor-pointer"
+      />
+    </div>
+  );
+}
+
+// Video design controls panel
+function VideoDesignControls({
+  slot,
+  show,
+  onToggle,
+  settings,
+  onUpdate,
+  onReset,
+}: {
+  slot: string;
+  show: boolean;
+  onToggle: () => void;
+  settings: VideoDesignSettings;
+  onUpdate: (key: keyof VideoDesignSettings, value: number) => void;
+  onReset: () => void;
+}) {
+  const hasChanges = Object.keys(DEFAULT_VIDEO_DESIGN).some(
+    (k) => settings[k as keyof VideoDesignSettings] !== DEFAULT_VIDEO_DESIGN[k as keyof VideoDesignSettings]
+  );
+
+  return (
+    <div className="max-w-[1400px] mx-auto mt-2">
+      <button
+        onClick={onToggle}
+        className="flex items-center gap-2 text-xs text-white/50 hover:text-white/80 transition-colors mb-1"
+      >
+        <svg
+          className={`w-3 h-3 transition-transform ${show ? "rotate-90" : ""}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+        Video Design
+        {hasChanges && <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />}
+      </button>
+
+      {show && (
+        <div className="p-3 bg-white/5 rounded-lg border border-white/10">
+          <div className="flex flex-wrap items-end gap-x-5 gap-y-3">
+            <DesignSlider
+              label="Opacity"
+              value={settings.opacity}
+              min={0} max={100} step={1}
+              unit="%"
+              defaultValue={DEFAULT_VIDEO_DESIGN.opacity}
+              onChange={(v) => onUpdate("opacity", v)}
+            />
+            <DesignSlider
+              label="Overlay Dark"
+              value={settings.overlayDarkness}
+              min={0} max={100} step={1}
+              unit="%"
+              defaultValue={DEFAULT_VIDEO_DESIGN.overlayDarkness}
+              onChange={(v) => onUpdate("overlayDarkness", v)}
+            />
+            <DesignSlider
+              label="Blur"
+              value={settings.blur}
+              min={0} max={20} step={0.5}
+              unit="px"
+              defaultValue={DEFAULT_VIDEO_DESIGN.blur}
+              onChange={(v) => onUpdate("blur", v)}
+            />
+            <DesignSlider
+              label="Speed"
+              value={settings.speed}
+              min={0.25} max={2} step={0.05}
+              unit="x"
+              defaultValue={DEFAULT_VIDEO_DESIGN.speed}
+              onChange={(v) => onUpdate("speed", v)}
+            />
+            <DesignSlider
+              label="Brightness"
+              value={settings.brightness}
+              min={0} max={200} step={1}
+              unit="%"
+              defaultValue={DEFAULT_VIDEO_DESIGN.brightness}
+              onChange={(v) => onUpdate("brightness", v)}
+            />
+            <DesignSlider
+              label="Saturation"
+              value={settings.saturation}
+              min={0} max={200} step={1}
+              unit="%"
+              defaultValue={DEFAULT_VIDEO_DESIGN.saturation}
+              onChange={(v) => onUpdate("saturation", v)}
+            />
+            {hasChanges && (
+              <button
+                onClick={onReset}
+                className="text-[11px] text-white/40 hover:text-white/70 transition-colors px-2 py-1 bg-white/5 rounded"
+              >
+                Reset
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
   );
 }

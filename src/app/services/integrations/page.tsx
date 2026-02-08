@@ -81,7 +81,7 @@ const industryUseCases = [
       "Billing system integration for contract and invoice automation",
       "Project management sync across service delivery platforms",
     ],
-    linkHref: "/industries/it-services",
+    linkHref: "/industries/information-technology",
   },
   {
     industry: "B2B SaaS",
