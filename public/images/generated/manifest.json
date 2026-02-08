@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-07T22:14:24.657Z",
+  "lastUpdated": "2026-02-08T02:56:08.874Z",
   "slots": {
     "hero": {
       "slot": "hero",
@@ -564,7 +564,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-06T03:19:55.666Z",
-      "updatedAt": "2026-02-06T03:19:55.666Z",
+      "updatedAt": "2026-02-08T02:53:24.649Z",
       "files": [
         {
           "filename": "service-marketing-automation-001.png",
@@ -582,7 +582,8 @@
           "generatedAt": "2026-02-06T03:20:05.776Z"
         }
       ],
-      "selected": null
+      "selected": "service-marketing-automation-001.png",
+      "selectedPath": "/images/selected/service-marketing-automation.png"
     },
     "service-sales-enablement": {
       "slot": "service-sales-enablement",
@@ -590,7 +591,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-06T03:20:08.889Z",
-      "updatedAt": "2026-02-06T03:20:08.889Z",
+      "updatedAt": "2026-02-08T02:53:32.371Z",
       "files": [
         {
           "filename": "service-sales-enablement-001.png",
@@ -603,7 +604,8 @@
           "generatedAt": "2026-02-06T03:20:15.567Z"
         }
       ],
-      "selected": null
+      "selected": "service-sales-enablement-002.png",
+      "selectedPath": "/images/selected/service-sales-enablement.png"
     },
     "service-reporting": {
       "slot": "service-reporting",
@@ -611,7 +613,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-06T03:21:32.461Z",
-      "updatedAt": "2026-02-06T03:21:32.461Z",
+      "updatedAt": "2026-02-08T02:53:45.770Z",
       "files": [
         {
           "filename": "service-reporting-001.png",
@@ -629,7 +631,8 @@
           "generatedAt": "2026-02-06T03:21:43.876Z"
         }
       ],
-      "selected": null
+      "selected": "service-reporting-002.png",
+      "selectedPath": "/images/selected/service-reporting.png"
     },
     "service-ai-automation": {
       "slot": "service-ai-automation",
@@ -637,7 +640,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-06T03:21:48.012Z",
-      "updatedAt": "2026-02-06T03:21:48.012Z",
+      "updatedAt": "2026-02-08T02:53:57.129Z",
       "files": [
         {
           "filename": "service-ai-automation-001.png",
@@ -655,7 +658,8 @@
           "generatedAt": "2026-02-06T03:21:57.723Z"
         }
       ],
-      "selected": null
+      "selected": "service-ai-automation-002.png",
+      "selectedPath": "/images/selected/service-ai-automation.png"
     },
     "service-integrations": {
       "slot": "service-integrations",
@@ -663,7 +667,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-06T03:22:01.240Z",
-      "updatedAt": "2026-02-06T03:22:01.240Z",
+      "updatedAt": "2026-02-08T02:54:09.134Z",
       "files": [
         {
           "filename": "service-integrations-001.png",
@@ -681,15 +685,16 @@
           "generatedAt": "2026-02-06T03:22:10.498Z"
         }
       ],
-      "selected": null
+      "selected": "service-integrations-001.png",
+      "selectedPath": "/images/selected/service-integrations.png"
     },
     "service-development": {
       "slot": "service-development",
-      "prompt": "Modern website design and development concept. Browser mockup showing clean, conversion-focused landing page with elegant typography and teal (#3BB782) CTA buttons. Code editor visible in background. Premium web design aesthetic. No readable text, no people.",
+      "prompt": "Modern website design and development concept. Browser mockup showing clean, conversion-focused landing page and teal (#3BB782) CTA buttons. Code editor visible in background. Premium web design aesthetic. No readable text, no people. no words on the computer",
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-06T03:23:22.998Z",
-      "updatedAt": "2026-02-06T03:23:22.998Z",
+      "updatedAt": "2026-02-08T02:55:47.154Z",
       "files": [
         {
           "filename": "service-development-001.png",
@@ -705,9 +710,40 @@
           "filename": "service-development-003.png",
           "path": "/images/generated/service-development/service-development-003.png",
           "generatedAt": "2026-02-06T03:23:34.313Z"
+        },
+        {
+          "filename": "service-development-004.png",
+          "path": "/images/generated/service-development/service-development-004.png",
+          "generatedAt": "2026-02-08T02:54:36.354Z"
+        },
+        {
+          "filename": "service-development-005.png",
+          "path": "/images/generated/service-development/service-development-005.png",
+          "generatedAt": "2026-02-08T02:54:41.183Z"
+        },
+        {
+          "filename": "service-development-006.png",
+          "path": "/images/generated/service-development/service-development-006.png",
+          "generatedAt": "2026-02-08T02:54:44.146Z"
+        },
+        {
+          "filename": "service-development-007.png",
+          "path": "/images/generated/service-development/service-development-007.png",
+          "generatedAt": "2026-02-08T02:55:26.153Z"
+        },
+        {
+          "filename": "service-development-008.png",
+          "path": "/images/generated/service-development/service-development-008.png",
+          "generatedAt": "2026-02-08T02:55:30.507Z"
+        },
+        {
+          "filename": "service-development-009.png",
+          "path": "/images/generated/service-development/service-development-009.png",
+          "generatedAt": "2026-02-08T02:55:33.936Z"
         }
       ],
-      "selected": null
+      "selected": "service-development-008.png",
+      "selectedPath": "/images/selected/service-development.png"
     },
     "service-marketing": {
       "slot": "service-marketing",
@@ -715,7 +751,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-06T03:23:38.153Z",
-      "updatedAt": "2026-02-06T03:23:38.153Z",
+      "updatedAt": "2026-02-08T02:56:08.874Z",
       "files": [
         {
           "filename": "service-marketing-001.png",
@@ -733,7 +769,8 @@
           "generatedAt": "2026-02-06T03:23:53.573Z"
         }
       ],
-      "selected": null
+      "selected": "service-marketing-001.png",
+      "selectedPath": "/images/selected/service-marketing.png"
     },
     "page-resources": {
       "slot": "page-resources",
@@ -741,7 +778,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "16:9",
       "createdAt": "2026-02-07T04:13:33.016Z",
-      "updatedAt": "2026-02-07T04:15:30.752Z",
+      "updatedAt": "2026-02-08T02:52:19.090Z",
       "files": [
         {
           "filename": "page-resources-001.png",
@@ -759,15 +796,16 @@
           "generatedAt": "2026-02-07T04:15:33.874Z"
         }
       ],
-      "selected": null
+      "selected": "page-resources-002.png",
+      "selectedPath": "/images/selected/page-resources.png"
     },
     "page-roi-calculator": {
       "slot": "page-roi-calculator",
-      "prompt": "ROI calculation visualization. Abstract rising bar charts and upward arrows showing return on investment growth. Calculator elements blended with financial growth graphics. Teal (#3BB782) and green accent colors suggesting positive returns. Clean, minimal financial aesthetic. No readable text, no people.",
+      "prompt": "ROI calculation visualization. Abstract rising bar charts and upward arrows showing return on investment growth. Teal (#3BB782) and green accent colors suggesting positive returns. Clean, minimal financial aesthetic. No readable text, no people.",
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-07T04:13:42.436Z",
-      "updatedAt": "2026-02-07T04:17:40.629Z",
+      "updatedAt": "2026-02-08T02:52:00.384Z",
       "files": [
         {
           "filename": "page-roi-calculator-001.png",
@@ -783,9 +821,25 @@
           "filename": "page-roi-calculator-003.png",
           "path": "/images/generated/page-roi-calculator/page-roi-calculator-003.png",
           "generatedAt": "2026-02-07T04:17:54.656Z"
+        },
+        {
+          "filename": "page-roi-calculator-004.png",
+          "path": "/images/generated/page-roi-calculator/page-roi-calculator-004.png",
+          "generatedAt": "2026-02-08T02:51:44.976Z"
+        },
+        {
+          "filename": "page-roi-calculator-005.png",
+          "path": "/images/generated/page-roi-calculator/page-roi-calculator-005.png",
+          "generatedAt": "2026-02-08T02:51:48.209Z"
+        },
+        {
+          "filename": "page-roi-calculator-006.png",
+          "path": "/images/generated/page-roi-calculator/page-roi-calculator-006.png",
+          "generatedAt": "2026-02-08T02:51:51.768Z"
         }
       ],
-      "selected": null
+      "selected": "page-roi-calculator-006.png",
+      "selectedPath": "/images/selected/page-roi-calculator.png"
     },
     "page-tco-calculator": {
       "slot": "page-tco-calculator",
@@ -793,7 +847,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-07T04:13:44.728Z",
-      "updatedAt": "2026-02-07T04:18:05.596Z",
+      "updatedAt": "2026-02-08T02:51:13.051Z",
       "files": [
         {
           "filename": "page-tco-calculator-001.png",
@@ -811,7 +865,8 @@
           "generatedAt": "2026-02-07T04:18:15.170Z"
         }
       ],
-      "selected": null
+      "selected": "page-tco-calculator-003.png",
+      "selectedPath": "/images/selected/page-tco-calculator.png"
     },
     "page-services": {
       "slot": "page-services",
@@ -819,7 +874,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "16:9",
       "createdAt": "2026-02-07T04:13:52.549Z",
-      "updatedAt": "2026-02-07T04:19:52.979Z",
+      "updatedAt": "2026-02-08T02:50:59.386Z",
       "files": [
         {
           "filename": "page-services-001.png",
@@ -837,7 +892,8 @@
           "generatedAt": "2026-02-07T04:19:58.953Z"
         }
       ],
-      "selected": null
+      "selected": "page-services-003.png",
+      "selectedPath": "/images/selected/page-services.png"
     },
     "page-work": {
       "slot": "page-work",
@@ -845,7 +901,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "16:9",
       "createdAt": "2026-02-07T04:13:57.282Z",
-      "updatedAt": "2026-02-07T04:20:35.725Z",
+      "updatedAt": "2026-02-08T02:50:43.416Z",
       "files": [
         {
           "filename": "page-work-001.png",
@@ -863,7 +919,8 @@
           "generatedAt": "2026-02-07T04:20:45.276Z"
         }
       ],
-      "selected": null
+      "selected": "page-work-003.png",
+      "selectedPath": "/images/selected/page-work.png"
     },
     "page-assessment": {
       "slot": "page-assessment",
@@ -871,7 +928,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-07T04:15:43.451Z",
-      "updatedAt": "2026-02-07T04:15:43.451Z",
+      "updatedAt": "2026-02-08T02:50:28.890Z",
       "files": [
         {
           "filename": "page-assessment-001.png",
@@ -889,7 +946,8 @@
           "generatedAt": "2026-02-07T04:15:52.768Z"
         }
       ],
-      "selected": null
+      "selected": "page-assessment-003.png",
+      "selectedPath": "/images/selected/page-assessment.png"
     },
     "page-guides": {
       "slot": "page-guides",
@@ -897,7 +955,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "4:3",
       "createdAt": "2026-02-07T04:16:04.691Z",
-      "updatedAt": "2026-02-07T04:54:49.760Z",
+      "updatedAt": "2026-02-08T02:50:15.330Z",
       "files": [
         {
           "filename": "page-guides-001.png",
@@ -915,7 +973,7 @@
           "generatedAt": "2026-02-07T04:16:14.040Z"
         }
       ],
-      "selected": "page-guides-003.png",
+      "selected": "page-guides-002.png",
       "selectedPath": "/images/selected/page-guides.png"
     },
     "page-industries": {
@@ -924,7 +982,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "16:9",
       "createdAt": "2026-02-07T04:20:11.255Z",
-      "updatedAt": "2026-02-07T21:53:21.067Z",
+      "updatedAt": "2026-02-08T02:50:00.640Z",
       "files": [
         {
           "filename": "page-industries-001.png",
@@ -942,7 +1000,7 @@
           "generatedAt": "2026-02-07T04:20:23.501Z"
         }
       ],
-      "selected": "page-industries-001.png",
+      "selected": "page-industries-003.png",
       "selectedPath": "/images/selected/page-industries.png"
     }
   }
