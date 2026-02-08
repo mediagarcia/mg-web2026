@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = {
   services: [
@@ -7,13 +8,16 @@ const footerLinks = {
     { label: "Marketing Automation", href: "/services/marketing-automation" },
     { label: "Custom Integrations", href: "/services/integrations" },
     { label: "Growth Marketing", href: "/services/marketing" },
+    { label: "CRM Migration", href: "/services/crm-migration" },
+    { label: "Reporting", href: "/services/reporting" },
+    { label: "AI Automation", href: "/services/ai-automation" },
+    { label: "Development", href: "/services/development" },
   ],
   company: [
     { label: "About", href: "/about" },
     { label: "Work", href: "/work" },
     { label: "Industries", href: "/industries" },
     { label: "Pricing", href: "/pricing" },
-    { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ],
   resources: [
@@ -21,6 +25,8 @@ const footerLinks = {
     { label: "CRM Assessment", href: "/resources/assessment" },
     { label: "ROI Calculator", href: "/resources/roi-calculator" },
     { label: "TCO Calculator", href: "/resources/tco-calculator" },
+    { label: "Resource Center", href: "/resources" },
+    { label: "Blog", href: "/blog" },
   ],
 };
 
@@ -39,12 +45,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-teal-500 flex items-center justify-center">
-                <span className="text-white font-bold text-xl">M</span>
-              </div>
-              <span className="text-xl font-bold tracking-tight">
-                Media<span className="text-teal-500">Garcia</span>
-              </span>
+              <Image src="/images/logos/mg-logo-white.png" alt="Media Garcia" height={48} width={240} className="h-12 w-auto" />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-sm">
               Digital platforms that keep companies lean, growing, and easy to do business with.

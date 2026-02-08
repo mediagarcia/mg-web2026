@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Rocket,
@@ -77,6 +78,7 @@ const resources: MenuItem[] = [
   { label: "Guides & Best Practices", href: "/resources/guides", description: "Expert tips and strategies", icon: BookOpen },
   { label: "ROI Calculator", href: "/resources/roi-calculator", description: "Calculate your potential ROI", icon: Calculator },
   { label: "TCO Calculator", href: "/resources/tco-calculator", description: "Total cost of ownership analysis", icon: DollarSign },
+  { label: "Blog", href: "/blog", description: "Latest insights and strategies", icon: BookOpen },
 ];
 
 const portfolioCategories: MenuItem[] = [
@@ -347,7 +349,6 @@ const navItems: NavItem[] = [
   { label: "Resources", href: "#", hasMegaMenu: true, megaMenuType: "resources" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
 ];
 
 // ============================================================================
@@ -387,12 +388,7 @@ export function Navigation() {
         <nav className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-teal-500 flex items-center justify-center">
-              <span className="text-white font-bold text-xl">M</span>
-            </div>
-            <span className="text-xl font-bold tracking-tight">
-              Media<span className="text-teal-500">Garcia</span>
-            </span>
+            <Image src="/images/logos/mg-logo-black.png" alt="Media Garcia" height={48} width={240} className="h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -551,15 +547,6 @@ export function Navigation() {
                       className="text-2xl font-bold text-gray-900 hover:text-teal-600 transition-colors block"
                     >
                       About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/blog"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-2xl font-bold text-gray-900 hover:text-teal-600 transition-colors block"
-                    >
-                      Blog
                     </Link>
                   </li>
                 </ul>

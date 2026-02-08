@@ -2,19 +2,69 @@ import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
-import { blogPosts } from "@/data/blog-posts";
 
 export const metadata: Metadata = {
   title: "Blog | Media Garcia",
   description: "HubSpot tips, marketing automation strategies, and growth insights for technology companies.",
 };
 
+const featuredPost = {
+  title: "The Complete Guide to HubSpot Implementation in 2026",
+  excerpt: "Everything you need to know about implementing HubSpot successfully—from planning and migration to training and optimization.",
+  category: "HubSpot",
+  date: "January 15, 2026",
+  readTime: "12 min read",
+  slug: "complete-guide-hubspot-implementation-2026",
+};
+
+const posts = [
+  {
+    title: "5 Marketing Automation Workflows Every SaaS Company Needs",
+    excerpt: "Discover the essential automation workflows that drive trial conversions, reduce churn, and increase expansion revenue.",
+    category: "Automation",
+    date: "January 10, 2026",
+    readTime: "8 min read",
+  },
+  {
+    title: "How to Calculate Your True Customer Acquisition Cost",
+    excerpt: "Stop guessing at CAC. Learn how to set up proper attribution and calculate the real cost of acquiring customers.",
+    category: "Analytics",
+    date: "January 5, 2026",
+    readTime: "6 min read",
+  },
+  {
+    title: "CRM Migration Checklist: Moving to HubSpot",
+    excerpt: "A comprehensive checklist to ensure your CRM migration goes smoothly with zero data loss.",
+    category: "Migration",
+    date: "December 28, 2025",
+    readTime: "10 min read",
+  },
+  {
+    title: "Lead Scoring Best Practices for B2B Tech Companies",
+    excerpt: "How to build a lead scoring model that actually predicts which leads will convert to customers.",
+    category: "Sales",
+    date: "December 20, 2025",
+    readTime: "7 min read",
+  },
+  {
+    title: "Building a Revenue Operations Function from Scratch",
+    excerpt: "A practical guide to implementing RevOps at your company, including team structure, tools, and metrics.",
+    category: "RevOps",
+    date: "December 15, 2025",
+    readTime: "9 min read",
+  },
+  {
+    title: "HubSpot vs Salesforce: Which CRM is Right for You?",
+    excerpt: "An honest comparison of the two leading CRM platforms for growing technology companies.",
+    category: "CRM",
+    date: "December 10, 2025",
+    readTime: "11 min read",
+  },
+];
+
 const categories = ["All", "HubSpot", "Automation", "Analytics", "Sales", "RevOps", "CRM", "Migration"];
 
 export default function BlogPage() {
-  const featuredPost = blogPosts.find((p) => p.featured);
-  const posts = blogPosts.filter((p) => !p.featured);
-
   return (
     <>
       <PageHeader
@@ -27,28 +77,25 @@ export default function BlogPage() {
       />
 
       {/* Featured Post */}
-      {featuredPost && (
-        <section className="py-12 bg-white">
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <Link href={`/blog/${featuredPost.slug}`}>
-              <div className="bg-gradient-to-br from-teal-500 to-teal-600 rounded-3xl p-8 lg:p-12 text-white hover:from-teal-600 hover:to-teal-700 transition-all">
-                <span className="inline-block px-3 py-1 bg-white/20 rounded-full text-sm font-medium mb-4">
-                  Featured
-                </span>
-                <h2 className="text-2xl lg:text-4xl font-black mb-4">{featuredPost.title}</h2>
-                <p className="text-white/80 mb-6 max-w-2xl">{featuredPost.excerpt}</p>
-                <div className="flex items-center gap-4 text-sm text-white/60">
-                  <span>{featuredPost.category}</span>
-                  <span>&bull;</span>
-                  <span>{featuredPost.date}</span>
-                  <span>&bull;</span>
-                  <span>{featuredPost.readTime}</span>
-                </div>
-              </div>
-            </Link>
+      <section className="py-12 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="bg-gradient-to-br from-teal-500 to-teal-600 rounded-3xl p-8 lg:p-12 text-white pointer-events-none opacity-80" aria-disabled="true">
+            <span className="inline-block px-3 py-1 bg-white/20 rounded-full text-sm font-medium mb-4">
+              Featured
+            </span>
+            <h2 className="text-2xl lg:text-4xl font-black mb-4">{featuredPost.title}</h2>
+            <p className="text-white/80 mb-6 max-w-2xl">{featuredPost.excerpt}</p>
+            <div className="flex items-center gap-4 text-sm text-white/60">
+              <span>{featuredPost.category}</span>
+              <span className="text-xs bg-white/20 text-white px-2 py-0.5 rounded-full ml-2">Coming Soon</span>
+              <span>•</span>
+              <span>{featuredPost.date}</span>
+              <span>•</span>
+              <span>{featuredPost.readTime}</span>
+            </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* Categories */}
       <section className="py-8 bg-white border-b border-gray-100">
@@ -75,24 +122,30 @@ export default function BlogPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
-                <article>
-                  <div className="bg-gray-100 rounded-2xl aspect-video mb-6 group-hover:bg-gray-200 transition-colors" />
-                  <span className="text-xs font-bold text-teal-500 uppercase tracking-wider">
-                    {post.category}
-                  </span>
-                  <h3 className="text-xl font-bold text-black mt-2 mb-3 group-hover:text-teal-500 transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-black/60 mb-4">{post.excerpt}</p>
-                  <div className="flex items-center gap-4 text-sm text-black/40">
-                    <span>{post.date}</span>
-                    <span>&bull;</span>
-                    <span>{post.readTime}</span>
-                  </div>
-                </article>
-              </Link>
+              <article key={post.title} className="group pointer-events-none opacity-80" aria-disabled="true">
+                <div className="bg-gray-100 rounded-2xl aspect-video mb-6" />
+                <span className="text-xs font-bold text-teal-500 uppercase tracking-wider">
+                  {post.category}
+                </span>
+                <span className="text-xs bg-teal-500/10 text-teal-600 px-2 py-0.5 rounded-full ml-2">Coming Soon</span>
+                <h3 className="text-xl font-bold text-black mt-2 mb-3">
+                  {post.title}
+                </h3>
+                <p className="text-black/60 mb-4">{post.excerpt}</p>
+                <div className="flex items-center gap-4 text-sm text-black/40">
+                  <span>{post.date}</span>
+                  <span>•</span>
+                  <span>{post.readTime}</span>
+                </div>
+              </article>
             ))}
+          </div>
+
+          {/* Load More */}
+          <div className="text-center mt-16">
+            <button className="inline-flex items-center gap-2 px-8 py-4 border-2 border-black/20 rounded-full font-medium text-black hover:border-teal-500 hover:text-teal-500 transition-colors">
+              Load More Articles
+            </button>
           </div>
         </div>
       </section>

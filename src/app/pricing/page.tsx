@@ -5,68 +5,69 @@ import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
 
 export const metadata: Metadata = {
   title: "Pricing | Media Garcia",
-  description: "Transparent pricing for HubSpot implementation, automation, and growth services. Packages starting at $3,500.",
+  description: "Flexible retainer packages for HubSpot, CRM, and RevOps services. Growth plans starting at $5,000/month.",
 };
 
 const packages = [
   {
-    name: "Starter",
-    price: "$3,500",
-    period: "one-time",
-    description: "Perfect for teams new to HubSpot who need a solid foundation.",
+    name: "Growth",
+    price: "$5,000",
+    period: "/month",
+    description: "For teams ready to optimize their CRM and revenue operations.",
     features: [
-      "HubSpot portal setup",
-      "Basic pipeline configuration",
-      "Data import (up to 5,000 contacts)",
-      "Team training (2 hours)",
-      "30 days email support",
+      "Dedicated strategist",
+      "CRM optimization & cleanup",
+      "Automation management",
+      "Monthly performance reporting",
+      "Pipeline refinement",
+      "Email & chat support",
+      "Up to 40 hrs/month",
     ],
-    cta: "Start With Starter",
+    cta: "Get Started",
     popular: false,
   },
   {
-    name: "Professional",
-    price: "$7,500",
-    period: "one-time",
-    description: "Comprehensive implementation for growing teams with complex needs.",
+    name: "Scale",
+    price: "$10,000",
+    period: "/month",
+    description: "Comprehensive RevOps for scaling teams with complex needs.",
     features: [
-      "Everything in Starter",
-      "Custom automation workflows",
-      "Advanced pipeline setup",
-      "Data migration (up to 25,000 contacts)",
-      "Sales sequence setup",
-      "Custom reporting dashboards",
-      "Team training (4 hours)",
-      "60 days email support",
+      "Everything in Growth",
+      "Advanced integrations",
+      "Custom dashboards & reporting",
+      "Multi-hub strategy",
+      "Dedicated project manager",
+      "Priority Slack support",
+      "Sales enablement",
+      "Up to 80 hrs/month",
     ],
-    cta: "Choose Professional",
+    cta: "Choose Scale",
     popular: true,
   },
   {
-    name: "Enterprise",
-    price: "Starting at $15,000",
+    name: "Custom",
+    price: "Let's Talk",
     period: "project-based",
-    description: "Full-scale transformation for organizations with complex requirements.",
+    description: "Tailored solutions for enterprise-grade requirements.",
     features: [
-      "Everything in Professional",
-      "Custom integrations",
-      "Multi-hub implementation",
-      "Advanced automation",
-      "Custom object setup",
-      "Dedicated project manager",
-      "On-site training available",
-      "90 days priority support",
+      "Custom scope & deliverables",
+      "Enterprise integrations",
+      "CRM migrations",
+      "Cross-functional team",
+      "Executive strategy sessions",
+      "On-site workshops available",
+      "SOW-based pricing",
     ],
     cta: "Contact Us",
     popular: false,
   },
 ];
 
-const addons = [
-  { name: "CRM Migration", price: "From $2,500", description: "Full data migration from your existing CRM" },
-  { name: "Custom Integration", price: "From $3,000", description: "Connect HubSpot to your other tools" },
-  { name: "Website Development", price: "From $10,000", description: "HubSpot CMS website build" },
-  { name: "Ongoing Support", price: "$1,500/mo", description: "Monthly optimization and support" },
+const commonProjects = [
+  { name: "CRM Migration", price: "$5,000+", description: "Full data migration from your existing CRM with zero downtime" },
+  { name: "Website Build", price: "$10,000+", description: "High-converting websites on HubSpot CMS or custom builds" },
+  { name: "Custom Integration", price: "$7,000+", description: "Connect HubSpot to your EHR, ERP, or any platform" },
+  { name: "Training & Enablement", price: "$2,500+", description: "Hands-on training to ensure team adoption sticks" },
 ];
 
 export default function PricingPage() {
@@ -148,16 +149,30 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Add-ons */}
+      {/* Competitive Positioning */}
+      <section className="py-12 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-black/60 leading-relaxed">
+              <strong className="text-black">How we compare:</strong> Agencies with comparable certifications and experience typically charge $8,000–$25,000/month. We keep costs lower by staying lean, senior-led, and outcome-focused—so you get enterprise expertise without the enterprise overhead.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Common Projects */}
       <section className="py-20 lg:py-32 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <h2 className="text-3xl lg:text-4xl font-black text-black mb-12">Add-On Services</h2>
+          <h2 className="text-3xl lg:text-4xl font-black text-black mb-4">Common Projects</h2>
+          <p className="text-black/60 mb-12 max-w-2xl">
+            Our retainers cover ongoing optimization, strategy, and support. These are common one-time projects we handle alongside your retainer—scoped and priced separately.
+          </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {addons.map((addon) => (
-              <div key={addon.name} className="bg-white rounded-2xl p-6">
-                <h3 className="text-lg font-bold text-black mb-1">{addon.name}</h3>
-                <p className="text-teal-500 font-bold mb-3">{addon.price}</p>
-                <p className="text-sm text-black/60">{addon.description}</p>
+            {commonProjects.map((project) => (
+              <div key={project.name} className="bg-white rounded-2xl p-6">
+                <h3 className="text-lg font-bold text-black mb-1">{project.name}</h3>
+                <p className="text-teal-500 font-bold mb-3">{project.price}</p>
+                <p className="text-sm text-black/60">{project.description}</p>
               </div>
             ))}
           </div>

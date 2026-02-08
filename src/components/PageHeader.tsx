@@ -48,7 +48,7 @@ export function PageHeader({ badge, title, description, breadcrumbs, compactBott
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-teal-500/5 to-transparent" />
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         {/* Breadcrumbs */}
         {breadcrumbs && breadcrumbs.length > 0 && (
           <motion.nav
