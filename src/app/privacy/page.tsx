@@ -26,9 +26,7 @@ export default function PrivacyPage() {
             </p>
             <p className="text-black/70 mb-6">
               Loud Website, Inc. DBA Media Garcia, Inc.<br />
-              PO BOX 4942<br />
-              Minnesota, USA<br />
-              6516919123
+              Saint Paul, Minnesota, USA
             </p>
             <p className="text-black/70 mb-6">
               It is Loud Website, Inc. DBA Media Garcia, Inc.&apos;s policy to respect your privacy regarding any information we may collect while operating our website. This Privacy Policy applies to <Link href="/" className="text-teal-500 hover:text-teal-600">https://www.mediagarcia.com</Link> (hereinafter, &quot;us&quot;, &quot;we&quot;, or &quot;https://www.mediagarcia.com&quot;). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the Website. We have adopted this privacy policy (&quot;Privacy Policy&quot;) to explain what information may be collected on our Website, how we use this information, and under what circumstances we may disclose the information to third parties. This Privacy Policy applies only to information we collect through the Website and does not apply to our collection of information from other sources.

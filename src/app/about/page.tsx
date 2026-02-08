@@ -600,10 +600,7 @@ export default function AboutPage() {
                     />
                   </svg>
                   <div>
-                    <p className="font-bold text-black">
-                      428 Minnesota Street, Suite 500
-                    </p>
-                    <p className="text-black/60">Saint Paul, MN 55101</p>
+                    <p className="font-bold text-black">Saint Paul, MN</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

@@ -129,8 +129,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-black/50 font-medium">Location</p>
-                  <p className="text-black font-medium">428 Minnesota Street, Suite 500</p>
-                  <p className="text-black/60 text-sm">Saint Paul, MN 55101</p>
+                  <p className="text-black font-medium">Saint Paul, MN</p>
                 </div>
               </div>
 

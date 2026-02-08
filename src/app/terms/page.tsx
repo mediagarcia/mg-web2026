@@ -150,8 +150,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-bold text-black mt-12 mb-4">Contact Us</h2>
             <div className="bg-gray-50 rounded-xl p-6 text-black/70">
               <p><strong>Loud Website, Inc. D/B/A Media Garcia, Inc.</strong></p>
-              <p>PO BOX 4942</p>
-              <p>Saint Paul, Minnesota 55101</p>
+              <p>Saint Paul, Minnesota</p>
               <p>Email: hola@mediagarcia.com</p>
               <p>Phone: (651) 691-9123</p>
               <p className="mt-4 text-sm text-black/40">Effective as of November 22, 2020. Updated as of July 5th, 2023.</p>

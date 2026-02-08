@@ -131,31 +131,6 @@ export default function ITIndustryPage() {
         </div>
       </section>
 
-      {/* Results */}
-      <section className="py-20 lg:py-32 bg-black text-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <h2 className="text-3xl lg:text-4xl font-black mb-12 text-center">Results for IT Companies</h2>
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <p className="text-5xl font-black text-teal-500">45%</p>
-              <p className="text-white/60 mt-2">Shorter Sales Cycle</p>
-            </div>
-            <div>
-              <p className="text-5xl font-black text-teal-500">2.8x</p>
-              <p className="text-white/60 mt-2">More Qualified Leads</p>
-            </div>
-            <div>
-              <p className="text-5xl font-black text-teal-500">60%</p>
-              <p className="text-white/60 mt-2">Higher Win Rate</p>
-            </div>
-            <div>
-              <p className="text-5xl font-black text-teal-500">$1.2M</p>
-              <p className="text-white/60 mt-2">Avg. Pipeline Growth</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <CTABanner />
     </>
   );
