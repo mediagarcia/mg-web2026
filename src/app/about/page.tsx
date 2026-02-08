@@ -140,38 +140,10 @@ const team = [
     linkedin: "https://www.linkedin.com/in/louisgarcia/",
   },
   {
-    name: "Rochelle Schmidt",
-    role: "Account Manager",
-    bio: "Rochelle ensures every client project delivers exceptional results. With deep expertise in project management and client success, she keeps implementations running smoothly and ensures nothing falls through the cracks.",
+    name: "Andrew",
+    role: "COO",
+    bio: "Andrew leads operations at Media Garcia, ensuring seamless delivery across every client engagement. His focus on process and execution keeps projects on track and clients happy.",
     image: "/images/team/team-member-2.jpg",
-  },
-  {
-    name: "Team Member",
-    role: "Solutions Architect",
-    bio: "Bio coming soon.",
-    image: "/images/team/placeholder.jpg",
-    placeholder: true,
-  },
-  {
-    name: "Team Member",
-    role: "RevOps Specialist",
-    bio: "Bio coming soon.",
-    image: "/images/team/placeholder.jpg",
-    placeholder: true,
-  },
-  {
-    name: "Team Member",
-    role: "Integration Specialist",
-    bio: "Bio coming soon.",
-    image: "/images/team/placeholder.jpg",
-    placeholder: true,
-  },
-  {
-    name: "Team Member",
-    role: "Marketing Automation Expert",
-    bio: "Bio coming soon.",
-    image: "/images/team/placeholder.jpg",
-    placeholder: true,
   },
 ];
 
@@ -184,14 +156,7 @@ const certifications = [
   { name: "Operations Hub", certified: true },
 ];
 
-const clientLogos = [
-  { name: "Healthcare Company", placeholder: true },
-  { name: "IT Services Firm", placeholder: true },
-  { name: "SaaS Platform", placeholder: true },
-  { name: "Medical Device Co", placeholder: true },
-  { name: "Tech Consultancy", placeholder: true },
-  { name: "B2B Software", placeholder: true },
-];
+
 
 function AnimatedCounter({
   value,
@@ -464,7 +429,7 @@ export default function AboutPage() {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {team.map((member, index) => (
               <motion.div
                 key={`${member.name}-${index}`}
@@ -472,29 +437,15 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`bg-gray-50 rounded-2xl p-6 text-center ${
-                  member.placeholder ? "opacity-60" : ""
-                }`}
+                className="bg-gray-50 rounded-2xl p-6 text-center"
               >
                 <div className="relative w-24 h-24 rounded-full overflow-hidden ring-4 ring-white shadow-lg mx-auto mb-4">
-                  {member.placeholder ? (
-                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                      <svg
-                        className="w-12 h-12 text-gray-400"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                      </svg>
-                    </div>
-                  ) : (
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                    />
-                  )}
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <h3 className="text-lg font-bold text-black">
                   {member.name}
@@ -602,28 +553,6 @@ export default function AboutPage() {
             ))}
           </div>
 
-          {/* Client Logos (Placeholder) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-center text-sm text-black/40 mb-8">
-              Trusted by companies in healthcare, IT, and SaaS
-            </p>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-8">
-              {clientLogos.map((logo, index) => (
-                <div
-                  key={`${logo.name}-${index}`}
-                  className="aspect-[3/2] bg-white rounded-xl flex items-center justify-center"
-                >
-                  <span className="text-xs text-black/20 text-center px-2">
-                    {logo.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
 

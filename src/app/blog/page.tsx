@@ -79,7 +79,7 @@ export default function BlogPage() {
       {/* Featured Post */}
       <section className="py-12 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="bg-gradient-to-br from-teal-500 to-teal-600 rounded-3xl p-8 lg:p-12 text-white">
+          <div className="bg-gradient-to-br from-teal-500 to-teal-600 rounded-3xl p-8 lg:p-12 text-white pointer-events-none opacity-80" aria-disabled="true">
             <span className="inline-block px-3 py-1 bg-white/20 rounded-full text-sm font-medium mb-4">
               Featured
             </span>
@@ -87,6 +87,7 @@ export default function BlogPage() {
             <p className="text-white/80 mb-6 max-w-2xl">{featuredPost.excerpt}</p>
             <div className="flex items-center gap-4 text-sm text-white/60">
               <span>{featuredPost.category}</span>
+              <span className="text-xs bg-white/20 text-white px-2 py-0.5 rounded-full ml-2">Coming Soon</span>
               <span>•</span>
               <span>{featuredPost.date}</span>
               <span>•</span>
@@ -121,12 +122,13 @@ export default function BlogPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => (
-              <article key={post.title} className="group">
+              <article key={post.title} className="group pointer-events-none opacity-80" aria-disabled="true">
                 <div className="bg-gray-100 rounded-2xl aspect-video mb-6" />
                 <span className="text-xs font-bold text-teal-500 uppercase tracking-wider">
                   {post.category}
                 </span>
-                <h3 className="text-xl font-bold text-black mt-2 mb-3 group-hover:text-teal-500 transition-colors">
+                <span className="text-xs bg-teal-500/10 text-teal-600 px-2 py-0.5 rounded-full ml-2">Coming Soon</span>
+                <h3 className="text-xl font-bold text-black mt-2 mb-3">
                   {post.title}
                 </h3>
                 <p className="text-black/60 mb-4">{post.excerpt}</p>
