@@ -71,7 +71,7 @@ const resources: MenuItem[] = [
   { label: "Guides & Best Practices", href: "/resources/guides", description: "Expert tips and strategies", icon: BookOpen },
   { label: "ROI Calculator", href: "/resources/roi-calculator", description: "Calculate your potential ROI", icon: Calculator },
   { label: "TCO Calculator", href: "/resources/tco-calculator", description: "Total cost of ownership analysis", icon: DollarSign },
-  { label: "Blog", href: "/blog", description: "Latest insights and strategies", icon: BookOpen },
+  { label: "Blog", href: "https://www.mediagarcia.com/blog", description: "Latest insights and strategies", icon: BookOpen },
 ];
 
 // ============================================================================
@@ -224,32 +224,44 @@ function ResourcesMegaMenu({ onClose }: { onClose: () => void }) {
       </Link>
 
       {/* Other Resources */}
-      {rest.map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          onClick={onClose}
-          className="group block p-5 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-gray-50 transition-all"
-        >
-          <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors mb-3">
-            <item.icon className="w-5 h-5" />
-          </div>
-          <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors mb-1">
-            {item.label}
-          </h3>
-          <p className="text-xs text-gray-500">{item.description}</p>
-        </Link>
-      ))}
+      {rest.map((item) => {
+        const isExternal = item.href.startsWith("http");
+        const Component = isExternal ? "a" : Link;
+        const externalProps = isExternal ? { target: "_blank" as const, rel: "noopener noreferrer" } : {};
+
+        return (
+          <Component
+            key={item.href}
+            href={item.href}
+            onClick={onClose}
+            className="group block p-5 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-gray-50 transition-all"
+            {...externalProps}
+          >
+            <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors mb-3">
+              <item.icon className="w-5 h-5" />
+            </div>
+            <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors mb-1">
+              {item.label}
+            </h3>
+            <p className="text-xs text-gray-500">{item.description}</p>
+          </Component>
+        );
+      })}
     </div>
   );
 }
 
 function MenuLink({ item, onClose }: { item: MenuItem; onClose: () => void }) {
+  const isExternal = item.href.startsWith("http");
+  const Component = isExternal ? "a" : Link;
+  const externalProps = isExternal ? { target: "_blank" as const, rel: "noopener noreferrer" } : {};
+
   return (
-    <Link
+    <Component
       href={item.href}
       onClick={onClose}
       className="group flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+      {...externalProps}
     >
       <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
         <item.icon className="w-4 h-4" />
@@ -260,7 +272,7 @@ function MenuLink({ item, onClose }: { item: MenuItem; onClose: () => void }) {
         </span>
         <span className="block text-xs text-gray-500">{item.description}</span>
       </div>
-    </Link>
+    </Component>
   );
 }
 
@@ -539,18 +551,25 @@ function MobileMenuItems({
 }) {
   return (
     <ul className="space-y-1 pl-4 border-l-2 border-teal-100">
-      {items.map((item) => (
-        <li key={item.href}>
-          <Link
-            href={item.href}
-            onClick={onClose}
-            className="block py-2"
-          >
-            <span className="text-base font-medium text-gray-900">{item.label}</span>
-            <span className="block text-sm text-gray-500">{item.description}</span>
-          </Link>
-        </li>
-      ))}
+      {items.map((item) => {
+        const isExternal = item.href.startsWith("http");
+        const Component = isExternal ? "a" : Link;
+        const externalProps = isExternal ? { target: "_blank" as const, rel: "noopener noreferrer" } : {};
+
+        return (
+          <li key={item.href}>
+            <Component
+              href={item.href}
+              onClick={onClose}
+              className="block py-2"
+              {...externalProps}
+            >
+              <span className="text-base font-medium text-gray-900">{item.label}</span>
+              <span className="block text-sm text-gray-500">{item.description}</span>
+            </Component>
+          </li>
+        );
+      })}
     </ul>
   );
 }
