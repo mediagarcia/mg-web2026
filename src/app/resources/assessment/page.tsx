@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
+import { HubSpotWidget } from "@/components/HubSpotWidget";
 
 export const metadata: Metadata = {
   title: "CRM Assessment | Media Garcia",
@@ -72,13 +73,13 @@ export default function AssessmentPage() {
                 ))}
               </div>
               <p className="text-black/40 mt-6 text-sm">
-                Total: 20 questions - Approximately 5 minutes to complete
+                Total: 20 questions &mdash; Approximately 5 minutes to complete
               </p>
             </div>
 
-            {/* Right - Start Form */}
+            {/* Right - HubSpot Form */}
             <div className="bg-black rounded-3xl p-8 lg:p-12 text-white">
-              <h2 className="text-2xl font-bold mb-6">Start your free assessment</h2>
+              <h2 className="text-2xl font-bold mb-6">Request your free assessment</h2>
               <ul className="space-y-3 mb-8">
                 {benefits.map((benefit) => (
                   <li key={benefit} className="flex items-start gap-3">
@@ -89,60 +90,11 @@ export default function AssessmentPage() {
                   </li>
                 ))}
               </ul>
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-white/60 mb-2">
-                    Work Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-teal-500"
-                    placeholder="you@company.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-white/60 mb-2">
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-teal-500"
-                    placeholder="Acme Inc."
-                  />
-                </div>
-                <div>
-                  <label htmlFor="crm" className="block text-sm font-medium text-white/60 mb-2">
-                    Current CRM Platform
-                  </label>
-                  <select
-                    id="crm"
-                    name="crm"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
-                  >
-                    <option value="" className="text-black">Select your platform</option>
-                    <option value="hubspot-free" className="text-black">HubSpot Free / Starter</option>
-                    <option value="hubspot-professional" className="text-black">HubSpot Professional</option>
-                    <option value="hubspot-enterprise" className="text-black">HubSpot Enterprise</option>
-                    <option value="salesforce" className="text-black">Salesforce</option>
-                    <option value="zoho" className="text-black">Zoho CRM</option>
-                    <option value="pipedrive" className="text-black">Pipedrive</option>
-                    <option value="other" className="text-black">Other / Custom Stack</option>
-                    <option value="none" className="text-black">No CRM yet</option>
-                  </select>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-teal-500 text-white py-4 rounded-full font-medium hover:bg-teal-400 transition-colors mt-4"
-                >
-                  Start Assessment
-                </button>
-              </form>
+              <HubSpotWidget
+                formId="9889726d-8529-4a21-a79a-3fd746e3fc44"
+                containerId="hubspot-assessment-form"
+                minHeight="300px"
+              />
               <p className="text-white/40 text-xs mt-4 text-center">
                 Your responses are confidential. No spam, ever.
               </p>
@@ -160,9 +112,9 @@ export default function AssessmentPage() {
               <div className="w-16 h-16 bg-teal-500 text-white rounded-2xl flex items-center justify-center text-2xl font-black mx-auto mb-6">
                 1
               </div>
-              <h3 className="text-xl font-bold text-black mb-3">Answer Questions</h3>
+              <h3 className="text-xl font-bold text-black mb-3">Tell Us About Your Setup</h3>
               <p className="text-black/60">
-                Complete our 20-question assessment about your current CRM setup and processes.
+                Fill out the form and our team will reach out to schedule your assessment.
               </p>
             </div>
             <div className="text-center">
@@ -171,7 +123,7 @@ export default function AssessmentPage() {
               </div>
               <h3 className="text-xl font-bold text-black mb-3">Get Your Score</h3>
               <p className="text-black/60">
-                Receive an instant score across four key areas with benchmarks against best practices.
+                We&apos;ll evaluate your CRM across four key areas and benchmark against best practices.
               </p>
             </div>
             <div className="text-center">
