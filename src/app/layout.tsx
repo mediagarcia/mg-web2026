@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { JourneyBackground } from "@/components/JourneyBackground";
 import { ScrollToTopOnNavigation } from "@/components/ScrollToTopOnNavigation";
 import { DevPreviewProviders } from "@/components/DevPreviewProviders";
 
@@ -222,9 +223,11 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        {/* Isometric journey background - fixed layer behind content */}
+        <JourneyBackground />
         <DevPreviewProviders>
           <Navigation />
-          <main id="main-content" tabIndex={-1} className="outline-none">
+          <main id="main-content" tabIndex={-1} className="relative z-40 outline-none">
             {children}
           </main>
           <Footer />
