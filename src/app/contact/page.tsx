@@ -1,8 +1,8 @@
-import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
+import { HubSpotForm } from "./hubspot-form";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Contact Us | Media Garcia",
   description: "Get in touch with Media Garcia for HubSpot implementation, marketing automation, and growth services. Schedule a free consultation today.",
 };
@@ -25,101 +25,10 @@ export default function ContactPage() {
         <GradientOrb color="purple" size="lg" className="bottom-1/4 -left-32 opacity-15" intensity="subtle" blur="xl" />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="grid lg:grid-cols-2 gap-16">
-            {/* Form */}
+            {/* HubSpot Form */}
             <div>
               <h2 className="text-2xl font-bold text-black mb-6">Send us a message</h2>
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-black mb-2">
-                      First Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      required
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-black mb-2">
-                      Last Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      required
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
-                    Work Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-black mb-2">
-                    Company *
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    required
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-black mb-2">
-                    What can we help with?
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="hubspot-onboarding">HubSpot Onboarding</option>
-                    <option value="sales-enablement">Sales Enablement</option>
-                    <option value="marketing-automation">Marketing Automation</option>
-                    <option value="crm-migration">CRM Migration</option>
-                    <option value="integrations">Custom Integrations</option>
-                    <option value="reporting">Reporting & Analytics</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-black mb-2">
-                    Tell us about your project
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none"
-                    placeholder="What are your goals? What challenges are you facing?"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-black text-white py-4 rounded-full font-medium hover:bg-teal-500 transition-colors"
-                >
-                  Send My Request
-                </button>
-                <p className="text-xs text-black/40 text-center mt-4">
-                  We&apos;ll respond within 24 hours with next steps.
-                </p>
-              </form>
+              <HubSpotForm />
             </div>
 
             {/* Contact Info */}
@@ -159,9 +68,8 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-bold text-black">Office</p>
-                      <p className="text-black/60">428 Minnesota Street, Suite 500</p>
-                      <p className="text-black/60">Saint Paul, MN 55101</p>
+                      <p className="font-bold text-black">Location</p>
+                      <p className="text-black/60">Saint Paul, MN</p>
                     </div>
                   </div>
                 </div>

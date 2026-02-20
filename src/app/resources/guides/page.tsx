@@ -95,8 +95,6 @@ const guides = [
   },
 ];
 
-const categories = ["All", "Implementation", "CRM", "Automation", "Migration", "Sales", "Analytics", "RevOps", "Technical"];
-
 export default function GuidesPage() {
   const featuredGuide = guides.find((g) => g.featured);
   const otherGuides = guides.filter((g) => !g.featured);
@@ -128,40 +126,30 @@ export default function GuidesPage() {
                 <span>-</span>
                 <span>{featuredGuide.readTime}</span>
               </div>
-              <button className="bg-white text-teal-600 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
-                Read Guide
-              </button>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-white text-teal-600 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors"
+              >
+                Get the Guide
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
             </div>
           </div>
         </section>
       )}
-
-      {/* Categories */}
-      <section className="py-8 bg-white border-b border-gray-100">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="flex flex-wrap gap-3">
-            {categories.map((category, index) => (
-              <button
-                key={category}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  index === 0
-                    ? "bg-black text-white"
-                    : "bg-gray-100 text-black/60 hover:bg-gray-200"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Guides Grid */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {otherGuides.map((guide) => (
-              <article key={guide.title} className="group bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors cursor-pointer">
+              <Link
+                key={guide.title}
+                href="/contact"
+                className="group bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors"
+              >
                 <span className="text-xs font-bold text-teal-500 uppercase tracking-wider">
                   {guide.category}
                 </span>
@@ -169,8 +157,16 @@ export default function GuidesPage() {
                   {guide.title}
                 </h3>
                 <p className="text-black/60 mb-4">{guide.description}</p>
-                <span className="text-sm text-black/40">{guide.readTime}</span>
-              </article>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-black/40">{guide.readTime}</span>
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-teal-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                    Get Guide
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

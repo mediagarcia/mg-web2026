@@ -59,26 +59,16 @@ export function CaseStudies({ images }: CaseStudiesProps = {}) {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <Link
-              href="/work"
-              className="inline-flex items-center gap-2 text-black font-medium hover:text-teal-500 transition-colors group"
-            >
-              View all case studies
-              <svg
-                className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            <span className="inline-flex items-center gap-2 text-black/50 font-medium">
+              <span className="text-xs bg-teal-500/10 text-teal-600 px-3 py-1 rounded-full font-semibold">Coming Soon</span>
+              More case studies
+            </span>
           </motion.div>
         </div>
 
         {/* Case Studies Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-          {caseStudies.map((study, index) => {
+          {caseStudies.slice(0, 1).map((study, index) => {
             // Use slug-specific override, generic override, or default image
             const imageUrl = images?.[study.slug] ?? images?.generic ?? study.image;
             // Get duotone styling for this case study

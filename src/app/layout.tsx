@@ -90,10 +90,8 @@ const organizationSchema = {
   foundingDate: "2011",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "428 Minnesota Street, Suite 500",
     addressLocality: "Saint Paul",
     addressRegion: "MN",
-    postalCode: "55101",
     addressCountry: "US",
   },
   telephone: "+1-888-612-4250",
@@ -140,10 +138,8 @@ const localBusinessSchema = {
   priceRange: "$$$",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "428 Minnesota Street, Suite 500",
     addressLocality: "Saint Paul",
     addressRegion: "MN",
-    postalCode: "55101",
     addressCountry: "US",
   },
   geo: {

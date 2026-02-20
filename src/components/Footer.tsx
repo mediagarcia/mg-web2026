@@ -26,7 +26,7 @@ const footerLinks = {
     { label: "ROI Calculator", href: "/resources/roi-calculator" },
     { label: "TCO Calculator", href: "/resources/tco-calculator" },
     { label: "Resource Center", href: "/resources" },
-    { label: "Blog", href: "/blog" },
+    { label: "Blog", href: "https://www.mediagarcia.com/blog" },
   ],
 };
 
@@ -97,16 +97,30 @@ export function Footer() {
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-white/40 mb-4">Resources</h4>
             <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/60 hover:text-teal-500 transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {footerLinks.resources.map((link) => {
+                const isExternal = link.href.startsWith("http");
+                return (
+                  <li key={link.label}>
+                    {isExternal ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-white/60 hover:text-teal-500 transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-sm text-white/60 hover:text-teal-500 transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

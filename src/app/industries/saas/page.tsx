@@ -50,12 +50,6 @@ const solutions = [
   },
 ];
 
-const metrics = [
-  { label: "Trial-to-Paid", before: "12%", after: "28%", improvement: "+133%" },
-  { label: "Net Revenue Retention", before: "95%", after: "118%", improvement: "+24%" },
-  { label: "Customer Churn", before: "8%", after: "3%", improvement: "-62%" },
-  { label: "Time to Value", before: "14 days", after: "5 days", improvement: "-64%" },
-];
 
 export default function SaaSIndustryPage() {
   return (
@@ -134,34 +128,6 @@ export default function SaaSIndustryPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Metrics Comparison */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <h2 className="text-3xl lg:text-4xl font-black text-black mb-12 text-center">Typical Results</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {metrics.map((metric) => (
-              <div key={metric.label} className="bg-gray-50 rounded-2xl p-6 text-center">
-                <p className="text-sm text-black/50 mb-4">{metric.label}</p>
-                <div className="flex items-center justify-center gap-4 mb-4">
-                  <div>
-                    <p className="text-sm text-black/40">Before</p>
-                    <p className="text-xl font-bold text-black/60">{metric.before}</p>
-                  </div>
-                  <svg className="w-6 h-6 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                  <div>
-                    <p className="text-sm text-black/40">After</p>
-                    <p className="text-xl font-bold text-black">{metric.after}</p>
-                  </div>
-                </div>
-                <p className="text-2xl font-black text-teal-500">{metric.improvement}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
