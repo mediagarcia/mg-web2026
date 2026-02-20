@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { JourneyBackground } from "@/components/JourneyBackground";
 import { ScrollToTopOnNavigation } from "@/components/ScrollToTopOnNavigation";
+import { DevPreviewProviders } from "@/components/DevPreviewProviders";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -224,11 +225,13 @@ export default function RootLayout({
         </a>
         {/* Isometric journey background - fixed layer behind content */}
         <JourneyBackground />
-        <Navigation />
-        <main id="main-content" tabIndex={-1} className="relative z-40 outline-none">
-          {children}
-        </main>
-        <Footer />
+        <DevPreviewProviders>
+          <Navigation />
+          <main id="main-content" tabIndex={-1} className="relative z-40 outline-none">
+            {children}
+          </main>
+          <Footer />
+        </DevPreviewProviders>
         <ScrollToTop />
         {/* JSON-LD structured data for SEO - content is a static constant, not user input */}
         <script

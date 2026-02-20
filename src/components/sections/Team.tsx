@@ -6,36 +6,28 @@ import Image from "next/image";
 const team = [
   {
     name: "Louis Garcia",
-    role: "CEO",
-    bio: "Founder leading Media Garcia's vision for digital transformation.",
+    role: "CEO & Founder",
+    bio: "15+ years building revenue systems. Personally involved in every engagement.",
     initials: "LG",
     image: "/images/team/team-member-1.jpg",
     gradient: "from-teal-500 to-teal-600",
     linkedin: "https://www.linkedin.com/in/louisgarcia/",
   },
   {
-    name: "Rochelle Schmidt",
-    role: "Account Manager",
-    bio: "Client success champion ensuring exceptional project delivery.",
-    initials: "RS",
+    name: "Andrew",
+    role: "COO",
+    bio: "Operations leader ensuring seamless delivery across every client engagement.",
+    initials: "AO",
     image: "/images/team/team-member-2.jpg",
     gradient: "from-neon-purple-500 to-neon-purple-600",
   },
   {
-    name: "HubSpot Team",
-    role: "Implementation Specialists",
-    bio: "Certified experts in CRM, automation, and integrations.",
-    initials: "HS",
-    image: "/images/team/team-member-3.jpg",
+    name: "Expert Network",
+    role: "Certified Specialists",
+    bio: "A curated team of certified HubSpot, Salesforce, and RevOps specialists.",
+    initials: "MG",
+    image: "/images/logos/mg-mark-black.png",
     gradient: "from-orange-red-500 to-orange-red-600",
-  },
-  {
-    name: "Marketing Team",
-    role: "Growth Strategists",
-    bio: "SEO, advertising, and content marketing professionals.",
-    initials: "MT",
-    image: "/images/team/team-member-4.jpg",
-    gradient: "from-teal-500 to-neon-purple-500",
   },
 ];
 
@@ -97,7 +89,7 @@ export function Team() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-24">
           {team.map((member, index) => (
             <motion.div
               key={member.name}

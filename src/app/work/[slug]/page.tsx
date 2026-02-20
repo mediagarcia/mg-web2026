@@ -3,7 +3,12 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { CTABanner } from "@/components/sections";
-import { caseStudies, getCaseStudyBySlug, getRelatedCaseStudies } from "@/data/case-studies";
+import {
+  caseStudies,
+  getCaseStudyBySlug,
+  getRelatedCaseStudies,
+} from "@/data/case-studies";
+import { CaseStudyCard } from "@/components/case-studies";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -28,6 +33,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${study.title} | ${study.client} Case Study | Media Garcia`,
     description: study.description,
+    openGraph: {
+      title: `${study.title} | ${study.client} Case Study`,
+      description: study.description,
+      type: "article",
+      images: [study.image],
+    },
   };
 }
 
@@ -52,13 +63,19 @@ export default async function CaseStudyPage({ params }: PageProps) {
           <nav className="mb-8" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2 text-sm">
               <li>
-                <Link href="/" className="text-black/40 hover:text-teal-500 transition-colors">
+                <Link
+                  href="/"
+                  className="text-black/40 hover:text-teal-500 transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li className="flex items-center gap-2">
                 <span className="text-black/20">/</span>
-                <Link href="/work" className="text-black/40 hover:text-teal-500 transition-colors">
+                <Link
+                  href="/work"
+                  className="text-black/40 hover:text-teal-500 transition-colors"
+                >
                   Work
                 </Link>
               </li>
@@ -70,15 +87,15 @@ export default async function CaseStudyPage({ params }: PageProps) {
           </nav>
 
           {/* Tags */}
-          <div className="flex gap-2 mb-6">
-            <span className="inline-block bg-teal-500/10 text-teal-600 text-xs font-medium px-3 py-1 rounded-full">
+          <div className="flex flex-wrap gap-2 mb-6">
+            <span className="inline-block bg-teal-500/10 text-teal-600 text-xs font-medium px-3 py-1.5 rounded-full">
               {study.industry}
             </span>
-            <span className="inline-block bg-black/5 text-black/60 text-xs font-medium px-3 py-1 rounded-full">
+            <span className="inline-block bg-black/5 text-black/60 text-xs font-medium px-3 py-1.5 rounded-full">
               {study.service}
             </span>
             {study.timeline && (
-              <span className="inline-block bg-black/5 text-black/60 text-xs font-medium px-3 py-1 rounded-full">
+              <span className="inline-block bg-black/5 text-black/60 text-xs font-medium px-3 py-1.5 rounded-full">
                 {study.timeline}
               </span>
             )}
@@ -89,14 +106,30 @@ export default async function CaseStudyPage({ params }: PageProps) {
             {study.title}
           </h1>
 
-          {/* Client */}
-          <p className="text-lg text-black/60 mb-8">{study.client}</p>
+          {/* Client Info */}
+          <div className="flex flex-wrap items-center gap-4 mb-8">
+            <p className="text-lg text-black/60">{study.client}</p>
+            {study.clientSize && (
+              <>
+                <span className="text-black/20">|</span>
+                <p className="text-black/50">{study.clientSize}</p>
+              </>
+            )}
+            {study.clientLocation && (
+              <>
+                <span className="text-black/20">|</span>
+                <p className="text-black/50">{study.clientLocation}</p>
+              </>
+            )}
+          </div>
 
           {/* Key Metrics */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 py-8 border-t border-black/10">
             {study.results.slice(0, 4).map((result) => (
               <div key={result.label}>
-                <p className="text-3xl lg:text-4xl font-black text-teal-500">{result.metric}</p>
+                <p className="text-3xl lg:text-4xl font-black text-teal-500">
+                  {result.metric}
+                </p>
                 <p className="text-sm text-black/60 mt-1">{result.label}</p>
               </div>
             ))}
@@ -107,7 +140,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
       {/* Hero Image */}
       <section className="bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 -mt-8">
-          <div className="relative aspect-[21/9] rounded-2xl overflow-hidden">
+          <div className="relative aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl">
             <Image
               src={study.image}
               alt={`${study.client} case study`}
@@ -115,7 +148,9 @@ export default async function CaseStudyPage({ params }: PageProps) {
               className="object-cover"
               priority
             />
-            <div className={`absolute inset-0 bg-gradient-to-br ${study.gradient} opacity-40`} />
+            <div
+              className={`absolute inset-0 bg-gradient-to-br ${study.gradient} opacity-40`}
+            />
           </div>
         </div>
       </section>
@@ -170,6 +205,43 @@ export default async function CaseStudyPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Screenshots Gallery */}
+      {study.screenshots && study.screenshots.length > 0 && (
+        <section className="py-20 lg:py-32 bg-white">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div className="mb-12">
+              <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
+                The Work
+              </span>
+              <h2 className="text-3xl lg:text-4xl font-black text-black">
+                What we built
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {study.screenshots.map((screenshot, index) => (
+                <figure
+                  key={index}
+                  className="group bg-gray-50 rounded-2xl overflow-hidden"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={screenshot.src}
+                      alt={screenshot.caption}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <figcaption className="p-4 text-sm text-black/60">
+                    {screenshot.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Results Section */}
       <section className="py-20 lg:py-32 bg-black text-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -185,7 +257,9 @@ export default async function CaseStudyPage({ params }: PageProps) {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {study.results.map((result) => (
               <div key={result.label} className="text-center">
-                <p className="text-4xl lg:text-6xl font-black text-teal-500">{result.metric}</p>
+                <p className="text-4xl lg:text-6xl font-black text-teal-500">
+                  {result.metric}
+                </p>
                 <p className="text-white/60 mt-3">{result.label}</p>
               </div>
             ))}
@@ -208,20 +282,81 @@ export default async function CaseStudyPage({ params }: PageProps) {
               <blockquote className="text-2xl lg:text-3xl font-medium text-black leading-relaxed mb-8">
                 &ldquo;{study.testimonial.quote}&rdquo;
               </blockquote>
-              <div>
-                <p className="font-bold text-black">{study.testimonial.author}</p>
-                <p className="text-black/60">
-                  {study.testimonial.title}, {study.testimonial.company}
-                </p>
+              <div className="flex items-center justify-center gap-4">
+                {study.testimonial.photo && (
+                  <Image
+                    src={study.testimonial.photo}
+                    alt={study.testimonial.author}
+                    width={56}
+                    height={56}
+                    className="rounded-full"
+                  />
+                )}
+                <div className="text-left">
+                  <p className="font-bold text-black">
+                    {study.testimonial.author}
+                  </p>
+                  <p className="text-black/60">
+                    {study.testimonial.title}, {study.testimonial.company}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
       )}
 
+      {/* CTA Section */}
+      <section className="py-20 lg:py-24 bg-gray-50">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="bg-black rounded-3xl p-8 lg:p-16 text-center relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+                  backgroundSize: "32px 32px",
+                }}
+              />
+            </div>
+
+            <div className="relative z-10">
+              <h2 className="text-3xl lg:text-4xl font-black text-white mb-4">
+                Want results like this?
+              </h2>
+              <p className="text-white/60 text-lg mb-8 max-w-2xl mx-auto">
+                Let&apos;s discuss how we can help transform your business with
+                strategic CRM implementation.
+              </p>
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold px-8 py-4 rounded-full transition-colors"
+              >
+                Get Started
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Related Case Studies */}
       {relatedStudies.length > 0 && (
-        <section className="py-20 lg:py-32 bg-gray-50">
+        <section className="py-20 lg:py-32 bg-white">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
               <div>
@@ -243,35 +378,23 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
                 </svg>
               </Link>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8">
-              {relatedStudies.map((relatedStudy) => (
-                <Link
+              {relatedStudies.map((relatedStudy, index) => (
+                <CaseStudyCard
                   key={relatedStudy.slug}
-                  href={`/work/${relatedStudy.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden hover:shadow-lg transition-all"
-                >
-                  <div className="relative aspect-[16/9]">
-                    <Image
-                      src={relatedStudy.image}
-                      alt={`${relatedStudy.client} case study`}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className={`absolute inset-0 bg-gradient-to-br ${relatedStudy.gradient} opacity-50`} />
-                  </div>
-                  <div className="p-8">
-                    <p className="text-sm text-black/50 font-medium mb-2">{relatedStudy.client}</p>
-                    <h3 className="text-xl font-bold text-black mb-3 group-hover:text-teal-500 transition-colors">
-                      {relatedStudy.title}
-                    </h3>
-                    <p className="text-black/60">{relatedStudy.description}</p>
-                  </div>
-                </Link>
+                  caseStudy={relatedStudy}
+                  index={index}
+                />
               ))}
             </div>
           </div>

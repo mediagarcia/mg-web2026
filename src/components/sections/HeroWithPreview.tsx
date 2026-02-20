@@ -11,8 +11,6 @@ interface HeroWithPreviewProps {
 export function HeroWithPreview({ defaultImage, slot = "hero" }: HeroWithPreviewProps) {
   const { isPreviewMode, getCurrentImagePath } = usePreview();
 
-  // In preview mode, use the preview context's current image
-  // Otherwise, use the server-provided default image
   const heroImage = isPreviewMode
     ? getCurrentImagePath(slot, defaultImage ?? undefined)
     : defaultImage;
