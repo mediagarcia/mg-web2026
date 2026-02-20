@@ -67,7 +67,6 @@ const config: Config = {
         "fade-in": "fadeIn 0.8s ease-out forwards",
         "slide-up": "slideUp 0.8s ease-out forwards",
         "slide-in-left": "slideInLeft 0.6s ease-out forwards",
-        "gradient-shift": "gradientShift 8s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -81,10 +80,6 @@ const config: Config = {
         slideInLeft: {
           "0%": { opacity: "0", transform: "translateX(-20px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
-        },
-        gradientShift: {
-          "0%, 100%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
         },
       },
     },

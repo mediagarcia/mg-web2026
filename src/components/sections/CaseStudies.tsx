@@ -53,22 +53,11 @@ export function CaseStudies({ images }: CaseStudiesProps = {}) {
               Results that speak for themselves
             </motion.h2>
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <span className="inline-flex items-center gap-2 text-black/50 font-medium">
-              <span className="text-xs bg-teal-500/10 text-teal-600 px-3 py-1 rounded-full font-semibold">Coming Soon</span>
-              More case studies
-            </span>
-          </motion.div>
         </div>
 
         {/* Case Studies Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-          {caseStudies.slice(0, 1).map((study, index) => {
+          {caseStudies.slice(0, 3).map((study, index) => {
             // Use slug-specific override, generic override, or default image
             const imageUrl = images?.[study.slug] ?? images?.generic ?? study.image;
             // Get duotone styling for this case study
