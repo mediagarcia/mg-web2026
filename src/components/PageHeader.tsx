@@ -14,11 +14,12 @@ interface PageHeaderProps {
   title: string;
   description?: string;
   breadcrumbs?: Breadcrumb[];
+  compactBottom?: boolean;
 }
 
-export function PageHeader({ badge, title, description, breadcrumbs }: PageHeaderProps) {
+export function PageHeader({ badge, title, description, breadcrumbs, compactBottom }: PageHeaderProps) {
   return (
-    <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-gray-50 relative overflow-hidden">
+    <section className={`pt-32 lg:pt-40 bg-gray-50 relative overflow-hidden ${compactBottom ? "pb-8 lg:pb-12" : "pb-16 lg:pb-24"}`}>
       {/* Grid pattern background */}
       <FadingGridPattern
         type="dots"

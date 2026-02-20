@@ -31,6 +31,28 @@ const team = [
   },
 ];
 
+const values = [
+  {
+    title: "Keep Your Word",
+    description: "Trust is built in follow-through. If we say it, it shows up in the system.",
+  },
+  {
+    title: "Think in Outcomes",
+    description: "We focus on results, not busywork. The goal is improvement you can feel.",
+  },
+  {
+    title: "Have Fun",
+    description: "Great work happens when teams enjoy what they do together.",
+  },
+  {
+    title: "Act Like an Owner",
+    description: "We treat your organization as if it were our own.",
+  },
+  {
+    title: "Raise the Bar",
+    description: "We hold ourselves to high standards and deliver work that lasts.",
+  },
+];
 
 export function Team() {
   return (
@@ -67,7 +89,7 @@ export function Team() {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-24">
           {team.map((member, index) => (
             <motion.div
               key={member.name}
@@ -108,6 +130,38 @@ export function Team() {
             </motion.div>
           ))}
         </div>
+
+        {/* Values Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-black rounded-3xl p-8 lg:p-16"
+        >
+          <div className="max-w-3xl mb-12">
+            <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
+              Our Values
+            </span>
+            <h3 className="text-[clamp(1.5rem,4vw,2.5rem)] font-black leading-tight text-white">
+              How we work with you
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {values.map((value, index) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <h4 className="text-lg font-bold text-white mb-2">{value.title}</h4>
+                <p className="text-white/60 leading-relaxed">{value.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

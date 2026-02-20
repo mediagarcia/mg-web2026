@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FooterNewsletterForm } from "./FooterNewsletterForm";
 
 const footerLinks = {
   services: [
@@ -56,7 +55,7 @@ export function Footer() {
               <svg className="w-5 h-5 text-[#ff7a59]" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.984 2.21 2.21 0 00-4.42 0c0 .873.51 1.625 1.245 1.982v2.848a5.276 5.276 0 00-2.407 1.227l-6.39-4.972a2.474 2.474 0 00.093-.655 2.472 2.472 0 10-2.471 2.471c.426 0 .824-.11 1.17-.299l6.271 4.876a5.3 5.3 0 00-.203 1.422 5.3 5.3 0 00.203 1.422l-6.271 4.876c-.346-.19-.744-.299-1.17-.299a2.472 2.472 0 102.471 2.471c0-.228-.034-.447-.093-.655l6.39-4.972a5.276 5.276 0 002.407 1.227v2.848a2.198 2.198 0 00-1.245 1.982 2.21 2.21 0 004.42 0 2.198 2.198 0 00-1.267-1.984V16.07a5.287 5.287 0 10-5.096-9.14 5.287 5.287 0 005.096-9.14z"/>
               </svg>
-              <span className="text-xs font-medium text-white/80">HubSpot Platinum Solutions Partner</span>
+              <span className="text-xs font-medium text-white/80">HubSpot Solutions Partner</span>
             </div>
           </div>
 
@@ -133,7 +132,19 @@ export function Footer() {
               <h4 className="text-lg font-bold mb-2">Stay in the loop</h4>
               <p className="text-sm text-white/60">Get CRM tips and growth strategies delivered to your inbox.</p>
             </div>
-            <FooterNewsletterForm />
+            <form className="flex gap-3 w-full md:w-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 md:w-64 px-4 py-3 bg-white/10 rounded-full text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              />
+              <button
+                type="submit"
+                className="px-6 py-3 bg-teal-500 text-white rounded-full text-sm font-medium hover:bg-teal-400 transition-colors"
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -150,9 +161,6 @@ export function Footer() {
             </Link>
             <Link href="/terms" className="text-xs text-white/40 hover:text-white transition-colors">
               Terms of Service
-            </Link>
-            <Link href="/ai-policy" className="text-xs text-white/40 hover:text-white transition-colors">
-              AI Policy
             </Link>
             {/* Social Links */}
             <div className="flex items-center gap-4 ml-4">
