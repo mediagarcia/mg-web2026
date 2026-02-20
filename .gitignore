@@ -46,10 +46,17 @@ test-results/
 
 .vercel
 
-# Claude Code session files
+# Claude Code session/local files
 .claude/context.json
 .claude/session.jsonl
+.claude/session.jsonl.*
 .claude/session.lock
+.claude/*.local.md
+.claude/*.local.json
+.claude/video-generation-plan.md
+
+# Env backups
+.env.port-backup
 
 # Generated images (keep manifest)
 public/images/generated/**/

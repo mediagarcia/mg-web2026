@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-06T02:45:49.192Z",
+  "lastUpdated": "2026-02-07T21:41:15.177Z",
   "slots": {
     "hero": {
       "slot": "hero",
@@ -8,7 +8,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "16:9",
       "createdAt": "2026-02-05T07:01:32.682Z",
-      "updatedAt": "2026-02-05T19:02:51.131Z",
+      "updatedAt": "2026-02-07T21:41:15.177Z",
       "files": [
         {
           "filename": "hero-003.png",
@@ -26,8 +26,8 @@
           "generatedAt": "2026-02-05T09:42:25.963Z"
         }
       ],
-      "selected": "hero-004.png",
-      "selectedPath": "/images/selected/hero.png"
+      "selected": "hero-005.png",
+      "selectedPath": "/images/generated/hero/hero-005.png"
     },
     "industries-healthcare": {
       "slot": "industries-healthcare",
