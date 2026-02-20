@@ -79,7 +79,20 @@
       "Bash(echo:*)",
       "Bash(npx next build)",
       "Bash(gh pr create:*)",
-      "Bash(gh pr merge:*)"
+      "Bash(gh pr merge:*)",
+      "Bash(gh pr view:*)",
+      "WebFetch(domain:ai.google.dev)",
+      "Bash(ls:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx tsx:*)",
+      "Bash(npm run generate-video:*)",
+      "Bash(ffmpeg:*)",
+      "Bash(npx next build:*)",
+      "Bash(git checkout:*)",
+      "Bash(git pull:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh api:*)",
+      "Bash(git diff-tree:*)"
     ]
   }
 }

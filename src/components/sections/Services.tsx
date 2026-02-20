@@ -6,8 +6,8 @@ import { GradientOrb } from "@/components/ui/visuals";
 
 const services = [
   {
-    title: "RevOps Strategy & Architecture",
-    description: "Design unified revenue systems that align sales, marketing, and customer success—regardless of your tech stack.",
+    title: "CRM Onboarding",
+    description: "Get your team up and running fast with expert HubSpot and CRM setup, configuration, and training.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -17,15 +17,15 @@ const services = [
     href: "/services/hubspot-onboarding",
   },
   {
-    title: "CRM Implementation & Migration",
-    description: "Deployment on HubSpot, Salesforce, or custom solutions. Zero data loss, minimal disruption.",
+    title: "Sales Enablement",
+    description: "Empower your sales team with optimized pipelines, sequences, playbooks, and tools to close more deals.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
       </svg>
     ),
     color: "neon-purple",
-    href: "/services/crm-migration",
+    href: "/services/sales-enablement",
   },
   {
     title: "Marketing Automation",
@@ -39,15 +39,15 @@ const services = [
     href: "/services/marketing-automation",
   },
   {
-    title: "Custom Integrations",
-    description: "Connect your CRM with EHR systems, ERPs, billing platforms, and any tool your business depends on.",
+    title: "CRM Migration",
+    description: "Zero-downtime data migration from any CRM to HubSpot, Salesforce, or your platform of choice.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
       </svg>
     ),
     color: "teal",
-    href: "/services/integrations",
+    href: "/services/crm-migration",
   },
   {
     title: "Reporting & Analytics",
@@ -61,6 +61,17 @@ const services = [
     href: "/services/reporting",
   },
   {
+    title: "Custom Integrations",
+    description: "Connect your CRM with EHR systems, ERPs, billing platforms, and any tool your business depends on.",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+      </svg>
+    ),
+    color: "orange-red",
+    href: "/services/integrations",
+  },
+  {
     title: "AI & Workflow Automation",
     description: "Leverage AI-powered tools for predictive scoring, chatbots, and intelligent routing.",
     icon: (
@@ -68,7 +79,7 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
-    color: "orange-red",
+    color: "teal",
     href: "/services/ai-automation",
   },
   {
@@ -79,8 +90,19 @@ const services = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
       </svg>
     ),
-    color: "teal",
+    color: "neon-purple",
     href: "/services/development",
+  },
+  {
+    title: "Growth Marketing",
+    description: "Strategic marketing services including SEO, content, advertising, and demand generation.",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+      </svg>
+    ),
+    color: "orange-red",
+    href: "/services/marketing",
   },
 ];
 
