@@ -210,19 +210,6 @@ export function Services() {
           ))}
         </div>
 
-        {/* Platform Footnote */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="mt-16 pt-8 border-t border-black/10"
-        >
-          <p className="text-sm text-black/50 text-center">
-            <strong className="text-black/70">Platforms we work with:</strong>{" "}
-            HubSpot (Platinum Partner) • Salesforce • Zoho • Pipedrive • Custom APIs & middleware
-          </p>
-        </motion.div>
       </div>
     </section>
   );
