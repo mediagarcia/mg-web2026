@@ -3,19 +3,14 @@ import { spawn } from "node:child_process";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import type { VideoManifest } from "@/lib/videos/types";
+import { requireDev } from "../../_lib/dev-auth";
 
 const MANIFEST_PATH = join(process.cwd(), "public/videos/generated/manifest.json");
 const SAFE_SLOT_PATTERN = /^[a-zA-Z0-9_\-\/]+$/;
 
-// Only allow in development
-function isDevelopment(): boolean {
-  return process.env.NODE_ENV === "development";
-}
-
 export async function POST(request: NextRequest) {
-  if (!isDevelopment()) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
+  const authError = requireDev(request);
+  if (authError) return authError;
 
   try {
     const body = await request.json();
