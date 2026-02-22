@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { readFileSync, writeFileSync, existsSync, unlinkSync, mkdirSync, copyFileSync } from "node:fs";
 import { join } from "node:path";
 import type { VideoManifest } from "@/lib/videos/types";
+import { requireDev } from "../_lib/dev-auth";
 
 const MANIFEST_PATH = join(process.cwd(), "public/videos/generated/manifest.json");
 const SELECTED_DIR = join(process.cwd(), "public/videos/selected");
@@ -32,15 +33,9 @@ function copyToSelectedFolder(slot: string, sourcePath: string): string {
   return sourcePath; // Return original if copy fails
 }
 
-// Only allow in development
-function isDevelopment(): boolean {
-  return process.env.NODE_ENV === "development";
-}
-
-export async function GET() {
-  if (!isDevelopment()) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
+export async function GET(request: NextRequest) {
+  const authError = requireDev(request);
+  if (authError) return authError;
 
   try {
     if (!existsSync(MANIFEST_PATH)) {
@@ -60,9 +55,8 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
-  if (!isDevelopment()) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
+  const authError = requireDev(request);
+  if (authError) return authError;
 
   try {
     const body = await request.json();
@@ -109,9 +103,8 @@ export async function POST(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
-  if (!isDevelopment()) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
+  const authError = requireDev(request);
+  if (authError) return authError;
 
   try {
     const body = await request.json();

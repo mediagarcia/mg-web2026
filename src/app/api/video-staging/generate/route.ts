@@ -3,18 +3,14 @@ import { spawn } from "node:child_process";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import type { VideoManifest } from "@/lib/videos/types";
+import { requireDev } from "../../_lib/dev-auth";
 
 const MANIFEST_PATH = join(process.cwd(), "public/videos/generated/manifest.json");
-
-// Only allow in development
-function isDevelopment(): boolean {
-  return process.env.NODE_ENV === "development";
-}
+const SAFE_SLOT_PATTERN = /^[a-zA-Z0-9_\-\/]+$/;
 
 export async function POST(request: NextRequest) {
-  if (!isDevelopment()) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
+  const authError = requireDev(request);
+  if (authError) return authError;
 
   try {
     const body = await request.json();
@@ -22,6 +18,11 @@ export async function POST(request: NextRequest) {
 
     if (!slot) {
       return NextResponse.json({ error: "Missing slot" }, { status: 400 });
+    }
+
+    // Validate slot: only allow alphanumeric, hyphens, underscores, and forward slashes
+    if (!SAFE_SLOT_PATTERN.test(slot)) {
+      return NextResponse.json({ error: "Invalid slot name" }, { status: 400 });
     }
 
     // If no prompt provided, try to get from existing slot
@@ -57,7 +58,6 @@ export async function POST(request: NextRequest) {
 
       const child = spawn("npm", args, {
         cwd: process.cwd(),
-        shell: true,
         env: { ...process.env },
       });
 
