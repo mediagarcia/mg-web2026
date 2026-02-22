@@ -5,6 +5,7 @@ import { join } from "node:path";
 import type { ImageManifest } from "@/lib/images/types";
 
 const MANIFEST_PATH = join(process.cwd(), "public/images/generated/manifest.json");
+const SAFE_SLOT_PATTERN = /^[a-zA-Z0-9_\-\/]+$/;
 
 // Only allow in development
 function isDevelopment(): boolean {
@@ -22,6 +23,11 @@ export async function POST(request: NextRequest) {
 
     if (!slot) {
       return NextResponse.json({ error: "Missing slot" }, { status: 400 });
+    }
+
+    // Validate slot: only allow alphanumeric, hyphens, underscores, and forward slashes
+    if (!SAFE_SLOT_PATTERN.test(slot)) {
+      return NextResponse.json({ error: "Invalid slot name" }, { status: 400 });
     }
 
     // If no prompt provided, try to get from existing slot
@@ -54,7 +60,6 @@ export async function POST(request: NextRequest) {
 
       const child = spawn("npm", args, {
         cwd: process.cwd(),
-        shell: true,
         env: { ...process.env },
       });
 
