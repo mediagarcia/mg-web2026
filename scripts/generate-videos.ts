@@ -207,10 +207,11 @@ async function generateVideo(
       if (videoUri) {
         console.log(`  Downloading video from: ${videoUri.substring(0, 80)}...`);
         // Veo video URIs require the API key for authentication
-        const downloadUrl = videoUri.includes("?")
-          ? `${videoUri}&key=${apiKey}`
-          : `${videoUri}?key=${apiKey}`;
-        const downloadResponse = await fetch(downloadUrl);
+        const downloadResponse = await fetch(videoUri, {
+          headers: {
+            "x-goog-api-key": apiKey,
+          },
+        });
 
         if (downloadResponse.ok) {
           const arrayBuffer = await downloadResponse.arrayBuffer();
