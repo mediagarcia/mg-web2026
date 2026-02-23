@@ -1,5 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
+import { HubSpotForm } from "@/components/HubSpotForm";
+
+const NEWSLETTER_FORM_ID = process.env.NEXT_PUBLIC_HS_FORM_NEWSLETTER;
 
 const footerLinks = {
   services: [
@@ -118,19 +121,18 @@ export function Footer() {
               <h4 className="text-lg font-bold mb-2">Stay in the loop</h4>
               <p className="text-sm text-white/60">Get CRM tips and growth strategies delivered to your inbox.</p>
             </div>
-            <form className="flex gap-3 w-full md:w-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 md:w-64 px-4 py-3 bg-white/10 rounded-full text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-teal-500"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-teal-500 text-white rounded-full text-sm font-medium hover:bg-teal-400 transition-colors"
+            {NEWSLETTER_FORM_ID ? (
+              <div className="w-full md:w-80">
+                <HubSpotForm formId={NEWSLETTER_FORM_ID} />
+              </div>
+            ) : (
+              <a
+                href="mailto:hello@mediagarcia.com?subject=Newsletter%20Subscription"
+                className="px-6 py-3 bg-teal-500 text-white rounded-full text-sm font-medium hover:bg-teal-400 transition-colors inline-block"
               >
-                Subscribe
-              </button>
-            </form>
+                Subscribe via Email
+              </a>
+            )}
           </div>
         </div>
       </div>

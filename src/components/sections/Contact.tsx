@@ -1,22 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { HubSpotForm } from "@/components/HubSpotForm";
+
+const CONTACT_FORM_ID = process.env.NEXT_PUBLIC_HS_FORM_CONTACT;
 
 export function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Connect to form backend (HubSpot Forms API, Formspree, etc.)
-    setSubmitted(true);
-  };
 
   return (
     <section id="contact" className="py-[var(--spacing-section)] bg-gray-50 relative overflow-hidden">
@@ -157,86 +146,34 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            {submitted ? (
-              <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl text-center">
-                <h3 className="text-2xl font-bold text-black mb-4">Thank you!</h3>
-                <p className="text-black/60">We&apos;ll be in touch within 24 hours.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl">
-                <div className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-black mb-2">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-black placeholder:text-black/40 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
-                      placeholder="John Smith"
-                      required
-                    />
+            <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl">
+              {CONTACT_FORM_ID ? (
+                <HubSpotForm formId={CONTACT_FORM_ID} />
+              ) : (
+                <div className="text-center py-8">
+                  <p className="text-black/60 mb-6">
+                    Ready to get started? Reach out directly.
+                  </p>
+                  <div className="flex flex-col gap-4">
+                    <a
+                      href="mailto:hello@mediagarcia.com"
+                      className="w-full bg-black text-white py-4 rounded-xl font-medium hover:bg-teal-500 transition-colors duration-300 text-center"
+                    >
+                      Email hello@mediagarcia.com
+                    </a>
+                    <a
+                      href="tel:+18886124250"
+                      className="w-full border-2 border-black text-black py-4 rounded-xl font-medium hover:bg-black hover:text-white transition-colors duration-300 text-center"
+                    >
+                      Call +1 888-612-4250
+                    </a>
                   </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
-                      Work Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-black placeholder:text-black/40 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
-                      placeholder="john@company.com"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-black mb-2">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-black placeholder:text-black/40 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
-                      placeholder="Company Inc."
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-black mb-2">
-                      How can we help?
-                    </label>
-                    <textarea
-                      id="message"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      rows={4}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-black placeholder:text-black/40 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all resize-none"
-                      placeholder="Tell us about your project..."
-                      required
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-black text-white py-4 rounded-xl font-medium hover:bg-teal-500 transition-colors duration-300"
-                  >
-                    Send My Request
-                  </button>
-
-                  <p className="text-xs text-black/40 text-center">
+                  <p className="text-xs text-black/40 mt-4">
                     We respond within 24 hours. No spam, ever.
                   </p>
                 </div>
-              </form>
-            )}
+              )}
+            </div>
           </motion.div>
         </div>
       </div>

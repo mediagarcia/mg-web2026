@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
+import { AssessmentForm } from "./AssessmentForm";
 
 export const metadata: Metadata = {
   title: "CRM Assessment | Media Garcia",
@@ -89,60 +90,7 @@ export default function AssessmentPage() {
                   </li>
                 ))}
               </ul>
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-white/60 mb-2">
-                    Work Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-teal-500"
-                    placeholder="you@company.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-white/60 mb-2">
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-teal-500"
-                    placeholder="Acme Inc."
-                  />
-                </div>
-                <div>
-                  <label htmlFor="crm" className="block text-sm font-medium text-white/60 mb-2">
-                    Current CRM Platform
-                  </label>
-                  <select
-                    id="crm"
-                    name="crm"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
-                  >
-                    <option value="" className="text-black">Select your platform</option>
-                    <option value="hubspot-free" className="text-black">HubSpot Free / Starter</option>
-                    <option value="hubspot-professional" className="text-black">HubSpot Professional</option>
-                    <option value="hubspot-enterprise" className="text-black">HubSpot Enterprise</option>
-                    <option value="salesforce" className="text-black">Salesforce</option>
-                    <option value="zoho" className="text-black">Zoho CRM</option>
-                    <option value="pipedrive" className="text-black">Pipedrive</option>
-                    <option value="other" className="text-black">Other / Custom Stack</option>
-                    <option value="none" className="text-black">No CRM yet</option>
-                  </select>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-teal-500 text-white py-4 rounded-full font-medium hover:bg-teal-400 transition-colors mt-4"
-                >
-                  Start Assessment
-                </button>
-              </form>
+              <AssessmentForm />
               <p className="text-white/40 text-xs mt-4 text-center">
                 Your responses are confidential. No spam, ever.
               </p>
