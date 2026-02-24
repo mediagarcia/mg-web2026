@@ -271,6 +271,46 @@ We also built a dashboard showing intake metrics by practice area, so marketing 
       company: "Regional Law Firm",
     },
   },
+  {
+    slug: "mipi-alliance-service-hub",
+    title: "Unified Service Desk for a Global Standards Organization",
+    client: "MIPI Alliance",
+    industry: "IT Services",
+    service: "HubSpot Implementation",
+    description: "Implemented a HubSpot service desk, standardized email marketing, and audited marketing-sales-service operations for a global technology standards body serving the mobile industry.",
+    image: "/images/case-studies/case-study-3.jpg",
+    gradient: "from-teal-500 to-neon-purple-700",
+    timeline: "6 months",
+    tags: ["Technology", "Service Hub", "Email Marketing", "Operations Audit"],
+    featured: false,
+    clientSize: "Global standards organization",
+    clientLocation: "United States",
+    publishDate: "2020-03-01",
+    challenge: `MIPI Alliance develops the world's most comprehensive set of interface specifications for mobile and mobile-influenced products. As a membership-based standards organization, their success depends on serving hundreds of member companies effectively—from onboarding new members to nurturing prospects and supporting existing ones.
+
+When Media Garcia began working with MIPI, the organization faced three interconnected challenges. Their member onboarding workflow was inconsistent—new members had different experiences depending on who handled their intake, with no standardized process to ensure every organization received the same level of attention and information.
+
+Prospect and at-risk member nurturing was essentially nonexistent. There was no systematic way to engage prospective members through the decision process, and no early-warning system to identify members who might not renew. Marketing, sales, and service operations ran on disjointed systems, making it difficult for any team to see the full picture of a member's relationship with the organization.`,
+    solution: `Media Garcia dedicated time to understanding the frontline teams' day-to-day roles and developed a comprehensive list of capabilities and infrastructure they needed to build great relationships with prospects and members.
+
+We started by onboarding MIPI to a ticketing platform inside HubSpot Service Hub, building structured processes for managing issues and inquiries from various intake channels. This gave every team member a consistent way to track, prioritize, and resolve member requests—replacing the ad hoc approach that had been in place.
+
+Next, we brought consistency to email marketing by standardizing templates across both HubSpot and Mailchimp, creating structures that made it easy for the team to launch campaigns without starting from scratch each time. We then conducted a full audit of MIPI's marketing, sales, and service processes—evaluating the technology in use across all three functions and providing a strategic recommendation for future growth.
+
+The result was a prioritized roadmap of projects spanning membership prospecting, member engagement, and technology integration—giving MIPI a clear path forward rather than a list of disconnected improvements.`,
+    results: [
+      { metric: "3", label: "Departments unified on one platform" },
+      { metric: "100%", label: "Member inquiry tracking coverage" },
+      { metric: "1", label: "Consolidated service desk" },
+      { metric: "6 mo", label: "Strategic roadmap delivered" },
+    ],
+    testimonial: {
+      quote: "We've been working with Media Garcia for about 6 months on various projects related to HubSpot and outside email and website marketing. So far we feel very comfortable with the team's level of aptitude, speed, focus, and professionalism. Looking forward to a continued partnership.",
+      author: "Melanie Cole",
+      title: "Special Projects Manager",
+      company: "MIPI Alliance",
+    },
+  },
 ];
 
 export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
