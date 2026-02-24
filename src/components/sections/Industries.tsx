@@ -7,15 +7,15 @@ import { GeometricOverlay, type GeometricPattern } from "@/components/ui/Geometr
 
 export interface IndustryImages {
   healthcare?: string | null;
-  it?: string | null;
-  saas?: string | null;
+  technology?: string | null;
+  b2b?: string | null;
 }
 
 // Map industry slugs to duotone colors and patterns
 const industryStyles: Record<string, { color: "teal" | "purple" | "orange"; pattern: GeometricPattern }> = {
   healthcare: { color: "teal", pattern: "spiral" },
-  "information-technology": { color: "purple", pattern: "grid" },
-  saas: { color: "orange", pattern: "arc" },
+  technology: { color: "purple", pattern: "grid" },
+  b2b: { color: "orange", pattern: "arc" },
 };
 
 const industries = [
@@ -37,14 +37,14 @@ const industries = [
     ),
   },
   {
-    name: "Information Technology",
-    slug: "information-technology",
-    description: "CRM and RevOps for technical buyers. Long sales cycles, multiple stakeholders, and solutions-based selling require specialized systems.",
+    name: "Technology",
+    slug: "technology",
+    description: "HubSpot for scaling tech companies. Multi-pipeline sales ops, lead scoring with decay, and integrations with tools like ZoomInfo and ChurnZero.",
     features: [
-      "Technical content marketing",
-      "Long-cycle lead nurturing",
-      "Partner ecosystem management",
-      "Multi-stakeholder deal tracking",
+      "Multi-pipeline sales architecture",
+      "Lead scoring with behavioral decay",
+      "Enterprise forecasting on any tier",
+      "Third-party data integrations",
     ],
     gradient: "from-neon-purple-500 to-neon-purple-600",
     icon: (
@@ -54,14 +54,14 @@ const industries = [
     ),
   },
   {
-    name: "SaaS & Software",
-    slug: "saas",
-    description: "Scale your revenue engine from startup to scale-up. Product-led growth integrations, usage-based billing connections, and customer success automation.",
+    name: "B2B Services",
+    slug: "b2b",
+    description: "Revenue operations for complex B2B companies. System integrations, marketing attribution, and process automation across industries.",
     features: [
-      "Trial-to-paid conversion funnels",
-      "Usage-based lead scoring",
-      "Customer health monitoring",
-      "Expansion revenue workflows",
+      "Multi-system integrations",
+      "Full-funnel attribution",
+      "Revenue process automation",
+      "Custom reporting dashboards",
     ],
     gradient: "from-orange-red-500 to-orange-red-600",
     icon: (
@@ -113,9 +113,7 @@ export function Industries({ images }: IndustriesProps = {}) {
         {/* Industries Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {industries.map((industry, index) => {
-            // Map slug to image key
-            const imageKey = industry.slug === "information-technology" ? "it" : industry.slug;
-            const backgroundImage = images?.[imageKey as keyof IndustryImages];
+            const backgroundImage = images?.[industry.slug as keyof IndustryImages];
 
             return (
               <motion.div

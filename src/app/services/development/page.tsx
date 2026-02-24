@@ -10,7 +10,7 @@ import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 
 export const metadata: Metadata = {
   title: "Website & CMS Development | Media Garcia",
-  description: "High-converting websites on HubSpot CMS, WordPress, or custom builds. Built for marketers in healthcare, IT, and SaaS.",
+  description: "High-converting websites on HubSpot CMS, WordPress, or custom builds. Built for marketers in healthcare, technology, and B2B.",
 };
 
 const stats = [
@@ -70,7 +70,7 @@ const industryUseCases = [
     linkHref: "/industries/healthcare",
   },
   {
-    industry: "IT Services & Technology",
+    industry: "Technology",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
@@ -82,22 +82,22 @@ const industryUseCases = [
       "Security-focused design with trust signals and certifications",
       "Partner portals with protected resource libraries",
     ],
-    linkHref: "/industries/information-technology",
+    linkHref: "/industries/technology",
   },
   {
-    industry: "B2B SaaS",
+    industry: "B2B Services",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
       </svg>
     ),
     useCases: [
-      "Product-led landing pages with interactive feature tours",
       "ROI calculators and pricing configurators",
-      "Trial signup flows optimized for conversion",
-      "Customer success portals with product documentation",
+      "Customer portals with project tracking and reporting",
+      "Multi-location websites with dynamic content",
+      "Lead generation landing pages with conversion optimization",
     ],
-    linkHref: "/industries/saas",
+    linkHref: "/industries/b2b",
   },
 ];
 
@@ -282,7 +282,7 @@ export default function DevelopmentPage() {
               Websites built for your industry
             </h2>
             <p className="text-lg text-black/60 max-w-2xl mx-auto">
-              Healthcare compliance, IT security requirements, SaaS conversion patterns—we understand what your industry needs.
+              Healthcare compliance, technology security requirements, B2B conversion patterns—we understand what your industry needs.
             </p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8">

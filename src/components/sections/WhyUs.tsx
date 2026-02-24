@@ -17,7 +17,7 @@ const differentiators = [
   {
     number: "02",
     title: "Industry-Specific Focus",
-    description: "We specialize in healthcare, IT, and SaaS. We understand your compliance requirements, your buyers, and your sales cycles.",
+    description: "We specialize in healthcare, technology, and B2B. We understand your compliance requirements, your buyers, and your sales cycles.",
   },
   {
     number: "03",

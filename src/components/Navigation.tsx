@@ -62,9 +62,9 @@ const additionalServices: MenuItem[] = [
 ];
 
 const industries: MenuItem[] = [
-  { label: "Healthcare", href: "/industries/healthcare", description: "HIPAA-compliant solutions", icon: HeartPulse },
-  { label: "Information Technology", href: "/industries/information-technology", description: "Solutions for IT companies", icon: Cpu },
-  { label: "SaaS", href: "/industries/saas", description: "Scale your subscription business", icon: Cloud },
+  { label: "Healthcare", href: "/industries/healthcare", description: "Patient portals, EHR, CRM optimization", icon: HeartPulse },
+  { label: "Technology", href: "/industries/technology", description: "Sales ops for scaling tech companies", icon: Cpu },
+  { label: "B2B Services", href: "/industries/b2b", description: "Complex operations across industries", icon: Cloud },
 ];
 
 const resources: MenuItem[] = [

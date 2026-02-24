@@ -13,6 +13,7 @@ const clients = [
   { name: "Vertex Education", logo: "/images/clients/vertexeducation.png" },
   { name: "MIPI Alliance", logo: "/images/clients/mipi.png" },
   { name: "Novi Connect", logo: "/images/clients/noviconnect.svg" },
+  { name: "Certn", logo: "/images/clients/certn.svg" },
 ];
 
 export function ClientLogos() {

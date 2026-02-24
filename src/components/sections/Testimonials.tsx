@@ -61,9 +61,9 @@ const testimonials = [
   },
   {
     quote: "Media Garcia was instrumental in scaling us up with HubSpot by stepping into the role of operations before we hired a full-time specialist. They set up our CRM, email workflows, and reporting dashboards, which we greatly appreciate.",
-    author: "Y. Chow",
+    author: "Yvonne Chow",
     title: "Marketing Manager",
-    company: "SaaS Company",
+    company: "Certn",
     initials: "YC",
     rating: 5,
   },

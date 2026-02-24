@@ -70,7 +70,7 @@ const industryUseCases = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
       </svg>
     ),
-    industry: "IT Services & Technology",
+    industry: "Technology",
     description: "Manage 6-12 month sales cycles with technical evaluation stages, multi-stakeholder engagement tracking, and proof-of-concept workflows built for enterprise deals.",
     features: ["Technical evaluation stages", "Stakeholder mapping", "POC tracking", "RFP response automation"],
   },
@@ -80,7 +80,7 @@ const industryUseCases = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
       </svg>
     ),
-    industry: "B2B SaaS",
+    industry: "B2B Services",
     description: "Build product-led growth + sales-assist hybrid motions with usage-based lead scoring, expansion revenue workflows, and customer health-triggered outreach.",
     features: ["Product usage scoring", "Trial conversion sequences", "Expansion revenue plays", "Customer health alerts"],
   },
@@ -95,7 +95,7 @@ const process = [
 
 const caseStudy = {
   metric: "40% Shorter Sales Cycle",
-  industry: "IT Services Company",
+  industry: "Technology Company",
   challenge: "90-day average sales cycle with deals frequently stalling at technical evaluation. Reps spent too much time on manual follow-up and not enough on high-value selling activities.",
   solution: "Built automated sequences with technical content delivery triggered by deal stage, implemented stakeholder mapping to identify missing decision-makers, and created a POC tracking workflow.",
   result: "Sales cycle reduced from 90 to 54 days. 2.5x more qualified demos booked per rep. Win rate increased from 22% to 31%.",

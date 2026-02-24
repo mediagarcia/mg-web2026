@@ -7,8 +7,8 @@ export default function Home() {
   // Industry images - auto-discovers highest version (v3 > v2 > base)
   const industryImages = {
     healthcare: getVersionedImageForSlot("industries-healthcare"),
-    it: getVersionedImageForSlot("industries-it"),
-    saas: getVersionedImageForSlot("industries-saas"),
+    technology: getVersionedImageForSlot("industries-technology"),
+    b2b: getVersionedImageForSlot("industries-b2b"),
   };
 
   // Why Us background image

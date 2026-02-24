@@ -70,7 +70,7 @@ const industryUseCases = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
       </svg>
     ),
-    industry: "IT Services & Technology",
+    industry: "Technology",
     description: "Nurture technical buyers through 6-12 month buying cycles with educational content sequences, technical resource delivery, and stakeholder-aware messaging.",
     features: ["Long-cycle nurture programs", "Technical content sequences", "Multi-stakeholder campaigns", "Event-triggered automation"],
   },
@@ -80,7 +80,7 @@ const industryUseCases = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
       </svg>
     ),
-    industry: "B2B SaaS",
+    industry: "B2B Services",
     description: "Build trial-to-paid conversion flows, expansion revenue campaigns, and customer health-triggered outreach that maximize LTV across the entire customer journey.",
     features: ["Trial conversion sequences", "Onboarding automation", "Expansion campaigns", "Churn prevention workflows"],
   },
@@ -95,7 +95,7 @@ const process = [
 
 const caseStudy = {
   metric: "3x Lead-to-Customer Conversion",
-  industry: "B2B SaaS Platform",
+  industry: "B2B Technology Platform",
   challenge: "Trial users signed up but only 12% converted to paid. Marketing had no visibility into product usage, and sales couldn't prioritize who to contact.",
   solution: "Built behavioral automation triggered by feature usage, created personalized nurture paths based on use case, and implemented product-qualified lead scoring to prioritize sales outreach.",
   result: "Conversion rate increased from 12% to 37%. Sales involvement in trial conversions reduced by 60%. Marketing proved $1.2M in attributed pipeline in the first quarter.",
