@@ -253,7 +253,7 @@ function WorkMegaMenu({ onClose }: { onClose: () => void }) {
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {/* Case Studies */}
       <Link
-        href="/work"
+        href="/work#case-studies"
         onClick={onClose}
         className="group block p-6 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 text-white"
       >
@@ -270,7 +270,7 @@ function WorkMegaMenu({ onClose }: { onClose: () => void }) {
 
       {/* Guides */}
       <Link
-        href="/resources/guides"
+        href="/work#guides"
         onClick={onClose}
         className="group block p-6 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-gray-50 transition-all"
       >
@@ -285,7 +285,7 @@ function WorkMegaMenu({ onClose }: { onClose: () => void }) {
 
       {/* Poco */}
       <Link
-        href="/work"
+        href="/work#poco"
         onClick={onClose}
         className="group block p-6 rounded-xl bg-gradient-to-br from-teal-600 to-emerald-600 text-white"
       >
@@ -496,7 +496,7 @@ export function Navigation() {
                     <ul className="space-y-1 pl-4 border-l-2 border-teal-100">
                       <li>
                         <Link
-                          href="/work"
+                          href="/work#case-studies"
                           onClick={() => setIsMobileMenuOpen(false)}
                           className="block py-2"
                         >
@@ -506,7 +506,7 @@ export function Navigation() {
                       </li>
                       <li>
                         <Link
-                          href="/resources/guides"
+                          href="/work#guides"
                           onClick={() => setIsMobileMenuOpen(false)}
                           className="block py-2"
                         >
@@ -516,7 +516,7 @@ export function Navigation() {
                       </li>
                       <li>
                         <Link
-                          href="/work"
+                          href="/work#poco"
                           onClick={() => setIsMobileMenuOpen(false)}
                           className="block py-2"
                         >
