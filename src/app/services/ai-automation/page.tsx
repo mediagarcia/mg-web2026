@@ -4,6 +4,7 @@ import { CTABanner } from "@/components/sections";
 import { ServiceFAQ } from "@/components/service-page";
 import Link from "next/link";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 
 export const metadata: Metadata = {
   title: "AI-Powered Automation | Media Garcia",
@@ -205,6 +206,8 @@ const relatedServices = [
 ];
 
 export default function AIAutomationPage() {
+  const serviceImage = getImageForSlot("services/ai-automation");
+
   return (
     <>
       <PageHeader
@@ -215,6 +218,7 @@ export default function AIAutomationPage() {
           { label: "Services", href: "/services" },
           { label: "AI-Powered Automation", href: "/services/ai-automation" },
         ]}
+        backgroundImage={serviceImage ? { src: serviceImage, color: "purple", pattern: "arc" } : undefined}
       />
 
       {/* Pain Point Section */}

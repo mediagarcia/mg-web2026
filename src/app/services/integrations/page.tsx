@@ -4,6 +4,7 @@ import { CTABanner } from "@/components/sections";
 import { ServiceFAQ } from "@/components/service-page";
 import Link from "next/link";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 
 export const metadata: Metadata = {
   title: "Custom Integrations | Media Garcia",
@@ -175,6 +176,8 @@ const relatedServices = [
 ];
 
 export default function IntegrationsPage() {
+  const serviceImage = getImageForSlot("services/integrations");
+
   return (
     <>
       <PageHeader
@@ -185,6 +188,7 @@ export default function IntegrationsPage() {
           { label: "Services", href: "/services" },
           { label: "Custom Integrations", href: "/services/integrations" },
         ]}
+        backgroundImage={serviceImage ? { src: serviceImage, color: "purple", pattern: "grid" } : undefined}
       />
 
       {/* Pain Point Section */}

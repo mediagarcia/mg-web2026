@@ -4,6 +4,7 @@ import { CTABanner } from "@/components/sections";
 import { ServiceFAQ } from "@/components/service-page";
 import Link from "next/link";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 
 export const metadata: Metadata = {
   title: "Growth Marketing Services | Media Garcia",
@@ -192,6 +193,8 @@ const relatedServices = [
 ];
 
 export default function MarketingPage() {
+  const serviceImage = getImageForSlot("services/marketing");
+
   return (
     <>
       <PageHeader
@@ -202,6 +205,7 @@ export default function MarketingPage() {
           { label: "Services", href: "/services" },
           { label: "Growth Marketing", href: "/services/marketing" },
         ]}
+        backgroundImage={serviceImage ? { src: serviceImage, color: "orange", pattern: "arc" } : undefined}
       />
 
       {/* Pain Point Section */}

@@ -116,13 +116,22 @@ export function Footer() {
 
         {/* Newsletter Section */}
         <div className="mt-16 pt-12 border-t border-white/10">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
-            <div>
-              <h4 className="text-lg font-bold mb-2">Stay in the loop</h4>
-              <p className="text-sm text-white/60">Get CRM tips and growth strategies delivered to your inbox.</p>
-            </div>
-            <div className="w-full md:w-80">
-              <HubSpotForm formId={NEWSLETTER_FORM_ID} />
+          <div className="bg-white/[0.04] rounded-2xl p-8 md:p-10">
+            <div className="flex flex-col md:flex-row md:items-center gap-8">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-full bg-teal-500/15 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-lg font-bold">Stay in the loop</h4>
+                </div>
+                <p className="text-sm text-white/50 leading-relaxed">Get CRM tips, growth strategies, and HubSpot insights delivered to your inbox. No spam, unsubscribe anytime.</p>
+              </div>
+              <div className="w-full md:w-[340px] flex-shrink-0">
+                <HubSpotForm formId={NEWSLETTER_FORM_ID} theme="dark" />
+              </div>
             </div>
           </div>
         </div>

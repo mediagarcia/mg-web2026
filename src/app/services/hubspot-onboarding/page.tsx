@@ -4,6 +4,7 @@ import { CTABanner } from "@/components/sections";
 import Link from "next/link";
 import { ServiceFAQ } from "@/components/service-page";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 
 export const metadata: Metadata = {
   title: "CRM Onboarding | Media Garcia",
@@ -145,6 +146,8 @@ const relatedServices = [
 ];
 
 export default function CRMOnboardingPage() {
+  const serviceImage = getImageForSlot("services/crm-onboarding");
+
   return (
     <>
       <PageHeader
@@ -155,6 +158,7 @@ export default function CRMOnboardingPage() {
           { label: "Services", href: "/services" },
           { label: "CRM Onboarding", href: "/services/hubspot-onboarding" },
         ]}
+        backgroundImage={serviceImage ? { src: serviceImage, color: "teal", pattern: "spiral" } : undefined}
       />
 
       {/* Pain Point Section */}

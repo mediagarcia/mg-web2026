@@ -4,6 +4,7 @@ import { CTABanner } from "@/components/sections";
 import Link from "next/link";
 import { ServiceFAQ } from "@/components/service-page";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 
 export const metadata: Metadata = {
   title: "CRM Migration | Media Garcia",
@@ -159,6 +160,8 @@ const relatedServices = [
 ];
 
 export default function CRMMigrationPage() {
+  const serviceImage = getImageForSlot("services/crm-migration");
+
   return (
     <>
       <PageHeader
@@ -169,6 +172,7 @@ export default function CRMMigrationPage() {
           { label: "Services", href: "/services" },
           { label: "CRM Migration", href: "/services/crm-migration" },
         ]}
+        backgroundImage={serviceImage ? { src: serviceImage, color: "teal", pattern: "grid" } : undefined}
       />
 
       {/* Pain Point Section */}
