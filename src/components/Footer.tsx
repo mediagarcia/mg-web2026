@@ -29,7 +29,7 @@ const footerLinks = {
     { label: "ROI Calculator", href: "/resources/roi-calculator" },
     { label: "TCO Calculator", href: "/resources/tco-calculator" },
     { label: "Resource Center", href: "/resources" },
-    { label: "Blog", href: "/blog" },
+    { label: "Blog", href: "https://www.mediagarcia.com/blog" },
   ],
 };
 
