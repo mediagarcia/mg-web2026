@@ -481,7 +481,7 @@ export function Navigation() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-white lg:hidden overflow-y-auto"
+            className="fixed inset-0 z-[45] bg-white lg:hidden overflow-y-auto"
             data-testid="mobile-menu"
           >
             <div className="pt-24 px-6 pb-12 min-h-full flex flex-col">
