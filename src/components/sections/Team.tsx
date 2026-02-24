@@ -28,6 +28,7 @@ const team = [
     initials: "MG",
     image: "/images/logos/mg-mark-black.png",
     gradient: "from-orange-red-500 to-orange-red-600",
+    isLogo: true,
   },
 ];
 
@@ -100,12 +101,12 @@ export function Team() {
               className="group text-center"
             >
               {/* Avatar */}
-              <div className={`relative w-24 h-24 lg:w-32 lg:h-32 mx-auto rounded-full overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300 ring-4 ring-white shadow-lg`}>
+              <div className={`relative w-24 h-24 lg:w-32 lg:h-32 mx-auto rounded-full overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-300 ring-4 ring-white shadow-lg ${member.isLogo ? "bg-teal-500" : ""}`}>
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="object-cover"
+                  className={`${member.isLogo ? "object-contain p-4 brightness-0 invert" : "object-cover grayscale"}`}
                 />
               </div>
 

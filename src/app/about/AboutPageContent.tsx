@@ -460,7 +460,7 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale"
                   />
                 </div>
                 <h3 className="text-lg font-bold text-black">
