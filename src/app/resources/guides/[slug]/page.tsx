@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { guides, getGuideBySlug } from "@/data/guides";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 
 import ZendeskToHubSpotGuide from "../_content/zendesk-to-hubspot";
 import OperationsHubPlaybook from "../_content/operations-hub-playbook";
@@ -30,6 +31,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Guide Not Found | Media Garcia" };
   }
 
+  const ogImage = guide.imageSlot ? getImageForSlot(guide.imageSlot) : null;
+
   return {
     title: `${guide.title} | Media Garcia`,
     description: guide.description,
@@ -38,11 +41,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: guide.description,
       type: "article",
       url: `https://mediagarcia.com/resources/guides/${guide.slug}`,
+      ...(ogImage ? { images: [{ url: ogImage }] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: guide.title,
       description: guide.description,
+      ...(ogImage ? { images: [ogImage] } : {}),
     },
   };
 }

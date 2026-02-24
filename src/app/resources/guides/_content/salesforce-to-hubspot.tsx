@@ -8,13 +8,22 @@ import {
   StatHighlight,
   InlineCTA,
   RelatedGuides,
+  SectionImage,
 } from "@/components/pillar-page";
 import { CTABanner } from "@/components/sections";
 import { getGuideBySlug, getRelatedGuides } from "@/data/guides";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 
 export default function SalesforceToHubSpotGuide() {
   const guide = getGuideBySlug("salesforce-to-hubspot")!;
   const related = getRelatedGuides("salesforce-to-hubspot");
+
+  const whyHubspotImg = getImageForSlot("guides/sfdc/why-hubspot");
+  const preMigrationImg = getImageForSlot("guides/sfdc/pre-migration");
+  const dataCleanupImg = getImageForSlot("guides/sfdc/data-cleanup");
+  const migrationImg = getImageForSlot("guides/sfdc/migration");
+  const qaTestingImg = getImageForSlot("guides/sfdc/qa-testing");
+  const postMigrationImg = getImageForSlot("guides/sfdc/post-migration");
 
   return (
     <PillarPageLayout guide={guide}>
@@ -38,6 +47,15 @@ export default function SalesforceToHubSpotGuide() {
           happens after the handoff. And leadership waits days for reports that
           should be available on demand.
         </p>
+
+        {whyHubspotImg && (
+          <SectionImage
+            src={whyHubspotImg}
+            alt="Simplification — from complexity to clarity"
+            color="orange"
+            pattern="arc"
+          />
+        )}
 
         <StatHighlight
           stats={[
@@ -217,6 +235,14 @@ export default function SalesforceToHubSpotGuide() {
           because the preparation was incomplete.
         </p>
 
+        {preMigrationImg && (
+          <SectionImage
+            src={preMigrationImg}
+            alt="Careful preparation before migration"
+            color="orange"
+          />
+        )}
+
         <ProcessSteps
           variant="horizontal"
           steps={[
@@ -356,6 +382,15 @@ export default function SalesforceToHubSpotGuide() {
           is not glamorous, but it is the single highest-ROI activity in the
           entire migration process.
         </p>
+
+        {dataCleanupImg && (
+          <SectionImage
+            src={dataCleanupImg}
+            alt="Data quality filtering and cleanup"
+            color="teal"
+            pattern="grid"
+          />
+        )}
 
         <ChecklistSection
           title="Data Cleanup Priorities"
@@ -602,6 +637,14 @@ export default function SalesforceToHubSpotGuide() {
           your HubSpot instance, moving your data, handling custom objects, and
           validating everything before your team ever touches the new system.
         </p>
+
+        {migrationImg && (
+          <SectionImage
+            src={migrationImg}
+            alt="Precision data migration"
+            color="teal"
+          />
+        )}
 
         <ProcessSteps
           variant="horizontal"
@@ -960,6 +1003,15 @@ export default function SalesforceToHubSpotGuide() {
           system meets three criteria: quality, consistency, and accessibility.
         </p>
 
+        {qaTestingImg && (
+          <SectionImage
+            src={qaTestingImg}
+            alt="Thorough quality validation and testing"
+            color="teal"
+            pattern="spiral"
+          />
+        )}
+
         <h3 className="text-xl font-bold text-black mt-6 mb-4">
           Data Quality Validation
         </h3>
@@ -1113,6 +1165,15 @@ export default function SalesforceToHubSpotGuide() {
           prevent your new HubSpot instance from accumulating the same technical
           debt you just left behind.
         </p>
+
+        {postMigrationImg && (
+          <SectionImage
+            src={postMigrationImg}
+            alt="Nurturing growth after launch"
+            color="orange"
+            pattern="arc"
+          />
+        )}
 
         <StatHighlight
           stats={[
