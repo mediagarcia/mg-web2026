@@ -9,9 +9,12 @@ interface CaseStudiesWithPreviewProps {
 
 // Map case study slugs to their base slot names
 const slugToBaseSlot: Record<string, string> = {
-  "healthcare-integration": "case-study-healthcare",
-  "lead-generation-saas": "case-study-saas",
-  "crm-migration": "case-study-crm",
+  "advi-health-crm-optimization": "case-study-advi",
+  "current-energy-integrations": "case-study-current-energy",
+  "mens-pro-crm-enablement": "case-study-menspro",
+  "mipi-alliance-service-hub": "case-study-mipi",
+  "eag-crm-data-analytics": "case-study-eag",
+  "xl-feet-ecommerce-growth": "case-study-xlfeet",
 };
 
 export function CaseStudiesWithPreview({ defaultImages }: CaseStudiesWithPreviewProps = {}) {
@@ -56,9 +59,12 @@ export function CaseStudiesWithPreview({ defaultImages }: CaseStudiesWithPreview
   const images: CaseStudyImages = isPreviewMode
     ? {
         generic: getCurrentImagePath("case-studies-generic", defaultImages?.generic ?? undefined),
-        "healthcare-integration": getImageForSlug("healthcare-integration"),
-        "lead-generation-saas": getImageForSlug("lead-generation-saas"),
-        "crm-migration": getImageForSlug("crm-migration"),
+        "advi-health-crm-optimization": getImageForSlug("advi-health-crm-optimization"),
+        "current-energy-integrations": getImageForSlug("current-energy-integrations"),
+        "mens-pro-crm-enablement": getImageForSlug("mens-pro-crm-enablement"),
+        "mipi-alliance-service-hub": getImageForSlug("mipi-alliance-service-hub"),
+        "eag-crm-data-analytics": getImageForSlug("eag-crm-data-analytics"),
+        "xl-feet-ecommerce-growth": getImageForSlug("xl-feet-ecommerce-growth"),
       }
     : defaultImages ?? {};
 

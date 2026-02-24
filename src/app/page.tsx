@@ -1,4 +1,4 @@
-import { HeroWithPreview, ClientLogos, Services, Platforms, Stats, IndustriesWithPreview, WhyUsWithPreview, Process, Certifications, Values, CTABanner, Testimonials, CaseStudiesWithPreview, FAQ, Team, Contact } from "@/components/sections";
+import { HeroWithPreview, ClientLogos, Services, Platforms, Stats, IndustriesWithPreview, WhyUsWithPreview, Process, Values, CTABanner, Testimonials, CaseStudiesWithPreview, FAQ, Team, Contact } from "@/components/sections";
 import { HomePageWrapper } from "@/components/HomePageWrapper";
 import { getImageForSlot, getVersionedImageForSlot } from "@/lib/images/get-image-for-slot";
 export default function Home() {
@@ -14,9 +14,12 @@ export default function Home() {
   // Case study images - auto-discovers highest version
   const caseStudyImages = {
     generic: getImageForSlot("case-studies-generic"),
-    "healthcare-integration": getVersionedImageForSlot("case-study-healthcare"),
-    "lead-generation-saas": getVersionedImageForSlot("case-study-saas"),
-    "crm-migration": getVersionedImageForSlot("case-study-crm"),
+    "advi-health-crm-optimization": getVersionedImageForSlot("case-study-advi"),
+    "current-energy-integrations": getVersionedImageForSlot("case-study-current-energy"),
+    "mens-pro-crm-enablement": getVersionedImageForSlot("case-study-menspro"),
+    "mipi-alliance-service-hub": getVersionedImageForSlot("case-study-mipi"),
+    "eag-crm-data-analytics": getVersionedImageForSlot("case-study-eag"),
+    "xl-feet-ecommerce-growth": getVersionedImageForSlot("case-study-xlfeet"),
   };
 
   // Why Us background image
@@ -32,7 +35,6 @@ export default function Home() {
       <IndustriesWithPreview defaultImages={industryImages} />
       <WhyUsWithPreview defaultImage={whyUsImage} slot="why-us" />
       <Process />
-      <Certifications />
       <Values />
       <CTABanner />
       <Testimonials />
