@@ -142,6 +142,105 @@ export default function TermsPage() {
               Unless otherwise specified herein, this agreement constitutes the entire agreement between the user and Media Garcia with respect to the Site and it supersedes all prior or contemporaneous communications and proposals, whether electronic, oral or written, between the user and Media Garcia with respect to the Site. A printed version of this agreement and of any notice given in electronic form shall be admissible in judicial or administrative proceedings based upon or relating to this agreement to the same extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form. It is the express wish to the parties that this agreement and all related documents be written in English.
             </p>
 
+            <h2 className="text-2xl font-bold text-black mt-12 mb-4">Webinar Terms &amp; Conditions</h2>
+            <p className="text-black/70 mb-6">
+              This Disclaimer applies to all content provided regarding Media Garcia programs and may change without notice at Media Garcia&apos;s discretion. By attending, users acknowledge and agree to this Disclaimer.
+            </p>
+
+            <h3 className="text-xl font-bold text-black mt-8 mb-3">DISCLAIMER</h3>
+
+            <h4 className="text-lg font-semibold text-black mt-6 mb-2">1) No advice</h4>
+            <p className="text-black/70 mb-6">
+              This webinar contains general information about business consulting. The information is not business advice and should not be treated as such.
+            </p>
+
+            <h4 className="text-lg font-semibold text-black mt-6 mb-2">2) No warranties</h4>
+            <p className="text-black/70 mb-6">
+              All information provided through this webinar is provided without any representations or warranties, express or implied. Media Garcia makes no representations or warranties in relation to the content of webinars or any other business-related information provided through this webinar.
+            </p>
+            <p className="text-black/70 mb-6">
+              Without prejudice to the generality of the foregoing paragraph, Media Garcia does not warrant or represent that the business-related information on this webinar:
+            </p>
+            <p className="text-black/70 mb-2 pl-6">(a) is complete, true, accurate, up to date or non-misleading; or</p>
+            <p className="text-black/70 mb-6 pl-6">(b) constitutes professional advice</p>
+
+            <h4 className="text-lg font-semibold text-black mt-6 mb-2">3) Professional assistance</h4>
+            <p className="text-black/70 mb-6">
+              You must not rely on the information on this webinar as an alternative to business advice from other professionals.
+            </p>
+            <p className="text-black/70 mb-6">
+              If you have any specific questions about any business matter, you should consult a variety of professionals and resources.
+            </p>
+
+            <h4 className="text-lg font-semibold text-black mt-6 mb-2">4) Limiting liability</h4>
+            <p className="text-black/70 mb-6">
+              Media Garcia is not responsible to you or anyone else for any loss suffered in connection with the use of this webinar or any of the content. This includes, but is not limited to, the transmission of any computer virus.
+            </p>
+            <p className="text-black/70 mb-6">
+              Nothing in this Disclaimer will:
+            </p>
+            <p className="text-black/70 mb-2 pl-6">(a) limit or exclude Media Garcia liability for death or personal injury resulting from negligence;</p>
+            <p className="text-black/70 mb-2 pl-6">(b) limit or exclude Media Garcia liability for fraud or fraudulent misrepresentation;</p>
+            <p className="text-black/70 mb-2 pl-6">(c) limit any of Media Garcia liabilities in any way that is not permitted under applicable law; or</p>
+            <p className="text-black/70 mb-6 pl-6">(d) exclude any of Media Garcia liabilities that may not be excluded under applicable law.</p>
+
+            <h3 className="text-xl font-bold text-black mt-8 mb-3">Terms of Use</h3>
+            <p className="text-black/70 mb-6">
+              These Terms of Use apply to all content provided through the Media Garcia webinar. These Terms of Use may change without notice at the discretion of Media Garcia. These Terms of Use are in no way limited or altered by any other terms or conditions on this webinar. By continuing to access this webinar, you acknowledge and agree to the Terms of Use as set out below.
+            </p>
+
+            <h4 className="text-lg font-semibold text-black mt-6 mb-2">1) Intellectual Property</h4>
+            <p className="text-black/70 mb-6">
+              Unless otherwise indicated, Media Garcia owns the copyright for the content on this webinar. Some of the copyright for the content on this webinar may be owned by individual presenters and is included on our webinar under a license or agreement.
+            </p>
+            <p className="text-black/70 mb-6">
+              The content must under no circumstances be recorded or reproduced.
+            </p>
+            <p className="text-black/70 mb-6">
+              If you seek to reproduce or otherwise use the content in any way it is your responsibility to obtain approval for such use where necessary. Any breach of copyright, including recording the presentation or any unauthorized use of the material may lead to legal action.
+            </p>
+
+            <h4 className="text-lg font-semibold text-black mt-6 mb-2">2) Learning Outcomes</h4>
+            <p className="text-black/70 mb-6">
+              Media Garcia is not liable for the detailed content of any webinars, quality of presentation, or if learning outcomes did not entirely meet expectations.
+            </p>
+
+            <h4 className="text-lg font-semibold text-black mt-6 mb-2">3) Links from this webinar</h4>
+            <p className="text-black/70 mb-6">
+              This webinar may contain links to other websites over which Media Garcia has no control. Media Garcia makes no representations about the accuracy of the information contained on those websites. We are not liable for the content on those websites.
+            </p>
+
+            <h4 className="text-lg font-semibold text-black mt-6 mb-2">4) Registrations</h4>
+            <p className="text-black/70 mb-6">
+              By registering for a webinar, consent is given for application details to be provided to Zoom to set up the webinar. You can view Zoom policies on their website by following this link: <a href="https://zoom.us/terms" className="text-teal-500 hover:text-teal-600" target="_blank" rel="noopener noreferrer">https://zoom.us/terms</a>
+            </p>
+            <p className="text-black/70 mb-6">
+              By using the credit card facilities you agree that the details provided will be processed by PayPal. For details of PayPal&apos;s terms and conditions, click here: <a href="https://www.paypal.com/au/webapps/mpp/ua/useragreement-full" className="text-teal-500 hover:text-teal-600" target="_blank" rel="noopener noreferrer">https://www.paypal.com/au/webapps/mpp/ua/useragreement-full</a>
+            </p>
+
+            <h4 className="text-lg font-semibold text-black mt-6 mb-2">6) Rectification</h4>
+            <p className="text-black/70 mb-6">
+              Whilst Media Garcia takes considerable care in reviewing the content of webinars and any other business-related information provided through this webinar, if webinar attendees believe that any information provided is incorrect or contentious, they are encouraged to use the contact us link so that the issue may be reviewed and rectified if necessary.
+            </p>
+
+            <h4 className="text-lg font-semibold text-black mt-6 mb-2">7) Webinars are recorded</h4>
+            <p className="text-black/70 mb-6">
+              The virtual event facility includes a feature that allows audio and any documents and other materials exchanged or viewed during the session to be recorded. By joining a session, you automatically consent to such recordings. If you do not consent to the recording, please contact Media Garcia to discuss your concerns in good time prior to the web-event date.
+            </p>
+
+            <h4 className="text-lg font-semibold text-black mt-6 mb-2">8) Webinar materials</h4>
+            <p className="text-black/70 mb-6">
+              The webinar presenter may provide reference materials for your use during or after the webinar. These may include (but are not limited to) the following:
+            </p>
+            <ul className="list-disc pl-8 text-black/70 mb-6 space-y-1">
+              <li>a workbook</li>
+              <li>a copy of the webinar slides</li>
+              <li>sample documents, templates or other material for use during the webinar</li>
+            </ul>
+            <p className="text-black/70 mb-6">
+              All webinar-related materials remain the copyright of Media Garcia. They must not be distributed to any third party at any time or in any form without written permission from Media Garcia.
+            </p>
+
             <h2 className="text-2xl font-bold text-black mt-12 mb-4">Changes to Terms</h2>
             <p className="text-black/70 mb-6">
               Media Garcia reserves the right, in its sole discretion, to change the Terms under which http://www.mediagarcia.com/ is offered. The most current version of the Terms will supersede all previous versions. Media Garcia encourages you to periodically review the Terms to stay informed of our updates.

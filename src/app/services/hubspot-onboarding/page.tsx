@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ServiceFAQ } from "@/components/service-page";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
 import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
+import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 
 export const metadata: Metadata = {
   title: "CRM Onboarding | Media Garcia",
@@ -147,6 +149,8 @@ const relatedServices = [
 
 export default function CRMOnboardingPage() {
   const serviceImage = getImageForSlot("services/crm-onboarding");
+  const painImage = getImageForSlot("services/crm-onboarding-pain");
+  const caseImage = getImageForSlot("services/crm-onboarding-case");
 
   return (
     <>
@@ -164,16 +168,36 @@ export default function CRMOnboardingPage() {
       {/* Pain Point Section */}
       <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
-              You bought a CRM six months ago. Your team still uses spreadsheets.
-            </h2>
-            <p className="text-lg text-black/60 leading-relaxed mb-6">
-              It&apos;s not their fault. Most CRM implementations fail because they&apos;re built around software features instead of how teams actually work. Your sales reps don&apos;t need a training manual—they need a system that makes their job easier, not harder.
-            </p>
-            <p className="text-lg text-black/80 font-medium">
-              We change that. We set up your CRM the way your team actually works—so they&apos;ll use it without being forced to.
-            </p>
+          <div className={`${painImage ? "grid lg:grid-cols-2 gap-12 items-center" : ""}`}>
+            <div className={painImage ? "" : "max-w-3xl"}>
+              <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
+                You bought a CRM six months ago. Your team still uses spreadsheets.
+              </h2>
+              <p className="text-lg text-black/60 leading-relaxed mb-6">
+                It&apos;s not their fault. Most CRM implementations fail because they&apos;re built around software features instead of how teams actually work. Your sales reps don&apos;t need a training manual—they need a system that makes their job easier, not harder.
+              </p>
+              <p className="text-lg text-black/80 font-medium">
+                We change that. We set up your CRM the way your team actually works—so they&apos;ll use it without being forced to.
+              </p>
+            </div>
+            {painImage && (
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <DuotoneImage
+                  src={painImage}
+                  alt=""
+                  color="teal"
+                  intensity="medium"
+                  className="absolute inset-0"
+                />
+                <GeometricOverlay
+                  pattern="spiral"
+                  position="bottom-right"
+                  color="white"
+                  opacity={0.15}
+                  size={120}
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -386,8 +410,19 @@ export default function CRMOnboardingPage() {
                 </div>
               </div>
             </div>
-            <div className="bg-white/5 rounded-2xl p-8 lg:p-12">
-              <div className="grid grid-cols-2 gap-8">
+            <div className="bg-white/5 rounded-2xl p-8 lg:p-12 relative overflow-hidden">
+              {caseImage && (
+                <div className="absolute inset-0 z-0 opacity-[0.2]">
+                  <DuotoneImage
+                    src={caseImage}
+                    alt=""
+                    color="teal"
+                    intensity="light"
+                    className="absolute inset-0"
+                  />
+                </div>
+              )}
+              <div className="grid grid-cols-2 gap-8 relative z-10">
                 <div className="text-center">
                   <p className="text-4xl font-black text-teal-500">80%</p>
                   <p className="text-white/60 text-sm mt-2">Team Adoption</p>

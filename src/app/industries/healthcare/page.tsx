@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
+import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 
 export const metadata: Metadata = {
   title: "HubSpot for Healthcare Companies | Media Garcia",
@@ -58,6 +61,10 @@ const metrics = [
 ];
 
 export default function HealthcareIndustryPage() {
+  const heroImage = getImageForSlot("industries/healthcare-hero");
+  const challengesImage = getImageForSlot("industries/healthcare-challenges");
+  const solutionsImage = getImageForSlot("industries/healthcare-solutions");
+
   return (
     <>
       <PageHeader
@@ -68,11 +75,17 @@ export default function HealthcareIndustryPage() {
           { label: "Industries", href: "/industries" },
           { label: "Healthcare", href: "/industries/healthcare" },
         ]}
+        backgroundImage={heroImage ? { src: heroImage, color: "teal", pattern: "spiral" } : undefined}
       />
 
       {/* Challenges */}
       <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
         <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-20" intensity="subtle" blur="xl" />
+        {challengesImage && (
+          <div className="absolute inset-0 z-0 opacity-[0.06]">
+            <DuotoneImage src={challengesImage} alt="" color="teal" intensity="light" className="absolute inset-0" />
+          </div>
+        )}
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <h2 className="text-3xl lg:text-4xl font-black text-black mb-12">Healthcare Challenges We Solve</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -90,6 +103,11 @@ export default function HealthcareIndustryPage() {
       <section className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
         <FadingGridPattern type="dots" color="gray" opacity={0.08} spacing={28} fadeDirection="both" />
         <GradientOrb color="purple" size="lg" className="bottom-0 -left-32 opacity-20" intensity="subtle" blur="xl" />
+        {solutionsImage && (
+          <div className="absolute inset-0 z-0 opacity-[0.06]">
+            <DuotoneImage src={solutionsImage} alt="" color="teal" intensity="light" className="absolute inset-0" />
+          </div>
+        )}
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <h2 className="text-3xl lg:text-4xl font-black text-black mb-12">Healthcare-Specific Solutions</h2>
           <div className="grid lg:grid-cols-2 gap-8">

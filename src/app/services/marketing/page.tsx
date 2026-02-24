@@ -5,6 +5,8 @@ import { ServiceFAQ } from "@/components/service-page";
 import Link from "next/link";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
 import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
+import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 
 export const metadata: Metadata = {
   title: "Growth Marketing Services | Media Garcia",
@@ -194,6 +196,8 @@ const relatedServices = [
 
 export default function MarketingPage() {
   const serviceImage = getImageForSlot("services/marketing");
+  const painImage = getImageForSlot("services/marketing-pain");
+  const caseImage = getImageForSlot("services/marketing-case");
 
   return (
     <>
@@ -213,16 +217,24 @@ export default function MarketingPage() {
         <FadingGridPattern type="dots" color="gray" opacity={0.08} spacing={28} fadeDirection="both" />
         <GradientOrb color="orange" size="xl" className="-top-48 -right-48 opacity-30" intensity="subtle" blur="xl" />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
-              You&apos;re running campaigns but can&apos;t prove what&apos;s working
-            </h2>
-            <p className="text-lg text-black/70 mb-6 leading-relaxed">
-              Traffic is up. Leads are coming in. But you can&apos;t tell your CEO which campaigns actually drive revenue. Sales says lead quality is bad. You&apos;re not sure whether to double down on content or spend more on ads.
-            </p>
-            <p className="text-lg text-black/70 leading-relaxed">
-              We run growth marketing programs that connect to revenue. Every campaign is tracked from first touch to closed deal. You&apos;ll know exactly what&apos;s working, what&apos;s not, and where to invest for maximum growth.
-            </p>
+          <div className={`${painImage ? "grid lg:grid-cols-2 gap-12 items-center" : ""}`}>
+            <div className={painImage ? "" : "max-w-3xl"}>
+              <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
+                You&apos;re running campaigns but can&apos;t prove what&apos;s working
+              </h2>
+              <p className="text-lg text-black/70 mb-6 leading-relaxed">
+                Traffic is up. Leads are coming in. But you can&apos;t tell your CEO which campaigns actually drive revenue. Sales says lead quality is bad. You&apos;re not sure whether to double down on content or spend more on ads.
+              </p>
+              <p className="text-lg text-black/70 leading-relaxed">
+                We run growth marketing programs that connect to revenue. Every campaign is tracked from first touch to closed deal. You&apos;ll know exactly what&apos;s working, what&apos;s not, and where to invest for maximum growth.
+              </p>
+            </div>
+            {painImage && (
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <DuotoneImage src={painImage} alt="" color="orange" intensity="medium" className="absolute inset-0" />
+                <GeometricOverlay pattern="arc" position="bottom-right" color="white" opacity={0.15} size={120} />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -402,6 +414,11 @@ export default function MarketingPage() {
         <MeshBackground />
         <GradientOrb color="orange" size="xl" className="-top-32 -left-32 opacity-30" intensity="medium" blur="xl" />
         <GradientOrb color="teal" size="lg" className="bottom-0 right-1/4 opacity-20" intensity="subtle" blur="xl" />
+        {caseImage && (
+          <div className="absolute inset-0 z-0 opacity-[0.15]">
+            <DuotoneImage src={caseImage} alt="" color="orange" intensity="light" className="absolute inset-0" />
+          </div>
+        )}
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-24T02:44:36.147Z",
+  "lastUpdated": "2026-02-24T04:23:24.670Z",
   "slots": {
     "hero": {
       "slot": "hero",
@@ -484,7 +484,7 @@
       "model": "gemini-2.0-flash-exp-image-generation",
       "aspect": "16:9",
       "createdAt": "2026-02-24T02:21:37.566Z",
-      "updatedAt": "2026-02-24T02:44:36.147Z",
+      "updatedAt": "2026-02-24T03:17:33.799Z",
       "files": [
         {
           "filename": "services-crm-onboarding-001.png",
@@ -502,7 +502,7 @@
           "generatedAt": "2026-02-24T02:21:48.716Z"
         }
       ],
-      "selected": "services-crm-onboarding-002.png",
+      "selected": "services-crm-onboarding-003.png",
       "selectedPath": "/images/selected/services-crm-onboarding.png"
     },
     "services/crm-migration": {
@@ -720,6 +720,735 @@
       ],
       "selected": "services-marketing-001.png",
       "selectedPath": "/images/selected/services-marketing.png"
+    },
+    "services/crm-onboarding-pain": {
+      "slot": "services/crm-onboarding-pain",
+      "prompt": "Fine art photograph of a compass lying on a blank, unmarked map. The compass needle spins uncertainly. Soft directional light, vast empty space around it. Metaphor for starting a journey without guidance or direction. Minimal, contemplative. Gallery-quality, high contrast, muted tones. No technology, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:05:28.067Z",
+      "updatedAt": "2026-02-24T04:23:02.847Z",
+      "files": [
+        {
+          "filename": "services-crm-onboarding-pain-001.png",
+          "path": "/images/generated/services-crm-onboarding-pain/services-crm-onboarding-pain-001.png",
+          "generatedAt": "2026-02-24T04:05:31.712Z"
+        },
+        {
+          "filename": "services-crm-onboarding-pain-002.png",
+          "path": "/images/generated/services-crm-onboarding-pain/services-crm-onboarding-pain-002.png",
+          "generatedAt": "2026-02-24T04:05:35.560Z"
+        },
+        {
+          "filename": "services-crm-onboarding-pain-003.png",
+          "path": "/images/generated/services-crm-onboarding-pain/services-crm-onboarding-pain-003.png",
+          "generatedAt": "2026-02-24T04:05:41.009Z"
+        }
+      ],
+      "selected": "services-crm-onboarding-pain-002.png",
+      "selectedPath": "/images/selected/services-crm-onboarding-pain.png"
+    },
+    "services/crm-migration-pain": {
+      "slot": "services/crm-migration-pain",
+      "prompt": "Fine art photograph of an old weathered bridge with missing planks, spanning between two cliff edges. Fog below obscuring the gap. Metaphor for the risky, uncertain gap between old and new systems. Dramatic atmospheric light, moody and tense. Gallery-quality, high contrast, muted earth tones. No technology, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:05:44.249Z",
+      "updatedAt": "2026-02-24T04:23:12.786Z",
+      "files": [
+        {
+          "filename": "services-crm-migration-pain-001.png",
+          "path": "/images/generated/services-crm-migration-pain/services-crm-migration-pain-001.png",
+          "generatedAt": "2026-02-24T04:05:49.635Z"
+        },
+        {
+          "filename": "services-crm-migration-pain-002.png",
+          "path": "/images/generated/services-crm-migration-pain/services-crm-migration-pain-002.png",
+          "generatedAt": "2026-02-24T04:05:53.250Z"
+        },
+        {
+          "filename": "services-crm-migration-pain-003.png",
+          "path": "/images/generated/services-crm-migration-pain/services-crm-migration-pain-003.png",
+          "generatedAt": "2026-02-24T04:05:56.972Z"
+        }
+      ],
+      "selected": "services-crm-migration-pain-001.png",
+      "selectedPath": "/images/selected/services-crm-migration-pain.png"
+    },
+    "services/marketing-automation-pain": {
+      "slot": "services/marketing-automation-pain",
+      "prompt": "Fine art photograph of hundreds of handwritten letters scattered across a desk, each one slightly different. An exhausted hand rests among them. Metaphor for the overwhelming burden of manual, repetitive work. Warm overhead light, shallow depth of field. Gallery-quality, high contrast, muted warm tones. No technology.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:06:00.451Z",
+      "updatedAt": "2026-02-24T04:23:19.557Z",
+      "files": [
+        {
+          "filename": "services-marketing-automation-pain-001.png",
+          "path": "/images/generated/services-marketing-automation-pain/services-marketing-automation-pain-001.png",
+          "generatedAt": "2026-02-24T04:06:03.970Z"
+        },
+        {
+          "filename": "services-marketing-automation-pain-002.png",
+          "path": "/images/generated/services-marketing-automation-pain/services-marketing-automation-pain-002.png",
+          "generatedAt": "2026-02-24T04:06:07.902Z"
+        },
+        {
+          "filename": "services-marketing-automation-pain-003.png",
+          "path": "/images/generated/services-marketing-automation-pain/services-marketing-automation-pain-003.png",
+          "generatedAt": "2026-02-24T04:06:13.420Z"
+        }
+      ],
+      "selected": "services-marketing-automation-pain-002.png",
+      "selectedPath": "/images/selected/services-marketing-automation-pain.png"
+    },
+    "services/sales-enablement-pain": {
+      "slot": "services/sales-enablement-pain",
+      "prompt": "Fine art still life photography. A blindfolded chess player sitting alone at a board with pieces in disarray, representing inability to see the full picture of sales performance. Muted tones, dramatic side lighting, shallow depth of field. No text, no UI elements.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:06:16.842Z",
+      "updatedAt": "2026-02-24T04:23:24.670Z",
+      "files": [
+        {
+          "filename": "services-sales-enablement-pain-001.png",
+          "path": "/images/generated/services-sales-enablement-pain/services-sales-enablement-pain-001.png",
+          "generatedAt": "2026-02-24T04:06:21.716Z"
+        },
+        {
+          "filename": "services-sales-enablement-pain-002.png",
+          "path": "/images/generated/services-sales-enablement-pain/services-sales-enablement-pain-002.png",
+          "generatedAt": "2026-02-24T04:06:24.946Z"
+        },
+        {
+          "filename": "services-sales-enablement-pain-003.png",
+          "path": "/images/generated/services-sales-enablement-pain/services-sales-enablement-pain-003.png",
+          "generatedAt": "2026-02-24T04:14:40.722Z"
+        }
+      ],
+      "selected": "services-sales-enablement-pain-001.png",
+      "selectedPath": "/images/selected/services-sales-enablement-pain.png"
+    },
+    "services/reporting-pain": {
+      "slot": "services/reporting-pain",
+      "prompt": "Fine art photograph of a dense forest where all the trees look identical, creating a disorienting maze. Flat overcast light, no clear path visible. Metaphor for being lost in data without meaningful insight or direction. Atmospheric, claustrophobic beauty. Gallery-quality, high contrast, muted green-gray tones. No people, no technology.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:06:28.511Z",
+      "updatedAt": "2026-02-24T04:22:20.607Z",
+      "files": [
+        {
+          "filename": "services-reporting-pain-001.png",
+          "path": "/images/generated/services-reporting-pain/services-reporting-pain-001.png",
+          "generatedAt": "2026-02-24T04:06:33.192Z"
+        },
+        {
+          "filename": "services-reporting-pain-002.png",
+          "path": "/images/generated/services-reporting-pain/services-reporting-pain-002.png",
+          "generatedAt": "2026-02-24T04:06:36.682Z"
+        },
+        {
+          "filename": "services-reporting-pain-003.png",
+          "path": "/images/generated/services-reporting-pain/services-reporting-pain-003.png",
+          "generatedAt": "2026-02-24T04:06:41.863Z"
+        }
+      ],
+      "selected": "services-reporting-pain-003.png",
+      "selectedPath": "/images/selected/services-reporting-pain.png"
+    },
+    "services/ai-automation-pain": {
+      "slot": "services/ai-automation-pain",
+      "prompt": "Fine art photograph of an expensive, beautiful toolbox sitting untouched and dusty on a pristine workbench. Tools visible but never used. Golden dust particles in a shaft of light. Metaphor for paying for powerful capabilities that go unused. Still life, contemplative. Gallery-quality, high contrast, warm muted tones. No technology, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:06:45.158Z",
+      "updatedAt": "2026-02-24T04:22:16.020Z",
+      "files": [
+        {
+          "filename": "services-ai-automation-pain-001.png",
+          "path": "/images/generated/services-ai-automation-pain/services-ai-automation-pain-001.png",
+          "generatedAt": "2026-02-24T04:06:48.935Z"
+        },
+        {
+          "filename": "services-ai-automation-pain-002.png",
+          "path": "/images/generated/services-ai-automation-pain/services-ai-automation-pain-002.png",
+          "generatedAt": "2026-02-24T04:06:52.195Z"
+        },
+        {
+          "filename": "services-ai-automation-pain-003.png",
+          "path": "/images/generated/services-ai-automation-pain/services-ai-automation-pain-003.png",
+          "generatedAt": "2026-02-24T04:06:55.825Z"
+        }
+      ],
+      "selected": "services-ai-automation-pain-001.png",
+      "selectedPath": "/images/selected/services-ai-automation-pain.png"
+    },
+    "services/integrations-pain": {
+      "slot": "services/integrations-pain",
+      "prompt": "Fine art photograph of several isolated islands in calm water, each with a single tree. No bridges between them. Aerial perspective, morning mist. Metaphor for disconnected systems operating as islands. Serene but lonely. Gallery-quality, high contrast, muted blue-gray tones. No technology, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:06:59.176Z",
+      "updatedAt": "2026-02-24T04:20:05.090Z",
+      "files": [
+        {
+          "filename": "services-integrations-pain-001.png",
+          "path": "/images/generated/services-integrations-pain/services-integrations-pain-001.png",
+          "generatedAt": "2026-02-24T04:07:04.991Z"
+        },
+        {
+          "filename": "services-integrations-pain-002.png",
+          "path": "/images/generated/services-integrations-pain/services-integrations-pain-002.png",
+          "generatedAt": "2026-02-24T04:07:08.625Z"
+        },
+        {
+          "filename": "services-integrations-pain-003.png",
+          "path": "/images/generated/services-integrations-pain/services-integrations-pain-003.png",
+          "generatedAt": "2026-02-24T04:07:12.421Z"
+        }
+      ],
+      "selected": "services-integrations-pain-003.png",
+      "selectedPath": "/images/selected/services-integrations-pain.png"
+    },
+    "services/development-pain": {
+      "slot": "services/development-pain",
+      "prompt": "Fine art photograph of a beautiful storefront with an elegant door, but the handle is placed too high to reach. Metaphor for a website that looks good but doesn't let visitors convert. Soft natural light, architectural photography. Gallery-quality, high contrast, muted neutral tones. No technology.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:07:15.773Z",
+      "updatedAt": "2026-02-24T04:20:01.471Z",
+      "files": [
+        {
+          "filename": "services-development-pain-001.png",
+          "path": "/images/generated/services-development-pain/services-development-pain-001.png",
+          "generatedAt": "2026-02-24T04:07:20.017Z"
+        },
+        {
+          "filename": "services-development-pain-002.png",
+          "path": "/images/generated/services-development-pain/services-development-pain-002.png",
+          "generatedAt": "2026-02-24T04:07:23.639Z"
+        },
+        {
+          "filename": "services-development-pain-003.png",
+          "path": "/images/generated/services-development-pain/services-development-pain-003.png",
+          "generatedAt": "2026-02-24T04:07:27.306Z"
+        }
+      ],
+      "selected": "services-development-pain-003.png",
+      "selectedPath": "/images/selected/services-development-pain.png"
+    },
+    "services/marketing-pain": {
+      "slot": "services/marketing-pain",
+      "prompt": "Fine art photograph of seeds scattered across rich soil, some sprouting and some not, with no way to tell which is which. Overhead golden hour light. Metaphor for investing in marketing but unable to see which efforts bear fruit. Beautiful, uncertain, natural. Gallery-quality, high contrast, rich earth tones. No technology.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:07:32.393Z",
+      "updatedAt": "2026-02-24T04:19:58.266Z",
+      "files": [
+        {
+          "filename": "services-marketing-pain-001.png",
+          "path": "/images/generated/services-marketing-pain/services-marketing-pain-001.png",
+          "generatedAt": "2026-02-24T04:07:37.929Z"
+        },
+        {
+          "filename": "services-marketing-pain-002.png",
+          "path": "/images/generated/services-marketing-pain/services-marketing-pain-002.png",
+          "generatedAt": "2026-02-24T04:07:41.326Z"
+        },
+        {
+          "filename": "services-marketing-pain-003.png",
+          "path": "/images/generated/services-marketing-pain/services-marketing-pain-003.png",
+          "generatedAt": "2026-02-24T04:07:44.544Z"
+        }
+      ],
+      "selected": "services-marketing-pain-003.png",
+      "selectedPath": "/images/selected/services-marketing-pain.png"
+    },
+    "services/crm-onboarding-case": {
+      "slot": "services/crm-onboarding-case",
+      "prompt": "Professional editorial photograph of a small team in a bright modern office, gathered around a screen showing a clean dashboard. Expressions of focus and confidence. Natural window light, warm tones. Over-shoulder perspective or faces at angle for natural anonymity. Premium corporate photography, shallow depth of field.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T04:07:48.019Z",
+      "updatedAt": "2026-02-24T04:19:54.237Z",
+      "files": [
+        {
+          "filename": "services-crm-onboarding-case-001.png",
+          "path": "/images/generated/services-crm-onboarding-case/services-crm-onboarding-case-001.png",
+          "generatedAt": "2026-02-24T04:07:51.717Z"
+        },
+        {
+          "filename": "services-crm-onboarding-case-002.png",
+          "path": "/images/generated/services-crm-onboarding-case/services-crm-onboarding-case-002.png",
+          "generatedAt": "2026-02-24T04:07:56.081Z"
+        },
+        {
+          "filename": "services-crm-onboarding-case-003.png",
+          "path": "/images/generated/services-crm-onboarding-case/services-crm-onboarding-case-003.png",
+          "generatedAt": "2026-02-24T04:08:22.301Z"
+        }
+      ],
+      "selected": "services-crm-onboarding-case-003.png",
+      "selectedPath": "/images/selected/services-crm-onboarding-case.png"
+    },
+    "services/crm-migration-case": {
+      "slot": "services/crm-migration-case",
+      "prompt": "Professional editorial photograph of a team celebrating a milestone in a modern workspace. High-fives or fist bumps, genuine energy. Large monitor in background showing completed progress. Natural light, candid moment. Faces at angle or motion blur for anonymity. Premium corporate photography, warm tones.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T04:08:25.660Z",
+      "updatedAt": "2026-02-24T04:19:49.498Z",
+      "files": [
+        {
+          "filename": "services-crm-migration-case-001.png",
+          "path": "/images/generated/services-crm-migration-case/services-crm-migration-case-001.png",
+          "generatedAt": "2026-02-24T04:08:33.106Z"
+        },
+        {
+          "filename": "services-crm-migration-case-002.png",
+          "path": "/images/generated/services-crm-migration-case/services-crm-migration-case-002.png",
+          "generatedAt": "2026-02-24T04:08:44.298Z"
+        },
+        {
+          "filename": "services-crm-migration-case-003.png",
+          "path": "/images/generated/services-crm-migration-case/services-crm-migration-case-003.png",
+          "generatedAt": "2026-02-24T04:08:48.545Z"
+        }
+      ],
+      "selected": "services-crm-migration-case-003.png",
+      "selectedPath": "/images/selected/services-crm-migration-case.png"
+    },
+    "services/marketing-automation-case": {
+      "slot": "services/marketing-automation-case",
+      "prompt": "Professional editorial photograph of a marketing professional reviewing campaign analytics on a laptop in a bright, plant-filled office. Coffee nearby, relaxed and confident posture. Person viewed from behind or profile. Natural light streaming in. Premium lifestyle-corporate photography, warm tones, shallow depth of field.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T04:08:51.993Z",
+      "updatedAt": "2026-02-24T04:19:45.691Z",
+      "files": [
+        {
+          "filename": "services-marketing-automation-case-001.png",
+          "path": "/images/generated/services-marketing-automation-case/services-marketing-automation-case-001.png",
+          "generatedAt": "2026-02-24T04:08:55.379Z"
+        },
+        {
+          "filename": "services-marketing-automation-case-002.png",
+          "path": "/images/generated/services-marketing-automation-case/services-marketing-automation-case-002.png",
+          "generatedAt": "2026-02-24T04:08:59.336Z"
+        },
+        {
+          "filename": "services-marketing-automation-case-003.png",
+          "path": "/images/generated/services-marketing-automation-case/services-marketing-automation-case-003.png",
+          "generatedAt": "2026-02-24T04:09:02.689Z"
+        }
+      ],
+      "selected": "services-marketing-automation-case-003.png",
+      "selectedPath": "/images/selected/services-marketing-automation-case.png"
+    },
+    "services/sales-enablement-case": {
+      "slot": "services/sales-enablement-case",
+      "prompt": "Professional editorial photograph of a sales professional confidently presenting to a client across a modern conference table. Laptop and documents visible. Warm natural light. Person viewed from side or over-shoulder. Premium corporate photography, strong composition, shallow depth of field, warm tones.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T04:09:06.140Z",
+      "updatedAt": "2026-02-24T04:19:41.004Z",
+      "files": [
+        {
+          "filename": "services-sales-enablement-case-001.png",
+          "path": "/images/generated/services-sales-enablement-case/services-sales-enablement-case-001.png",
+          "generatedAt": "2026-02-24T04:09:09.433Z"
+        },
+        {
+          "filename": "services-sales-enablement-case-002.png",
+          "path": "/images/generated/services-sales-enablement-case/services-sales-enablement-case-002.png",
+          "generatedAt": "2026-02-24T04:09:13.169Z"
+        },
+        {
+          "filename": "services-sales-enablement-case-003.png",
+          "path": "/images/generated/services-sales-enablement-case/services-sales-enablement-case-003.png",
+          "generatedAt": "2026-02-24T04:09:18.462Z"
+        }
+      ],
+      "selected": "services-sales-enablement-case-002.png",
+      "selectedPath": "/images/selected/services-sales-enablement-case.png"
+    },
+    "services/reporting-case": {
+      "slot": "services/reporting-case",
+      "prompt": "Editorial photography. A small team of 3-4 business professionals gathered around a large wall-mounted display showing colorful data visualizations and dashboards. Modern office with warm lighting, team pointing at insights on screen. Authentic, candid moment of data-driven decision making. No text overlays.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:09:21.753Z",
+      "updatedAt": "2026-02-24T04:19:33.860Z",
+      "files": [
+        {
+          "filename": "services-reporting-case-001.png",
+          "path": "/images/generated/services-reporting-case/services-reporting-case-001.png",
+          "generatedAt": "2026-02-24T04:09:25.436Z"
+        },
+        {
+          "filename": "services-reporting-case-002.png",
+          "path": "/images/generated/services-reporting-case/services-reporting-case-002.png",
+          "generatedAt": "2026-02-24T04:14:47.715Z"
+        },
+        {
+          "filename": "services-reporting-case-003.png",
+          "path": "/images/generated/services-reporting-case/services-reporting-case-003.png",
+          "generatedAt": "2026-02-24T04:14:51.929Z"
+        }
+      ],
+      "selected": "services-reporting-case-003.png",
+      "selectedPath": "/images/selected/services-reporting-case.png"
+    },
+    "services/ai-automation-case": {
+      "slot": "services/ai-automation-case",
+      "prompt": "Professional editorial photograph of a professional reviewing AI-powered insights on a tablet, with a modern workspace in the background. Expressions of discovery and confidence. Person in profile view. Natural light, premium tech-corporate aesthetic. Shallow depth of field, warm tones.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T04:09:28.917Z",
+      "updatedAt": "2026-02-24T04:19:30.350Z",
+      "files": [
+        {
+          "filename": "services-ai-automation-case-001.png",
+          "path": "/images/generated/services-ai-automation-case/services-ai-automation-case-001.png",
+          "generatedAt": "2026-02-24T04:09:32.761Z"
+        },
+        {
+          "filename": "services-ai-automation-case-002.png",
+          "path": "/images/generated/services-ai-automation-case/services-ai-automation-case-002.png",
+          "generatedAt": "2026-02-24T04:09:35.750Z"
+        },
+        {
+          "filename": "services-ai-automation-case-003.png",
+          "path": "/images/generated/services-ai-automation-case/services-ai-automation-case-003.png",
+          "generatedAt": "2026-02-24T04:09:40.143Z"
+        }
+      ],
+      "selected": "services-ai-automation-case-003.png",
+      "selectedPath": "/images/selected/services-ai-automation-case.png"
+    },
+    "services/integrations-case": {
+      "slot": "services/integrations-case",
+      "prompt": "Professional editorial photograph of an IT professional at a standing desk with multiple monitors showing connected system dashboards. Calm, organized environment. Person viewed from behind. Natural light, premium tech workspace aesthetic. Shallow depth of field, cool-warm balanced tones.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T04:09:43.584Z",
+      "updatedAt": "2026-02-24T04:19:26.289Z",
+      "files": [
+        {
+          "filename": "services-integrations-case-001.png",
+          "path": "/images/generated/services-integrations-case/services-integrations-case-001.png",
+          "generatedAt": "2026-02-24T04:09:46.862Z"
+        },
+        {
+          "filename": "services-integrations-case-002.png",
+          "path": "/images/generated/services-integrations-case/services-integrations-case-002.png",
+          "generatedAt": "2026-02-24T04:09:51.113Z"
+        },
+        {
+          "filename": "services-integrations-case-003.png",
+          "path": "/images/generated/services-integrations-case/services-integrations-case-003.png",
+          "generatedAt": "2026-02-24T04:09:55.269Z"
+        }
+      ],
+      "selected": "services-integrations-case-003.png",
+      "selectedPath": "/images/selected/services-integrations-case.png"
+    },
+    "services/development-case": {
+      "slot": "services/development-case",
+      "prompt": "Professional editorial photograph of a marketing team member easily updating content on a laptop, looking satisfied and empowered. Modern bright office with whiteboard nearby. Person in profile or three-quarter view. Natural window light. Premium lifestyle-corporate photography, warm tones.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T04:09:58.613Z",
+      "updatedAt": "2026-02-24T04:19:22.694Z",
+      "files": [
+        {
+          "filename": "services-development-case-001.png",
+          "path": "/images/generated/services-development-case/services-development-case-001.png",
+          "generatedAt": "2026-02-24T04:10:03.294Z"
+        },
+        {
+          "filename": "services-development-case-002.png",
+          "path": "/images/generated/services-development-case/services-development-case-002.png",
+          "generatedAt": "2026-02-24T04:10:06.572Z"
+        },
+        {
+          "filename": "services-development-case-003.png",
+          "path": "/images/generated/services-development-case/services-development-case-003.png",
+          "generatedAt": "2026-02-24T04:10:09.718Z"
+        }
+      ],
+      "selected": "services-development-case-003.png",
+      "selectedPath": "/images/selected/services-development-case.png"
+    },
+    "services/marketing-case": {
+      "slot": "services/marketing-case",
+      "prompt": "Editorial photography. A content strategist or marketing professional working at a laptop in a bright modern office, with a content calendar and campaign analytics visible on a secondary monitor. Warm natural lighting, plants in background. Productive, focused energy. No text overlays.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:10:14.272Z",
+      "updatedAt": "2026-02-24T04:19:18.823Z",
+      "files": [
+        {
+          "filename": "services-marketing-case-001.png",
+          "path": "/images/generated/services-marketing-case/services-marketing-case-001.png",
+          "generatedAt": "2026-02-24T04:10:17.338Z"
+        },
+        {
+          "filename": "services-marketing-case-002.png",
+          "path": "/images/generated/services-marketing-case/services-marketing-case-002.png",
+          "generatedAt": "2026-02-24T04:14:59.376Z"
+        },
+        {
+          "filename": "services-marketing-case-003.png",
+          "path": "/images/generated/services-marketing-case/services-marketing-case-003.png",
+          "generatedAt": "2026-02-24T04:15:02.255Z"
+        }
+      ],
+      "selected": "services-marketing-case-003.png",
+      "selectedPath": "/images/selected/services-marketing-case.png"
+    },
+    "industries/healthcare-hero": {
+      "slot": "industries/healthcare-hero",
+      "prompt": "Editorial photography. A healthcare administrator or practice manager reviewing patient engagement data on a tablet while walking through a modern medical facility hallway. Professional attire, warm lighting, shallow depth of field. Conveys technology meeting healthcare. No text overlays.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:10:20.851Z",
+      "updatedAt": "2026-02-24T04:19:13.872Z",
+      "files": [
+        {
+          "filename": "industries-healthcare-hero-001.png",
+          "path": "/images/generated/industries-healthcare-hero/industries-healthcare-hero-001.png",
+          "generatedAt": "2026-02-24T04:10:24.018Z"
+        },
+        {
+          "filename": "industries-healthcare-hero-002.png",
+          "path": "/images/generated/industries-healthcare-hero/industries-healthcare-hero-002.png",
+          "generatedAt": "2026-02-24T04:10:27.135Z"
+        },
+        {
+          "filename": "industries-healthcare-hero-003.png",
+          "path": "/images/generated/industries-healthcare-hero/industries-healthcare-hero-003.png",
+          "generatedAt": "2026-02-24T04:15:07.727Z"
+        }
+      ],
+      "selected": "industries-healthcare-hero-003.png",
+      "selectedPath": "/images/selected/industries-healthcare-hero.png"
+    },
+    "industries/it-hero": {
+      "slot": "industries/it-hero",
+      "prompt": "Professional editorial photograph of IT professionals collaborating around a standing table in a modern tech office. Laptops and large screen visible. Dynamic, innovative energy. People viewed from side or over-shoulder. Premium tech-corporate photography, cool-warm balanced lighting, shallow depth of field.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:10:30.521Z",
+      "updatedAt": "2026-02-24T04:19:08.505Z",
+      "files": [
+        {
+          "filename": "industries-it-hero-001.png",
+          "path": "/images/generated/industries-it-hero/industries-it-hero-001.png",
+          "generatedAt": "2026-02-24T04:10:34.015Z"
+        },
+        {
+          "filename": "industries-it-hero-002.png",
+          "path": "/images/generated/industries-it-hero/industries-it-hero-002.png",
+          "generatedAt": "2026-02-24T04:10:37.434Z"
+        },
+        {
+          "filename": "industries-it-hero-003.png",
+          "path": "/images/generated/industries-it-hero/industries-it-hero-003.png",
+          "generatedAt": "2026-02-24T04:10:41.095Z"
+        }
+      ],
+      "selected": "industries-it-hero-001.png",
+      "selectedPath": "/images/selected/industries-it-hero.png"
+    },
+    "industries/saas-hero": {
+      "slot": "industries/saas-hero",
+      "prompt": "Professional editorial photograph of a SaaS founder in a modern open office, gesturing toward a whiteboard showing growth metrics and product roadmap. Energetic, startup atmosphere with natural light. Person in profile view. Premium startup photography, warm tones, shallow depth of field.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:10:44.381Z",
+      "updatedAt": "2026-02-24T04:18:57.227Z",
+      "files": [
+        {
+          "filename": "industries-saas-hero-001.png",
+          "path": "/images/generated/industries-saas-hero/industries-saas-hero-001.png",
+          "generatedAt": "2026-02-24T04:10:49.267Z"
+        },
+        {
+          "filename": "industries-saas-hero-002.png",
+          "path": "/images/generated/industries-saas-hero/industries-saas-hero-002.png",
+          "generatedAt": "2026-02-24T04:10:52.946Z"
+        },
+        {
+          "filename": "industries-saas-hero-003.png",
+          "path": "/images/generated/industries-saas-hero/industries-saas-hero-003.png",
+          "generatedAt": "2026-02-24T04:10:56.296Z"
+        }
+      ],
+      "selected": "industries-saas-hero-002.png",
+      "selectedPath": "/images/selected/industries-saas-hero.png"
+    },
+    "industries/healthcare-challenges": {
+      "slot": "industries/healthcare-challenges",
+      "prompt": "Fine art photograph of tangled medical tubing or thread arranged artistically on a clean white surface. Complex knots suggesting bureaucratic complexity and interconnected challenges. Soft overhead light, clinical precision meets organic chaos. Metaphor for healthcare complexity. Gallery-quality, high contrast, muted clinical tones. No people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T04:10:59.708Z",
+      "updatedAt": "2026-02-24T04:18:50.401Z",
+      "files": [
+        {
+          "filename": "industries-healthcare-challenges-001.png",
+          "path": "/images/generated/industries-healthcare-challenges/industries-healthcare-challenges-001.png",
+          "generatedAt": "2026-02-24T04:11:04.605Z"
+        },
+        {
+          "filename": "industries-healthcare-challenges-002.png",
+          "path": "/images/generated/industries-healthcare-challenges/industries-healthcare-challenges-002.png",
+          "generatedAt": "2026-02-24T04:11:07.552Z"
+        },
+        {
+          "filename": "industries-healthcare-challenges-003.png",
+          "path": "/images/generated/industries-healthcare-challenges/industries-healthcare-challenges-003.png",
+          "generatedAt": "2026-02-24T04:11:11.563Z"
+        }
+      ],
+      "selected": "industries-healthcare-challenges-003.png",
+      "selectedPath": "/images/selected/industries-healthcare-challenges.png"
+    },
+    "industries/it-challenges": {
+      "slot": "industries/it-challenges",
+      "prompt": "Fine art photograph of a large jigsaw puzzle nearly complete, but with several missing pieces scattered nearby. Each piece has a different texture or pattern. Metaphor for IT ecosystem fragmentation and the challenge of making everything fit. Clean surface, soft directional light. Gallery-quality, high contrast, muted tones. No people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T04:11:15.049Z",
+      "updatedAt": "2026-02-24T04:18:46.289Z",
+      "files": [
+        {
+          "filename": "industries-it-challenges-001.png",
+          "path": "/images/generated/industries-it-challenges/industries-it-challenges-001.png",
+          "generatedAt": "2026-02-24T04:11:18.531Z"
+        },
+        {
+          "filename": "industries-it-challenges-002.png",
+          "path": "/images/generated/industries-it-challenges/industries-it-challenges-002.png",
+          "generatedAt": "2026-02-24T04:11:22.591Z"
+        },
+        {
+          "filename": "industries-it-challenges-003.png",
+          "path": "/images/generated/industries-it-challenges/industries-it-challenges-003.png",
+          "generatedAt": "2026-02-24T04:11:25.616Z"
+        }
+      ],
+      "selected": "industries-it-challenges-003.png",
+      "selectedPath": "/images/selected/industries-it-challenges.png"
+    },
+    "industries/saas-challenges": {
+      "slot": "industries/saas-challenges",
+      "prompt": "Fine art photograph of an hourglass with sand flowing, but with a crack in the glass causing sand to leak out the side. Metaphor for customer churn and time-to-value pressure. Dramatic side lighting, close-up detail. Gallery-quality, high contrast, warm amber-muted tones. No people, no technology.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T04:11:28.967Z",
+      "updatedAt": "2026-02-24T04:18:40.581Z",
+      "files": [
+        {
+          "filename": "industries-saas-challenges-001.png",
+          "path": "/images/generated/industries-saas-challenges/industries-saas-challenges-001.png",
+          "generatedAt": "2026-02-24T04:11:32.995Z"
+        },
+        {
+          "filename": "industries-saas-challenges-002.png",
+          "path": "/images/generated/industries-saas-challenges/industries-saas-challenges-002.png",
+          "generatedAt": "2026-02-24T04:11:36.314Z"
+        },
+        {
+          "filename": "industries-saas-challenges-003.png",
+          "path": "/images/generated/industries-saas-challenges/industries-saas-challenges-003.png",
+          "generatedAt": "2026-02-24T04:11:41.524Z"
+        }
+      ],
+      "selected": "industries-saas-challenges-003.png",
+      "selectedPath": "/images/selected/industries-saas-challenges.png"
+    },
+    "industries/healthcare-solutions": {
+      "slot": "industries/healthcare-solutions",
+      "prompt": "Professional editorial photograph of a healthcare team reviewing unified patient data on a modern display in a bright clinic conference room. Collaborative, organized, confident. People viewed from behind or profile. Natural light, premium medical-corporate photography, warm tones, shallow depth of field.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T04:11:44.865Z",
+      "updatedAt": "2026-02-24T04:18:33.001Z",
+      "files": [
+        {
+          "filename": "industries-healthcare-solutions-001.png",
+          "path": "/images/generated/industries-healthcare-solutions/industries-healthcare-solutions-001.png",
+          "generatedAt": "2026-02-24T04:11:48.469Z"
+        },
+        {
+          "filename": "industries-healthcare-solutions-002.png",
+          "path": "/images/generated/industries-healthcare-solutions/industries-healthcare-solutions-002.png",
+          "generatedAt": "2026-02-24T04:11:51.429Z"
+        },
+        {
+          "filename": "industries-healthcare-solutions-003.png",
+          "path": "/images/generated/industries-healthcare-solutions/industries-healthcare-solutions-003.png",
+          "generatedAt": "2026-02-24T04:11:54.793Z"
+        }
+      ],
+      "selected": "industries-healthcare-solutions-001.png",
+      "selectedPath": "/images/selected/industries-healthcare-solutions.png"
+    },
+    "industries/it-solutions": {
+      "slot": "industries/it-solutions",
+      "prompt": "Professional editorial photograph of an IT team in a modern workspace, with multiple monitors showing connected dashboards and clean data flows. Collaborative energy, organized workspace. People viewed from side. Natural light balanced with screen glow. Premium tech-corporate photography, cool-warm tones.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T04:11:58.483Z",
+      "updatedAt": "2026-02-24T04:18:21.700Z",
+      "files": [
+        {
+          "filename": "industries-it-solutions-001.png",
+          "path": "/images/generated/industries-it-solutions/industries-it-solutions-001.png",
+          "generatedAt": "2026-02-24T04:12:03.989Z"
+        },
+        {
+          "filename": "industries-it-solutions-002.png",
+          "path": "/images/generated/industries-it-solutions/industries-it-solutions-002.png",
+          "generatedAt": "2026-02-24T04:12:07.786Z"
+        },
+        {
+          "filename": "industries-it-solutions-003.png",
+          "path": "/images/generated/industries-it-solutions/industries-it-solutions-003.png",
+          "generatedAt": "2026-02-24T04:12:12.916Z"
+        }
+      ],
+      "selected": "industries-it-solutions-001.png",
+      "selectedPath": "/images/selected/industries-it-solutions.png"
+    },
+    "industries/saas-solutions": {
+      "slot": "industries/saas-solutions",
+      "prompt": "Editorial photography. A diverse SaaS success team of 4-5 people in a modern office celebrating hitting growth metrics, with a large screen showing upward-trending charts behind them. High-fives and genuine smiles. Bright, energetic atmosphere. No text overlays.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T04:12:18.907Z",
+      "updatedAt": "2026-02-24T04:18:11.852Z",
+      "files": [
+        {
+          "filename": "industries-saas-solutions-001.png",
+          "path": "/images/generated/industries-saas-solutions/industries-saas-solutions-001.png",
+          "generatedAt": "2026-02-24T04:12:22.265Z"
+        },
+        {
+          "filename": "industries-saas-solutions-002.png",
+          "path": "/images/generated/industries-saas-solutions/industries-saas-solutions-002.png",
+          "generatedAt": "2026-02-24T04:15:13.177Z"
+        },
+        {
+          "filename": "industries-saas-solutions-003.png",
+          "path": "/images/generated/industries-saas-solutions/industries-saas-solutions-003.png",
+          "generatedAt": "2026-02-24T04:15:17.204Z"
+        }
+      ],
+      "selected": "industries-saas-solutions-003.png",
+      "selectedPath": "/images/selected/industries-saas-solutions.png"
     }
   }
 }
