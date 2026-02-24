@@ -26,12 +26,6 @@ import {
   ArrowRight,
   Grid3X3,
   Briefcase,
-  Wrench,
-  FlaskConical,
-  Mail,
-  Layout,
-  Link2,
-  FileText,
   type LucideIcon,
 } from "lucide-react";
 
@@ -81,14 +75,6 @@ const resources: MenuItem[] = [
   { label: "Blog", href: "https://www.mediagarcia.com/blog", description: "Latest insights and strategies", icon: BookOpen },
 ];
 
-const portfolioCategories: MenuItem[] = [
-  { label: "Tools & Apps", href: "/work?category=tools", description: "Custom tools and applications", icon: Wrench },
-  { label: "AI Experiments", href: "/work?category=experiments", description: "Cutting-edge AI explorations", icon: FlaskConical },
-  { label: "Email Templates", href: "/work?category=email", description: "Professional email designs", icon: Mail },
-  { label: "Website Templates", href: "/work?category=websites", description: "Modern web designs", icon: Layout },
-  { label: "Integrations", href: "/work?category=integrations", description: "System connections", icon: Link2 },
-  { label: "Reports", href: "/work?category=reports", description: "Data and analytics solutions", icon: FileText },
-];
 
 // ============================================================================
 // MEGA MENU COMPONENT
@@ -263,50 +249,22 @@ function ResourcesMegaMenu({ onClose }: { onClose: () => void }) {
 
 function WorkMegaMenu({ onClose }: { onClose: () => void }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {/* Featured - Case Studies */}
+    <div className="max-w-sm">
       <Link
         href="/work"
         onClick={onClose}
-        className="group block p-6 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 text-white lg:col-span-1"
+        className="group block p-6 rounded-xl bg-gradient-to-br from-teal-600 to-emerald-600 text-white"
       >
         <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mb-3">
           <Briefcase className="w-5 h-5" />
         </div>
-        <h3 className="text-base font-semibold mb-1">Case Studies</h3>
-        <p className="text-sm text-white/80 mb-4">Real results from real clients</p>
+        <h3 className="text-base font-semibold mb-1">Poco</h3>
+        <p className="text-sm text-white/80 mb-4">An AI-driven app we&apos;re building. Coming soon.</p>
         <span className="inline-flex items-center gap-1 text-sm font-medium">
-          View All Work
+          Learn More
           <ArrowRight className="w-4 h-4" />
         </span>
       </Link>
-
-      {/* Portfolio Categories */}
-      <div className="lg:col-span-3">
-        <h3 className="text-xs font-bold uppercase tracking-wider text-teal-600 mb-4">
-          Portfolio Showcase
-        </h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {portfolioCategories.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={onClose}
-              className="group flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors">
-                <item.icon className="w-4 h-4" />
-              </div>
-              <div>
-                <span className="block text-sm font-medium text-gray-900 group-hover:text-teal-600 transition-colors">
-                  {item.label}
-                </span>
-                <span className="block text-xs text-gray-500">{item.description}</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
@@ -501,17 +459,16 @@ export function Navigation() {
                     title="Work"
                     onClose={() => setIsMobileMenuOpen(false)}
                   >
-                    <div className="mb-4">
+                    <div>
                       <Link
                         href="/work"
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="block py-2 pl-4 border-l-2 border-teal-500"
                       >
-                        <span className="text-base font-medium text-teal-600">View All Case Studies</span>
-                        <span className="block text-sm text-gray-500">Real results from real clients</span>
+                        <span className="text-base font-medium text-teal-600">Poco — Coming Soon</span>
+                        <span className="block text-sm text-gray-500">An AI-driven app we&apos;re building</span>
                       </Link>
                     </div>
-                    <MobileMenuCategory title="Portfolio" items={portfolioCategories} onClose={() => setIsMobileMenuOpen(false)} />
                   </MobileMenuSection>
 
                   {/* Industries */}

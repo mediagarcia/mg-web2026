@@ -32,9 +32,9 @@ const stats = [
     context: "Across all hubs",
   },
   {
-    value: 10,
-    suffix: "+",
-    label: "Countries Served",
+    value: 98,
+    suffix: "%",
+    label: "Client Retention Rate",
     context: "From our Saint Paul HQ",
   },
 ];
@@ -612,11 +612,11 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
                 Location
               </span>
               <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
-                Right-Sized Partner, Global Reach
+                Right-Sized Partner, Remote Team
               </h2>
               <p className="text-black/60 leading-relaxed mb-8">
-                Headquartered in Saint Paul, Minnesota, we serve clients across
-                10+ countries. We&apos;re small enough that our founder is
+                Headquartered in Saint Paul, Minnesota, with a distributed
+                remote team. We&apos;re small enough that our founder is
                 involved in every engagement, but experienced enough to handle
                 enterprise complexity and regulated industries.
               </p>
@@ -643,10 +643,8 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
                     />
                   </svg>
                   <div>
-                    <p className="font-bold text-black">
-                      428 Minnesota Street, Suite 500
-                    </p>
-                    <p className="text-black/60">Saint Paul, MN 55101</p>
+                    <p className="font-bold text-black">Saint Paul, MN</p>
+                    <p className="text-black/60">Minnesota, USA</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -672,22 +670,15 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
 
               <div className="flex flex-wrap gap-2">
                 {[
-                  "United States",
-                  "Canada",
-                  "United Kingdom",
-                  "Australia",
-                  "New Zealand",
-                  "India",
-                  "Sweden",
-                  "Spain",
-                  "Colombia",
-                  "Mexico",
-                ].map((country) => (
+                  "Distributed Remote Team",
+                  "US-Based Leadership",
+                  "Flexible Availability",
+                ].map((tag) => (
                   <span
-                    key={country}
+                    key={tag}
                     className="px-3 py-1 bg-gray-100 rounded-full text-xs text-black/70"
                   >
-                    {country}
+                    {tag}
                   </span>
                 ))}
               </div>
@@ -765,7 +756,7 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
                     />
                   </svg>
                 </Link>
-                <span className="text-white/60 text-sm mt-2">30 minutes. No commitment.</span>
+                <span className="text-white/60 text-sm mt-2">15 minutes. No commitment.</span>
               </div>
               <Link
                 href="tel:+18886124250"

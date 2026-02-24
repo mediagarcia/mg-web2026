@@ -103,7 +103,7 @@ const processSteps = [
     number: "01",
     title: "Book a Call",
     description:
-      "30 minutes with Louis. We'll talk about your goals, current systems, and what success looks like. Free, no commitment.",
+      "15 minutes with Louis. We'll talk about your goals, current systems, and what success looks like. Free, no commitment.",
     icon: (
       <svg
         className="w-8 h-8"
@@ -528,7 +528,7 @@ export default function PricingPage() {
               Let&apos;s figure out what you need.
             </h2>
             <p className="text-white/60 mb-8 max-w-2xl mx-auto text-lg">
-              Book a 30-minute strategy call with Louis. No commitment, no sales
+              Book a 15-minute strategy call with Louis. No commitment, no sales
               pitch — just a conversation about where you are and where you want
               to be.
             </p>

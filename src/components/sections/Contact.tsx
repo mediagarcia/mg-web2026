@@ -59,7 +59,7 @@ export function Contact() {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500/10 text-teal-500 text-sm font-bold flex items-center justify-center">2</span>
-                  <p className="text-sm text-black/70"><strong className="text-black">Discovery call</strong> — 30 minutes to understand your goals and challenges.</p>
+                  <p className="text-sm text-black/70"><strong className="text-black">Discovery call</strong> — 15 minutes to understand your goals and challenges.</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-teal-500/10 text-teal-500 text-sm font-bold flex items-center justify-center">3</span>
@@ -118,8 +118,8 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-black/50 font-medium">Location</p>
-                  <p className="text-black font-medium">428 Minnesota Street, Suite 500</p>
-                  <p className="text-black/60 text-sm">Saint Paul, MN 55101</p>
+                  <p className="text-black font-medium">Saint Paul, MN</p>
+                  <p className="text-black/60 text-sm">Minnesota, USA</p>
                 </div>
               </div>
 
@@ -130,8 +130,8 @@ export function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm text-black/50 font-medium">Global Presence</p>
-                  <p className="text-black/60 text-sm">US, Canada, UK, Australia, NZ, India, Sweden, Spain, Colombia, Mexico</p>
+                  <p className="text-sm text-black/50 font-medium">Team</p>
+                  <p className="text-black/60 text-sm">Distributed remote team</p>
                 </div>
               </div>
             </motion.div>

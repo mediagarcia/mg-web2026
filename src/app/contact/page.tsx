@@ -10,7 +10,7 @@ import { ContactInfoFooter } from "./ContactInfoFooter";
 export const metadata: Metadata = {
   title: "Book a Strategy Call | Media Garcia",
   description:
-    "Book a free 30-minute strategy call with a senior revenue operations strategist. No commitment \u2014 get actionable insights for your CRM, RevOps, and growth systems.",
+    "Book a free 15-minute strategy call with a senior revenue operations strategist. No commitment \u2014 get actionable insights for your CRM, RevOps, and growth systems.",
 };
 
 export default function ContactPage() {
@@ -19,7 +19,7 @@ export default function ContactPage() {
       {/* 1. Page Header */}
       <PageHeader
         badge="Book a Strategy Call"
-        title="30 minutes that could change your trajectory"
+        title="15 minutes that could change your trajectory"
         description="A free, no-commitment conversation with a senior strategist about your revenue goals."
         breadcrumbs={[
           { label: "Book a Strategy Call", href: "/contact" },

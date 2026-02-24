@@ -318,7 +318,7 @@ export default function ServicesPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
-              <span className="text-white/40 text-sm mt-3">30 minutes. Platform-agnostic advice.</span>
+              <span className="text-white/40 text-sm mt-3">15 minutes. Platform-agnostic advice.</span>
             </div>
           </div>
         </div>

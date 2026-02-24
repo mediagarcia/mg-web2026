@@ -3,8 +3,6 @@ import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
 import { getImageForSlot } from "@/lib/images/get-image-for-slot";
-import { DuotoneImage } from "@/components/ui/DuotoneImage";
-import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 
 export const metadata: Metadata = {
   title: "HubSpot for IT Companies | Media Garcia",
@@ -55,8 +53,6 @@ const solutions = [
 
 export default function ITIndustryPage() {
   const heroImage = getImageForSlot("industries/it-hero");
-  const challengesImage = getImageForSlot("industries/it-challenges");
-  const solutionsImage = getImageForSlot("industries/it-solutions");
 
   return (
     <>
@@ -74,11 +70,6 @@ export default function ITIndustryPage() {
       {/* Challenges */}
       <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
         <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-20" intensity="subtle" blur="xl" />
-        {challengesImage && (
-          <div className="absolute inset-0 z-0 opacity-[0.06]">
-            <DuotoneImage src={challengesImage} alt="" color="purple" intensity="light" className="absolute inset-0" />
-          </div>
-        )}
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <h2 className="text-3xl lg:text-4xl font-black text-black mb-12">Challenges We Solve</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -96,11 +87,6 @@ export default function ITIndustryPage() {
       <section className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
         <FadingGridPattern type="dots" color="gray" opacity={0.08} spacing={28} fadeDirection="both" />
         <GradientOrb color="purple" size="lg" className="bottom-0 -left-32 opacity-20" intensity="subtle" blur="xl" />
-        {solutionsImage && (
-          <div className="absolute inset-0 z-0 opacity-[0.06]">
-            <DuotoneImage src={solutionsImage} alt="" color="purple" intensity="light" className="absolute inset-0" />
-          </div>
-        )}
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <h2 className="text-3xl lg:text-4xl font-black text-black mb-12">Our IT Industry Solutions</h2>
           <div className="grid lg:grid-cols-2 gap-8">

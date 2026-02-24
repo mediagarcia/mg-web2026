@@ -11,7 +11,7 @@ const steps = [
   {
     number: 2,
     title: "Discovery call",
-    description: "30 minutes to understand your goals and challenges.",
+    description: "15 minutes to understand your goals and challenges.",
   },
   {
     number: 3,

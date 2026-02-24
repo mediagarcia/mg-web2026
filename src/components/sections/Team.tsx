@@ -35,7 +35,7 @@ const team = [
 
 export function Team() {
   return (
-    <section id="about" className="py-[var(--spacing-section)] bg-white">
+    <section id="about" className="pt-0 pb-[var(--spacing-section)] bg-white">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="max-w-3xl mb-16 lg:mb-24">
