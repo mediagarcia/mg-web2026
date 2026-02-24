@@ -23,10 +23,10 @@ const stats = [
     description: "From real clients",
   },
   {
-    value: 10,
-    suffix: "+",
-    label: "Countries Served",
-    description: "Global presence",
+    value: 98,
+    suffix: "%",
+    label: "Client Retention",
+    description: "Average engagement: 3+ years",
   },
 ];
 

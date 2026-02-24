@@ -20,38 +20,38 @@ const DARK_THEME_CSS = `
     border-radius: 9999px !important;
     padding: 10px 16px !important;
     font-size: 14px !important;
-    font-family: inherit !important;
+    font-family: var(--font-family-sans, 'Roboto', system-ui, sans-serif) !important;
     width: 100% !important;
     transition: border-color 0.2s, background 0.2s !important;
   }
   .hs-form .hs-input::placeholder { color: rgba(255,255,255,0.4) !important; }
   .hs-form .hs-input:focus {
     outline: none !important;
-    border-color: #14b8a6 !important;
+    border-color: #3BB782 !important;
     background: rgba(255,255,255,0.12) !important;
   }
   .hs-form .hs-button {
-    background: #14b8a6 !important;
+    background: #3BB782 !important;
     color: #fff !important;
     border: none !important;
     border-radius: 9999px !important;
     padding: 10px 24px !important;
     font-size: 14px !important;
     font-weight: 600 !important;
-    font-family: inherit !important;
+    font-family: var(--font-family-sans, 'Roboto', system-ui, sans-serif) !important;
     cursor: pointer !important;
     transition: background 0.2s !important;
     width: auto !important;
   }
-  .hs-form .hs-button:hover { background: #0d9488 !important; }
+  .hs-form .hs-button:hover { background: #2F9268 !important; }
   .hs-form .hs-error-msgs { margin-top: 4px !important; }
   .hs-form .hs-error-msgs label { color: #f87171 !important; font-size: 12px !important; }
   .hs-form .hs-form-field { margin-bottom: 8px !important; }
   .hs-form label:not(.hs-error-msgs label) { display: none !important; }
   .hs-form .legal-consent-container { margin-top: 4px !important; }
   .hs-form .legal-consent-container p { color: rgba(255,255,255,0.4) !important; font-size: 11px !important; }
-  .hs-form .legal-consent-container a { color: #14b8a6 !important; }
-  .submitted-message { color: #14b8a6 !important; font-size: 14px !important; font-weight: 500 !important; }
+  .hs-form .legal-consent-container a { color: #3BB782 !important; }
+  .submitted-message { color: #3BB782 !important; font-size: 14px !important; font-weight: 500 !important; }
 `;
 
 const LIGHT_THEME_CSS = `
@@ -63,15 +63,15 @@ const LIGHT_THEME_CSS = `
     border-radius: 12px !important;
     padding: 12px 16px !important;
     font-size: 14px !important;
-    font-family: inherit !important;
+    font-family: var(--font-family-sans, 'Roboto', system-ui, sans-serif) !important;
     width: 100% !important;
     transition: border-color 0.2s, box-shadow 0.2s !important;
   }
   .hs-form .hs-input::placeholder { color: #9ca3af !important; }
   .hs-form .hs-input:focus {
     outline: none !important;
-    border-color: #14b8a6 !important;
-    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1) !important;
+    border-color: #3BB782 !important;
+    box-shadow: 0 0 0 3px rgba(59, 183, 130, 0.1) !important;
   }
   .hs-form select.hs-input {
     appearance: auto !important;
@@ -83,19 +83,19 @@ const LIGHT_THEME_CSS = `
     resize: vertical !important;
   }
   .hs-form .hs-button {
-    background: #14b8a6 !important;
+    background: #3BB782 !important;
     color: #fff !important;
     border: none !important;
     border-radius: 9999px !important;
     padding: 14px 32px !important;
     font-size: 15px !important;
     font-weight: 600 !important;
-    font-family: inherit !important;
+    font-family: var(--font-family-sans, 'Roboto', system-ui, sans-serif) !important;
     cursor: pointer !important;
     transition: background 0.2s !important;
     width: 100% !important;
   }
-  .hs-form .hs-button:hover { background: #0d9488 !important; }
+  .hs-form .hs-button:hover { background: #2F9268 !important; }
   .hs-form .hs-error-msgs { margin-top: 4px !important; }
   .hs-form .hs-error-msgs label { color: #ef4444 !important; font-size: 12px !important; }
   .hs-form .hs-form-field { margin-bottom: 12px !important; }
@@ -105,12 +105,12 @@ const LIGHT_THEME_CSS = `
     font-weight: 500 !important;
     color: #374151 !important;
     margin-bottom: 4px !important;
-    font-family: inherit !important;
+    font-family: var(--font-family-sans, 'Roboto', system-ui, sans-serif) !important;
   }
   .hs-form .legal-consent-container { margin-top: 8px !important; }
   .hs-form .legal-consent-container p { color: #6b7280 !important; font-size: 11px !important; }
-  .hs-form .legal-consent-container a { color: #14b8a6 !important; }
-  .submitted-message { color: #14b8a6 !important; font-size: 16px !important; font-weight: 600 !important; }
+  .hs-form .legal-consent-container a { color: #3BB782 !important; }
+  .submitted-message { color: #3BB782 !important; font-size: 16px !important; font-weight: 600 !important; }
 `;
 
 export function HubSpotForm({ portalId, formId, className = "", theme = "light" }: HubSpotFormProps) {

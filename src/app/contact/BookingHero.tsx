@@ -13,7 +13,7 @@ const meetingDetails = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
       </svg>
     ),
-    text: "30-minute video call",
+    text: "15-minute video call",
   },
   {
     icon: (
@@ -36,7 +36,7 @@ const meetingDetails = [
 const coverItems = [
   "Your current revenue operations and tech stack",
   "Where you\u2019re losing deals or leaving money on the table",
-  "Quick wins we can identify in 30 minutes",
+  "Quick wins we can identify in 15 minutes",
   "Whether a formal engagement makes sense (no pressure)",
 ];
 
@@ -113,7 +113,7 @@ export function BookingHero() {
               </svg>
             </a>
             <p className="text-sm text-black/40 mt-3">
-              30 minutes. Free. No sales pitch.
+              15 minutes. Free. No sales pitch.
             </p>
 
             <div className="mt-8 space-y-4">

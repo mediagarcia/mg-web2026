@@ -80,7 +80,7 @@ export function CTABanner() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </Link>
-              <span className="text-white/60 text-sm mt-2">30 minutes with a senior strategist. No commitment.</span>
+              <span className="text-white/60 text-sm mt-2">15 minutes with a senior strategist. No commitment.</span>
             </div>
             <Link
               href="tel:+18886124250"

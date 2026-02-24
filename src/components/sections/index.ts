@@ -15,6 +15,7 @@ export { CTABanner } from "./CTABanner";
 export { Testimonials } from "./Testimonials";
 export { CaseStudies, type CaseStudyImages } from "./CaseStudies";
 export { CaseStudiesWithPreview } from "./CaseStudiesWithPreview";
+export { PocoComingSoon } from "./PocoComingSoon";
 export { FAQ } from "./FAQ";
 export { Team } from "./Team";
 export { Contact } from "./Contact";
