@@ -51,6 +51,7 @@ export const industries = [
   "Manufacturing",
   "Education",
   "Energy",
+  "E-Commerce",
 ] as const;
 
 export const services = [
@@ -350,6 +351,40 @@ We also discovered that on average it took 40 interactions to close-win a deal v
       title: "President & CEO",
       company: "EAG Advertising & Marketing",
     },
+  },
+  {
+    slug: "xl-feet-ecommerce-growth",
+    title: "$111K in Email Revenue in Year One",
+    client: "XL Feet",
+    industry: "E-Commerce",
+    service: "Marketing Automation",
+    description: "Documented operations, built a marketing strategy from scratch, and implemented a growth stack that generated over $111K in email-driven sales in the first year for a niche footwear retailer.",
+    image: "/images/case-studies/case-study-2.jpg",
+    gradient: "from-neon-purple-500 to-teal-700",
+    timeline: "12 months",
+    tags: ["E-Commerce", "Email Marketing", "Operations", "Growth Stack"],
+    featured: false,
+    clientSize: "Niche e-commerce retailer",
+    clientLocation: "United States",
+    publishDate: "2023-06-01",
+    challenge: `XL Feet is a niche e-commerce business serving adults with wide and long feet—a specialized market with a loyal but underserved customer base. The business was growing, but the owner, Adrian, was doing everything himself with no documented processes, no marketing strategy, and no way to measure what was working.
+
+Internal operations ran on institutional knowledge locked in the owner's head. There was no documentation that would allow tasks to be delegated, meaning Adrian was the bottleneck for every decision and every process. Marketing efforts were scattered and undefined—money was being spent without a clear understanding of ROI or what channels were actually driving sales.
+
+On top of that, the systems for marketing, sales, and customer service were completely disjointed. Returns and warranty requests were handled manually, product reviews weren't being collected systematically, and there was no way for customers to get personalized help finding shoes that fit their specific needs. XL Feet needed a partner who could bring structure, strategy, and the right technology to unlock the next stage of growth.`,
+    solution: `Media Garcia took a holistic approach, tackling operations, marketing, and technology in parallel to create compounding impact.
+
+We started with process documentation—mapping out XL Feet's key workflows and creating clear documentation that would enable Adrian to delegate logistical roles to team members. This alone was transformational, freeing up the owner's time to focus on strategic growth rather than day-to-day operations.
+
+For marketing, we developed a cohesive strategy from the ground up and implemented digital marketing tactics with email marketing as the centerpiece. We built automated email sequences for customer lifecycle stages—welcome series, post-purchase follow-ups, win-back campaigns, and product recommendations based on purchase history.
+
+On the technology side, we curated a growth stack of integrated tools: a returns and warranty management system to streamline customer service, a product review collection platform to build social proof, and a conversational bot that guided customers through custom shoe fittings. This last piece was especially valuable for XL Feet's niche—customers with hard-to-fit feet could get personalized recommendations without needing to call or email, creating a self-service experience that felt like working with an in-store specialist.`,
+    results: [
+      { metric: "$111K+", label: "Email revenue in year one" },
+      { metric: "100%", label: "Key processes documented" },
+      { metric: "New", label: "Conversational shoe fitting bot" },
+      { metric: "3+", label: "Growth stack tools integrated" },
+    ],
   },
 ];
 
