@@ -50,6 +50,7 @@ export const industries = [
   "Professional Services",
   "Manufacturing",
   "Education",
+  "Energy",
 ] as const;
 
 export const services = [
@@ -109,42 +110,44 @@ The relationship runs on weekly meetings, a dedicated project manager, and a sha
     },
   },
   {
-    slug: "lead-generation-saas",
-    title: "340% Increase in Qualified Leads",
-    client: "SaaS Technology Company",
-    industry: "SaaS",
-    service: "Marketing Automation",
-    description: "Implemented advanced lead scoring and nurturing workflows that transformed their sales pipeline from chaos to predictable growth.",
+    slug: "current-energy-integrations",
+    title: "5 System Integrations Unifying Energy Operations",
+    client: "Current Energy",
+    industry: "Energy",
+    service: "HubSpot Implementation",
+    description: "Connected HubSpot to NetSuite, Aurora, Paycom, Company Cam, and a custom customer portal—turning disconnected tools into one unified operations platform for a growing energy company.",
     image: "/images/case-studies/case-study-2.jpg",
     gradient: "from-neon-purple-500 to-neon-purple-700",
-    timeline: "8 weeks",
-    tags: ["SaaS", "Lead Generation", "Marketing Automation"],
+    timeline: "Ongoing",
+    tags: ["Energy", "Integrations", "Automation", "Customer Portal"],
     featured: false,
-    clientLogo: "/images/case-studies/logos/saas-tech.svg",
-    clientSize: "100-200 employees",
-    clientLocation: "San Francisco, CA",
-    publishDate: "2024-09-20",
-    challenge: `A B2B SaaS company was generating plenty of leads, but their sales team was overwhelmed. Every form fill went directly to sales, regardless of fit or intent. Reps wasted hours chasing unqualified prospects while high-intent buyers waited days for follow-up.
+    clientLogo: "/images/clients/currentenergy.png",
+    clientSize: "Growing energy company",
+    clientLocation: "United States",
+    publishDate: "2025-01-15",
+    challenge: `Current Energy, a residential and commercial energy company, was scaling fast—but their technology stack wasn't keeping up. Their teams relied on five disconnected systems: HubSpot for CRM, NetSuite for billing, Aurora for solar design, Paycom for HR, and Company Cam for on-site project photos.
 
-Their existing "lead scoring" was based on a single form field asking budget range—which prospects routinely inflated or left blank. Marketing and sales were at odds: marketing claimed they were delivering leads, sales claimed the leads were garbage.
+Every project required manual data entry across multiple platforms. Deal stage updates in HubSpot didn't trigger tasks in the right queues. Inspection scheduling, proposal generation, and project handoffs all required someone to manually move information between systems. The residential team had pipeline data trapped in a legacy system that needed migrating. And when leadership wanted a single view of project status, no one could provide it without hours of manual reconciliation.
 
-The real problem? No system to identify which leads were actually ready to buy versus which needed more nurturing.`,
-    solution: `We implemented a comprehensive lead scoring and nurturing system in HubSpot that tracks behavioral signals across their entire buyer journey.
+On top of the integration challenges, Current Energy needed a customer-facing portal where homeowners and commercial clients could track their project status—something that required HubSpot's ticket pipelines to be repurposed as project phases, with tailored views for different customer types.`,
+    solution: `We took a systems-first approach, mapping Current Energy's entire operational workflow before touching any code. This revealed the critical integration points where manual handoffs were costing the most time.
 
-The scoring model weighs engagement depth (not just email opens, but specific page visits, content downloads, and feature page engagement), firmographic fit, and explicit intent signals. Leads aren't handed to sales until they hit a qualified threshold—and when they do, sales gets full context on what the prospect has engaged with.
+We built the HubSpot-to-NetSuite integration with field mapping and control fields ("Ready for NetSuite" and "Billable" flags) so deals only sync when they're truly ready—preventing the billing team from chasing incomplete records. For Aurora, we set up Zapier automations to create deals in HubSpot automatically from solar designs, with safeguards to prevent duplicate records and data sync errors.
 
-For leads that aren't ready, we built automated nurture sequences tailored to their specific interests and stage. A prospect exploring pricing gets different content than one still researching solutions.`,
+Deal stage-based task automation ensures that when a project moves from design to permitting to inspection, the right team gets the right tasks automatically. We rebuilt stage notes with readable titles and auto-association to deals, so every team member can see project history at a glance.
+
+For the customer portal, we prototyped and designed a solution using HubSpot's native capabilities—validating that ticket pipelines could serve as project phases, building Figma mockups for management review, and ensuring the portal could support multiple customer types with tailored views. We also executed a full residential data migration, moving both open and closed-won deals from the legacy system with zero data loss.`,
     results: [
-      { metric: "340%", label: "Increase in qualified leads" },
-      { metric: "52%", label: "Faster sales cycle" },
-      { metric: "3x", label: "Email engagement rate" },
-      { metric: "$1.2M", label: "Pipeline added in 90 days" },
+      { metric: "5+", label: "Systems integrated with HubSpot" },
+      { metric: "200+", label: "Tasks delivered and tracked" },
+      { metric: "100%", label: "Data migration accuracy" },
+      { metric: "0", label: "Manual deal stage handoffs" },
     ],
     testimonial: {
-      quote: "Our sales team finally trusts the leads they get. Every qualified lead comes with context on what they care about, so conversations start in the right place. Pipeline has never been healthier.",
-      author: "VP of Marketing",
-      title: "VP of Marketing",
-      company: "B2B SaaS Platform",
+      quote: "Before Media Garcia, our teams were copying data between five different systems. Now everything flows automatically—when a deal moves stages, tasks get created, the right people get notified, and our customers can see their project status in real time.",
+      author: "Maria Woo",
+      title: "Operations Lead",
+      company: "Current Energy",
     },
   },
   {
