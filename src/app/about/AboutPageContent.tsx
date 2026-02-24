@@ -137,9 +137,9 @@ const team = [
     linkedin: "https://www.linkedin.com/in/louisgarcia/",
   },
   {
-    name: "Rochelle Schmidt",
-    role: "Account Manager",
-    bio: "Rochelle ensures every client project delivers exceptional results. With deep expertise in project management and client success, she keeps implementations running smoothly and ensures nothing falls through the cracks.",
+    name: "Andrew",
+    role: "COO",
+    bio: "Andrew leads operations at Media Garcia, ensuring seamless delivery across every client engagement. With a sharp focus on process, quality, and execution, he keeps projects running on time and on target—so clients get results without the runaround.",
     image: "/images/team/team-member-2.jpg",
   },
 ];
