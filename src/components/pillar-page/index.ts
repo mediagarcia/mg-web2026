@@ -9,3 +9,4 @@ export { StatHighlight } from "./StatHighlight";
 export { BlueprintCard } from "./BlueprintCard";
 export { InlineCTA } from "./InlineCTA";
 export { RelatedGuides } from "./RelatedGuides";
+export { SectionImage } from "./SectionImage";

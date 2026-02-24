@@ -8,13 +8,22 @@ import {
   StatHighlight,
   InlineCTA,
   RelatedGuides,
+  SectionImage,
 } from "@/components/pillar-page";
 import { CTABanner } from "@/components/sections";
 import { getGuideBySlug, getRelatedGuides } from "@/data/guides";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 
 export default function ZendeskToHubSpotGuide() {
   const guide = getGuideBySlug("zendesk-to-hubspot")!;
   const related = getRelatedGuides("zendesk-to-hubspot");
+
+  const whyMigrateImg = getImageForSlot("guides/zendesk/why-migrate");
+  const selfServiceImg = getImageForSlot("guides/zendesk/self-service");
+  const feedbackImg = getImageForSlot("guides/zendesk/feedback");
+  const reportingImg = getImageForSlot("guides/zendesk/reporting");
+  const dataMigrationImg = getImageForSlot("guides/zendesk/data-migration");
+  const goLiveImg = getImageForSlot("guides/zendesk/go-live");
 
   return (
     <PillarPageLayout guide={guide}>
@@ -38,6 +47,16 @@ export default function ZendeskToHubSpotGuide() {
           giving agents instant access to every interaction a customer has ever
           had with your company.
         </p>
+
+        {whyMigrateImg && (
+          <SectionImage
+            src={whyMigrateImg}
+            alt="Unified access — migrating from Zendesk to HubSpot Service Hub"
+            color="teal"
+            pattern="spiral"
+          />
+        )}
+
         <p>
           The practical upside is significant. When a customer submits a ticket,
           your agent can see the deals they closed, the marketing emails they
@@ -626,6 +645,15 @@ export default function ZendeskToHubSpotGuide() {
           the CRM, which opens up possibilities that a standalone help desk
           cannot match.
         </p>
+
+        {selfServiceImg && (
+          <SectionImage
+            src={selfServiceImg}
+            alt="Self-service knowledge and customer portal"
+            color="teal"
+          />
+        )}
+
         <p>
           The two primary self-service tools in HubSpot Service Hub are the
           Customer Portal and the Knowledge Base. Together, they give your
@@ -768,6 +796,16 @@ export default function ZendeskToHubSpotGuide() {
           Score), CES (Customer Effort Score), and fully custom surveys with
           unlimited questions and branching logic.
         </p>
+
+        {feedbackImg && (
+          <SectionImage
+            src={feedbackImg}
+            alt="Customer feedback loops and voice of the customer"
+            color="teal"
+            pattern="grid"
+          />
+        )}
+
         <p>
           What makes this particularly valuable is the automation layer.
           HubSpot surveys are tied to the CRM, which means you can trigger
@@ -848,6 +886,15 @@ export default function ZendeskToHubSpotGuide() {
           or &ldquo;How many tickets have been submitted by contacts in our
           enterprise segment who also have an active deal in the pipeline?&rdquo;
         </p>
+
+        {reportingImg && (
+          <SectionImage
+            src={reportingImg}
+            alt="Reporting and analytics — finding direction from data"
+            color="teal"
+          />
+        )}
+
         <p>
           HubSpot includes pre-built service analytics dashboards covering
           ticket volume, response time, resolution time, SLA performance, agent
@@ -895,6 +942,16 @@ export default function ZendeskToHubSpotGuide() {
           transfer data, but to transfer it cleanly &mdash; with accurate field
           mappings, preserved associations, and no duplicates.
         </p>
+
+        {dataMigrationImg && (
+          <SectionImage
+            src={dataMigrationImg}
+            alt="Organized, methodical data migration"
+            color="teal"
+            pattern="arc"
+          />
+        )}
+
         <p>
           Start with a comprehensive property mapping exercise. Every Zendesk
           ticket field, user field, and organization field needs a corresponding
@@ -1133,6 +1190,15 @@ export default function ZendeskToHubSpotGuide() {
           Wednesday &mdash; and make sure your migration team is available for
           the entire day to handle issues in real time.
         </p>
+
+        {goLiveImg && (
+          <SectionImage
+            src={goLiveImg}
+            alt="Go-live — launching your new service platform"
+            color="teal"
+            pattern="spiral"
+          />
+        )}
 
         <ProcessSteps
           variant="vertical"

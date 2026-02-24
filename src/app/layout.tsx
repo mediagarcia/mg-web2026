@@ -206,7 +206,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${roboto.variable} ${robotoMono.variable}`}>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased" suppressHydrationWarning>
         <GoogleAnalytics />
         <HubSpotTracking />
         <ScrollToTopOnNavigation />
