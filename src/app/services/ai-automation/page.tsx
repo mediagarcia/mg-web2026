@@ -4,6 +4,9 @@ import { CTABanner } from "@/components/sections";
 import { ServiceFAQ } from "@/components/service-page";
 import Link from "next/link";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
+import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 
 export const metadata: Metadata = {
   title: "AI-Powered Automation | Media Garcia",
@@ -205,6 +208,8 @@ const relatedServices = [
 ];
 
 export default function AIAutomationPage() {
+  const serviceImage = getImageForSlot("services/ai-automation");
+
   return (
     <>
       <PageHeader
@@ -237,8 +242,26 @@ export default function AIAutomationPage() {
       </section>
 
       {/* Social Proof Bar */}
-      <section className="py-12 bg-black text-white">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="py-12 bg-black text-white relative overflow-hidden">
+        {serviceImage && (
+          <div className="absolute inset-0 z-0 opacity-[0.15]">
+            <DuotoneImage
+              src={serviceImage}
+              alt=""
+              color="purple"
+              intensity="light"
+              className="absolute inset-0"
+            />
+            <GeometricOverlay
+              pattern="arc"
+              position="bottom-right"
+              color="white"
+              opacity={0.2}
+              size={140}
+            />
+          </div>
+        )}
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">

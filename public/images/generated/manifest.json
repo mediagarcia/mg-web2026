@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-07T21:41:15.177Z",
+  "lastUpdated": "2026-02-24T02:44:36.147Z",
   "slots": {
     "hero": {
       "slot": "hero",
@@ -477,6 +477,249 @@
       ],
       "selected": "industries-saas-v2-002.png",
       "selectedPath": "/images/selected/industries-saas-v2.png"
+    },
+    "services/crm-onboarding": {
+      "slot": "services/crm-onboarding",
+      "prompt": "Elegant architectural photograph of a single hand carefully placing the first stone of a clean geometric structure. Soft directional light casting long shadows. Vast negative space. Minimal, contemplative composition suggesting a fresh beginning and solid foundation. No technology, no screens. Fine art photography style, high contrast, muted tones.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T02:21:37.566Z",
+      "updatedAt": "2026-02-24T02:44:36.147Z",
+      "files": [
+        {
+          "filename": "services-crm-onboarding-001.png",
+          "path": "/images/generated/services-crm-onboarding/services-crm-onboarding-001.png",
+          "generatedAt": "2026-02-24T02:21:41.427Z"
+        },
+        {
+          "filename": "services-crm-onboarding-002.png",
+          "path": "/images/generated/services-crm-onboarding/services-crm-onboarding-002.png",
+          "generatedAt": "2026-02-24T02:21:45.306Z"
+        },
+        {
+          "filename": "services-crm-onboarding-003.png",
+          "path": "/images/generated/services-crm-onboarding/services-crm-onboarding-003.png",
+          "generatedAt": "2026-02-24T02:21:48.716Z"
+        }
+      ],
+      "selected": "services-crm-onboarding-002.png",
+      "selectedPath": "/images/selected/services-crm-onboarding.png"
+    },
+    "services/crm-migration": {
+      "slot": "services/crm-migration",
+      "prompt": "Abstract fine art photograph of water being carefully poured from one elegant ceramic vessel into another. Smooth continuous stream connecting both vessels. Clean white background, beautiful caustic light patterns from the water. Metaphor for seamless data transfer. Minimal, serene, gallery-quality composition. High contrast, muted tones, no technology.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T02:22:06.331Z",
+      "updatedAt": "2026-02-24T02:44:33.390Z",
+      "files": [
+        {
+          "filename": "services-crm-migration-001.png",
+          "path": "/images/generated/services-crm-migration/services-crm-migration-001.png",
+          "generatedAt": "2026-02-24T02:22:11.148Z"
+        },
+        {
+          "filename": "services-crm-migration-002.png",
+          "path": "/images/generated/services-crm-migration/services-crm-migration-002.png",
+          "generatedAt": "2026-02-24T02:22:15.335Z"
+        },
+        {
+          "filename": "services-crm-migration-003.png",
+          "path": "/images/generated/services-crm-migration/services-crm-migration-003.png",
+          "generatedAt": "2026-02-24T02:22:19.473Z"
+        }
+      ],
+      "selected": "services-crm-migration-001.png",
+      "selectedPath": "/images/selected/services-crm-migration.png"
+    },
+    "services/marketing-automation": {
+      "slot": "services/marketing-automation",
+      "prompt": "Overhead fine art photograph of a perfectly arranged set of dominos mid-cascade, frozen in motion. Each piece precisely spaced, creating a beautiful flowing S-curve pattern across a clean surface. Long shadows from side lighting. Metaphor for automated sequences triggering one after another. Minimal, elegant, gallery-quality. High contrast, muted earth tones, no technology.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T02:22:36.985Z",
+      "updatedAt": "2026-02-24T02:44:27.543Z",
+      "files": [
+        {
+          "filename": "services-marketing-automation-001.png",
+          "path": "/images/generated/services-marketing-automation/services-marketing-automation-001.png",
+          "generatedAt": "2026-02-24T02:22:40.782Z"
+        },
+        {
+          "filename": "services-marketing-automation-002.png",
+          "path": "/images/generated/services-marketing-automation/services-marketing-automation-002.png",
+          "generatedAt": "2026-02-24T02:22:43.975Z"
+        },
+        {
+          "filename": "services-marketing-automation-003.png",
+          "path": "/images/generated/services-marketing-automation/services-marketing-automation-003.png",
+          "generatedAt": "2026-02-24T02:22:48.872Z"
+        }
+      ],
+      "selected": "services-marketing-automation-003.png",
+      "selectedPath": "/images/selected/services-marketing-automation.png"
+    },
+    "services/sales-enablement": {
+      "slot": "services/sales-enablement",
+      "prompt": "Fine art photograph of an archer's hands drawing a bow at full draw, captured from behind. Extreme focus on the tension in the string and the stillness before release. Beautiful bokeh background. Metaphor for precision, empowerment, and hitting targets. Dramatic rim lighting, vast depth of field. Elegant, powerful, contemplative. High contrast, muted tones.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T02:37:30.811Z",
+      "updatedAt": "2026-02-24T02:44:21.004Z",
+      "files": [
+        {
+          "filename": "services-sales-enablement-001.png",
+          "path": "/images/generated/services-sales-enablement/services-sales-enablement-001.png",
+          "generatedAt": "2026-02-24T02:37:34.831Z"
+        },
+        {
+          "filename": "services-sales-enablement-002.png",
+          "path": "/images/generated/services-sales-enablement/services-sales-enablement-002.png",
+          "generatedAt": "2026-02-24T02:37:38.939Z"
+        },
+        {
+          "filename": "services-sales-enablement-003.png",
+          "path": "/images/generated/services-sales-enablement/services-sales-enablement-003.png",
+          "generatedAt": "2026-02-24T02:37:43.004Z"
+        }
+      ],
+      "selected": "services-sales-enablement-001.png",
+      "selectedPath": "/images/selected/services-sales-enablement.png"
+    },
+    "services/reporting": {
+      "slot": "services/reporting",
+      "prompt": "Fine art photograph of sunlight passing through a glass prism, splitting into a clean spectrum of light rays across a white surface. Beautiful caustics and refracted light patterns. Metaphor for taking raw data and revealing the full spectrum of insight and clarity. Minimal, elegant, scientific beauty. Gallery-quality composition, high contrast, clean background.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T02:38:02.679Z",
+      "updatedAt": "2026-02-24T02:44:15.356Z",
+      "files": [
+        {
+          "filename": "services-reporting-001.png",
+          "path": "/images/generated/services-reporting/services-reporting-001.png",
+          "generatedAt": "2026-02-24T02:38:08.197Z"
+        },
+        {
+          "filename": "services-reporting-002.png",
+          "path": "/images/generated/services-reporting/services-reporting-002.png",
+          "generatedAt": "2026-02-24T02:38:12.049Z"
+        },
+        {
+          "filename": "services-reporting-003.png",
+          "path": "/images/generated/services-reporting/services-reporting-003.png",
+          "generatedAt": "2026-02-24T02:38:15.874Z"
+        }
+      ],
+      "selected": "services-reporting-001.png",
+      "selectedPath": "/images/selected/services-reporting.png"
+    },
+    "services/ai-automation": {
+      "slot": "services/ai-automation",
+      "prompt": "Macro fine art photograph of mycelium network spreading through rich dark soil, captured with extreme detail. Delicate white branching filaments forming an intelligent organic web. Beautiful natural neural network. Metaphor for AI intelligence that grows and connects organically. Dark moody background, selective focus, ethereal rim lighting. Gallery-quality, high contrast.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T02:38:32.214Z",
+      "updatedAt": "2026-02-24T02:44:10.372Z",
+      "files": [
+        {
+          "filename": "services-ai-automation-001.png",
+          "path": "/images/generated/services-ai-automation/services-ai-automation-001.png",
+          "generatedAt": "2026-02-24T02:38:37.114Z"
+        },
+        {
+          "filename": "services-ai-automation-002.png",
+          "path": "/images/generated/services-ai-automation/services-ai-automation-002.png",
+          "generatedAt": "2026-02-24T02:38:41.476Z"
+        },
+        {
+          "filename": "services-ai-automation-003.png",
+          "path": "/images/generated/services-ai-automation/services-ai-automation-003.png",
+          "generatedAt": "2026-02-24T02:38:44.999Z"
+        }
+      ],
+      "selected": "services-ai-automation-003.png",
+      "selectedPath": "/images/selected/services-ai-automation.png"
+    },
+    "services/integrations": {
+      "slot": "services/integrations",
+      "prompt": "Fine art close-up photograph of skilled hands weaving threads on a loom. Multiple colored threads coming together into a unified, beautiful fabric pattern. Warm natural light from the side. Metaphor for connecting disparate systems into one cohesive whole. Shallow depth of field, artisan craftsmanship. Elegant, tactile, human. Gallery-quality, high contrast, muted warm tones.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T02:39:03.407Z",
+      "updatedAt": "2026-02-24T02:44:04.257Z",
+      "files": [
+        {
+          "filename": "services-integrations-001.png",
+          "path": "/images/generated/services-integrations/services-integrations-001.png",
+          "generatedAt": "2026-02-24T02:39:08.182Z"
+        },
+        {
+          "filename": "services-integrations-002.png",
+          "path": "/images/generated/services-integrations/services-integrations-002.png",
+          "generatedAt": "2026-02-24T02:39:11.631Z"
+        },
+        {
+          "filename": "services-integrations-003.png",
+          "path": "/images/generated/services-integrations/services-integrations-003.png",
+          "generatedAt": "2026-02-24T02:39:15.523Z"
+        }
+      ],
+      "selected": "services-integrations-002.png",
+      "selectedPath": "/images/selected/services-integrations.png"
+    },
+    "services/development": {
+      "slot": "services/development",
+      "prompt": "Fine art photograph of an architect's hands carefully positioning a scale model of a clean modern building. Blueprints with precise geometric lines visible beneath. Beautiful overhead natural light. Metaphor for thoughtful craftsmanship and building something from vision to reality. Shallow depth of field, clean workspace. Elegant, precise, intentional. Gallery-quality, high contrast, neutral tones.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T02:42:02.738Z",
+      "updatedAt": "2026-02-24T02:43:58.928Z",
+      "files": [
+        {
+          "filename": "services-development-001.png",
+          "path": "/images/generated/services-development/services-development-001.png",
+          "generatedAt": "2026-02-24T02:42:08.411Z"
+        },
+        {
+          "filename": "services-development-002.png",
+          "path": "/images/generated/services-development/services-development-002.png",
+          "generatedAt": "2026-02-24T02:42:14.239Z"
+        },
+        {
+          "filename": "services-development-003.png",
+          "path": "/images/generated/services-development/services-development-003.png",
+          "generatedAt": "2026-02-24T02:42:17.690Z"
+        }
+      ],
+      "selected": "services-development-003.png",
+      "selectedPath": "/images/selected/services-development.png"
+    },
+    "services/marketing": {
+      "slot": "services/marketing",
+      "prompt": "Fine art photograph of a single green plant shoot breaking through cracked concrete, reaching toward warm golden sunlight from above. Dramatic contrast between the harsh surface and the delicate, determined growth. Metaphor for organic growth breaking through barriers. Shallow depth of field, morning light. Elegant, hopeful, powerful simplicity. Gallery-quality, high contrast, rich natural tones.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T02:42:34.350Z",
+      "updatedAt": "2026-02-24T02:43:47.530Z",
+      "files": [
+        {
+          "filename": "services-marketing-001.png",
+          "path": "/images/generated/services-marketing/services-marketing-001.png",
+          "generatedAt": "2026-02-24T02:42:38.262Z"
+        },
+        {
+          "filename": "services-marketing-002.png",
+          "path": "/images/generated/services-marketing/services-marketing-002.png",
+          "generatedAt": "2026-02-24T02:42:41.927Z"
+        },
+        {
+          "filename": "services-marketing-003.png",
+          "path": "/images/generated/services-marketing/services-marketing-003.png",
+          "generatedAt": "2026-02-24T02:42:45.687Z"
+        }
+      ],
+      "selected": "services-marketing-001.png",
+      "selectedPath": "/images/selected/services-marketing.png"
     }
   }
 }
