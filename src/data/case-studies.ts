@@ -311,6 +311,46 @@ The result was a prioritized roadmap of projects spanning membership prospecting
       company: "MIPI Alliance",
     },
   },
+  {
+    slug: "eag-crm-data-analytics",
+    title: "CRM Data Analytics That Proved Marketing ROI",
+    client: "EAG Advertising & Marketing",
+    industry: "Professional Services",
+    service: "CRM Optimization",
+    description: "Validated marketing and sales assumptions through CRM data analysis, uncovering deal velocity insights and attribution data that empowered an agency and their client with actionable growth intelligence.",
+    image: "/images/case-studies/case-study-1.jpg",
+    gradient: "from-orange-red-500 to-orange-red-700",
+    timeline: "Rapid engagement",
+    tags: ["Marketing Agency", "Data Analytics", "Attribution", "Reporting"],
+    featured: false,
+    clientSize: "Marketing agency",
+    clientLocation: "United States",
+    publishDate: "2022-03-01",
+    challenge: `EAG Advertising & Marketing was working with a client who used HubSpot CRM for their marketing and sales activities. The client had a sales team running outbound calling while EAG created marketing campaigns. Both efforts were generating leads—but it was nearly impossible to quickly discern and attribute where leads came from and what influenced their conversion.
+
+The client didn't have insights into what was actually driving deals and revenue growth. Sales had become stagnant as they tried different tactics without being able to measure what was working. There wasn't enough consistency in actions or data to see what was making a difference, which led to gut-feel decision-making and reactive responses to shifting performance.
+
+EAG needed a data partner who could dig into the CRM, validate assumptions, and deliver attribution insights that would demonstrate the ROI of their marketing efforts—giving both EAG and their client the clarity they needed to make smarter decisions.`,
+    solution: `Media Garcia met with EAG to articulate multiple hypotheses and determine which needed validation, along with what insights would be most valuable for both the agency and their end client.
+
+We performed a comprehensive analysis of CRM data focused on three objectives: discovering how marketing activities were influencing the sales pipeline, uncovering selling velocity characteristics, and recommending actions to better attribute and increase opportunities going forward.
+
+The analysis revealed critical insights. The client was taking significantly longer to close deals—average time to close had grown from 36 days in early 2021 to deals staying open for 298 days by Q4 2021. This pattern had been worsening since 2020, indicating a clear need to close deals faster and move on to fresh opportunities rather than nursing stale pipeline.
+
+We also discovered that on average it took 40 interactions to close-win a deal versus only 26 interactions for deals that were closed-lost—revealing that the deals they were winning required substantially more touches, and the ones they were losing were being identified faster. Media Garcia built a suite of HubSpot CRM dashboards and reports to visualize these findings and make the insights actionable for ongoing decision-making.`,
+    results: [
+      { metric: "40 vs 26", label: "Interactions to win vs. lose a deal" },
+      { metric: "36 → 298", label: "Days to close: early vs. late 2021" },
+      { metric: "100%", label: "Marketing attribution visibility" },
+      { metric: "Weeks → Days", label: "Time to validate hypotheses" },
+    ],
+    testimonial: {
+      quote: "We partnered with Media Garcia on creating a dashboard for a client. What they delivered for us, I have the happiest team right now because they did it this fast. We had gotten through maybe a quarter of the same material over the course of weeks if not months. Thank you, Media Garcia!",
+      author: "Michele Markham",
+      title: "President & CEO",
+      company: "EAG Advertising & Marketing",
+    },
+  },
 ];
 
 export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
