@@ -2,15 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-
 const testimonials = [
   {
     quote: "Media Garcia worked with us to turn our ideas and tight timeline into a reality, making it the easiest website project I've ever managed. Their designers and developers were incredible, and we're already planning our next project with them!",
     author: "Ashley Sims",
     title: "VP of Marketing",
     company: "American Hole 'n One",
-    image: "/images/testimonials/author-1.jpg",
     initials: "AS",
     rating: 5,
   },
@@ -19,7 +16,6 @@ const testimonials = [
     author: "Victoria Naef",
     title: "Agency Marketing Manager",
     company: "Marketing Agency",
-    image: "/images/testimonials/author-2.jpg",
     initials: "VN",
     rating: 5,
   },
@@ -28,7 +24,6 @@ const testimonials = [
     author: "R. Higgins",
     title: "Marketing Manager",
     company: "Enel X North America",
-    image: "/images/testimonials/author-3.jpg",
     initials: "RH",
     rating: 5,
   },
@@ -37,7 +32,6 @@ const testimonials = [
     author: "K. Wade",
     title: "CEO",
     company: "Professional Services",
-    image: "/images/testimonials/author-4.jpg",
     initials: "KW",
     rating: 5,
   },
@@ -150,21 +144,12 @@ export function Testimonials() {
 
                 {/* Author */}
                 <div className="flex items-center gap-4">
-                  <div className="relative w-14 h-14 rounded-full overflow-hidden ring-4 ring-teal-500/20">
-                    {testimonials[currentIndex].image ? (
-                      <Image
-                        src={testimonials[currentIndex].image}
-                        alt={testimonials[currentIndex].author}
-                        fill
-                        className="object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center">
-                        <span className="text-white font-bold text-lg">
-                          {testimonials[currentIndex].initials}
-                        </span>
-                      </div>
-                    )}
+                  <div className="w-14 h-14 rounded-full overflow-hidden ring-4 ring-teal-500/20">
+                    <div className="w-full h-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">
+                        {testimonials[currentIndex].initials}
+                      </span>
+                    </div>
                   </div>
                   <div>
                     <p className="font-bold text-black">{testimonials[currentIndex].author}</p>

@@ -183,6 +183,7 @@ export default function PricingPage() {
         title="Every business is different. Your investment should be too."
         description="We don't do packages. We build custom partnerships around your goals, timeline, and budget — then grow with you."
         breadcrumbs={[{ label: "Pricing", href: "/pricing" }]}
+        backgroundImage={{ src: "/images/about/team-collaboration.jpg", color: "teal", pattern: "arc" }}
       />
 
       {/* Section 2: Philosophy */}
