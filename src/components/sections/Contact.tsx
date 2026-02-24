@@ -3,8 +3,6 @@
 import { motion } from "framer-motion";
 import { HubSpotForm } from "@/components/HubSpotForm";
 
-const CONTACT_FORM_ID = process.env.NEXT_PUBLIC_HS_FORM_CONTACT;
-
 export function Contact() {
 
   return (
@@ -147,32 +145,7 @@ export function Contact() {
             transition={{ delay: 0.2 }}
           >
             <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl">
-              {CONTACT_FORM_ID ? (
-                <HubSpotForm formId={CONTACT_FORM_ID} />
-              ) : (
-                <div className="text-center py-8">
-                  <p className="text-black/60 mb-6">
-                    Ready to get started? Reach out directly.
-                  </p>
-                  <div className="flex flex-col gap-4">
-                    <a
-                      href="mailto:hello@mediagarcia.com"
-                      className="w-full bg-black text-white py-4 rounded-xl font-medium hover:bg-teal-500 transition-colors duration-300 text-center"
-                    >
-                      Email hello@mediagarcia.com
-                    </a>
-                    <a
-                      href="tel:+18886124250"
-                      className="w-full border-2 border-black text-black py-4 rounded-xl font-medium hover:bg-black hover:text-white transition-colors duration-300 text-center"
-                    >
-                      Call +1 888-612-4250
-                    </a>
-                  </div>
-                  <p className="text-xs text-black/40 mt-4">
-                    We respond within 24 hours. No spam, ever.
-                  </p>
-                </div>
-              )}
+              <HubSpotForm formId="9889726d-8529-4a21-a79a-3fd746e3fc44" />
             </div>
           </motion.div>
         </div>

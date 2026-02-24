@@ -2,8 +2,6 @@
 
 import { HubSpotForm } from "@/components/HubSpotForm";
 
-const NEWSLETTER_FORM_ID = process.env.NEXT_PUBLIC_HS_FORM_NEWSLETTER;
-
 export function BlogNewsletter() {
   return (
     <section className="py-20 lg:py-32 bg-gray-50">
@@ -13,16 +11,7 @@ export function BlogNewsletter() {
           <p className="text-black/60 mb-8">
             Get the latest HubSpot tips and growth strategies delivered to your inbox every week.
           </p>
-          {NEWSLETTER_FORM_ID ? (
-            <HubSpotForm formId={NEWSLETTER_FORM_ID} className="max-w-md mx-auto" />
-          ) : (
-            <a
-              href="mailto:hello@mediagarcia.com?subject=Newsletter%20Subscription"
-              className="inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-teal-500 transition-colors"
-            >
-              Subscribe via Email
-            </a>
-          )}
+          <HubSpotForm formId="1e17d757-c025-44e9-880f-7c4b012695a7" className="max-w-md mx-auto" />
         </div>
       </div>
     </section>

@@ -8,7 +8,7 @@ interface HubSpotFormProps {
   className?: string;
 }
 
-const DEFAULT_PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID;
+const DEFAULT_PORTAL_ID = "556151";
 
 export function HubSpotForm({ portalId, formId, className = "" }: HubSpotFormProps) {
   const containerRef = useRef<HTMLDivElement>(null);
