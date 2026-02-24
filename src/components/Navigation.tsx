@@ -78,7 +78,7 @@ const resources: MenuItem[] = [
   { label: "Guides & Best Practices", href: "/resources/guides", description: "Expert tips and strategies", icon: BookOpen },
   { label: "ROI Calculator", href: "/resources/roi-calculator", description: "Calculate your potential ROI", icon: Calculator },
   { label: "TCO Calculator", href: "/resources/tco-calculator", description: "Total cost of ownership analysis", icon: DollarSign },
-  { label: "Blog", href: "/blog", description: "Latest insights and strategies", icon: BookOpen },
+  { label: "Blog", href: "https://www.mediagarcia.com/blog", description: "Latest insights and strategies", icon: BookOpen },
 ];
 
 const portfolioCategories: MenuItem[] = [
