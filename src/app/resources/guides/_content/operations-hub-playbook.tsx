@@ -9,13 +9,22 @@ import {
   BlueprintCard,
   InlineCTA,
   RelatedGuides,
+  SectionImage,
 } from "@/components/pillar-page";
 import { CTABanner } from "@/components/sections";
 import { getGuideBySlug, getRelatedGuides } from "@/data/guides";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 
 export default function OperationsHubPlaybook() {
   const guide = getGuideBySlug("operations-hub-playbook")!;
   const related = getRelatedGuides("operations-hub-playbook");
+
+  const foundationImg = getImageForSlot("guides/opshub/foundation");
+  const dataArchImg = getImageForSlot("guides/opshub/data-architecture");
+  const integrationsImg = getImageForSlot("guides/opshub/integrations");
+  const automationImg = getImageForSlot("guides/opshub/automation");
+  const routingImg = getImageForSlot("guides/opshub/routing");
+  const customObjImg = getImageForSlot("guides/opshub/custom-objects");
 
   return (
     <PillarPageLayout guide={guide}>
@@ -36,6 +45,15 @@ export default function OperationsHubPlaybook() {
           data sync, automated data quality management, and programmable
           automation through custom code.
         </p>
+
+        {foundationImg && (
+          <SectionImage
+            src={foundationImg}
+            alt="Operations Hub — centralized operational control"
+            color="teal"
+            pattern="grid"
+          />
+        )}
 
         <p className="text-black/70 leading-relaxed">
           For RevOps teams running on HubSpot, Operations Hub transforms the CRM
@@ -143,6 +161,14 @@ export default function OperationsHubPlaybook() {
           category solve a fundamental challenge: getting the right data onto the
           right object so your reports just work.
         </p>
+
+        {dataArchImg && (
+          <SectionImage
+            src={dataArchImg}
+            alt="Data architecture — designing intentional schema"
+            color="teal"
+          />
+        )}
 
         <p className="text-black/70 leading-relaxed">
           Using Operations Hub&apos;s custom code actions, you can query HubSpot&apos;s
@@ -310,6 +336,15 @@ export default function OperationsHubPlaybook() {
           data back in, and transform payloads -- all without a middleware
           subscription or a server to maintain.
         </p>
+
+        {integrationsImg && (
+          <SectionImage
+            src={integrationsImg}
+            alt="Direct integrations without middleware"
+            color="purple"
+            pattern="spiral"
+          />
+        )}
 
         <p className="text-black/70 leading-relaxed">
           This does not replace every integration scenario. High-volume,
@@ -491,6 +526,14 @@ export default function OperationsHubPlaybook() {
           automation earns its keep.
         </p>
 
+        {automationImg && (
+          <SectionImage
+            src={automationImg}
+            alt="Advanced workflow automation — precision and elegance"
+            color="purple"
+          />
+        )}
+
         <p className="text-black/70 leading-relaxed">
           The blueprints in this category go beyond basic if/then automation.
           They use custom code actions to build operational systems that would
@@ -659,6 +702,15 @@ export default function OperationsHubPlaybook() {
           routing tools.
         </p>
 
+        {routingImg && (
+          <SectionImage
+            src={routingImg}
+            alt="Intelligent data routing and assignment"
+            color="orange"
+            pattern="arc"
+          />
+        )}
+
         <p className="text-black/70 leading-relaxed">
           The blueprints in this category use custom code actions to query
           HubSpot&apos;s APIs in real time, evaluate routing criteria
@@ -815,6 +867,14 @@ export default function OperationsHubPlaybook() {
           functionality inside HubSpot that would traditionally require a
           separate application.
         </p>
+
+        {customObjImg && (
+          <SectionImage
+            src={customObjImg}
+            alt="Custom objects — extensible, modular systems"
+            color="orange"
+          />
+        )}
 
         <p className="text-black/70 leading-relaxed">
           The blueprints in this category demonstrate how to use custom objects

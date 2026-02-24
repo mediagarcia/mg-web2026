@@ -1,8 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import type { ImageManifest, ImageSlot } from "@/lib/images/types";
+
+function getSlotPrefix(key: string): string {
+  const parts = key.split("/");
+  if (parts.length >= 2) return parts.slice(0, parts.length > 2 ? 2 : 1).join("/");
+  return "other";
+}
+
+function getGroupLabel(prefix: string): string {
+  const labels: Record<string, string> = {
+    "guides": "Guides",
+    "services": "Services",
+    "case-studies": "Case Studies",
+    "other": "Other",
+  };
+  return labels[prefix] || prefix;
+}
 
 export function ImageStagingClient() {
   const [manifest, setManifest] = useState<ImageManifest | null>(null);
@@ -10,6 +26,8 @@ export function ImageStagingClient() {
   const [error, setError] = useState<string | null>(null);
   const [expandedSlots, setExpandedSlots] = useState<Set<string>>(new Set());
   const [currentIndexes, setCurrentIndexes] = useState<Record<string, number>>({});
+  const [activeFilter, setActiveFilter] = useState<string>("all");
+  const [hideSelected, setHideSelected] = useState(false);
 
   useEffect(() => {
     fetchManifest();
@@ -33,8 +51,11 @@ export function ImageStagingClient() {
       });
       setCurrentIndexes(indexes);
 
-      // Auto-expand all slots initially
-      setExpandedSlots(new Set(Object.keys(data.slots)));
+      // Auto-expand only unselected slots
+      const unselected = Object.entries(data.slots)
+        .filter(([, s]) => !(s as ImageSlot).selected)
+        .map(([k]) => k);
+      setExpandedSlots(new Set(unselected));
     } catch {
       setError("Failed to load manifest");
     } finally {
@@ -86,6 +107,40 @@ export function ImageStagingClient() {
     });
   }
 
+  const slots = Object.entries(manifest?.slots ?? {});
+
+  // Compute filter groups
+  const filterGroups = useMemo(() => {
+    const groups: Record<string, { total: number; selected: number }> = {};
+    slots.forEach(([key, slot]) => {
+      const s = slot as ImageSlot;
+      const prefix = key.split("/")[0];
+      if (!groups[prefix]) groups[prefix] = { total: 0, selected: 0 };
+      groups[prefix].total++;
+      if (s.selected) groups[prefix].selected++;
+    });
+    return groups;
+  }, [slots]);
+
+  // Filter slots
+  const filteredSlots = useMemo(() => {
+    let filtered = slots;
+    if (activeFilter !== "all") {
+      filtered = filtered.filter(([key]) => key.startsWith(activeFilter + "/") || key.split("/")[0] === activeFilter);
+    }
+    if (hideSelected) {
+      filtered = filtered.filter(([, slot]) => !(slot as ImageSlot).selected);
+    }
+    // Sort: unselected first, then alphabetically
+    filtered.sort(([aKey, aSlot], [bKey, bSlot]) => {
+      const aSelected = (aSlot as ImageSlot).selected ? 1 : 0;
+      const bSelected = (bSlot as ImageSlot).selected ? 1 : 0;
+      if (aSelected !== bSelected) return aSelected - bSelected;
+      return aKey.localeCompare(bKey);
+    });
+    return filtered;
+  }, [slots, activeFilter, hideSelected]);
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -117,8 +172,6 @@ export function ImageStagingClient() {
     );
   }
 
-  const slots = Object.entries(manifest?.slots ?? {});
-
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -127,6 +180,53 @@ export function ImageStagingClient() {
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Image Staging</h1>
           <p className="text-gray-600">
             Review and select generated images for each slot. Selected images will be used in production.
+          </p>
+
+          {/* Filter bar */}
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <button
+              onClick={() => setActiveFilter("all")}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                activeFilter === "all"
+                  ? "bg-gray-900 text-white"
+                  : "bg-white text-gray-600 border border-gray-200 hover:border-gray-400"
+              }`}
+            >
+              All ({slots.length})
+            </button>
+            {Object.entries(filterGroups)
+              .sort(([a], [b]) => a.localeCompare(b))
+              .map(([prefix, counts]) => (
+              <button
+                key={prefix}
+                onClick={() => setActiveFilter(prefix)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                  activeFilter === prefix
+                    ? "bg-gray-900 text-white"
+                    : "bg-white text-gray-600 border border-gray-200 hover:border-gray-400"
+                }`}
+              >
+                {getGroupLabel(prefix)} ({counts.total - counts.selected} new / {counts.total})
+              </button>
+            ))}
+
+            <div className="ml-auto">
+              <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={hideSelected}
+                  onChange={(e) => setHideSelected(e.target.checked)}
+                  className="w-4 h-4 rounded border-gray-300 text-teal-500 focus:ring-teal-500"
+                />
+                Hide already selected
+              </label>
+            </div>
+          </div>
+
+          {/* Results count */}
+          <p className="mt-3 text-sm text-gray-500">
+            Showing {filteredSlots.length} of {slots.length} slots
+            {hideSelected && " (hiding selected)"}
           </p>
         </div>
 
@@ -154,7 +254,7 @@ export function ImageStagingClient() {
 
         {/* Slot cards */}
         <div className="space-y-6">
-          {slots.map(([key, slot]) => {
+          {filteredSlots.map(([key, slot]) => {
             const s = slot as ImageSlot;
             const isExpanded = expandedSlots.has(key);
             const currentIndex = currentIndexes[key] ?? 0;

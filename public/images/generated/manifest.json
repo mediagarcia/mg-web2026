@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-24T04:23:24.670Z",
+  "lastUpdated": "2026-02-24T06:09:18.991Z",
   "slots": {
     "hero": {
       "slot": "hero",
@@ -1449,6 +1449,558 @@
       ],
       "selected": "industries-saas-solutions-003.png",
       "selectedPath": "/images/selected/industries-saas-solutions.png"
+    },
+    "guides/zendesk-card": {
+      "slot": "guides/zendesk-card",
+      "prompt": "Fine art photograph of two elegant vessels connected by a stream of flowing liquid, representing data migrating seamlessly between platforms. Abstract, clean composition. Soft directional light, teal-cyan color tones. Gallery-quality, high contrast. No text, no logos, no people, no technology.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:25:24.978Z",
+      "updatedAt": "2026-02-24T06:09:02.991Z",
+      "files": [
+        {
+          "filename": "guides-zendesk-card-001.png",
+          "path": "/images/generated/guides-zendesk-card/guides-zendesk-card-001.png",
+          "generatedAt": "2026-02-24T05:25:28.876Z"
+        },
+        {
+          "filename": "guides-zendesk-card-002.png",
+          "path": "/images/generated/guides-zendesk-card/guides-zendesk-card-002.png",
+          "generatedAt": "2026-02-24T05:25:33.427Z"
+        },
+        {
+          "filename": "guides-zendesk-card-003.png",
+          "path": "/images/generated/guides-zendesk-card/guides-zendesk-card-003.png",
+          "generatedAt": "2026-02-24T05:25:37.449Z"
+        }
+      ],
+      "selected": "guides-zendesk-card-003.png",
+      "selectedPath": "/images/selected/guides-zendesk-card.png"
+    },
+    "guides/opshub-card": {
+      "slot": "guides/opshub-card",
+      "prompt": "Fine art photograph of interconnected precision gears and mechanical components forming a harmonious system, representing unified revenue operations. Abstract, elegant composition. Soft directional light, purple-violet color tones. Gallery-quality, high contrast. No text, no logos, no people.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T05:25:41.363Z",
+      "updatedAt": "2026-02-24T06:08:14.958Z",
+      "files": [
+        {
+          "filename": "guides-opshub-card-001.png",
+          "path": "/images/generated/guides-opshub-card/guides-opshub-card-001.png",
+          "generatedAt": "2026-02-24T05:25:47.542Z"
+        },
+        {
+          "filename": "guides-opshub-card-002.png",
+          "path": "/images/generated/guides-opshub-card/guides-opshub-card-002.png",
+          "generatedAt": "2026-02-24T05:25:50.858Z"
+        },
+        {
+          "filename": "guides-opshub-card-003.png",
+          "path": "/images/generated/guides-opshub-card/guides-opshub-card-003.png",
+          "generatedAt": "2026-02-24T05:25:54.971Z"
+        }
+      ],
+      "selected": "guides-opshub-card-001.png",
+      "selectedPath": "/images/selected/guides-opshub-card.png"
+    },
+    "guides/sfdc-card": {
+      "slot": "guides/sfdc-card",
+      "prompt": "Fine art photograph of a grand stone bridge spanning between two cliff faces, representing safe passage between CRM platforms. Atmospheric fog, dramatic golden-warm light. Orange-amber accent tones. Gallery-quality, high contrast. No text, no logos, no people, no technology.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:25:59.058Z",
+      "updatedAt": "2026-02-24T06:08:38.190Z",
+      "files": [
+        {
+          "filename": "guides-sfdc-card-001.png",
+          "path": "/images/generated/guides-sfdc-card/guides-sfdc-card-001.png",
+          "generatedAt": "2026-02-24T05:26:04.234Z"
+        },
+        {
+          "filename": "guides-sfdc-card-002.png",
+          "path": "/images/generated/guides-sfdc-card/guides-sfdc-card-002.png",
+          "generatedAt": "2026-02-24T05:26:08.562Z"
+        },
+        {
+          "filename": "guides-sfdc-card-003.png",
+          "path": "/images/generated/guides-sfdc-card/guides-sfdc-card-003.png",
+          "generatedAt": "2026-02-24T05:26:12.829Z"
+        }
+      ],
+      "selected": "guides-sfdc-card-003.png",
+      "selectedPath": "/images/selected/guides-sfdc-card.png"
+    },
+    "guides/zendesk/why-migrate": {
+      "slot": "guides/zendesk/why-migrate",
+      "prompt": "Fine art photograph of a single ornate key fitting perfectly into an elaborate lock mechanism. Soft directional light illuminating the moment of connection. Metaphor for unified access and seamless integration. Muted teal-gray color palette. Gallery-quality, high contrast, editorial aesthetic. No people, no technology, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:26:17.299Z",
+      "updatedAt": "2026-02-24T06:09:18.991Z",
+      "files": [
+        {
+          "filename": "guides-zendesk-why-migrate-001.png",
+          "path": "/images/generated/guides-zendesk-why-migrate/guides-zendesk-why-migrate-001.png",
+          "generatedAt": "2026-02-24T05:26:20.462Z"
+        },
+        {
+          "filename": "guides-zendesk-why-migrate-002.png",
+          "path": "/images/generated/guides-zendesk-why-migrate/guides-zendesk-why-migrate-002.png",
+          "generatedAt": "2026-02-24T05:26:28.462Z"
+        },
+        {
+          "filename": "guides-zendesk-why-migrate-003.png",
+          "path": "/images/generated/guides-zendesk-why-migrate/guides-zendesk-why-migrate-003.png",
+          "generatedAt": "2026-02-24T05:26:33.231Z"
+        }
+      ],
+      "selected": "guides-zendesk-why-migrate-002.png",
+      "selectedPath": "/images/selected/guides-zendesk-why-migrate.png"
+    },
+    "guides/zendesk/self-service": {
+      "slot": "guides/zendesk/self-service",
+      "prompt": "Fine art photograph of a beautifully organized library with warm natural light streaming through tall windows. Clear pathways between shelves, open books inviting exploration. Metaphor for customer self-service and accessible knowledge. Warm amber tones with hints of teal. Gallery-quality, editorial aesthetic. No people, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:26:38.166Z",
+      "updatedAt": "2026-02-24T06:09:15.331Z",
+      "files": [
+        {
+          "filename": "guides-zendesk-self-service-001.png",
+          "path": "/images/generated/guides-zendesk-self-service/guides-zendesk-self-service-001.png",
+          "generatedAt": "2026-02-24T05:26:41.863Z"
+        },
+        {
+          "filename": "guides-zendesk-self-service-002.png",
+          "path": "/images/generated/guides-zendesk-self-service/guides-zendesk-self-service-002.png",
+          "generatedAt": "2026-02-24T05:26:45.222Z"
+        },
+        {
+          "filename": "guides-zendesk-self-service-003.png",
+          "path": "/images/generated/guides-zendesk-self-service/guides-zendesk-self-service-003.png",
+          "generatedAt": "2026-02-24T05:26:51.098Z"
+        }
+      ],
+      "selected": "guides-zendesk-self-service-002.png",
+      "selectedPath": "/images/selected/guides-zendesk-self-service.png"
+    },
+    "guides/zendesk/feedback": {
+      "slot": "guides/zendesk/feedback",
+      "prompt": "Fine art photograph of concentric ripples expanding outward from where a smooth stone has been dropped into perfectly still water. Soft diffused light, contemplative mood. Metaphor for listening, feedback loops, and the impact of voice of customer. Soft teal-blue palette. Gallery-quality, high contrast. No people, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:26:55.350Z",
+      "updatedAt": "2026-02-24T06:09:08.937Z",
+      "files": [
+        {
+          "filename": "guides-zendesk-feedback-001.png",
+          "path": "/images/generated/guides-zendesk-feedback/guides-zendesk-feedback-001.png",
+          "generatedAt": "2026-02-24T05:26:58.443Z"
+        },
+        {
+          "filename": "guides-zendesk-feedback-002.png",
+          "path": "/images/generated/guides-zendesk-feedback/guides-zendesk-feedback-002.png",
+          "generatedAt": "2026-02-24T05:27:01.789Z"
+        },
+        {
+          "filename": "guides-zendesk-feedback-003.png",
+          "path": "/images/generated/guides-zendesk-feedback/guides-zendesk-feedback-003.png",
+          "generatedAt": "2026-02-24T05:27:04.978Z"
+        }
+      ],
+      "selected": "guides-zendesk-feedback-002.png",
+      "selectedPath": "/images/selected/guides-zendesk-feedback.png"
+    },
+    "guides/zendesk/reporting": {
+      "slot": "guides/zendesk/reporting",
+      "prompt": "Fine art photograph of antique nautical navigation instruments arranged on a detailed maritime chart. Brass compass, parallel ruler, dividers catching warm side light. Metaphor for finding clear direction through data and analytics. Rich warm amber tones. Gallery-quality, editorial aesthetic. No people, no text, no technology.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:27:09.378Z",
+      "updatedAt": "2026-02-24T06:09:12.821Z",
+      "files": [
+        {
+          "filename": "guides-zendesk-reporting-001.png",
+          "path": "/images/generated/guides-zendesk-reporting/guides-zendesk-reporting-001.png",
+          "generatedAt": "2026-02-24T05:27:13.941Z"
+        },
+        {
+          "filename": "guides-zendesk-reporting-002.png",
+          "path": "/images/generated/guides-zendesk-reporting/guides-zendesk-reporting-002.png",
+          "generatedAt": "2026-02-24T05:27:18.214Z"
+        },
+        {
+          "filename": "guides-zendesk-reporting-003.png",
+          "path": "/images/generated/guides-zendesk-reporting/guides-zendesk-reporting-003.png",
+          "generatedAt": "2026-02-24T05:27:21.172Z"
+        }
+      ],
+      "selected": "guides-zendesk-reporting-002.png",
+      "selectedPath": "/images/selected/guides-zendesk-reporting.png"
+    },
+    "guides/zendesk/data-migration": {
+      "slot": "guides/zendesk/data-migration",
+      "prompt": "Fine art photograph of carefully wrapped archival materials being precisely arranged in labeled storage boxes. Clean workspace, overhead soft light. Metaphor for organized, methodical, careful data transfer. Neutral warm palette with teal accents. Gallery-quality, editorial aesthetic. No people, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:27:26.286Z",
+      "updatedAt": "2026-02-24T06:09:06.968Z",
+      "files": [
+        {
+          "filename": "guides-zendesk-data-migration-001.png",
+          "path": "/images/generated/guides-zendesk-data-migration/guides-zendesk-data-migration-001.png",
+          "generatedAt": "2026-02-24T05:27:30.626Z"
+        },
+        {
+          "filename": "guides-zendesk-data-migration-002.png",
+          "path": "/images/generated/guides-zendesk-data-migration/guides-zendesk-data-migration-002.png",
+          "generatedAt": "2026-02-24T05:27:33.959Z"
+        },
+        {
+          "filename": "guides-zendesk-data-migration-003.png",
+          "path": "/images/generated/guides-zendesk-data-migration/guides-zendesk-data-migration-003.png",
+          "generatedAt": "2026-02-24T05:27:37.086Z"
+        }
+      ],
+      "selected": "guides-zendesk-data-migration-003.png",
+      "selectedPath": "/images/selected/guides-zendesk-data-migration.png"
+    },
+    "guides/zendesk/go-live": {
+      "slot": "guides/zendesk/go-live",
+      "prompt": "Fine art photograph of a sailing vessel leaving harbor at golden dawn, sails catching the first light. Calm water, dramatic sky. Metaphor for launch, new beginnings, and confident departure. Golden amber tones with atmospheric haze. Gallery-quality, high contrast, editorial aesthetic. No people visible, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:27:41.541Z",
+      "updatedAt": "2026-02-24T06:09:11.145Z",
+      "files": [
+        {
+          "filename": "guides-zendesk-go-live-001.png",
+          "path": "/images/generated/guides-zendesk-go-live/guides-zendesk-go-live-001.png",
+          "generatedAt": "2026-02-24T05:27:47.242Z"
+        },
+        {
+          "filename": "guides-zendesk-go-live-002.png",
+          "path": "/images/generated/guides-zendesk-go-live/guides-zendesk-go-live-002.png",
+          "generatedAt": "2026-02-24T05:27:50.564Z"
+        },
+        {
+          "filename": "guides-zendesk-go-live-003.png",
+          "path": "/images/generated/guides-zendesk-go-live/guides-zendesk-go-live-003.png",
+          "generatedAt": "2026-02-24T05:27:53.974Z"
+        }
+      ],
+      "selected": "guides-zendesk-go-live-003.png",
+      "selectedPath": "/images/selected/guides-zendesk-go-live.png"
+    },
+    "guides/opshub/foundation": {
+      "slot": "guides/opshub/foundation",
+      "prompt": "Fine art photograph of a master control panel with perfectly organized rows of switches, dials, and indicator lights. Clean industrial design, precise alignment. Soft overhead light. Metaphor for centralized operational command and control. Cool teal-gray palette. Gallery-quality, high contrast, editorial aesthetic. No people, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:27:58.445Z",
+      "updatedAt": "2026-02-24T06:08:28.958Z",
+      "files": [
+        {
+          "filename": "guides-opshub-foundation-001.png",
+          "path": "/images/generated/guides-opshub-foundation/guides-opshub-foundation-001.png",
+          "generatedAt": "2026-02-24T05:28:02.387Z"
+        },
+        {
+          "filename": "guides-opshub-foundation-002.png",
+          "path": "/images/generated/guides-opshub-foundation/guides-opshub-foundation-002.png",
+          "generatedAt": "2026-02-24T05:28:06.461Z"
+        },
+        {
+          "filename": "guides-opshub-foundation-003.png",
+          "path": "/images/generated/guides-opshub-foundation/guides-opshub-foundation-003.png",
+          "generatedAt": "2026-02-24T05:28:09.855Z"
+        }
+      ],
+      "selected": "guides-opshub-foundation-002.png",
+      "selectedPath": "/images/selected/guides-opshub-foundation.png"
+    },
+    "guides/opshub/data-architecture": {
+      "slot": "guides/opshub/data-architecture",
+      "prompt": "Fine art photograph of a large architectural blueprint spread across a drafting table, with precision instruments nearby. Detailed structural lines and measurements visible. Metaphor for intentional data schema design and planning. Blue-gray tones with warm highlights. Gallery-quality, editorial aesthetic. No people, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:28:14.276Z",
+      "updatedAt": "2026-02-24T06:08:28.935Z",
+      "files": [
+        {
+          "filename": "guides-opshub-data-architecture-001.png",
+          "path": "/images/generated/guides-opshub-data-architecture/guides-opshub-data-architecture-001.png",
+          "generatedAt": "2026-02-24T05:28:18.543Z"
+        },
+        {
+          "filename": "guides-opshub-data-architecture-002.png",
+          "path": "/images/generated/guides-opshub-data-architecture/guides-opshub-data-architecture-002.png",
+          "generatedAt": "2026-02-24T05:28:22.961Z"
+        }
+      ],
+      "selected": "guides-opshub-data-architecture-001.png",
+      "selectedPath": "/images/selected/guides-opshub-data-architecture.png"
+    },
+    "guides/opshub/integrations": {
+      "slot": "guides/opshub/integrations",
+      "prompt": "Fine art photograph taken from above showing multiple clear streams of water naturally merging into a single flowing river through a rocky landscape. Metaphor for direct data connections without middleware. Aerial perspective, natural beauty. Green-teal color palette. Gallery-quality, high contrast. No people, no text, no technology.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:28:27.523Z",
+      "updatedAt": "2026-02-24T06:08:29.729Z",
+      "files": [
+        {
+          "filename": "guides-opshub-integrations-001.png",
+          "path": "/images/generated/guides-opshub-integrations/guides-opshub-integrations-001.png",
+          "generatedAt": "2026-02-24T05:28:31.216Z"
+        },
+        {
+          "filename": "guides-opshub-integrations-002.png",
+          "path": "/images/generated/guides-opshub-integrations/guides-opshub-integrations-002.png",
+          "generatedAt": "2026-02-24T05:28:34.802Z"
+        },
+        {
+          "filename": "guides-opshub-integrations-003.png",
+          "path": "/images/generated/guides-opshub-integrations/guides-opshub-integrations-003.png",
+          "generatedAt": "2026-02-24T05:28:37.702Z"
+        }
+      ],
+      "selected": "guides-opshub-integrations-002.png",
+      "selectedPath": "/images/selected/guides-opshub-integrations.png"
+    },
+    "guides/opshub/automation": {
+      "slot": "guides/opshub/automation",
+      "prompt": "Fine art photograph of an exposed mechanical clockwork with interlocking brass gears turning in perfect harmony. Macro perspective showing intricate detail. Warm golden side light. Metaphor for sophisticated automation working seamlessly together. Golden-warm tones. Gallery-quality, high contrast, editorial aesthetic. No people, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:28:41.631Z",
+      "updatedAt": "2026-02-24T06:08:35.160Z",
+      "files": [
+        {
+          "filename": "guides-opshub-automation-001.png",
+          "path": "/images/generated/guides-opshub-automation/guides-opshub-automation-001.png",
+          "generatedAt": "2026-02-24T05:28:46.927Z"
+        },
+        {
+          "filename": "guides-opshub-automation-002.png",
+          "path": "/images/generated/guides-opshub-automation/guides-opshub-automation-002.png",
+          "generatedAt": "2026-02-24T05:28:50.075Z"
+        },
+        {
+          "filename": "guides-opshub-automation-003.png",
+          "path": "/images/generated/guides-opshub-automation/guides-opshub-automation-003.png",
+          "generatedAt": "2026-02-24T05:28:53.706Z"
+        }
+      ],
+      "selected": "guides-opshub-automation-001.png",
+      "selectedPath": "/images/selected/guides-opshub-automation.png"
+    },
+    "guides/opshub/routing": {
+      "slot": "guides/opshub/routing",
+      "prompt": "Fine art photograph of a railway switching yard with steel tracks diverging in organized geometric patterns, captured from an elevated perspective. Morning mist, industrial beauty. Metaphor for intelligent data routing and assignment decisions. Muted steel-gray and teal tones. Gallery-quality, high contrast. No people, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:28:57.656Z",
+      "updatedAt": "2026-02-24T06:08:32.912Z",
+      "files": [
+        {
+          "filename": "guides-opshub-routing-001.png",
+          "path": "/images/generated/guides-opshub-routing/guides-opshub-routing-001.png",
+          "generatedAt": "2026-02-24T05:29:00.735Z"
+        },
+        {
+          "filename": "guides-opshub-routing-002.png",
+          "path": "/images/generated/guides-opshub-routing/guides-opshub-routing-002.png",
+          "generatedAt": "2026-02-24T05:29:04.185Z"
+        },
+        {
+          "filename": "guides-opshub-routing-003.png",
+          "path": "/images/generated/guides-opshub-routing/guides-opshub-routing-003.png",
+          "generatedAt": "2026-02-24T05:29:09.400Z"
+        }
+      ],
+      "selected": "guides-opshub-routing-003.png",
+      "selectedPath": "/images/selected/guides-opshub-routing.png"
+    },
+    "guides/opshub/custom-objects": {
+      "slot": "guides/opshub/custom-objects",
+      "prompt": "Fine art photograph of modular wooden building blocks and architectural model pieces arranged in a creative, intentional structure on a clean surface. Warm natural light from the side. Metaphor for extensible, customizable systems. Warm neutral tones with hints of amber. Gallery-quality, editorial aesthetic. No people, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:29:13.571Z",
+      "updatedAt": "2026-02-24T06:08:18.364Z",
+      "files": [
+        {
+          "filename": "guides-opshub-custom-objects-001.png",
+          "path": "/images/generated/guides-opshub-custom-objects/guides-opshub-custom-objects-001.png",
+          "generatedAt": "2026-02-24T05:29:17.782Z"
+        },
+        {
+          "filename": "guides-opshub-custom-objects-002.png",
+          "path": "/images/generated/guides-opshub-custom-objects/guides-opshub-custom-objects-002.png",
+          "generatedAt": "2026-02-24T05:29:21.569Z"
+        },
+        {
+          "filename": "guides-opshub-custom-objects-003.png",
+          "path": "/images/generated/guides-opshub-custom-objects/guides-opshub-custom-objects-003.png",
+          "generatedAt": "2026-02-24T05:29:25.003Z"
+        }
+      ],
+      "selected": "guides-opshub-custom-objects-002.png",
+      "selectedPath": "/images/selected/guides-opshub-custom-objects.png"
+    },
+    "guides/sfdc/why-hubspot": {
+      "slot": "guides/sfdc/why-hubspot",
+      "prompt": "Fine art photograph of a cluttered antique desk being cleared to reveal a beautiful clean wooden surface underneath. Items being carefully organized and simplified. Warm directional light capturing the transformation moment. Metaphor for simplification and clarity. Warm amber-orange tones. Gallery-quality, editorial aesthetic. No people, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:29:29.140Z",
+      "updatedAt": "2026-02-24T06:09:00.866Z",
+      "files": [
+        {
+          "filename": "guides-sfdc-why-hubspot-001.png",
+          "path": "/images/generated/guides-sfdc-why-hubspot/guides-sfdc-why-hubspot-001.png",
+          "generatedAt": "2026-02-24T05:29:32.636Z"
+        },
+        {
+          "filename": "guides-sfdc-why-hubspot-002.png",
+          "path": "/images/generated/guides-sfdc-why-hubspot/guides-sfdc-why-hubspot-002.png",
+          "generatedAt": "2026-02-24T05:29:37.701Z"
+        },
+        {
+          "filename": "guides-sfdc-why-hubspot-003.png",
+          "path": "/images/generated/guides-sfdc-why-hubspot/guides-sfdc-why-hubspot-003.png",
+          "generatedAt": "2026-02-24T05:29:41.601Z"
+        }
+      ],
+      "selected": "guides-sfdc-why-hubspot-002.png",
+      "selectedPath": "/images/selected/guides-sfdc-why-hubspot.png"
+    },
+    "guides/sfdc/pre-migration": {
+      "slot": "guides/sfdc/pre-migration",
+      "prompt": "Fine art photograph of a mountaineer's hands holding open a detailed topographic map against a dramatic mountain landscape backdrop. Golden-hour light illuminating the map. Metaphor for careful preparation before a major undertaking. Warm atmospheric tones with orange accents. Gallery-quality, high contrast. No faces visible, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:29:46.054Z",
+      "updatedAt": "2026-02-24T06:08:52.320Z",
+      "files": [
+        {
+          "filename": "guides-sfdc-pre-migration-001.png",
+          "path": "/images/generated/guides-sfdc-pre-migration/guides-sfdc-pre-migration-001.png",
+          "generatedAt": "2026-02-24T05:29:49.882Z"
+        },
+        {
+          "filename": "guides-sfdc-pre-migration-002.png",
+          "path": "/images/generated/guides-sfdc-pre-migration/guides-sfdc-pre-migration-002.png",
+          "generatedAt": "2026-02-24T05:29:53.043Z"
+        },
+        {
+          "filename": "guides-sfdc-pre-migration-003.png",
+          "path": "/images/generated/guides-sfdc-pre-migration/guides-sfdc-pre-migration-003.png",
+          "generatedAt": "2026-02-24T05:29:56.673Z"
+        }
+      ],
+      "selected": "guides-sfdc-pre-migration-003.png",
+      "selectedPath": "/images/selected/guides-sfdc-pre-migration.png"
+    },
+    "guides/sfdc/data-cleanup": {
+      "slot": "guides/sfdc/data-cleanup",
+      "prompt": "Fine art photograph of hands carefully sorting through precious gemstones on a velvet surface, separating quality stones from rough ones. Dramatic focused light on the gems. Metaphor for data cleanup and quality filtering. Warm amber tones with sparkling highlights. Gallery-quality, editorial aesthetic. No faces visible, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:30:00.610Z",
+      "updatedAt": "2026-02-24T06:08:41.890Z",
+      "files": [
+        {
+          "filename": "guides-sfdc-data-cleanup-001.png",
+          "path": "/images/generated/guides-sfdc-data-cleanup/guides-sfdc-data-cleanup-001.png",
+          "generatedAt": "2026-02-24T05:30:04.320Z"
+        },
+        {
+          "filename": "guides-sfdc-data-cleanup-002.png",
+          "path": "/images/generated/guides-sfdc-data-cleanup/guides-sfdc-data-cleanup-002.png",
+          "generatedAt": "2026-02-24T05:30:08.008Z"
+        },
+        {
+          "filename": "guides-sfdc-data-cleanup-003.png",
+          "path": "/images/generated/guides-sfdc-data-cleanup/guides-sfdc-data-cleanup-003.png",
+          "generatedAt": "2026-02-24T05:30:11.538Z"
+        }
+      ],
+      "selected": "guides-sfdc-data-cleanup-001.png",
+      "selectedPath": "/images/selected/guides-sfdc-data-cleanup.png"
+    },
+    "guides/sfdc/migration": {
+      "slot": "guides/sfdc/migration",
+      "prompt": "Fine art photograph of a watchmaker's precision tools arranged on a clean workbench next to an open timepiece. Magnifying loupe, tweezers, and tiny components in perfect order. Warm focused light, shallow depth of field. Metaphor for the technical precision of data migration. Warm golden tones. Gallery-quality, editorial aesthetic. No faces, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:30:15.675Z",
+      "updatedAt": "2026-02-24T06:08:44.730Z",
+      "files": [
+        {
+          "filename": "guides-sfdc-migration-001.png",
+          "path": "/images/generated/guides-sfdc-migration/guides-sfdc-migration-001.png",
+          "generatedAt": "2026-02-24T05:30:20.125Z"
+        }
+      ],
+      "selected": "guides-sfdc-migration-001.png",
+      "selectedPath": "/images/selected/guides-sfdc-migration.png"
+    },
+    "guides/sfdc/qa-testing": {
+      "slot": "guides/sfdc/qa-testing",
+      "prompt": "Fine art photograph of a magnifying glass held over a surface of small objects being carefully inspected. Clean clinical light from above, sharp focus through the lens. Metaphor for thorough quality validation and attention to detail. Cool neutral tones with teal accents. Gallery-quality, high contrast, editorial aesthetic. No faces, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:30:24.721Z",
+      "updatedAt": "2026-02-24T06:08:56.289Z",
+      "files": [
+        {
+          "filename": "guides-sfdc-qa-testing-001.png",
+          "path": "/images/generated/guides-sfdc-qa-testing/guides-sfdc-qa-testing-001.png",
+          "generatedAt": "2026-02-24T05:30:28.078Z"
+        },
+        {
+          "filename": "guides-sfdc-qa-testing-002.png",
+          "path": "/images/generated/guides-sfdc-qa-testing/guides-sfdc-qa-testing-002.png",
+          "generatedAt": "2026-02-24T05:30:31.552Z"
+        },
+        {
+          "filename": "guides-sfdc-qa-testing-003.png",
+          "path": "/images/generated/guides-sfdc-qa-testing/guides-sfdc-qa-testing-003.png",
+          "generatedAt": "2026-02-24T05:30:36.001Z"
+        }
+      ],
+      "selected": "guides-sfdc-qa-testing-001.png",
+      "selectedPath": "/images/selected/guides-sfdc-qa-testing.png"
+    },
+    "guides/sfdc/post-migration": {
+      "slot": "guides/sfdc/post-migration",
+      "prompt": "Fine art photograph of young green sprouts breaking through rich dark soil in a newly planted garden bed. Morning golden light catching dewdrops on the leaves. Metaphor for nurturing growth after launch. Fresh green and warm golden tones. Gallery-quality, high contrast, editorial aesthetic. No people, no text.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "16:9",
+      "createdAt": "2026-02-24T05:30:39.999Z",
+      "updatedAt": "2026-02-24T06:08:48.395Z",
+      "files": [
+        {
+          "filename": "guides-sfdc-post-migration-001.png",
+          "path": "/images/generated/guides-sfdc-post-migration/guides-sfdc-post-migration-001.png",
+          "generatedAt": "2026-02-24T05:30:45.195Z"
+        },
+        {
+          "filename": "guides-sfdc-post-migration-002.png",
+          "path": "/images/generated/guides-sfdc-post-migration/guides-sfdc-post-migration-002.png",
+          "generatedAt": "2026-02-24T05:30:49.656Z"
+        },
+        {
+          "filename": "guides-sfdc-post-migration-003.png",
+          "path": "/images/generated/guides-sfdc-post-migration/guides-sfdc-post-migration-003.png",
+          "generatedAt": "2026-02-24T05:30:53.220Z"
+        }
+      ],
+      "selected": "guides-sfdc-post-migration-002.png",
+      "selectedPath": "/images/selected/guides-sfdc-post-migration.png"
     }
   }
 }

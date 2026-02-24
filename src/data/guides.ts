@@ -16,6 +16,7 @@ export interface Guide {
   relatedServiceHref?: string;
   publishDate: string;
   lastUpdated: string;
+  imageSlot?: string;
 }
 
 export const guides: Guide[] = [
@@ -28,6 +29,7 @@ export const guides: Guide[] = [
     readTime: "45 min read",
     featured: true,
     hasDetailPage: true,
+    imageSlot: "guides/zendesk-card",
     tableOfContents: [
       { id: "why-migrate", title: "Why Migrate to HubSpot Service Hub", level: 1 },
       { id: "pre-migration-planning", title: "Pre-Migration Planning", level: 1 },
@@ -62,6 +64,7 @@ export const guides: Guide[] = [
     readTime: "30 min read",
     featured: true,
     hasDetailPage: true,
+    imageSlot: "guides/opshub-card",
     tableOfContents: [
       { id: "what-is-operations-hub", title: "What Is Operations Hub", level: 1 },
       { id: "data-architecture", title: "Data Architecture", level: 1 },
@@ -97,6 +100,7 @@ export const guides: Guide[] = [
     readTime: "40 min read",
     featured: true,
     hasDetailPage: true,
+    imageSlot: "guides/sfdc-card",
     tableOfContents: [
       { id: "why-hubspot", title: "Why Migrate to HubSpot", level: 1 },
       { id: "conversion-table", title: "Salesforce to HubSpot Conversion Table", level: 1 },
@@ -119,139 +123,6 @@ export const guides: Guide[] = [
     publishDate: "2026-02-01",
     lastUpdated: "2026-02-23",
   },
-  // Existing placeholder guides (no detail pages yet)
-  {
-    slug: "complete-crm-implementation",
-    title: "The Complete CRM Implementation Guide",
-    description: "Everything you need to know about implementing your CRM successfully, from planning to go-live.",
-    category: "Implementation",
-    readTime: "25 min read",
-    featured: false,
-    hasDetailPage: false,
-    tableOfContents: [],
-    publishDate: "2026-01-15",
-    lastUpdated: "2026-01-15",
-  },
-  {
-    slug: "hubspot-vs-salesforce",
-    title: "HubSpot vs Salesforce: A Detailed Comparison",
-    description: "An honest comparison of features, pricing, and use cases to help you choose the right CRM.",
-    category: "CRM",
-    readTime: "15 min read",
-    featured: false,
-    hasDetailPage: false,
-    tableOfContents: [],
-    publishDate: "2026-01-15",
-    lastUpdated: "2026-01-15",
-  },
-  {
-    slug: "marketing-automation-best-practices",
-    title: "Marketing Automation Best Practices",
-    description: "Learn how to build effective marketing automation workflows that convert leads to customers.",
-    category: "Automation",
-    readTime: "12 min read",
-    featured: false,
-    hasDetailPage: false,
-    tableOfContents: [],
-    publishDate: "2026-01-15",
-    lastUpdated: "2026-01-15",
-  },
-  {
-    slug: "lead-scoring-b2b",
-    title: "Lead Scoring for B2B Companies",
-    description: "How to build a lead scoring model that actually predicts which leads will convert.",
-    category: "Sales",
-    readTime: "8 min read",
-    featured: false,
-    hasDetailPage: false,
-    tableOfContents: [],
-    publishDate: "2026-01-15",
-    lastUpdated: "2026-01-15",
-  },
-  {
-    slug: "hubspot-reporting-attribution",
-    title: "HubSpot Reporting & Attribution",
-    description: "Set up reporting dashboards that give you real visibility into marketing and sales performance.",
-    category: "Analytics",
-    readTime: "14 min read",
-    featured: false,
-    hasDetailPage: false,
-    tableOfContents: [],
-    publishDate: "2026-01-15",
-    lastUpdated: "2026-01-15",
-  },
-  {
-    slug: "revops-fundamentals",
-    title: "Revenue Operations Fundamentals",
-    description: "A practical guide to implementing RevOps at your company, including team structure and metrics.",
-    category: "RevOps",
-    readTime: "18 min read",
-    featured: false,
-    hasDetailPage: false,
-    tableOfContents: [],
-    publishDate: "2026-01-15",
-    lastUpdated: "2026-01-15",
-  },
-  {
-    slug: "hubspot-api-integrations",
-    title: "HubSpot API & Custom Integrations",
-    description: "Technical guide to building custom integrations with HubSpot using their APIs.",
-    category: "Technical",
-    readTime: "20 min read",
-    featured: false,
-    hasDetailPage: false,
-    tableOfContents: [],
-    publishDate: "2026-01-15",
-    lastUpdated: "2026-01-15",
-  },
-  {
-    slug: "email-deliverability",
-    title: "Email Deliverability Best Practices",
-    description: "Ensure your emails reach the inbox with these proven deliverability strategies.",
-    category: "Email",
-    readTime: "11 min read",
-    featured: false,
-    hasDetailPage: false,
-    tableOfContents: [],
-    publishDate: "2026-01-15",
-    lastUpdated: "2026-01-15",
-  },
-  {
-    slug: "sales-enablement-hubspot",
-    title: "Sales Enablement with HubSpot",
-    description: "Equip your sales team with the tools and content they need to close more deals.",
-    category: "Sales",
-    readTime: "13 min read",
-    featured: false,
-    hasDetailPage: false,
-    tableOfContents: [],
-    publishDate: "2026-01-15",
-    lastUpdated: "2026-01-15",
-  },
-  {
-    slug: "hubspot-for-saas",
-    title: "HubSpot for SaaS Companies",
-    description: "Industry-specific guide for implementing HubSpot to drive subscription growth.",
-    category: "Industry",
-    readTime: "16 min read",
-    featured: false,
-    hasDetailPage: false,
-    tableOfContents: [],
-    publishDate: "2026-01-15",
-    lastUpdated: "2026-01-15",
-  },
-  {
-    slug: "customer-success-automation",
-    title: "Customer Success Automation",
-    description: "Build automated workflows that improve customer retention and expansion revenue.",
-    category: "Success",
-    readTime: "9 min read",
-    featured: false,
-    hasDetailPage: false,
-    tableOfContents: [],
-    publishDate: "2026-01-15",
-    lastUpdated: "2026-01-15",
-  },
 ];
 
 export function getGuideBySlug(slug: string): Guide | undefined {
@@ -260,11 +131,6 @@ export function getGuideBySlug(slug: string): Guide | undefined {
 
 export function getFeaturedGuides(): Guide[] {
   return guides.filter((g) => g.featured && g.hasDetailPage);
-}
-
-export function getGuidesByCategory(category: string): Guide[] {
-  if (category === "All") return guides;
-  return guides.filter((g) => g.category === category);
 }
 
 export function getRelatedGuides(currentSlug: string, limit = 3): Guide[] {
