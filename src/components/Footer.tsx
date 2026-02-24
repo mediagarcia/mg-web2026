@@ -150,6 +150,9 @@ export function Footer() {
             <Link href="/terms" className="text-xs text-white/40 hover:text-white transition-colors">
               Terms of Service
             </Link>
+            <Link href="/ethical-ai" className="text-xs text-white/40 hover:text-white transition-colors">
+              AI Policy
+            </Link>
             {/* Social Links */}
             <div className="flex items-center gap-4 ml-4">
               {socialLinks.map((social) => (
