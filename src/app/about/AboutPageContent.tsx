@@ -142,34 +142,6 @@ const team = [
     bio: "Rochelle ensures every client project delivers exceptional results. With deep expertise in project management and client success, she keeps implementations running smoothly and ensures nothing falls through the cracks.",
     image: "/images/team/team-member-2.jpg",
   },
-  {
-    name: "Team Member",
-    role: "Solutions Architect",
-    bio: "Bio coming soon.",
-    image: "/images/team/placeholder.jpg",
-    placeholder: true,
-  },
-  {
-    name: "Team Member",
-    role: "RevOps Specialist",
-    bio: "Bio coming soon.",
-    image: "/images/team/placeholder.jpg",
-    placeholder: true,
-  },
-  {
-    name: "Team Member",
-    role: "Integration Specialist",
-    bio: "Bio coming soon.",
-    image: "/images/team/placeholder.jpg",
-    placeholder: true,
-  },
-  {
-    name: "Team Member",
-    role: "Marketing Automation Expert",
-    bio: "Bio coming soon.",
-    image: "/images/team/placeholder.jpg",
-    placeholder: true,
-  },
 ];
 
 const certifications = [
@@ -182,12 +154,12 @@ const certifications = [
 ];
 
 const clientLogos = [
-  { name: "Healthcare Company", placeholder: true },
-  { name: "IT Services Firm", placeholder: true },
-  { name: "SaaS Platform", placeholder: true },
-  { name: "Medical Device Co", placeholder: true },
-  { name: "Tech Consultancy", placeholder: true },
-  { name: "B2B Software", placeholder: true },
+  { name: "ADVI", logo: "/images/clients/advi.svg" },
+  { name: "Men's Pro", logo: "/images/clients/menspro.png" },
+  { name: "Current Energy", logo: "/images/clients/currentenergy.png" },
+  { name: "Cloud Force Gurus", logo: "/images/clients/cloudforcegurus.png" },
+  { name: "Delve Health", logo: "/images/clients/delvehealth.svg" },
+  { name: "Optix", logo: "/images/clients/optix.png" },
 ];
 
 function AnimatedCounter({
@@ -481,29 +453,15 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`bg-gray-50 rounded-2xl p-6 text-center ${
-                  member.placeholder ? "opacity-60" : ""
-                }`}
+                className="bg-gray-50 rounded-2xl p-6 text-center"
               >
                 <div className="relative w-24 h-24 rounded-full overflow-hidden ring-4 ring-white shadow-lg mx-auto mb-4">
-                  {member.placeholder ? (
-                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                      <svg
-                        className="w-12 h-12 text-gray-400"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                      </svg>
-                    </div>
-                  ) : (
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                    />
-                  )}
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <h3 className="text-lg font-bold text-black">
                   {member.name}
@@ -611,7 +569,7 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
             ))}
           </div>
 
-          {/* Client Logos (Placeholder) */}
+          {/* Client Logos */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -624,11 +582,16 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
               {clientLogos.map((logo, index) => (
                 <div
                   key={`${logo.name}-${index}`}
-                  className="aspect-[3/2] bg-white rounded-xl flex items-center justify-center"
+                  className="aspect-[3/2] bg-white rounded-xl flex items-center justify-center p-4"
                 >
-                  <span className="text-xs text-black/20 text-center px-2">
-                    {logo.name}
-                  </span>
+                  <Image
+                    src={logo.logo}
+                    alt={`${logo.name} logo`}
+                    width={120}
+                    height={40}
+                    unoptimized
+                    className="max-h-8 w-auto object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  />
                 </div>
               ))}
             </div>

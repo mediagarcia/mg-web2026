@@ -50,6 +50,8 @@ export const industries = [
   "Professional Services",
   "Manufacturing",
   "Education",
+  "Energy",
+  "E-Commerce",
 ] as const;
 
 export const services = [
@@ -60,6 +62,7 @@ export const services = [
   "EHR Integration",
   "Sales Enablement",
   "Salesforce to HubSpot",
+  "CRM Optimization",
 ] as const;
 
 export type Industry = (typeof industries)[number];
@@ -67,199 +70,243 @@ export type Service = (typeof services)[number];
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "healthcare-integration",
-    title: "80% Reduction in Manual Data Entry",
-    client: "Healthcare Provider Network",
+    slug: "advi-health-crm-optimization",
+    title: "200+ CRM Optimizations Powering Healthcare Growth",
+    client: "ADVI Health",
     industry: "Healthcare",
-    service: "EHR Integration",
-    description: "Integrated patient intake system with CRM, automating lead capture and eliminating duplicate data entry across multiple clinic locations.",
+    service: "CRM Optimization",
+    description: "Ongoing HubSpot CRM maintenance, data quality monitoring, and executive reporting that keeps ADVI Health's revenue operations running at peak performance.",
     image: "/images/case-studies/case-study-1.jpg",
     gradient: "from-teal-500 to-teal-700",
-    timeline: "6 weeks",
-    tags: ["Healthcare", "Integration", "Automation"],
+    timeline: "Ongoing (2+ years)",
+    tags: ["Healthcare", "CRM Optimization", "Data Quality", "Reporting"],
     featured: true,
-    clientLogo: "/images/case-studies/logos/healthcare-network.svg",
-    clientSize: "50+ locations",
-    clientLocation: "Midwest Region",
-    publishDate: "2024-10-15",
-    challenge: `A 50-location healthcare provider network was drowning in manual data entry. Every new patient inquiry required staff to enter information into three separate systems: their EHR, their marketing platform, and their internal tracking spreadsheets.
+    clientLogo: "/images/clients/advi.svg",
+    clientSize: "Growth-stage advisory firm",
+    clientLocation: "United States",
+    publishDate: "2025-04-01",
+    challenge: `ADVI Health, a healthcare advisory firm, had invested in HubSpot but their portal had grown organically without governance. Data quality was deteriorating—duplicate records, incomplete deal information, and inconsistent property usage made it impossible to trust the numbers in reports.
 
-The result? Staff spent 15+ hours per week per location on duplicate data entry. Leads fell through the cracks. Patient information was inconsistent across systems. And the revenue team had no visibility into which marketing channels were actually driving new patients.
+Their revenue team was making decisions based on dashboards they couldn't fully rely on. Deal amounts weren't syncing correctly, booking reports required manual reconciliation, and there was no systematic way to audit portal health. When leadership asked for pipeline reports, the team spent hours manually verifying data before presenting.
 
-They'd tried solving this with "better processes" and training—but the fundamental problem was disconnected systems that weren't designed to work together.`,
-    solution: `We built a unified integration layer that connected their patient intake forms directly to HubSpot, their EHR system, and their scheduling platform.
+ADVI needed more than a one-time cleanup. They needed an ongoing partner who could maintain CRM excellence as their business scaled—someone who understood both the technical platform and the healthcare advisory business well enough to proactively identify issues before they impacted revenue decisions.`,
+    solution: `We established a comprehensive CRM maintenance and optimization program built around three pillars: data quality, executive reporting, and continuous improvement.
 
-When a potential patient fills out an inquiry form, their information automatically flows to all three systems—with proper field mapping, duplicate detection, and validation at every step. We also implemented lead source tracking so their marketing team finally knows which campaigns drive actual appointments, not just form fills.
+First, we conducted a deep portal audit and built a custom data quality dashboard to monitor duplicates, incomplete records, and invalid data in real time. We implemented deal amount sync validation, solution industry properties, and deal split tracking to ensure revenue attribution was accurate down to the individual rep level.
 
-The integration includes bi-directional sync, so when patient status updates in the EHR, their CRM record reflects it automatically. Staff no longer need to manually update records or check multiple systems.`,
+From there, we provide ongoing ad hoc HubSpot administration—everything from workflow automation and form tracking to weekly booking reports and custom dashboards for executive decision-making. When ADVI's needs evolved in 2026, we restructured the engagement to focus on what mattered most: executive reporting, special initiatives, and responsive CRM support with a one-hour SLA for critical issues.
+
+The relationship runs on weekly meetings, a dedicated project manager, and a shared task system with over 200 tracked items—ensuring nothing falls through the cracks.`,
     results: [
-      { metric: "80%", label: "Reduction in data entry time" },
-      { metric: "15 hrs", label: "Saved per location weekly" },
-      { metric: "0", label: "Data entry errors" },
-      { metric: "< 90 days", label: "Full ROI achieved" },
+      { metric: "200+", label: "CRM optimizations delivered" },
+      { metric: "90%", label: "Deliverable compliance rate" },
+      { metric: "< 1 hr", label: "Critical issue response time" },
+      { metric: "2+ yrs", label: "Continuous partnership" },
     ],
     testimonial: {
-      quote: "We went from spending half our day on data entry to focusing on what matters—patient care. The integration just works, and we finally have accurate data across all our systems.",
-      author: "Operations Director",
-      title: "Operations Director",
-      company: "Regional Healthcare Network",
+      quote: "Media Garcia isn't just a vendor—they're an extension of our team. They understand our business well enough to proactively identify issues before they become problems, and their reporting gives us the confidence to make real revenue decisions.",
+      author: "Juli Denny",
+      title: "Chief Growth Officer",
+      company: "ADVI Health",
     },
   },
   {
-    slug: "lead-generation-saas",
-    title: "340% Increase in Qualified Leads",
-    client: "SaaS Technology Company",
-    industry: "SaaS",
-    service: "Marketing Automation",
-    description: "Implemented advanced lead scoring and nurturing workflows that transformed their sales pipeline from chaos to predictable growth.",
+    slug: "current-energy-integrations",
+    title: "5 System Integrations Unifying Energy Operations",
+    client: "Current Energy",
+    industry: "Energy",
+    service: "HubSpot Implementation",
+    description: "Connected HubSpot to NetSuite, Aurora, Paycom, Company Cam, and a custom customer portal—turning disconnected tools into one unified operations platform for a growing energy company.",
     image: "/images/case-studies/case-study-2.jpg",
     gradient: "from-neon-purple-500 to-neon-purple-700",
-    timeline: "8 weeks",
-    tags: ["SaaS", "Lead Generation", "Marketing Automation"],
+    timeline: "Ongoing",
+    tags: ["Energy", "Integrations", "Automation", "Customer Portal"],
     featured: false,
-    clientLogo: "/images/case-studies/logos/saas-tech.svg",
-    clientSize: "100-200 employees",
-    clientLocation: "San Francisco, CA",
-    publishDate: "2024-09-20",
-    challenge: `A B2B SaaS company was generating plenty of leads, but their sales team was overwhelmed. Every form fill went directly to sales, regardless of fit or intent. Reps wasted hours chasing unqualified prospects while high-intent buyers waited days for follow-up.
+    clientLogo: "/images/clients/currentenergy.png",
+    clientSize: "Growing energy company",
+    clientLocation: "United States",
+    publishDate: "2025-01-15",
+    challenge: `Current Energy, a residential and commercial energy company, was scaling fast—but their technology stack wasn't keeping up. Their teams relied on five disconnected systems: HubSpot for CRM, NetSuite for billing, Aurora for solar design, Paycom for HR, and Company Cam for on-site project photos.
 
-Their existing "lead scoring" was based on a single form field asking budget range—which prospects routinely inflated or left blank. Marketing and sales were at odds: marketing claimed they were delivering leads, sales claimed the leads were garbage.
+Every project required manual data entry across multiple platforms. Deal stage updates in HubSpot didn't trigger tasks in the right queues. Inspection scheduling, proposal generation, and project handoffs all required someone to manually move information between systems. The residential team had pipeline data trapped in a legacy system that needed migrating. And when leadership wanted a single view of project status, no one could provide it without hours of manual reconciliation.
 
-The real problem? No system to identify which leads were actually ready to buy versus which needed more nurturing.`,
-    solution: `We implemented a comprehensive lead scoring and nurturing system in HubSpot that tracks behavioral signals across their entire buyer journey.
+On top of the integration challenges, Current Energy needed a customer-facing portal where homeowners and commercial clients could track their project status—something that required HubSpot's ticket pipelines to be repurposed as project phases, with tailored views for different customer types.`,
+    solution: `We took a systems-first approach, mapping Current Energy's entire operational workflow before touching any code. This revealed the critical integration points where manual handoffs were costing the most time.
 
-The scoring model weighs engagement depth (not just email opens, but specific page visits, content downloads, and feature page engagement), firmographic fit, and explicit intent signals. Leads aren't handed to sales until they hit a qualified threshold—and when they do, sales gets full context on what the prospect has engaged with.
+We built the HubSpot-to-NetSuite integration with field mapping and control fields ("Ready for NetSuite" and "Billable" flags) so deals only sync when they're truly ready—preventing the billing team from chasing incomplete records. For Aurora, we set up Zapier automations to create deals in HubSpot automatically from solar designs, with safeguards to prevent duplicate records and data sync errors.
 
-For leads that aren't ready, we built automated nurture sequences tailored to their specific interests and stage. A prospect exploring pricing gets different content than one still researching solutions.`,
+Deal stage-based task automation ensures that when a project moves from design to permitting to inspection, the right team gets the right tasks automatically. We rebuilt stage notes with readable titles and auto-association to deals, so every team member can see project history at a glance.
+
+For the customer portal, we prototyped and designed a solution using HubSpot's native capabilities—validating that ticket pipelines could serve as project phases, building Figma mockups for management review, and ensuring the portal could support multiple customer types with tailored views. We also executed a full residential data migration, moving both open and closed-won deals from the legacy system with zero data loss.`,
     results: [
-      { metric: "340%", label: "Increase in qualified leads" },
-      { metric: "52%", label: "Faster sales cycle" },
-      { metric: "3x", label: "Email engagement rate" },
-      { metric: "$1.2M", label: "Pipeline added in 90 days" },
+      { metric: "5+", label: "Systems integrated with HubSpot" },
+      { metric: "200+", label: "Tasks delivered and tracked" },
+      { metric: "100%", label: "Data migration accuracy" },
+      { metric: "0", label: "Manual deal stage handoffs" },
     ],
     testimonial: {
-      quote: "Our sales team finally trusts the leads they get. Every qualified lead comes with context on what they care about, so conversations start in the right place. Pipeline has never been healthier.",
-      author: "VP of Marketing",
-      title: "VP of Marketing",
-      company: "B2B SaaS Platform",
+      quote: "Before Media Garcia, our teams were copying data between five different systems. Now everything flows automatically—when a deal moves stages, tasks get created, the right people get notified, and our customers can see their project status in real time.",
+      author: "Maria Woo",
+      title: "Operations Lead",
+      company: "Current Energy",
     },
   },
   {
-    slug: "crm-migration",
-    title: "Full CRM Migration in 30 Days",
-    client: "Professional Services Firm",
-    industry: "IT Services",
-    service: "Salesforce to HubSpot",
-    description: "Migrated 50,000+ contacts from Salesforce to HubSpot with zero data loss, no downtime, and immediate team adoption.",
+    slug: "mens-pro-crm-enablement",
+    title: "Custom Patient Portal and EHR Built Inside HubSpot",
+    client: "Men's Pro Health",
+    industry: "Healthcare",
+    service: "HubSpot Implementation",
+    description: "Built a complete patient portal, custom EHR notes system, and clinic operations platform inside HubSpot—replacing a legacy medical system for a multi-location men's health clinic.",
     image: "/images/case-studies/case-study-3.jpg",
     gradient: "from-orange-red-500 to-orange-red-700",
-    timeline: "30 days",
-    tags: ["IT Services", "CRM Migration", "Data Migration"],
+    timeline: "8 months",
+    tags: ["Healthcare", "Patient Portal", "EHR", "Custom Objects"],
     featured: false,
-    clientLogo: "/images/case-studies/logos/prof-services.svg",
-    clientSize: "200-500 employees",
-    clientLocation: "Minneapolis, MN",
-    publishDate: "2024-08-10",
-    challenge: `A professional services firm had outgrown their Salesforce implementation. What started as a simple CRM had become a tangled mess of custom objects, outdated workflows, and integrations that no one fully understood. Their Salesforce admin had left, and the monthly bill kept climbing for features they didn't use.
+    clientLogo: "/images/clients/menspro.png",
+    clientSize: "Multi-location clinic",
+    clientLocation: "United States",
+    publishDate: "2025-08-01",
+    challenge: `Men's Pro Health, a growing men's health clinic with multiple locations, was running their entire patient operation on AdvancedMD (AMD)—a legacy EHR system that couldn't keep up with how they wanted to grow. Patient onboarding was manual, medication reorder tracking was done by memory, and there was no way for patients to self-serve or check their order status online.
 
-They needed to migrate to HubSpot—but they had 50,000+ contacts, 5 years of deal history, and critical integrations with their billing and project management systems. Previous migration attempts had stalled due to data complexity and fear of losing historical information.
+The clinic needed a patient-facing portal where men could log in, view their treatment plans, reorder medications, and message their care team directly. They also needed their clinical staff to have structured EHR notes inside the same system their sales and operations teams used—eliminating the constant toggling between AMD and HubSpot.
 
-The stakes were high: their entire sales operation depended on CRM access, and they couldn't afford extended downtime.`,
-    solution: `We developed a phased migration plan that moved data in stages while keeping both systems operational during the transition.
+The complexity was significant: the solution needed to support multiple clinic locations with location-specific branding, handle secure patient data, integrate with lab APIs (Quest, AEL), automate medication reorder notifications via email and SMS, and migrate years of patient data from AMD—all while keeping the clinics running without disruption.`,
+    solution: `We designed and built a complete CRM enablement platform inside HubSpot, organized into phased milestones: discovery, MVP buildout, internal pilot, refinement, and full rollout.
 
-First, we mapped every Salesforce field, custom object, and workflow to HubSpot equivalents—identifying what to migrate directly, what to restructure, and what to leave behind. We built custom import scripts that preserved relationships between contacts, companies, and deals while cleaning duplicate and outdated records.
+The patient portal was built from scratch using HubSpot's native capabilities—membership login, patient profile management, medication order forms, a chatbot for patient-to-staff messaging, and automated order status notifications via email and SMS. Each clinic location gets its own branded experience through smart content, with location-specific contact info, landing pages, and support routing.
 
-The actual migration happened over a weekend, with parallel systems running for one week to catch any issues. We trained teams by role before go-live, so they knew exactly where to find what they needed in the new system.`,
+For the clinical team, we built a custom EHR notes system using HubSpot custom objects. Providers can create structured clinical notes (SOAP format), with draft-vs-signed workflows, PDF export, and separated views for sales notes versus medical notes. We also automated patient plan tracking using custom objects tied to invoice data, so treatment plans update automatically as patients reorder.
+
+The data migration from AdvancedMD is being executed in stages—current patients first, with historical records following—using FTP exports and custom mapping scripts. Lab API integration connects Quest and AEL results directly to patient records in HubSpot.
+
+We piloted with a select group of patients, collected structured feedback, created training documentation and onboarding guides, and are rolling out to all locations with a full communication and adoption plan.`,
     results: [
-      { metric: "50,000+", label: "Contacts migrated" },
-      { metric: "0", label: "Data loss incidents" },
-      { metric: "30 days", label: "Total project time" },
-      { metric: "40%", label: "Reduction in CRM costs" },
+      { metric: "217+", label: "Project tasks delivered" },
+      { metric: "4", label: "Clinic locations supported" },
+      { metric: "100%", label: "Portal pilot completion" },
+      { metric: "0", label: "Legacy systems needed post-launch" },
     ],
     testimonial: {
-      quote: "We were terrified of losing five years of client history. Instead, we got a cleaner, faster CRM with all our data intact. The migration was smoother than any software transition we've ever done.",
-      author: "Managing Partner",
-      title: "Managing Partner",
-      company: "Professional Services Firm",
+      quote: "We asked Media Garcia to build us a patient portal and ended up with an entire operating system for our clinics. Our patients can manage their own care online, our providers have structured clinical notes, and we're finally running everything from one platform.",
+      author: "Dan Green",
+      title: "President & CEO",
+      company: "Men's Pro Health",
     },
   },
   {
-    slug: "manufacturing-hubspot",
-    title: "2x Sales Team Productivity",
-    client: "Industrial Equipment Manufacturer",
-    industry: "Manufacturing",
+    slug: "mipi-alliance-service-hub",
+    title: "Unified Service Desk for a Global Standards Organization",
+    client: "MIPI Alliance",
+    industry: "IT Services",
     service: "HubSpot Implementation",
-    description: "Deployed HubSpot Sales Hub to a traditional manufacturing company, replacing spreadsheets and sticky notes with a modern sales process.",
-    image: "/images/case-studies/case-study-1.jpg",
-    gradient: "from-teal-500 to-teal-700",
-    timeline: "10 weeks",
-    tags: ["Manufacturing", "HubSpot", "Sales Process"],
+    description: "Implemented a HubSpot service desk, standardized email marketing, and audited marketing-sales-service operations for a global technology standards body serving the mobile industry.",
+    image: "/images/case-studies/case-study-3.jpg",
+    gradient: "from-teal-500 to-neon-purple-700",
+    timeline: "6 months",
+    tags: ["Technology", "Service Hub", "Email Marketing", "Operations Audit"],
     featured: false,
-    clientLogo: "/images/case-studies/logos/manufacturing.svg",
-    clientSize: "100-250 employees",
-    clientLocation: "Detroit, MI",
-    publishDate: "2024-07-05",
-    challenge: `A third-generation industrial equipment manufacturer had grown to $50M in revenue using the same sales process they'd used for decades: spreadsheets, sticky notes, and institutional knowledge locked in the heads of veteran salespeople.
+    clientSize: "Global standards organization",
+    clientLocation: "United States",
+    publishDate: "2020-03-01",
+    challenge: `MIPI Alliance develops the world's most comprehensive set of interface specifications for mobile and mobile-influenced products. As a membership-based standards organization, their success depends on serving hundreds of member companies effectively—from onboarding new members to nurturing prospects and supporting existing ones.
 
-When two senior sales reps retired, the company realized they had no documentation of customer relationships, deal history, or follow-up processes. New hires were floundering. Quotes were falling through the cracks. And leadership had no visibility into the pipeline.
+When Media Garcia began working with MIPI, the organization faced three interconnected challenges. Their member onboarding workflow was inconsistent—new members had different experiences depending on who handled their intake, with no standardized process to ensure every organization received the same level of attention and information.
 
-They needed to modernize—but their sales team was skeptical of technology and resistant to change. Previous software rollouts had failed due to low adoption.`,
-    solution: `We implemented HubSpot Sales Hub with a focus on adoption over features. Rather than deploying everything at once, we started with the basics: contact management, deal tracking, and email logging.
+Prospect and at-risk member nurturing was essentially nonexistent. There was no systematic way to engage prospective members through the decision process, and no early-warning system to identify members who might not renew. Marketing, sales, and service operations ran on disjointed systems, making it difficult for any team to see the full picture of a member's relationship with the organization.`,
+    solution: `Media Garcia dedicated time to understanding the frontline teams' day-to-day roles and developed a comprehensive list of capabilities and infrastructure they needed to build great relationships with prospects and members.
 
-We worked with the sales team to map their existing process into HubSpot—respecting what worked while eliminating the manual overhead. Custom properties captured the manufacturing-specific data they needed: equipment types, maintenance schedules, and purchase cycles.
+We started by onboarding MIPI to a ticketing platform inside HubSpot Service Hub, building structured processes for managing issues and inquiries from various intake channels. This gave every team member a consistent way to track, prioritize, and resolve member requests—replacing the ad hoc approach that had been in place.
 
-Training happened on the floor, not in a conference room. We showed reps how HubSpot would save them time, not create more work. By week three, even the skeptics were logging activities.`,
+Next, we brought consistency to email marketing by standardizing templates across both HubSpot and Mailchimp, creating structures that made it easy for the team to launch campaigns without starting from scratch each time. We then conducted a full audit of MIPI's marketing, sales, and service processes—evaluating the technology in use across all three functions and providing a strategic recommendation for future growth.
+
+The result was a prioritized roadmap of projects spanning membership prospecting, member engagement, and technology integration—giving MIPI a clear path forward rather than a list of disconnected improvements.`,
     results: [
-      { metric: "2x", label: "Sales team productivity" },
-      { metric: "100%", label: "User adoption rate" },
-      { metric: "45%", label: "Faster quote turnaround" },
-      { metric: "$800K", label: "Recovered pipeline" },
+      { metric: "3", label: "Departments unified on one platform" },
+      { metric: "100%", label: "Member inquiry tracking coverage" },
+      { metric: "1", label: "Consolidated service desk" },
+      { metric: "6 mo", label: "Strategic roadmap delivered" },
     ],
     testimonial: {
-      quote: "I've been selling for 30 years and never thought I'd use a CRM. Now I can't imagine working without it. I actually know where all my deals stand.",
-      author: "Senior Sales Representative",
-      title: "Senior Sales Representative",
-      company: "Industrial Equipment Manufacturer",
+      quote: "We've been working with Media Garcia for about 6 months on various projects related to HubSpot and outside email and website marketing. So far we feel very comfortable with the team's level of aptitude, speed, focus, and professionalism. Looking forward to a continued partnership.",
+      author: "Melanie Cole",
+      title: "Special Projects Manager",
+      company: "MIPI Alliance",
     },
   },
   {
-    slug: "law-firm-sales-enablement",
-    title: "65% Increase in New Client Intake",
-    client: "Regional Law Firm",
+    slug: "eag-crm-data-analytics",
+    title: "CRM Data Analytics That Proved Marketing ROI",
+    client: "EAG Advertising & Marketing",
     industry: "Professional Services",
-    service: "Sales Enablement",
-    description: "Built an automated intake and follow-up system that transformed how a growing law firm captures and converts prospective clients.",
-    image: "/images/case-studies/case-study-2.jpg",
-    gradient: "from-neon-purple-500 to-neon-purple-700",
-    timeline: "6 weeks",
-    tags: ["Legal", "Sales Enablement", "Lead Capture"],
+    service: "CRM Optimization",
+    description: "Validated marketing and sales assumptions through CRM data analysis, uncovering deal velocity insights and attribution data that empowered an agency and their client with actionable growth intelligence.",
+    image: "/images/case-studies/case-study-1.jpg",
+    gradient: "from-orange-red-500 to-orange-red-700",
+    timeline: "Rapid engagement",
+    tags: ["Marketing Agency", "Data Analytics", "Attribution", "Reporting"],
     featured: false,
-    clientLogo: "/images/case-studies/logos/law-firm.svg",
-    clientSize: "50-100 employees",
-    clientLocation: "Chicago, IL",
-    publishDate: "2024-06-20",
-    challenge: `A regional law firm with 40 attorneys was losing prospective clients to slower response times. Their intake process relied on a receptionist manually routing calls and emails to the right practice area—often with delays of 24-48 hours.
+    clientSize: "Marketing agency",
+    clientLocation: "United States",
+    publishDate: "2022-03-01",
+    challenge: `EAG Advertising & Marketing was working with a client who used HubSpot CRM for their marketing and sales activities. The client had a sales team running outbound calling while EAG created marketing campaigns. Both efforts were generating leads—but it was nearly impossible to quickly discern and attribute where leads came from and what influenced their conversion.
 
-In legal services, speed matters. Prospective clients contact multiple firms and typically go with whoever responds first. The firm was spending significantly on marketing but watching leads go cold before attorneys could follow up.
+The client didn't have insights into what was actually driving deals and revenue growth. Sales had become stagnant as they tried different tactics without being able to measure what was working. There wasn't enough consistency in actions or data to see what was making a difference, which led to gut-feel decision-making and reactive responses to shifting performance.
 
-They needed a system that could instantly route inquiries to the right attorney while maintaining the personal touch clients expect from a law firm.`,
-    solution: `We implemented an intelligent intake system in HubSpot that routes inquiries based on practice area, urgency, and attorney availability.
+EAG needed a data partner who could dig into the CRM, validate assumptions, and deliver attribution insights that would demonstrate the ROI of their marketing efforts—giving both EAG and their client the clarity they needed to make smarter decisions.`,
+    solution: `Media Garcia met with EAG to articulate multiple hypotheses and determine which needed validation, along with what insights would be most valuable for both the agency and their end client.
 
-Web forms capture case type and key details upfront, then automatically assign to the appropriate attorney with full context. Attorneys receive mobile notifications for urgent matters. Automated sequences handle initial follow-up for non-urgent inquiries, keeping prospects engaged until an attorney is available.
+We performed a comprehensive analysis of CRM data focused on three objectives: discovering how marketing activities were influencing the sales pipeline, uncovering selling velocity characteristics, and recommending actions to better attribute and increase opportunities going forward.
 
-We also built a dashboard showing intake metrics by practice area, so marketing knows which channels drive actual clients—not just form fills.`,
+The analysis revealed critical insights. The client was taking significantly longer to close deals—average time to close had grown from 36 days in early 2021 to deals staying open for 298 days by Q4 2021. This pattern had been worsening since 2020, indicating a clear need to close deals faster and move on to fresh opportunities rather than nursing stale pipeline.
+
+We also discovered that on average it took 40 interactions to close-win a deal versus only 26 interactions for deals that were closed-lost—revealing that the deals they were winning required substantially more touches, and the ones they were losing were being identified faster. Media Garcia built a suite of HubSpot CRM dashboards and reports to visualize these findings and make the insights actionable for ongoing decision-making.`,
     results: [
-      { metric: "65%", label: "Increase in new clients" },
-      { metric: "< 5 min", label: "Average response time" },
-      { metric: "3x", label: "Consultation bookings" },
-      { metric: "28%", label: "Higher close rate" },
+      { metric: "40 vs 26", label: "Interactions to win vs. lose a deal" },
+      { metric: "36 → 298", label: "Days to close: early vs. late 2021" },
+      { metric: "100%", label: "Marketing attribution visibility" },
+      { metric: "Weeks → Days", label: "Time to validate hypotheses" },
     ],
     testimonial: {
-      quote: "We used to lose clients because we couldn't respond fast enough. Now prospective clients hear from us within minutes, and our attorneys have all the context they need before the first call.",
-      author: "Director of Business Development",
-      title: "Director of Business Development",
-      company: "Regional Law Firm",
+      quote: "We partnered with Media Garcia on creating a dashboard for a client. What they delivered for us, I have the happiest team right now because they did it this fast. We had gotten through maybe a quarter of the same material over the course of weeks if not months. Thank you, Media Garcia!",
+      author: "Michele Markham",
+      title: "President & CEO",
+      company: "EAG Advertising & Marketing",
     },
+  },
+  {
+    slug: "xl-feet-ecommerce-growth",
+    title: "$111K in Email Revenue in Year One",
+    client: "XL Feet",
+    industry: "E-Commerce",
+    service: "Marketing Automation",
+    description: "Documented operations, built a marketing strategy from scratch, and implemented a growth stack that generated over $111K in email-driven sales in the first year for a niche footwear retailer.",
+    image: "/images/case-studies/case-study-2.jpg",
+    gradient: "from-neon-purple-500 to-teal-700",
+    timeline: "12 months",
+    tags: ["E-Commerce", "Email Marketing", "Operations", "Growth Stack"],
+    featured: false,
+    clientSize: "Niche e-commerce retailer",
+    clientLocation: "United States",
+    publishDate: "2023-06-01",
+    challenge: `XL Feet is a niche e-commerce business serving adults with wide and long feet—a specialized market with a loyal but underserved customer base. The business was growing, but the owner, Adrian, was doing everything himself with no documented processes, no marketing strategy, and no way to measure what was working.
+
+Internal operations ran on institutional knowledge locked in the owner's head. There was no documentation that would allow tasks to be delegated, meaning Adrian was the bottleneck for every decision and every process. Marketing efforts were scattered and undefined—money was being spent without a clear understanding of ROI or what channels were actually driving sales.
+
+On top of that, the systems for marketing, sales, and customer service were completely disjointed. Returns and warranty requests were handled manually, product reviews weren't being collected systematically, and there was no way for customers to get personalized help finding shoes that fit their specific needs. XL Feet needed a partner who could bring structure, strategy, and the right technology to unlock the next stage of growth.`,
+    solution: `Media Garcia took a holistic approach, tackling operations, marketing, and technology in parallel to create compounding impact.
+
+We started with process documentation—mapping out XL Feet's key workflows and creating clear documentation that would enable Adrian to delegate logistical roles to team members. This alone was transformational, freeing up the owner's time to focus on strategic growth rather than day-to-day operations.
+
+For marketing, we developed a cohesive strategy from the ground up and implemented digital marketing tactics with email marketing as the centerpiece. We built automated email sequences for customer lifecycle stages—welcome series, post-purchase follow-ups, win-back campaigns, and product recommendations based on purchase history.
+
+On the technology side, we curated a growth stack of integrated tools: a returns and warranty management system to streamline customer service, a product review collection platform to build social proof, and a conversational bot that guided customers through custom shoe fittings. This last piece was especially valuable for XL Feet's niche—customers with hard-to-fit feet could get personalized recommendations without needing to call or email, creating a self-service experience that felt like working with an in-store specialist.`,
+    results: [
+      { metric: "$111K+", label: "Email revenue in year one" },
+      { metric: "100%", label: "Key processes documented" },
+      { metric: "New", label: "Conversational shoe fitting bot" },
+      { metric: "3+", label: "Growth stack tools integrated" },
+    ],
   },
 ];
 

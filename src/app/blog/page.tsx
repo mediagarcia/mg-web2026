@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
 import Link from "next/link";
 import { blogPosts } from "@/data/blog-posts";
+import { BlogNewsletter } from "./BlogNewsletter";
 
 export const metadata: Metadata = {
   title: "Blog | Media Garcia",
@@ -77,7 +78,15 @@ export default function BlogPage() {
             {posts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
                 <article>
-                  <div className="bg-gray-100 rounded-2xl aspect-video mb-6 group-hover:bg-gray-200 transition-colors" />
+                  <div className={`rounded-2xl aspect-video mb-6 transition-all ${
+                    post.category === "HubSpot" ? "bg-gradient-to-br from-[#ff7a59]/20 to-[#ff7a59]/5" :
+                    post.category === "Automation" ? "bg-gradient-to-br from-teal-500/20 to-teal-500/5" :
+                    post.category === "Analytics" ? "bg-gradient-to-br from-neon-purple-500/20 to-neon-purple-500/5" :
+                    post.category === "Sales" ? "bg-gradient-to-br from-orange-red-500/20 to-orange-red-500/5" :
+                    post.category === "RevOps" ? "bg-gradient-to-br from-teal-600/20 to-teal-600/5" :
+                    post.category === "Migration" ? "bg-gradient-to-br from-blue-500/20 to-blue-500/5" :
+                    "bg-gradient-to-br from-gray-200 to-gray-100"
+                  } group-hover:shadow-lg`} />
                   <span className="text-xs font-bold text-teal-500 uppercase tracking-wider">
                     {post.category}
                   </span>
@@ -98,29 +107,7 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter */}
-      <section className="py-20 lg:py-32 bg-gray-50">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-black text-black mb-4">Subscribe to our newsletter</h2>
-            <p className="text-black/60 mb-8">
-              Get the latest HubSpot tips and growth strategies delivered to your inbox every week.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-4 bg-white border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-teal-500"
-              />
-              <button
-                type="submit"
-                className="px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-teal-500 transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
+      <BlogNewsletter />
 
       <CTABanner />
     </>

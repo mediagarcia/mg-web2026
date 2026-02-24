@@ -4,8 +4,9 @@ import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
-import { JourneyBackground } from "@/components/JourneyBackground";
 import { ScrollToTopOnNavigation } from "@/components/ScrollToTopOnNavigation";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { HubSpotTracking } from "@/components/analytics/HubSpotTracking";
 import { DevPreviewProviders } from "@/components/DevPreviewProviders";
 
 const roboto = Roboto({
@@ -23,12 +24,12 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mediagarcia.com"),
   title: "Media Garcia | RevOps & CRM Experts",
   description: "We build and run digital platforms that keep companies lean, growing, and easy to do business with. Platform-agnostic RevOps expertise across HubSpot, Salesforce, and custom stacks.",
   keywords: ["RevOps", "Revenue Operations", "CRM Implementation", "HubSpot", "HubSpot Partner", "Salesforce Integration", "Marketing Automation", "CRM", "Sales Enablement", "Digital Transformation", "Platform-Agnostic"],
   icons: {
     icon: "/favicon.svg",
-    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "Media Garcia | RevOps & CRM Experts",
@@ -37,20 +38,11 @@ export const metadata: Metadata = {
     url: "https://mediagarcia.com",
     siteName: "Media Garcia",
     locale: "en_US",
-    images: [
-      {
-        url: "https://mediagarcia.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Media Garcia - RevOps & CRM Experts",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Media Garcia | RevOps & CRM Experts",
     description: "We build and run digital platforms that keep companies lean, growing, and easy to do business with.",
-    images: ["https://mediagarcia.com/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -134,7 +126,7 @@ const localBusinessSchema = {
   "@type": "ProfessionalService",
   "@id": "https://mediagarcia.com/#localbusiness",
   name: "Media Garcia",
-  image: "https://mediagarcia.com/og-image.jpg",
+  image: "https://mediagarcia.com/opengraph-image",
   url: "https://mediagarcia.com",
   telephone: "+1-888-612-4250",
   priceRange: "$$$",
@@ -215,6 +207,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${roboto.variable} ${robotoMono.variable}`}>
       <body className="font-sans antialiased">
+        <GoogleAnalytics />
+        <HubSpotTracking />
         <ScrollToTopOnNavigation />
         {/* Skip to main content link for accessibility */}
         <a
@@ -223,8 +217,6 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        {/* Isometric journey background - fixed layer behind content */}
-        <JourneyBackground />
         <DevPreviewProviders>
           <Navigation />
           <main id="main-content" tabIndex={-1} className="relative z-40 outline-none">
