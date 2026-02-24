@@ -26,6 +26,7 @@ import {
   ArrowRight,
   Grid3X3,
   Briefcase,
+  FileText,
   type LucideIcon,
 } from "lucide-react";
 
@@ -249,7 +250,40 @@ function ResourcesMegaMenu({ onClose }: { onClose: () => void }) {
 
 function WorkMegaMenu({ onClose }: { onClose: () => void }) {
   return (
-    <div className="max-w-sm">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Case Studies */}
+      <Link
+        href="/work"
+        onClick={onClose}
+        className="group block p-6 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 text-white"
+      >
+        <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mb-3">
+          <Briefcase className="w-5 h-5" />
+        </div>
+        <h3 className="text-base font-semibold mb-1">Case Studies</h3>
+        <p className="text-sm text-white/80 mb-4">Real results from real clients</p>
+        <span className="inline-flex items-center gap-1 text-sm font-medium">
+          View All
+          <ArrowRight className="w-4 h-4" />
+        </span>
+      </Link>
+
+      {/* Guides */}
+      <Link
+        href="/resources/guides"
+        onClick={onClose}
+        className="group block p-6 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-gray-50 transition-all"
+      >
+        <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors mb-3">
+          <FileText className="w-5 h-5" />
+        </div>
+        <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors mb-1">
+          Guides & Playbooks
+        </h3>
+        <p className="text-xs text-gray-500">Expert migration guides and strategy playbooks</p>
+      </Link>
+
+      {/* Poco */}
       <Link
         href="/work"
         onClick={onClose}
@@ -459,16 +493,38 @@ export function Navigation() {
                     title="Work"
                     onClose={() => setIsMobileMenuOpen(false)}
                   >
-                    <div>
-                      <Link
-                        href="/work"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="block py-2 pl-4 border-l-2 border-teal-500"
-                      >
-                        <span className="text-base font-medium text-teal-600">Poco — Coming Soon</span>
-                        <span className="block text-sm text-gray-500">An AI-driven app we&apos;re building</span>
-                      </Link>
-                    </div>
+                    <ul className="space-y-1 pl-4 border-l-2 border-teal-100">
+                      <li>
+                        <Link
+                          href="/work"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="block py-2"
+                        >
+                          <span className="text-base font-medium text-gray-900">Case Studies</span>
+                          <span className="block text-sm text-gray-500">Real results from real clients</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/resources/guides"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="block py-2"
+                        >
+                          <span className="text-base font-medium text-gray-900">Guides & Playbooks</span>
+                          <span className="block text-sm text-gray-500">Expert migration guides and strategy playbooks</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/work"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="block py-2"
+                        >
+                          <span className="text-base font-medium text-teal-600">Poco — Coming Soon</span>
+                          <span className="block text-sm text-gray-500">An AI-driven app we&apos;re building</span>
+                        </Link>
+                      </li>
+                    </ul>
                   </MobileMenuSection>
 
                   {/* Industries */}
