@@ -5,8 +5,6 @@ import Link from "next/link";
 import { ServiceFAQ } from "@/components/service-page";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
 import { getImageForSlot } from "@/lib/images/get-image-for-slot";
-import { DuotoneImage } from "@/components/ui/DuotoneImage";
-import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 
 export const metadata: Metadata = {
   title: "Reporting & Analytics | Media Garcia",
@@ -159,6 +157,7 @@ export default function ReportingPage() {
           { label: "Services", href: "/services" },
           { label: "Reporting & Analytics", href: "/services/reporting" },
         ]}
+        backgroundImage={serviceImage ? { src: serviceImage, color: "teal", pattern: "grid" } : undefined}
       />
 
       {/* Pain Point Section */}
@@ -179,26 +178,8 @@ export default function ReportingPage() {
       </section>
 
       {/* Social Proof Bar */}
-      <section className="py-16 bg-black text-white relative overflow-hidden">
-        {serviceImage && (
-          <div className="absolute inset-0 z-0 opacity-[0.15]">
-            <DuotoneImage
-              src={serviceImage}
-              alt=""
-              color="teal"
-              intensity="light"
-              className="absolute inset-0"
-            />
-            <GeometricOverlay
-              pattern="grid"
-              position="bottom-right"
-              color="white"
-              opacity={0.2}
-              size={140}
-            />
-          </div>
-        )}
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+      <section className="py-16 bg-black text-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {stats.map((stat) => (
               <div key={stat.label}>

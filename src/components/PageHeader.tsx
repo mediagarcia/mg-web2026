@@ -3,10 +3,18 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
+import { GeometricOverlay, type GeometricPattern } from "@/components/ui/GeometricOverlay";
 
 interface Breadcrumb {
   label: string;
   href: string;
+}
+
+interface PageHeaderBackgroundImage {
+  src: string;
+  color: "teal" | "purple" | "orange";
+  pattern?: GeometricPattern;
 }
 
 interface PageHeaderProps {
@@ -15,11 +23,34 @@ interface PageHeaderProps {
   description?: string;
   breadcrumbs?: Breadcrumb[];
   compactBottom?: boolean;
+  backgroundImage?: PageHeaderBackgroundImage;
 }
 
-export function PageHeader({ badge, title, description, breadcrumbs, compactBottom }: PageHeaderProps) {
+export function PageHeader({ badge, title, description, breadcrumbs, compactBottom, backgroundImage }: PageHeaderProps) {
   return (
     <section className={`pt-32 lg:pt-40 bg-gray-50 relative overflow-hidden ${compactBottom ? "pb-8 lg:pb-12" : "pb-16 lg:pb-24"}`}>
+      {/* Optional background image with duotone treatment */}
+      {backgroundImage && (
+        <div className="absolute inset-0 z-0 opacity-[0.12]">
+          <DuotoneImage
+            src={backgroundImage.src}
+            alt=""
+            color={backgroundImage.color}
+            intensity="light"
+            className="absolute inset-0"
+          />
+          {backgroundImage.pattern && (
+            <GeometricOverlay
+              pattern={backgroundImage.pattern}
+              position="bottom-right"
+              color="currentColor"
+              opacity={0.15}
+              size={180}
+            />
+          )}
+        </div>
+      )}
+
       {/* Grid pattern background */}
       <FadingGridPattern
         type="dots"
