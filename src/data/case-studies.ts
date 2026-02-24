@@ -60,6 +60,7 @@ export const services = [
   "EHR Integration",
   "Sales Enablement",
   "Salesforce to HubSpot",
+  "CRM Optimization",
 ] as const;
 
 export type Industry = (typeof industries)[number];
@@ -67,42 +68,44 @@ export type Service = (typeof services)[number];
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "healthcare-integration",
-    title: "80% Reduction in Manual Data Entry",
-    client: "Healthcare Provider Network",
+    slug: "advi-health-crm-optimization",
+    title: "200+ CRM Optimizations Powering Healthcare Growth",
+    client: "ADVI Health",
     industry: "Healthcare",
-    service: "EHR Integration",
-    description: "Integrated patient intake system with CRM, automating lead capture and eliminating duplicate data entry across multiple clinic locations.",
+    service: "CRM Optimization",
+    description: "Ongoing HubSpot CRM maintenance, data quality monitoring, and executive reporting that keeps ADVI Health's revenue operations running at peak performance.",
     image: "/images/case-studies/case-study-1.jpg",
     gradient: "from-teal-500 to-teal-700",
-    timeline: "6 weeks",
-    tags: ["Healthcare", "Integration", "Automation"],
+    timeline: "Ongoing (2+ years)",
+    tags: ["Healthcare", "CRM Optimization", "Data Quality", "Reporting"],
     featured: true,
-    clientLogo: "/images/case-studies/logos/healthcare-network.svg",
-    clientSize: "50+ locations",
-    clientLocation: "Midwest Region",
-    publishDate: "2024-10-15",
-    challenge: `A 50-location healthcare provider network was drowning in manual data entry. Every new patient inquiry required staff to enter information into three separate systems: their EHR, their marketing platform, and their internal tracking spreadsheets.
+    clientLogo: "/images/clients/advi.svg",
+    clientSize: "Growth-stage advisory firm",
+    clientLocation: "United States",
+    publishDate: "2025-04-01",
+    challenge: `ADVI Health, a healthcare advisory firm, had invested in HubSpot but their portal had grown organically without governance. Data quality was deteriorating—duplicate records, incomplete deal information, and inconsistent property usage made it impossible to trust the numbers in reports.
 
-The result? Staff spent 15+ hours per week per location on duplicate data entry. Leads fell through the cracks. Patient information was inconsistent across systems. And the revenue team had no visibility into which marketing channels were actually driving new patients.
+Their revenue team was making decisions based on dashboards they couldn't fully rely on. Deal amounts weren't syncing correctly, booking reports required manual reconciliation, and there was no systematic way to audit portal health. When leadership asked for pipeline reports, the team spent hours manually verifying data before presenting.
 
-They'd tried solving this with "better processes" and training—but the fundamental problem was disconnected systems that weren't designed to work together.`,
-    solution: `We built a unified integration layer that connected their patient intake forms directly to HubSpot, their EHR system, and their scheduling platform.
+ADVI needed more than a one-time cleanup. They needed an ongoing partner who could maintain CRM excellence as their business scaled—someone who understood both the technical platform and the healthcare advisory business well enough to proactively identify issues before they impacted revenue decisions.`,
+    solution: `We established a comprehensive CRM maintenance and optimization program built around three pillars: data quality, executive reporting, and continuous improvement.
 
-When a potential patient fills out an inquiry form, their information automatically flows to all three systems—with proper field mapping, duplicate detection, and validation at every step. We also implemented lead source tracking so their marketing team finally knows which campaigns drive actual appointments, not just form fills.
+First, we conducted a deep portal audit and built a custom data quality dashboard to monitor duplicates, incomplete records, and invalid data in real time. We implemented deal amount sync validation, solution industry properties, and deal split tracking to ensure revenue attribution was accurate down to the individual rep level.
 
-The integration includes bi-directional sync, so when patient status updates in the EHR, their CRM record reflects it automatically. Staff no longer need to manually update records or check multiple systems.`,
+From there, we provide ongoing ad hoc HubSpot administration—everything from workflow automation and form tracking to weekly booking reports and custom dashboards for executive decision-making. When ADVI's needs evolved in 2026, we restructured the engagement to focus on what mattered most: executive reporting, special initiatives, and responsive CRM support with a one-hour SLA for critical issues.
+
+The relationship runs on weekly meetings, a dedicated project manager, and a shared task system with over 200 tracked items—ensuring nothing falls through the cracks.`,
     results: [
-      { metric: "80%", label: "Reduction in data entry time" },
-      { metric: "15 hrs", label: "Saved per location weekly" },
-      { metric: "0", label: "Data entry errors" },
-      { metric: "< 90 days", label: "Full ROI achieved" },
+      { metric: "200+", label: "CRM optimizations delivered" },
+      { metric: "90%", label: "Deliverable compliance rate" },
+      { metric: "< 1 hr", label: "Critical issue response time" },
+      { metric: "2+ yrs", label: "Continuous partnership" },
     ],
     testimonial: {
-      quote: "We went from spending half our day on data entry to focusing on what matters—patient care. The integration just works, and we finally have accurate data across all our systems.",
-      author: "Operations Director",
-      title: "Operations Director",
-      company: "Regional Healthcare Network",
+      quote: "Media Garcia isn't just a vendor—they're an extension of our team. They understand our business well enough to proactively identify issues before they become problems, and their reporting gives us the confidence to make real revenue decisions.",
+      author: "Juli Denny",
+      title: "Chief Growth Officer",
+      company: "ADVI Health",
     },
   },
   {
