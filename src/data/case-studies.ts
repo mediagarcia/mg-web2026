@@ -151,42 +151,46 @@ For the customer portal, we prototyped and designed a solution using HubSpot's n
     },
   },
   {
-    slug: "crm-migration",
-    title: "Full CRM Migration in 30 Days",
-    client: "Professional Services Firm",
-    industry: "IT Services",
-    service: "Salesforce to HubSpot",
-    description: "Migrated 50,000+ contacts from Salesforce to HubSpot with zero data loss, no downtime, and immediate team adoption.",
+    slug: "mens-pro-crm-enablement",
+    title: "Custom Patient Portal and EHR Built Inside HubSpot",
+    client: "Men's Pro Health",
+    industry: "Healthcare",
+    service: "HubSpot Implementation",
+    description: "Built a complete patient portal, custom EHR notes system, and clinic operations platform inside HubSpot—replacing a legacy medical system for a multi-location men's health clinic.",
     image: "/images/case-studies/case-study-3.jpg",
     gradient: "from-orange-red-500 to-orange-red-700",
-    timeline: "30 days",
-    tags: ["IT Services", "CRM Migration", "Data Migration"],
+    timeline: "8 months",
+    tags: ["Healthcare", "Patient Portal", "EHR", "Custom Objects"],
     featured: false,
-    clientLogo: "/images/case-studies/logos/prof-services.svg",
-    clientSize: "200-500 employees",
-    clientLocation: "Minneapolis, MN",
-    publishDate: "2024-08-10",
-    challenge: `A professional services firm had outgrown their Salesforce implementation. What started as a simple CRM had become a tangled mess of custom objects, outdated workflows, and integrations that no one fully understood. Their Salesforce admin had left, and the monthly bill kept climbing for features they didn't use.
+    clientLogo: "/images/clients/menspro.png",
+    clientSize: "Multi-location clinic",
+    clientLocation: "United States",
+    publishDate: "2025-08-01",
+    challenge: `Men's Pro Health, a growing men's health clinic with multiple locations, was running their entire patient operation on AdvancedMD (AMD)—a legacy EHR system that couldn't keep up with how they wanted to grow. Patient onboarding was manual, medication reorder tracking was done by memory, and there was no way for patients to self-serve or check their order status online.
 
-They needed to migrate to HubSpot—but they had 50,000+ contacts, 5 years of deal history, and critical integrations with their billing and project management systems. Previous migration attempts had stalled due to data complexity and fear of losing historical information.
+The clinic needed a patient-facing portal where men could log in, view their treatment plans, reorder medications, and message their care team directly. They also needed their clinical staff to have structured EHR notes inside the same system their sales and operations teams used—eliminating the constant toggling between AMD and HubSpot.
 
-The stakes were high: their entire sales operation depended on CRM access, and they couldn't afford extended downtime.`,
-    solution: `We developed a phased migration plan that moved data in stages while keeping both systems operational during the transition.
+The complexity was significant: the solution needed to support multiple clinic locations with location-specific branding, handle secure patient data, integrate with lab APIs (Quest, AEL), automate medication reorder notifications via email and SMS, and migrate years of patient data from AMD—all while keeping the clinics running without disruption.`,
+    solution: `We designed and built a complete CRM enablement platform inside HubSpot, organized into phased milestones: discovery, MVP buildout, internal pilot, refinement, and full rollout.
 
-First, we mapped every Salesforce field, custom object, and workflow to HubSpot equivalents—identifying what to migrate directly, what to restructure, and what to leave behind. We built custom import scripts that preserved relationships between contacts, companies, and deals while cleaning duplicate and outdated records.
+The patient portal was built from scratch using HubSpot's native capabilities—membership login, patient profile management, medication order forms, a chatbot for patient-to-staff messaging, and automated order status notifications via email and SMS. Each clinic location gets its own branded experience through smart content, with location-specific contact info, landing pages, and support routing.
 
-The actual migration happened over a weekend, with parallel systems running for one week to catch any issues. We trained teams by role before go-live, so they knew exactly where to find what they needed in the new system.`,
+For the clinical team, we built a custom EHR notes system using HubSpot custom objects. Providers can create structured clinical notes (SOAP format), with draft-vs-signed workflows, PDF export, and separated views for sales notes versus medical notes. We also automated patient plan tracking using custom objects tied to invoice data, so treatment plans update automatically as patients reorder.
+
+The data migration from AdvancedMD is being executed in stages—current patients first, with historical records following—using FTP exports and custom mapping scripts. Lab API integration connects Quest and AEL results directly to patient records in HubSpot.
+
+We piloted with a select group of patients, collected structured feedback, created training documentation and onboarding guides, and are rolling out to all locations with a full communication and adoption plan.`,
     results: [
-      { metric: "50,000+", label: "Contacts migrated" },
-      { metric: "0", label: "Data loss incidents" },
-      { metric: "30 days", label: "Total project time" },
-      { metric: "40%", label: "Reduction in CRM costs" },
+      { metric: "217+", label: "Project tasks delivered" },
+      { metric: "4", label: "Clinic locations supported" },
+      { metric: "100%", label: "Portal pilot completion" },
+      { metric: "0", label: "Legacy systems needed post-launch" },
     ],
     testimonial: {
-      quote: "We were terrified of losing five years of client history. Instead, we got a cleaner, faster CRM with all our data intact. The migration was smoother than any software transition we've ever done.",
-      author: "Managing Partner",
-      title: "Managing Partner",
-      company: "Professional Services Firm",
+      quote: "We asked Media Garcia to build us a patient portal and ended up with an entire operating system for our clinics. Our patients can manage their own care online, our providers have structured clinical notes, and we're finally running everything from one platform.",
+      author: "Dan Green",
+      title: "President & CEO",
+      company: "Men's Pro Health",
     },
   },
   {
