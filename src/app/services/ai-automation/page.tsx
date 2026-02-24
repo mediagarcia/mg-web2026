@@ -5,6 +5,8 @@ import { ServiceFAQ } from "@/components/service-page";
 import Link from "next/link";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
 import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
+import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 
 export const metadata: Metadata = {
   title: "AI-Powered Automation | Media Garcia",
@@ -207,6 +209,8 @@ const relatedServices = [
 
 export default function AIAutomationPage() {
   const serviceImage = getImageForSlot("services/ai-automation");
+  const painImage = getImageForSlot("services/ai-automation-pain");
+  const caseImage = getImageForSlot("services/ai-automation-case");
 
   return (
     <>
@@ -226,16 +230,24 @@ export default function AIAutomationPage() {
         <FadingGridPattern type="dots" color="gray" opacity={0.08} spacing={28} fadeDirection="both" />
         <GradientOrb color="purple" size="xl" className="-top-48 -right-48 opacity-30" intensity="subtle" blur="xl" />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
-              Paying for AI features you never touch?
-            </h2>
-            <p className="text-lg text-black/70 mb-6 leading-relaxed">
-              Your CRM has AI built in—predictive scoring, content generation, intelligent automation. But it sits unused while your team sticks to manual processes. You&apos;re paying for capabilities that gather dust.
-            </p>
-            <p className="text-lg text-black/70 leading-relaxed">
-              We change that. We implement AI features that your team will actually use, because we design them around how you work—not the other way around. No generic AI. No &quot;cool but useless&quot; demos. Just automation that moves revenue.
-            </p>
+          <div className={`${painImage ? "grid lg:grid-cols-2 gap-12 items-center" : ""}`}>
+            <div className={painImage ? "" : "max-w-3xl"}>
+              <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
+                Paying for AI features you never touch?
+              </h2>
+              <p className="text-lg text-black/70 mb-6 leading-relaxed">
+                Your CRM has AI built in—predictive scoring, content generation, intelligent automation. But it sits unused while your team sticks to manual processes. You&apos;re paying for capabilities that gather dust.
+              </p>
+              <p className="text-lg text-black/70 leading-relaxed">
+                We change that. We implement AI features that your team will actually use, because we design them around how you work—not the other way around. No generic AI. No &quot;cool but useless&quot; demos. Just automation that moves revenue.
+              </p>
+            </div>
+            {painImage && (
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <DuotoneImage src={painImage} alt="" color="purple" intensity="medium" className="absolute inset-0" />
+                <GeometricOverlay pattern="arc" position="bottom-right" color="white" opacity={0.15} size={120} />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -360,6 +372,11 @@ export default function AIAutomationPage() {
         <MeshBackground />
         <GradientOrb color="purple" size="xl" className="-top-32 -left-32 opacity-40" intensity="medium" blur="xl" />
         <GradientOrb color="teal" size="lg" className="bottom-0 right-1/4 opacity-20" intensity="subtle" blur="xl" />
+        {caseImage && (
+          <div className="absolute inset-0 z-0 opacity-[0.15]">
+            <DuotoneImage src={caseImage} alt="" color="purple" intensity="light" className="absolute inset-0" />
+          </div>
+        )}
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>

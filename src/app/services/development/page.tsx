@@ -5,6 +5,8 @@ import { ServiceFAQ } from "@/components/service-page";
 import Link from "next/link";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
 import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
+import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 
 export const metadata: Metadata = {
   title: "Website & CMS Development | Media Garcia",
@@ -177,6 +179,8 @@ const relatedServices = [
 
 export default function DevelopmentPage() {
   const serviceImage = getImageForSlot("services/development");
+  const painImage = getImageForSlot("services/development-pain");
+  const caseImage = getImageForSlot("services/development-case");
 
   return (
     <>
@@ -196,16 +200,24 @@ export default function DevelopmentPage() {
         <FadingGridPattern type="dots" color="gray" opacity={0.08} spacing={28} fadeDirection="both" />
         <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-30" intensity="subtle" blur="xl" />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
-              Your website looks good but doesn&apos;t convert
-            </h2>
-            <p className="text-lg text-black/70 mb-6 leading-relaxed">
-              Visitors land on your site, scroll around, and leave. Your conversion rate is stuck at 1-2%. Marketing wants to run campaigns, but they need developer help for every landing page. Your site loads slowly on mobile, and you&apos;re not sure why.
-            </p>
-            <p className="text-lg text-black/70 leading-relaxed">
-              We build websites that convert—fast-loading, conversion-optimized, and easy for your marketing team to manage. Whether you need HubSpot CMS, WordPress, or a custom build, we focus on what matters: turning visitors into leads and leads into customers.
-            </p>
+          <div className={`${painImage ? "grid lg:grid-cols-2 gap-12 items-center" : ""}`}>
+            <div className={painImage ? "" : "max-w-3xl"}>
+              <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
+                Your website looks good but doesn&apos;t convert
+              </h2>
+              <p className="text-lg text-black/70 mb-6 leading-relaxed">
+                Visitors land on your site, scroll around, and leave. Your conversion rate is stuck at 1-2%. Marketing wants to run campaigns, but they need developer help for every landing page. Your site loads slowly on mobile, and you&apos;re not sure why.
+              </p>
+              <p className="text-lg text-black/70 leading-relaxed">
+                We build websites that convert—fast-loading, conversion-optimized, and easy for your marketing team to manage. Whether you need HubSpot CMS, WordPress, or a custom build, we focus on what matters: turning visitors into leads and leads into customers.
+              </p>
+            </div>
+            {painImage && (
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <DuotoneImage src={painImage} alt="" color="orange" intensity="medium" className="absolute inset-0" />
+                <GeometricOverlay pattern="spiral" position="bottom-right" color="white" opacity={0.15} size={120} />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -330,6 +342,11 @@ export default function DevelopmentPage() {
         <MeshBackground />
         <GradientOrb color="teal" size="xl" className="-top-32 -left-32 opacity-30" intensity="medium" blur="xl" />
         <GradientOrb color="purple" size="lg" className="bottom-0 right-1/4 opacity-20" intensity="subtle" blur="xl" />
+        {caseImage && (
+          <div className="absolute inset-0 z-0 opacity-[0.15]">
+            <DuotoneImage src={caseImage} alt="" color="orange" intensity="light" className="absolute inset-0" />
+          </div>
+        )}
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>

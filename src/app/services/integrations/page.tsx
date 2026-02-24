@@ -5,6 +5,8 @@ import { ServiceFAQ } from "@/components/service-page";
 import Link from "next/link";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
 import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
+import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 
 export const metadata: Metadata = {
   title: "Custom Integrations | Media Garcia",
@@ -177,6 +179,8 @@ const relatedServices = [
 
 export default function IntegrationsPage() {
   const serviceImage = getImageForSlot("services/integrations");
+  const painImage = getImageForSlot("services/integrations-pain");
+  const caseImage = getImageForSlot("services/integrations-case");
 
   return (
     <>
@@ -196,16 +200,24 @@ export default function IntegrationsPage() {
         <FadingGridPattern type="dots" color="gray" opacity={0.08} spacing={28} fadeDirection="both" />
         <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-30" intensity="subtle" blur="xl" />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
-              Your tools don&apos;t talk to each other
-            </h2>
-            <p className="text-lg text-black/70 mb-6 leading-relaxed">
-              Your team copies data between systems. Patient records get entered twice. Deals close in your CRM but finance doesn&apos;t know for days. Support tickets exist in a vacuum, invisible to sales.
-            </p>
-            <p className="text-lg text-black/70 leading-relaxed">
-              You&apos;re paying for powerful tools—but they&apos;re operating as islands. We connect your systems so data flows automatically, accurately, and securely. No more copy-paste. No more &quot;which system is right?&quot;
-            </p>
+          <div className={`${painImage ? "grid lg:grid-cols-2 gap-12 items-center" : ""}`}>
+            <div className={painImage ? "" : "max-w-3xl"}>
+              <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
+                Your tools don&apos;t talk to each other
+              </h2>
+              <p className="text-lg text-black/70 mb-6 leading-relaxed">
+                Your team copies data between systems. Patient records get entered twice. Deals close in your CRM but finance doesn&apos;t know for days. Support tickets exist in a vacuum, invisible to sales.
+              </p>
+              <p className="text-lg text-black/70 leading-relaxed">
+                You&apos;re paying for powerful tools—but they&apos;re operating as islands. We connect your systems so data flows automatically, accurately, and securely. No more copy-paste. No more &quot;which system is right?&quot;
+              </p>
+            </div>
+            {painImage && (
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <DuotoneImage src={painImage} alt="" color="purple" intensity="medium" className="absolute inset-0" />
+                <GeometricOverlay pattern="grid" position="bottom-right" color="white" opacity={0.15} size={120} />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -330,6 +342,11 @@ export default function IntegrationsPage() {
         <MeshBackground />
         <GradientOrb color="teal" size="xl" className="-top-32 -left-32 opacity-30" intensity="medium" blur="xl" />
         <GradientOrb color="purple" size="lg" className="bottom-0 right-1/4 opacity-20" intensity="subtle" blur="xl" />
+        {caseImage && (
+          <div className="absolute inset-0 z-0 opacity-[0.15]">
+            <DuotoneImage src={caseImage} alt="" color="purple" intensity="light" className="absolute inset-0" />
+          </div>
+        )}
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>

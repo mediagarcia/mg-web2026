@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ServiceFAQ } from "@/components/service-page";
 import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
 import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
+import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 
 export const metadata: Metadata = {
   title: "Reporting & Analytics | Media Garcia",
@@ -146,6 +148,8 @@ const relatedServices = [
 
 export default function ReportingPage() {
   const serviceImage = getImageForSlot("services/reporting");
+  const painImage = getImageForSlot("services/reporting-pain");
+  const caseImage = getImageForSlot("services/reporting-case");
 
   return (
     <>
@@ -163,16 +167,24 @@ export default function ReportingPage() {
       {/* Pain Point Section */}
       <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
-              Your CEO asks &quot;Which campaigns drive revenue?&quot; You open a spreadsheet and start guessing.
-            </h2>
-            <p className="text-lg text-black/60 leading-relaxed mb-6">
-              You know marketing is working. Leads come in, some become customers. But when leadership asks for the connection between marketing spend and revenue, the best you can offer is educated guesses and activity metrics that don&apos;t prove impact.
-            </p>
-            <p className="text-lg text-black/80 font-medium">
-              We build reporting that closes that gap. Attribution that connects campaigns to closed deals. Dashboards that show what&apos;s working. Analytics that prove marketing&apos;s value in dollars—not just leads.
-            </p>
+          <div className={`${painImage ? "grid lg:grid-cols-2 gap-12 items-center" : ""}`}>
+            <div className={painImage ? "" : "max-w-3xl"}>
+              <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
+                Your CEO asks &quot;Which campaigns drive revenue?&quot; You open a spreadsheet and start guessing.
+              </h2>
+              <p className="text-lg text-black/60 leading-relaxed mb-6">
+                You know marketing is working. Leads come in, some become customers. But when leadership asks for the connection between marketing spend and revenue, the best you can offer is educated guesses and activity metrics that don&apos;t prove impact.
+              </p>
+              <p className="text-lg text-black/80 font-medium">
+                We build reporting that closes that gap. Attribution that connects campaigns to closed deals. Dashboards that show what&apos;s working. Analytics that prove marketing&apos;s value in dollars—not just leads.
+              </p>
+            </div>
+            {painImage && (
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <DuotoneImage src={painImage} alt="" color="teal" intensity="medium" className="absolute inset-0" />
+                <GeometricOverlay pattern="grid" position="bottom-right" color="white" opacity={0.15} size={120} />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -327,8 +339,13 @@ export default function ReportingPage() {
                 </div>
               </div>
             </div>
-            <div className="bg-white/5 rounded-2xl p-8 lg:p-12">
-              <div className="grid grid-cols-2 gap-8">
+            <div className="bg-white/5 rounded-2xl p-8 lg:p-12 relative overflow-hidden">
+              {caseImage && (
+                <div className="absolute inset-0 z-0 opacity-[0.2]">
+                  <DuotoneImage src={caseImage} alt="" color="teal" intensity="light" className="absolute inset-0" />
+                </div>
+              )}
+              <div className="grid grid-cols-2 gap-8 relative z-10">
                 <div className="text-center">
                   <p className="text-4xl font-black text-teal-500">$2.4M</p>
                   <p className="text-white/60 text-sm mt-2">Revenue Attributed</p>
