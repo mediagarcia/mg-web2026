@@ -14,9 +14,12 @@ export default function Home() {
   // Case study images - auto-discovers highest version
   const caseStudyImages = {
     generic: getImageForSlot("case-studies-generic"),
-    "healthcare-integration": getVersionedImageForSlot("case-study-healthcare"),
-    "lead-generation-saas": getVersionedImageForSlot("case-study-saas"),
-    "crm-migration": getVersionedImageForSlot("case-study-crm"),
+    "advi-health-crm-optimization": getVersionedImageForSlot("case-study-advi"),
+    "current-energy-integrations": getVersionedImageForSlot("case-study-current-energy"),
+    "mens-pro-crm-enablement": getVersionedImageForSlot("case-study-menspro"),
+    "mipi-alliance-service-hub": getVersionedImageForSlot("case-study-mipi"),
+    "eag-crm-data-analytics": getVersionedImageForSlot("case-study-eag"),
+    "xl-feet-ecommerce-growth": getVersionedImageForSlot("case-study-xlfeet"),
   };
 
   // Why Us background image

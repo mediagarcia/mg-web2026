@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-24T04:23:24.670Z",
+  "lastUpdated": "2026-02-24T08:07:51.765Z",
   "slots": {
     "hero": {
       "slot": "hero",
@@ -1449,6 +1449,134 @@
       ],
       "selected": "industries-saas-solutions-003.png",
       "selectedPath": "/images/selected/industries-saas-solutions.png"
+    },
+    "case-study-mipi": {
+      "slot": "case-study-mipi",
+      "prompt": "Professional editorial photograph of a standards organization board meeting in a high-end conference room. Large display showing service metrics and member engagement data. Professional, institutional atmosphere with natural light. People viewed from behind or silhouette. Premium corporate photography, cool-warm balanced tones.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T07:55:35.481Z",
+      "updatedAt": "2026-02-24T07:55:35.481Z",
+      "files": [
+        {
+          "filename": "case-study-mipi-001.png",
+          "path": "/images/generated/case-study-mipi/case-study-mipi-001.png",
+          "generatedAt": "2026-02-24T07:55:39.818Z"
+        },
+        {
+          "filename": "case-study-mipi-002.png",
+          "path": "/images/generated/case-study-mipi/case-study-mipi-002.png",
+          "generatedAt": "2026-02-24T07:55:45.994Z"
+        }
+      ],
+      "selected": null
+    },
+    "case-study-xlfeet": {
+      "slot": "case-study-xlfeet",
+      "prompt": "Professional editorial photograph of a podiatrist or foot care specialist workspace with modern medical equipment. Custom orthotic products and digital measurement tools visible. Clean, clinical yet warm atmosphere. Premium medical-retail photography, natural light, shallow depth of field.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T08:03:48.161Z",
+      "updatedAt": "2026-02-24T08:03:48.161Z",
+      "files": [
+        {
+          "filename": "case-study-xlfeet-001.png",
+          "path": "/images/generated/case-study-xlfeet/case-study-xlfeet-001.png",
+          "generatedAt": "2026-02-24T08:03:52.719Z"
+        },
+        {
+          "filename": "case-study-xlfeet-002.png",
+          "path": "/images/generated/case-study-xlfeet/case-study-xlfeet-002.png",
+          "generatedAt": "2026-02-24T08:03:55.618Z"
+        },
+        {
+          "filename": "case-study-xlfeet-003.png",
+          "path": "/images/generated/case-study-xlfeet/case-study-xlfeet-003.png",
+          "generatedAt": "2026-02-24T08:03:59.101Z"
+        }
+      ],
+      "selected": null
+    },
+    "industries-healthcare-v3": {
+      "slot": "industries-healthcare-v3",
+      "prompt": "Soft abstract medical texture. Blurred stethoscope and clinical instruments on a clean white surface. Extremely soft focus, dreamy bokeh effect. Subtle teal color tones. Minimal, airy, works as a background behind text. No people, no screens. Fine art still life, high-key lighting.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T08:06:57.800Z",
+      "updatedAt": "2026-02-24T08:06:57.800Z",
+      "files": [
+        {
+          "filename": "industries-healthcare-v3-001.png",
+          "path": "/images/generated/industries-healthcare-v3/industries-healthcare-v3-001.png",
+          "generatedAt": "2026-02-24T08:07:01.220Z"
+        },
+        {
+          "filename": "industries-healthcare-v3-002.png",
+          "path": "/images/generated/industries-healthcare-v3/industries-healthcare-v3-002.png",
+          "generatedAt": "2026-02-24T08:07:05.338Z"
+        },
+        {
+          "filename": "industries-healthcare-v3-003.png",
+          "path": "/images/generated/industries-healthcare-v3/industries-healthcare-v3-003.png",
+          "generatedAt": "2026-02-24T08:07:08.482Z"
+        }
+      ],
+      "selected": "industries-healthcare-v3-001.png",
+      "selectedPath": "/images/generated/industries-healthcare-v3/industries-healthcare-v3-001.png"
+    },
+    "industries-it-v3": {
+      "slot": "industries-it-v3",
+      "prompt": "Soft abstract technology texture. Blurred circuit board traces and server rack lights creating a subtle pattern. Extremely soft focus, gentle bokeh. Cool blue-purple tones. Minimal, ethereal, works as a background behind text. No people, no faces. High-key, dreamy aesthetic.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T08:07:17.726Z",
+      "updatedAt": "2026-02-24T08:07:17.726Z",
+      "files": [
+        {
+          "filename": "industries-it-v3-001.png",
+          "path": "/images/generated/industries-it-v3/industries-it-v3-001.png",
+          "generatedAt": "2026-02-24T08:07:23.302Z"
+        },
+        {
+          "filename": "industries-it-v3-002.png",
+          "path": "/images/generated/industries-it-v3/industries-it-v3-002.png",
+          "generatedAt": "2026-02-24T08:07:27.319Z"
+        },
+        {
+          "filename": "industries-it-v3-003.png",
+          "path": "/images/generated/industries-it-v3/industries-it-v3-003.png",
+          "generatedAt": "2026-02-24T08:07:30.502Z"
+        }
+      ],
+      "selected": "industries-it-v3-001.png",
+      "selectedPath": "/images/generated/industries-it-v3/industries-it-v3-001.png"
+    },
+    "industries-saas-v3": {
+      "slot": "industries-saas-v3",
+      "prompt": "Soft abstract startup texture. Blurred laptop keyboard and coffee cup on a bright desk. Extremely soft focus, warm dreamy bokeh. Warm amber-orange tones. Minimal, airy, works as a background behind text. No people, no faces. High-key, lifestyle-editorial aesthetic.",
+      "model": "gemini-2.0-flash-exp-image-generation",
+      "aspect": "4:3",
+      "createdAt": "2026-02-24T08:07:39.001Z",
+      "updatedAt": "2026-02-24T08:07:39.001Z",
+      "files": [
+        {
+          "filename": "industries-saas-v3-001.png",
+          "path": "/images/generated/industries-saas-v3/industries-saas-v3-001.png",
+          "generatedAt": "2026-02-24T08:07:43.064Z"
+        },
+        {
+          "filename": "industries-saas-v3-002.png",
+          "path": "/images/generated/industries-saas-v3/industries-saas-v3-002.png",
+          "generatedAt": "2026-02-24T08:07:47.246Z"
+        },
+        {
+          "filename": "industries-saas-v3-003.png",
+          "path": "/images/generated/industries-saas-v3/industries-saas-v3-003.png",
+          "generatedAt": "2026-02-24T08:07:51.764Z"
+        }
+      ],
+      "selected": "industries-saas-v3-001.png",
+      "selectedPath": "/images/generated/industries-saas-v3/industries-saas-v3-001.png"
     }
   }
 }
