@@ -30,6 +30,14 @@ const DARK_THEME_CSS = `
     border-color: #3BB782 !important;
     background: rgba(255,255,255,0.12) !important;
   }
+  .hs-form select.hs-input {
+    appearance: auto !important;
+    border-radius: 9999px !important;
+  }
+  .hs-form select.hs-input option {
+    background: #1f2937 !important;
+    color: #fff !important;
+  }
   .hs-form .hs-button {
     background: #3BB782 !important;
     color: #fff !important;

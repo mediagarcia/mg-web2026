@@ -169,7 +169,7 @@ function ServicesMegaMenu({ onClose }: { onClose: () => void }) {
 
 function IndustriesMegaMenu({ onClose }: { onClose: () => void }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {industries.map((item) => (
         <Link
           key={item.href}
@@ -186,21 +186,6 @@ function IndustriesMegaMenu({ onClose }: { onClose: () => void }) {
           <p className="text-xs text-gray-500">{item.description}</p>
         </Link>
       ))}
-
-      {/* View All */}
-      <Link
-        href="/industries"
-        onClick={onClose}
-        className="group block p-5 rounded-xl bg-gradient-to-br from-teal-50 to-cyan-50 hover:from-teal-100 hover:to-cyan-100 transition-all"
-      >
-        <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-teal-600 mb-3">
-          <Grid3X3 className="w-5 h-5" />
-        </div>
-        <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors mb-1">
-          View All Industries
-        </h3>
-        <p className="text-xs text-gray-500">Explore all industry solutions</p>
-      </Link>
     </div>
   );
 }
