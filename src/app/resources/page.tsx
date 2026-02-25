@@ -32,6 +32,17 @@ const resources = [
     ),
     count: "5 min assessment",
   },
+  {
+    title: "Blog",
+    description: "Latest insights on HubSpot strategies, marketing automation, and growth tactics.",
+    href: "/blog",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+      </svg>
+    ),
+    count: "Coming soon",
+  },
 ];
 
 export default function ResourcesPage() {
@@ -51,7 +62,7 @@ export default function ResourcesPage() {
         <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-20" intensity="subtle" blur="xl" />
         <GradientOrb color="purple" size="lg" className="bottom-1/4 -left-32 opacity-15" intensity="subtle" blur="xl" />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {resources.map((resource) => (
               <Link
                 key={resource.title}
