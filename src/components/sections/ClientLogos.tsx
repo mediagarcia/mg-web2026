@@ -13,7 +13,7 @@ const clients = [
   { name: "Vertex Education", logo: "/images/clients/vertexeducation.png" },
   { name: "MIPI Alliance", logo: "/images/clients/mipi.png" },
   { name: "Novi Connect", logo: "/images/clients/noviconnect.svg" },
-  { name: "Certn", logo: "/images/clients/certn.svg" },
+  { name: "Certn", logo: "/images/clients/certn.png" },
 ];
 
 export function ClientLogos() {
@@ -47,7 +47,7 @@ export function ClientLogos() {
                 width={160}
                 height={48}
                 unoptimized
-                className="max-h-6 w-auto max-w-[110px] object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                className="max-h-8 w-auto max-w-[130px] object-contain opacity-80 hover:opacity-100 transition-all duration-300"
               />
             </div>
           ))}

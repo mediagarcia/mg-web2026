@@ -286,7 +286,7 @@ We also discovered that on average it took 40 interactions to close-win a deal v
     timeline: "6 months",
     tags: ["Technology", "CRM Optimization", "Sales Enablement", "Lead Scoring"],
     featured: false,
-    clientLogo: "/images/clients/certn.svg",
+    clientLogo: "/images/clients/certn.png",
     clientSize: "Scaling B2B SaaS",
     clientLocation: "Canada (with US expansion)",
     publishDate: "2021-03-01",

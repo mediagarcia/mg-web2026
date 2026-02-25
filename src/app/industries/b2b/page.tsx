@@ -325,7 +325,7 @@ export default function B2BIndustryPage() {
             {clientLogos.map((logo) => (
               <div
                 key={logo.alt}
-                className="relative h-10 w-32 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all"
+                className="relative h-10 w-32 opacity-80 hover:opacity-100 transition-all"
               >
                 <Image
                   src={logo.src}

@@ -52,7 +52,7 @@ const certnResults = [
 ];
 
 const clientLogos = [
-  { name: "Certn", src: "/images/clients/certn.svg" },
+  { name: "Certn", src: "/images/clients/certn.png" },
   { name: "MIPI Alliance", src: "/images/clients/mipi.svg" },
   { name: "Cloud Force Gurus", src: "/images/clients/cloudforcegurus.png" },
   { name: "Optix", src: "/images/clients/optix.png" },
@@ -114,7 +114,7 @@ export default function TechnologyIndustryPage() {
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm">
                     <Image
-                      src="/images/clients/certn.svg"
+                      src="/images/clients/certn.png"
                       alt="Certn logo"
                       width={32}
                       height={32}
@@ -415,7 +415,7 @@ export default function TechnologyIndustryPage() {
             {clientLogos.map((logo) => (
               <div
                 key={logo.name}
-                className="relative h-10 w-28 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all"
+                className="relative h-10 w-28 opacity-80 hover:opacity-100 transition-all"
               >
                 <Image
                   src={logo.src}
