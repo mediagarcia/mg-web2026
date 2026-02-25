@@ -27,6 +27,7 @@ import {
   Grid3X3,
   Briefcase,
   FileText,
+  Dog,
   type LucideIcon,
 } from "lucide-react";
 
@@ -272,8 +273,8 @@ function WorkMegaMenu({ onClose }: { onClose: () => void }) {
         onClick={onClose}
         className="group block p-5 rounded-xl border border-gray-100 hover:border-amber-200 hover:bg-amber-50/30 transition-all"
       >
-        <div className="w-10 h-10 rounded-lg overflow-hidden mb-3">
-          <img src="/images/poco/poco-logo.png" alt="Poco" className="w-full h-full object-cover" />
+        <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600 group-hover:bg-amber-500 group-hover:text-white transition-colors mb-3">
+          <Dog className="w-5 h-5" />
         </div>
         <h3 className="text-sm font-semibold text-gray-900 group-hover:text-amber-600 transition-colors mb-1">
           Poco

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Bell } from "lucide-react";
@@ -14,8 +14,40 @@ const features = [
   "Meeting Intelligence",
 ];
 
+const gallerySlides = [
+  {
+    src: "/images/poco/feature-dashboard-overview.png",
+    alt: "Poco dashboard overview with weekly summary and action items",
+    caption: "Your daily command center",
+    width: 1400,
+    height: 350,
+  },
+  {
+    src: "/images/poco/feature-action-items.png",
+    alt: "Action items panel with status badges and task priorities",
+    caption: "Track every promise across clients",
+    width: 1400,
+    height: 580,
+  },
+  {
+    src: "/images/poco/feature-metrics.png",
+    alt: "Health metric cards showing response speed, task documentation, and weekly coverage",
+    caption: "Health metrics at a glance",
+    width: 1400,
+    height: 235,
+  },
+];
+
 export function PocoComingSoon() {
   const [showForm, setShowForm] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % gallerySlides.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
@@ -121,17 +153,18 @@ export function PocoComingSoon() {
                     </p>
                     <HubSpotForm
                       formId="ea85ebc5-732f-4c64-a26d-c80eb800e790"
+                      theme="poco"
                     />
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
 
-            {/* Right: Screenshot + Features */}
+            {/* Right: Screenshot Gallery + Features */}
             <div>
               <div className="relative">
-                {/* Browser frame */}
-                <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200/50 lg:rotate-1 lg:hover:rotate-0 transition-transform duration-500">
+                {/* Browser frame with gallery */}
+                <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200/50">
                   <div className="bg-gray-900 px-4 py-2.5 flex items-center gap-2" aria-hidden="true">
                     <div className="flex gap-1.5">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
@@ -144,19 +177,52 @@ export function PocoComingSoon() {
                       </div>
                     </div>
                   </div>
-                  <Image
-                    src="/images/poco/dashboard-preview.png"
-                    alt="Poco dashboard showing action items, project health metrics, and team activity"
-                    width={1400}
-                    height={900}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="w-full h-auto"
-                  />
+                  <div className="bg-[#1a1a2e] relative min-h-[200px]">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={currentSlide}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                      >
+                        <Image
+                          src={gallerySlides[currentSlide].src}
+                          alt={gallerySlides[currentSlide].alt}
+                          width={gallerySlides[currentSlide].width}
+                          height={gallerySlides[currentSlide].height}
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          className="w-full h-auto"
+                        />
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+                </div>
+
+                {/* Caption + dots */}
+                <div className="flex items-center justify-between mt-4">
+                  <p className="text-sm text-black/50 font-medium">
+                    {gallerySlides[currentSlide].caption}
+                  </p>
+                  <div className="flex gap-2">
+                    {gallerySlides.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentSlide(index)}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          index === currentSlide
+                            ? "bg-amber-500 w-5"
+                            : "bg-black/15 hover:bg-black/30"
+                        }`}
+                        aria-label={`View screenshot ${index + 1}`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
 
               {/* Feature pills */}
-              <div className="flex flex-wrap gap-2 mt-6 justify-center lg:justify-start">
+              <div className="flex flex-wrap gap-2 mt-5 justify-center lg:justify-start">
                 {features.map((feature) => (
                   <span
                     key={feature}
