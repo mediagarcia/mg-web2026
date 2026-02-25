@@ -99,6 +99,12 @@ const testimonials = [
     name: "Ashley Sims",
     title: "VP of Marketing, American Hole \u2019n One",
   },
+  {
+    quote:
+      "Media Garcia\u2019s professionalism, expertise, and dedication to customer satisfaction are unmatched. They simplified our complicated procedures, leading to enhanced client management and improved business operations.",
+    name: "T. Chiappetta",
+    title: "CEO, Cyber Security",
+  },
 ];
 
 const clientLogos = [

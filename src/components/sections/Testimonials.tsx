@@ -60,6 +60,22 @@ const testimonials = [
     initials: "VN",
     rating: 5,
   },
+  {
+    quote: "Media Garcia created custom email and landing page templates, delivering exactly what we needed. They're flexible and produce quality results whether it's a small project or long-term strategy consulting.",
+    author: "R. Higgins",
+    title: "Marketing Manager",
+    company: "Enel X North America",
+    initials: "RH",
+    rating: 5,
+  },
+  {
+    quote: "Media Garcia's professionalism, expertise, and dedication to customer satisfaction are unmatched. They simplified our complicated procedures, leading to enhanced client management and improved business operations.",
+    author: "T. Chiappetta",
+    title: "CEO",
+    company: "Cyber Security",
+    initials: "TC",
+    rating: 5,
+  },
 ];
 
 export function Testimonials() {

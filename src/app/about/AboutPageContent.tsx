@@ -177,6 +177,12 @@ const testimonials = [
     author: "Dan Green",
     title: "President & CEO, Men\u2019s Pro Health",
   },
+  {
+    quote:
+      "Media Garcia listened to our business needs and provided solutions to optimize our website and implement our CRM. They are exceptional at what they do and wonderful teachers throughout the process.",
+    author: "Bert Jones",
+    title: "CEO, Blue Phoenix Events",
+  },
 ];
 
 function AnimatedCounter({
