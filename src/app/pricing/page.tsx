@@ -12,9 +12,6 @@ export const metadata: Metadata = {
     "Custom pricing for CRM, RevOps, and revenue operations services. Projects, retainers, and fractional RevOps — scoped to your goals. Book a free intro call.",
 };
 
-const MEETINGS_URL =
-  "https://meetings.hubspot.com/louis3/discovery-meeting-with-louis";
-
 const engagementModels = [
   {
     title: "Strategic Projects",
@@ -431,13 +428,11 @@ export default function PricingPage() {
               Every engagement starts with a free intro call where we scope
               the work together. No surprises.
             </p>
-            <a
-              href={MEETINGS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contact"
               className="inline-flex items-center gap-2 text-teal-500 font-medium hover:text-teal-600 transition-colors mt-4 group/link"
             >
-              Book your free call
+              Book an Intro Call
               <svg
                 className="w-4 h-4 transition-transform group-hover/link:translate-x-1"
                 fill="none"
@@ -451,7 +446,7 @@ export default function PricingPage() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -494,10 +489,8 @@ export default function PricingPage() {
                 <p className="text-black/60 leading-relaxed mb-6">
                   {model.description}
                 </p>
-                <a
-                  href={MEETINGS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contact"
                   className="inline-flex items-center gap-2 text-teal-500 font-medium hover:text-teal-600 transition-colors group/link"
                 >
                   Talk to us about this
@@ -514,7 +507,7 @@ export default function PricingPage() {
                       d="M17 8l4 4m0 0l-4 4m4-4H3"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             ))}
           </div>
@@ -635,13 +628,11 @@ export default function PricingPage() {
           </div>
 
           <div className="text-center">
-            <a
-              href={MEETINGS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contact"
               className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-teal-500 transition-colors"
             >
-              Start with a free intro call
+              Book an Intro Call
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -655,7 +646,7 @@ export default function PricingPage() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -733,10 +724,8 @@ export default function PricingPage() {
               to be.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href={MEETINGS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contact"
                 className="inline-flex items-center gap-2 bg-teal-500 text-white px-8 py-4 rounded-full font-medium hover:bg-teal-400 transition-colors"
               >
                 Book an Intro Call
@@ -753,7 +742,7 @@ export default function PricingPage() {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
             <span className="text-white/40 text-sm mt-4 block">
               We&apos;ll send a custom proposal within 48 hours.
