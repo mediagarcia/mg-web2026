@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Bell } from "lucide-react";
-import { GradientOrb } from "@/components/ui/visuals";
 import { HubSpotForm } from "@/components/HubSpotForm";
 
 const features = [
@@ -14,121 +13,65 @@ const features = [
   "Meeting Intelligence",
 ];
 
-const gallerySlides = [
-  {
-    src: "/images/poco/feature-dashboard-overview.png",
-    alt: "Poco dashboard overview with weekly summary and action items",
-    caption: "Your daily command center",
-    width: 1400,
-    height: 350,
-  },
-  {
-    src: "/images/poco/feature-action-items.png",
-    alt: "Action items panel with status badges and task priorities",
-    caption: "Track every promise across clients",
-    width: 1400,
-    height: 580,
-  },
-  {
-    src: "/images/poco/feature-metrics.png",
-    alt: "Health metric cards showing response speed, task documentation, and weekly coverage",
-    caption: "Health metrics at a glance",
-    width: 1400,
-    height: 235,
-  },
-];
-
 export function PocoComingSoon() {
   const [showForm, setShowForm] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % gallerySlides.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section
       id="poco"
-      className="pt-[var(--spacing-section)] pb-16 lg:pb-20 bg-gray-50 relative overflow-hidden scroll-mt-24"
+      className="py-12 lg:py-16 bg-gray-50 scroll-mt-24"
     >
-      <GradientOrb
-        color="teal"
-        size="xl"
-        className="-top-48 -right-48 opacity-20"
-        intensity="subtle"
-        blur="xl"
-      />
-      <GradientOrb
-        color="purple"
-        size="lg"
-        className="bottom-1/4 -left-32 opacity-15"
-        intensity="subtle"
-        blur="xl"
-      />
-
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
-        {/* Section Header */}
-        <div className="max-w-2xl mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xs font-bold uppercase tracking-widest text-amber-500 mb-4 block"
-          >
-            What We&apos;re Building
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black"
-          >
-            Meet Poco
-          </motion.h2>
-        </div>
-
-        {/* Showcase Card */}
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="bg-white rounded-3xl border border-gray-100 p-8 lg:p-12 overflow-hidden"
+          className="bg-white rounded-2xl border border-gray-100 p-6 lg:p-8"
         >
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            {/* Left: Branding + Copy + Form */}
-            <div>
+          <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
+            {/* Logo + Branding */}
+            <div className="flex items-center gap-4 shrink-0">
               <Image
                 src="/images/poco/poco-logo.png"
                 alt="Poco logo"
-                width={80}
-                height={80}
-                sizes="80px"
-                className="rounded-2xl mb-6"
+                width={48}
+                height={48}
+                sizes="48px"
+                className="rounded-xl"
               />
+              <div>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-xl font-black text-black">Poco</h3>
+                  <span className="bg-amber-500/10 text-amber-600 text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full">
+                    Coming Soon
+                  </span>
+                </div>
+                <p className="text-sm text-amber-600 font-medium">
+                  Tracks the little things
+                </p>
+              </div>
+            </div>
 
-              <span className="inline-block bg-amber-500/10 text-amber-600 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
-                Coming Soon
-              </span>
-
-              <h3 className="text-3xl lg:text-4xl font-black text-black mb-2">
-                Poco
-              </h3>
-              <p className="text-lg text-amber-600 font-medium mb-4">
-                Tracks the little things
-              </p>
-
-              <p className="text-black/60 leading-relaxed mb-8">
+            {/* Description + Feature pills */}
+            <div className="flex-1 min-w-0">
+              <p className="text-sm text-black/60 leading-relaxed mb-3">
                 An AI-powered platform that tracks promises, monitors project
-                health, and surfaces what matters&nbsp;&mdash; born from
-                everything we&apos;ve learned building CRM and RevOps systems.
+                health, and surfaces what matters.
               </p>
+              <div className="flex flex-wrap gap-1.5">
+                {features.map((feature) => (
+                  <span
+                    key={feature}
+                    className="px-2.5 py-1 bg-amber-500/10 rounded-full text-[11px] text-amber-700 font-medium"
+                  >
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </div>
 
-              {/* Notify CTA */}
+            {/* Notify CTA */}
+            <div className="shrink-0">
               <AnimatePresence mode="wait">
                 {!showForm ? (
                   <motion.button
@@ -136,9 +79,9 @@ export function PocoComingSoon() {
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0, y: -10 }}
                     onClick={() => setShowForm(true)}
-                    className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3 rounded-full transition-colors"
+                    className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2.5 rounded-full transition-colors text-sm"
                   >
-                    <Bell className="w-4 h-4" />
+                    <Bell className="w-3.5 h-3.5" />
                     Get Notified
                   </motion.button>
                 ) : (
@@ -146,10 +89,10 @@ export function PocoComingSoon() {
                     key="form"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="max-w-sm"
+                    className="w-72"
                   >
-                    <p className="text-sm text-black/50 mb-3">
-                      Drop your email and we&apos;ll let you know when Poco launches.
+                    <p className="text-xs text-black/40 mb-2">
+                      We&apos;ll let you know when Poco launches.
                     </p>
                     <HubSpotForm
                       formId="ea85ebc5-732f-4c64-a26d-c80eb800e790"
@@ -159,103 +102,7 @@ export function PocoComingSoon() {
                 )}
               </AnimatePresence>
             </div>
-
-            {/* Right: Screenshot Gallery + Features */}
-            <div>
-              <div className="relative">
-                {/* Browser frame with gallery */}
-                <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200/50">
-                  <div className="bg-gray-900 px-4 py-2.5 flex items-center gap-2" aria-hidden="true">
-                    <div className="flex gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
-                    </div>
-                    <div className="flex-1 mx-8">
-                      <div className="bg-gray-800 rounded-md px-3 py-1 text-xs text-gray-400 text-center truncate">
-                        poco.mediagarcia.com
-                      </div>
-                    </div>
-                  </div>
-                  <div className="bg-[#1a1a2e] relative min-h-[200px]">
-                    <AnimatePresence mode="wait">
-                      <motion.div
-                        key={currentSlide}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.4 }}
-                      >
-                        <Image
-                          src={gallerySlides[currentSlide].src}
-                          alt={gallerySlides[currentSlide].alt}
-                          width={gallerySlides[currentSlide].width}
-                          height={gallerySlides[currentSlide].height}
-                          sizes="(max-width: 1024px) 100vw, 50vw"
-                          className="w-full h-auto"
-                        />
-                      </motion.div>
-                    </AnimatePresence>
-                  </div>
-                </div>
-
-                {/* Caption + dots */}
-                <div className="flex items-center justify-between mt-4">
-                  <p className="text-sm text-black/50 font-medium">
-                    {gallerySlides[currentSlide].caption}
-                  </p>
-                  <div className="flex gap-2">
-                    {gallerySlides.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentSlide(index)}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                          index === currentSlide
-                            ? "bg-amber-500 w-5"
-                            : "bg-black/15 hover:bg-black/30"
-                        }`}
-                        aria-label={`View screenshot ${index + 1}`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Feature pills */}
-              <div className="flex flex-wrap gap-2 mt-5 justify-center lg:justify-start">
-                {features.map((feature) => (
-                  <span
-                    key={feature}
-                    className="px-3 py-1.5 bg-amber-500/10 rounded-full text-xs text-amber-700 font-medium"
-                  >
-                    {feature}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
-        </motion.div>
-
-        {/* Stats Row */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-8 pt-10 border-t border-black/10"
-        >
-          {[
-            { value: "200+", label: "CRM Implementations" },
-            { value: "98%", label: "Client Retention" },
-            { value: "$4M+", label: "Revenue Attributed" },
-            { value: "50+", label: "5-Star Reviews" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center lg:text-left">
-              <p className="text-4xl lg:text-5xl font-black text-black mb-2">
-                {stat.value}
-              </p>
-              <p className="text-sm text-black/50 font-medium">{stat.label}</p>
-            </div>
-          ))}
         </motion.div>
       </div>
     </section>
