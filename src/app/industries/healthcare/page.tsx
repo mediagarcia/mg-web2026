@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
-import { CTABanner } from "@/components/sections";
 import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
 import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 import Image from "next/image";
@@ -75,7 +74,7 @@ const solutions = [
   {
     title: "Clinic Operations Platform",
     description:
-      "End-to-end clinic management from a single platform\u2014patient intake, provider workflows, appointment management, and operational reporting. Built for Men\u2019s Pro Health across 4 locations.",
+      "End-to-end clinic management from a single platform\u2014patient intake, provider workflows, appointment management, and operational reporting. Built for Men\u2019s Pro Health across 10+ locations.",
     client: "Men\u2019s Pro Health",
     features: [
       "Appointment management",
@@ -113,7 +112,7 @@ const resultsMetrics = [
     source: "Men\u2019s Pro Health",
   },
   {
-    value: "4",
+    value: "10+",
     label: "Clinic Locations Supported",
     source: "Men\u2019s Pro Health",
   },
@@ -295,7 +294,7 @@ export default function HealthcareIndustryPage() {
                   </p>
                 </div>
                 <div className="bg-white rounded-2xl p-5 text-center">
-                  <p className="text-3xl font-black text-teal-500">4</p>
+                  <p className="text-3xl font-black text-teal-500">10+</p>
                   <p className="text-sm text-black/50 mt-1">
                     Clinic Locations
                   </p>
@@ -646,7 +645,6 @@ export default function HealthcareIndustryPage() {
         </div>
       </section>
 
-      <CTABanner />
     </>
   );
 }

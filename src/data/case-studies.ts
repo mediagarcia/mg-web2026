@@ -176,7 +176,7 @@ The data migration from AdvancedMD is being executed in stages—current patient
 We piloted with a select group of patients, collected structured feedback, created training documentation and onboarding guides, and are rolling out to all locations with a full communication and adoption plan.`,
     results: [
       { metric: "217+", label: "Project tasks delivered" },
-      { metric: "4", label: "Clinic locations supported" },
+      { metric: "10+", label: "Clinic locations supported" },
       { metric: "100%", label: "Portal pilot completion" },
       { metric: "0", label: "Legacy systems needed post-launch" },
     ],

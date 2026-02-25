@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
-import { CTABanner } from "@/components/sections";
 import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
 import { getImageForSlot } from "@/lib/images/get-image-for-slot";
 import Image from "next/image";
@@ -375,7 +374,6 @@ export default function B2BIndustryPage() {
         </div>
       </section>
 
-      <CTABanner />
     </>
   );
 }
