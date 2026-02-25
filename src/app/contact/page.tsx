@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { ContactForm } from "@/components/ContactForm";
 import { GradientOrb } from "@/components/ui/visuals";
+import { ReviewTrustStrip } from "@/components/ReviewTrustStrip";
 import { BookingHero } from "./BookingHero";
 import { SocialProofStrip } from "./SocialProofStrip";
 import { ProcessSteps } from "./ProcessSteps";
@@ -29,6 +30,13 @@ export default function ContactPage() {
       {/* 2. Primary Booking Hero — calendar CTA above the fold */}
       <BookingHero />
 
+      {/* 2b. Review Trust Strip — verified review links */}
+      <div className="py-8 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <ReviewTrustStrip />
+        </div>
+      </div>
+
       {/* 3. Social Proof — 3 inline testimonials */}
       <SocialProofStrip />
 
@@ -49,6 +57,11 @@ export default function ContactPage() {
           <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl shadow-black/10 ring-1 ring-black/[0.04]">
             <ContactForm />
           </div>
+          <p className="text-sm text-gray-500 text-center mt-6">
+            You&apos;ll hear back from Louis or Andrew within 24 hours. We&apos;ll
+            ask about your current stack, challenges, and timeline to make the
+            most of our first conversation.
+          </p>
         </div>
       </section>
 

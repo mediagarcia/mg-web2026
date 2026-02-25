@@ -8,7 +8,7 @@ import { GradientOrb } from "@/components/ui/visuals";
 const faqs = [
   {
     question: "What platforms do you work with?",
-    answer: "We're a Platinum HubSpot Partner and work extensively with Salesforce, Zoho, Pipedrive, and custom-built solutions. We recommend the platform that fits your needs, budget, and existing tech stack—not the one that's easiest for us.",
+    answer: "We're a Gold HubSpot Partner and work extensively with Salesforce, Zoho, Pipedrive, and custom-built solutions. We recommend the platform that fits your needs, budget, and existing tech stack—not the one that's easiest for us.",
   },
   {
     question: "Do you work with healthcare organizations?",

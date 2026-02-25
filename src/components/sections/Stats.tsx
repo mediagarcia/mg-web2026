@@ -20,7 +20,7 @@ const stats = [
     value: 50,
     suffix: "+",
     label: "Five-Star Reviews",
-    description: "From real clients",
+    description: "Across HubSpot, Facebook & Google",
   },
   {
     value: 98,

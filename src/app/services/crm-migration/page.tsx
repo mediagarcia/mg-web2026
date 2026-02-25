@@ -135,7 +135,7 @@ const faqs = [
   },
   {
     question: "Do you migrate to platforms other than HubSpot?",
-    answer: "Yes. While HubSpot is our most common destination (as a Platinum Partner), we also migrate to Salesforce, Zoho, and other CRM platforms. We'll recommend the platform that fits your needs—or work with your existing choice.",
+    answer: "Yes. While HubSpot is our most common destination (as a Gold Partner), we also migrate to Salesforce, Zoho, and other CRM platforms. We'll recommend the platform that fits your needs—or work with your existing choice.",
   },
   {
     question: "What if something goes wrong during cutover?",

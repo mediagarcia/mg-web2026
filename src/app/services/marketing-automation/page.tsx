@@ -104,7 +104,7 @@ const caseStudy = {
 const faqs = [
   {
     question: "What marketing platforms do you work with?",
-    answer: "We build marketing automation on HubSpot (our specialty as a Platinum Partner), Salesforce Marketing Cloud, Pardot, Marketo, and other major platforms. The principles of effective marketing automation are platform-agnostic—we'll implement them in whatever system you're using.",
+    answer: "We build marketing automation on HubSpot (our specialty as a Gold Partner), Salesforce Marketing Cloud, Pardot, Marketo, and other major platforms. The principles of effective marketing automation are platform-agnostic—we'll implement them in whatever system you're using.",
   },
   {
     question: "How long does a marketing automation project take?",

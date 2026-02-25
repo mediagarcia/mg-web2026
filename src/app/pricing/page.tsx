@@ -256,12 +256,212 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Section 3: Engagement Models */}
+      {/* Section 3: Investment Context */}
       <section className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
+        <GradientOrb
+          color="teal"
+          size="xl"
+          className="-bottom-48 -left-48 opacity-20"
+          intensity="subtle"
+          blur="xl"
+        />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
+              Investment Context
+            </span>
+            <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6">
+              We believe in transparency
+            </h2>
+            <p className="text-lg text-black/60 leading-relaxed">
+              Here&apos;s what to expect so you can plan with confidence.
+            </p>
+          </div>
+
+          {/* Investment Range Cards */}
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            {[
+              {
+                label: "Minimum engagement",
+                value: "$5,000",
+                description:
+                  "Our starting point for any engagement — enough to deliver real, measurable impact.",
+              },
+              {
+                label: "Most projects",
+                value: "$5K–$50K+",
+                description:
+                  "Depending on scope, complexity, and timeline. We'll scope it together before anything starts.",
+              },
+              {
+                label: "Ongoing partnerships",
+                value: "$3–8K/mo",
+                description:
+                  "For retainer-style engagements with a dedicated strategist embedded in your operations.",
+              },
+            ].map((tier) => (
+              <div
+                key={tier.label}
+                className="bg-white rounded-2xl p-8 text-center group hover:shadow-lg transition-shadow duration-300"
+              >
+                <p className="text-sm font-semibold text-black/50 uppercase tracking-wide mb-3">
+                  {tier.label}
+                </p>
+                <p className="text-4xl lg:text-5xl font-black text-teal-500 mb-4">
+                  {tier.value}
+                </p>
+                <p className="text-black/60 leading-relaxed text-sm">
+                  {tier.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* What Drives Investment */}
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-xl lg:text-2xl font-bold text-black text-center mb-10">
+              What drives investment
+            </h3>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Team size & specialization",
+                  description:
+                    "How many specialists your project needs — from a solo strategist to a full cross-functional squad.",
+                  icon: (
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Integration complexity",
+                  description:
+                    "The number of systems to connect and how deeply they need to talk to each other.",
+                  icon: (
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"
+                      />
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Data volume & migration scope",
+                  description:
+                    "How much data needs to move, be cleaned, or be restructured across your systems.",
+                  icon: (
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+                      />
+                    </svg>
+                  ),
+                },
+                {
+                  title: "Timeline requirements",
+                  description:
+                    "Faster delivery means more focused resources. We'll always be upfront about tradeoffs.",
+                  icon: (
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  ),
+                },
+              ].map((factor) => (
+                <div
+                  key={factor.title}
+                  className="flex gap-4 bg-white rounded-2xl p-6"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-500 flex-shrink-0">
+                    {factor.icon}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-black mb-1">
+                      {factor.title}
+                    </h4>
+                    <p className="text-sm text-black/60 leading-relaxed">
+                      {factor.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Closing Reassurance */}
+          <div className="text-center mt-12">
+            <p className="text-lg text-black/70 leading-relaxed max-w-2xl mx-auto">
+              Every engagement starts with a free strategy call where we scope
+              the work together. No surprises.
+            </p>
+            <a
+              href={MEETINGS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-teal-500 font-medium hover:text-teal-600 transition-colors mt-4 group/link"
+            >
+              Book your free call
+              <svg
+                className="w-4 h-4 transition-transform group-hover/link:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Engagement Models */}
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
         <FadingGridPattern
           type="dots"
           color="gray"
-          opacity={0.15}
+          opacity={0.1}
           spacing={32}
           fadeDirection="both"
         />
@@ -283,7 +483,7 @@ export default function PricingPage() {
             {engagementModels.map((model) => (
               <div
                 key={model.title}
-                className="bg-white rounded-2xl p-8 group hover:shadow-lg transition-shadow duration-300"
+                className="bg-gray-50 rounded-2xl p-8 group hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="w-16 h-16 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-500 mb-6">
                   {model.icon}
@@ -321,7 +521,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Section 4: Inline Testimonial */}
+      {/* Section 5: Inline Testimonial */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="bg-gray-50 rounded-3xl p-8 lg:p-16">
@@ -365,13 +565,13 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Section 5: Pricing FAQ */}
+      {/* Section 6: Pricing FAQ */}
       <PricingFAQ />
 
-      {/* Section 6: Stats Bar */}
+      {/* Section 7: Stats Bar */}
       <Stats />
 
-      {/* Section 7: Getting Started Process */}
+      {/* Section 8: Getting Started Process */}
       <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
         <FadingGridPattern
           type="dots"
@@ -460,7 +660,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Section 8: Case Study Teasers */}
+      {/* Section 9: Case Study Teasers */}
       <section className="py-20 lg:py-32 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -520,7 +720,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Section 9: Final CTA */}
+      {/* Section 10: Final CTA */}
       <section className="py-20 lg:py-32 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="bg-black rounded-3xl p-8 lg:p-16 text-white text-center">
