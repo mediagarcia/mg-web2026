@@ -75,6 +75,7 @@ export function PocoComingSoon() {
                 alt="Poco logo"
                 width={80}
                 height={80}
+                sizes="80px"
                 className="rounded-2xl mb-6"
               />
 
@@ -131,7 +132,7 @@ export function PocoComingSoon() {
               <div className="relative">
                 {/* Browser frame */}
                 <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200/50 lg:rotate-1 lg:hover:rotate-0 transition-transform duration-500">
-                  <div className="bg-gray-900 px-4 py-2.5 flex items-center gap-2">
+                  <div className="bg-gray-900 px-4 py-2.5 flex items-center gap-2" aria-hidden="true">
                     <div className="flex gap-1.5">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
                       <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
@@ -148,6 +149,7 @@ export function PocoComingSoon() {
                     alt="Poco dashboard showing action items, project health metrics, and team activity"
                     width={1400}
                     height={900}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="w-full h-auto"
                   />
                 </div>
