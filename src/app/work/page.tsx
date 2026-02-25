@@ -1,12 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Clock, BookOpen } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
-import { CTABanner, PocoComingSoon } from "@/components/sections";
-import { caseStudies } from "@/data/case-studies";
-import { CaseStudyCard } from "@/components/case-studies";
+import { CTABanner } from "@/components/sections";
+import { caseStudies, type Industry, type Service } from "@/data/case-studies";
+import { CaseStudyCard, FeaturedCaseStudy, CaseStudyFilters } from "@/components/case-studies";
 import { guides } from "@/data/guides";
 
 const stats = [
@@ -17,6 +18,16 @@ const stats = [
 ];
 
 export default function WorkPage() {
+  const [selectedIndustry, setSelectedIndustry] = useState<Industry>("All Industries");
+  const [selectedService, setSelectedService] = useState<Service>("All Services");
+
+  const featuredStudy = caseStudies.find((s) => s.featured);
+  const filteredStudies = caseStudies.filter((study) => {
+    const industryMatch = selectedIndustry === "All Industries" || study.industry === selectedIndustry;
+    const serviceMatch = selectedService === "All Services" || study.service === selectedService;
+    return industryMatch && serviceMatch;
+  });
+
   return (
     <>
       <PageHeader
@@ -26,8 +37,20 @@ export default function WorkPage() {
         breadcrumbs={[{ label: "Work", href: "/work" }]}
       />
 
+      {/* Featured Case Study */}
+      {featuredStudy && (
+        <section className="py-20 lg:py-32 bg-white">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-8 block">
+              Featured
+            </span>
+            <FeaturedCaseStudy caseStudy={featuredStudy} />
+          </div>
+        </section>
+      )}
+
       {/* Case Studies */}
-      <section id="case-studies" className="py-20 lg:py-32 bg-white scroll-mt-24">
+      <section id="case-studies" className="py-20 lg:py-32 bg-gray-50 scroll-mt-24">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
             <div>
@@ -40,8 +63,15 @@ export default function WorkPage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {caseStudies.map((study, index) => (
+          <CaseStudyFilters
+            selectedIndustry={selectedIndustry}
+            selectedService={selectedService}
+            onIndustryChange={setSelectedIndustry}
+            onServiceChange={setSelectedService}
+          />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            {filteredStudies.map((study, index) => (
               <CaseStudyCard
                 key={study.slug}
                 caseStudy={study}
@@ -49,11 +79,26 @@ export default function WorkPage() {
               />
             ))}
           </div>
+
+          {filteredStudies.length === 0 && (
+            <div className="text-center py-16">
+              <p className="text-black/50 text-lg">No case studies match your filters.</p>
+              <button
+                onClick={() => {
+                  setSelectedIndustry("All Industries");
+                  setSelectedService("All Services");
+                }}
+                className="mt-4 text-teal-500 font-medium hover:text-teal-600 transition-colors"
+              >
+                Clear filters
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
       {/* Guides & Playbooks */}
-      <section id="guides" className="py-20 lg:py-32 bg-gray-50 scroll-mt-24">
+      <section id="guides" className="py-20 lg:py-32 bg-white scroll-mt-24">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
             <div>
@@ -84,7 +129,7 @@ export default function WorkPage() {
               >
                 <Link
                   href={`/resources/guides/${guide.slug}`}
-                  className="group block h-full bg-white rounded-2xl overflow-hidden border border-black/5 hover:border-black/10 hover:shadow-lg transition-all duration-300"
+                  className="group block h-full bg-gray-50 rounded-2xl overflow-hidden border border-black/5 hover:border-black/10 hover:shadow-lg transition-all duration-300"
                 >
                   <div className="p-6 flex flex-col h-full">
                     <span className="inline-block px-3 py-1 bg-teal-500/10 text-teal-600 rounded-full text-xs font-bold uppercase tracking-wider w-fit mb-4">
@@ -113,9 +158,6 @@ export default function WorkPage() {
           </div>
         </div>
       </section>
-
-      {/* Poco Coming Soon */}
-      <PocoComingSoon />
 
       {/* Stats */}
       <section className="py-16 bg-black text-white">

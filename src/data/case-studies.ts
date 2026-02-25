@@ -41,15 +41,12 @@ export interface CaseStudy {
   publishDate?: string;
 }
 
-// Filter options
+// Filter options — only categories with actual case studies
 export const industries = [
   "All Industries",
   "Healthcare",
   "Technology",
-  "B2B Services",
   "Professional Services",
-  "Manufacturing",
-  "Education",
   "Energy",
   "E-Commerce",
 ] as const;
@@ -57,11 +54,7 @@ export const industries = [
 export const services = [
   "All Services",
   "HubSpot Implementation",
-  "CRM Migration",
   "Marketing Automation",
-  "EHR Integration",
-  "Sales Enablement",
-  "Salesforce to HubSpot",
   "CRM Optimization",
 ] as const;
 

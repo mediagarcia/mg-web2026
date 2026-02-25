@@ -60,16 +60,6 @@ export const platforms: Platform[] = [
     description:
       "Full migration and bi-directional sync expertise with HubSpot.",
   },
-  {
-    id: "gohighlevel",
-    name: "Go High Level",
-    category: "CRM & Sales",
-    tier: "Supporting",
-    relationship: "We integrate",
-    brandColor: "#4285f4",
-    description:
-      "Agency CRM integration and data sync with HubSpot ecosystems.",
-  },
 
   // Sales Engagement
   {
@@ -81,16 +71,6 @@ export const platforms: Platform[] = [
     brandColor: "#6f3cfa",
     description:
       "Prospecting data enrichment and outbound sequence integration.",
-  },
-  {
-    id: "instantly",
-    name: "Instantly",
-    category: "Sales Engagement",
-    tier: "Supporting",
-    relationship: "We integrate",
-    brandColor: "#5b5fc7",
-    description:
-      "Cold outreach at scale, synced with your CRM pipeline.",
   },
   {
     id: "salesloft",
@@ -268,7 +248,7 @@ export const integrationApproaches: IntegrationApproach[] = [
       "API-level integrations built to spec when off-the-shelf won't cut it. Full control, tailored logic, enterprise-grade.",
     example: "HubSpot ↔ NetSuite quote-to-cash pipeline",
     color: "orange",
-    platformIds: ["hubspot", "netsuite", "sage", "outreach", "gohighlevel"],
+    platformIds: ["hubspot", "netsuite", "sage", "outreach"],
   },
 ];
 
