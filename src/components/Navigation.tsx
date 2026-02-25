@@ -285,15 +285,15 @@ function WorkMegaMenu({ onClose }: { onClose: () => void }) {
       <Link
         href="/work#poco"
         onClick={onClose}
-        className="group block p-5 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-gray-50 transition-all"
+        className="group block p-5 rounded-xl border border-gray-100 hover:border-amber-200 hover:bg-amber-50/30 transition-all"
       >
-        <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors mb-3">
-          <Briefcase className="w-5 h-5" />
+        <div className="w-10 h-10 rounded-lg overflow-hidden mb-3">
+          <img src="/images/poco/poco-logo.png" alt="Poco" className="w-full h-full object-cover" />
         </div>
-        <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors mb-1">
+        <h3 className="text-sm font-semibold text-gray-900 group-hover:text-amber-600 transition-colors mb-1">
           Poco
         </h3>
-        <p className="text-xs text-gray-500">An AI-driven app we&apos;re building. Coming soon.</p>
+        <p className="text-xs text-gray-500">Your Revenue Operations Co-Pilot. Coming soon.</p>
       </Link>
     </div>
   );
@@ -516,8 +516,8 @@ export function Navigation() {
                           onClick={() => setIsMobileMenuOpen(false)}
                           className="block py-2"
                         >
-                          <span className="text-base font-medium text-teal-600">Poco — Coming Soon</span>
-                          <span className="block text-sm text-gray-500">An AI-driven app we&apos;re building</span>
+                          <span className="text-base font-medium text-amber-600">Poco — Your RevOps Co-Pilot</span>
+                          <span className="block text-sm text-gray-500">AI-powered. Tracks the little things.</span>
                         </Link>
                       </li>
                     </ul>
