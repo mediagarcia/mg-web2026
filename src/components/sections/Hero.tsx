@@ -74,10 +74,10 @@ export function Hero({ heroImage, imageOpacity = 0.04 }: HeroProps) {
             className="flex flex-col sm:flex-row gap-4 mb-4"
           >
             <Link
-              href="/contact"
+              href="/book"
               className="inline-flex items-center justify-center gap-2 bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-teal-500 transition-all duration-300 group"
             >
-              Book a Strategy Call
+              Book an Intro Call
               <svg
                 className="w-5 h-5 transition-transform group-hover:translate-x-1"
                 fill="none"
@@ -105,7 +105,7 @@ export function Hero({ heroImage, imageOpacity = 0.04 }: HeroProps) {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="text-sm text-black/50 mb-10"
           >
-            15 minutes with a senior strategist. No commitment.
+            15 minutes. Free. No commitment.
           </motion.p>
 
           {/* Trust Indicators */}

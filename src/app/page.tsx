@@ -1,4 +1,4 @@
-import { HeroWithPreview, ClientLogos, ResultsHighlight, Services, Platforms, Stats, IndustriesWithPreview, WhyUsWithPreview, Process, Values, CTABanner, Testimonials, PocoComingSoon, FAQ, Team, Contact } from "@/components/sections";
+import { HeroWithPreview, ClientLogos, ResultsHighlight, Services, Platforms, IndustriesWithPreview, WhyUsWithPreview, Process, CTABanner, Testimonials, PocoComingSoon, FAQ, Team, Contact } from "@/components/sections";
 import { HomePageWrapper } from "@/components/HomePageWrapper";
 import { getImageForSlot, getVersionedImageForSlot } from "@/lib/images/get-image-for-slot";
 export default function Home() {
@@ -21,11 +21,9 @@ export default function Home() {
       <ResultsHighlight />
       <Services />
       <Platforms />
-      <Stats />
       <IndustriesWithPreview defaultImages={industryImages} />
       <WhyUsWithPreview defaultImage={whyUsImage} slot="why-us" />
       <Process />
-      <Values />
       <CTABanner />
       <Testimonials />
       <PocoComingSoon />
