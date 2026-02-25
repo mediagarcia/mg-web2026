@@ -107,7 +107,7 @@ const LIGHT_THEME_CSS = `
     font-family: var(--font-family-sans, 'Roboto', system-ui, sans-serif) !important;
     cursor: pointer !important;
     transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
-    width: 100% !important;
+    width: auto !important;
     letter-spacing: 0.01em !important;
     box-shadow: 0 4px 14px rgba(59, 183, 130, 0.35) !important;
     margin-top: 8px !important;
@@ -170,7 +170,7 @@ const POCO_THEME_CSS = `
     font-family: var(--font-family-sans, 'Roboto', system-ui, sans-serif) !important;
     cursor: pointer !important;
     transition: background 0.2s, transform 0.15s !important;
-    width: 100% !important;
+    width: auto !important;
     box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3) !important;
     margin-top: 4px !important;
   }
