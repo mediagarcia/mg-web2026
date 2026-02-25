@@ -69,7 +69,7 @@ const resources: MenuItem[] = [
   { label: "Resource Center", href: "/resources", description: "Guides, tools, and insights", icon: Library },
   { label: "CRM Assessment", href: "/resources/assessment", description: "Evaluate your CRM setup", icon: ClipboardCheck },
   { label: "Guides & Best Practices", href: "/resources/guides", description: "Expert tips and strategies", icon: BookOpen },
-  { label: "Blog", href: "/blog", description: "Latest insights and strategies", icon: FileText },
+  { label: "Blog", href: "https://www.mediagarcia.com/blog", description: "Latest insights and strategies", icon: FileText },
 ];
 
 
@@ -188,9 +188,22 @@ function IndustriesMegaMenu({ onClose }: { onClose: () => void }) {
 
 function ResourcesMegaMenu({ onClose }: { onClose: () => void }) {
   return (
-    <div className="flex gap-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {resources.map((item) => (
-        <MenuLink key={item.href} item={item} onClose={onClose} />
+        <Link
+          key={item.href}
+          href={item.href}
+          onClick={onClose}
+          className="group block p-5 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-gray-50 transition-all"
+        >
+          <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors mb-3">
+            <item.icon className="w-5 h-5" />
+          </div>
+          <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors mb-1">
+            {item.label}
+          </h3>
+          <p className="text-xs text-gray-500">{item.description}</p>
+        </Link>
       ))}
     </div>
   );
