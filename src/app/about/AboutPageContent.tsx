@@ -160,7 +160,7 @@ const clientLogos = [
   { name: "Cloud Force Gurus", logo: "/images/clients/cloudforcegurus.png" },
   { name: "Delve Health", logo: "/images/clients/delvehealth.svg" },
   { name: "Optix", logo: "/images/clients/optix.png" },
-  { name: "Certn", logo: "/images/clients/certn.svg" },
+  { name: "Certn", logo: "/images/clients/certn.png" },
 ];
 
 function AnimatedCounter({
@@ -591,7 +591,7 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
                     width={120}
                     height={40}
                     unoptimized
-                    className="max-h-8 w-auto object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                    className="max-h-8 w-auto object-contain opacity-80 hover:opacity-100 transition-all duration-300"
                   />
                 </div>
               ))}
