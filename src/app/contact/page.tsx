@@ -46,7 +46,7 @@ export default function ContactPage() {
           <p className="text-lg text-black/60 text-center mb-10">
             Tell us about your project and we&apos;ll respond within 24 hours.
           </p>
-          <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-100">
+          <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl shadow-black/10 ring-1 ring-black/[0.04]">
             <ContactForm />
           </div>
         </div>

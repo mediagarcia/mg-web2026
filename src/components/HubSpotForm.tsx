@@ -48,9 +48,15 @@ const DARK_THEME_CSS = `
   .hs-form .hs-error-msgs label { color: #f87171 !important; font-size: 12px !important; }
   .hs-form .hs-form-field { margin-bottom: 8px !important; }
   .hs-form label:not(.hs-error-msgs label) { display: none !important; }
-  .hs-form .legal-consent-container { margin-top: 4px !important; }
-  .hs-form .legal-consent-container p { color: rgba(255,255,255,0.4) !important; font-size: 11px !important; }
-  .hs-form .legal-consent-container a { color: #3BB782 !important; }
+  .hs-form .legal-consent-container { margin-top: 2px !important; }
+  .hs-form .legal-consent-container p { color: rgba(255,255,255,0.25) !important; font-size: 10px !important; line-height: 1.3 !important; }
+  .hs-form .legal-consent-container a { color: rgba(255,255,255,0.25) !important; text-decoration: underline !important; }
+  .hs-form .hs-recaptcha { margin-top: 2px !important; margin-bottom: 0 !important; }
+  .hs-form .hs-recaptcha .grecaptcha-badge { opacity: 0 !important; }
+  .hs-form .hs-recaptcha p,
+  .hs-form .hs-recaptcha span,
+  .hs-form .hs-recaptcha label { color: rgba(255,255,255,0.2) !important; font-size: 9px !important; line-height: 1.2 !important; }
+  .hs-form .hs-recaptcha a { color: rgba(255,255,255,0.2) !important; text-decoration: underline !important; }
   .submitted-message { color: #3BB782 !important; font-size: 14px !important; font-weight: 500 !important; }
 `;
 
@@ -87,15 +93,22 @@ const LIGHT_THEME_CSS = `
     color: #fff !important;
     border: none !important;
     border-radius: 9999px !important;
-    padding: 14px 32px !important;
-    font-size: 15px !important;
-    font-weight: 600 !important;
+    padding: 16px 40px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
     font-family: var(--font-family-sans, 'Roboto', system-ui, sans-serif) !important;
     cursor: pointer !important;
-    transition: background 0.2s !important;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
     width: 100% !important;
+    letter-spacing: 0.01em !important;
+    box-shadow: 0 4px 14px rgba(59, 183, 130, 0.35) !important;
+    margin-top: 8px !important;
   }
-  .hs-form .hs-button:hover { background: #2F9268 !important; }
+  .hs-form .hs-button:hover {
+    background: #2F9268 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 20px rgba(59, 183, 130, 0.45) !important;
+  }
   .hs-form .hs-error-msgs { margin-top: 4px !important; }
   .hs-form .hs-error-msgs label { color: #ef4444 !important; font-size: 12px !important; }
   .hs-form .hs-form-field { margin-bottom: 12px !important; }
@@ -107,9 +120,15 @@ const LIGHT_THEME_CSS = `
     margin-bottom: 4px !important;
     font-family: var(--font-family-sans, 'Roboto', system-ui, sans-serif) !important;
   }
-  .hs-form .legal-consent-container { margin-top: 8px !important; }
-  .hs-form .legal-consent-container p { color: #6b7280 !important; font-size: 11px !important; }
-  .hs-form .legal-consent-container a { color: #3BB782 !important; }
+  .hs-form .legal-consent-container { margin-top: 4px !important; }
+  .hs-form .legal-consent-container p { color: #9ca3af !important; font-size: 10px !important; line-height: 1.3 !important; }
+  .hs-form .legal-consent-container a { color: #9ca3af !important; text-decoration: underline !important; }
+  .hs-form .hs-recaptcha { margin-top: 2px !important; margin-bottom: 0 !important; }
+  .hs-form .hs-recaptcha .grecaptcha-badge { opacity: 0 !important; }
+  .hs-form .hs-recaptcha p,
+  .hs-form .hs-recaptcha span,
+  .hs-form .hs-recaptcha label { color: #c0c4ca !important; font-size: 9px !important; line-height: 1.2 !important; }
+  .hs-form .hs-recaptcha a { color: #c0c4ca !important; text-decoration: underline !important; }
   .submitted-message { color: #3BB782 !important; font-size: 16px !important; font-weight: 600 !important; }
 `;
 
