@@ -1,48 +1,9 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { OrganicShapeCluster, DotPattern } from "@/components/OrganicShapes";
-
-import { useState, useEffect } from "react";
-
-const rotatingWords = [
-  "lean",
-  "growing",
-  "winning",
-  "ahead",
-  "profitable",
-  "scaling",
-  "focused",
-  "thriving",
-  "sharp",
-  "agile",
-  "closing",
-  "in control",
-  "on top",
-  "sane",
-  "selling",
-];
-
-const rotatingColors = [
-  "text-teal-500",
-  "text-neon-purple-500",
-  "text-orange-red-500",
-  "text-teal-500",
-  "text-neon-purple-500",
-  "text-orange-red-500",
-];
-
-// Scale animation - gentle scale + fade with subtle bounce
-const scaleAnimation = {
-  variants: {
-    initial: { scale: 0.8, opacity: 0 },
-    animate: { scale: 1, opacity: 1 },
-    exit: { scale: 1.1, opacity: 0 },
-  },
-  transition: { duration: 0.4, ease: [0.34, 1.56, 0.64, 1] as const },
-};
 
 interface HeroProps {
   heroImage?: string | null;
@@ -50,22 +11,6 @@ interface HeroProps {
 }
 
 export function Hero({ heroImage, imageOpacity = 0.04 }: HeroProps) {
-  const [wordIndex, setWordIndex] = useState(0);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-
-    const interval = setInterval(() => {
-      setWordIndex((prev) => (prev + 1) % rotatingWords.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, [mounted]);
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
       {/* Background Image - subtle tech/consulting visual */}
@@ -96,38 +41,19 @@ export function Hero({ heroImage, imageOpacity = 0.04 }: HeroProps) {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg lg:text-xl font-medium text-black/50 mb-4"
           >
-            Tired of CRM investments that gather dust?
+            Your CRM should drive revenue, not collect dust.
           </motion.p>
 
-          {/* Main Headline with Rotating Text */}
+          {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-[clamp(2.5rem,7vw,4.5rem)] font-black leading-[1.1] tracking-tight text-black mb-8"
           >
-            We build systems that
+            Revenue systems your team
             <br />
-            <span className="inline-flex items-baseline whitespace-nowrap">
-              <span>keep you&nbsp;</span>
-              <span className="relative inline-flex min-w-[4.5ch]">
-                <AnimatePresence mode="wait">
-                  {mounted && (
-                    <motion.span
-                      key={wordIndex}
-                      variants={scaleAnimation.variants}
-                      initial="initial"
-                      animate="animate"
-                      exit="exit"
-                      transition={scaleAnimation.transition}
-                      className={`whitespace-nowrap ${rotatingColors[wordIndex % rotatingColors.length]}`}
-                    >
-                      {rotatingWords[wordIndex]}
-                    </motion.span>
-                  )}
-                </AnimatePresence>
-              </span>
-            </span>
+            will actually use
           </motion.h1>
 
           {/* Subheadline - Enhanced Mission */}
@@ -137,7 +63,7 @@ export function Hero({ heroImage, imageOpacity = 0.04 }: HeroProps) {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl lg:text-2xl text-black/60 leading-relaxed max-w-2xl mb-10"
           >
-            We design RevOps and automation platforms for healthcare, technology, and B2B companies—across HubSpot, Salesforce, and custom stacks.
+            HubSpot and CRM specialists for healthcare, technology, and B2B companies. 94% adoption rate. 200+ implementations. Zero-downtime migrations.
           </motion.p>
 
           {/* CTA */}
@@ -205,7 +131,7 @@ export function Hero({ heroImage, imageOpacity = 0.04 }: HeroProps) {
               <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
-              <span className="font-medium">50+ Five-Star Reviews</span>
+              <span className="font-medium">50+ Verified Reviews</span>
             </div>
           </motion.div>
         </div>
