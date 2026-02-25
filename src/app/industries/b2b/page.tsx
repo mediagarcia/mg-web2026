@@ -89,12 +89,6 @@ const capabilities = [
 const testimonials = [
   {
     quote:
-      "Before Media Garcia, our teams were copying data between five different systems. Now everything flows automatically\u2014when a deal moves stages, tasks get created, the right people get notified, and our customers can see their project status in real time.",
-    name: "Maria Woo",
-    title: "Operations Lead, Current Energy",
-  },
-  {
-    quote:
       "We partnered with Media Garcia on creating a dashboard for a client. What they delivered for us, I have the happiest team right now because they did it this fast. We had gotten through maybe a quarter of the same material over the course of weeks if not months. Thank you, Media Garcia!",
     name: "Michele Markham",
     title: "President & CEO, EAG Advertising & Marketing",

@@ -137,12 +137,7 @@ For the customer portal, we prototyped and designed a solution using HubSpot's n
       { metric: "100%", label: "Data migration accuracy" },
       { metric: "0", label: "Manual deal stage handoffs" },
     ],
-    testimonial: {
-      quote: "Before Media Garcia, our teams were copying data between five different systems. Now everything flows automatically—when a deal moves stages, tasks get created, the right people get notified, and our customers can see their project status in real time.",
-      author: "Maria Woo",
-      title: "Operations Lead",
-      company: "Current Energy",
-    },
+    testimonial: undefined,
   },
   {
     slug: "mens-pro-crm-enablement",

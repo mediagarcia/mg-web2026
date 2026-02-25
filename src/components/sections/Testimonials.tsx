@@ -13,14 +13,6 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "Before Media Garcia, our teams were copying data between five different systems. Now everything flows automatically—when a deal moves stages, tasks get created, the right people get notified, and our customers can see their project status in real time.",
-    author: "Maria Woo",
-    title: "Operations Lead",
-    company: "Current Energy",
-    initials: "MW",
-    rating: 5,
-  },
-  {
     quote: "We asked Media Garcia to build us a patient portal and ended up with an entire operating system for our clinics. Our patients can manage their own care online, our providers have structured clinical notes, and we're finally running everything from one platform.",
     author: "Dan Green",
     title: "President & CEO",

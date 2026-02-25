@@ -173,12 +173,6 @@ const testimonials = [
   },
   {
     quote:
-      "Before Media Garcia, our teams were copying data between five different systems. Now everything flows automatically.",
-    author: "Maria Woo",
-    title: "Operations Lead, Current Energy",
-  },
-  {
-    quote:
       "We asked Media Garcia to build us a patient portal and ended up with an entire operating system for our clinics.",
     author: "Dan Green",
     title: "President & CEO, Men\u2019s Pro Health",
