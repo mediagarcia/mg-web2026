@@ -31,35 +31,84 @@ const gallerySlides = [
   {
     src: "/images/poco/screenshot-dashboard.png",
     alt: "Poco dashboard with action items, weekly summary, and performance metrics",
-    caption: "Your daily command center",
+    caption: "Your daily command center — ClickUp, Calendar & Email unified",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-clients.png",
     alt: "Client list with health statuses, hours tracking, and meeting counts",
-    caption: "Client health at a glance",
+    caption: "Client health at a glance with HubSpot sync",
+    width: 1366,
+    height: 768,
+  },
+  {
+    src: "/images/poco/screenshot-meetings.png",
+    alt: "Meetings list with AI analysis, task extraction, and question tracking",
+    caption: "Every meeting tracked with AI-extracted tasks & questions",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-meeting-report.png",
     alt: "AI-generated meeting summary with suggested goals and action items",
-    caption: "AI-powered meeting intelligence",
+    caption: "AI meeting intelligence from Google Meet recordings",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-projects.png",
     alt: "Project dashboard with health scores, task counts, and overdue tracking",
-    caption: "Project health across every engagement",
+    caption: "Project health synced from ClickUp in real time",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-client-detail.png",
     alt: "Client detail view with email tracking, meetings, contracts, and activity insights",
-    caption: "Deep tracking for every client",
+    caption: "Deep AI-powered insights for every client relationship",
+    width: 1366,
+    height: 768,
+  },
+  {
+    src: "/images/poco/screenshot-client-comms.png",
+    alt: "Unified communications timeline with email threads and Slack messages",
+    caption: "Unified Email & Slack communications timeline",
+    width: 1366,
+    height: 768,
+  },
+  {
+    src: "/images/poco/screenshot-client-retainer.png",
+    alt: "Client retainer management with utilization tracking and invoice settings",
+    caption: "Retainer tracking with QuickBooks Online integration",
+    width: 1366,
+    height: 768,
+  },
+  {
+    src: "/images/poco/screenshot-goals.png",
+    alt: "Goal tracking dashboard with AI-suggested goals from meeting patterns",
+    caption: "AI-suggested goals surfaced from meeting patterns",
+    width: 1366,
+    height: 768,
+  },
+  {
+    src: "/images/poco/screenshot-contracts.png",
+    alt: "Contract obligations tracking with status indicators and compliance scores",
+    caption: "Contract obligations tracked automatically from uploads",
+    width: 1366,
+    height: 768,
+  },
+  {
+    src: "/images/poco/screenshot-budget.png",
+    alt: "Financial dashboard with revenue, margins, utilization and time tracking from QBO",
+    caption: "Financial health powered by QuickBooks Online",
+    width: 1366,
+    height: 768,
+  },
+  {
+    src: "/images/poco/screenshot-business-dev.png",
+    alt: "Business development pipeline with conversion rates and prospect tracking",
+    caption: "Business development pipeline & conversion tracking",
     width: 1366,
     height: 768,
   },
@@ -73,7 +122,7 @@ export function PocoPageContent() {
     if (lightboxOpen) return;
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % gallerySlides.length);
-    }, 5000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [lightboxOpen]);
 
