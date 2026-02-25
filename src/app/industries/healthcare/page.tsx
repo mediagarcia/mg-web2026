@@ -539,15 +539,15 @@ export default function HealthcareIndustryPage() {
                 years
               </h3>
               <p className="text-white/80">
-                Book a strategy call to discuss how we can bring the same
+                Book an intro call to discuss how we can bring the same
                 results to your healthcare organization.
               </p>
             </div>
             <Link
-              href="/contact"
+              href="/book"
               className="inline-flex items-center gap-2 bg-white text-teal-600 px-8 py-4 rounded-full font-bold hover:bg-black hover:text-white transition-all shrink-0"
             >
-              Book a Strategy Call
+              Book an Intro Call
               <svg
                 className="w-5 h-5"
                 fill="none"

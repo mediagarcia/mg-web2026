@@ -1332,12 +1332,8 @@ export default function SalesforceToHubSpotGuide() {
           title="Keep Your HubSpot Instance Running at Peak Performance"
           description="Our managed CRM services include ongoing data governance, workflow optimization, and quarterly health audits. We keep your system clean so your team can focus on selling."
           primaryAction={{
-            label: "Explore Managed Services",
-            href: "/services/managed-services",
-          }}
-          secondaryAction={{
-            label: "Book a Strategy Call",
-            href: "/contact",
+            label: "Book an Intro Call",
+            href: "/book",
           }}
           variant="prominent"
         />

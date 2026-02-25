@@ -308,8 +308,8 @@ export default function OperationsHubPlaybook() {
         title="Need help building your data architecture?"
         description="Our team has built these exact blueprints for dozens of RevOps teams. We can implement them in your portal or train your team to build them independently."
         primaryAction={{
-          label: "Book a strategy call",
-          href: "/contact",
+          label: "Book an intro call",
+          href: "/book",
         }}
         secondaryAction={{
           label: "View our integration services",
@@ -502,8 +502,8 @@ export default function OperationsHubPlaybook() {
           href: "/contact",
         }}
         secondaryAction={{
-          label: "See integration case studies",
-          href: "/case-studies",
+          label: "Explore integration services",
+          href: "/services/integrations",
         }}
         variant="prominent"
       />
