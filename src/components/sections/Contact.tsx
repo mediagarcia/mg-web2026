@@ -144,7 +144,9 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl">
+            <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl shadow-black/10 ring-1 ring-black/[0.04]">
+              <h3 className="text-xl font-bold text-black mb-1">Start the conversation</h3>
+              <p className="text-sm text-black/50 mb-6">Fill out the form and we&apos;ll be in touch within 24 hours.</p>
               <HubSpotForm formId="9889726d-8529-4a21-a79a-3fd746e3fc44" />
             </div>
           </motion.div>
