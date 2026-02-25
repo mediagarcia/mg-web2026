@@ -10,7 +10,7 @@ export function Platforms() {
   return (
     <section
       id="platforms"
-      className="py-[var(--spacing-section)] bg-gray-50 relative overflow-hidden"
+      className="pt-[var(--spacing-section-sm)] pb-[var(--spacing-section)] bg-gray-50 relative overflow-hidden"
     >
       {/* Background orbs */}
       <GradientOrb
