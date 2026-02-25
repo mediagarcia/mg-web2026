@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { GradientOrb } from "@/components/ui/visuals";
+import { HubSpotMeetings } from "@/components/HubSpotMeetings";
 
 const MEETINGS_URL =
-  "https://meetings.hubspot.com/louis3/discovery-meeting-with-louis";
+  "https://meetings.hubspot.com/louis3/discovery-meeting-with-louis?uuid=86b53683-4620-4e4a-9c3a-6656ed6a4df4";
 
 const whatYouGet = [
   "Honest assessment of your current CRM and RevOps setup",
@@ -42,7 +43,7 @@ export function BookLandingContent() {
         />
 
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Left: Copy */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -80,51 +81,10 @@ export function BookLandingContent() {
                 ))}
               </ul>
 
-              {/* CTA */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-4">
-                <a
-                  href={MEETINGS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-black text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-teal-500 transition-all duration-300 group"
-                >
-                  Book an Intro Call
-                  <svg
-                    className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </a>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-black/20 text-black px-8 py-4 rounded-full text-lg font-medium hover:border-teal-500 hover:text-teal-500 transition-all duration-300"
-                >
-                  Or Send a Message
-                </Link>
-              </div>
-              <p className="text-sm text-black/40">
-                15 minutes. Free. No sales pitch.
-              </p>
-            </motion.div>
-
-            {/* Right: Louis card */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15 }}
-            >
-              <div className="bg-gray-50 rounded-3xl p-8 lg:p-10">
-                {/* Person */}
-                <div className="flex items-center gap-5 mb-8">
-                  <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden ring-4 ring-teal-500/20 shadow-lg shrink-0">
+              {/* You'll meet */}
+              <div className="bg-gray-50 rounded-2xl p-6 mb-6">
+                <div className="flex items-center gap-4">
+                  <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-teal-500/20 shadow-md shrink-0">
                     <Image
                       src="/images/team/team-member-1.jpg"
                       alt="Louis Garcia"
@@ -133,132 +93,72 @@ export function BookLandingContent() {
                     />
                   </div>
                   <div>
-                    <h2 className="text-xl font-bold text-black">
+                    <h2 className="text-base font-bold text-black">
                       Louis Garcia
                     </h2>
                     <p className="text-sm text-teal-500 font-medium">
                       CEO & Founder
                     </p>
-                    <p className="text-sm text-black/50 mt-1">
-                      15+ years building revenue systems. Personally involved in
-                      every engagement.
+                    <p className="text-xs text-black/50 mt-0.5">
+                      15+ years building revenue systems
                     </p>
                   </div>
                 </div>
+              </div>
 
-                {/* Details */}
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 shrink-0">
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-                        />
-                      </svg>
-                    </div>
-                    <p className="text-black/70 font-medium">
-                      15-minute video call
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 shrink-0">
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                        />
-                      </svg>
-                    </div>
-                    <p className="text-black/70 font-medium">
-                      Choose a time that works for you
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-500 shrink-0">
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                    </div>
-                    <p className="text-black/70 font-medium">
-                      Actionable insights, even if we don&apos;t work together
-                    </p>
-                  </div>
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-2">
+                  <svg
+                    className="w-5 h-5 text-[#ff7a59]"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span className="text-sm font-medium text-black/50">
+                    Gold HubSpot Partner
+                  </span>
                 </div>
+                <div className="flex items-center gap-2">
+                  <svg
+                    className="w-5 h-5 text-yellow-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <span className="text-sm font-medium text-black/50">
+                    50+ Five-Star Reviews
+                  </span>
+                </div>
+              </div>
 
-                {/* Trust indicators */}
-                <div className="border-t border-gray-200 pt-6">
-                  <div className="flex flex-wrap gap-4">
-                    <div className="flex items-center gap-2">
-                      <svg
-                        className="w-5 h-5 text-[#ff7a59]"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span className="text-sm font-medium text-black/50">
-                        Gold HubSpot Partner
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg
-                        className="w-5 h-5 text-yellow-500"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                      <span className="text-sm font-medium text-black/50">
-                        50+ Five-Star Reviews
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <svg
-                        className="w-5 h-5 text-teal-500"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span className="text-sm font-medium text-black/50">
-                        200+ Implementations
-                      </span>
-                    </div>
-                  </div>
-                </div>
+              <p className="text-sm text-black/40 mt-6">
+                Prefer email?{" "}
+                <Link
+                  href="/contact"
+                  className="text-teal-500 hover:text-teal-600 font-medium transition-colors"
+                >
+                  Send a message
+                </Link>
+              </p>
+            </motion.div>
+
+            {/* Right: Embedded Calendar */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+            >
+              <div className="bg-gray-50 rounded-3xl p-4 lg:p-6 border border-gray-100">
+                <HubSpotMeetings
+                  url={MEETINGS_URL}
+                  className="min-h-[660px]"
+                />
               </div>
             </motion.div>
           </div>
