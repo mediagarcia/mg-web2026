@@ -41,7 +41,7 @@ export default function ContactPage() {
       <SocialProofStrip />
 
       {/* 4. Secondary Form Section */}
-      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+      <section id="contact-form" className="py-20 lg:py-32 bg-white relative overflow-hidden scroll-mt-24">
         <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-20" intensity="subtle" blur="xl" />
         <GradientOrb color="purple" size="lg" className="bottom-1/4 -left-32 opacity-15" intensity="subtle" blur="xl" />
         <div className="max-w-2xl mx-auto px-6 lg:px-12 relative">
