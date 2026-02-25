@@ -9,7 +9,7 @@ import { PricingFAQ } from "./pricing-faq";
 export const metadata: Metadata = {
   title: "Pricing | Media Garcia",
   description:
-    "Custom pricing for CRM, RevOps, and revenue operations services. Projects, retainers, and fractional RevOps — scoped to your goals. Book a free strategy call.",
+    "Custom pricing for CRM, RevOps, and revenue operations services. Projects, retainers, and fractional RevOps — scoped to your goals. Book a free intro call.",
 };
 
 const MEETINGS_URL =
@@ -285,17 +285,17 @@ export default function PricingPage() {
                 label: "Minimum engagement",
                 value: "$5,000",
                 description:
-                  "Our starting point for any engagement — enough to deliver real, measurable impact.",
+                  "Great for small projects, fixes, support, training, and onboardings. A focused starting point.",
               },
               {
                 label: "Most projects",
                 value: "$5K–$50K+",
                 description:
-                  "Depending on scope, complexity, and timeline. We'll scope it together before anything starts.",
+                  "Where real, measurable impact happens. CRM builds, migrations, integrations — scoped together before anything starts.",
               },
               {
                 label: "Ongoing partnerships",
-                value: "$3–8K/mo",
+                value: "$3–10K/mo",
                 description:
                   "For retainer-style engagements with a dedicated strategist embedded in your operations.",
               },
@@ -428,7 +428,7 @@ export default function PricingPage() {
           {/* Closing Reassurance */}
           <div className="text-center mt-12">
             <p className="text-lg text-black/70 leading-relaxed max-w-2xl mx-auto">
-              Every engagement starts with a free strategy call where we scope
+              Every engagement starts with a free intro call where we scope
               the work together. No surprises.
             </p>
             <a
@@ -641,7 +641,7 @@ export default function PricingPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-teal-500 transition-colors"
             >
-              Start with a free strategy call
+              Start with a free intro call
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -728,7 +728,7 @@ export default function PricingPage() {
               Let&apos;s figure out what you need.
             </h2>
             <p className="text-white/60 mb-8 max-w-2xl mx-auto text-lg">
-              Book a 15-minute strategy call with Louis. No commitment, no sales
+              Book a 15-minute intro call with Louis. No commitment, no sales
               pitch — just a conversation about where you are and where you want
               to be.
             </p>
@@ -739,7 +739,7 @@ export default function PricingPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-teal-500 text-white px-8 py-4 rounded-full font-medium hover:bg-teal-400 transition-colors"
               >
-                Book a Strategy Call
+                Book an Intro Call
                 <svg
                   className="w-5 h-5"
                   fill="none"

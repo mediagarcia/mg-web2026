@@ -105,7 +105,7 @@ export function Hero({ heroImage, imageOpacity = 0.04 }: HeroProps) {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="text-sm text-black/50 mb-10"
           >
-            15 minutes with a senior strategist. No commitment.
+            15 minutes. Free. No commitment.
           </motion.p>
 
           {/* Trust Indicators */}

@@ -327,10 +327,10 @@ export default function CRMOnboardingPage() {
                 </svg>
               </Link>
               <Link
-                href="/contact"
+                href="/book"
                 className="inline-flex items-center gap-2 bg-teal-500 text-white px-6 py-3 rounded-full font-medium hover:bg-teal-400 transition-all"
               >
-                Book a Strategy Call
+                Book an Intro Call
               </Link>
             </div>
           </div>
@@ -460,7 +460,7 @@ export default function CRMOnboardingPage() {
                 Everything you need to know about our CRM onboarding process. Have a question we didn&apos;t answer?
               </p>
               <Link
-                href="/contact"
+                href="/book"
                 className="inline-flex items-center gap-2 bg-teal-500 text-white px-6 py-3 rounded-full font-medium hover:bg-teal-600 transition-colors group"
               >
                 Book a Quick Call
