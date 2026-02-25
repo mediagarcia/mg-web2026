@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ReviewTrustStrip } from "@/components/ReviewTrustStrip";
 const testimonials = [
   {
     quote: "Media Garcia isn't just a vendor—they're an extension of our team. They understand our business well enough to proactively identify issues before they become problems, and their reporting gives us the confidence to make real revenue decisions.",
@@ -206,6 +207,17 @@ export function Testimonials() {
             </button>
           </div>
         </div>
+
+        {/* Aggregated review trust strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="mt-12 pt-8 border-t border-black/5"
+        >
+          <ReviewTrustStrip />
+        </motion.div>
       </div>
     </section>
   );
