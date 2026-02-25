@@ -27,7 +27,7 @@ const footerLinks = {
     { label: "CRM Guides", href: "/resources/guides" },
     { label: "CRM Assessment", href: "/resources/assessment" },
     { label: "Resource Center", href: "/resources" },
-    { label: "Blog", href: "https://www.mediagarcia.com/blog" },
+    { label: "Blog", href: "https://hub.mediagarcia.com/blog" },
   ],
 };
 

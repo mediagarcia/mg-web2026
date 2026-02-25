@@ -150,7 +150,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: 'https://www.mediagarcia.com/blog',
+      url: 'https://hub.mediagarcia.com/blog',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.6,
