@@ -45,7 +45,7 @@ export const platforms: Platform[] = [
     name: "HubSpot",
     category: "CRM & Sales",
     tier: "Primary",
-    relationship: "Platinum Partner",
+    relationship: "Gold Partner",
     brandColor: "#ff7a59",
     description:
       "Our core platform — we build, migrate, and optimize across every Hub.",

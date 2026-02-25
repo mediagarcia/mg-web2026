@@ -53,7 +53,7 @@ export function Platforms() {
         </div>
 
         {/* Logo Cloud Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {platforms.map((platform, index) => (
             <motion.div
               key={platform.id}
@@ -76,14 +76,35 @@ export function Platforms() {
                 {platform.name}
               </span>
 
-              {/* HubSpot Platinum Partner badge */}
+              {/* HubSpot Gold Partner badge */}
               {platform.id === "hubspot" && (
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#ff7a59] bg-[#ff7a59]/10 rounded-full px-2.5 py-1">
-                  Platinum Partner
+                  Gold Partner
                 </span>
               )}
             </motion.div>
           ))}
+
+          {/* "And more" card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: platforms.length * 0.04 }}
+            className="flex flex-col items-center justify-center gap-3 rounded-2xl p-6 border border-dashed border-black/10 bg-white/50"
+          >
+            <div className="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center text-black/30">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4v16m8-8H4" />
+              </svg>
+            </div>
+            <span className="text-sm font-semibold text-black/40 text-center">
+              And many more
+            </span>
+            <span className="text-xs text-black/30 text-center">
+              Don&apos;t see your tool? We probably work with it.
+            </span>
+          </motion.div>
         </div>
       </div>
     </section>
