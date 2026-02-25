@@ -101,9 +101,9 @@ const testimonials = [
   },
   {
     quote:
-      "Media Garcia\u2019s professionalism, expertise, and dedication to customer satisfaction are unmatched. They simplified our complicated procedures, leading to enhanced client management and improved business operations.",
-    name: "T. Chiappetta",
-    title: "CEO, Cyber Security",
+      "The flexibility that Media Garcia has displayed has been impressive. They are truly forward thinking when it comes to marketing strategies and always willing to go the extra mile.",
+    name: "J. Ramey",
+    title: "Marketing Director",
   },
 ];
 

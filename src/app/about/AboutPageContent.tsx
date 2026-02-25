@@ -179,9 +179,9 @@ const testimonials = [
   },
   {
     quote:
-      "Media Garcia listened to our business needs and provided solutions to optimize our website and implement our CRM. They are exceptional at what they do and wonderful teachers throughout the process.",
-    author: "Bert Jones",
-    title: "CEO, Blue Phoenix Events",
+      "They've gone above and beyond in helping us with our digital marketing efforts, making themselves available to our very long work hours across multiple time zones.",
+    author: "L. Dady",
+    title: "Director, Education",
   },
 ];
 
