@@ -29,25 +29,39 @@ const features = [
 
 const gallerySlides = [
   {
-    src: "/images/poco/feature-dashboard-overview.png",
-    alt: "Poco dashboard overview with weekly summary and action items",
+    src: "/images/poco/screenshot-dashboard.png",
+    alt: "Poco dashboard with action items, weekly summary, and performance metrics",
     caption: "Your daily command center",
-    width: 1400,
-    height: 350,
+    width: 1366,
+    height: 768,
   },
   {
-    src: "/images/poco/feature-action-items.png",
-    alt: "Action items panel with status badges and task priorities",
-    caption: "Track every promise across clients",
-    width: 1400,
-    height: 580,
+    src: "/images/poco/screenshot-clients.png",
+    alt: "Client list with health statuses, hours tracking, and meeting counts",
+    caption: "Client health at a glance",
+    width: 1366,
+    height: 768,
   },
   {
-    src: "/images/poco/feature-metrics.png",
-    alt: "Health metric cards showing response speed, task documentation, and weekly coverage",
-    caption: "Health metrics at a glance",
-    width: 1400,
-    height: 235,
+    src: "/images/poco/screenshot-meeting-report.png",
+    alt: "AI-generated meeting summary with suggested goals and action items",
+    caption: "AI-powered meeting intelligence",
+    width: 1366,
+    height: 768,
+  },
+  {
+    src: "/images/poco/screenshot-projects.png",
+    alt: "Project dashboard with health scores, task counts, and overdue tracking",
+    caption: "Project health across every engagement",
+    width: 1366,
+    height: 768,
+  },
+  {
+    src: "/images/poco/screenshot-client-detail.png",
+    alt: "Client detail view with email tracking, meetings, contracts, and activity insights",
+    caption: "Deep tracking for every client",
+    width: 1366,
+    height: 768,
   },
 ];
 
@@ -57,7 +71,7 @@ export function PocoPageContent() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % gallerySlides.length);
-    }, 4000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
