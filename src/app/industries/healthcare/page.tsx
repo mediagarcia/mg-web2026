@@ -131,9 +131,9 @@ const resultsMetrics = [
 const testimonials = [
   {
     quote:
-      "Media Garcia isn\u2019t just a vendor\u2014they\u2019re an extension of our team. They understand our business well enough to proactively identify issues before they become problems, and their reporting gives us the confidence to make real revenue decisions.",
-    author: "Juli Denny",
-    title: "Chief Growth Officer",
+      "Media Garcia came in and really reimplemented our HubSpot CRM such that now we get meaningful results. It\u2019s part of our workflow from lead generation through to closing business, and it automatically flows into our accounting system. I wish we\u2019d started with them from the very beginning.",
+    author: "Ben Shand",
+    title: "Head of Business Development",
     company: "ADVI Health",
   },
   {
@@ -232,17 +232,17 @@ export default function HealthcareIndustryPage() {
               </div>
               <blockquote className="border-l-4 border-teal-500 pl-5 mb-6 flex-1">
                 <p className="text-black/70 leading-relaxed italic">
-                  &ldquo;Media Garcia isn&apos;t just a vendor&mdash;they&apos;re
-                  an extension of our team. They understand our business well
-                  enough to proactively identify issues before they become
-                  problems.&rdquo;
+                  &ldquo;Media Garcia came in and really reimplemented our
+                  HubSpot CRM such that now we get meaningful results.
+                  I wish we&apos;d started with them from the very
+                  beginning.&rdquo;
                 </p>
               </blockquote>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-bold text-black text-sm">Juli Denny</p>
+                  <p className="font-bold text-black text-sm">Ben Shand</p>
                   <p className="text-sm text-black/50">
-                    Chief Growth Officer, ADVI Health
+                    Head of Business Development, ADVI Health
                   </p>
                 </div>
                 <Link

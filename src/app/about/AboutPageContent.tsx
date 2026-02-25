@@ -167,9 +167,9 @@ const clientLogos = [
 const testimonials = [
   {
     quote:
-      "Media Garcia isn\u2019t just a vendor\u2014they\u2019re an extension of our team. They understand our business well enough to proactively identify issues before they become problems.",
-    author: "Juli Denny",
-    title: "Chief Growth Officer, ADVI Health",
+      "Media Garcia came in and really reimplemented our HubSpot CRM such that now we get meaningful results. It\u2019s part of our workflow from lead generation through to closing business. I wish we\u2019d started with them from the very beginning.",
+    author: "Ben Shand",
+    title: "Head of Business Development, ADVI Health",
   },
   {
     quote:

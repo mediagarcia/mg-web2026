@@ -97,9 +97,9 @@ The relationship runs on weekly meetings, a dedicated project manager, and a sha
       { metric: "2+ yrs", label: "Continuous partnership" },
     ],
     testimonial: {
-      quote: "Media Garcia isn't just a vendor—they're an extension of our team. They understand our business well enough to proactively identify issues before they become problems, and their reporting gives us the confidence to make real revenue decisions.",
-      author: "Juli Denny",
-      title: "Chief Growth Officer",
+      quote: "Media Garcia came in and really reimplemented our HubSpot CRM such that now we get meaningful results. It's part of our workflow from lead generation through to closing business, and it automatically flows into our accounting system. I wish we'd started with them from the very beginning—we would have gotten to a functional CRM so much faster.",
+      author: "Ben Shand",
+      title: "Head of Business Development",
       company: "ADVI Health",
     },
   },
