@@ -3,6 +3,7 @@ export { HeroWithPreview } from "./HeroWithPreview";
 export { ClientLogos } from "./ClientLogos";
 export { Services } from "./Services";
 export { Platforms } from "./Platforms";
+export { ResultsHighlight } from "./ResultsHighlight";
 export { Stats } from "./Stats";
 export { Industries, type IndustryImages } from "./Industries";
 export { IndustriesWithPreview } from "./IndustriesWithPreview";
