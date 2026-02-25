@@ -48,8 +48,8 @@ export function IndustriesWithPreview({ defaultImages }: IndustriesWithPreviewPr
   const images: IndustryImages = isPreviewMode
     ? {
         healthcare: getImageForSlot("industries-healthcare"),
-        it: getImageForSlot("industries-it"),
-        saas: getImageForSlot("industries-saas"),
+        technology: getImageForSlot("industries-technology"),
+        b2b: getImageForSlot("industries-b2b"),
       }
     : defaultImages ?? {};
 

@@ -132,7 +132,7 @@ const team = [
   {
     name: "Louis Garcia",
     role: "CEO & Founder",
-    bio: "Louis founded Media Garcia in 2010 with a simple premise: clients deserve senior-level expertise, not junior staff learning on their dime. With 15+ years in digital marketing and sales operations, he's personally led 200+ CRM implementations across healthcare, IT, and SaaS companies. He's involved in every engagement—not just overseeing from afar. When he's not building revenue systems, he's probably talking about revenue systems.",
+    bio: "Louis founded Media Garcia in 2010 with a simple premise: clients deserve senior-level expertise, not junior staff learning on their dime. With 15+ years in digital marketing and sales operations, he's personally led 200+ CRM implementations across healthcare, technology, and B2B companies. He's involved in every engagement—not just overseeing from afar. When he's not building revenue systems, he's probably talking about revenue systems.",
     image: "/images/team/team-member-1.jpg",
     linkedin: "https://www.linkedin.com/in/louisgarcia/",
   },
@@ -160,6 +160,7 @@ const clientLogos = [
   { name: "Cloud Force Gurus", logo: "/images/clients/cloudforcegurus.png" },
   { name: "Delve Health", logo: "/images/clients/delvehealth.svg" },
   { name: "Optix", logo: "/images/clients/optix.png" },
+  { name: "Certn", logo: "/images/clients/certn.svg" },
 ];
 
 function AnimatedCounter({
@@ -264,7 +265,7 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
             className="text-lg lg:text-xl text-black/60 leading-relaxed max-w-2xl"
           >
             We&apos;re obsessed with your outcomes, not our billable hours.
-            That&apos;s why healthcare, IT, and SaaS companies choose us—and
+            That&apos;s why healthcare, technology, and B2B companies choose us—and
             stay for years.
           </motion.p>
         </div>
@@ -287,7 +288,7 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
                 <p className="text-lg">
                   We build and optimize revenue systems for companies with
                   complex sales cycles and high stakes. Healthcare
-                  organizations, IT services firms, and B2B SaaS companies trust
+                  organizations, technology companies, and B2B services firms trust
                   us to configure their CRM, marketing automation, and sales
                   operations—whether that&apos;s HubSpot, Salesforce, or a
                   custom platform.
@@ -576,7 +577,7 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
             viewport={{ once: true }}
           >
             <p className="text-center text-sm text-black/40 mb-8">
-              Trusted by companies in healthcare, IT, and SaaS
+              Trusted by companies in healthcare, technology, and B2B
             </p>
             <div className="grid grid-cols-3 md:grid-cols-6 gap-8">
               {clientLogos.map((logo, index) => (

@@ -10,7 +10,7 @@ import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 
 export const metadata: Metadata = {
   title: "Growth Marketing Services | Media Garcia",
-  description: "Full-service growth marketing for healthcare, IT, and SaaS. SEO, paid ads, content marketing, and conversion optimization—all tied to revenue.",
+  description: "Full-service growth marketing for healthcare, technology, and B2B. SEO, paid ads, content marketing, and conversion optimization—all tied to revenue.",
 };
 
 const stats = [
@@ -70,7 +70,7 @@ const industryUseCases = [
     linkHref: "/industries/healthcare",
   },
   {
-    industry: "IT Services & Technology",
+    industry: "Technology",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
@@ -82,22 +82,22 @@ const industryUseCases = [
       "Demand generation for long sales cycles with nurturing sequences",
       "Event marketing and webinar programs for lead generation",
     ],
-    linkHref: "/industries/information-technology",
+    linkHref: "/industries/technology",
   },
   {
-    industry: "B2B SaaS",
+    industry: "B2B Services",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
       </svg>
     ),
     useCases: [
-      "Product-led content that drives trial signups and feature adoption",
-      "Expansion revenue campaigns targeting existing customers",
-      "Customer advocacy programs turning users into champions",
-      "Competitive content and comparison pages for bottom-funnel search",
+      "Multi-channel campaigns for complex buying committees",
+      "Account-based marketing for high-value B2B prospects",
+      "Customer advocacy programs turning clients into champions",
+      "Revenue attribution connecting marketing spend to closed deals",
     ],
-    linkHref: "/industries/saas",
+    linkHref: "/industries/b2b",
   },
 ];
 
@@ -143,7 +143,7 @@ const processSteps = [
 
 const caseStudy = {
   metric: "340% Increase in Qualified Leads",
-  industry: "IT Services Company",
+  industry: "Technology Company",
   challenge: "Marketing generated traffic but few qualified leads. Sales complained about lead quality. No way to prove marketing ROI to leadership.",
   solution: "Built integrated content + paid strategy targeting technical decision-makers. Created comparison pages, technical guides, and LinkedIn campaigns. Full attribution tracking from first touch to closed deal.",
   result: "Qualified leads increased 340% in 9 months. Cost per qualified lead dropped 52%. Marketing now proves $1.2M in influenced pipeline quarterly.",
@@ -204,7 +204,7 @@ export default function MarketingPage() {
       <PageHeader
         badge="Service"
         title="Growth Marketing Services"
-        description="Full-service marketing execution—SEO, paid ads, content, and conversion optimization—all tied to revenue. For healthcare, IT, and SaaS."
+        description="Full-service marketing execution—SEO, paid ads, content, and conversion optimization—all tied to revenue. For healthcare, technology, and B2B."
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "Growth Marketing", href: "/services/marketing" },
@@ -354,7 +354,7 @@ export default function MarketingPage() {
               Marketing built for your industry
             </h2>
             <p className="text-lg text-black/60 max-w-2xl mx-auto">
-              Healthcare compliance, IT buyer journeys, SaaS metrics—we understand your market.
+              Healthcare compliance, technology buyer journeys, B2B metrics—we understand your market.
             </p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8">

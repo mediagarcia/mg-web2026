@@ -5,44 +5,47 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Industries We Serve | Media Garcia",
-  description: "HubSpot solutions tailored for healthcare, IT services, and SaaS companies. Deep expertise in industries with complex sales cycles.",
+  description: "HubSpot solutions tailored for healthcare, technology, and B2B companies. Deep expertise in industries with complex sales cycles.",
 };
 
 const industries = [
   {
     name: "Healthcare",
     slug: "healthcare",
-    description: "HubSpot implementations that understand healthcare complexity — long sales cycles, multiple stakeholders, and careful communication.",
+    description: "HubSpot implementations that understand healthcare complexity — patient portals, EHR integration, multi-stakeholder sales, and CRM optimization for healthcare organizations.",
     features: [
-      "Multi-stakeholder sales tracking",
-      "Long-cycle lead nurturing",
-      "Referral management systems",
-      "Patient journey automation",
+      "Custom patient portals",
+      "EHR notes & lab integration",
+      "CRM optimization & data quality",
+      "Multi-stakeholder deal tracking",
     ],
+    clients: "ADVI Health, Men\u2019s Pro Health, Delve Health",
     color: "teal",
   },
   {
-    name: "IT Services",
-    slug: "information-technology",
-    description: "HubSpot solutions built for IT companies managing complex sales cycles, technical buyers, and multi-stakeholder decisions.",
+    name: "Technology",
+    slug: "technology",
+    description: "HubSpot solutions built for scaling tech companies — multi-pipeline sales architecture, data enrichment, enterprise-grade forecasting, and service operations.",
     features: [
-      "Technical content marketing",
-      "Long-cycle lead nurturing",
-      "Partner ecosystem management",
-      "Product-led growth enablement",
+      "Multi-pipeline sales architecture",
+      "Data enrichment & lead scoring",
+      "Enterprise forecasting on any tier",
+      "Service desk & operations",
     ],
+    clients: "Certn, MIPI Alliance, Cloud Force Gurus",
     color: "purple",
   },
   {
-    name: "SaaS",
-    slug: "saas",
-    description: "Scale your SaaS company with HubSpot automations designed for subscription revenue, product adoption, and customer success.",
+    name: "B2B Services",
+    slug: "b2b",
+    description: "Complex operations across industries — from multi-system integrations to marketing automation to CRM analytics. We build revenue systems for companies with unique challenges.",
     features: [
-      "Trial-to-paid conversion funnels",
-      "Usage-based lead scoring",
-      "Customer health monitoring",
-      "Expansion revenue workflows",
+      "Multi-system integrations",
+      "CRM analytics & attribution",
+      "Marketing automation & growth",
+      "Process documentation & ops",
     ],
+    clients: "Current Energy, EAG Advertising, XL Feet",
     color: "orange",
   },
 ];
@@ -52,8 +55,8 @@ export default function IndustriesPage() {
     <>
       <PageHeader
         badge="Industries"
-        title="Deep expertise in three verticals"
-        description="We specialize in industries with complex sales cycles and high stakes. Healthcare, IT services, and SaaS — we understand your unique challenges."
+        title="Deep expertise where it matters"
+        description="We specialize in industries with complex sales cycles and high stakes. Healthcare, technology, and B2B companies trust us because we&apos;ve done the work — and we can prove it."
         breadcrumbs={[
           { label: "Industries", href: "/industries" },
         ]}
@@ -82,7 +85,7 @@ export default function IndustriesPage() {
                     </svg>
                   ) : (
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.15c0 .415.336.75.75.75z" />
                     </svg>
                   )}
                 </div>
@@ -90,16 +93,17 @@ export default function IndustriesPage() {
                   {industry.name}
                 </h2>
                 <p className="text-black/60 leading-relaxed mb-6">{industry.description}</p>
-                <ul className="grid grid-cols-2 gap-3 mb-8">
+                <ul className="grid grid-cols-2 gap-3 mb-6">
                   {industry.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2 text-sm text-black/70">
-                      <svg className="w-4 h-4 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-teal-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       {feature}
                     </li>
                   ))}
                 </ul>
+                <p className="text-xs text-black/40 mb-6">Clients: {industry.clients}</p>
                 <span className="inline-flex items-center gap-2 text-sm font-medium text-black/40 group-hover:text-teal-500 transition-colors">
                   Learn more
                   <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -15,6 +15,7 @@ const slugToBaseSlot: Record<string, string> = {
   "mipi-alliance-service-hub": "case-study-mipi",
   "eag-crm-data-analytics": "case-study-eag",
   "xl-feet-ecommerce-growth": "case-study-xlfeet",
+  "certn-crm-sales-enablement": "case-study-certn",
 };
 
 export function CaseStudiesWithPreview({ defaultImages }: CaseStudiesWithPreviewProps = {}) {
@@ -65,6 +66,7 @@ export function CaseStudiesWithPreview({ defaultImages }: CaseStudiesWithPreview
         "mipi-alliance-service-hub": getImageForSlug("mipi-alliance-service-hub"),
         "eag-crm-data-analytics": getImageForSlug("eag-crm-data-analytics"),
         "xl-feet-ecommerce-growth": getImageForSlug("xl-feet-ecommerce-growth"),
+        "certn-crm-sales-enablement": getImageForSlug("certn-crm-sales-enablement"),
       }
     : defaultImages ?? {};
 

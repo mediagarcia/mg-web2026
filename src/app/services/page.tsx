@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Services | Media Garcia",
-  description: "Revenue operations, CRM implementation, and growth services for healthcare, IT services, and B2B SaaS. Find the right service for your business.",
+  description: "Revenue operations, CRM implementation, and growth services for healthcare, technology, and B2B companies. Find the right service for your business.",
 };
 
 const serviceCategories = [
@@ -122,7 +122,7 @@ export default function ServicesPage() {
       <PageHeader
         badge="Services"
         title="Revenue services for complex sales cycles"
-        description="Revenue operations, CRM implementation, and growth services built for healthcare, IT services, and B2B SaaS companies. We work on HubSpot, Salesforce, and any platform."
+        description="Revenue operations, CRM implementation, and growth services built for healthcare, technology, and B2B companies. We work on HubSpot, Salesforce, and any platform."
         breadcrumbs={[
           { label: "Services", href: "/services" },
         ]}
@@ -276,9 +276,9 @@ export default function ServicesPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-black mb-3">IT Services & Technology</h3>
-              <p className="text-black/60 mb-4">Long sales cycles, multi-stakeholder deals, technical evaluation stages, and PSA integrations.</p>
-              <Link href="/industries/information-technology" className="text-teal-500 font-medium hover:text-teal-600 transition-colors">
+              <h3 className="text-xl font-bold text-black mb-3">Technology</h3>
+              <p className="text-black/60 mb-4">Multi-pipeline sales ops, lead scoring with decay, enterprise forecasting, and third-party data integrations.</p>
+              <Link href="/industries/technology" className="text-teal-500 font-medium hover:text-teal-600 transition-colors">
                 Learn more →
               </Link>
             </div>
@@ -288,9 +288,9 @@ export default function ServicesPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-black mb-3">B2B SaaS</h3>
-              <p className="text-black/60 mb-4">Product usage tracking, trial conversion flows, expansion revenue, and customer health scoring.</p>
-              <Link href="/industries/saas" className="text-teal-500 font-medium hover:text-teal-600 transition-colors">
+              <h3 className="text-xl font-bold text-black mb-3">B2B Services</h3>
+              <p className="text-black/60 mb-4">System integrations, marketing attribution, revenue process automation, and custom reporting dashboards.</p>
+              <Link href="/industries/b2b" className="text-teal-500 font-medium hover:text-teal-600 transition-colors">
                 Learn more →
               </Link>
             </div>

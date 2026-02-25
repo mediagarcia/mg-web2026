@@ -4,7 +4,7 @@ import { AboutPageContent } from "./AboutPageContent";
 
 export const metadata: Metadata = {
   title: "About | Media Garcia",
-  description: "14+ years building revenue systems that actually work. Learn about our team, approach, and why healthcare, IT, and SaaS companies trust us.",
+  description: "14+ years building revenue systems that actually work. Learn about our team, approach, and why healthcare, technology, and B2B companies trust us.",
 };
 
 export default function AboutPage() {

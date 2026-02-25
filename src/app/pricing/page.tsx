@@ -355,9 +355,9 @@ export default function PricingPage() {
                 </div>
               </div>
               <div>
-                <p className="font-bold text-black">Y. Chow</p>
+                <p className="font-bold text-black">Yvonne Chow</p>
                 <p className="text-sm text-black/60">
-                  Marketing Manager, SaaS Company
+                  Marketing Manager, Certn
                 </p>
               </div>
             </div>

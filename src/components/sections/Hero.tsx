@@ -137,7 +137,7 @@ export function Hero({ heroImage, imageOpacity = 0.04 }: HeroProps) {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl lg:text-2xl text-black/60 leading-relaxed max-w-2xl mb-10"
           >
-            We design RevOps and automation platforms for healthcare, IT, and SaaS companies—across HubSpot, Salesforce, and custom stacks.
+            We design RevOps and automation platforms for healthcare, technology, and B2B companies—across HubSpot, Salesforce, and custom stacks.
           </motion.p>
 
           {/* CTA */}

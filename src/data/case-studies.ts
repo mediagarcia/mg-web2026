@@ -45,8 +45,8 @@ export interface CaseStudy {
 export const industries = [
   "All Industries",
   "Healthcare",
-  "SaaS",
-  "IT Services",
+  "Technology",
+  "B2B Services",
   "Professional Services",
   "Manufacturing",
   "Education",
@@ -198,7 +198,7 @@ We piloted with a select group of patients, collected structured feedback, creat
     slug: "mipi-alliance-service-hub",
     title: "Unified Service Desk for a Global Standards Organization",
     client: "MIPI Alliance",
-    industry: "IT Services",
+    industry: "Technology",
     service: "HubSpot Implementation",
     description: "Implemented a HubSpot service desk, standardized email marketing, and audited marketing-sales-service operations for a global technology standards body serving the mobile industry.",
     image: "/images/generated/case-study-mipi/case-study-mipi-001.png",
@@ -272,6 +272,49 @@ We also discovered that on average it took 40 interactions to close-win a deal v
       author: "Michele Markham",
       title: "President & CEO",
       company: "EAG Advertising & Marketing",
+    },
+  },
+  {
+    slug: "certn-crm-sales-enablement",
+    title: "Enterprise-Grade Sales Ops Built on HubSpot Professional",
+    client: "Certn",
+    industry: "Technology",
+    service: "HubSpot Implementation",
+    description: "Transformed a scaling background-check SaaS company from an underutilized HubSpot CRM into a fully structured sales and marketing machine — with enterprise-level forecasting built on a Professional tier.",
+    image: "/images/generated/case-study-certn/case-study-certn-001.png",
+    gradient: "from-neon-purple-500 to-teal-700",
+    timeline: "6 months",
+    tags: ["Technology", "CRM Optimization", "Sales Enablement", "Lead Scoring"],
+    featured: false,
+    clientLogo: "/images/clients/certn.svg",
+    clientSize: "Scaling B2B SaaS",
+    clientLocation: "Canada (with US expansion)",
+    publishDate: "2021-03-01",
+    challenge: `Certn, a background screening technology company disrupting the background check industry with AI-powered solutions, had a HubSpot Professional account and a growing sales team across the US and Canada — but their CRM wasn't keeping up with the business.
+
+Data wasn't clean, reporting was limited, forecasting was entirely manual, and the sales process lacked structure. The team was selling into multiple verticals — HR, property management, wholesale, gig economy, and API partnerships — but the CRM treated every deal the same way. There was no way to track pipeline by vertical, forecast by geography, or score leads based on actual engagement.
+
+On the marketing side, there was no structured handoff between marketing and sales. Nurture campaigns weren't segmented by vertical, and attribution was essentially nonexistent. Certn needed a partner who could architect a CRM and marketing operations foundation that would scale with their rapid growth — without requiring an expensive Enterprise upgrade.`,
+    solution: `We restructured Certn's entire HubSpot environment across two phases: CRM and sales operations first, then marketing operations.
+
+For the CRM, we overhauled the sales pipeline architecture — building five separate pipelines (HR, Property Management, Wholesale, Referral, and API) with standardized stage percentages and conditional fields that trigger at each stage progression. When a deal moves to closed-won, the system automatically captures annual ordering volume, ATS platform, integration requirements, and contract details.
+
+We built a lead scoring system with engagement decay — scoring based on pricing page visits, solution page views, API page engagement, video views, email interactions, and employee count, with freshness weighting so stale leads don't clog the pipeline. We also integrated ZoomInfo data enrichment and ChurnZero customer health signals directly into HubSpot.
+
+The forecasting challenge was the most creative solve: we built enterprise-level forecasting capabilities entirely on HubSpot Professional using custom properties — weighted and unweighted revenue calculations, ramp-up modeling by rep and geography (US/Canada/International), and pipeline analysis by ATS provider, industry, and campaign type. This saved Certn the cost of upgrading to Enterprise while delivering the same analytical capabilities.
+
+We split the sales team into US and Canada divisions with proper permissions, round-robin lead assignment by geography, and team-specific dashboards. For marketing, we built vertical-specific nurture campaigns, a partner tracking system with referral attribution, and marketing-to-sales handoff documentation with lead scoring integration.`,
+    results: [
+      { metric: "5", label: "Sales pipelines architected by vertical" },
+      { metric: "3", label: "Data sources integrated (ZoomInfo, ChurnZero, Paycom)" },
+      { metric: "Pro → Enterprise", label: "Forecasting capability without the upgrade cost" },
+      { metric: "US + CAN", label: "Geographic team structure with separate reporting" },
+    ],
+    testimonial: {
+      quote: "Media Garcia was instrumental in scaling us up with HubSpot by stepping into the role of operations before we hired a full-time specialist. They set up our CRM, email workflows, and reporting dashboards, which we greatly appreciate.",
+      author: "Yvonne Chow",
+      title: "Marketing Manager",
+      company: "Certn",
     },
   },
   {

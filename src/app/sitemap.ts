@@ -106,13 +106,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Industry Pages
     {
-      url: `${baseUrl}/industries/information-technology`,
+      url: `${baseUrl}/industries/healthcare`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/industries/saas`,
+      url: `${baseUrl}/industries/technology`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/industries/b2b`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
