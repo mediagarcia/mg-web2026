@@ -20,14 +20,11 @@ import {
   Library,
   ClipboardCheck,
   BookOpen,
-  Calculator,
-  DollarSign,
   ChevronDown,
   ArrowRight,
   Grid3X3,
   Briefcase,
   FileText,
-  Dog,
   type LucideIcon,
 } from "lucide-react";
 
@@ -72,8 +69,6 @@ const resources: MenuItem[] = [
   { label: "Resource Center", href: "/resources", description: "Guides, tools, and insights", icon: Library },
   { label: "CRM Assessment", href: "/resources/assessment", description: "Evaluate your CRM setup", icon: ClipboardCheck },
   { label: "Guides & Best Practices", href: "/resources/guides", description: "Expert tips and strategies", icon: BookOpen },
-  { label: "ROI Calculator", href: "/resources/roi-calculator", description: "Calculate your potential ROI", icon: Calculator },
-  { label: "TCO Calculator", href: "/resources/tco-calculator", description: "Total cost of ownership analysis", icon: DollarSign },
   { label: "Blog", href: "https://www.mediagarcia.com/blog", description: "Latest insights and strategies", icon: BookOpen },
 ];
 
@@ -236,7 +231,7 @@ function ResourcesMegaMenu({ onClose }: { onClose: () => void }) {
 
 function WorkMegaMenu({ onClose }: { onClose: () => void }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {/* Case Studies */}
       <Link
         href="/work#case-studies"
@@ -265,21 +260,6 @@ function WorkMegaMenu({ onClose }: { onClose: () => void }) {
           Guides & Playbooks
         </h3>
         <p className="text-xs text-gray-500">Expert migration guides and strategy playbooks</p>
-      </Link>
-
-      {/* Poco */}
-      <Link
-        href="/work#poco"
-        onClick={onClose}
-        className="group block p-5 rounded-xl border border-gray-100 hover:border-amber-200 hover:bg-amber-50/30 transition-all"
-      >
-        <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600 group-hover:bg-amber-500 group-hover:text-white transition-colors mb-3">
-          <Dog className="w-5 h-5" />
-        </div>
-        <h3 className="text-sm font-semibold text-gray-900 group-hover:text-amber-600 transition-colors mb-1">
-          Poco
-        </h3>
-        <p className="text-xs text-gray-500">Your Revenue Operations Co-Pilot. Coming soon.</p>
       </Link>
     </div>
   );
@@ -317,12 +297,13 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { label: "Services", href: "#", hasMegaMenu: true, megaMenuType: "services" },
+  { label: "Services", href: "/services", hasMegaMenu: true, megaMenuType: "services" },
   { label: "Work", href: "/work", hasMegaMenu: true, megaMenuType: "work" },
-  { label: "Industries", href: "#", hasMegaMenu: true, megaMenuType: "industries" },
-  { label: "Resources", href: "#", hasMegaMenu: true, megaMenuType: "resources" },
+  { label: "Industries", href: "/industries", hasMegaMenu: true, megaMenuType: "industries" },
+  { label: "Resources", href: "/resources", hasMegaMenu: true, megaMenuType: "resources" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 // ============================================================================
@@ -496,16 +477,6 @@ export function Navigation() {
                           <span className="block text-sm text-gray-500">Expert migration guides and strategy playbooks</span>
                         </Link>
                       </li>
-                      <li>
-                        <Link
-                          href="/work#poco"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className="block py-2"
-                        >
-                          <span className="text-base font-medium text-amber-600">Poco — Your RevOps Co-Pilot</span>
-                          <span className="block text-sm text-gray-500">AI-powered. Tracks the little things.</span>
-                        </Link>
-                      </li>
                     </ul>
                   </MobileMenuSection>
 
@@ -542,6 +513,15 @@ export function Navigation() {
                       className="text-2xl font-bold text-gray-900 hover:text-teal-600 transition-colors block"
                     >
                       About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/contact"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-2xl font-bold text-gray-900 hover:text-teal-600 transition-colors block"
+                    >
+                      Contact
                     </Link>
                   </li>
                 </ul>

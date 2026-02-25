@@ -34,10 +34,10 @@ const stats = [
     context: "Across all hubs",
   },
   {
-    value: 98,
-    suffix: "%",
-    label: "Client Retention Rate",
-    context: "From our Saint Paul HQ",
+    value: 50,
+    suffix: "+",
+    label: "5-Star Reviews",
+    context: "Across Google, HubSpot, and Clutch",
   },
 ];
 

@@ -87,12 +87,15 @@ export function CaseStudyCard({
                   {caseStudy.service}
                 </span>
               </div>
-              {/* Client logo placeholder - shows when logo exists */}
               {caseStudy.clientLogo && (
                 <div className="bg-white rounded-lg p-1.5 shadow-sm">
-                  <div className="w-8 h-8 bg-black/10 rounded flex items-center justify-center text-[8px] font-bold text-black/30">
-                    LOGO
-                  </div>
+                  <Image
+                    src={caseStudy.clientLogo}
+                    alt={`${caseStudy.client} logo`}
+                    width={32}
+                    height={32}
+                    className="w-8 h-8 object-contain rounded"
+                  />
                 </div>
               )}
             </div>
