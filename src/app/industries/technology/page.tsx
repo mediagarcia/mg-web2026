@@ -447,10 +447,10 @@ export default function TechnologyIndustryPage() {
               </p>
             </div>
             <Link
-              href="/contact"
+              href="/book"
               className="inline-flex items-center gap-2 bg-white text-neon-purple-500 px-8 py-4 rounded-full font-bold hover:bg-black hover:text-white transition-all shrink-0 relative"
             >
-              Book a Strategy Call
+              Book an Intro Call
               <svg
                 className="w-5 h-5"
                 fill="none"

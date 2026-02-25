@@ -826,10 +826,10 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
             >
               <div className="flex flex-col items-center sm:items-start">
                 <Link
-                  href="/contact"
+                  href="/book"
                   className="inline-flex items-center justify-center gap-2 bg-white text-teal-600 px-8 py-4 rounded-full text-lg font-bold hover:bg-black hover:text-white transition-all duration-300 group"
                 >
-                  Book a Strategy Call
+                  Book an Intro Call
                   <svg
                     className="w-5 h-5 transition-transform group-hover:translate-x-1"
                     fill="none"

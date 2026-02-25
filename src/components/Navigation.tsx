@@ -403,10 +403,10 @@ export function Navigation() {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Link
-              href="/contact"
+              href="/book"
               className="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-teal-600 transition-colors"
             >
-              Book a Strategy Call
+              Book an Intro Call
               <svg
                 className="w-4 h-4"
                 fill="none"
@@ -548,11 +548,11 @@ export function Navigation() {
               </nav>
 
               <Link
-                href="/contact"
+                href="/book"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="inline-flex items-center justify-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-teal-600 transition-colors mt-8"
               >
-                Book a Strategy Call
+                Book an Intro Call
               </Link>
             </div>
           </motion.div>
