@@ -1,13 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Clock, BookOpen } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { CTABanner } from "@/components/sections";
-import { caseStudies, type Industry, type Service } from "@/data/case-studies";
-import { CaseStudyCard, FeaturedCaseStudy, CaseStudyFilters } from "@/components/case-studies";
+import { caseStudies } from "@/data/case-studies";
+import { CaseStudyCard, FeaturedCaseStudy } from "@/components/case-studies";
 import { guides } from "@/data/guides";
 
 const stats = [
@@ -18,15 +17,7 @@ const stats = [
 ];
 
 export default function WorkPage() {
-  const [selectedIndustry, setSelectedIndustry] = useState<Industry>("All Industries");
-  const [selectedService, setSelectedService] = useState<Service>("All Services");
-
   const featuredStudy = caseStudies.find((s) => s.featured);
-  const filteredStudies = caseStudies.filter((study) => {
-    const industryMatch = selectedIndustry === "All Industries" || study.industry === selectedIndustry;
-    const serviceMatch = selectedService === "All Services" || study.service === selectedService;
-    return industryMatch && serviceMatch;
-  });
 
   return (
     <>
@@ -63,15 +54,8 @@ export default function WorkPage() {
             </div>
           </div>
 
-          <CaseStudyFilters
-            selectedIndustry={selectedIndustry}
-            selectedService={selectedService}
-            onIndustryChange={setSelectedIndustry}
-            onServiceChange={setSelectedService}
-          />
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-            {filteredStudies.map((study, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {caseStudies.map((study, index) => (
               <CaseStudyCard
                 key={study.slug}
                 caseStudy={study}
@@ -79,21 +63,6 @@ export default function WorkPage() {
               />
             ))}
           </div>
-
-          {filteredStudies.length === 0 && (
-            <div className="text-center py-16">
-              <p className="text-black/50 text-lg">No case studies match your filters.</p>
-              <button
-                onClick={() => {
-                  setSelectedIndustry("All Industries");
-                  setSelectedService("All Services");
-                }}
-                className="mt-4 text-teal-500 font-medium hover:text-teal-600 transition-colors"
-              >
-                Clear filters
-              </button>
-            </div>
-          )}
         </div>
       </section>
 
