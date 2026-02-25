@@ -92,24 +92,6 @@ export function WhyUs({ backgroundImage }: WhyUsProps = {}) {
             >
               We&apos;re not another CRM agency. We combine deep technical expertise with strategic thinking to build systems that drive real business growth.
             </motion.p>
-
-            {/* Quick Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="flex gap-12"
-            >
-              <div>
-                <span className="text-4xl font-black text-teal-500">14+</span>
-                <p className="text-sm text-black/50 mt-1">Years experience</p>
-              </div>
-              <div>
-                <span className="text-4xl font-black text-teal-500">200+</span>
-                <p className="text-sm text-black/50 mt-1">Implementations</p>
-              </div>
-            </motion.div>
           </div>
 
           {/* Right - Differentiators */}

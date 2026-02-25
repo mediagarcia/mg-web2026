@@ -255,24 +255,22 @@ function WorkMegaMenu({ onClose }: { onClose: () => void }) {
       <Link
         href="/work#case-studies"
         onClick={onClose}
-        className="group block p-6 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 text-white"
+        className="group block p-5 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-gray-50 transition-all"
       >
-        <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mb-3">
+        <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors mb-3">
           <Briefcase className="w-5 h-5" />
         </div>
-        <h3 className="text-base font-semibold mb-1">Case Studies</h3>
-        <p className="text-sm text-white/80 mb-4">Real results from real clients</p>
-        <span className="inline-flex items-center gap-1 text-sm font-medium">
-          View All
-          <ArrowRight className="w-4 h-4" />
-        </span>
+        <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors mb-1">
+          Case Studies
+        </h3>
+        <p className="text-xs text-gray-500">Real results from real clients</p>
       </Link>
 
       {/* Guides */}
       <Link
         href="/work#guides"
         onClick={onClose}
-        className="group block p-6 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-gray-50 transition-all"
+        className="group block p-5 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-gray-50 transition-all"
       >
         <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors mb-3">
           <FileText className="w-5 h-5" />
@@ -287,17 +285,15 @@ function WorkMegaMenu({ onClose }: { onClose: () => void }) {
       <Link
         href="/work#poco"
         onClick={onClose}
-        className="group block p-6 rounded-xl bg-gradient-to-br from-teal-600 to-emerald-600 text-white"
+        className="group block p-5 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-gray-50 transition-all"
       >
-        <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mb-3">
+        <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors mb-3">
           <Briefcase className="w-5 h-5" />
         </div>
-        <h3 className="text-base font-semibold mb-1">Poco</h3>
-        <p className="text-sm text-white/80 mb-4">An AI-driven app we&apos;re building. Coming soon.</p>
-        <span className="inline-flex items-center gap-1 text-sm font-medium">
-          Learn More
-          <ArrowRight className="w-4 h-4" />
-        </span>
+        <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors mb-1">
+          Poco
+        </h3>
+        <p className="text-xs text-gray-500">An AI-driven app we&apos;re building. Coming soon.</p>
       </Link>
     </div>
   );

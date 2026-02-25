@@ -20,6 +20,7 @@ const team = [
     initials: "AO",
     image: "/images/team/team-member-2.jpg",
     gradient: "from-neon-purple-500 to-neon-purple-600",
+    linkedin: "https://www.linkedin.com/in/andrewjohnsonmn/",
   },
   {
     name: "Expert Network",
