@@ -70,7 +70,7 @@ const resources: MenuItem[] = [
   { label: "Resource Center", href: "/resources", description: "Guides, tools, and insights", icon: Library },
   { label: "CRM Assessment", href: "/resources/assessment", description: "Evaluate your CRM setup", icon: ClipboardCheck },
   { label: "Guides & Best Practices", href: "/resources/guides", description: "Expert tips and strategies", icon: BookOpen },
-  { label: "Blog", href: "https://www.mediagarcia.com/blog", description: "Latest insights and strategies", icon: FileText },
+  { label: "Blog", href: "https://hub.mediagarcia.com/blog", description: "Latest insights and strategies", icon: FileText },
 ];
 
 

@@ -25,6 +25,16 @@ const nextConfig: NextConfig = {
         destination: "/terms",
         permanent: true,
       },
+      {
+        source: "/blog",
+        destination: "https://hub.mediagarcia.com/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog/:slug",
+        destination: "https://hub.mediagarcia.com/blog",
+        permanent: true,
+      },
     ];
   },
   async headers() {
