@@ -4,27 +4,51 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
+    quote: "Media Garcia isn't just a vendor—they're an extension of our team. They understand our business well enough to proactively identify issues before they become problems, and their reporting gives us the confidence to make real revenue decisions.",
+    author: "Juli Denny",
+    title: "Chief Growth Officer",
+    company: "ADVI Health",
+    initials: "JD",
+    rating: 5,
+  },
+  {
+    quote: "Before Media Garcia, our teams were copying data between five different systems. Now everything flows automatically—when a deal moves stages, tasks get created, the right people get notified, and our customers can see their project status in real time.",
+    author: "Maria Woo",
+    title: "Operations Lead",
+    company: "Current Energy",
+    initials: "MW",
+    rating: 5,
+  },
+  {
+    quote: "We asked Media Garcia to build us a patient portal and ended up with an entire operating system for our clinics. Our patients can manage their own care online, our providers have structured clinical notes, and we're finally running everything from one platform.",
+    author: "Dan Green",
+    title: "President & CEO",
+    company: "Men's Pro Health",
+    initials: "DG",
+    rating: 5,
+  },
+  {
+    quote: "What they delivered for us, I have the happiest team right now because they did it this fast. We had gotten through maybe a quarter of the same material over the course of weeks if not months. Thank you, Media Garcia!",
+    author: "Michele Markham",
+    title: "President & CEO",
+    company: "EAG Advertising & Marketing",
+    initials: "MM",
+    rating: 5,
+  },
+  {
+    quote: "Media Garcia was instrumental in scaling us up with HubSpot by stepping into the role of operations before we hired a full-time specialist. They set up our CRM, email workflows, and reporting dashboards, which we greatly appreciate.",
+    author: "Yvonne Chow",
+    title: "Marketing Manager",
+    company: "Certn",
+    initials: "YC",
+    rating: 5,
+  },
+  {
     quote: "Media Garcia worked with us to turn our ideas and tight timeline into a reality, making it the easiest website project I've ever managed. Their designers and developers were incredible, and we're already planning our next project with them!",
     author: "Ashley Sims",
     title: "VP of Marketing",
     company: "American Hole 'n One",
     initials: "AS",
-    rating: 5,
-  },
-  {
-    quote: "We have been working with Media Garcia for a few months, and it has been an excellent experience. They helped us solve multiple HubSpot Sales configuration challenges with professionalism and exceptional communication.",
-    author: "Victoria Naef",
-    title: "Agency Marketing Manager",
-    company: "Marketing Agency",
-    initials: "VN",
-    rating: 5,
-  },
-  {
-    quote: "Media Garcia helped us create custom email and landing page templates, delivering exactly what we needed. They're flexible and produce quality results, whether for small projects or long-term strategy consulting.",
-    author: "R. Higgins",
-    title: "Marketing Manager",
-    company: "Enel X North America",
-    initials: "RH",
     rating: 5,
   },
   {
@@ -36,35 +60,11 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "Media Garcia is professional, responsive, and offers great value for the cost. Their fair pricing and exceptional work make them a game-changer for your website and CRM.",
-    author: "Dr. Brandon Allen",
-    title: "CEO",
-    company: "Health and Wellness",
-    initials: "BA",
-    rating: 5,
-  },
-  {
-    quote: "Media Garcia listened to my business needs and provided solutions to optimize my website and implement a CRM that works for me. They are exceptional at what they do and are wonderful teachers throughout the process.",
-    author: "Bert Jones",
-    title: "CEO",
-    company: "Blue Phoenix Events",
-    initials: "BJ",
-    rating: 5,
-  },
-  {
-    quote: "I highly recommend the team at Media Garcia. Their expertise in CRM implementation, website optimization, and technical support has significantly impacted my team's success.",
-    author: "Joe Tosti",
+    quote: "We have been working with Media Garcia for a few months, and it has been an excellent experience. They helped us solve multiple HubSpot Sales configuration challenges with professionalism and exceptional communication.",
+    author: "Victoria Naef",
     title: "Agency Marketing Manager",
     company: "Marketing Agency",
-    initials: "JT",
-    rating: 5,
-  },
-  {
-    quote: "Media Garcia was instrumental in scaling us up with HubSpot by stepping into the role of operations before we hired a full-time specialist. They set up our CRM, email workflows, and reporting dashboards, which we greatly appreciate.",
-    author: "Yvonne Chow",
-    title: "Marketing Manager",
-    company: "Certn",
-    initials: "YC",
+    initials: "VN",
     rating: 5,
   },
 ];
@@ -103,7 +103,7 @@ export function Testimonials() {
             transition={{ delay: 0.1 }}
             className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black"
           >
-            What 200+ implementations taught us
+            What our clients say
           </motion.h2>
         </div>
 
