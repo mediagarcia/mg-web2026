@@ -140,7 +140,7 @@ export function BookLandingContent() {
               <p className="text-sm text-black/40 mt-6">
                 Prefer email?{" "}
                 <Link
-                  href="/contact"
+                  href="/contact#contact-form"
                   className="text-teal-500 hover:text-teal-600 font-medium transition-colors"
                 >
                   Send a message

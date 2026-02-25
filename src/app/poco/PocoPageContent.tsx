@@ -154,7 +154,7 @@ export function PocoPageContent() {
                 </div>
                 <HubSpotForm
                   formId="ea85ebc5-732f-4c64-a26d-c80eb800e790"
-                  theme="poco"
+                  theme="light"
                 />
               </motion.div>
             </div>
@@ -277,34 +277,28 @@ export function PocoPageContent() {
         </div>
 
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center lg:text-left"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center max-w-2xl mx-auto"
+          >
+            <h2 className="text-2xl lg:text-4xl font-black text-white mb-4">
+              Interested in Poco?
+            </h2>
+            <p className="text-white/80 text-lg mb-8">
+              Sign up above to get notified when we launch, or book a call to learn more about how Poco can help your team.
+            </p>
+            <Link
+              href="/book"
+              className="inline-flex items-center gap-2 bg-white text-amber-600 px-8 py-4 rounded-full font-bold hover:bg-black hover:text-white transition-all"
             >
-              <h2 className="text-2xl lg:text-4xl font-black text-white mb-4">
-                Be the first to know
-              </h2>
-              <p className="text-white/80 text-lg max-w-xl">
-                Poco is coming soon. Drop your email and we&apos;ll notify you the moment it launches.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="w-full max-w-sm"
-            >
-              <HubSpotForm
-                formId="ea85ebc5-732f-4c64-a26d-c80eb800e790"
-                theme="dark"
-              />
-            </motion.div>
-          </div>
+              Book an Intro Call
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </motion.div>
         </div>
       </section>
     </>
