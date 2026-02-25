@@ -101,9 +101,9 @@ const LIGHT_THEME_CSS = `
     color: #fff !important;
     border: none !important;
     border-radius: 9999px !important;
-    padding: 16px 40px !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
+    padding: 10px 24px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
     font-family: var(--font-family-sans, 'Roboto', system-ui, sans-serif) !important;
     cursor: pointer !important;
     transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
