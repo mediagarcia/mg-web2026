@@ -30,7 +30,7 @@ const caseStudyStyles: Record<
 
 export function CaseStudies({ images }: CaseStudiesProps = {}) {
   return (
-    <section id="work" className="py-[var(--spacing-section)] bg-gray-50">
+    <section id="work" className="pt-[var(--spacing-section)] pb-16 lg:pb-20 bg-gray-50">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
@@ -162,7 +162,7 @@ export function CaseStudies({ images }: CaseStudiesProps = {}) {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 py-12 border-t border-black/10"
+          className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-8 pt-10 border-t border-black/10"
         >
           {[
             { value: "200+", label: "CRM Implementations" },

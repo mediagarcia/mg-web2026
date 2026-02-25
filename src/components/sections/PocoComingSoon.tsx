@@ -5,7 +5,7 @@ import { GradientOrb } from "@/components/ui/visuals";
 
 export function PocoComingSoon() {
   return (
-    <section id="work" className="py-[var(--spacing-section)] bg-gray-50 relative overflow-hidden">
+    <section id="work" className="pt-[var(--spacing-section)] pb-16 lg:pb-20 bg-gray-50 relative overflow-hidden">
       <GradientOrb
         color="teal"
         size="xl"
@@ -97,7 +97,7 @@ export function PocoComingSoon() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 py-12 border-t border-black/10"
+          className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-8 pt-10 border-t border-black/10"
         >
           {[
             { value: "200+", label: "CRM Implementations" },
