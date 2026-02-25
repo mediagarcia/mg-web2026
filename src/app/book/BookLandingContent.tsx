@@ -7,7 +7,7 @@ import { GradientOrb } from "@/components/ui/visuals";
 import { HubSpotMeetings } from "@/components/HubSpotMeetings";
 
 const MEETINGS_URL =
-  "https://meetings.hubspot.com/louis3/discovery-meeting-with-louis?uuid=86b53683-4620-4e4a-9c3a-6656ed6a4df4";
+  "https://www.mediagarcia.com/meetings/louis3/intro";
 
 const whatYouGet = [
   "Honest assessment of your current CRM and RevOps setup",
@@ -157,7 +157,7 @@ export function BookLandingContent() {
               <div className="bg-gray-50 rounded-3xl p-4 lg:p-6 border border-gray-100">
                 <HubSpotMeetings
                   url={MEETINGS_URL}
-                  className="min-h-[660px]"
+                  className="min-h-[760px]"
                 />
               </div>
             </motion.div>
