@@ -69,11 +69,11 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "Media Garcia's professionalism, expertise, and dedication to customer satisfaction are unmatched. They simplified our complicated procedures, leading to enhanced client management and improved business operations.",
-    author: "T. Chiappetta",
-    title: "CEO",
-    company: "Cyber Security",
-    initials: "TC",
+    quote: "Working with Media Garcia to assist in our HubSpot implementation was money well spent. They kept our team on pace and got us up and running much faster than I was able to do on my own.",
+    author: "B. Hall",
+    title: "Agency Owner",
+    company: "Marketing Agency",
+    initials: "BH",
     rating: 5,
   },
 ];
