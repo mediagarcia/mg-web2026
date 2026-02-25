@@ -1,9 +1,7 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
-import { CTABanner } from "@/components/sections";
 import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
 import { getImageForSlot } from "@/lib/images/get-image-for-slot";
-import { DuotoneImage } from "@/components/ui/DuotoneImage";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -53,7 +51,7 @@ const certnResults = [
 
 const clientLogos = [
   { name: "Certn", src: "/images/clients/certn.png" },
-  { name: "MIPI Alliance", src: "/images/clients/mipi.svg" },
+  { name: "MIPI Alliance", src: "/images/clients/mipi.png" },
   { name: "Cloud Force Gurus", src: "/images/clients/cloudforcegurus.png" },
   { name: "Optix", src: "/images/clients/optix.png" },
 ];
@@ -469,8 +467,6 @@ export default function TechnologyIndustryPage() {
         </div>
       </section>
 
-      {/* ── 7. Standard CTA Banner ── */}
-      <CTABanner />
     </>
   );
 }

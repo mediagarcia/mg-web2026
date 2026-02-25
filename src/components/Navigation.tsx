@@ -25,6 +25,7 @@ import {
   Grid3X3,
   Briefcase,
   FileText,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 
@@ -231,7 +232,7 @@ function ResourcesMegaMenu({ onClose }: { onClose: () => void }) {
 
 function WorkMegaMenu({ onClose }: { onClose: () => void }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {/* Case Studies */}
       <Link
         href="/work#case-studies"
@@ -260,6 +261,21 @@ function WorkMegaMenu({ onClose }: { onClose: () => void }) {
           Guides & Playbooks
         </h3>
         <p className="text-xs text-gray-500">Expert migration guides and strategy playbooks</p>
+      </Link>
+
+      {/* Poco */}
+      <Link
+        href="/poco"
+        onClick={onClose}
+        className="group block p-5 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-gray-50 transition-all"
+      >
+        <div className="w-10 h-10 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors mb-3">
+          <Sparkles className="w-5 h-5" />
+        </div>
+        <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors mb-1">
+          Poco
+        </h3>
+        <p className="text-xs text-gray-500">AI-powered platform that tracks promises and project health</p>
       </Link>
     </div>
   );
@@ -475,6 +491,16 @@ export function Navigation() {
                         >
                           <span className="text-base font-medium text-gray-900">Guides & Playbooks</span>
                           <span className="block text-sm text-gray-500">Expert migration guides and strategy playbooks</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/poco"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="block py-2"
+                        >
+                          <span className="text-base font-medium text-gray-900">Poco</span>
+                          <span className="block text-sm text-gray-500">AI-powered platform that tracks promises and project health</span>
                         </Link>
                       </li>
                     </ul>
