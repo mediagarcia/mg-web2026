@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Bell } from "lucide-react";
+import { Bell, X } from "lucide-react";
 import { GradientOrb } from "@/components/ui/visuals";
 import { HubSpotForm } from "@/components/HubSpotForm";
 
@@ -67,13 +67,28 @@ const gallerySlides = [
 
 export function PocoPageContent() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   useEffect(() => {
+    if (lightboxOpen) return;
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % gallerySlides.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [lightboxOpen]);
+
+  const closeLightbox = useCallback(() => setLightboxOpen(false), []);
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") setCurrentSlide((prev) => (prev + 1) % gallerySlides.length);
+      if (e.key === "ArrowLeft") setCurrentSlide((prev) => (prev - 1 + gallerySlides.length) % gallerySlides.length);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [lightboxOpen, closeLightbox]);
 
   return (
     <>
@@ -193,7 +208,11 @@ export function PocoPageContent() {
                       </div>
                     </div>
                   </div>
-                  <div className="bg-[#1a1a2e] relative min-h-[200px]">
+                  <div
+                    className="bg-[#1a1a2e] relative cursor-pointer"
+                    style={{ aspectRatio: "16 / 9" }}
+                    onClick={() => setLightboxOpen(true)}
+                  >
                     <AnimatePresence mode="wait">
                       <motion.div
                         key={currentSlide}
@@ -201,17 +220,20 @@ export function PocoPageContent() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.4 }}
+                        className="absolute inset-0"
                       >
                         <Image
                           src={gallerySlides[currentSlide].src}
                           alt={gallerySlides[currentSlide].alt}
-                          width={gallerySlides[currentSlide].width}
-                          height={gallerySlides[currentSlide].height}
+                          fill
                           sizes="(max-width: 1024px) 100vw, 50vw"
-                          className="w-full h-auto"
+                          className="object-cover"
                         />
                       </motion.div>
                     </AnimatePresence>
+                    <div className="absolute bottom-3 right-3 bg-black/50 text-white/80 text-xs px-2 py-1 rounded-md pointer-events-none">
+                      Click to expand
+                    </div>
                   </div>
                 </div>
 
@@ -315,6 +337,93 @@ export function PocoPageContent() {
           </motion.div>
         </div>
       </section>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 lg:p-8"
+            onClick={closeLightbox}
+          >
+            <button
+              onClick={closeLightbox}
+              className="absolute top-4 right-4 lg:top-6 lg:right-6 text-white/70 hover:text-white transition-colors z-10"
+              aria-label="Close fullscreen view"
+            >
+              <X className="w-8 h-8" />
+            </button>
+
+            <div
+              className="relative w-full max-w-6xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image
+                    src={gallerySlides[currentSlide].src}
+                    alt={gallerySlides[currentSlide].alt}
+                    width={1366}
+                    height={768}
+                    sizes="100vw"
+                    className="w-full h-auto rounded-lg"
+                    priority
+                  />
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Lightbox caption + dots */}
+              <div className="flex items-center justify-between mt-4">
+                <p className="text-sm text-white/60 font-medium">
+                  {gallerySlides[currentSlide].caption}
+                </p>
+                <div className="flex gap-2">
+                  {gallerySlides.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentSlide
+                          ? "bg-amber-500 w-5"
+                          : "bg-white/30 hover:bg-white/50"
+                      }`}
+                      aria-label={`View screenshot ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Prev/Next arrows */}
+              <button
+                onClick={() => setCurrentSlide((prev) => (prev - 1 + gallerySlides.length) % gallerySlides.length)}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 lg:-translate-x-16 text-white/50 hover:text-white transition-colors"
+                aria-label="Previous screenshot"
+              >
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={() => setCurrentSlide((prev) => (prev + 1) % gallerySlides.length)}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 lg:translate-x-16 text-white/50 hover:text-white transition-colors"
+                aria-label="Next screenshot"
+              >
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
