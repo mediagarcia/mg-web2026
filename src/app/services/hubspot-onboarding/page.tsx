@@ -105,7 +105,7 @@ const caseStudy = {
 const faqs = [
   {
     question: "Do you only work with HubSpot?",
-    answer: "No. While we're a Platinum HubSpot Partner and HubSpot is our most-requested platform, we also onboard teams to Salesforce, Zoho, Pipedrive, and custom CRM solutions. We recommend the platform that fits your needs and budget—not the one that's easiest for us. During discovery, we'll assess your requirements and suggest the best fit.",
+    answer: "No. While we're a Gold HubSpot Partner and HubSpot is our most-requested platform, we also onboard teams to Salesforce, Zoho, Pipedrive, and custom CRM solutions. We recommend the platform that fits your needs and budget—not the one that's easiest for us. During discovery, we'll assess your requirements and suggest the best fit.",
   },
   {
     question: "How long does CRM onboarding take?",

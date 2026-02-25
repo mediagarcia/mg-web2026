@@ -12,7 +12,7 @@ const differentiators = [
   {
     number: "01",
     title: "Platform Expertise, Not Lock-in",
-    description: "HubSpot Platinum Partner. Salesforce integration experts. Custom API builders. We recommend what's right for your business, not what's easiest for us.",
+    description: "HubSpot Gold Partner. Salesforce integration experts. Custom API builders. We recommend what's right for your business, not what's easiest for us.",
   },
   {
     number: "02",

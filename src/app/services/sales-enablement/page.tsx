@@ -104,7 +104,7 @@ const caseStudy = {
 const faqs = [
   {
     question: "What CRM platforms do you work with for sales enablement?",
-    answer: "We build sales enablement systems on HubSpot (our specialty as a Platinum Partner), Salesforce, Pipedrive, and other major CRMs. The principles of good sales enablement are platform-agnostic—we'll implement them in whatever system you're using or help you choose the right one.",
+    answer: "We build sales enablement systems on HubSpot (our specialty as a Gold Partner), Salesforce, Pipedrive, and other major CRMs. The principles of good sales enablement are platform-agnostic—we'll implement them in whatever system you're using or help you choose the right one.",
   },
   {
     question: "How long does a sales enablement project take?",

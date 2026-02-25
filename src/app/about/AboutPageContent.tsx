@@ -147,7 +147,7 @@ const team = [
 ];
 
 const certifications = [
-  { name: "HubSpot Solutions Partner", tier: "Platinum" },
+  { name: "HubSpot Solutions Partner", tier: "Gold" },
   { name: "Marketing Hub", certified: true },
   { name: "Sales Hub", certified: true },
   { name: "Service Hub", certified: true },
@@ -610,7 +610,7 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
                 <path d="M18.164 7.93V5.084a2.198 2.198 0 001.267-1.984 2.21 2.21 0 00-4.42 0c0 .873.51 1.625 1.245 1.982v2.848a5.276 5.276 0 00-2.407 1.227l-6.39-4.972a2.474 2.474 0 00.093-.655 2.472 2.472 0 10-2.471 2.471c.426 0 .824-.11 1.17-.299l6.271 4.876a5.3 5.3 0 00-.203 1.422 5.3 5.3 0 00.203 1.422l-6.271 4.876c-.346-.19-.744-.299-1.17-.299a2.472 2.472 0 102.471 2.471c0-.228-.034-.447-.093-.655l6.39-4.972a5.276 5.276 0 002.407 1.227v2.848a2.198 2.198 0 00-1.245 1.982 2.21 2.21 0 004.42 0 2.198 2.198 0 00-1.267-1.984V16.07a5.287 5.287 0 10-5.096-9.14 5.287 5.287 0 005.096-9.14z" />
               </svg>
               <p className="text-xl font-bold text-black">
-                HubSpot Platinum Partner
+                HubSpot Gold Partner
               </p>
               <p className="text-sm text-black/50">Solutions Partner Program</p>
             </div>

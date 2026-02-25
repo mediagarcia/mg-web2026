@@ -215,7 +215,7 @@ export default function ServicesPage() {
                 We work on any platform—but we specialize in HubSpot
               </h2>
               <p className="text-white/70 leading-relaxed mb-6">
-                As a Platinum HubSpot Partner, we have deep expertise in HubSpot&apos;s ecosystem. But we also implement on Salesforce, Zoho, Pipedrive, and custom solutions. We recommend the platform that fits your needs and budget—not the one that&apos;s easiest for us.
+                As a Gold HubSpot Partner, we have deep expertise in HubSpot&apos;s ecosystem. But we also implement on Salesforce, Zoho, Pipedrive, and custom solutions. We recommend the platform that fits your needs and budget—not the one that&apos;s easiest for us.
               </p>
               <p className="text-white/70 leading-relaxed">
                 During discovery, we&apos;ll assess your requirements and suggest the best fit. Already have a platform? We&apos;ll make it work better for your team.
@@ -227,7 +227,7 @@ export default function ServicesPage() {
                 <p className="text-white/60 text-sm mt-2">CRM Implementations</p>
               </div>
               <div className="bg-white/5 rounded-2xl p-6 text-center">
-                <p className="text-3xl font-black text-teal-500">Platinum</p>
+                <p className="text-3xl font-black text-teal-500">Gold</p>
                 <p className="text-white/60 text-sm mt-2">HubSpot Partner</p>
               </div>
               <div className="bg-white/5 rounded-2xl p-6 text-center">
