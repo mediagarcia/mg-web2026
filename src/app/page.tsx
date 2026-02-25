@@ -1,5 +1,6 @@
 import { HeroWithPreview, ClientLogos, ResultsHighlight, Services, Platforms, Stats, IndustriesWithPreview, WhyUsWithPreview, Process, Values, CTABanner, Testimonials, PocoComingSoon, FAQ, Team, Contact } from "@/components/sections";
 import { HomePageWrapper } from "@/components/HomePageWrapper";
+import { ReviewTrustStrip } from "@/components/ReviewTrustStrip";
 import { getImageForSlot, getVersionedImageForSlot } from "@/lib/images/get-image-for-slot";
 export default function Home() {
   const heroImage = getImageForSlot("hero", "/images/hero/hero-bg.jpg");
@@ -28,6 +29,11 @@ export default function Home() {
       <Values />
       <CTABanner />
       <Testimonials />
+      <div className="py-6 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <ReviewTrustStrip />
+        </div>
+      </div>
       <PocoComingSoon />
       <FAQ />
       <Team />

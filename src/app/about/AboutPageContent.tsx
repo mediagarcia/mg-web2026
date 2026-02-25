@@ -4,7 +4,9 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
+import { Star } from "lucide-react";
 import { GradientOrb, FadingGridPattern, MeshBackground, PreviewBackgroundVideo } from "@/components/ui/visuals";
+import { ReviewTrustStrip } from "@/components/ReviewTrustStrip";
 
 const stats = [
   {
@@ -161,6 +163,27 @@ const clientLogos = [
   { name: "Delve Health", logo: "/images/clients/delvehealth.svg" },
   { name: "Optix", logo: "/images/clients/optix.png" },
   { name: "Certn", logo: "/images/clients/certn.png" },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Media Garcia isn\u2019t just a vendor\u2014they\u2019re an extension of our team. They understand our business well enough to proactively identify issues before they become problems.",
+    author: "Juli Denny",
+    title: "Chief Growth Officer, ADVI Health",
+  },
+  {
+    quote:
+      "Before Media Garcia, our teams were copying data between five different systems. Now everything flows automatically.",
+    author: "Maria Woo",
+    title: "Operations Lead, Current Energy",
+  },
+  {
+    quote:
+      "We asked Media Garcia to build us a patient portal and ended up with an entire operating system for our clinics.",
+    author: "Dan Green",
+    title: "President & CEO, Men\u2019s Pro Health",
+  },
 ];
 
 function AnimatedCounter({
@@ -446,6 +469,19 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
             </h2>
           </motion.div>
 
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-lg text-gray-600 leading-relaxed max-w-3xl mb-12"
+          >
+            We&apos;re a founder-led consultancy with a senior-only team. Every
+            engagement is led directly by our principals&mdash;no junior staff
+            learning on your dime. We work with a network of vetted specialists
+            for specific needs so you get deep expertise without paying for a
+            large agency&apos;s overhead.
+          </motion.p>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <motion.div
@@ -494,6 +530,47 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
               </motion.div>
             ))}
           </div>
+
+          {/* Client Testimonials */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-20"
+          >
+            <h3 className="text-2xl font-bold text-black mb-8 text-center">
+              What Our Clients Say
+            </h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {testimonials.map((testimonial, index) => (
+                <motion.div
+                  key={testimonial.author}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="border border-gray-100 rounded-xl p-6"
+                >
+                  <div className="flex gap-0.5 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-4 h-4 fill-amber-400 text-amber-400"
+                      />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    <span className="font-medium">{testimonial.author}</span>
+                    {", "}
+                    {testimonial.title}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -596,6 +673,16 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
                 </div>
               ))}
             </div>
+          </motion.div>
+
+          {/* Review Trust Strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12"
+          >
+            <ReviewTrustStrip />
           </motion.div>
         </div>
       </section>
