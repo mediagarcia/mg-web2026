@@ -429,7 +429,7 @@ export default function PricingPage() {
               the work together. No surprises.
             </p>
             <Link
-              href="/contact"
+              href="/book"
               className="inline-flex items-center gap-2 text-teal-500 font-medium hover:text-teal-600 transition-colors mt-4 group/link"
             >
               Book an Intro Call
@@ -490,7 +490,7 @@ export default function PricingPage() {
                   {model.description}
                 </p>
                 <Link
-                  href="/contact"
+                  href="/book"
                   className="inline-flex items-center gap-2 text-teal-500 font-medium hover:text-teal-600 transition-colors group/link"
                 >
                   Talk to us about this
@@ -629,7 +629,7 @@ export default function PricingPage() {
 
           <div className="text-center">
             <Link
-              href="/contact"
+              href="/book"
               className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full font-medium hover:bg-teal-500 transition-colors"
             >
               Book an Intro Call
@@ -725,7 +725,7 @@ export default function PricingPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/contact"
+                href="/book"
                 className="inline-flex items-center gap-2 bg-teal-500 text-white px-8 py-4 rounded-full font-medium hover:bg-teal-400 transition-colors"
               >
                 Book an Intro Call
