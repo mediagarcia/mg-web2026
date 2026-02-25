@@ -159,7 +159,6 @@ const clientLogos = [
   { name: "ADVI", logo: "/images/clients/advi.svg" },
   { name: "Men's Pro", logo: "/images/clients/menspro.png" },
   { name: "Current Energy", logo: "/images/clients/currentenergy.png" },
-  { name: "Cloud Force Gurus", logo: "/images/clients/cloudforcegurus.png" },
   { name: "Delve Health", logo: "/images/clients/delvehealth.svg" },
   { name: "Optix", logo: "/images/clients/optix.png" },
   { name: "Certn", logo: "/images/clients/certn.png" },
