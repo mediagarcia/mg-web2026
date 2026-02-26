@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
 
 // Content-Security-Policy directives
-// Deployed as Report-Only first — switch to enforcing once verified in production.
-// To enforce: rename the header key from "Content-Security-Policy-Report-Only"
-// to "Content-Security-Policy".
+// Enforced — verified zero violations on production (homepage, /contact, /pricing).
 const cspDirectives = [
   "default-src 'self'",
   // Scripts: self + inline (Next.js requires it) + trusted third-party CDNs
@@ -108,7 +106,7 @@ const nextConfig: NextConfig = {
             value: "camera=(), microphone=(), geolocation=()",
           },
           {
-            key: "Content-Security-Policy-Report-Only",
+            key: "Content-Security-Policy",
             value: cspDirectives,
           },
         ],
