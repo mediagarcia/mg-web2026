@@ -1,15 +1,30 @@
 import { MetadataRoute } from 'next'
 import { caseStudies } from '@/data/case-studies'
+import { guides } from '@/data/guides'
+import { portfolioItems } from '@/data/portfolio'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://mediagarcia.com'
 
-  // Generate case study URLs dynamically
   const caseStudyUrls: MetadataRoute.Sitemap = caseStudies.map((study) => ({
     url: `${baseUrl}/work/${study.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
+  }))
+
+  const guideUrls: MetadataRoute.Sitemap = guides.map((guide) => ({
+    url: `${baseUrl}/resources/guides/${guide.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
+
+  const portfolioUrls: MetadataRoute.Sitemap = portfolioItems.map((item) => ({
+    url: `${baseUrl}/work/portfolio/${item.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
   }))
 
   return [
@@ -38,6 +53,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/book`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
 
     // Work / Case Studies
     {
@@ -47,8 +68,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     ...caseStudyUrls,
+    ...portfolioUrls,
 
-    // Service Pages
+    // Services
+    {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
     {
       url: `${baseUrl}/services/hubspot-onboarding`,
       lastModified: new Date(),
@@ -104,7 +132,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
 
-    // Industry Pages
+    // Industries
+    {
+      url: `${baseUrl}/industries`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     {
       url: `${baseUrl}/industries/healthcare`,
       lastModified: new Date(),
@@ -124,7 +158,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
 
-    // Resource Pages
+    // Resources
     {
       url: `${baseUrl}/resources`,
       lastModified: new Date(),
@@ -138,16 +172,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/resources/roi-calculator`,
+      url: `${baseUrl}/resources/guides`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,
+    },
+    ...guideUrls,
+    {
+      url: `${baseUrl}/resources/roi-calculator`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
     },
     {
       url: `${baseUrl}/resources/tco-calculator`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.6,
+      priority: 0.5,
     },
     {
       url: 'https://hub.mediagarcia.com/blog',

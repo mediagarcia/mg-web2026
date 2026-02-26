@@ -59,6 +59,67 @@ const nextConfig: NextConfig = {
         destination: "https://hub.mediagarcia.com/blog",
         permanent: true,
       },
+      {
+        source: "/blog/:path*",
+        destination: "https://hub.mediagarcia.com/blog",
+        permanent: true,
+      },
+      // Old site pages → new equivalents (indexed by Google pre-migration)
+      {
+        source: "/contact-media-garcia",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/our-approach",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/get-started",
+        destination: "/book",
+        permanent: true,
+      },
+      {
+        source: "/hubspot",
+        destination: "/services/hubspot-onboarding",
+        permanent: true,
+      },
+      {
+        source: "/marketing",
+        destination: "/services/marketing",
+        permanent: true,
+      },
+      {
+        source: "/development",
+        destination: "/services/development",
+        permanent: true,
+      },
+      {
+        source: "/technology",
+        destination: "/services/integrations",
+        permanent: true,
+      },
+      {
+        source: "/information-technology",
+        destination: "/industries/technology",
+        permanent: true,
+      },
+      {
+        source: "/roi",
+        destination: "/resources/roi-calculator",
+        permanent: true,
+      },
+      {
+        source: "/7-steps",
+        destination: "/resources/guides",
+        permanent: true,
+      },
+      {
+        source: "/data-driven-pillar",
+        destination: "/resources/guides",
+        permanent: true,
+      },
       // Block dev staging pages in production
       ...(process.env.NODE_ENV === "production"
         ? [

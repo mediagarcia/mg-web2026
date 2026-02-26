@@ -57,7 +57,7 @@ export default function NotFound() {
             Back to Home
           </Link>
           <Link
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-black/20 text-black px-8 py-4 rounded-full text-lg font-medium hover:border-teal-500 hover:text-teal-500 transition-all duration-300"
           >
             Contact Us
