@@ -5,7 +5,6 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { ScrollToTopOnNavigation } from "@/components/ScrollToTopOnNavigation";
-import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { HubSpotTracking } from "@/components/analytics/HubSpotTracking";
 import { DevPreviewProviders } from "@/components/DevPreviewProviders";
 
@@ -199,7 +198,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${roboto.variable} ${robotoMono.variable}`}>
       <body className="font-sans antialiased" suppressHydrationWarning>
-        <GoogleAnalytics />
         <HubSpotTracking />
         <ScrollToTopOnNavigation />
         {/* Skip to main content link for accessibility */}
