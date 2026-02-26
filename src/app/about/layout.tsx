@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Media Garcia | 14+ Years Building Revenue Systems",
+  title: "About Media Garcia | 15+ Years Building Revenue Systems",
   description:
     "We build CRM and RevOps systems for healthcare, technology, and B2B companies. Senior-level expertise from day one, outcomes-focused approach, 98% client retention.",
   openGraph: {
-    title: "About Media Garcia | 14+ Years Building Revenue Systems",
+    title: "About Media Garcia | 15+ Years Building Revenue Systems",
     description:
       "We build CRM and RevOps systems for healthcare, technology, and B2B companies. Senior-level expertise from day one, outcomes-focused approach, 98% client retention.",
   },

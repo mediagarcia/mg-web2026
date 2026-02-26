@@ -58,11 +58,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://mediagarcia.com",
   },
-  verification: {
-    // Add these when you have them
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-  },
+  verification: {},
 };
 
 // Organization Schema
@@ -79,7 +75,7 @@ const organizationSchema = {
     height: 60,
   },
   description: "We build and run digital platforms that keep companies lean, growing, and easy to do business with.",
-  foundingDate: "2011",
+  foundingDate: "2010",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Saint Paul",
@@ -185,7 +181,7 @@ const localBusinessSchema = {
   },
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "5",
+    ratingValue: "4.9",
     reviewCount: "50",
     bestRating: "5",
     worstRating: "1",

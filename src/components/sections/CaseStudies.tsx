@@ -167,7 +167,7 @@ export function CaseStudies({ images }: CaseStudiesProps = {}) {
           {[
             { value: "200+", label: "CRM Implementations" },
             { value: "98%", label: "Client Retention" },
-            { value: "$4M+", label: "Revenue Attributed" },
+            { value: "15+", label: "Years In Business" },
             { value: "50+", label: "5-Star Reviews" },
           ].map((stat, index) => (
             <div key={stat.label} className="text-center lg:text-left">
