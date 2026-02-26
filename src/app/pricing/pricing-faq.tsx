@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import Script from "next/script";
 import { GradientOrb } from "@/components/ui/visuals";
 
@@ -159,14 +160,14 @@ export function PricingFAQ() {
               We believe in transparency. Here&apos;s what you need to know
               about working with us.
             </motion.p>
-            <motion.a
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              href="https://meetings.hubspot.com/louis3/discovery-meeting-with-louis"
-              target="_blank"
-              rel="noopener noreferrer"
+            >
+            <Link
+              href="/book"
               className="inline-flex items-center gap-2 text-teal-500 font-medium hover:text-teal-600 transition-colors group"
             >
               Have more questions? Let&apos;s talk
@@ -183,7 +184,8 @@ export function PricingFAQ() {
                   d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-            </motion.a>
+            </Link>
+            </motion.div>
           </div>
 
           {/* Right - FAQ List */}
