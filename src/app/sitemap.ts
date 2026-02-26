@@ -179,18 +179,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...guideUrls,
     {
-      url: `${baseUrl}/resources/roi-calculator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/resources/tco-calculator`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
       url: 'https://hub.mediagarcia.com/blog',
       lastModified: new Date(),
       changeFrequency: 'weekly',

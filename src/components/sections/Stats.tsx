@@ -5,7 +5,7 @@ import { useRef, useEffect, useState } from "react";
 
 const stats = [
   {
-    value: 14,
+    value: 15,
     suffix: "+",
     label: "Years Experience",
     description: "Building HubSpot systems",
