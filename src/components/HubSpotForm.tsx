@@ -203,36 +203,53 @@ export function HubSpotForm({ portalId, formId, className = "", theme = "light" 
   useEffect(() => {
     if (!resolvedPortalId || !formId || !containerRef.current) return;
 
-    const script = document.createElement("script");
-    script.src = "//js.hsforms.net/forms/embed/v2.js";
-    script.charset = "utf-8";
-    script.async = true;
+    let cancelled = false;
+    let pollTimer: ReturnType<typeof setInterval>;
 
-    script.onload = () => {
-      if (window.hbspt && containerRef.current) {
-        const config: Record<string, unknown> = {
-          portalId: resolvedPortalId,
-          formId,
-          target: `#${containerRef.current.id}`,
-        };
-        if (theme === "dark") {
-          config.css = DARK_THEME_CSS;
-        } else if (theme === "poco") {
-          config.css = POCO_THEME_CSS;
-        } else {
-          config.css = LIGHT_THEME_CSS;
-        }
-        window.hbspt.forms.create(config);
-        setLoaded(true);
+    const createForm = () => {
+      if (cancelled || !window.hbspt || !containerRef.current) return false;
+      const config: Record<string, unknown> = {
+        portalId: resolvedPortalId,
+        formId,
+        target: `#${containerRef.current.id}`,
+      };
+      if (theme === "dark") {
+        config.css = DARK_THEME_CSS;
+      } else if (theme === "poco") {
+        config.css = POCO_THEME_CSS;
+      } else {
+        config.css = LIGHT_THEME_CSS;
       }
+      window.hbspt.forms.create(config);
+      setLoaded(true);
+      return true;
     };
 
-    document.head.appendChild(script);
+    // If hbspt is already available (cached script / another form loaded it), use it directly
+    if (window.hbspt) {
+      createForm();
+      return;
+    }
+
+    // Only append the embed script once across all HubSpotForm instances
+    if (!document.querySelector('script[src*="js.hsforms.net/forms/embed"]')) {
+      const script = document.createElement("script");
+      script.src = "//js.hsforms.net/forms/embed/v2.js";
+      script.charset = "utf-8";
+      script.async = true;
+      document.head.appendChild(script);
+    }
+
+    // Poll for window.hbspt — handles the gap between script download and initialization
+    pollTimer = setInterval(() => {
+      if (createForm()) {
+        clearInterval(pollTimer);
+      }
+    }, 100);
 
     return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
+      cancelled = true;
+      clearInterval(pollTimer);
     };
   }, [resolvedPortalId, formId, theme]);
 
