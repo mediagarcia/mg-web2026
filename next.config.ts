@@ -11,7 +11,7 @@ const cspDirectives = [
   // Images: self + data URIs + HubSpot ecosystem + Google Analytics + own domains
   "img-src 'self' data: https://*.hubspot.com https://*.hsappstatic.net https://*.hubspot.net https://www.google-analytics.com https://www.googletagmanager.com https://mediagarcia.com https://*.mediagarcia.com https://track.hubspot.com",
   // API connections: self + HubSpot + Google Analytics + reCAPTCHA
-  "connect-src 'self' https://*.hubspot.com https://*.hubapi.com https://*.hs-analytics.net https://*.hscollectedforms.net https://*.hs-banner.com https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com",
+  "connect-src 'self' https://*.hubspot.com https://*.hubapi.com https://*.hsforms.com https://*.hs-analytics.net https://*.hscollectedforms.net https://*.hs-banner.com https://hubspot-forms-static-embed.s3.amazonaws.com https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com",
   // Frames: HubSpot meetings + reCAPTCHA
   "frame-src https://app.hubspot.com https://meetings.hubspot.com https://*.hubspot.com https://www.google.com https://www.gstatic.com",
   // Fonts: self only (next/font bundles at build time)
