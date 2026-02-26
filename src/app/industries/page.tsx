@@ -122,11 +122,11 @@ export default function IndustriesPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">Why Industry Focus Matters</h2>
             <p className="text-lg text-black/60 leading-relaxed mb-12">
-              Generic HubSpot implementations miss the nuances of your industry. We bring 14+ years of experience with complex B2B sales cycles, enabling faster implementation and better results.
+              Generic HubSpot implementations miss the nuances of your industry. We bring 15+ years of experience with complex B2B sales cycles, enabling faster implementation and better results.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-2xl p-6">
-                <p className="text-4xl font-black text-teal-500 mb-2">14+</p>
+                <p className="text-4xl font-black text-teal-500 mb-2">15+</p>
                 <p className="text-black/60">Years of Experience</p>
               </div>
               <div className="bg-white rounded-2xl p-6">

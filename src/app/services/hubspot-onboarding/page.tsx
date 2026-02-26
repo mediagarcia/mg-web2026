@@ -17,7 +17,7 @@ const stats = [
   { value: "200+", label: "CRMs Onboarded" },
   { value: "94%", label: "User Adoption Rate" },
   { value: "3 weeks", label: "Average Time to Value" },
-  { value: "4.9/5", label: "Client Satisfaction" },
+  { value: "98%", label: "Client Retention" },
 ];
 
 const capabilities = [

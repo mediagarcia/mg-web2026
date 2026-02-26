@@ -22,7 +22,7 @@ export default function TermsPage() {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-2xl font-bold text-black mt-0 mb-4">Agreement between User and mediagarcia.com</h2>
             <p className="text-black/70 mb-6">
-              Welcome to http://www.mediagarcia.com/. The Site is comprised of various web pages operated by Loud Website, Inc. D/B/A Media Garcia, Inc. (&quot;Media Garcia&quot;). The site is offered conditioned on acceptance of the terms, conditions, and notices contained herein without modification. Your use constitutes agreement to all Terms. http://www.mediagarcia.com/ is a business consulting website.
+              Welcome to https://www.mediagarcia.com/. The Site is comprised of various web pages operated by Media Garcia, Inc. (&quot;Media Garcia&quot;). The site is offered conditioned on acceptance of the terms, conditions, and notices contained herein without modification. Your use constitutes agreement to all Terms. https://www.mediagarcia.com/ is a business consulting website.
             </p>
 
             <h2 className="text-2xl font-bold text-black mt-12 mb-4">About Us</h2>
@@ -37,7 +37,7 @@ export default function TermsPage() {
 
             <h2 className="text-2xl font-bold text-black mt-12 mb-4">Electronic Communications</h2>
             <p className="text-black/70 mb-6">
-              Visiting http://www.mediagarcia.com/ or sending emails constitutes electronic communications. You consent to receive electronic communications and agree that all agreements, notices, disclosures and other communications are satisfied whether provided electronically, via email or on the Site.
+              Visiting https://www.mediagarcia.com/ or sending emails constitutes electronic communications. You consent to receive electronic communications and agree that all agreements, notices, disclosures and other communications are satisfied whether provided electronically, via email or on the Site.
             </p>
 
             <h2 className="text-2xl font-bold text-black mt-12 mb-4">Children Under Thirteen</h2>
@@ -102,7 +102,7 @@ export default function TermsPage() {
 
             <h2 className="text-2xl font-bold text-black mt-12 mb-4">International Users</h2>
             <p className="text-black/70 mb-6">
-              The Service is controlled, operated and administered by Media Garcia from offices within the USA. If you access the Service from a location outside the USA, you are responsible for compliance with all local laws. You agree that you will not use the Media Garcia Content accessed through http://www.mediagarcia.com/ in any country or in any manner prohibited by any applicable laws, restrictions or regulations.
+              The Service is controlled, operated and administered by Media Garcia from offices within the USA. If you access the Service from a location outside the USA, you are responsible for compliance with all local laws. You agree that you will not use the Media Garcia Content accessed through https://www.mediagarcia.com/ in any country or in any manner prohibited by any applicable laws, restrictions or regulations.
             </p>
 
             <h2 className="text-2xl font-bold text-black mt-12 mb-4">Indemnification</h2>
@@ -243,17 +243,16 @@ export default function TermsPage() {
 
             <h2 className="text-2xl font-bold text-black mt-12 mb-4">Changes to Terms</h2>
             <p className="text-black/70 mb-6">
-              Media Garcia reserves the right, in its sole discretion, to change the Terms under which http://www.mediagarcia.com/ is offered. The most current version of the Terms will supersede all previous versions. Media Garcia encourages you to periodically review the Terms to stay informed of our updates.
+              Media Garcia reserves the right, in its sole discretion, to change the Terms under which https://www.mediagarcia.com/ is offered. The most current version of the Terms will supersede all previous versions. Media Garcia encourages you to periodically review the Terms to stay informed of our updates.
             </p>
 
             <h2 className="text-2xl font-bold text-black mt-12 mb-4">Contact Us</h2>
             <div className="bg-gray-50 rounded-xl p-6 text-black/70">
-              <p><strong>Loud Website, Inc. D/B/A Media Garcia, Inc.</strong></p>
-              <p>PO BOX 4942</p>
-              <p>Saint Paul, Minnesota 55101</p>
-              <p>Email: hola@mediagarcia.com</p>
-              <p>Phone: (651) 691-9123</p>
-              <p className="mt-4 text-sm text-black/40">Effective as of November 22, 2020. Updated as of July 5th, 2023.</p>
+              <p><strong>Media Garcia, Inc.</strong></p>
+              <p>Saint Paul, Minnesota, USA</p>
+              <p>Email: hello@mediagarcia.com</p>
+              <p>Phone: +1 888-612-4250</p>
+              <p className="mt-4 text-sm text-black/40">Effective as of November 22, 2020. Updated as of February 26, 2026.</p>
             </div>
           </div>
         </div>

@@ -10,7 +10,7 @@ import { ReviewTrustStrip } from "@/components/ReviewTrustStrip";
 
 const stats = [
   {
-    value: 14,
+    value: 15,
     suffix: "+",
     label: "Years In Business",
     context: "Since 2010, before most agencies existed",
@@ -277,7 +277,7 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
             transition={{ delay: 0.1 }}
             className="text-[clamp(2rem,6vw,4rem)] font-black leading-tight text-black mb-6 max-w-4xl"
           >
-            14+ Years Building Revenue Systems That Actually Work
+            15+ Years Building Revenue Systems That Actually Work
           </motion.h1>
 
           <motion.p
@@ -317,7 +317,7 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
                 </p>
 
                 <p>
-                  For 14+ years, we&apos;ve stayed deliberately small. No junior
+                  For 15+ years, we&apos;ve stayed deliberately small. No junior
                   staff learning on your dime. No account managers who disappear
                   after the sale. Our founder is involved in every engagement,
                   and our team brings senior-level expertise from day one.
