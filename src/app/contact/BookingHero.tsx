@@ -2,9 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-const MEETINGS_URL =
-  "https://meetings.hubspot.com/louis3/discovery-meeting-with-louis";
+import Link from "next/link";
 
 const meetingDetails = [
   {
@@ -96,10 +94,8 @@ export function BookingHero() {
               </div>
             </div>
 
-            <a
-              href={MEETINGS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/book"
               className="inline-flex items-center justify-center gap-2 bg-teal-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-teal-600 transition-colors w-full sm:w-auto group"
             >
               Book Your Intro Call
@@ -111,7 +107,7 @@ export function BookingHero() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </Link>
             <p className="text-sm text-black/40 mt-3">
               15 minutes. Free. No sales pitch.
             </p>
