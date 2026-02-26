@@ -70,9 +70,9 @@ const organizationSchema = {
   url: "https://mediagarcia.com",
   logo: {
     "@type": "ImageObject",
-    url: "https://mediagarcia.com/logo.png",
-    width: 200,
-    height: 60,
+    url: "https://mediagarcia.com/images/logos/mg-logo-black.png",
+    width: 1328,
+    height: 260,
   },
   description: "We build and run digital platforms that keep companies lean, growing, and easy to do business with.",
   foundingDate: "2010",

@@ -218,17 +218,17 @@ export default function TermsPage() {
               By using the credit card facilities you agree that the details provided will be processed by PayPal. For details of PayPal&apos;s terms and conditions, click here: <a href="https://www.paypal.com/au/webapps/mpp/ua/useragreement-full" className="text-teal-500 hover:text-teal-600" target="_blank" rel="noopener noreferrer">https://www.paypal.com/au/webapps/mpp/ua/useragreement-full</a>
             </p>
 
-            <h4 className="text-lg font-semibold text-black mt-6 mb-2">6) Rectification</h4>
+            <h4 className="text-lg font-semibold text-black mt-6 mb-2">5) Rectification</h4>
             <p className="text-black/70 mb-6">
               Whilst Media Garcia takes considerable care in reviewing the content of webinars and any other business-related information provided through this webinar, if webinar attendees believe that any information provided is incorrect or contentious, they are encouraged to use the contact us link so that the issue may be reviewed and rectified if necessary.
             </p>
 
-            <h4 className="text-lg font-semibold text-black mt-6 mb-2">7) Webinars are recorded</h4>
+            <h4 className="text-lg font-semibold text-black mt-6 mb-2">6) Webinars are recorded</h4>
             <p className="text-black/70 mb-6">
               The virtual event facility includes a feature that allows audio and any documents and other materials exchanged or viewed during the session to be recorded. By joining a session, you automatically consent to such recordings. If you do not consent to the recording, please contact Media Garcia to discuss your concerns in good time prior to the web-event date.
             </p>
 
-            <h4 className="text-lg font-semibold text-black mt-6 mb-2">8) Webinar materials</h4>
+            <h4 className="text-lg font-semibold text-black mt-6 mb-2">7) Webinar materials</h4>
             <p className="text-black/70 mb-6">
               The webinar presenter may provide reference materials for your use during or after the webinar. These may include (but are not limited to) the following:
             </p>
