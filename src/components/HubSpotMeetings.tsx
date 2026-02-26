@@ -7,25 +7,45 @@ interface HubSpotMeetingsProps {
   className?: string;
 }
 
+const SCRIPT_SRC =
+  "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
+
 export function HubSpotMeetings({ url, className = "" }: HubSpotMeetingsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const scriptLoaded = useRef(false);
 
   useEffect(() => {
-    if (!containerRef.current || scriptLoaded.current) return;
+    if (!containerRef.current) return;
 
-    const script = document.createElement("script");
-    script.src =
-      "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
-    script.async = true;
-    scriptLoaded.current = true;
+    // Only append the embed script once globally
+    if (!document.querySelector(`script[src="${SCRIPT_SRC}"]`)) {
+      const script = document.createElement("script");
+      script.src = SCRIPT_SRC;
+      script.async = true;
+      document.head.appendChild(script);
+    }
 
-    document.head.appendChild(script);
+    // The HubSpot script scans for .meetings-iframe-container on load.
+    // If it already ran before our div existed, re-trigger by re-appending.
+    const poll = setInterval(() => {
+      if (!containerRef.current) return;
+      // HubSpot replaces the div contents with an iframe when it processes it
+      if (containerRef.current.querySelector("iframe")) {
+        clearInterval(poll);
+        return;
+      }
+      // If the script is loaded but hasn't processed our container, nudge it
+      const existingScript = document.querySelector(`script[src="${SCRIPT_SRC}"]`);
+      if (existingScript) {
+        const fresh = document.createElement("script");
+        fresh.src = SCRIPT_SRC;
+        fresh.async = true;
+        document.head.appendChild(fresh);
+        clearInterval(poll);
+      }
+    }, 200);
 
     return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
+      clearInterval(poll);
     };
   }, []);
 
