@@ -26,6 +26,8 @@ import {
   Briefcase,
   FileText,
   Sparkles,
+  Calculator,
+  DollarSign,
   type LucideIcon,
 } from "lucide-react";
 
@@ -70,6 +72,8 @@ const resources: MenuItem[] = [
   { label: "Resource Center", href: "/resources", description: "Guides, tools, and insights", icon: Library },
   { label: "CRM Assessment", href: "/resources/assessment", description: "Evaluate your CRM setup", icon: ClipboardCheck },
   { label: "Guides & Best Practices", href: "/resources/guides", description: "Expert tips and strategies", icon: BookOpen },
+  { label: "ROI Calculator", href: "https://hub.mediagarcia.com/roi", description: "Calculate your HubSpot ROI", icon: Calculator },
+  { label: "TCO Calculator", href: "https://hub.mediagarcia.com/tco", description: "Compare CRM total cost of ownership", icon: DollarSign },
   { label: "Blog", href: "https://hub.mediagarcia.com/blog", description: "Latest insights and strategies", icon: FileText },
 ];
 
@@ -189,7 +193,7 @@ function IndustriesMegaMenu({ onClose }: { onClose: () => void }) {
 
 function ResourcesMegaMenu({ onClose }: { onClose: () => void }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {resources.map((item) => (
         <Link
           key={item.href}

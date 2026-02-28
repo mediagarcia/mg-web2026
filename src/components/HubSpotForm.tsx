@@ -63,8 +63,8 @@ const DARK_THEME_CSS = `
   .hs-form .hs-recaptcha .grecaptcha-badge { opacity: 0 !important; }
   .hs-form .hs-recaptcha p,
   .hs-form .hs-recaptcha span,
-  .hs-form .hs-recaptcha label { color: rgba(255,255,255,0.2) !important; font-size: 9px !important; line-height: 1.2 !important; }
-  .hs-form .hs-recaptcha a { color: rgba(255,255,255,0.2) !important; text-decoration: underline !important; }
+  .hs-form .hs-recaptcha label { color: rgba(255,255,255,0.4) !important; font-size: 10px !important; line-height: 1.3 !important; }
+  .hs-form .hs-recaptcha a { color: rgba(255,255,255,0.4) !important; text-decoration: underline !important; }
   .submitted-message { color: #3BB782 !important; font-size: 14px !important; font-weight: 500 !important; }
 `;
 
@@ -135,8 +135,8 @@ const LIGHT_THEME_CSS = `
   .hs-form .hs-recaptcha .grecaptcha-badge { opacity: 0 !important; }
   .hs-form .hs-recaptcha p,
   .hs-form .hs-recaptcha span,
-  .hs-form .hs-recaptcha label { color: #c0c4ca !important; font-size: 9px !important; line-height: 1.2 !important; }
-  .hs-form .hs-recaptcha a { color: #c0c4ca !important; text-decoration: underline !important; }
+  .hs-form .hs-recaptcha label { color: #9ca3af !important; font-size: 10px !important; line-height: 1.3 !important; }
+  .hs-form .hs-recaptcha a { color: #9ca3af !important; text-decoration: underline !important; }
   .submitted-message { color: #3BB782 !important; font-size: 16px !important; font-weight: 600 !important; }
 `;
 
@@ -190,8 +190,8 @@ const POCO_THEME_CSS = `
   .hs-form .hs-recaptcha .grecaptcha-badge { opacity: 0 !important; }
   .hs-form .hs-recaptcha p,
   .hs-form .hs-recaptcha span,
-  .hs-form .hs-recaptcha label { color: #c0c4ca !important; font-size: 9px !important; line-height: 1.2 !important; }
-  .hs-form .hs-recaptcha a { color: #c0c4ca !important; text-decoration: underline !important; }
+  .hs-form .hs-recaptcha label { color: #9ca3af !important; font-size: 10px !important; line-height: 1.3 !important; }
+  .hs-form .hs-recaptcha a { color: #9ca3af !important; text-decoration: underline !important; }
   .submitted-message { color: #f59e0b !important; font-size: 14px !important; font-weight: 600 !important; }
 `;
 

@@ -179,6 +179,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...guideUrls,
     {
+      url: 'https://hub.mediagarcia.com/roi',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: 'https://hub.mediagarcia.com/tco',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: 'https://hub.mediagarcia.com/blog',
       lastModified: new Date(),
       changeFrequency: 'weekly',

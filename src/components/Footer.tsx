@@ -26,6 +26,8 @@ const footerLinks = {
   resources: [
     { label: "CRM Guides", href: "/resources/guides" },
     { label: "CRM Assessment", href: "/resources/assessment" },
+    { label: "ROI Calculator", href: "https://hub.mediagarcia.com/roi" },
+    { label: "TCO Calculator", href: "https://hub.mediagarcia.com/tco" },
     { label: "Resource Center", href: "/resources" },
     { label: "Blog", href: "https://hub.mediagarcia.com/blog" },
   ],
@@ -34,7 +36,7 @@ const footerLinks = {
 const socialLinks = [
   { label: "Facebook", href: "https://facebook.com/mediagarcia", icon: "facebook" },
   { label: "Instagram", href: "https://instagram.com/mediagarcia", icon: "instagram" },
-  { label: "YouTube", href: "https://youtube.com/@mediagarcia", icon: "youtube" },
+  { label: "YouTube", href: "https://www.youtube.com/@mediagarcia2692", icon: "youtube" },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/mediagarcia", icon: "linkedin" },
 ];
 

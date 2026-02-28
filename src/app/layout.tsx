@@ -86,7 +86,7 @@ const organizationSchema = {
   sameAs: [
     "https://facebook.com/mediagarcia",
     "https://instagram.com/mediagarcia",
-    "https://youtube.com/@mediagarcia",
+    "https://www.youtube.com/@mediagarcia2692",
     "https://www.linkedin.com/company/mediagarcia",
   ],
   contactPoint: [
