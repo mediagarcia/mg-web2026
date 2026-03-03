@@ -207,7 +207,7 @@ export function HubSpotForm({ portalId, formId, className = "", theme = "light" 
     let pollTimer: ReturnType<typeof setInterval>;
 
     const createForm = () => {
-      if (cancelled || !window.hbspt || !containerRef.current) return false;
+      if (cancelled || !window.hbspt?.forms || !containerRef.current) return false;
       const config: Record<string, unknown> = {
         portalId: resolvedPortalId,
         formId,
@@ -225,8 +225,8 @@ export function HubSpotForm({ portalId, formId, className = "", theme = "light" 
       return true;
     };
 
-    // If hbspt is already available (cached script / another form loaded it), use it directly
-    if (window.hbspt) {
+    // If the forms API is already available, use it directly
+    if (window.hbspt?.forms) {
       createForm();
       return;
     }
@@ -240,7 +240,7 @@ export function HubSpotForm({ portalId, formId, className = "", theme = "light" 
       document.head.appendChild(script);
     }
 
-    // Poll for window.hbspt — handles the gap between script download and initialization
+    // Poll for window.hbspt.forms — handles the gap between script download and initialization
     pollTimer = setInterval(() => {
       if (createForm()) {
         clearInterval(pollTimer);
@@ -277,7 +277,7 @@ export function HubSpotForm({ portalId, formId, className = "", theme = "light" 
 declare global {
   interface Window {
     hbspt?: {
-      forms: {
+      forms?: {
         create: (config: Record<string, unknown>) => void;
       };
     };
