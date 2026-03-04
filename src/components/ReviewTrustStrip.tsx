@@ -14,6 +14,11 @@ const platforms = [
     url: "https://ecosystem.hubspot.com/marketplace/solutions/media-garcia",
   },
   {
+    name: "Upwork",
+    count: 20,
+    label: "five-star reviews",
+  },
+  {
     name: "Facebook",
     count: 15,
     label: "reviews (4.7\u2605)",
@@ -56,34 +61,52 @@ export function ReviewTrustStrip({ variant = "light" }: ReviewTrustStripProps) {
             />
           )}
           <Stars />
-          <a
-            href={platform.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`text-sm transition-colors ${
-              isDark
-                ? "text-white/70 hover:text-white"
-                : "text-gray-500 hover:text-gray-900"
-            }`}
-          >
-            <span
-              className={`font-bold ${
-                isDark ? "text-white" : "text-gray-900"
-              }`}
-            >
-              {platform.count}
-            </span>{" "}
-            {platform.label} on{" "}
-            <span
-              className={`font-medium underline underline-offset-2 decoration-dotted ${
+          {platform.url ? (
+            <a
+              href={platform.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-sm transition-colors ${
                 isDark
-                  ? "decoration-white/30"
-                  : "decoration-gray-300"
+                  ? "text-white/70 hover:text-white"
+                  : "text-gray-500 hover:text-gray-900"
               }`}
             >
-              {platform.name}
+              <span
+                className={`font-bold ${
+                  isDark ? "text-white" : "text-gray-900"
+                }`}
+              >
+                {platform.count}
+              </span>{" "}
+              {platform.label} on{" "}
+              <span
+                className={`font-medium underline underline-offset-2 decoration-dotted ${
+                  isDark
+                    ? "decoration-white/30"
+                    : "decoration-gray-300"
+                }`}
+              >
+                {platform.name}
+              </span>
+            </a>
+          ) : (
+            <span
+              className={`text-sm ${
+                isDark ? "text-white/70" : "text-gray-500"
+              }`}
+            >
+              <span
+                className={`font-bold ${
+                  isDark ? "text-white" : "text-gray-900"
+                }`}
+              >
+                {platform.count}
+              </span>{" "}
+              {platform.label} on{" "}
+              <span className="font-medium">{platform.name}</span>
             </span>
-          </a>
+          )}
         </span>
       ))}
     </div>
