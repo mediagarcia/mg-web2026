@@ -4,26 +4,26 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Bell, X } from "lucide-react";
+import { MessageSquare, X } from "lucide-react";
 import { GradientOrb } from "@/components/ui/visuals";
 import { HubSpotForm } from "@/components/HubSpotForm";
 
 const features = [
   {
-    title: "Promise Tracking",
-    description: "Automatically capture and track every commitment made in meetings, emails, and chats.",
+    title: "Commitment Tracking",
+    description: "Every promise we make — in meetings, emails, or Slack — is captured and tracked. Nothing gets lost between conversations.",
   },
   {
-    title: "Project Health",
-    description: "Real-time health scores across all client engagements so nothing falls through the cracks.",
+    title: "Operational Plans",
+    description: "We create a detailed operational plan for every engagement and use Poco to track progress against outcomes, not just tasks.",
   },
   {
-    title: "AI Insights",
-    description: "Surface patterns and risks before they become problems with intelligent analysis.",
+    title: "Real-Time Project Health",
+    description: "Health scores across every active engagement give our team early visibility into risks, blockers, and budget utilization.",
   },
   {
-    title: "Meeting Intelligence",
-    description: "Turn every conversation into actionable items with automatic summarization.",
+    title: "AI-Powered Accountability",
+    description: "Meetings are automatically summarized, action items are extracted, and follow-through is tracked — so nothing falls through the cracks.",
   },
 ];
 
@@ -31,84 +31,84 @@ const gallerySlides = [
   {
     src: "/images/poco/screenshot-dashboard.png",
     alt: "Poco dashboard with action items, weekly summary, and performance metrics",
-    caption: "Your daily command center — ClickUp, Calendar & Email unified",
+    caption: "How we start every day — unified view of all client activity",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-clients.png",
     alt: "Client list with health statuses, hours tracking, and meeting counts",
-    caption: "Client health at a glance with HubSpot sync",
+    caption: "Real-time health status across every active engagement",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-meetings.png",
     alt: "Meetings list with AI analysis, task extraction, and question tracking",
-    caption: "Every meeting tracked with AI-extracted tasks & questions",
+    caption: "Every meeting produces tracked commitments and follow-ups",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-meeting-report.png",
     alt: "AI-generated meeting summary with suggested goals and action items",
-    caption: "AI meeting intelligence from Google Meet recordings",
+    caption: "AI-generated meeting summaries ensure nothing gets missed",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-projects.png",
     alt: "Project dashboard with health scores, task counts, and overdue tracking",
-    caption: "Project health synced from ClickUp in real time",
+    caption: "Project health and task progress tracked in real time",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-client-detail.png",
     alt: "Client detail view with email tracking, meetings, contracts, and activity insights",
-    caption: "Deep AI-powered insights for every client relationship",
+    caption: "Deep visibility into every client relationship",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-client-comms.png",
     alt: "Unified communications timeline with email threads and Slack messages",
-    caption: "Unified Email & Slack communications timeline",
+    caption: "Complete communications history across email and Slack",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-client-retainer.png",
     alt: "Client retainer management with utilization tracking and invoice settings",
-    caption: "Retainer tracking with QuickBooks Online integration",
+    caption: "Retainer utilization tracked to maximize your budget",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-goals.png",
     alt: "Goal tracking dashboard with AI-suggested goals from meeting patterns",
-    caption: "AI-suggested goals surfaced from meeting patterns",
+    caption: "Goals and milestones tracked against your operational plan",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-contracts.png",
     alt: "Contract obligations tracking with status indicators and compliance scores",
-    caption: "Contract obligations tracked automatically from uploads",
+    caption: "Contract obligations monitored for compliance and delivery",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-budget.png",
     alt: "Financial dashboard with revenue, margins, utilization and time tracking from QBO",
-    caption: "Financial health powered by QuickBooks Online",
+    caption: "Budget and utilization visibility ensures efficient delivery",
     width: 1366,
     height: 768,
   },
   {
     src: "/images/poco/screenshot-business-dev.png",
     alt: "Business development pipeline with conversion rates and prospect tracking",
-    caption: "Business development pipeline & conversion tracking",
+    caption: "Pipeline visibility across business development",
     width: 1366,
     height: 768,
   },
@@ -189,7 +189,7 @@ export function PocoPageContent() {
                 />
                 <div>
                   <span className="inline-block bg-amber-500/10 text-amber-600 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-1">
-                    Coming Soon
+                    Our Operations Platform
                   </span>
                   <h1 className="text-4xl lg:text-5xl font-black text-black">
                     Poco
@@ -203,7 +203,7 @@ export function PocoPageContent() {
                 transition={{ delay: 0.1 }}
                 className="text-xl text-amber-600 font-medium mb-4"
               >
-                Tracks the little things
+                Delivering to outcomes, not hours
               </motion.p>
 
               <motion.p
@@ -212,9 +212,10 @@ export function PocoPageContent() {
                 transition={{ delay: 0.15 }}
                 className="text-lg text-black/60 leading-relaxed mb-8"
               >
-                An AI-powered platform that tracks promises, monitors project
-                health, and surfaces what matters&nbsp;&mdash; born from
-                everything we&apos;ve learned building 200+ CRM and RevOps systems.
+                We built Poco to hold ourselves accountable. It tracks every
+                commitment we make, monitors project health in real time, and
+                surfaces risks before they become problems&nbsp;&mdash; so you
+                get the outcomes you&apos;re paying for, not just the hours.
               </motion.p>
 
               {/* Notify Form */}
@@ -225,9 +226,9 @@ export function PocoPageContent() {
                 className="max-w-sm"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <Bell className="w-4 h-4 text-amber-500" />
+                  <MessageSquare className="w-4 h-4 text-amber-500" />
                   <p className="text-sm font-medium text-black/70">
-                    Get notified when Poco launches
+                    Want to see how we work? Tell us about your project.
                   </p>
                 </div>
                 <HubSpotForm
@@ -322,10 +323,10 @@ export function PocoPageContent() {
             className="text-center max-w-2xl mx-auto mb-16"
           >
             <span className="text-xs font-bold uppercase tracking-widest text-amber-500 mb-4 block">
-              Features
+              How We Work
             </span>
             <h2 className="text-3xl lg:text-4xl font-black text-black">
-              Everything that falls through the cracks&nbsp;&mdash; caught
+              Built-in accountability at every step
             </h2>
           </motion.div>
 
@@ -369,10 +370,10 @@ export function PocoPageContent() {
             className="text-center max-w-2xl mx-auto"
           >
             <h2 className="text-2xl lg:text-4xl font-black text-white mb-4">
-              Interested in Poco?
+              See how we deliver differently
             </h2>
             <p className="text-white/80 text-lg mb-8">
-              Sign up above to get notified when we launch, or book a call to learn more about how Poco can help your team.
+              Poco is one part of how we ensure every engagement delivers real outcomes. Book a call to learn more about our process and how we can help your team.
             </p>
             <Link
               href="/book"
