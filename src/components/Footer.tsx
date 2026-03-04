@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { HubSpotForm } from "@/components/HubSpotForm";
-
-const NEWSLETTER_FORM_ID = "1e17d757-c025-44e9-880f-7c4b012695a7";
+import { NewsletterForm } from "@/components/forms/NewsletterForm";
 
 const footerLinks = {
   services: [
@@ -131,7 +129,7 @@ export function Footer() {
                 <p className="text-sm text-white/50 leading-relaxed">Get CRM tips, growth strategies, and HubSpot insights delivered to your inbox. No spam, unsubscribe anytime.</p>
               </div>
               <div className="w-full md:w-[340px] flex-shrink-0">
-                <HubSpotForm formId={NEWSLETTER_FORM_ID} theme="dark" />
+                <NewsletterForm />
               </div>
             </div>
           </div>

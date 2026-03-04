@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
-import { ContactForm } from "@/components/ContactForm";
+import { ContactForm } from "@/components/forms/ContactForm";
 import { GradientOrb } from "@/components/ui/visuals";
 import { ReviewTrustStrip } from "@/components/ReviewTrustStrip";
 import { BookingHero } from "./BookingHero";

@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Bell, X } from "lucide-react";
 import { GradientOrb } from "@/components/ui/visuals";
-import { HubSpotForm } from "@/components/HubSpotForm";
+import { WaitlistForm } from "@/components/forms/WaitlistForm";
 
 const features = [
   {
@@ -230,10 +230,7 @@ export function PocoPageContent() {
                     Get notified when Poco launches
                   </p>
                 </div>
-                <HubSpotForm
-                  formId="ea85ebc5-732f-4c64-a26d-c80eb800e790"
-                  theme="light"
-                />
+                <WaitlistForm />
               </motion.div>
             </div>
 
