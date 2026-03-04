@@ -28,16 +28,16 @@ const stats = [
     context: "They stay because it works",
   },
   {
-    value: 26,
+    value: 10000,
     suffix: "+",
-    label: "HubSpot Certifications",
-    context: "Across all hubs",
+    label: "Hours Delivered",
+    context: "Across all client engagements",
   },
   {
-    value: 50,
+    value: 100,
     suffix: "+",
     label: "5-Star Reviews",
-    context: "Across Google, HubSpot, and Clutch",
+    context: "Across all platforms",
   },
 ];
 
@@ -183,6 +183,12 @@ const testimonials = [
     author: "L. Dady",
     title: "Director, Education",
   },
+  {
+    quote:
+      "Very experienced and efficient in grasping the key aspects of the project and to scope it out. Also helped identify obstacles and sharing creative ideas to mitigate.",
+    author: "A. Ali",
+    title: "Founder, Simple Software Ventures",
+  },
 ];
 
 function AnimatedCounter({
@@ -220,7 +226,7 @@ function AnimatedCounter({
 
   return (
     <span ref={ref}>
-      {displayValue}
+      {displayValue.toLocaleString()}
       {suffix}
     </span>
   );
@@ -540,7 +546,7 @@ export function AboutPageContent({ aboutVideo }: AboutPageContentProps) {
             <h3 className="text-2xl font-bold text-black mb-8 text-center">
               What Our Clients Say
             </h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {testimonials.map((testimonial, index) => (
                 <motion.div
                   key={testimonial.author}

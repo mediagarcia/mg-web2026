@@ -7,24 +7,10 @@ interface ReviewTrustStripProps {
 }
 
 const platforms = [
-  {
-    name: "HubSpot",
-    count: 29,
-    label: "five-star reviews",
-    url: "https://ecosystem.hubspot.com/marketplace/solutions/media-garcia",
-  },
-  {
-    name: "Facebook",
-    count: 15,
-    label: "reviews (4.7\u2605)",
-    url: "https://www.facebook.com/mediagarcia/reviews",
-  },
-  {
-    name: "Google",
-    count: 6,
-    label: "five-star reviews",
-    url: "https://g.page/mediagarcia",
-  },
+  { name: "HubSpot", count: 29, label: "five-star reviews" },
+  { name: "Upwork", count: 20, label: "five-star reviews" },
+  { name: "Facebook", count: 15, label: "reviews (4.7\u2605)" },
+  { name: "Google", count: 6, label: "five-star reviews" },
 ];
 
 function Stars({ count = 5 }: { count?: number }) {
@@ -56,14 +42,9 @@ export function ReviewTrustStrip({ variant = "light" }: ReviewTrustStripProps) {
             />
           )}
           <Stars />
-          <a
-            href={platform.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`text-sm transition-colors ${
-              isDark
-                ? "text-white/70 hover:text-white"
-                : "text-gray-500 hover:text-gray-900"
+          <span
+            className={`text-sm ${
+              isDark ? "text-white/70" : "text-gray-500"
             }`}
           >
             <span
@@ -74,16 +55,8 @@ export function ReviewTrustStrip({ variant = "light" }: ReviewTrustStripProps) {
               {platform.count}
             </span>{" "}
             {platform.label} on{" "}
-            <span
-              className={`font-medium underline underline-offset-2 decoration-dotted ${
-                isDark
-                  ? "decoration-white/30"
-                  : "decoration-gray-300"
-              }`}
-            >
-              {platform.name}
-            </span>
-          </a>
+            <span className="font-medium">{platform.name}</span>
+          </span>
         </span>
       ))}
     </div>
