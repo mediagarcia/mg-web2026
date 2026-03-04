@@ -259,7 +259,7 @@ function WorkMegaMenu({ onClose }: { onClose: () => void }) {
         <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors mb-1">
           Poco
         </h3>
-        <p className="text-xs text-gray-500">AI-powered platform that tracks promises and project health</p>
+        <p className="text-xs text-gray-500">Our AI-powered operations platform for delivery accountability</p>
       </Link>
     </div>
   );
@@ -484,7 +484,7 @@ export function Navigation() {
                           className="block py-2"
                         >
                           <span className="text-base font-medium text-gray-900">Poco</span>
-                          <span className="block text-sm text-gray-500">AI-powered platform that tracks promises and project health</span>
+                          <span className="block text-sm text-gray-500">Our AI-powered operations platform for delivery accountability</span>
                         </Link>
                       </li>
                     </ul>

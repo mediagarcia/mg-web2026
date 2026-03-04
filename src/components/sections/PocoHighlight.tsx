@@ -6,13 +6,13 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const features = [
-  "Promise Tracking",
+  "Commitment Tracking",
+  "Operational Plans",
   "Project Health",
-  "AI Insights",
-  "Meeting Intelligence",
+  "AI Accountability",
 ];
 
-export function PocoComingSoon() {
+export function PocoHighlight() {
   return (
     <section
       id="poco"
@@ -43,11 +43,11 @@ export function PocoComingSoon() {
                   <div className="flex items-center gap-2">
                     <h3 className="text-xl font-black text-black">Poco</h3>
                     <span className="bg-amber-500/10 text-amber-600 text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full">
-                      Coming Soon
+                      Internal Platform
                     </span>
                   </div>
                   <p className="text-sm text-amber-600 font-medium">
-                    Tracks the little things
+                    Delivering to outcomes, not hours
                   </p>
                 </div>
               </div>
@@ -55,8 +55,8 @@ export function PocoComingSoon() {
               {/* Description + Feature pills */}
               <div className="flex-1 min-w-0">
                 <p className="text-sm text-black/60 leading-relaxed mb-3">
-                  An AI-powered platform that tracks promises, monitors project
-                  health, and surfaces what matters.
+                  Our internal operations platform that tracks commitments,
+                  monitors project health, and ensures we deliver on every promise.
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {features.map((feature) => (
@@ -70,10 +70,10 @@ export function PocoComingSoon() {
                 </div>
               </div>
 
-              {/* Learn More link */}
+              {/* See How We Work link */}
               <div className="shrink-0">
                 <span className="inline-flex items-center gap-2 text-amber-600 font-semibold text-sm group-hover:gap-3 transition-all">
-                  Learn More
+                  See How We Work
                   <ArrowRight className="w-4 h-4" />
                 </span>
               </div>
