@@ -67,9 +67,11 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="py-8 text-center">
-        <p className="text-teal-600 text-lg font-semibold">Thanks for reaching out!</p>
-        <p className="text-sm text-black/50 mt-2">We&apos;ll be in touch within 24 hours.</p>
+      <div className="py-10 text-center">
+        <p className="text-3xl mb-3">🎉</p>
+        <p className="text-teal-600 text-xl font-bold">You&apos;re in good hands!</p>
+        <p className="text-sm text-black/60 mt-2">A real human from our team will get back to you within <strong className="text-black/80">1 business day</strong>.</p>
+        <p className="text-xs text-black/40 mt-3">We&apos;re already excited to learn about your project.</p>
       </div>
     );
   }
