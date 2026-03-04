@@ -18,7 +18,6 @@ import {
   Cpu,
   Cloud,
   Library,
-  ClipboardCheck,
   BookOpen,
   ChevronDown,
   ArrowRight,
@@ -70,7 +69,6 @@ const industries: MenuItem[] = [
 
 const resources: MenuItem[] = [
   { label: "Resource Center", href: "/resources", description: "Guides, tools, and insights", icon: Library },
-  { label: "CRM Assessment", href: "/resources/assessment", description: "Evaluate your CRM setup", icon: ClipboardCheck },
   { label: "Guides & Best Practices", href: "/resources/guides", description: "Expert tips and strategies", icon: BookOpen },
   { label: "ROI Calculator", href: "https://hub.mediagarcia.com/roi", description: "Calculate your HubSpot ROI", icon: Calculator },
   { label: "TCO Calculator", href: "https://hub.mediagarcia.com/tco", description: "Compare CRM total cost of ownership", icon: DollarSign },

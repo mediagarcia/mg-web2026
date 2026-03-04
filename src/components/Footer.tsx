@@ -23,7 +23,6 @@ const footerLinks = {
   ],
   resources: [
     { label: "CRM Guides", href: "/resources/guides" },
-    { label: "CRM Assessment", href: "/resources/assessment" },
     { label: "ROI Calculator", href: "https://hub.mediagarcia.com/roi" },
     { label: "TCO Calculator", href: "https://hub.mediagarcia.com/tco" },
     { label: "Resource Center", href: "/resources" },
