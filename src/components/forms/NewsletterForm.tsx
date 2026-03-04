@@ -30,7 +30,7 @@ export function NewsletterForm() {
   if (status === "success") {
     return (
       <p className="text-teal-400 text-sm font-medium py-2">
-        Thanks for subscribing!
+        You&apos;re in — thanks for joining us! We&apos;ll keep it useful, never spammy.
       </p>
     );
   }
