@@ -134,7 +134,7 @@ export default function IndustriesPage() {
                 <p className="text-black/60">Implementations</p>
               </div>
               <div className="bg-white rounded-2xl p-6">
-                <p className="text-4xl font-black text-teal-500 mb-2">50+</p>
+                <p className="text-4xl font-black text-teal-500 mb-2">100+</p>
                 <p className="text-black/60">Five-Star Reviews</p>
               </div>
             </div>

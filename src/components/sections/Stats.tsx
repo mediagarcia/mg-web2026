@@ -17,10 +17,10 @@ const stats = [
     description: "Successfully deployed",
   },
   {
-    value: 50,
+    value: 100,
     suffix: "+",
     label: "Five-Star Reviews",
-    description: "Across HubSpot, Facebook & Google",
+    description: "Across all platforms",
   },
   {
     value: 98,

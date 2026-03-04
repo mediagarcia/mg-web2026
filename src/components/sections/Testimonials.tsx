@@ -76,6 +76,30 @@ const testimonials = [
     initials: "BH",
     rating: 5,
   },
+  {
+    quote: "They did an excellent job and were super flexible to work with. We would hire them anytime!",
+    author: "R. Razak",
+    title: "Business Owner",
+    company: "Art & Design",
+    initials: "RR",
+    rating: 5,
+  },
+  {
+    quote: "We needed help optimizing our attribution tracking and reporting in HubSpot and the team was able to get us sorted in a big way.",
+    author: "M. Walker",
+    title: "Growth Lead",
+    company: "Technology",
+    initials: "MW",
+    rating: 5,
+  },
+  {
+    quote: "Working with the Media Garcia team has been an excellent experience. Their professionalism and exceptional communication standards make it easy to collaborate.",
+    author: "J. Fechter",
+    title: "CEO",
+    company: "Growth & Education",
+    initials: "JF",
+    rating: 5,
+  },
 ];
 
 export function Testimonials() {

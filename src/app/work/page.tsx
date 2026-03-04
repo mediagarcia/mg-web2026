@@ -13,7 +13,7 @@ const stats = [
   { value: "200+", label: "CRM Implementations" },
   { value: "98%", label: "Client Retention" },
   { value: "15+", label: "Years In Business" },
-  { value: "50+", label: "5-Star Reviews" },
+  { value: "100+", label: "5-Star Reviews" },
 ];
 
 export default function WorkPage() {
