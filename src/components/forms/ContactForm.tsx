@@ -52,7 +52,7 @@ export function ContactForm() {
       legitimateInterest: {
         value: true,
         subscriptionTypeId: SUBSCRIPTION_TYPE_ID,
-        legalBasis: "LEGITIMATE_INTEREST_PQL",
+        legalBasis: "LEAD",
         text: PRIVACY_TEXT_PLAIN,
       },
     });
