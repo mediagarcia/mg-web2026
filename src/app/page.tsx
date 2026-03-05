@@ -1,6 +1,12 @@
+import { Metadata } from "next";
 import { HeroWithPreview, ClientLogos, ResultsHighlight, Services, Platforms, IndustriesWithPreview, WhyUsWithPreview, Process, CTABanner, Testimonials, FAQ, Team, Contact } from "@/components/sections";
 import { HomePageWrapper } from "@/components/HomePageWrapper";
 import { getImageForSlot, getVersionedImageForSlot } from "@/lib/images/get-image-for-slot";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
 export default function Home() {
   const heroImage = getImageForSlot("hero", "/images/hero/hero-bg.jpg");
 

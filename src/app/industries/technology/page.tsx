@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "HubSpot for Technology Companies | Media Garcia",
   description:
     "HubSpot implementations built for scaling tech companies — multi-vertical pipelines, data integrations, enterprise forecasting, and service operations.",
+  alternates: { canonical: "/industries/technology" },
 };
 
 const capabilities = [

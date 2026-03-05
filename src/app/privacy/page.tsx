@@ -5,6 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy | Media Garcia",
   description: "Media Garcia privacy policy. Learn how we collect, use, and protect your personal information.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

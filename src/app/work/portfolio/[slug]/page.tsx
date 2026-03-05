@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${item.title} | Portfolio | Media Garcia`,
     description: item.description,
+    alternates: { canonical: `/work/portfolio/${slug}` },
   };
 }
 

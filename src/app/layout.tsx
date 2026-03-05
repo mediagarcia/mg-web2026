@@ -54,10 +54,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "https://mediagarcia.com",
-  },
-  verification: {},
 };
 
 // Organization Schema
@@ -181,7 +177,7 @@ const localBusinessSchema = {
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
-    reviewCount: "50",
+    reviewCount: "100",
     bestRating: "5",
     worstRating: "1",
   },

@@ -11,6 +11,7 @@ import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 export const metadata: Metadata = {
   title: "Marketing Automation | Media Garcia",
   description: "Build marketing automation that proves ROI. Intelligent nurture campaigns, lead scoring, and attribution—on HubSpot, Salesforce, or any platform.",
+  alternates: { canonical: "/services/marketing-automation" },
 };
 
 const stats = [

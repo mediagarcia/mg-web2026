@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "HubSpot for B2B Companies | Media Garcia",
   description:
     "Complex operations across industries — from multi-system integrations to marketing automation to CRM analytics. We build revenue systems for companies with unique challenges.",
+  alternates: { canonical: "/industries/b2b" },
 };
 
 const caseStudies = [

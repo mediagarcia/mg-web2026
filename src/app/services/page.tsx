@@ -8,6 +8,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Services | Media Garcia",
   description: "Revenue operations, CRM implementation, and growth services for healthcare, technology, and B2B companies. Find the right service for your business.",
+  alternates: { canonical: "/services" },
 };
 
 const serviceCategories = [

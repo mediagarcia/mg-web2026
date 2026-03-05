@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/PageHeader";
 export const metadata: Metadata = {
   title: "Terms & Conditions | Media Garcia",
   description: "Media Garcia terms and conditions. Read our terms for using our website and services.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

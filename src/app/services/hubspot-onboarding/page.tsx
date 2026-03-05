@@ -11,6 +11,7 @@ import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 export const metadata: Metadata = {
   title: "CRM Onboarding | Media Garcia",
   description: "Get your CRM set up right—whether you choose HubSpot, Salesforce, or a custom platform. Expert onboarding that your team will actually use.",
+  alternates: { canonical: "/services/hubspot-onboarding" },
 };
 
 const stats = [

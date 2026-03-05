@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Pricing | Media Garcia",
   description:
     "Custom pricing for CRM, RevOps, and revenue operations services. Projects, retainers, and fractional RevOps — scoped to your goals. Book a free intro call.",
+  alternates: { canonical: "/pricing" },
 };
 
 const engagementModels = [

@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/PageHeader";
 export const metadata: Metadata = {
   title: "AI Policy | Media Garcia",
   description: "Media Garcia AI policy. Learn how we use AI ethically and responsibly in our services.",
+  alternates: { canonical: "/ethical-ai" },
 };
 
 export default function AIPolicyPage() {

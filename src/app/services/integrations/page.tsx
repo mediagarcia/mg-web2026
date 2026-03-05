@@ -11,6 +11,7 @@ import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 export const metadata: Metadata = {
   title: "Custom Integrations | Media Garcia",
   description: "Connect your CRM, EHR, PSA tools, and business systems with custom integrations. HIPAA-compliant, reliable, and built for healthcare, technology, and B2B.",
+  alternates: { canonical: "/services/integrations" },
 };
 
 const stats = [

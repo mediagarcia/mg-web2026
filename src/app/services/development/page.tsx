@@ -11,6 +11,7 @@ import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 export const metadata: Metadata = {
   title: "Website & CMS Development | Media Garcia",
   description: "High-converting websites on HubSpot CMS, WordPress, or custom builds. Built for marketers in healthcare, technology, and B2B.",
+  alternates: { canonical: "/services/development" },
 };
 
 const stats = [

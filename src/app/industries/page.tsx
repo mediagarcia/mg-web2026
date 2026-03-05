@@ -6,6 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Industries We Serve | Media Garcia",
   description: "HubSpot solutions tailored for healthcare, technology, and B2B companies. Deep expertise in industries with complex sales cycles.",
+  alternates: { canonical: "/industries" },
 };
 
 const industries = [

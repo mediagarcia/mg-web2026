@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "HubSpot for Healthcare Companies | Media Garcia",
   description:
     "HubSpot implementations trusted by ADVI Health, Men\u2019s Pro Health, and healthcare organizations nationwide. Real results: 200+ CRM optimizations, custom patient portals, and multi-year partnerships.",
+  alternates: { canonical: "/industries/healthcare" },
 };
 
 const challenges = [

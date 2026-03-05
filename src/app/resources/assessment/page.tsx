@@ -5,6 +5,7 @@ import { AssessmentForm } from "./AssessmentForm";
 export const metadata: Metadata = {
   title: "CRM Assessment | Media Garcia",
   description: "Take our free CRM assessment to evaluate your current setup and identify opportunities for improvement.",
+  alternates: { canonical: "/resources/assessment" },
 };
 
 const assessmentAreas = [

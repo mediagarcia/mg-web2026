@@ -11,6 +11,7 @@ import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 export const metadata: Metadata = {
   title: "Reporting & Analytics | Media Garcia",
   description: "Custom dashboards and attribution that connect marketing spend to closed revenue. Know what's working—on HubSpot, Salesforce, or any platform.",
+  alternates: { canonical: "/services/reporting" },
 };
 
 const stats = [

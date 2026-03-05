@@ -11,6 +11,7 @@ import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 export const metadata: Metadata = {
   title: "AI-Powered Automation | Media Garcia",
   description: "Unlock AI features in HubSpot, Salesforce, and your CRM. Predictive scoring, intelligent workflows, AI chatbots—built for healthcare, technology, and B2B.",
+  alternates: { canonical: "/services/ai-automation" },
 };
 
 const stats = [

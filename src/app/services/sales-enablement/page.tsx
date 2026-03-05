@@ -11,6 +11,7 @@ import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 export const metadata: Metadata = {
   title: "Sales Enablement | Media Garcia",
   description: "Build sales systems that turn your CRM into a revenue machine. Sequences, playbooks, and pipeline optimization—on HubSpot, Salesforce, or any CRM.",
+  alternates: { canonical: "/services/sales-enablement" },
 };
 
 const stats = [

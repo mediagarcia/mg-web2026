@@ -7,6 +7,7 @@ import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
 export const metadata: Metadata = {
   title: "Resources | Media Garcia",
   description: "Free CRM guides, ROI calculators, and tools to help you make better decisions about your tech stack.",
+  alternates: { canonical: "/resources" },
 };
 
 const resources = [

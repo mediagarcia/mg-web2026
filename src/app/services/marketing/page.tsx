@@ -11,6 +11,7 @@ import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 export const metadata: Metadata = {
   title: "Growth Marketing Services | Media Garcia",
   description: "Full-service growth marketing for healthcare, technology, and B2B. SEO, paid ads, content marketing, and conversion optimization—all tied to revenue.",
+  alternates: { canonical: "/services/marketing" },
 };
 
 const stats = [

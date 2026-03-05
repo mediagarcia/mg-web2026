@@ -49,6 +49,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: guide.description,
       ...(ogImage ? { images: [ogImage] } : {}),
     },
+    alternates: { canonical: `/resources/guides/${slug}` },
   };
 }
 

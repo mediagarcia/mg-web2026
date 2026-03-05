@@ -11,6 +11,7 @@ import { GeometricOverlay } from "@/components/ui/GeometricOverlay";
 export const metadata: Metadata = {
   title: "CRM Migration | Media Garcia",
   description: "Seamless CRM migration with zero data loss. We migrate from Salesforce, Pipedrive, Zoho, and more to HubSpot or any platform you choose.",
+  alternates: { canonical: "/services/crm-migration" },
 };
 
 const stats = [

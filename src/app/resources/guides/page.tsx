@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "CRM & RevOps Guides | Media Garcia",
   description:
     "Free in-depth guides on CRM implementation, marketing automation, CRM migration, and revenue operations.",
+  alternates: { canonical: "/resources/guides" },
 };
 
 const guideStyles: Record<string, { color: "teal" | "purple" | "orange"; pattern: GeometricPattern; gradientFrom: string; gradientTo: string }> = {
