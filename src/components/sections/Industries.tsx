@@ -150,14 +150,12 @@ export function Industries({ images }: IndustriesProps = {}) {
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Header */}
-                    <div className="flex items-center gap-5 mb-4">
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${industry.gradient} flex items-center justify-center text-white shrink-0`}>
-                        {industry.icon}
-                      </div>
-                      <h3 className="text-2xl lg:text-3xl font-bold text-black group-hover:text-teal-500 transition-colors">
-                        {industry.name}
-                      </h3>
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${industry.gradient} flex items-center justify-center text-white mb-5`}>
+                      {industry.icon}
                     </div>
+                    <h3 className="text-2xl lg:text-3xl font-bold text-black mb-3 group-hover:text-teal-500 transition-colors">
+                      {industry.name}
+                    </h3>
                     <p className="text-black/60 leading-relaxed mb-6">
                       {industry.description}
                     </p>
