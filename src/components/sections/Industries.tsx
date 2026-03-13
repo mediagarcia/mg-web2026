@@ -111,7 +111,7 @@ export function Industries({ images }: IndustriesProps = {}) {
         </div>
 
         {/* Industries Grid */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {industries.map((industry, index) => {
             const backgroundImage = images?.[industry.slug as keyof IndustryImages];
 
@@ -165,7 +165,7 @@ export function Industries({ images }: IndustriesProps = {}) {
                     </div>
 
                     {/* Features */}
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                    <ul className="grid grid-cols-1 gap-3 mb-8">
                       {industry.features.map((feature) => (
                         <li key={feature} className="flex items-center gap-3">
                           <svg className="w-5 h-5 text-teal-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
