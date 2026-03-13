@@ -27,8 +27,8 @@ const contactMethods = [
   },
   {
     label: "Office",
-    value: "Saint Paul, MN",
-    subtext: "Minnesota, USA",
+    value: "Saint Paul, Minnesota",
+    subtext: "USA",
     href: null,
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
