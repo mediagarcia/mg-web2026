@@ -111,7 +111,7 @@ export function Industries({ images }: IndustriesProps = {}) {
         </div>
 
         {/* Industries Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           {industries.map((industry, index) => {
             const backgroundImage = images?.[industry.slug as keyof IndustryImages];
 
