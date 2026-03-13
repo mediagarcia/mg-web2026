@@ -129,7 +129,7 @@ export function Industries({ images }: IndustriesProps = {}) {
                 >
                   {/* Optional Background Image with Duotone */}
                   {backgroundImage && (
-                    <div className="absolute inset-0 z-0 opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500">
+                    <div className="absolute inset-0 z-0 opacity-[0.35] group-hover:opacity-[0.45] transition-opacity duration-500">
                       <DuotoneImage
                         src={backgroundImage}
                         alt=""

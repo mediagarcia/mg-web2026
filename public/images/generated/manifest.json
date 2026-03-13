@@ -1,14 +1,14 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-02-24T08:07:51.765Z",
+  "lastUpdated": "2026-03-13T08:10:37.390Z",
   "slots": {
     "hero": {
       "slot": "hero",
-      "prompt": "Abstract flowing data visualization. Interconnected nodes and gentle flowing lines suggesting digital transformation. Soft teal (#3BB782) and neon purple (#EE82F0) gradient accents on clean white/light gray background. Minimal, premium aesthetic. No text, no people. Subtle depth and dimensionality.",
-      "model": "gemini-2.0-flash-exp-image-generation",
+      "prompt": "Bold abstract composition of interconnected CRM data nodes and revenue pipeline visualization, geometric shapes forming an upward growth trajectory, teal (#3BB782) gradients flowing into white space, clean premium B2B technology aesthetic, high contrast, editorial quality",
+      "model": "gemini-2.5-flash-image",
       "aspect": "16:9",
       "createdAt": "2026-02-05T07:01:32.682Z",
-      "updatedAt": "2026-02-07T21:41:15.177Z",
+      "updatedAt": "2026-03-13T07:55:02.141Z",
       "files": [
         {
           "filename": "hero-003.png",
@@ -24,10 +24,25 @@
           "filename": "hero-005.png",
           "path": "/images/generated/hero/hero-005.png",
           "generatedAt": "2026-02-05T09:42:25.963Z"
+        },
+        {
+          "filename": "hero-006.png",
+          "path": "/images/generated/hero/hero-006.png",
+          "generatedAt": "2026-03-13T07:51:20.313Z"
+        },
+        {
+          "filename": "hero-007.png",
+          "path": "/images/generated/hero/hero-007.png",
+          "generatedAt": "2026-03-13T07:51:25.460Z"
+        },
+        {
+          "filename": "hero-008.png",
+          "path": "/images/generated/hero/hero-008.png",
+          "generatedAt": "2026-03-13T07:51:30.953Z"
         }
       ],
-      "selected": "hero-005.png",
-      "selectedPath": "/images/generated/hero/hero-005.png"
+      "selected": "hero-008.png",
+      "selectedPath": "/images/selected/hero.png"
     },
     "industries-healthcare": {
       "slot": "industries-healthcare",
@@ -2129,6 +2144,60 @@
       ],
       "selected": "guides-sfdc-post-migration-002.png",
       "selectedPath": "/images/selected/guides-sfdc-post-migration.png"
+    },
+    "services-banner": {
+      "slot": "services-banner",
+      "prompt": "Abstract birds-eye view of a modern CRM dashboard with connected workflow automations, clean geometric UI elements floating in space, teal and subtle purple accent colors, white background, premium SaaS product visualization style",
+      "model": "gemini-2.5-flash-image",
+      "aspect": "4:3",
+      "createdAt": "2026-03-13T07:29:11.989Z",
+      "updatedAt": "2026-03-13T08:09:07.832Z",
+      "files": [
+        {
+          "filename": "services-banner-001.png",
+          "path": "/images/generated/services-banner/services-banner-001.png",
+          "generatedAt": "2026-03-13T07:51:47.449Z"
+        },
+        {
+          "filename": "services-banner-002.png",
+          "path": "/images/generated/services-banner/services-banner-002.png",
+          "generatedAt": "2026-03-13T07:51:53.123Z"
+        },
+        {
+          "filename": "services-banner-003.png",
+          "path": "/images/generated/services-banner/services-banner-003.png",
+          "generatedAt": "2026-03-13T07:51:58.663Z"
+        }
+      ],
+      "selected": "services-banner-001.png",
+      "selectedPath": "/images/selected/services-banner.png"
+    },
+    "results-bg": {
+      "slot": "results-bg",
+      "prompt": "Dark abstract background with subtle flowing revenue data streams and geometric analytics patterns, deep charcoal base with faint glowing teal (#3BB782) connection lines, sophisticated enterprise data visualization mood, minimal and refined",
+      "model": "gemini-2.5-flash-image",
+      "aspect": "16:9",
+      "createdAt": "2026-03-13T07:29:13.008Z",
+      "updatedAt": "2026-03-13T08:10:37.390Z",
+      "files": [
+        {
+          "filename": "results-bg-001.png",
+          "path": "/images/generated/results-bg/results-bg-001.png",
+          "generatedAt": "2026-03-13T07:44:34.434Z"
+        },
+        {
+          "filename": "results-bg-002.png",
+          "path": "/images/generated/results-bg/results-bg-002.png",
+          "generatedAt": "2026-03-13T07:44:39.554Z"
+        },
+        {
+          "filename": "results-bg-003.png",
+          "path": "/images/generated/results-bg/results-bg-003.png",
+          "generatedAt": "2026-03-13T07:44:44.944Z"
+        }
+      ],
+      "selected": "results-bg-001.png",
+      "selectedPath": "/images/selected/results-bg.png"
     }
   }
 }

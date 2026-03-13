@@ -22,6 +22,8 @@ const slotToPageMap: Record<string, { path: string; selector?: string }> = {
   "case-study-crm": { path: "/", selector: "#work" },
   "why-us": { path: "/" },
   "services-accent": { path: "/", selector: "#services" },
+  "services-banner": { path: "/", selector: "#services" },
+  "results-bg": { path: "/", selector: "#results" },
   "stats-background": { path: "/" },
   // Video slots
   "hero-video": { path: "/", selector: "section:first-of-type" },

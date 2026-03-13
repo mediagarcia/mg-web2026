@@ -41,7 +41,7 @@ export function WhyUs({ backgroundImage }: WhyUsProps = {}) {
             src={backgroundImage}
             alt=""
             fill
-            className="object-cover opacity-[0.06]"
+            className="object-cover opacity-[0.18]"
           />
         </div>
       )}

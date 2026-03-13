@@ -7,13 +7,13 @@ import { OrganicShapeCluster, DotPattern } from "@/components/OrganicShapes";
 
 interface HeroProps {
   heroImage?: string | null;
-  imageOpacity?: number; // 0-1, defaults to 0.04
+  imageOpacity?: number; // 0-1, defaults to 0.18
 }
 
-export function Hero({ heroImage, imageOpacity = 0.04 }: HeroProps) {
+export function Hero({ heroImage, imageOpacity = 0.18 }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
-      {/* Background Image - subtle tech/consulting visual */}
+      {/* Background Image - bold tech/consulting visual */}
       <div className="absolute inset-0 z-0">
         <Image
           src={heroImage ?? "/images/hero/hero-bg.jpg"}
@@ -23,6 +23,8 @@ export function Hero({ heroImage, imageOpacity = 0.04 }: HeroProps) {
           style={{ opacity: imageOpacity }}
           priority
         />
+        {/* Gradient overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent" />
       </div>
 
       {/* Organic Background Shapes */}

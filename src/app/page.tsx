@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { HeroWithPreview, ClientLogos, ResultsHighlight, Services, Platforms, IndustriesWithPreview, WhyUsWithPreview, Process, CTABanner, Testimonials, FAQ, Team, Contact } from "@/components/sections";
+import { HeroWithPreview, ClientLogos, ResultsHighlightWithPreview, ServicesWithPreview, Platforms, IndustriesWithPreview, WhyUsWithPreview, Process, CTABanner, Testimonials, FAQ, Team, Contact } from "@/components/sections";
 import { HomePageWrapper } from "@/components/HomePageWrapper";
 import { getImageForSlot, getVersionedImageForSlot } from "@/lib/images/get-image-for-slot";
 
@@ -17,6 +17,12 @@ export default function Home() {
     b2b: getVersionedImageForSlot("industries-b2b"),
   };
 
+  // Services banner image
+  const servicesBannerImage = getImageForSlot("services-banner");
+
+  // Results background image
+  const resultsBgImage = getImageForSlot("results-bg");
+
   // Why Us background image
   const whyUsImage = getImageForSlot("why-us");
 
@@ -24,8 +30,8 @@ export default function Home() {
     <HomePageWrapper>
       <HeroWithPreview defaultImage={heroImage} slot="hero" />
       <ClientLogos />
-      <ResultsHighlight />
-      <Services />
+      <ResultsHighlightWithPreview defaultImage={resultsBgImage} slot="results-bg" />
+      <ServicesWithPreview defaultImage={servicesBannerImage} slot="services-banner" />
       <Platforms />
       <IndustriesWithPreview defaultImages={industryImages} />
       <WhyUsWithPreview defaultImage={whyUsImage} slot="why-us" />
