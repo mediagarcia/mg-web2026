@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { GradientOrb } from "@/components/ui/visuals";
+import { DuotoneImage } from "@/components/ui/DuotoneImage";
 
 const services = [
   {
@@ -112,7 +113,11 @@ const colorClasses = {
   "orange-red": "bg-orange-red-500/10 text-orange-red-500 group-hover:bg-orange-red-500 group-hover:text-white",
 };
 
-export function Services() {
+interface ServicesProps {
+  bannerImage?: string | null;
+}
+
+export function Services({ bannerImage }: ServicesProps = {}) {
   return (
     <section id="services" className="py-[var(--spacing-section)] bg-gray-50 relative overflow-hidden">
       {/* Decorative gradient orbs */}
@@ -132,34 +137,55 @@ export function Services() {
       />
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-16 lg:mb-24">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block"
-          >
-            What We Do
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6"
-          >
-            Revenue systems and integrations that actually work
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-black/60 leading-relaxed"
-          >
-            From CRM strategy to automation build-out, we design RevOps systems that improve how you attract, engage, and close.
-          </motion.p>
+        {/* Section Header - Split layout with optional banner image */}
+        <div className={`mb-16 lg:mb-24 ${bannerImage ? "grid lg:grid-cols-2 gap-12 lg:gap-16 items-center" : ""}`}>
+          <div className="max-w-3xl">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block"
+            >
+              What We Do
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6"
+            >
+              Revenue systems and integrations that actually work
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-lg text-black/60 leading-relaxed"
+            >
+              From CRM strategy to automation build-out, we design RevOps systems that improve how you attract, engage, and close.
+            </motion.p>
+          </div>
+
+          {/* Banner Image - CRM dashboard visualization */}
+          {bannerImage && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl"
+            >
+              <DuotoneImage
+                src={bannerImage}
+                alt="CRM dashboard and workflow automation visualization"
+                color="teal"
+                intensity="medium"
+                className="absolute inset-0"
+              />
+            </motion.div>
+          )}
         </div>
 
         {/* Services Grid */}

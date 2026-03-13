@@ -27,7 +27,7 @@ import type { ImageManifest, ImageSlot, GeneratedFile, AspectRatio } from "../sr
 
 const MANIFEST_PATH = join(process.cwd(), "public/images/generated/manifest.json");
 const GENERATED_DIR = join(process.cwd(), "public/images/generated");
-const MODEL = "gemini-2.0-flash-exp-image-generation";
+const MODEL = "gemini-2.5-flash-image";
 
 interface Args {
   slot?: string;

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const results = [
   {
@@ -26,10 +27,26 @@ const results = [
   },
 ];
 
-export function ResultsHighlight() {
+interface ResultsHighlightProps {
+  backgroundImage?: string | null;
+}
+
+export function ResultsHighlight({ backgroundImage }: ResultsHighlightProps = {}) {
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <section id="results" className="py-20 lg:py-32 bg-gradient-to-r from-gray-900 to-gray-800 text-white relative overflow-hidden">
+      {/* Background texture image */}
+      {backgroundImage && (
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            className="object-cover opacity-[0.10]"
+          />
+        </div>
+      )}
+
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
