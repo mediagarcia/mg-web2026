@@ -20,7 +20,7 @@ const industryStyles: Record<string, { color: "teal" | "purple" | "orange"; patt
 
 const industries = [
   {
-    name: "Healthcare & Life Sciences",
+    name: "Healthcare",
     slug: "healthcare",
     description: "Revenue systems for regulated environments. We understand HIPAA compliance, EHR integrations, and the nuances of selling to healthcare organizations.",
     features: [
