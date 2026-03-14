@@ -20,7 +20,7 @@ const industryStyles: Record<string, { color: "teal" | "purple" | "orange"; patt
 
 const industries = [
   {
-    name: "Healthcare & Life Sciences",
+    name: "Healthcare",
     slug: "healthcare",
     description: "Revenue systems for regulated environments. We understand HIPAA compliance, EHR integrations, and the nuances of selling to healthcare organizations.",
     features: [
@@ -150,22 +150,18 @@ export function Industries({ images }: IndustriesProps = {}) {
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Header */}
-                    <div className="flex items-start gap-6 mb-8">
-                      <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${industry.gradient} flex items-center justify-center text-white shrink-0`}>
-                        {industry.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-2xl lg:text-3xl font-bold text-black mb-2 group-hover:text-teal-500 transition-colors">
-                          {industry.name}
-                        </h3>
-                        <p className="text-black/60 leading-relaxed">
-                          {industry.description}
-                        </p>
-                      </div>
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${industry.gradient} flex items-center justify-center text-white mb-5`}>
+                      {industry.icon}
                     </div>
+                    <h3 className="text-2xl lg:text-3xl font-bold text-black mb-3 group-hover:text-teal-500 transition-colors">
+                      {industry.name}
+                    </h3>
+                    <p className="text-black/60 leading-relaxed mb-6">
+                      {industry.description}
+                    </p>
 
                     {/* Features */}
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                    <ul className="grid grid-cols-1 gap-3 mb-8">
                       {industry.features.map((feature) => (
                         <li key={feature} className="flex items-center gap-3">
                           <svg className="w-5 h-5 text-teal-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
