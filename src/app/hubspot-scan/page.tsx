@@ -280,8 +280,7 @@ export default function HubSpotScanPage() {
 
       {/* How It Works */}
       <section className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
-        <MeshBackground />
-        <GradientOrb color="purple" size="lg" className="bottom-0 left-1/4 opacity-20" intensity="subtle" blur="xl" />
+        <FadingGridPattern type="dots" color="gray" opacity={0.08} spacing={28} fadeDirection="both" />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
@@ -329,7 +328,7 @@ export default function HubSpotScanPage() {
           </div>
 
           <div className="space-y-4 max-w-4xl">
-            {sampleFindings.map((finding, index) => {
+            {sampleFindings.map((finding) => {
               const severityColors: Record<string, { bg: string; border: string; badge: string; text: string }> = {
                 red: {
                   bg: "bg-red-50",
@@ -353,7 +352,7 @@ export default function HubSpotScanPage() {
               const colors = severityColors[finding.color];
               return (
                 <div
-                  key={index}
+                  key={finding.message}
                   className={`${colors.bg} border ${colors.border} rounded-2xl p-6 flex items-start gap-4`}
                 >
                   <span

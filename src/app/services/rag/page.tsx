@@ -170,7 +170,7 @@ export default function RAGPage() {
       <PageHeader
         badge="Service"
         title="RAG & Knowledge Systems"
-        description="Retrieval-augmented generation systems that give AI access to your company&apos;s knowledge. Turn docs, wikis, and tribal knowledge into instant, accurate answers."
+        description="Retrieval-augmented generation systems that give AI access to your company's knowledge. Turn docs, wikis, and tribal knowledge into instant, accurate answers."
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "RAG & Knowledge", href: "/services/rag" },
