@@ -55,14 +55,32 @@ const serviceCategories = [
     ],
   },
   {
-    category: "Advanced Capabilities",
-    description: "Extend your systems with AI and integrations",
+    category: "AI & Automation",
+    description: "Leverage AI to automate, enrich, and optimize your revenue operations",
     services: [
+      {
+        title: "AI Agents",
+        description: "Custom AI agents that work inside HubSpot—enriching data, prepping meetings, and handling tasks 24/7.",
+        href: "/services/ai-agents",
+        bestFor: "Autonomous AI workers",
+      },
       {
         title: "AI-Powered Automation",
         description: "Unlock AI features you're already paying for—predictive scoring, chatbots, and intelligent workflows.",
         href: "/services/ai-automation",
         bestFor: "Automation at scale",
+      },
+      {
+        title: "RAG & Knowledge",
+        description: "AI-powered knowledge retrieval that gives your team instant answers from your own documents and data.",
+        href: "/services/rag",
+        bestFor: "Knowledge management",
+      },
+      {
+        title: "Multi-LLM Orchestration",
+        description: "Use Claude, Gemini, and GPT together—routing each task to the best model for cost, speed, and quality.",
+        href: "/services/multi-llm",
+        bestFor: "AI cost & quality optimization",
       },
       {
         title: "Custom Integrations",
@@ -104,9 +122,9 @@ const decisionGuide = [
     services: ["/services/marketing-automation", "/services/sales-enablement", "/services/reporting"],
   },
   {
-    question: "Ready for advanced capabilities?",
-    recommendation: "Explore AI Automation and Custom Integrations",
-    services: ["/services/ai-automation", "/services/integrations"],
+    question: "Ready for AI-powered operations?",
+    recommendation: "Explore AI Agents, RAG & Knowledge, Multi-LLM, or AI Automation",
+    services: ["/services/ai-agents", "/services/rag", "/services/multi-llm", "/services/ai-automation"],
   },
   {
     question: "Need more traffic and conversions?",
