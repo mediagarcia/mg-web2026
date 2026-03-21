@@ -6,7 +6,7 @@ import { ScanReportPreview } from "./ScanReportPreview";
 import { ScanCTASection } from "./ScanCTASection";
 
 export const metadata: Metadata = {
-  title: "HubSpot Scan — Automated CRM Health Audits | Media Garcia",
+  title: "HubScan.Ai — Automated CRM Health Audits | Media Garcia",
   description:
     "Automated portal audits with 34 scanner modules that find issues before they become problems. Contact health, deal pipelines, workflows, integrations, reporting, and security — scanned in under 5 minutes.",
   alternates: { canonical: "/hubspot-scan" },
@@ -233,9 +233,9 @@ export default function HubSpotScanPage() {
     <>
       <PageHeader
         badge="Product"
-        title="HubSpot Scan"
+        title="HubScan.Ai"
         description="Automated CRM health audits that find what's broken, what's unused, and what's costing you money — across 34 scanner modules."
-        breadcrumbs={[{ label: "HubSpot Scan", href: "/hubspot-scan" }]}
+        breadcrumbs={[{ label: "HubScan.Ai", href: "/hubspot-scan" }]}
         backgroundImage={heroImage ? { src: heroImage, color: "teal", pattern: "arc" } : undefined}
       />
 
@@ -333,7 +333,7 @@ export default function HubSpotScanPage() {
               What a real scan report looks like
             </h2>
             <p className="text-lg text-black/60 leading-relaxed">
-              This is an anonymized preview from an actual HubSpot Scan. Every finding includes a severity
+              This is an anonymized preview from an actual HubScan.Ai report. Every finding includes a severity
               rating, a plain-language explanation, and instructions to fix it.
             </p>
           </div>
@@ -380,7 +380,7 @@ export default function HubSpotScanPage() {
               FAQ
             </span>
             <h2 className="text-3xl lg:text-4xl font-black text-black mb-4">
-              Common questions about HubSpot Scan
+              Common questions about HubScan.Ai
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl">

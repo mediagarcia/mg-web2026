@@ -93,7 +93,7 @@ export function ScanCTASection() {
           <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-2xl">
             <ContactForm
               defaultInquiry="Service Request"
-              defaultMessage="I'd like to request a HubSpot Scan for my portal."
+              defaultMessage="I'd like to request a HubScan.Ai audit for my portal."
             />
           </div>
         </div>
