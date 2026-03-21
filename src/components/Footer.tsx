@@ -12,6 +12,10 @@ const footerLinks = {
     { label: "CRM Migration", href: "/services/crm-migration" },
     { label: "Reporting", href: "/services/reporting" },
     { label: "AI Automation", href: "/services/ai-automation" },
+    { label: "AI Agents", href: "/services/ai-agents" },
+    { label: "RAG & Knowledge", href: "/services/rag" },
+    { label: "Multi-LLM", href: "/services/multi-llm" },
+    { label: "HubScan.Ai", href: "/hubspot-scan" },
     { label: "Development", href: "/services/development" },
   ],
   company: [

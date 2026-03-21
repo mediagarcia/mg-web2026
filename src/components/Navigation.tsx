@@ -27,6 +27,9 @@ import {
   Sparkles,
   Calculator,
   DollarSign,
+  BrainCircuit,
+  Network,
+  ScanSearch,
   type LucideIcon,
 } from "lucide-react";
 
@@ -55,8 +58,15 @@ const crmServices: MenuItem[] = [
   { label: "Custom Integrations", href: "/services/integrations", description: "Connect your tech stack", icon: Puzzle },
 ];
 
-const additionalServices: MenuItem[] = [
+const aiServices: MenuItem[] = [
   { label: "AI Automation", href: "/services/ai-automation", description: "Intelligent workflow automation", icon: Bot },
+  { label: "AI Agents", href: "/services/ai-agents", description: "Autonomous agents for HubSpot", icon: BrainCircuit },
+  { label: "RAG & Knowledge", href: "/services/rag", description: "AI-powered knowledge systems", icon: BookOpen },
+  { label: "Multi-LLM", href: "/services/multi-llm", description: "Multi-model orchestration", icon: Network },
+  { label: "HubScan.Ai", href: "/hubspot-scan", description: "Automated CRM health audits", icon: ScanSearch },
+];
+
+const additionalServices: MenuItem[] = [
   { label: "Development", href: "/services/development", description: "Custom software solutions", icon: Code },
   { label: "Marketing", href: "/services/marketing", description: "Strategic marketing services", icon: Megaphone },
 ];
@@ -131,12 +141,17 @@ function ServicesMegaMenu({ onClose }: { onClose: () => void }) {
         </div>
       </div>
 
-      {/* Additional Services */}
+      {/* AI & Innovation */}
       <div>
         <h3 className="text-xs font-bold uppercase tracking-wider text-teal-600 mb-4">
-          Additional Services
+          AI & Innovation
         </h3>
         <div className="space-y-1">
+          {aiServices.map((item) => (
+            <MenuLink key={item.href} item={item} onClose={onClose} />
+          ))}
+        </div>
+        <div className="border-t border-gray-100 mt-3 pt-3">
           {additionalServices.map((item) => (
             <MenuLink key={item.href} item={item} onClose={onClose} />
           ))}
@@ -431,6 +446,7 @@ export function Navigation() {
                     onClose={() => setIsMobileMenuOpen(false)}
                   >
                     <MobileMenuCategory title="CRM & RevOps" items={crmServices} onClose={() => setIsMobileMenuOpen(false)} />
+                    <MobileMenuCategory title="AI & Innovation" items={aiServices} onClose={() => setIsMobileMenuOpen(false)} />
                     <MobileMenuCategory title="Additional Services" items={additionalServices} onClose={() => setIsMobileMenuOpen(false)} />
                   </MobileMenuSection>
 
