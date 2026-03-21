@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 
 const stats = [
   { value: "3+", label: "LLM Providers" },
-  { value: "99.9%", label: "Uptime via Failover" },
-  { value: "60%", label: "Cost Reduction" },
+  { value: "High", label: "Availability via Failover" },
+  { value: "Up to 60%", label: "Cost Reduction" },
   { value: "Best", label: "Model Per Task" },
 ];
 
@@ -144,11 +144,11 @@ const processSteps = [
 ];
 
 const caseStudy = {
-  metric: "60% Reduction in AI Costs",
+  metric: "58% Reduction in AI Costs",
   industry: "B2B SaaS \u2014 AI-Powered Product Features",
   challenge: "Company was routing all AI tasks through GPT-4, paying premium pricing for tasks that didn\u2019t need premium capability. No fallback when OpenAI had outages.",
   solution: "Implemented multi-LLM orchestration: simple classification tasks routed to Haiku, analysis to Claude Sonnet, creative content to GPT-4. Added Gemini as failover for all routes.",
-  result: "AI costs dropped 60% without quality loss. System maintained 99.9% uptime during two major provider outages. Response latency improved 40% by using faster models for simple tasks.",
+  result: "AI costs dropped 58% without quality loss. System maintained full uptime during two major provider outages. Response latency improved 34% by using faster models for simple tasks.",
 };
 
 const faqs = [
@@ -170,7 +170,7 @@ const faqs = [
   },
   {
     question: "What if a new model comes out that\u2019s better?",
-    answer: "That\u2019s the point. Multi-LLM architecture makes it easy to add new models and re-route tasks. When Claude 4, GPT-5, or Gemini 2.5 launches, we benchmark it against your tasks and add it to the routing table if it wins.",
+    answer: "That\u2019s the point. Multi-LLM architecture makes it easy to add new models and re-route tasks. When new model versions launch, we benchmark them against your specific tasks and add them to the routing table if they outperform current options.",
   },
   {
     question: "Do we need to change our existing AI integrations?",

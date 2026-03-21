@@ -1,7 +1,9 @@
 import { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
-import Link from "next/link";
-import { GradientOrb, MeshBackground, FadingGridPattern } from "@/components/ui/visuals";
+import { GradientOrb, FadingGridPattern } from "@/components/ui/visuals";
+import { getImageForSlot } from "@/lib/images/get-image-for-slot";
+import { ScanReportPreview } from "./ScanReportPreview";
+import { ScanCTASection } from "./ScanCTASection";
 
 export const metadata: Metadata = {
   title: "HubSpot Scan — Automated CRM Health Audits | Media Garcia",
@@ -143,33 +145,6 @@ const processSteps = [
   },
 ];
 
-const sampleFindings = [
-  {
-    severity: "Critical",
-    color: "red",
-    message:
-      "847 contacts with no lifecycle stage assigned — these contacts are invisible to your automation",
-  },
-  {
-    severity: "Warning",
-    color: "amber",
-    message:
-      "12 workflows with enrollment conflicts — contacts may be receiving duplicate or contradictory sequences",
-  },
-  {
-    severity: "Info",
-    color: "blue",
-    message:
-      "38% of deal properties have never been used — consider archiving to reduce clutter",
-  },
-  {
-    severity: "Critical",
-    color: "red",
-    message:
-      "3 integrations showing sync errors in the last 7 days — data is not flowing correctly",
-  },
-];
-
 const audiences = [
   {
     title: "RevOps Teams",
@@ -181,7 +156,7 @@ const audiences = [
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={1.5}
-          d="M11.42 15.17l-5.1-3.26a.75.75 0 010-1.28l5.1-3.26a.75.75 0 011.08.67v6.46a.75.75 0 01-1.08.67zM19.42 15.17l-5.1-3.26a.75.75 0 010-1.28l5.1-3.26a.75.75 0 011.08.67v6.46a.75.75 0 01-1.08.67z"
+          d="M11.42 15.17l-5.1-5.1m0 0L11.42 4.97m-5.1 5.1H21M3 21h18"
         />
       </svg>
     ),
@@ -218,7 +193,42 @@ const audiences = [
   },
 ];
 
+const faqs = [
+  {
+    question: "What access level does the scan require?",
+    answer:
+      "We request read-only OAuth access to your HubSpot portal. The scan never writes, modifies, or deletes any data. Access is scoped to the specific APIs needed for each scanner module.",
+  },
+  {
+    question: "How is my data protected?",
+    answer:
+      "Scan data is processed in memory and never stored on our servers beyond the report generation window. Reports are delivered directly to you. We do not retain portal data after the scan completes.",
+  },
+  {
+    question: "Is access revoked after the scan?",
+    answer:
+      "You can revoke access at any time from your HubSpot Settings > Integrations > Connected Apps. We recommend revoking after you receive your report if you don\u2019t plan to run recurring scans.",
+  },
+  {
+    question: "How is the report delivered?",
+    answer:
+      "You receive a detailed report with findings organized by category and severity. Each finding includes a plain-language explanation, fix instructions, and estimated effort level.",
+  },
+  {
+    question: "How often should I run a scan?",
+    answer:
+      "We recommend scanning quarterly, or after major changes like migrations, new integrations, or team restructuring. CRM health drifts over time as teams add properties, workflows, and automations.",
+  },
+  {
+    question: "Does it work with any HubSpot plan?",
+    answer:
+      "Yes. The scan works with Free, Starter, Professional, and Enterprise plans. Some scanner modules surface additional findings for Professional and Enterprise features like workflows and custom reporting.",
+  },
+];
+
 export default function HubSpotScanPage() {
+  const heroImage = getImageForSlot("hubspot-scan-hero");
+
   return (
     <>
       <PageHeader
@@ -226,6 +236,7 @@ export default function HubSpotScanPage() {
         title="HubSpot Scan"
         description="Automated CRM health audits that find what's broken, what's unused, and what's costing you money — across 34 scanner modules."
         breadcrumbs={[{ label: "HubSpot Scan", href: "/hubspot-scan" }]}
+        backgroundImage={heroImage ? { src: heroImage, color: "teal", pattern: "arc" } : undefined}
       />
 
       {/* Hero Stats Bar */}
@@ -310,61 +321,24 @@ export default function HubSpotScanPage() {
         </div>
       </section>
 
-      {/* Sample Findings */}
-      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+      {/* Sample Report Preview */}
+      <section id="report-preview" className="py-20 lg:py-32 bg-white relative overflow-hidden">
         <FadingGridPattern type="dots" color="gray" opacity={0.06} spacing={32} fadeDirection="both" />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
-              Sample Findings
+              Sample Report
             </span>
             <h2 className="text-3xl lg:text-4xl font-black text-black mb-4">
-              What a real scan looks like
+              What a real scan report looks like
             </h2>
             <p className="text-lg text-black/60 leading-relaxed">
-              These are anonymized findings from an actual HubSpot Scan. Every finding includes a severity
+              This is an anonymized preview from an actual HubSpot Scan. Every finding includes a severity
               rating, a plain-language explanation, and instructions to fix it.
             </p>
           </div>
 
-          <div className="space-y-4 max-w-4xl">
-            {sampleFindings.map((finding) => {
-              const severityColors: Record<string, { bg: string; border: string; badge: string; text: string }> = {
-                red: {
-                  bg: "bg-red-50",
-                  border: "border-red-200",
-                  badge: "bg-red-500",
-                  text: "text-red-800",
-                },
-                amber: {
-                  bg: "bg-amber-50",
-                  border: "border-amber-200",
-                  badge: "bg-amber-500",
-                  text: "text-amber-800",
-                },
-                blue: {
-                  bg: "bg-blue-50",
-                  border: "border-blue-200",
-                  badge: "bg-blue-500",
-                  text: "text-blue-800",
-                },
-              };
-              const colors = severityColors[finding.color];
-              return (
-                <div
-                  key={finding.message}
-                  className={`${colors.bg} border ${colors.border} rounded-2xl p-6 flex items-start gap-4`}
-                >
-                  <span
-                    className={`${colors.badge} text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full shrink-0`}
-                  >
-                    {finding.severity}
-                  </span>
-                  <p className={`${colors.text} leading-relaxed`}>{finding.message}</p>
-                </div>
-              );
-            })}
-          </div>
+          <ScanReportPreview />
         </div>
       </section>
 
@@ -398,36 +372,30 @@ export default function HubSpotScanPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 lg:py-32 bg-black relative overflow-hidden">
-        <MeshBackground />
-        <GradientOrb color="teal" size="xl" className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20" intensity="subtle" blur="xl" />
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative text-center">
-          <h2 className="text-3xl lg:text-5xl font-black text-white mb-6">
-            Ready to scan your portal?
-          </h2>
-          <p className="text-lg lg:text-xl text-white/60 leading-relaxed max-w-2xl mx-auto mb-10">
-            Get a complete CRM health audit in under 5 minutes. No code, no consultants, no guesswork.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-teal-500 text-white font-bold rounded-xl hover:bg-teal-600 transition-colors text-lg"
-            >
-              Request a Scan
-            </Link>
-            <Link
-              href="/contact?subject=sample-report"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/20 text-white font-bold rounded-xl hover:border-white/40 transition-colors text-lg"
-            >
-              See Sample Report
-            </Link>
+      {/* FAQ Section */}
+      <section className="py-20 lg:py-32 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="max-w-3xl mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
+              FAQ
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-black text-black mb-4">
+              Common questions about HubSpot Scan
+            </h2>
           </div>
-          <p className="text-white/40 text-sm">
-            Read-only access. We never modify your data.
-          </p>
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl">
+            {faqs.map((faq) => (
+              <div key={faq.question}>
+                <h3 className="text-lg font-bold text-black mb-2">{faq.question}</h3>
+                <p className="text-black/60 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* CTA Section with embedded form */}
+      <ScanCTASection />
     </>
   );
 }

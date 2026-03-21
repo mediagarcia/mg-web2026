@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-03-13T08:10:37.390Z",
+  "lastUpdated": "2026-03-21T00:57:05.611Z",
   "slots": {
     "hero": {
       "slot": "hero",
@@ -2198,6 +2198,298 @@
       ],
       "selected": "results-bg-001.png",
       "selectedPath": "/images/selected/results-bg.png"
+    },
+    "services/ai-agents": {
+      "slot": "services/ai-agents",
+      "prompt": "Macro photograph of precision clockwork gears interlocking with glowing blue circuit traces, metaphor for autonomous agents working in harmony. Dark background, teal rim lighting, shallow depth of field. Gallery-quality fine art.",
+      "model": "gemini-2.5-flash-image",
+      "aspect": "16:9",
+      "createdAt": "2026-03-21T00:03:29.406Z",
+      "updatedAt": "2026-03-21T00:56:45.155Z",
+      "files": [
+        {
+          "filename": "services-ai-agents-001.png",
+          "path": "/images/generated/services-ai-agents/services-ai-agents-001.png",
+          "generatedAt": "2026-03-21T00:03:35.217Z"
+        },
+        {
+          "filename": "services-ai-agents-002.png",
+          "path": "/images/generated/services-ai-agents/services-ai-agents-002.png",
+          "generatedAt": "2026-03-21T00:03:40.721Z"
+        },
+        {
+          "filename": "services-ai-agents-003.png",
+          "path": "/images/generated/services-ai-agents/services-ai-agents-003.png",
+          "generatedAt": "2026-03-21T00:03:46.610Z"
+        }
+      ],
+      "selected": "services-ai-agents-003.png",
+      "selectedPath": "/images/selected/services-ai-agents.png"
+    },
+    "services/ai-agents-pain": {
+      "slot": "services/ai-agents-pain",
+      "prompt": "Overhead editorial photo of office desk overwhelmed with sticky notes, multiple browser tabs on screen, coffee cup, metaphor for manual repetitive CRM work. Warm tungsten lighting, shallow focus.",
+      "model": "gemini-2.5-flash-image",
+      "aspect": "16:9",
+      "createdAt": "2026-03-21T00:03:53.386Z",
+      "updatedAt": "2026-03-21T00:56:31.249Z",
+      "files": [
+        {
+          "filename": "services-ai-agents-pain-001.png",
+          "path": "/images/generated/services-ai-agents-pain/services-ai-agents-pain-001.png",
+          "generatedAt": "2026-03-21T00:03:58.597Z"
+        },
+        {
+          "filename": "services-ai-agents-pain-002.png",
+          "path": "/images/generated/services-ai-agents-pain/services-ai-agents-pain-002.png",
+          "generatedAt": "2026-03-21T00:04:04.240Z"
+        },
+        {
+          "filename": "services-ai-agents-pain-003.png",
+          "path": "/images/generated/services-ai-agents-pain/services-ai-agents-pain-003.png",
+          "generatedAt": "2026-03-21T00:04:10.938Z"
+        }
+      ],
+      "selected": "services-ai-agents-pain-002.png",
+      "selectedPath": "/images/selected/services-ai-agents-pain.png"
+    },
+    "services/ai-agents-case": {
+      "slot": "services/ai-agents-case",
+      "prompt": "Modern open-plan office, team reviewing clean dashboard on large monitor showing upward metrics. Natural light, candid documentary style.",
+      "model": "gemini-2.5-flash-image",
+      "aspect": "16:9",
+      "createdAt": "2026-03-21T00:04:16.598Z",
+      "updatedAt": "2026-03-21T00:56:39.506Z",
+      "files": [
+        {
+          "filename": "services-ai-agents-case-001.png",
+          "path": "/images/generated/services-ai-agents-case/services-ai-agents-case-001.png",
+          "generatedAt": "2026-03-21T00:04:22.221Z"
+        },
+        {
+          "filename": "services-ai-agents-case-002.png",
+          "path": "/images/generated/services-ai-agents-case/services-ai-agents-case-002.png",
+          "generatedAt": "2026-03-21T00:04:28.068Z"
+        },
+        {
+          "filename": "services-ai-agents-case-003.png",
+          "path": "/images/generated/services-ai-agents-case/services-ai-agents-case-003.png",
+          "generatedAt": "2026-03-21T00:04:34.562Z"
+        }
+      ],
+      "selected": "services-ai-agents-case-002.png",
+      "selectedPath": "/images/selected/services-ai-agents-case.png"
+    },
+    "services/rag": {
+      "slot": "services/rag",
+      "prompt": "Fine art macro of fiber optic cables converging into a luminous sphere, metaphor for knowledge retrieval. Dark moody background, teal and purple light painting. Ethereal, cinematic.",
+      "model": "gemini-2.5-flash-image",
+      "aspect": "16:9",
+      "createdAt": "2026-03-21T00:04:41.788Z",
+      "updatedAt": "2026-03-21T00:55:37.869Z",
+      "files": [
+        {
+          "filename": "services-rag-001.png",
+          "path": "/images/generated/services-rag/services-rag-001.png",
+          "generatedAt": "2026-03-21T00:04:47.776Z"
+        },
+        {
+          "filename": "services-rag-002.png",
+          "path": "/images/generated/services-rag/services-rag-002.png",
+          "generatedAt": "2026-03-21T00:04:53.204Z"
+        },
+        {
+          "filename": "services-rag-003.png",
+          "path": "/images/generated/services-rag/services-rag-003.png",
+          "generatedAt": "2026-03-21T00:04:59.189Z"
+        }
+      ],
+      "selected": "services-rag-002.png",
+      "selectedPath": "/images/selected/services-rag.png"
+    },
+    "services/rag-pain": {
+      "slot": "services/rag-pain",
+      "prompt": "Editorial photo of person searching through stacked binders and folders in office, overwhelmed expression, metaphor for trapped knowledge in silos. Warm overhead lighting.",
+      "model": "gemini-2.5-flash-image",
+      "aspect": "16:9",
+      "createdAt": "2026-03-21T00:05:06.926Z",
+      "updatedAt": "2026-03-21T00:55:10.604Z",
+      "files": [
+        {
+          "filename": "services-rag-pain-001.png",
+          "path": "/images/generated/services-rag-pain/services-rag-pain-001.png",
+          "generatedAt": "2026-03-21T00:05:14.371Z"
+        },
+        {
+          "filename": "services-rag-pain-002.png",
+          "path": "/images/generated/services-rag-pain/services-rag-pain-002.png",
+          "generatedAt": "2026-03-21T00:05:20.647Z"
+        },
+        {
+          "filename": "services-rag-pain-003.png",
+          "path": "/images/generated/services-rag-pain/services-rag-pain-003.png",
+          "generatedAt": "2026-03-21T00:05:27.105Z"
+        }
+      ],
+      "selected": "services-rag-pain-003.png",
+      "selectedPath": "/images/selected/services-rag-pain.png"
+    },
+    "services/rag-case": {
+      "slot": "services/rag-case",
+      "prompt": "Clean modern support dashboard on screen showing dramatically reduced ticket queue, green metrics. Soft office ambient lighting, shallow focus on screen.",
+      "model": "gemini-2.5-flash-image",
+      "aspect": "16:9",
+      "createdAt": "2026-03-21T00:05:32.505Z",
+      "updatedAt": "2026-03-21T00:55:30.271Z",
+      "files": [
+        {
+          "filename": "services-rag-case-001.png",
+          "path": "/images/generated/services-rag-case/services-rag-case-001.png",
+          "generatedAt": "2026-03-21T00:05:40.327Z"
+        },
+        {
+          "filename": "services-rag-case-002.png",
+          "path": "/images/generated/services-rag-case/services-rag-case-002.png",
+          "generatedAt": "2026-03-21T00:05:46.007Z"
+        },
+        {
+          "filename": "services-rag-case-003.png",
+          "path": "/images/generated/services-rag-case/services-rag-case-003.png",
+          "generatedAt": "2026-03-21T00:05:51.803Z"
+        }
+      ],
+      "selected": "services-rag-case-002.png",
+      "selectedPath": "/images/selected/services-rag-case.png"
+    },
+    "services/multi-llm": {
+      "slot": "services/multi-llm",
+      "prompt": "Abstract fine art of three luminous neural-network orbs (warm orange, cool blue, emerald green) connected by orchestration pathways against deep black. Cinematic, high contrast.",
+      "model": "gemini-2.5-flash-image",
+      "aspect": "16:9",
+      "createdAt": "2026-03-21T00:06:00.460Z",
+      "updatedAt": "2026-03-21T00:56:07.574Z",
+      "files": [
+        {
+          "filename": "services-multi-llm-001.png",
+          "path": "/images/generated/services-multi-llm/services-multi-llm-001.png",
+          "generatedAt": "2026-03-21T00:06:05.926Z"
+        },
+        {
+          "filename": "services-multi-llm-002.png",
+          "path": "/images/generated/services-multi-llm/services-multi-llm-002.png",
+          "generatedAt": "2026-03-21T00:06:11.706Z"
+        },
+        {
+          "filename": "services-multi-llm-003.png",
+          "path": "/images/generated/services-multi-llm/services-multi-llm-003.png",
+          "generatedAt": "2026-03-21T00:06:19.117Z"
+        }
+      ],
+      "selected": "services-multi-llm-003.png",
+      "selectedPath": "/images/selected/services-multi-llm.png"
+    },
+    "services/multi-llm-pain": {
+      "slot": "services/multi-llm-pain",
+      "prompt": "Dramatic photo of single server rack with one blinking red warning LED in dark server room. Moody, metaphor for single point of failure. Cool blue ambient light.",
+      "model": "gemini-2.5-flash-image",
+      "aspect": "16:9",
+      "createdAt": "2026-03-21T00:06:33.695Z",
+      "updatedAt": "2026-03-21T00:55:49.188Z",
+      "files": [
+        {
+          "filename": "services-multi-llm-pain-001.png",
+          "path": "/images/generated/services-multi-llm-pain/services-multi-llm-pain-001.png",
+          "generatedAt": "2026-03-21T00:06:40.685Z"
+        },
+        {
+          "filename": "services-multi-llm-pain-002.png",
+          "path": "/images/generated/services-multi-llm-pain/services-multi-llm-pain-002.png",
+          "generatedAt": "2026-03-21T00:06:45.974Z"
+        },
+        {
+          "filename": "services-multi-llm-pain-003.png",
+          "path": "/images/generated/services-multi-llm-pain/services-multi-llm-pain-003.png",
+          "generatedAt": "2026-03-21T00:06:51.220Z"
+        }
+      ],
+      "selected": "services-multi-llm-pain-002.png",
+      "selectedPath": "/images/selected/services-multi-llm-pain.png"
+    },
+    "services/multi-llm-case": {
+      "slot": "services/multi-llm-case",
+      "prompt": "Analytics dashboard on ultrawide monitor showing cost trend declining while quality line stays flat. Clean modern desk, ambient office lighting.",
+      "model": "gemini-2.5-flash-image",
+      "aspect": "16:9",
+      "createdAt": "2026-03-21T00:06:56.559Z",
+      "updatedAt": "2026-03-21T00:56:02.931Z",
+      "files": [
+        {
+          "filename": "services-multi-llm-case-001.png",
+          "path": "/images/generated/services-multi-llm-case/services-multi-llm-case-001.png",
+          "generatedAt": "2026-03-21T00:07:02.321Z"
+        },
+        {
+          "filename": "services-multi-llm-case-002.png",
+          "path": "/images/generated/services-multi-llm-case/services-multi-llm-case-002.png",
+          "generatedAt": "2026-03-21T00:07:08.244Z"
+        },
+        {
+          "filename": "services-multi-llm-case-003.png",
+          "path": "/images/generated/services-multi-llm-case/services-multi-llm-case-003.png",
+          "generatedAt": "2026-03-21T00:07:13.495Z"
+        }
+      ],
+      "selected": "services-multi-llm-case-002.png",
+      "selectedPath": "/images/selected/services-multi-llm-case.png"
+    },
+    "hubspot-scan-hero": {
+      "slot": "hubspot-scan-hero",
+      "prompt": "Isometric technical illustration of a CRM database being examined by a glowing teal scanner beam, revealing checkmarks and warning icons in data layers. Dark background, clean geometric style.",
+      "model": "gemini-2.5-flash-image",
+      "aspect": "16:9",
+      "createdAt": "2026-03-21T00:07:25.702Z",
+      "updatedAt": "2026-03-21T00:57:05.611Z",
+      "files": [
+        {
+          "filename": "hubspot-scan-hero-002.png",
+          "path": "/images/generated/hubspot-scan-hero/hubspot-scan-hero-002.png",
+          "generatedAt": "2026-03-21T00:07:33.128Z"
+        },
+        {
+          "filename": "hubspot-scan-hero-003.png",
+          "path": "/images/generated/hubspot-scan-hero/hubspot-scan-hero-003.png",
+          "generatedAt": "2026-03-21T00:07:39.733Z"
+        }
+      ],
+      "selected": "hubspot-scan-hero-002.png",
+      "selectedPath": "/images/selected/hubspot-scan-hero.png"
+    },
+    "hubspot-scan-report": {
+      "slot": "hubspot-scan-report",
+      "prompt": "Professional audit report dashboard with severity badges in red yellow and green, progress bars, health scores, and category breakdowns. Dark theme with teal accents, clean data visualization aesthetic.",
+      "model": "gemini-2.5-flash-image",
+      "aspect": "16:9",
+      "createdAt": "2026-03-21T00:07:45.704Z",
+      "updatedAt": "2026-03-21T00:56:58.654Z",
+      "files": [
+        {
+          "filename": "hubspot-scan-report-001.png",
+          "path": "/images/generated/hubspot-scan-report/hubspot-scan-report-001.png",
+          "generatedAt": "2026-03-21T00:07:52.596Z"
+        },
+        {
+          "filename": "hubspot-scan-report-002.png",
+          "path": "/images/generated/hubspot-scan-report/hubspot-scan-report-002.png",
+          "generatedAt": "2026-03-21T00:07:59.429Z"
+        },
+        {
+          "filename": "hubspot-scan-report-003.png",
+          "path": "/images/generated/hubspot-scan-report/hubspot-scan-report-003.png",
+          "generatedAt": "2026-03-21T00:08:05.576Z"
+        }
+      ],
+      "selected": "hubspot-scan-report-001.png",
+      "selectedPath": "/images/selected/hubspot-scan-report.png"
     }
   }
 }

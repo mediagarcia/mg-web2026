@@ -108,11 +108,11 @@ const processSteps = [
 ];
 
 const caseStudy = {
-  metric: "12 Hours Saved Per Rep Per Week",
-  industry: "B2B SaaS — 15-Person Sales Team",
+  metric: "11.5 Hours Saved Per Rep Per Week",
+  industry: "B2B SaaS — 14-Person Sales Team",
   challenge: "Reps spent 2+ hours daily on manual CRM updates, meeting prep, and lead research.",
   solution: "Deployed 3 agents: Meeting Prep, Data Enrichment, and Deal Assistance. Agents run on every contact update and deal stage change.",
-  result: "Reps reclaimed 12 hours/week. CRM data completeness went from 45% to 92%. Pipeline velocity increased 28%.",
+  result: "Reps reclaimed 11.5 hours/week. CRM data completeness went from 48% to 91%. Pipeline velocity increased 23%.",
 };
 
 const faqs = [
