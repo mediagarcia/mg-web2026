@@ -18,14 +18,20 @@ const INQUIRY_OPTIONS = [
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export function ContactForm() {
+export function ContactForm({
+  defaultInquiry = "",
+  defaultMessage = "",
+}: {
+  defaultInquiry?: string;
+  defaultMessage?: string;
+} = {}) {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [company, setCompany] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [inquiryType, setInquiryType] = useState("");
-  const [message, setMessage] = useState("");
+  const [inquiryType, setInquiryType] = useState(defaultInquiry);
+  const [message, setMessage] = useState(defaultMessage);
   const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
