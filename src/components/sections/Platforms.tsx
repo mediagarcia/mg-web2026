@@ -47,7 +47,7 @@ export function Platforms() {
             transition={{ delay: 0.2 }}
             className="text-lg text-black/60 leading-relaxed"
           >
-            From CRM to ERP, we integrate across 15+ platforms to keep your
+            From CRM to AI, we integrate across 20+ platforms to keep your
             revenue stack running as one system.
           </motion.p>
         </div>

@@ -5,7 +5,8 @@ export type PlatformCategory =
   | "Sales Engagement"
   | "Automation & iPaaS"
   | "Data & Intelligence"
-  | "ERP & Finance";
+  | "ERP & Finance"
+  | "AI & LLM";
 
 export type PlatformTier = "Primary" | "Supporting" | "Connector";
 
@@ -188,6 +189,58 @@ export const platforms: Platform[] = [
     description:
       "Accounting and ERP integration with bi-directional data flow.",
   },
+
+  // AI & LLM
+  {
+    id: "claude",
+    name: "Claude",
+    category: "AI & LLM",
+    tier: "Primary",
+    relationship: "We build with",
+    brandColor: "#d97757",
+    description:
+      "Long-form analysis, complex reasoning, and safety-critical AI tasks.",
+  },
+  {
+    id: "gemini",
+    name: "Gemini",
+    category: "AI & LLM",
+    tier: "Supporting",
+    relationship: "We build with",
+    brandColor: "#4285f4",
+    description:
+      "Multi-modal AI for data analysis, structured extraction, and image generation.",
+  },
+  {
+    id: "openai",
+    name: "GPT",
+    category: "AI & LLM",
+    tier: "Supporting",
+    relationship: "We build with",
+    brandColor: "#10a37f",
+    description:
+      "Creative content, conversational AI, and code generation.",
+  },
+  {
+    id: "openclaw",
+    name: "OpenClaw",
+    category: "AI & LLM",
+    tier: "Supporting",
+    relationship: "We deploy with",
+    brandColor: "#e74c3c",
+    description:
+      "Open-source autonomous AI agent framework for local-first deployments.",
+  },
+  {
+    id: "nemoclaw",
+    name: "NemoClaw",
+    category: "AI & LLM",
+    tier: "Supporting",
+    relationship: "We secure with",
+    brandColor: "#76b900",
+    description:
+      "NVIDIA enterprise security and sandboxing layer for AI agents.",
+  },
 ];
 
 // ── Category Metadata ──────────────────────────────────────────────────
@@ -217,6 +270,11 @@ export const categories: CategoryMeta[] = [
     label: "ERP & Finance",
     icon: "erp",
     description: "Back-office systems we bridge to your revenue stack",
+  },
+  {
+    label: "AI & LLM",
+    icon: "ai",
+    description: "AI models and agent frameworks we build intelligent systems with",
   },
 ];
 
