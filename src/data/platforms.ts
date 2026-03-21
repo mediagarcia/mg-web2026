@@ -40,7 +40,7 @@ export interface IntegrationApproach {
 // ── Platform Data ──────────────────────────────────────────────────────
 
 export const platforms: Platform[] = [
-  // CRM & Sales
+  // CRM & Sales — HubSpot always leads
   {
     id: "hubspot",
     name: "HubSpot",
@@ -51,6 +51,60 @@ export const platforms: Platform[] = [
     description:
       "Our core platform — we build, migrate, and optimize across every Hub.",
   },
+
+  // AI & LLM — complex, cutting-edge
+  {
+    id: "claude",
+    name: "Claude",
+    category: "AI & LLM",
+    tier: "Primary",
+    relationship: "We build with",
+    brandColor: "#d97757",
+    description:
+      "Long-form analysis, complex reasoning, and safety-critical AI tasks.",
+  },
+  {
+    id: "gemini",
+    name: "Gemini",
+    category: "AI & LLM",
+    tier: "Supporting",
+    relationship: "We build with",
+    brandColor: "#4285f4",
+    description:
+      "Multi-modal AI for data analysis, structured extraction, and image generation.",
+  },
+  {
+    id: "openai",
+    name: "GPT",
+    category: "AI & LLM",
+    tier: "Supporting",
+    relationship: "We build with",
+    brandColor: "#10a37f",
+    description:
+      "Creative content, conversational AI, and code generation.",
+  },
+  {
+    id: "openclaw",
+    name: "OpenClaw",
+    category: "AI & LLM",
+    tier: "Supporting",
+    relationship: "We deploy with",
+    brandColor: "#e74c3c",
+    description:
+      "Open-source autonomous AI agent framework for local-first deployments.",
+  },
+  {
+    id: "nemoclaw",
+    name: "NemoClaw",
+    category: "AI & LLM",
+    tier: "Supporting",
+    relationship: "We secure with",
+    brandColor: "#76b900",
+    description:
+      "NVIDIA enterprise security and sandboxing layer for AI agents.",
+  },
+
+  // CRM & Sales
   {
     id: "salesforce",
     name: "Salesforce",
@@ -60,6 +114,48 @@ export const platforms: Platform[] = [
     brandColor: "#00a1e0",
     description:
       "Full migration and bi-directional sync expertise with HubSpot.",
+  },
+
+  // Data & Intelligence
+  {
+    id: "clay",
+    name: "Clay",
+    category: "Data & Intelligence",
+    tier: "Supporting",
+    relationship: "We enrich with",
+    brandColor: "#2d2d2d",
+    description:
+      "Waterfall data enrichment to supercharge prospecting lists.",
+  },
+  {
+    id: "zoominfo",
+    name: "ZoomInfo",
+    category: "Data & Intelligence",
+    tier: "Supporting",
+    relationship: "We enrich with",
+    brandColor: "#21b573",
+    description:
+      "B2B intent data and contact intelligence piped into your CRM.",
+  },
+  {
+    id: "powerbi",
+    name: "Power BI",
+    category: "Data & Intelligence",
+    tier: "Supporting",
+    relationship: "We report with",
+    brandColor: "#f2c811",
+    description:
+      "Advanced dashboards connecting CRM data to business KPIs.",
+  },
+  {
+    id: "databox",
+    name: "Databox",
+    category: "Data & Intelligence",
+    tier: "Supporting",
+    relationship: "We report with",
+    brandColor: "#29b6f6",
+    description:
+      "Real-time performance dashboards for marketing and sales.",
   },
 
   // Sales Engagement
@@ -126,48 +222,6 @@ export const platforms: Platform[] = [
       "Enterprise iPaaS for mission-critical process automation.",
   },
 
-  // Data & Intelligence
-  {
-    id: "clay",
-    name: "Clay",
-    category: "Data & Intelligence",
-    tier: "Supporting",
-    relationship: "We enrich with",
-    brandColor: "#2d2d2d",
-    description:
-      "Waterfall data enrichment to supercharge prospecting lists.",
-  },
-  {
-    id: "zoominfo",
-    name: "ZoomInfo",
-    category: "Data & Intelligence",
-    tier: "Supporting",
-    relationship: "We enrich with",
-    brandColor: "#21b573",
-    description:
-      "B2B intent data and contact intelligence piped into your CRM.",
-  },
-  {
-    id: "powerbi",
-    name: "Power BI",
-    category: "Data & Intelligence",
-    tier: "Supporting",
-    relationship: "We report with",
-    brandColor: "#f2c811",
-    description:
-      "Advanced dashboards connecting CRM data to business KPIs.",
-  },
-  {
-    id: "databox",
-    name: "Databox",
-    category: "Data & Intelligence",
-    tier: "Supporting",
-    relationship: "We report with",
-    brandColor: "#29b6f6",
-    description:
-      "Real-time performance dashboards for marketing and sales.",
-  },
-
   // ERP & Finance
   {
     id: "netsuite",
@@ -188,58 +242,6 @@ export const platforms: Platform[] = [
     brandColor: "#00dc00",
     description:
       "Accounting and ERP integration with bi-directional data flow.",
-  },
-
-  // AI & LLM
-  {
-    id: "claude",
-    name: "Claude",
-    category: "AI & LLM",
-    tier: "Primary",
-    relationship: "We build with",
-    brandColor: "#d97757",
-    description:
-      "Long-form analysis, complex reasoning, and safety-critical AI tasks.",
-  },
-  {
-    id: "gemini",
-    name: "Gemini",
-    category: "AI & LLM",
-    tier: "Supporting",
-    relationship: "We build with",
-    brandColor: "#4285f4",
-    description:
-      "Multi-modal AI for data analysis, structured extraction, and image generation.",
-  },
-  {
-    id: "openai",
-    name: "GPT",
-    category: "AI & LLM",
-    tier: "Supporting",
-    relationship: "We build with",
-    brandColor: "#10a37f",
-    description:
-      "Creative content, conversational AI, and code generation.",
-  },
-  {
-    id: "openclaw",
-    name: "OpenClaw",
-    category: "AI & LLM",
-    tier: "Supporting",
-    relationship: "We deploy with",
-    brandColor: "#e74c3c",
-    description:
-      "Open-source autonomous AI agent framework for local-first deployments.",
-  },
-  {
-    id: "nemoclaw",
-    name: "NemoClaw",
-    category: "AI & LLM",
-    tier: "Supporting",
-    relationship: "We secure with",
-    brandColor: "#76b900",
-    description:
-      "NVIDIA enterprise security and sandboxing layer for AI agents.",
   },
 ];
 
