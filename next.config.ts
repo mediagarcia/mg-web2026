@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withSentryConfig } from "@sentry/nextjs";
 
 // Content-Security-Policy directives
 // Enforced — verified zero violations on production (homepage, /contact, /pricing).
@@ -10,12 +11,14 @@ const cspDirectives = [
   "style-src 'self' 'unsafe-inline'",
   // Images: self + data URIs + HubSpot ecosystem + Google Analytics + own domains
   "img-src 'self' data: https://*.hubspot.com https://*.hsappstatic.net https://*.hubspot.net https://www.google-analytics.com https://www.googletagmanager.com https://mediagarcia.com https://*.mediagarcia.com https://track.hubspot.com",
-  // API connections: self + HubSpot + Google Analytics + reCAPTCHA
-  "connect-src 'self' https://*.hubspot.com https://*.hubapi.com https://*.hsforms.com https://*.hs-analytics.net https://*.hscollectedforms.net https://*.hs-banner.com https://hubspot-forms-static-embed.s3.amazonaws.com https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com",
+  // API connections: self + HubSpot + Google Analytics + reCAPTCHA + Sentry
+  "connect-src 'self' https://*.hubspot.com https://*.hubapi.com https://*.hsforms.com https://*.hs-analytics.net https://*.hscollectedforms.net https://*.hs-banner.com https://hubspot-forms-static-embed.s3.amazonaws.com https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://www.google.com https://*.ingest.us.sentry.io",
   // Frames: HubSpot meetings + reCAPTCHA + own subdomains (hub.mediagarcia.com)
   "frame-src https://app.hubspot.com https://meetings.hubspot.com https://*.hubspot.com https://*.mediagarcia.com https://www.google.com https://www.gstatic.com",
   // Fonts: self only (next/font bundles at build time)
   "font-src 'self'",
+  // Workers: Sentry session replay
+  "worker-src 'self' blob:",
   // Block all object/embed
   "object-src 'none'",
   // Restrict base URI
@@ -176,4 +179,12 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withSentryConfig(nextConfig, {
+  org: process.env.SENTRY_ORG || "media-garcia",
+  project: process.env.SENTRY_PROJECT || "mg-website",
+  authToken: process.env.SENTRY_AUTH_TOKEN,
+  silent: true,
+  sourcemaps: {
+    deleteSourcemapsAfterUpload: true,
+  },
+});
