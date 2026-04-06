@@ -6,7 +6,7 @@ import { withSentryConfig } from "@sentry/nextjs";
 const cspDirectives = [
   "default-src 'self'",
   // Scripts: self + inline (Next.js requires it) + trusted third-party CDNs
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.hsforms.net https://js.hs-scripts.com https://js.hs-analytics.net https://js.hscollectedforms.net https://js.hs-banner.com https://www.googletagmanager.com https://www.google-analytics.com https://static.hsappstatic.net https://www.google.com https://www.gstatic.com",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.hsforms.net https://js.hs-scripts.com https://js.hs-analytics.net https://js.hscollectedforms.net https://js.hs-banner.com https://js.hsadspixel.net https://js.hubspot.com https://www.googletagmanager.com https://www.google-analytics.com https://static.hsappstatic.net https://www.google.com https://www.gstatic.com",
   // Styles: self + inline (HubSpot forms inject CSS, Tailwind uses inline)
   "style-src 'self' 'unsafe-inline'",
   // Images: self + data URIs + HubSpot ecosystem + Google Analytics + own domains

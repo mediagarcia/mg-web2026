@@ -7,7 +7,7 @@ import { GradientOrb } from "@/components/ui/visuals";
 import { HubSpotMeetings } from "@/components/HubSpotMeetings";
 
 const MEETINGS_URL =
-  "https://hub.mediagarcia.com/meetings/louis3/intro";
+  "https://hub.mediagarcia.com/meetings/louis3/discovery-meeting-with-louis";
 
 const whatYouGet = [
   "Honest assessment of your current CRM and RevOps setup",
