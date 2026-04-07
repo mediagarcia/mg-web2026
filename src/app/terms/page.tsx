@@ -23,7 +23,7 @@ export default function TermsPage() {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-2xl font-bold text-black mt-0 mb-4">Agreement between User and mediagarcia.com</h2>
             <p className="text-black/70 mb-6">
-              Welcome to https://www.mediagarcia.com/. The Site is comprised of various web pages operated by Media Garcia, Inc. (&quot;Media Garcia&quot;). The site is offered conditioned on acceptance of the terms, conditions, and notices contained herein without modification. Your use constitutes agreement to all Terms. https://www.mediagarcia.com/ is a business consulting website.
+              Welcome to https://www.mediagarcia.com/. The Site is comprised of various web pages operated by Media Garcia (&quot;Media Garcia&quot;). The site is offered conditioned on acceptance of the terms, conditions, and notices contained herein without modification. Your use constitutes agreement to all Terms. https://www.mediagarcia.com/ is a business consulting website.
             </p>
 
             <h2 className="text-2xl font-bold text-black mt-12 mb-4">About Us</h2>
@@ -249,7 +249,7 @@ export default function TermsPage() {
 
             <h2 className="text-2xl font-bold text-black mt-12 mb-4">Contact Us</h2>
             <div className="bg-gray-50 rounded-xl p-6 text-black/70">
-              <p><strong>Media Garcia, Inc.</strong></p>
+              <p><strong>Media Garcia</strong></p>
               <p>Saint Paul, Minnesota, USA</p>
               <p>Email: hello@mediagarcia.com</p>
               <p>Phone: +1 888-612-4250</p>
