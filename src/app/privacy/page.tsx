@@ -23,11 +23,11 @@ export default function PrivacyPage() {
         <div className="max-w-[900px] mx-auto px-6 lg:px-12">
           <div className="prose prose-lg max-w-none">
             <p className="text-black/70 mb-6">
-              Your privacy is important to us. This Privacy Policy explains how Media Garcia, Inc. (&quot;Media Garcia,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, and protects your personal information when you visit <Link href="/" className="text-teal-500 hover:text-teal-600">https://www.mediagarcia.com</Link> or use our services.
+              Your privacy is important to us. This Privacy Policy explains how Media Garcia (&quot;Media Garcia,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, and protects your personal information when you visit <Link href="/" className="text-teal-500 hover:text-teal-600">https://www.mediagarcia.com</Link> or use our services.
             </p>
 
             <div className="bg-gray-50 rounded-xl p-6 text-black/70 mb-8">
-              <p><strong>Media Garcia, Inc.</strong></p>
+              <p><strong>Media Garcia</strong></p>
               <p>Saint Paul, Minnesota, USA</p>
               <p>Email: hello@mediagarcia.com</p>
               <p>Phone: +1 888-612-4250</p>
@@ -115,7 +115,7 @@ export default function PrivacyPage() {
               If you have questions about this Privacy Policy or our data practices, contact us at:
             </p>
             <div className="bg-gray-50 rounded-xl p-6 text-black/70">
-              <p><strong>Media Garcia, Inc.</strong></p>
+              <p><strong>Media Garcia</strong></p>
               <p>Email: hello@mediagarcia.com</p>
               <p>Phone: +1 888-612-4250</p>
               <p className="mt-4 text-sm text-black/40">Effective as of February 26, 2026.</p>
