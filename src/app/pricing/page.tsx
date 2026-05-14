@@ -9,15 +9,15 @@ import { PricingFAQ } from "./pricing-faq";
 export const metadata: Metadata = {
   title: "Pricing | Media Garcia",
   description:
-    "Custom pricing for CRM, RevOps, and revenue operations services. Projects, retainers, and fractional RevOps — scoped to your goals. Book a free intro call.",
+    "Transparent monthly pricing for CRM, RevOps, and AI operations support: $2.5K maintenance and support plus $7.5K per active project workstream.",
   alternates: { canonical: "/pricing" },
 };
 
 const engagementModels = [
   {
-    title: "Strategic Projects",
+    title: "Maintenance & Support",
     description:
-      "A defined engagement to solve a specific problem. CRM migrations, integration builds, process redesigns — scoped with clear deliverables and timeline.",
+      "A $2.5K/month foundation for steady help, triage, fixes, reporting questions, and keeping your revenue systems from drifting.",
     icon: (
       <svg
         className="w-8 h-8"
@@ -35,9 +35,9 @@ const engagementModels = [
     ),
   },
   {
-    title: "Ongoing Partnerships",
+    title: "Project Workstreams",
     description:
-      "A dedicated strategist embedded in your operations. Monthly retainer, flexible priorities, regular check-ins. This is how most of our long-term relationships work.",
+      "Add $7.5K/month for each active project track, such as a HubSpot rebuild, automation rollout, integration, migration, or agent implementation.",
     icon: (
       <svg
         className="w-8 h-8"
@@ -55,9 +55,9 @@ const engagementModels = [
     ),
   },
   {
-    title: "Fractional RevOps",
+    title: "Embedded RevOps",
     description:
-      "We step in as your RevOps team until you're ready to hire. Strategy, execution, and hiring support — all under one roof.",
+      "Run multiple workstreams with one accountable team across strategy, systems, data, automation, enablement, and executive reporting.",
     icon: (
       <svg
         className="w-8 h-8"
@@ -77,7 +77,7 @@ const engagementModels = [
   {
     title: "Advisory & Training",
     description:
-      "Workshops, audits, and team enablement. We teach your team to own the system and make it stick.",
+      "Workshops, audits, and enablement can be scoped as a workstream or folded into the support foundation when the lift is lighter.",
     icon: (
       <svg
         className="w-8 h-8"
@@ -177,9 +177,9 @@ export default function PricingPage() {
     <>
       {/* Section 1: PageHeader */}
       <PageHeader
-        badge="How We Engage"
-        title="Every business is different. Your investment should be too."
-        description="We don't do packages. We build custom partnerships around your goals, timeline, and budget — then grow with you."
+        badge="Pricing"
+        title="Simple monthly pricing for support plus project workstreams."
+        description="Start with $2.5K/month for maintenance and support. Add $7.5K/month for each active project workstream we run on top of that."
         breadcrumbs={[{ label: "Pricing", href: "/pricing" }]}
         backgroundImage={{ src: "/images/about/team-collaboration.jpg", color: "teal", pattern: "arc" }}
       />
@@ -201,24 +201,24 @@ export default function PricingPage() {
                 Our Philosophy
               </span>
               <h2 className="text-3xl lg:text-4xl font-black text-black mb-8">
-                Built around you, not a template
+                Built around capacity, not hidden hourly math
               </h2>
               <div className="space-y-6 text-lg text-black/70 leading-relaxed">
                 <p>
                   After 200+ implementations, we&apos;ve learned that the best
-                  outcomes come from engagements built around what each business
-                  actually needs — not what fits into a template.
+                  outcomes come from a steady operating foundation plus clear
+                  capacity for the projects that actually move the business.
                 </p>
                 <p>
-                  Some clients need a two-week CRM fix. Others need us as their
-                  fractional RevOps team for a year. One price for both would be
-                  dishonest.
+                  The maintenance and support plan keeps the day-to-day work
+                  covered. Project workstreams give bigger initiatives a named
+                  lane, dedicated attention, and a budget everyone can plan
+                  around.
                 </p>
                 <p>
-                  We&apos;ll always be straight about what things cost,
-                  we&apos;ll work within your budget, and we won&apos;t recommend
-                  work you don&apos;t need. That&apos;s why 98% of our clients
-                  stay with us year over year.
+                  The math stays simple: $2.5K/month to start, then $7.5K/month
+                  per active workstream. One workstream is $10K/month all-in,
+                  two is $17.5K/month, and three is $25K/month.
                 </p>
               </div>
             </div>
@@ -227,16 +227,16 @@ export default function PricingPage() {
             <div className="space-y-4 lg:mt-16">
               {[
                 {
-                  title: "Outcomes over hours",
-                  text: "We measure success by your results, not our timesheets.",
+                  title: "Clear baseline",
+                  text: "Support, triage, maintenance, and small fixes live in the $2.5K/month foundation.",
                 },
                 {
-                  title: "Scoped to your goals",
-                  text: "Every proposal is custom-built for what you need right now.",
+                  title: "Named workstreams",
+                  text: "Each major project gets its own $7.5K/month lane with clear outcomes and ownership.",
                 },
                 {
-                  title: "No wasted spend",
-                  text: "We don't recommend work that won't move the needle.",
+                  title: "Easy to scale",
+                  text: "Add or pause workstreams as priorities change, without renegotiating the whole relationship.",
                 },
               ].map((principle) => (
                 <div
@@ -266,36 +266,43 @@ export default function PricingPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
-              Investment Context
+              Pricing Model
             </span>
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6">
-              We believe in transparency
+              Start with support. Add focused workstreams.
             </h2>
             <p className="text-lg text-black/60 leading-relaxed">
-              Here&apos;s what to expect so you can plan with confidence.
+              A practical monthly model for teams that need reliable systems
+              support and active project execution.
             </p>
           </div>
 
           {/* Investment Range Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {[
               {
-                label: "Minimum engagement",
-                value: "$5,000",
+                label: "Maintenance & support",
+                value: "$2.5K/mo",
                 description:
-                  "Great for small projects, fixes, support, training, and onboardings. A focused starting point.",
+                  "The starting foundation: ongoing help, issue triage, small fixes, reporting questions, and system upkeep.",
               },
               {
-                label: "Most projects",
-                value: "$5K–$50K+",
+                label: "Support + 1 workstream",
+                value: "$10K/mo",
                 description:
-                  "Where real, measurable impact happens. CRM builds, migrations, integrations — scoped together before anything starts.",
+                  "Maintenance plus one focused project lane, such as a CRM cleanup, automation rollout, or integration.",
               },
               {
-                label: "Ongoing partnerships",
-                value: "$3–10K/mo",
+                label: "Support + 2 workstreams",
+                value: "$17.5K/mo",
                 description:
-                  "For retainer-style engagements with a dedicated strategist embedded in your operations.",
+                  "For teams that need parallel progress across two priorities, usually with more cross-functional coordination.",
+              },
+              {
+                label: "Support + 3 workstreams",
+                value: "$25K/mo",
+                description:
+                  "For active transformation work across systems, data, automation, enablement, and leadership reporting.",
               },
             ].map((tier) => (
               <div
@@ -318,14 +325,14 @@ export default function PricingPage() {
           {/* What Drives Investment */}
           <div className="max-w-4xl mx-auto">
             <h3 className="text-xl lg:text-2xl font-bold text-black text-center mb-10">
-              What drives investment
+              What counts as a workstream
             </h3>
             <div className="grid sm:grid-cols-2 gap-6">
               {[
                 {
-                  title: "Team size & specialization",
+                  title: "A defined outcome",
                   description:
-                    "How many specialists your project needs — from a solo strategist to a full cross-functional squad.",
+                    "A workstream has a concrete business result, such as cleaner lifecycle reporting, a new sales process, or an agent-assisted workflow.",
                   icon: (
                     <svg
                       className="w-6 h-6"
@@ -343,9 +350,9 @@ export default function PricingPage() {
                   ),
                 },
                 {
-                  title: "Integration complexity",
+                  title: "A clear owner and cadence",
                   description:
-                    "The number of systems to connect and how deeply they need to talk to each other.",
+                    "We agree on who is driving the work, how often we meet, and what decisions need to be made to keep it moving.",
                   icon: (
                     <svg
                       className="w-6 h-6"
@@ -363,9 +370,9 @@ export default function PricingPage() {
                   ),
                 },
                 {
-                  title: "Data volume & migration scope",
+                  title: "Enough lift to need a lane",
                   description:
-                    "How much data needs to move, be cleaned, or be restructured across your systems.",
+                    "Small fixes stay in support. Bigger efforts that require planning, build time, QA, and rollout become a workstream.",
                   icon: (
                     <svg
                       className="w-6 h-6"
@@ -383,9 +390,9 @@ export default function PricingPage() {
                   ),
                 },
                 {
-                  title: "Timeline requirements",
+                  title: "Room to adjust",
                   description:
-                    "Faster delivery means more focused resources. We'll always be upfront about tradeoffs.",
+                    "If priorities change, we can pause, swap, or add workstreams so budget follows the work that matters most.",
                   icon: (
                     <svg
                       className="w-6 h-6"
@@ -426,8 +433,9 @@ export default function PricingPage() {
           {/* Closing Reassurance */}
           <div className="text-center mt-12">
             <p className="text-lg text-black/70 leading-relaxed max-w-2xl mx-auto">
-              Every engagement starts with a free intro call where we scope
-              the work together. No surprises.
+              Every engagement starts with the support foundation. From there,
+              we scope how many active workstreams make sense for the next
+              month or quarter.
             </p>
             <Link
               href="/book"
@@ -470,8 +478,8 @@ export default function PricingPage() {
               Flexible ways to work together
             </h2>
             <p className="text-lg text-black/60 leading-relaxed">
-              Whether you need a focused project, a long-term partner, or
-              something in between — we&apos;ll find the right fit.
+              Keep support steady, then choose the number of active workstreams
+              that matches your current priorities.
             </p>
           </div>
 
@@ -660,7 +668,7 @@ export default function PricingPage() {
               Results
             </span>
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight text-black mb-6">
-              See what custom partnerships deliver
+              See what focused partnerships deliver
             </h2>
           </div>
 

@@ -10,27 +10,32 @@ const pricingFaqs = [
   {
     question: "What's the minimum engagement size?",
     answer:
-      "There's no strict minimum. We've done focused projects in a few weeks and long-term partnerships spanning years. We'll scope something that makes sense for both of us.",
+      "The standard starting point is $2.5K/month for maintenance and support. That gives you a steady lane for triage, small fixes, reporting questions, and system upkeep.",
   },
   {
-    question: "Do you require long-term contracts?",
+    question: "How much is a project workstream?",
     answer:
-      "No. Our retainer clients work with us month-to-month. We earn your business every month — that's why 98% of our clients renew year over year.",
+      "Each active project workstream is $7.5K/month on top of the support foundation. Maintenance plus one workstream is $10K/month, two is $17.5K/month, and three is $25K/month.",
   },
   {
-    question: "Can I start with a small project first?",
+    question: "What belongs in maintenance and support?",
     answer:
-      "Absolutely. Many of our long-term partners started with a single project — a migration, an audit, or a workflow build. It's a great way to see how we work together.",
+      "The support foundation covers ongoing help, issue triage, light fixes, admin questions, monitoring, and keeping your CRM and revenue systems healthy. Larger planned initiatives become workstreams.",
   },
   {
-    question: "How do retainers work?",
+    question: "What counts as a workstream?",
     answer:
-      "We agree on a monthly scope and set of priorities. You get a dedicated strategist and team, regular check-ins, and the flexibility to shift priorities as your business evolves.",
+      "A workstream is a named project lane with a defined outcome, owner, cadence, and delivery plan. Examples include a HubSpot rebuild, lifecycle reporting cleanup, data migration, integration, automation rollout, or AI agent implementation.",
   },
   {
     question: "What happens if my needs change mid-engagement?",
     answer:
-      "We adapt. Businesses change, and your partner should change with you. We'll adjust scope, timeline, or focus — no rigid SOWs that don't flex.",
+      "We adapt the active workstreams. You can pause, swap, or add workstreams as priorities change, while the support foundation keeps the day-to-day work covered.",
+  },
+  {
+    question: "Do you require long-term contracts?",
+    answer:
+      "Most client relationships are structured month-to-month or quarter-to-quarter depending on the workstream plan. We keep the model clear so budget and capacity can move with the business.",
   },
   {
     question: "How quickly can we get started?",
