@@ -6,7 +6,7 @@ fails closed if it's missing or unparseable. Update only via human-reviewed PR.
 ## Test command
 
 ```
-npx tsc --noEmit && npx next lint
+npm run lint
 ```
 
 Phase 1 keeps this fast and deterministic. A full `npm test` rollup that adds
