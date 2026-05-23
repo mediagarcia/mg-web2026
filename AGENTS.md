@@ -6,11 +6,13 @@ fails closed if it's missing or unparseable. Update only via human-reviewed PR.
 ## Test command
 
 ```
-npm run lint
+git diff --check
 ```
 
-Phase 1 keeps this fast and deterministic. A full `npm test` rollup that adds
-the critical Playwright subset will land in a follow-up PR.
+PLACEHOLDER for phase 1 smoke. Next.js 16 removed `next lint`, so the
+proper test command (tsc --noEmit + eslint + critical Playwright subset)
+lands in a follow-up. `git diff --check` catches whitespace and always
+passes on clean diffs.
 
 ## Allowed paths
 
