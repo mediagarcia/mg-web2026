@@ -6,13 +6,17 @@ fails closed if it's missing or unparseable. Update only via human-reviewed PR.
 ## Test command
 
 ```
-git diff --check
+npx --no-install tsc --noEmit --incremental
 ```
 
-PLACEHOLDER for phase 1 smoke. Next.js 16 removed `next lint`, so the
-proper test command (tsc --noEmit + eslint + critical Playwright subset)
-lands in a follow-up. `git diff --check` catches whitespace and always
-passes on clean diffs.
+Typecheck only for now. `--no-install` makes npx use `node_modules/.bin/tsc`
+(typescript is in devDependencies) and fail fast if it is missing instead of
+fetching a wrong package. `--incremental` reuses `tsconfig.tsbuildinfo` when
+present.
+
+Lint is deliberately omitted: Next.js 16 removed `next lint` and the repo
+has no standalone eslint config yet. Once one is added, expand this to
+`npx --no-install tsc --noEmit --incremental && npx --no-install eslint .`
 
 ## Allowed paths
 
