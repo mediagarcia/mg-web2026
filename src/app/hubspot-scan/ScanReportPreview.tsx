@@ -13,12 +13,12 @@ const sampleFindings = [
   {
     severity: "Critical" as const,
     message:
-      "47 users found. 1 generic email detected — review info@acme-corp.com for shared credential risk.",
+      "47 users found. 1 generic email detected. Review info@acme-corp.com for shared credential risk.",
   },
   {
     severity: "Warning" as const,
     message:
-      "Checked 3 domains — none have HubSpot tracking code installed.",
+      "Checked 3 domains. None have HubSpot tracking code installed.",
   },
   {
     severity: "Pass" as const,
@@ -68,7 +68,7 @@ export function ScanReportPreview() {
               <div className="w-3 h-3 rounded-full bg-emerald-500/60" />
             </div>
             <span className="text-white/40 text-sm font-mono">
-              Portal Health Report — acme-corp.com
+              Portal Health Report: acme-corp.com
             </span>
           </div>
           <span className="text-xs text-white/30 font-mono">

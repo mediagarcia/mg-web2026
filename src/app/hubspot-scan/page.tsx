@@ -6,17 +6,38 @@ import { ScanReportPreview } from "./ScanReportPreview";
 import { ScanCTASection } from "./ScanCTASection";
 
 export const metadata: Metadata = {
-  title: "HubScan.Ai — Automated CRM Health Audits | Media Garcia",
+  title: "Portal Pulse: A RevOps Agent That Earns Its Access | Media Garcia",
   description:
-    "Automated portal audits with 34 scanner modules that find issues before they become problems. Contact health, deal pipelines, workflows, integrations, reporting, and security — scanned in under 5 minutes.",
+    "Portal Pulse is the RevOps agent Media Garcia built in-house. It reads a HubSpot portal end to end, proposes fixes in plain language, and runs them only inside the lanes you approve. The tooling that sets us apart from other agencies.",
   alternates: { canonical: "/hubspot-scan" },
 };
 
 const heroStats = [
   { value: "34", label: "Scanner Modules" },
-  { value: "82", label: "Assessment Rules" },
-  { value: "< 5min", label: "Full Portal Audit" },
-  { value: "100%", label: "Automated" },
+  { value: "0", label: "Writes Without Your Sign-off" },
+  { value: "3", label: "Plays, Scoped and Reversible" },
+  { value: "< 5min", label: "To Your First Pulse" },
+];
+
+const moments = [
+  {
+    step: "01",
+    title: "We show you what we see.",
+    description:
+      "A full read of your portal before anything is touched. Pipelines, properties, workflows, reports. You read the room before we enter it.",
+  },
+  {
+    step: "02",
+    title: "We propose. You approve.",
+    description:
+      "Every action is drafted, scoped, and explained in language your team already uses. Nothing ships without your sign-off.",
+  },
+  {
+    step: "03",
+    title: "We do the work. You review the summary.",
+    description:
+      "The agent executes inside the lanes you approved, then hands you a clean record of what changed and why.",
+  },
 ];
 
 const scannerCategories = [
@@ -124,32 +145,38 @@ const scannerCategories = [
   },
 ];
 
-const processSteps = [
+const plays = [
   {
-    step: "01",
-    title: "Connect",
-    description:
-      "Authorize read-only access to your HubSpot portal. We never write or modify your data.",
+    idx: "PLAY 01",
+    name: "The Clean Slate Play",
+    outcome:
+      "Retire the automations, properties, and reports nobody uses, with a paper trail your admin can defend in a meeting.",
+    runtime: "Runs in ~48 hours",
+    risk: "LOW RISK",
   },
   {
-    step: "02",
-    title: "Scan",
-    description:
-      "34 modules analyze your portal against 82 rules. Contacts, deals, workflows, integrations, security — everything.",
+    idx: "PLAY 02",
+    name: "The Pipeline Integrity Play",
+    outcome:
+      "Deal stages that mean the same thing across every team, so your CRO can put a number behind the forecast without a caveat.",
+    runtime: "Runs over 1 to 2 weeks",
+    risk: "SUPERVISED",
   },
   {
-    step: "03",
-    title: "Report",
-    description:
-      "Get a prioritized report with severity ratings, fix instructions, and estimated impact for each finding.",
+    idx: "PLAY 03",
+    name: "The Lead Source Play",
+    outcome:
+      "One attribution taxonomy. Every lead, every channel, every campaign stitched to a source you can actually measure.",
+    runtime: "Runs over 2 to 3 weeks",
+    risk: "SUPERVISED",
   },
 ];
 
 const audiences = [
   {
-    title: "RevOps Teams",
+    title: "We build, we don't just configure",
     description:
-      "You inherited a portal with 5 years of tech debt. Scan finds what\u2019s broken so you can prioritize fixes.",
+      "Other shops resell HubSpot's native tools and call it strategy. We engineer our own agents on top of them. Portal Pulse is one of several we run in-house.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
@@ -162,9 +189,9 @@ const audiences = [
     ),
   },
   {
-    title: "Agencies",
+    title: "Findings you can actually trust",
     description:
-      "Show clients the state of their portal before you start work. Scan creates instant credibility and scopes projects.",
+      "Every issue we raise is backed by an agent that read your real portal against 82 rules, not a junior working from a generic checklist.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
@@ -177,9 +204,9 @@ const audiences = [
     ),
   },
   {
-    title: "New HubSpot Customers",
+    title: "Senior work, at machine speed",
     description:
-      "Just migrated? Scan validates that your data landed correctly and your setup follows best practices.",
+      "Plays that take other agencies weeks of manual effort run in hours here, with a dry run you approve and an undo path you can use.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
@@ -195,34 +222,34 @@ const audiences = [
 
 const faqs = [
   {
-    question: "What access level does the scan require?",
+    question: "What access does Portal Pulse start with?",
     answer:
-      "We request read-only OAuth access to your HubSpot portal. The scan never writes, modifies, or deletes any data. Access is scoped to the specific APIs needed for each scanner module.",
+      "It starts with read-only OAuth to your HubSpot portal. The first pulse never writes, modifies, or deletes anything. Access is scoped to the specific APIs each module needs, and you can audit every scope inside HubSpot.",
+  },
+  {
+    question: "Does it ever change my data?",
+    answer:
+      "Only after you approve a specific play, and only inside the lanes you signed off on. Every action type is one you have approved before, every action has an undo path, and the agent stops the moment it reaches something outside its authority.",
   },
   {
     question: "How is my data protected?",
     answer:
-      "Scan data is processed in memory and never stored on our servers beyond the report generation window. Reports are delivered directly to you. We do not retain portal data after the scan completes.",
+      "Scan data is processed in memory and is not stored on our servers beyond the report window. The agent works against your portal through the API. It does not copy your database somewhere else.",
   },
   {
-    question: "Is access revoked after the scan?",
+    question: "Can I revoke access?",
     answer:
-      "You can revoke access at any time from your HubSpot Settings > Integrations > Connected Apps. We recommend revoking after you receive your report if you don\u2019t plan to run recurring scans.",
+      "Any time, from HubSpot Settings, Integrations, Connected Apps. The first pulse is non-invasive, so you can run it, read the report, and revoke it if the read is all you came for.",
   },
   {
-    question: "How is the report delivered?",
+    question: "What is a play?",
     answer:
-      "You receive a detailed report with findings organized by category and severity. Each finding includes a plain-language explanation, fix instructions, and estimated effort level.",
+      "A scoped piece of work with a dry run you approve and an undo path you can use. Clean Slate, Pipeline Integrity, and Lead Source are the first three. You check the scope, not the line items.",
   },
   {
-    question: "How often should I run a scan?",
+    question: "Does it work with my HubSpot plan?",
     answer:
-      "We recommend scanning quarterly, or after major changes like migrations, new integrations, or team restructuring. CRM health drifts over time as teams add properties, workflows, and automations.",
-  },
-  {
-    question: "Does it work with any HubSpot plan?",
-    answer:
-      "Yes. The scan works with Free, Starter, Professional, and Enterprise plans. Some scanner modules surface additional findings for Professional and Enterprise features like workflows and custom reporting.",
+      "Yes. It works across Free, Starter, Professional, and Enterprise. Some modules and plays surface more on Professional and Enterprise, where workflows and custom reporting live.",
   },
 ];
 
@@ -232,10 +259,10 @@ export default function HubSpotScanPage() {
   return (
     <>
       <PageHeader
-        badge="Product"
-        title="HubScan.Ai"
-        description="Automated CRM health audits that find what's broken, what's unused, and what's costing you money — across 34 scanner modules."
-        breadcrumbs={[{ label: "HubScan.Ai", href: "/hubspot-scan" }]}
+        badge="Our Edge"
+        title="Portal Pulse"
+        description="Most agencies audit your HubSpot with a junior and a spreadsheet. We built an agent for it. Portal Pulse reads a portal end to end, proposes every fix in plain language, and changes nothing without sign-off. It is the tooling behind how Media Garcia works, and part of why our work holds up where other shops guess."
+        breadcrumbs={[{ label: "Portal Pulse", href: "/hubspot-scan" }]}
         backgroundImage={heroImage ? { src: heroImage, color: "teal", pattern: "arc" } : undefined}
       />
 
@@ -253,21 +280,53 @@ export default function HubSpotScanPage() {
         </div>
       </section>
 
-      {/* What It Scans */}
+      {/* How It Works */}
       <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
         <FadingGridPattern type="dots" color="gray" opacity={0.08} spacing={28} fadeDirection="both" />
         <GradientOrb color="teal" size="xl" className="-top-48 -right-48 opacity-30" intensity="subtle" blur="xl" />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
-              What It Scans
+              How It Works
             </span>
             <h2 className="text-3xl lg:text-4xl font-black text-black mb-4">
-              Six categories. 34 modules. Every corner of your portal.
+              Scan. Plan. Fix. In that order.
             </h2>
             <p className="text-lg text-black/60 leading-relaxed">
-              Each scanner module checks specific aspects of your HubSpot portal against best-practice rules
-              and surfaces findings with severity ratings and fix instructions.
+              Portal Pulse never runs ahead of you. It earns the next step by showing its work on the last one.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {moments.map((moment) => (
+              <div key={moment.step} className="relative">
+                <span className="text-6xl lg:text-7xl font-black text-teal-500/10 absolute -top-4 -left-2">
+                  {moment.step}
+                </span>
+                <div className="relative pt-12">
+                  <h3 className="text-2xl font-black text-black mb-3">{moment.title}</h3>
+                  <p className="text-black/60 leading-relaxed">{moment.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What the first pulse sees */}
+      <section className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
+        <FadingGridPattern type="dots" color="gray" opacity={0.08} spacing={28} fadeDirection="both" />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
+          <div className="max-w-3xl mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
+              The First Pulse
+            </span>
+            <h2 className="text-3xl lg:text-4xl font-black text-black mb-4">
+              Your first pulse reads every corner of the portal
+            </h2>
+            <p className="text-lg text-black/60 leading-relaxed">
+              Before Portal Pulse proposes a single change, it reads the whole portal against best-practice
+              rules and surfaces what matters, each finding with a severity and a recommended fix.
             </p>
           </div>
 
@@ -275,7 +334,7 @@ export default function HubSpotScanPage() {
             {scannerCategories.map((category) => (
               <div
                 key={category.title}
-                className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow"
+                className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow"
               >
                 <div className="w-14 h-14 bg-teal-500/10 rounded-xl flex items-center justify-center text-teal-500 mb-6">
                   {category.icon}
@@ -289,31 +348,40 @@ export default function HubSpotScanPage() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
-        <FadingGridPattern type="dots" color="gray" opacity={0.08} spacing={28} fadeDirection="both" />
+      {/* The Plays */}
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <FadingGridPattern type="dots" color="gray" opacity={0.06} spacing={32} fadeDirection="both" />
+        <GradientOrb color="teal" size="xl" className="-bottom-32 -right-32 opacity-30" intensity="subtle" blur="xl" />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
-              How It Works
+              The Plays
             </span>
             <h2 className="text-3xl lg:text-4xl font-black text-black mb-4">
-              Three steps. Under five minutes.
+              Then it runs plays, not scripts
             </h2>
             <p className="text-lg text-black/60 leading-relaxed">
-              No configuration, no onboarding calls, no waiting. Connect your portal and get results.
+              Each play is a scoped piece of work with a dry run you approve and an undo path you can use.
+              You check the scope, not the line items.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {processSteps.map((step) => (
-              <div key={step.step} className="relative">
-                <span className="text-6xl lg:text-7xl font-black text-teal-500/10 absolute -top-4 -left-2">
-                  {step.step}
+            {plays.map((play) => (
+              <div
+                key={play.idx}
+                className="bg-gray-50 rounded-2xl p-8 flex flex-col hover:shadow-lg transition-shadow"
+              >
+                <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
+                  {play.idx}
                 </span>
-                <div className="relative pt-12">
-                  <h3 className="text-2xl font-black text-black mb-3">{step.title}</h3>
-                  <p className="text-black/60 leading-relaxed">{step.description}</p>
+                <h3 className="text-xl font-black text-black mb-3">{play.name}</h3>
+                <p className="text-black/60 leading-relaxed mb-8 flex-1">{play.outcome}</p>
+                <div className="flex items-center justify-between border-t border-black/10 pt-4">
+                  <span className="text-sm text-black/50">{play.runtime}</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-teal-500">
+                    {play.risk}
+                  </span>
                 </div>
               </div>
             ))}
@@ -322,19 +390,19 @@ export default function HubSpotScanPage() {
       </section>
 
       {/* Sample Report Preview */}
-      <section id="report-preview" className="py-20 lg:py-32 bg-white relative overflow-hidden">
+      <section id="report-preview" className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
         <FadingGridPattern type="dots" color="gray" opacity={0.06} spacing={32} fadeDirection="both" />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
-              Sample Report
+              Sample Pulse
             </span>
             <h2 className="text-3xl lg:text-4xl font-black text-black mb-4">
-              What a real scan report looks like
+              What your first pulse looks like
             </h2>
             <p className="text-lg text-black/60 leading-relaxed">
-              This is an anonymized preview from an actual HubScan.Ai report. Every finding includes a severity
-              rating, a plain-language explanation, and instructions to fix it.
+              An anonymized preview of a real Portal Pulse read. Every finding has a severity, a
+              plain-language explanation, and a recommended fix.
             </p>
           </div>
 
@@ -343,23 +411,26 @@ export default function HubSpotScanPage() {
       </section>
 
       {/* Who It's For */}
-      <section className="py-20 lg:py-32 bg-gray-50 relative overflow-hidden">
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
         <GradientOrb color="teal" size="xl" className="-bottom-32 -left-32 opacity-30" intensity="subtle" blur="xl" />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
-              Who It&apos;s For
+              Our Edge
             </span>
             <h2 className="text-3xl lg:text-4xl font-black text-black mb-4">
-              Built for people who own the CRM
+              Why working with Media Garcia is different
             </h2>
+            <p className="text-lg text-black/60 leading-relaxed">
+              Portal Pulse is one of several agents we run in-house. Most agencies in our space cannot say that.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {audiences.map((audience) => (
               <div
                 key={audience.title}
-                className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow"
+                className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow"
               >
                 <div className="w-14 h-14 bg-teal-500/10 rounded-xl flex items-center justify-center text-teal-500 mb-6">
                   {audience.icon}
@@ -373,14 +444,14 @@ export default function HubSpotScanPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 lg:py-32 bg-white">
+      <section className="py-20 lg:py-32 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-teal-500 mb-4 block">
               FAQ
             </span>
             <h2 className="text-3xl lg:text-4xl font-black text-black mb-4">
-              Common questions about HubScan.Ai
+              Common questions about Portal Pulse
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl">

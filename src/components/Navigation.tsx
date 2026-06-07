@@ -63,7 +63,7 @@ const aiServices: MenuItem[] = [
   { label: "AI Agents", href: "/services/ai-agents", description: "Autonomous agents for HubSpot", icon: BrainCircuit },
   { label: "RAG & Knowledge", href: "/services/rag", description: "AI-powered knowledge systems", icon: BookOpen },
   { label: "Multi-LLM", href: "/services/multi-llm", description: "Multi-model orchestration", icon: Network },
-  { label: "HubScan.Ai", href: "/hubspot-scan", description: "Automated CRM health audits", icon: ScanSearch },
+  { label: "Portal Pulse", href: "/hubspot-scan", description: "A RevOps agent that earns its access", icon: ScanSearch },
 ];
 
 const additionalServices: MenuItem[] = [
@@ -260,7 +260,7 @@ function WorkMegaMenu({ onClose }: { onClose: () => void }) {
         <p className="text-xs text-gray-500">Our AI-powered operations platform for delivery accountability</p>
       </Link>
 
-      {/* HubScan.Ai */}
+      {/* Portal Pulse */}
       <Link
         href="/hubspot-scan"
         onClick={onClose}
@@ -270,9 +270,9 @@ function WorkMegaMenu({ onClose }: { onClose: () => void }) {
           <ScanSearch className="w-5 h-5" />
         </div>
         <h3 className="text-sm font-semibold text-gray-900 group-hover:text-teal-600 transition-colors mb-1">
-          HubScan.Ai
+          Portal Pulse
         </h3>
-        <p className="text-xs text-gray-500">Automated CRM health audits across 34 scanner modules</p>
+        <p className="text-xs text-gray-500">A RevOps agent that earns its access</p>
       </Link>
     </div>
   );
@@ -497,8 +497,8 @@ export function Navigation() {
                           onClick={() => setIsMobileMenuOpen(false)}
                           className="block py-2"
                         >
-                          <span className="text-base font-medium text-gray-900">HubScan.Ai</span>
-                          <span className="block text-sm text-gray-500">Automated CRM health audits across 34 scanner modules</span>
+                          <span className="text-base font-medium text-gray-900">Portal Pulse</span>
+                          <span className="block text-sm text-gray-500">A RevOps agent that earns its access</span>
                         </Link>
                       </li>
                     </ul>
