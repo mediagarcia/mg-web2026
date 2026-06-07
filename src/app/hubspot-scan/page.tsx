@@ -6,7 +6,7 @@ import { ScanReportPreview } from "./ScanReportPreview";
 import { ScanCTASection } from "./ScanCTASection";
 
 export const metadata: Metadata = {
-  title: "Portal Pulse — A RevOps Agent That Earns Its Access | Media Garcia",
+  title: "Portal Pulse: A RevOps Agent That Earns Its Access | Media Garcia",
   description:
     "Portal Pulse is the RevOps agent Media Garcia built in-house. It reads a HubSpot portal end to end, proposes fixes in plain language, and runs them only inside the lanes you approve. The tooling that sets us apart from other agencies.",
   alternates: { canonical: "/hubspot-scan" },
