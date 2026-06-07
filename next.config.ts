@@ -43,6 +43,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/hubspot-scan",
+        destination: "/portalpulse",
+        permanent: true,
+      },
+      {
         source: "/privacy-policy",
         destination: "/privacy",
         permanent: true,

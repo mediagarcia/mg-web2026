@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Portal Pulse: A RevOps Agent That Earns Its Access | Media Garcia",
   description:
     "Portal Pulse is the RevOps agent Media Garcia built in-house. It reads a HubSpot portal end to end, proposes fixes in plain language, and runs them only inside the lanes you approve. The tooling that sets us apart from other agencies.",
-  alternates: { canonical: "/hubspot-scan" },
+  alternates: { canonical: "/portalpulse" },
 };
 
 const heroStats = [
@@ -262,7 +262,7 @@ export default function HubSpotScanPage() {
         badge="Our Edge"
         title="Portal Pulse"
         description="Most agencies audit your HubSpot with a junior and a spreadsheet. We built an agent for it. Portal Pulse reads a portal end to end, proposes every fix in plain language, and changes nothing without sign-off. It is the tooling behind how Media Garcia works, and part of why our work holds up where other shops guess."
-        breadcrumbs={[{ label: "Portal Pulse", href: "/hubspot-scan" }]}
+        breadcrumbs={[{ label: "Portal Pulse", href: "/portalpulse" }]}
         backgroundImage={heroImage ? { src: heroImage, color: "teal", pattern: "arc" } : undefined}
       />
 

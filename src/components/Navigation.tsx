@@ -63,7 +63,7 @@ const aiServices: MenuItem[] = [
   { label: "AI Agents", href: "/services/ai-agents", description: "Autonomous agents for HubSpot", icon: BrainCircuit },
   { label: "RAG & Knowledge", href: "/services/rag", description: "AI-powered knowledge systems", icon: BookOpen },
   { label: "Multi-LLM", href: "/services/multi-llm", description: "Multi-model orchestration", icon: Network },
-  { label: "Portal Pulse", href: "/hubspot-scan", description: "A RevOps agent that earns its access", icon: ScanSearch },
+  { label: "Portal Pulse", href: "/portalpulse", description: "A RevOps agent that earns its access", icon: ScanSearch },
 ];
 
 const additionalServices: MenuItem[] = [
@@ -262,7 +262,7 @@ function WorkMegaMenu({ onClose }: { onClose: () => void }) {
 
       {/* Portal Pulse */}
       <Link
-        href="/hubspot-scan"
+        href="/portalpulse"
         onClick={onClose}
         className="group block p-5 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-gray-50 transition-all"
       >
@@ -493,7 +493,7 @@ export function Navigation() {
                       </li>
                       <li>
                         <Link
-                          href="/hubspot-scan"
+                          href="/portalpulse"
                           onClick={() => setIsMobileMenuOpen(false)}
                           className="block py-2"
                         >
