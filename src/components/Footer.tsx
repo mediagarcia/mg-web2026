@@ -15,7 +15,7 @@ const footerLinks = {
     { label: "AI Agents", href: "/services/ai-agents" },
     { label: "RAG & Knowledge", href: "/services/rag" },
     { label: "Multi-LLM", href: "/services/multi-llm" },
-    { label: "Portal Pulse", href: "/hubspot-scan" },
+    { label: "Portal Pulse", href: "/portalpulse" },
     { label: "Development", href: "/services/development" },
   ],
   company: [
