@@ -98,8 +98,8 @@ Currently using placeholder images for some testimonials. To add real photos:
 **Files to update:** `src/components/sections/Team.tsx`, `src/app/about/page.tsx`
 
 Current status:
-- [x] Louis Garcia: Using placeholder URL (`https://www.linkedin.com/in/louisgarcia/`)
-- [ ] Verify Louis's correct LinkedIn URL
+- [x] Louis Garcia: Confirmed real profile (`https://www.linkedin.com/in/louisagarcia/`)
+- [x] Verify Louis's correct LinkedIn URL
 - [ ] Rochelle Schmidt: Add LinkedIn URL if available
 
 ---

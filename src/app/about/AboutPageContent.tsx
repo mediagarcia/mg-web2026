@@ -136,7 +136,7 @@ const team = [
     role: "CEO & Founder",
     bio: "Louis founded Media Garcia in 2010 with a simple premise: clients deserve senior-level expertise, not junior staff learning on their dime. With 15+ years in digital marketing and sales operations, he's personally led 200+ CRM implementations across healthcare, technology, and B2B companies. He's involved in every engagement—not just overseeing from afar. When he's not building revenue systems, he's probably talking about revenue systems.",
     image: "/images/team/team-member-1.jpg",
-    linkedin: "https://www.linkedin.com/in/louisgarcia/",
+    linkedin: "https://www.linkedin.com/in/louisagarcia/",
   },
   {
     name: "Andrew",

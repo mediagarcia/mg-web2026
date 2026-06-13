@@ -11,7 +11,7 @@ const team = [
     initials: "LG",
     image: "/images/team/team-member-1.jpg",
     gradient: "from-teal-500 to-teal-600",
-    linkedin: "https://www.linkedin.com/in/louisgarcia/",
+    linkedin: "https://www.linkedin.com/in/louisagarcia/",
   },
   {
     name: "Andrew",
