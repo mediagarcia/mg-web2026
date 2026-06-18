@@ -85,6 +85,8 @@ export function ContactForm({
   const inputBase =
     "w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/10 transition-colors";
 
+  const srOnly = "sr-only";
+
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
       {/* Honeypot */}
@@ -93,21 +95,42 @@ export function ContactForm({
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <input type="text" placeholder="First Name *" required value={firstname} onChange={(e) => setFirstname(e.target.value)} className={inputBase} />
-        <input type="text" placeholder="Last Name" value={lastname} onChange={(e) => setLastname(e.target.value)} className={inputBase} />
+        <div>
+          <label htmlFor="firstname" className={srOnly}>First Name</label>
+          <input id="firstname" type="text" placeholder="First Name *" required value={firstname} onChange={(e) => setFirstname(e.target.value)} className={inputBase} />
+        </div>
+        <div>
+          <label htmlFor="lastname" className={srOnly}>Last Name</label>
+          <input id="lastname" type="text" placeholder="Last Name" value={lastname} onChange={(e) => setLastname(e.target.value)} className={inputBase} />
+        </div>
       </div>
 
-      <input type="text" placeholder="Company *" required value={company} onChange={(e) => setCompany(e.target.value)} className={inputBase} />
-      <input type="tel" placeholder="Phone Number *" required value={phone} onChange={(e) => setPhone(e.target.value)} className={inputBase} />
-      <input type="email" placeholder="Email *" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputBase} />
+      <div>
+        <label htmlFor="company" className={srOnly}>Company</label>
+        <input id="company" type="text" placeholder="Company *" required value={company} onChange={(e) => setCompany(e.target.value)} className={inputBase} />
+      </div>
+      <div>
+        <label htmlFor="phone" className={srOnly}>Phone Number</label>
+        <input id="phone" type="tel" placeholder="Phone Number *" required value={phone} onChange={(e) => setPhone(e.target.value)} className={inputBase} />
+      </div>
+      <div>
+        <label htmlFor="email" className={srOnly}>Email</label>
+        <input id="email" type="email" placeholder="Email *" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputBase} />
+      </div>
 
-      <select value={inquiryType} onChange={(e) => setInquiryType(e.target.value)} className={inputBase}>
-        {INQUIRY_OPTIONS.map((opt) => (
-          <option key={opt.value} value={opt.value}>{opt.label}</option>
-        ))}
-      </select>
+      <div>
+        <label htmlFor="inquiryType" className={srOnly}>Inquiry type</label>
+        <select id="inquiryType" value={inquiryType} onChange={(e) => setInquiryType(e.target.value)} className={inputBase}>
+          {INQUIRY_OPTIONS.map((opt) => (
+            <option key={opt.value} value={opt.value}>{opt.label}</option>
+          ))}
+        </select>
+      </div>
 
-      <textarea placeholder="Message *" required rows={4} value={message} onChange={(e) => setMessage(e.target.value)} className={`${inputBase} resize-vertical min-h-[120px]`} />
+      <div>
+        <label htmlFor="message" className={srOnly}>Message</label>
+        <textarea id="message" placeholder="Message *" required rows={4} value={message} onChange={(e) => setMessage(e.target.value)} className={`${inputBase} resize-vertical min-h-[120px]`} />
+      </div>
 
       <p className="text-[10px] text-black/30 leading-snug">
         Media Garcia needs the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at anytime. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, check out our{" "}
