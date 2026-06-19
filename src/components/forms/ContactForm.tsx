@@ -93,21 +93,21 @@ export function ContactForm({
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <input type="text" placeholder="First Name *" required value={firstname} onChange={(e) => setFirstname(e.target.value)} className={inputBase} />
-        <input type="text" placeholder="Last Name" value={lastname} onChange={(e) => setLastname(e.target.value)} className={inputBase} />
+        <input aria-label="First Name" type="text" placeholder="First Name *" required value={firstname} onChange={(e) => setFirstname(e.target.value)} className={inputBase} />
+        <input aria-label="Last Name" type="text" placeholder="Last Name" value={lastname} onChange={(e) => setLastname(e.target.value)} className={inputBase} />
       </div>
 
-      <input type="text" placeholder="Company *" required value={company} onChange={(e) => setCompany(e.target.value)} className={inputBase} />
-      <input type="tel" placeholder="Phone Number *" required value={phone} onChange={(e) => setPhone(e.target.value)} className={inputBase} />
-      <input type="email" placeholder="Email *" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputBase} />
+      <input aria-label="Company" type="text" placeholder="Company *" required value={company} onChange={(e) => setCompany(e.target.value)} className={inputBase} />
+      <input aria-label="Phone Number" type="tel" placeholder="Phone Number *" required value={phone} onChange={(e) => setPhone(e.target.value)} className={inputBase} />
+      <input aria-label="Email" type="email" placeholder="Email *" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputBase} />
 
-      <select value={inquiryType} onChange={(e) => setInquiryType(e.target.value)} className={inputBase}>
+      <select aria-label="Inquiry type" value={inquiryType} onChange={(e) => setInquiryType(e.target.value)} className={inputBase}>
         {INQUIRY_OPTIONS.map((opt) => (
           <option key={opt.value} value={opt.value}>{opt.label}</option>
         ))}
       </select>
 
-      <textarea placeholder="Message *" required rows={4} value={message} onChange={(e) => setMessage(e.target.value)} className={`${inputBase} resize-vertical min-h-[120px]`} />
+      <textarea aria-label="Message" placeholder="Message *" required rows={4} value={message} onChange={(e) => setMessage(e.target.value)} className={`${inputBase} resize-vertical min-h-[120px]`} />
 
       <p className="text-[10px] text-black/30 leading-snug">
         Media Garcia needs the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at anytime. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, check out our{" "}
