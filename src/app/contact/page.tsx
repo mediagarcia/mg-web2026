@@ -59,7 +59,7 @@ export default function ContactPage() {
             <ContactForm />
           </div>
           <p className="text-sm text-gray-500 text-center mt-6">
-            You&apos;ll hear back from Louis or Andrew within 24 hours. We&apos;ll
+            You&apos;ll hear back from Louis within 24 hours. We&apos;ll
             ask about your current stack, challenges, and timeline to make the
             most of our first conversation.
           </p>
