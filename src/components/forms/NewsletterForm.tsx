@@ -45,6 +45,7 @@ export function NewsletterForm() {
       <div className="flex gap-2">
         <input
           type="email"
+          aria-label="Email"
           placeholder="you@company.com"
           required
           value={email}
