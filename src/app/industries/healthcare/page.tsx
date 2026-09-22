@@ -6,9 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "HubSpot for Healthcare Companies | Media Garcia",
+  title: "Healthcare Growth Infrastructure | Media Garcia",
   description:
-    "HubSpot implementations trusted by ADVI Health, Men\u2019s Pro Health, and healthcare organizations nationwide. Real results: 200+ CRM optimizations, custom patient portals, and multi-year partnerships.",
+    "Healthcare growth infrastructure built around HubSpot, paid media, attribution, and the operational systems your team already uses. Trusted by ADVI Health and Men\u2019s Pro Health.",
   alternates: { canonical: "/industries/healthcare" },
 };
 
@@ -21,7 +21,7 @@ const challenges = [
   {
     title: "Legacy Systems That Don\u2019t Talk",
     description:
-      "Men\u2019s Pro Health was running patient intake on AdvancedMD while managing operations separately. Disconnected systems meant duplicate data entry, missed follow-ups, and no single source of truth.",
+      "Men\u2019s Pro Health was using AdvancedMD for patient intake while other growth and operations work lived elsewhere. Disconnected systems made it harder to coordinate follow-up, reporting, and handoffs.",
   },
   {
     title: "Long Sales Cycles & Multiple Stakeholders",
@@ -51,13 +51,13 @@ const solutions = [
   {
     title: "Custom Patient Portal & EHR Integration",
     description:
-      "A full patient-facing portal with structured clinical notes and self-service care management\u2014all inside HubSpot. Built for Men\u2019s Pro Health to replace their legacy AdvancedMD system entirely.",
+      "A patient-facing portal and structured clinical workflow designed around Men\u2019s Pro Health\u2019s operating model. The engagement connected HubSpot with the systems already involved in clinic operations.",
     client: "Men\u2019s Pro Health",
     features: [
       "Patient self-service portal",
       "Structured EHR notes system",
+      "AdvancedMD coordination",
       "Multi-location clinic operations",
-      "Legacy system replacement",
     ],
   },
   {
@@ -166,8 +166,8 @@ export default function HealthcareIndustryPage() {
     <>
       <PageHeader
         badge="Industry"
-        title="HubSpot for Healthcare"
-        description="Trusted by ADVI Health, Men&apos;s Pro Health, and healthcare organizations nationwide. We build and maintain the HubSpot systems that power patient portals, clinic operations, and revenue-driving CRM workflows."
+        title="Healthcare Growth Infrastructure"
+        description="We connect healthcare growth, CRM, attribution, and operational systems so teams can make better decisions without forcing every workflow into one platform."
         breadcrumbs={[
           { label: "Industries", href: "/industries" },
           { label: "Healthcare", href: "/industries/healthcare" },
@@ -283,9 +283,9 @@ export default function HealthcareIndustryPage() {
                 Custom Patient Portal & Clinic Platform
               </p>
               <p className="text-black/60 leading-relaxed mb-6">
-                Full patient portal, EHR notes system, and clinic operations
-                platform inside HubSpot&mdash;replacing a legacy AdvancedMD
-                system.
+                Full patient portal, structured clinical notes, and clinic
+                operations workflows designed around the systems Men&apos;s Pro
+                Health already used, including AdvancedMD.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <div className="bg-white rounded-2xl p-5 text-center">
@@ -479,9 +479,9 @@ export default function HealthcareIndustryPage() {
                 ),
               },
               {
-                title: "EHR Integrations",
+                title: "Healthcare Platform Coordination",
                 description:
-                  "Proven integrations with Epic, Cerner, athenahealth, and AdvancedMD. We connect clinical systems to your CRM without compromising data integrity or compliance.",
+                  "We map the handoffs between HubSpot, AdvancedMD, Quest, AEL, and the growth channels your team uses. The exact systems and data flows are scoped to your operating model.",
                 icon: (
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
